@@ -18,7 +18,8 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .nav-links a{color:var(--co);text-decoration:none;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:1rem .65rem;display:block;transition:all .2s;border-bottom:3px solid transparent;}
 .nav-links a:hover,.nav-links a.active{color:var(--am);border-bottom-color:var(--am);background:rgba(255,255,255,.05);}
 .page{display:none;position:relative;z-index:1;}
-.page.active{display:block;}
+.page.active{display:block;animation:pageIn .3s ease both;}
+@keyframes pageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
 /* SOBRE MI — Opción C: hero minimalista vertical centrado */
 
@@ -32,7 +33,9 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .hero-ubi{font-size:.8rem;color:var(--ar);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:2rem;}
 
 /* FRANJA STATS */
-.stats-franja{display:flex;justify-content:center;gap:0;max-width:480px;margin:2rem auto 0;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;}
+.stats-franja{display:flex;flex-direction:column;max-width:480px;margin:2rem auto 0;border:1px solid rgba(255,255,255,.15);border-radius:12px;overflow:hidden;}
+.stats-titulo{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ar);text-align:center;padding:.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.12);}
+.stats-kpis{display:flex;}
 .stat-item{flex:1;text-align:center;padding:.9rem .5rem;border-right:1px solid rgba(255,255,255,.1);}
 .stat-item:last-child{border-right:none;}
 .stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--cr);font-weight:700;display:block;line-height:1;}
@@ -134,8 +137,8 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem;align-items:start;}
 
 /* FIGURITA */
-.fig{border-radius:10px;overflow:hidden;border:2px solid var(--ar);background:white;cursor:pointer;transition:all .3s;box-shadow:2px 4px 12px rgba(0,0,0,.07);position:relative;}
-.fig:hover{transform:translateY(-4px) rotate(.5deg);box-shadow:6px 10px 24px rgba(0,0,0,.14);border-color:var(--am);z-index:2;}
+.fig{border-radius:10px;overflow:hidden;border:2px solid var(--ar);background:white;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,border-color .25s ease;box-shadow:2px 4px 12px rgba(0,0,0,.07);position:relative;}
+.fig:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 32px rgba(0,0,0,.18);border-color:var(--v2);z-index:2;}
 .fig.enc{border-color:var(--v2);}
 .fig-num{position:absolute;top:5px;left:7px;font-family:'Caveat',cursive;font-size:1rem;color:rgba(255,255,255,.65);z-index:1;}
 .fig-star{position:absolute;top:5px;right:7px;font-size:.85rem;z-index:1;opacity:0;}
@@ -304,6 +307,15 @@ input[type=file]{display:none;}
 #site-footer-global a:hover{color:var(--v2);}
 #site-footer-global .sep{color:var(--ar);font-size:.55rem;}
 body{padding-bottom:48px;}
+
+/* ── ANIMACIONES ──────────────────────────────────────────────────────────── */
+@keyframes cardIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.fig{animation:cardIn .35s ease both;}
+
+@keyframes slideInRight{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:translateX(0);}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-16px);}to{opacity:1;transform:translateX(0);}}
+.modal-slide-right{animation:slideInRight .22s ease both;}
+.modal-slide-left{animation:slideInLeft .22s ease both;}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -331,9 +343,12 @@ body{padding-bottom:48px;}
     <h1 class="hero-nombre">Félix <em>Santiago</em> Aves</h1>
     <p class="hero-ubi">Río Cuarto · Córdoba · Argentina</p>
     <div class="stats-franja">
-      <div class="stat-item" onclick="irAlbum('enc')" style="cursor:pointer"><span class="stat-num" id="s-vistas">0</span><span class="stat-label">vistas ↗</span></div>
-      <div class="stat-item" onclick="irAlbum('todas')" style="cursor:pointer"><span class="stat-num" id="s-total">415</span><span class="stat-label">spp. Córdoba ↗</span></div>
-      <div class="stat-item"><span class="stat-num" id="s-pct">0%</span><span class="stat-label">completado</span></div>
+      <div class="stats-titulo">Estadísticas · Córdoba</div>
+      <div class="stats-kpis">
+        <div class="stat-item" onclick="irAlbum('enc')" style="cursor:pointer"><span class="stat-num" id="s-vistas">0</span><span class="stat-label">Especies vistas ↗</span></div>
+        <div class="stat-item" onclick="irAlbum('todas')" style="cursor:pointer"><span class="stat-num" id="s-total">415</span><span class="stat-label">Especies totales ↗</span></div>
+        <div class="stat-item"><span class="stat-num" id="s-pct">0%</span><span class="stat-label">Completado</span></div>
+      </div>
     </div>
     <div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill" style="width:0%"></div></div>
 </div>
@@ -1167,6 +1182,7 @@ function irAlbum(filtroVal){
 const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 10, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Real", "Ratona", "Picaflor Verde"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 11, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 2, "especies": ["Picabuey", "Biguá"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}];
 let lugarActivo = null;
 let mapaAvesOrdenadas = [];
+let modalNavDir = 1;
 
 function mapaIrEspecie(idAve) {
   const lugar = LUGARES_MAP[lugarActivo];
@@ -1267,13 +1283,32 @@ function showPage(id,el) {
   if(el) el.classList.add('active');
 }
 
+
+function animCount(el, target, duration) {
+  const start = performance.now();
+  const isFloat = String(target).includes('.');
+  requestAnimationFrame(function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    // Easing out cubic
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(ease * target);
+    el.textContent = current + (el.dataset.suffix || '');
+    if(progress < 1) requestAnimationFrame(tick);
+  });
+}
 function updStats() {
   const v=Object.keys(avist).length, t=AVES.length, pct=Math.round(v/t*100);
-  document.getElementById('s-vistas').textContent=v;
-  document.getElementById('s-total').textContent=t;
-  document.getElementById('s-pct').textContent=pct+'%';
-  const pf=document.getElementById('prog-fill'); if(pf) pf.style.width=pct+'%';
-  const ph=document.getElementById('prog-hero-fill'); if(ph) ph.style.width=pct+'%';
+  const elV = document.getElementById('s-vistas');
+  const elT = document.getElementById('s-total');
+  const elP = document.getElementById('s-pct');
+  elP.dataset.suffix = '%';
+  animCount(elV, v, 900);
+  animCount(elT, t, 1200);
+  animCount(elP, pct, 1000);
+  const pf=document.getElementById('prog-fill');
+  const ph=document.getElementById('prog-hero-fill');
+  if(pf){pf.style.width='0%'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ pf.style.transition='width 1.2s cubic-bezier(.4,0,.2,1)'; pf.style.width=pct+'%'; }));}
+  if(ph){ph.style.width='0%'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ ph.style.transition='width 1.2s cubic-bezier(.4,0,.2,1)'; ph.style.width=pct+'%'; }));}
   document.getElementById('prog-txt').textContent=v+' de '+t+' especies encontradas';
   // novedades
   const registros=Object.entries(avist).filter(([,r])=>r.fecha).sort((a,b)=>b[1].fecha.localeCompare(a[1].fecha));
@@ -1316,11 +1351,11 @@ function renderAlbum() {
   avesFilt.sort((a,b) => a.comun.localeCompare(b.comun, 'es'));
 
   let html = '<div class="album-grid">';
-  avesFilt.forEach(ave => {
+  avesFilt.forEach((ave, i) => {
       const av=avist[ave.id];
       const enc=!!av;
       const fotoHTML = av&&av.foto ? `<img class="fig-foto" src="${av.foto}" alt="${ave.comun}">` : getSilueta(ave.familiaEsp);
-      html += `<div class="fig ${enc?'enc':'no'}" onclick="openM(${ave.id})" data-id="${ave.id}">
+      html += `<div class="fig ${enc?'enc':'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="animation-delay:${Math.min(i*0.04,0.6)}s">
         <span class="fig-num">#${String(ave.id).padStart(3,'0')}</span>
         <span class="fig-star">✓</span>
         <div class="fig-img"><div class="fig-svg-wrap">${fotoHTML}</div></div>
@@ -1350,8 +1385,14 @@ function openM(id) {
   curId=id; curFoto=null;
   const ave=AVES.find(a=>a.id===id);
   const av=avist[id];
-  document.getElementById('m-nombre').textContent=ave.nombre;
-  document.getElementById('m-comun').textContent=ave.comun+' · '+ave.familiaEsp;
+  const mNombre = document.getElementById('m-nombre');
+  const mComun = document.getElementById('m-comun');
+  const slideClass = modalNavDir >= 0 ? 'modal-slide-right' : 'modal-slide-left';
+  mNombre.classList.remove('modal-slide-right','modal-slide-left');
+  mComun.classList.remove('modal-slide-right','modal-slide-left');
+  void mNombre.offsetWidth; // reflow para reiniciar animación
+  mNombre.textContent=ave.nombre; mNombre.classList.add(slideClass);
+  mComun.textContent=ave.comun+' · '+ave.familiaEsp; mComun.classList.add(slideClass);
 
   // Ficha
   const ficha=FICHAS[ave.nombre];
@@ -1501,7 +1542,7 @@ function modalNav(dir) {
   })();
   const idx = lista.findIndex(a => a.id === curId);
   const newIdx = idx + dir;
-  if(newIdx >= 0 && newIdx < lista.length) openM(lista[newIdx].id);
+  if(newIdx >= 0 && newIdx < lista.length) { modalNavDir = dir; openM(lista[newIdx].id); }
 }
 
 function updateModalArrows() {
