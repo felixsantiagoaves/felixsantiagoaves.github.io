@@ -4,63 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Félix Santiago Aves · Álbum de Córdoba</title>
-
-<!-- ══ SEO ══════════════════════════════════════════════════════════════ -->
-
-<!-- Descripción que muestra Google en los resultados -->
-<meta name="description" content="Álbum de aves de Félix Santiago — 415 especies registradas en Córdoba, Argentina. Avistamientos en Río Cuarto, UNRC, Parque Sarmiento, Lago Villa Dalcar y más.">
-
-<!-- Palabras clave -->
-<meta name="keywords" content="aves Córdoba Argentina, avistamiento aves Río Cuarto, birding Córdoba, álbum aves, Félix Santiago aves, aves de Argentina, observación de aves Córdoba">
-
-<!-- Autor y robots -->
-<meta name="author" content="Félix Santiago Allendes">
-<meta name="robots" content="index, follow">
-
-<!-- URL canónica — evita contenido duplicado -->
-<link rel="canonical" href="https://felixsantiagoaves.github.io/">
-
-<!-- ── Open Graph (Facebook, WhatsApp, LinkedIn) ── -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://felixsantiagoaves.github.io/">
-<meta property="og:title" content="Félix Santiago Aves · Álbum de Córdoba">
-<meta property="og:description" content="415 especies registradas en Córdoba, Argentina. Explorá el álbum completo con fotos, mapas y datos de cada avistamiento.">
-<meta property="og:image" content="https://felixsantiagoaves.github.io/fotos/og-preview.jpg">
-<meta property="og:locale" content="es_AR">
-<meta property="og:site_name" content="Félix Santiago Aves">
-
-<!-- ── Twitter / X Card ── -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Félix Santiago Aves · Álbum de Córdoba">
-<meta name="twitter:description" content="415 especies registradas en Córdoba, Argentina.">
-<meta name="twitter:image" content="https://felixsantiagoaves.github.io/fotos/og-preview.jpg">
-
-<!-- ── Schema.org — datos estructurados para Google ── -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Félix Santiago Aves",
-  "url": "https://felixsantiagoaves.github.io/",
-  "description": "Álbum personal de avistamiento de aves en Córdoba, Argentina. 415 especies registradas.",
-  "author": {
-    "@type": "Person",
-    "name": "Félix Santiago Allendes",
-    "location": {
-      "@type": "Place",
-      "name": "Río Cuarto, Córdoba, Argentina"
-    }
-  },
-  "about": {
-    "@type": "Thing",
-    "name": "Avistamiento de aves",
-    "description": "Observación y registro de especies de aves en la provincia de Córdoba, Argentina"
-  }
-}
-</script>
-
-<!-- ══ FIN SEO ══════════════════════════════════════════════════════════ -->
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--v1:#414833;--v2:#656d4a;--v3:#a68a64;--ti:#7f5539;--ar:#c4a882;--cr:#ede0d4;--co:#ddd0c0;--ma:#5c3d28;--am:#a68a64;--tx:#2a1f14;}
@@ -132,7 +75,7 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
   .redes-grid{grid-template-columns:1fr;}
   .foto-grid{columns:1;}
   .album-controls-inner{gap:.5rem;}
-  .page-body,.page-body-wide{padding:1.5rem 1rem;}
+  .page-body,.page-body-wide{padding:1.5rem 2rem;max-width:1600px;margin:0 auto;}
 }
 .edit-box{background:white;border-radius:12px;padding:1.5rem;margin:0 auto 3rem;max-width:1100px;border:1px solid var(--co);}
 .edit-box h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--v1);margin-bottom:1.2rem;}
@@ -191,7 +134,7 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .fb.active,.fb:hover{background:var(--v1);color:var(--cr);border-color:var(--v1);}
 
 /* GRID ÁLBUM */
-.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem;align-items:start;}
+.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.65rem;align-items:start;}
 
 /* FIGURITA */
 .fig{border-radius:10px;overflow:hidden;border:2px solid var(--ar);background:white;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,border-color .25s ease;box-shadow:2px 4px 12px rgba(0,0,0,.07);position:relative;}
@@ -240,13 +183,13 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 /* MODAL */
 .modal-ov{display:none;position:fixed;inset:0;background:rgba(20,15,10,.85);z-index:1000;align-items:center;justify-content:center;padding:1rem;}
 .modal-ov.open{display:flex;}
-.modal{background:var(--cr);border-radius:16px;max-width:460px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:mIn .3s ease;}
+.modal{background:var(--cr);border-radius:16px;max-width:900px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:mIn .3s ease;}
 @keyframes mIn{from{transform:scale(.9) translateY(20px);opacity:0;}to{transform:scale(1) translateY(0);opacity:1;}}
 .modal-hd{background:var(--v1);padding:1.3rem 1.5rem;display:flex;justify-content:space-between;align-items:center;}
 .modal-hd h3{font-family:'Playfair Display',serif;font-style:italic;color:var(--cr);font-size:1.2rem;}
 .modal-hd p{color:var(--v3);font-size:.75rem;text-transform:uppercase;letter-spacing:1px;}
 .modal-close{background:none;border:none;color:var(--ar);font-size:1.4rem;cursor:pointer;}
-.modal-bd{padding:1.3rem;}
+.modal-bd{padding:1.3rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:start;}
 .ficha-section{background:var(--cr);border-radius:8px;padding:.9rem 1rem;margin-bottom:1rem;border:1px solid var(--co);}
 .ficha-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem;}
 .ficha-row:last-child{margin-bottom:0;}
@@ -254,8 +197,8 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .ficha-val{font-size:.82rem;color:var(--tx);font-weight:400;}
 .ficha-cientifico{font-size:.82rem;color:var(--ti);font-style:italic;}
 
-.modal-prev{width:100%;background:linear-gradient(160deg,var(--v1),var(--ma));border-radius:10px;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
-.modal-prev img{width:100%;height:auto;display:block;}
+.modal-prev{width:100%;background:linear-gradient(160deg,var(--v1),var(--ma));border-radius:10px;margin-bottom:0;overflow:hidden;position:relative;aspect-ratio:4/3;}
+.modal-prev img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
 .prev-ph{display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.5);font-family:'Caveat',cursive;font-size:.95rem;}
 .found-badge{display:inline-block;background:var(--v3);color:white;font-size:.68rem;padding:.18rem .65rem;border-radius:100px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:.8rem;}
 .avist-info{background:white;border-radius:8px;padding:.9rem;margin-bottom:.8rem;border-left:3px solid var(--v2);}
@@ -373,6 +316,12 @@ body{padding-bottom:48px;}
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-16px);}to{opacity:1;transform:translateX(0);}}
 .modal-slide-right{animation:slideInRight .22s ease both;}
 .modal-slide-left{animation:slideInLeft .22s ease both;}
+
+.modal-right-col{display:flex;flex-direction:column;gap:1rem;}
+@media(max-width:640px){
+  .modal-bd{grid-template-columns:1fr;}
+  .modal-prev{aspect-ratio:16/9;}
+}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -596,14 +545,16 @@ body{padding-bottom:48px;}
       <button class="modal-close" onclick="closeM()">✕</button>
     </div>
     <div class="modal-bd">
-      <div id="m-ficha" class="ficha-section" style="display:none"></div>
       <div class="modal-prev" id="m-prev">
         <div class="prev-ph" id="m-ph"><span style="font-size:2.5rem">📷</span><span>Subí tu foto</span></div>
         <img id="m-img" style="display:none" alt="">
       </div>
-      <div id="m-enc-info" style="display:none">
-        <span class="found-badge">✓ Encontrada</span>
-        <div class="avist-info" id="m-avist"></div>
+      <div class="modal-right-col">
+        <div id="m-ficha" class="ficha-section" style="display:none"></div>
+        <div id="m-enc-info" style="display:none">
+          <span class="found-badge">✓ Encontrada</span>
+          <div class="avist-info" id="m-avist"></div>
+        </div>
       </div>
 
     </div>
@@ -1413,7 +1364,7 @@ function renderAlbum() {
       const enc=!!av;
       const fotoHTML = av&&av.foto ? `<img class="fig-foto" src="${av.foto}" alt="${ave.comun}">` : getSilueta(ave.familiaEsp);
       html += `<div class="fig ${enc?'enc':'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="animation-delay:${Math.min(i*0.04,0.6)}s">
-        <span class="fig-num">#${String(ave.id).padStart(3,'0')}</span>
+        <span class="fig-num">#${String(i+1).padStart(3,'0')}</span>
         <span class="fig-star">✓</span>
         <div class="fig-img"><div class="fig-svg-wrap">${fotoHTML}</div></div>
         <div class="fig-info">
