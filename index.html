@@ -19,7 +19,7 @@
 body{font-family:'Lato',sans-serif;background:var(--cr);color:var(--tx);overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;}
 nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3);}
-.nav-i{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;}
+.nav-i{max-width:100%;margin:0;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;}
 .nav-logo{font-family:'Playfair Display',serif;font-style:italic;color:var(--ar);font-size:1.3rem;padding:.9rem 0;letter-spacing:.5px;}
 .nav-logo span{color:var(--v3);font-style:normal;}
 .nav-links{display:flex;gap:0;list-style:none;}
@@ -36,19 +36,19 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .hero-top::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%, rgba(166,138,100,.15) 0%, transparent 70%);pointer-events:none;}
 .logo-hero{width:48px;height:48px;object-fit:contain;margin:0 auto .8rem;display:block;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4));}
 .hero-tag{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--ar);font-weight:600;letter-spacing:.5px;margin-bottom:.6rem;}
-.hero-nombre{font-family:'Playfair Display',serif;font-size:2.8rem;line-height:1.05;color:var(--cr);margin-bottom:.5rem;white-space:nowrap;}
+.hero-nombre{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.1;color:var(--cr);margin-bottom:.5rem;white-space:normal;word-break:keep-all;}
 .hero-nombre em{color:var(--am);font-style:italic;}
-.hero-ubi{font-size:.8rem;color:var(--ar);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:2rem;}
+.hero-ubi{font-size:clamp(.75rem,1.2vw,1rem);color:var(--ar);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:2rem;}
 
 /* FRANJA STATS */
-.stats-franja{display:flex;flex-direction:column;max-width:480px;margin:2rem auto 0;border:1px solid rgba(255,255,255,.15);border-radius:12px;overflow:hidden;}
-.stats-titulo{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ar);text-align:center;padding:.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.12);}
+.stats-franja{display:flex;flex-direction:column;width:100%;max-width:520px;margin:2rem auto 0;border:1px solid rgba(255,255,255,.15);border-radius:12px;overflow:hidden;}
+.stats-titulo{font-family:'Caveat',cursive;font-size:clamp(1rem,1.6vw,1.4rem);color:var(--ar);text-align:center;padding:.4rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.12);}
 .stats-kpis{display:flex;}
 .stat-item{flex:1;text-align:center;padding:.9rem .5rem;border-right:1px solid rgba(255,255,255,.1);}
 .stat-item:last-child{border-right:none;}
-.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--cr);font-weight:700;display:block;line-height:1;}
-.stat-label{font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--ar);font-weight:700;margin-top:.2rem;display:block;}
-.prog-hero{height:3px;background:rgba(255,255,255,.1);margin-top:1.2rem;max-width:480px;margin-left:auto;margin-right:auto;border-radius:100px;overflow:hidden;}
+.stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.6rem);color:var(--cr);font-weight:700;display:block;line-height:1;}
+.stat-label{font-size:clamp(.58rem,.9vw,.78rem);text-transform:uppercase;letter-spacing:1px;color:var(--ar);font-weight:700;margin-top:.2rem;display:block;}
+.prog-hero{height:3px;background:rgba(255,255,255,.1);margin-top:1.2rem;width:100%;max-width:520px;margin-left:auto;margin-right:auto;border-radius:100px;overflow:hidden;}
 .prog-hero-fill{height:100%;background:linear-gradient(90deg,var(--am),var(--ar));border-radius:100px;transition:width .6s;}
 
 /* CONTENIDO INFERIOR */
@@ -333,6 +333,73 @@ body{padding-bottom:48px;}
   .modal-bd{grid-template-columns:1fr;}
   .modal-prev{aspect-ratio:16/9;}
 }
+
+.share-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--v1);color:var(--ar);border:none;border-radius:20px;padding:.4rem .9rem;font-size:.75rem;font-weight:700;letter-spacing:.5px;cursor:pointer;transition:all .2s;margin-top:.5rem;}
+.share-btn:hover{background:var(--v2);transform:translateY(-1px);}
+.share-btn svg{flex-shrink:0;}
+
+.share-btn-hero{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--ar);border:1px solid rgba(196,168,100,.35);border-radius:20px;padding:.45rem 1rem;font-size:clamp(1rem,1.4vw,1.3rem);font-family:'Caveat',cursive;letter-spacing:.5px;cursor:pointer;transition:all .2s;margin-top:1rem;}
+.share-btn-hero:hover{background:rgba(196,168,100,.1);border-color:var(--ar);}
+
+/* ── Sobre mí: 2 columnas en PC ── */
+@media(min-width:769px){
+  #page-sobre-mi.active{
+    display:flex !important;
+    flex-direction:row;
+    overflow:hidden;
+    height:calc(100vh - 56px);
+  }
+  /* Columna izquierda — todo centrado vertical y horizontalmente */
+  #page-sobre-mi.active .hero-top{
+    width:42%;
+    min-height:100%;
+    padding:2.5rem 2.5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+  }
+  #page-sobre-mi.active .hero-nombre{text-align:center;}
+  #page-sobre-mi.active .hero-ubi{text-align:center;}
+  #page-sobre-mi.active .stats-franja{width:100%;}
+  #page-sobre-mi.active .prog-hero{width:100%;}
+  #page-sobre-mi.active .logo-hero{display:none;}
+  #page-sobre-mi.active .share-btn-hero{align-self:center;width:auto;}
+  /* Columna derecha */
+  #page-sobre-mi.active .hero-body{
+    width:58%;
+    max-width:none;
+    margin:0;
+    padding:2rem 2.5rem;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:1rem;
+  }
+  #page-sobre-mi.active .hero-bio{
+    font-size:.95rem;
+    line-height:1.7;
+    text-align:left;
+    margin-bottom:0;
+  }
+  #page-sobre-mi.active .carrusel-wrap{margin-bottom:0;max-height:400px;}
+  #page-sobre-mi.active .novedades{gap:.75rem;}
+  #page-sobre-mi.active .nov-card{padding:1rem 1.2rem;}
+}
+
+@media(min-width:769px){
+  #page-sobre-mi.active .carrusel-slide img{max-height:400px;object-fit:cover;width:100%;}
+}
+
+@media(min-width:769px){
+  #page-sobre-mi.active .share-btn-hero{
+    opacity:.7;
+  }
+  #page-sobre-mi.active .share-btn-hero:hover{opacity:1;}
+}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -368,6 +435,10 @@ body{padding-bottom:48px;}
       </div>
     </div>
     <div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill" style="width:0%"></div></div>
+  <button class="share-btn-hero" onclick="shareSitio()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    Compartir álbum
+  </button>
 </div>
 
   <!-- CUERPO CLARO -->
@@ -572,6 +643,10 @@ body{padding-bottom:48px;}
         <div id="m-enc-info" style="display:none">
           <span class="found-badge">✓ Encontrada</span>
           <div class="avist-info" id="m-avist"></div>
+          <button class="share-btn" onclick="shareAve()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Compartir
+          </button>
         </div>
         <div id="m-pending-info" style="display:none">
           <span class="pending-badge">○ Aún no encontrada</span>
@@ -1400,7 +1475,7 @@ function renderAlbum() {
   avesFilt.forEach((ave, i) => {
       const av=avist[ave.id];
       const enc=!!av;
-      const fotoHTML = av&&av.foto ? `<img class="fig-foto" src="${av.foto}" alt="${ave.comun}">` : getSilueta(ave.familiaEsp);
+      const fotoHTML = av&&av.foto ? `<img class="fig-foto" src="${av.foto}" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Córdoba, Argentina por Félix Santiago">` : getSilueta(ave.familiaEsp);
       html += `<div class="fig ${enc?'enc':'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="animation-delay:${Math.min(i*0.04,0.6)}s">
         <span class="fig-num">#${String(i+1).padStart(3,'0')}</span>
         <span class="fig-star">✓</span>
@@ -1468,7 +1543,7 @@ function openM(id) {
   const img=document.getElementById('m-img'), ph=document.getElementById('m-ph');
   const mPrev=document.getElementById('m-prev');
   if(av&&av.foto){
-    img.src=av.foto; img.style.display='block'; ph.style.display='none';
+    img.src=av.foto; img.alt=ave.comun+' ('+ave.nombre+') - '+ave.familiaEsp+' - Córdoba, Argentina'; img.style.display='block'; ph.style.display='none';
     mPrev.style.backgroundImage='none';
     mPrev.style.filter='none';
   } else {
@@ -1504,6 +1579,31 @@ function openM(id) {
 }
 
 function closeMO(e){if(e.target===document.getElementById('modal-ov'))closeM();}
+
+
+function shareSitio() {
+  const enc = Object.keys(avist).length;
+  const url = 'https://felixsantiagoaves.github.io/';
+  const texto = 'Estoy registrando las más de 400 especies de aves de Córdoba, Argentina.';
+  if(navigator.share) {
+    navigator.share({ title: 'Álbum de Aves · Félix Santiago', text: texto, url: url });
+  } else {
+    navigator.clipboard.writeText(texto).then(() => showToast('¡Texto copiado!'));
+  }
+}
+
+function shareAve() {
+  const ave = AVES.find(a => a.id === curId);
+  if(!ave) return;
+  const url = 'https://felixsantiagoaves.github.io/#' + slugAve(ave.comun);
+  const texto = ave.comun + ' (' + ave.nombre + ') — Registrada en Córdoba, Argentina. Mirá mi álbum de aves: ' + url;
+  if(navigator.share) {
+    navigator.share({ title: ave.comun, text: texto, url: url });
+  } else {
+    navigator.clipboard.writeText(url).then(() => showToast('¡Link copiado!'));
+  }
+}
+
 function closeM(){document.getElementById('modal-ov').classList.remove('open');curFoto=null;avesOrdenadas=[];mapaAvesOrdenadas=[];try{history.replaceState(null,'','#album');}catch(e){}}
 
 function prevFoto(inp) {
