@@ -1311,6 +1311,12 @@ function init() {
   if(hash && validPages.includes(hash)){
     const link = document.querySelector(`.nav-links a[onclick*="${hash}"]`);
     showPage(hash, link);
+  } else if(hash && hash.startsWith('ave-')) {
+    // Abrir álbum y buscar el ave por slug
+    const link = document.querySelector('.nav-links a[onclick*="album"]');
+    showPage('album', link);
+    const ave = AVES.find(a => slugAve(a.comun) === hash && avist[a.id]);
+    if(ave) setTimeout(()=>openM(ave.id), 100);
   }
 }
 
@@ -1421,10 +1427,19 @@ function setFiltro(f, btn) {
 
 function buscar(q) { busqTxt=q; renderAlbum(); }
 
+
+function slugAve(comun) {
+  return 'ave-' + comun.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9]+/g,'-')
+    .replace(/^-|-$/g,'');
+}
 function openM(id) {
   curId=id; curFoto=null;
   const ave=AVES.find(a=>a.id===id);
   const av=avist[id];
+  // URL solo para aves encontradas
+  if(av) { try{ history.replaceState(null,'','#'+slugAve(ave.comun)); }catch(e){} }
   const mNombre = document.getElementById('m-nombre');
   const mComun = document.getElementById('m-comun');
   const slideClass = modalNavDir >= 0 ? 'modal-slide-right' : 'modal-slide-left';
@@ -1489,7 +1504,7 @@ function openM(id) {
 }
 
 function closeMO(e){if(e.target===document.getElementById('modal-ov'))closeM();}
-function closeM(){document.getElementById('modal-ov').classList.remove('open');curFoto=null;avesOrdenadas=[];mapaAvesOrdenadas=[];}
+function closeM(){document.getElementById('modal-ov').classList.remove('open');curFoto=null;avesOrdenadas=[];mapaAvesOrdenadas=[];try{history.replaceState(null,'','#album');}catch(e){}}
 
 function prevFoto(inp) {
   if(!inp.files[0]) return;
