@@ -1305,6 +1305,13 @@ function init() {
   }
   renderAlbum();  updStats();
   buildFooter();
+  // Leer hash de la URL y navegar a esa sección
+  const hash = window.location.hash.replace('#','');
+  const validPages = ['sobre-mi','album','mapa','galeria','redes'];
+  if(hash && validPages.includes(hash)){
+    const link = document.querySelector(`.nav-links a[onclick*="${hash}"]`);
+    showPage(hash, link);
+  }
 }
 
 function showPage(id,el) {
@@ -1313,6 +1320,7 @@ function showPage(id,el) {
   document.getElementById('page-'+id).classList.add('active');
   if(id==='mapa'){setTimeout(initLeafletMap,100);}
   if(el) el.classList.add('active');
+  history.replaceState(null,'','#'+id);
 }
 
 
