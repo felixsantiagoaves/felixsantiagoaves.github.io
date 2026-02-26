@@ -293,8 +293,8 @@ input[type=file]{display:none;}
 .mapa-card-lista{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin-top:.8rem;}
 
 /* FOOTER REDES */
-.footer-redes{display:flex;justify-content:center;align-items:center;gap:1.5rem;padding:1.5rem 1rem;margin-top:2rem;border-top:1px solid var(--ar);opacity:.7;flex-wrap:wrap;}
-.footer-redes a{color:var(--ti);text-decoration:none;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;transition:opacity .2s;}
+.footer-redes{display:flex;justify-content:center;align-items:center;gap:clamp(.5rem,2vw,1.5rem);padding:1rem clamp(.5rem,2vw,1rem);margin-top:2rem;border-top:1px solid var(--ar);opacity:.7;flex-wrap:nowrap;}
+.footer-redes a{color:var(--ti);text-decoration:none;font-size:clamp(.5rem,.9vw,.75rem);letter-spacing:1px;text-transform:uppercase;font-weight:700;transition:opacity .2s;}
 .footer-redes a:hover{opacity:.5;}
 .footer-redes span{color:var(--ar);font-size:.6rem;}
 
@@ -307,10 +307,10 @@ input[type=file]{display:none;}
 .site-footer .sep{color:var(--ar);font-size:.55rem;}
 
 /* ── FOOTER REDES ─────────────────────────────────────────────────────────── */
-#site-footer-global{display:flex;justify-content:center;align-items:center;gap:1rem;
-  padding:1rem;border-top:1px solid var(--ar);flex-wrap:wrap;background:var(--cr);
+#site-footer-global{display:flex;justify-content:center;align-items:center;gap:clamp(.4rem,1.5vw,1rem);
+  padding:.8rem 1rem;border-top:1px solid var(--ar);flex-wrap:nowrap;background:var(--cr);
   position:fixed;bottom:0;left:0;right:0;z-index:99;}
-#site-footer-global a{color:var(--ti);text-decoration:none;font-size:.72rem;letter-spacing:1.2px;
+#site-footer-global a{color:var(--ti);text-decoration:none;font-size:clamp(.5rem,1.8vw,.72rem);letter-spacing:clamp(0px,.5px,1.2px);
   text-transform:uppercase;font-weight:700;transition:color .2s;}
 #site-footer-global a:hover{color:var(--v2);}
 #site-footer-global .sep{color:var(--ar);font-size:.55rem;}
