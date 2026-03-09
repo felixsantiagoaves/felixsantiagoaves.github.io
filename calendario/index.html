@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Félix Santiago Aves · Plan de Contenido</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --v1:#414833; --v2:#656d4a; --v3:#a68a64;
+  --ti:#7f5539; --ar:#c4a882; --cr:#ede0d4;
+  --co:#ddd0c0; --ma:#5c3d28; --am:#a68a64; --tx:#2a1f14;
+  --feed:#2d5a27; --reel:#7f3a1a; --hist:#4a3070; --com:#1a4a5a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Lato',sans-serif;background:var(--cr);color:var(--tx);min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;}
+nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3);}
+.nav-i{display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem;}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;color:var(--ar);font-size:1.1rem;padding:.85rem 0;letter-spacing:.5px;}
+.nav-logo span{color:var(--v3);font-style:normal;}
+.nav-right{display:flex;align-items:center;gap:.6rem;}
+.nav-pct{font-family:'Caveat',cursive;color:var(--ar);font-size:1rem;}
+.nav-prog{width:60px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden;}
+.nav-prog-fill{height:100%;background:linear-gradient(90deg,var(--am),var(--ar));border-radius:2px;transition:width .5s;}
+.page-header{background:var(--v1);padding:2rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;z-index:1;}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(166,138,100,.15) 0%,transparent 70%);pointer-events:none;}
+.page-title{font-family:'Playfair Display',serif;font-size:2rem;color:var(--cr);margin-bottom:.25rem;}
+.page-title em{color:var(--am);font-style:italic;}
+.page-sub{font-family:'Caveat',cursive;font-size:1.05rem;color:var(--ar);}
+.stats-row{display:flex;justify-content:center;gap:2.5rem;margin-top:1.5rem;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--cr);display:block;line-height:1;}
+.stat-label{font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--ar);font-weight:700;margin-top:.2rem;display:block;}
+.wrapper{max-width:640px;margin:0 auto;padding:1.5rem 1rem 4rem;position:relative;z-index:1;}
+.cal-week-label{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--ti);font-weight:700;margin:1.2rem 0 .4rem .2rem;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.cal-hcell{text-align:center;font-size:.58rem;font-weight:700;letter-spacing:1px;color:var(--ti);text-transform:uppercase;padding-bottom:5px;}
+.cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;border:2px solid transparent;transition:all .15s;background:#fff8f0;user-select:none;}
+.cal-day:active{transform:scale(.95);}
+.cal-day.sel{border-color:var(--am);background:var(--v1);}
+.cal-day.tod{border-color:var(--ti);}
+.cal-day.done-all{background:#e8edd8;}
+.cal-day-num{font-size:.82rem;font-family:'Playfair Display',serif;font-weight:700;color:var(--tx);line-height:1;}
+.cal-day.sel .cal-day-num{color:var(--cr);}
+.cal-day.done-all .cal-day-num{color:var(--feed);}
+.cal-dots{display:flex;gap:2px;}
+.dot{width:4px;height:4px;border-radius:50%;}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem 1rem;margin:.8rem 0 1.2rem;}
+.leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:var(--ti);text-transform:uppercase;letter-spacing:.5px;font-weight:700;}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:var(--ti);cursor:pointer;padding:.5rem 0;margin-bottom:.8rem;}
+.back-btn:active{color:var(--v1);}
+.day-hdr{display:flex;align-items:baseline;gap:.8rem;border-bottom:2px solid var(--v1);padding-bottom:.8rem;margin:1.2rem 0 1rem;}
+.day-big{font-family:'Playfair Display',serif;font-size:3rem;line-height:1;color:var(--v1);}
+.day-info{flex:1;}
+.day-name{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--v1);font-weight:700;}
+.day-today{font-family:'Caveat',cursive;font-size:.85rem;color:var(--ti);}
+.day-count{text-align:right;}
+.day-cnt{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--v1);}
+.day-cnt-lbl{font-size:.58rem;text-transform:uppercase;letter-spacing:1px;color:var(--ti);font-weight:700;display:block;}
+.task-card{background:#fff;border:2px solid var(--co);margin-bottom:.65rem;overflow:hidden;transition:opacity .2s;}
+.task-card.done{opacity:.5;background:#f8f4ee;}
+.task-hdr{display:flex;align-items:center;gap:.65rem;padding:.85rem .9rem;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.task-cb{width:20px;height:20px;cursor:pointer;accent-color:var(--v2);flex-shrink:0;}
+.task-ico{font-size:1.15rem;flex-shrink:0;}
+.task-inf{flex:1;min-width:0;}
+.task-ttl{font-size:.85rem;font-weight:700;color:var(--tx);line-height:1.3;}
+.task-card.done .task-ttl{text-decoration:line-through;color:var(--ti);}
+.task-sub{font-family:'Caveat',cursive;font-size:.82rem;color:var(--ti);margin-top:.1rem;}
+.task-badge{font-size:.52rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;padding:2px 6px;color:#fff;flex-shrink:0;}
+.task-arr{font-size:.65rem;color:var(--ti);margin-left:.2rem;flex-shrink:0;}
+.task-body{padding:0 .9rem .85rem;border-top:1px solid var(--co);display:none;}
+.task-body.open{display:block;}
+.task-sec{margin-top:.75rem;}
+.task-sec-lbl{font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:var(--ti);margin-bottom:.3rem;display:flex;align-items:center;gap:.3rem;}
+.task-sec-lbl::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--v2);}
+.task-detail{font-size:.82rem;line-height:1.8;color:#4a3a2a;background:#faf6f0;padding:.65rem .85rem;border-left:3px solid var(--co);white-space:pre-line;}
+.task-ht{font-size:.73rem;font-family:monospace;color:var(--ma);background:#f5f0e4;padding:.55rem .85rem;line-height:1.9;border-left:3px solid var(--ar);margin-top:.5rem;}
+.tips-box{background:var(--v1);padding:1.5rem;margin-top:2rem;}
+.tips-ttl{font-family:'Playfair Display',serif;font-style:italic;color:var(--ar);font-size:1rem;margin-bottom:.85rem;}
+.tip-row{display:flex;gap:.5rem;margin-bottom:.55rem;font-size:.78rem;color:var(--co);line-height:1.65;}
+.tip-arr{color:var(--am);flex-shrink:0;font-weight:700;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-i">
+    <div class="nav-logo">Félix Santiago <span>· Aves</span></div>
+    <div class="nav-right">
+      <span class="nav-pct" id="nav-pct">0%</span>
+      <div class="nav-prog"><div class="nav-prog-fill" id="nav-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-title">Plan de <em>Contenido</em></div>
+  <div class="page-sub">Instagram · 4 semanas · desde el 9 de marzo</div>
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-num" id="s-done">0</span><span class="stat-label">Completadas</span></div>
+    <div class="stat-item"><span class="stat-num" id="s-total">—</span><span class="stat-label">Total</span></div>
+    <div class="stat-item"><span class="stat-num" id="s-posts">0</span><span class="stat-label">Posts listos</span></div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div id="vcal"></div>
+  <div id="vday" style="display:none"></div>
+</div>
+
+<script>
+const SK='fsaves_cal_v1';
+const TODAY=new Date(2026,2,9);
+const MESES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DMON=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+
+const FEED=[
+  {cap:"Contá dónde la fotografiaste y cuánto tiempo esperaste para lograr la foto.",ht:"#AvesArgentinas #AvesCórdoba #BirdPhotography #FaunaArgentina #NaturalezaArgentina"},
+  {cap:"Agregá un dato curioso sobre esta especie que la gente no suele saber.",ht:"#AvesArgentinas #Ornitología #BirdFacts #WildlifePhotography #AvesCórdoba"},
+  {cap:"Contá en qué hábitat la encontraste y qué condiciones había ese día.",ht:"#BirdsOfInstagram #AvesArgentinas #NaturalezaCórdoba #BirdWatching #FaunaArgentina"},
+  {cap:"Describí el comportamiento que tenía el ave cuando sacaste la foto.",ht:"#WildlifeBehavior #AvesArgentinas #BirdPhotography #NaturalezaArgentina #AvesCórdoba"},
+  {cap:"Contá la hora, el lugar, la luz. ¿Fue fácil o difícil conseguir esta toma?",ht:"#GoldenHour #AvesArgentinas #FieldPhotography #BirdPhotography #NaturalezaCórdoba"},
+  {cap:"Algo personal de esa salida: el frío, la espera, lo que sentiste al verla.",ht:"#BirdingLife #AvesArgentinas #NaturalezaArgentina #SalidaDeCampo #WildlifePhotography"},
+  {cap:"¿Es común o difícil de ver? ¿Qué tan especial fue ese encuentro?",ht:"#RareBirds #AvesArgentinas #AvesCórdoba #Ornitología #BirdPhotography"},
+  {cap:"Contá el contexto del lugar: ¿reserva, campo, bañado? ¿Se puede visitar?",ht:"#EcoturismoCba #AvesArgentinas #NaturalezaCórdoba #BirdWatching #FaunaArgentina"},
+];
+const REELS=[
+  {t:"El ave más rara que fotografié",tipo:"Personal",i:"Foto misteriosa de intro → revelar especie → dato sorprendente. Texto en pantalla + audio trending dramático.",a:"Trending misterioso/dramático"},
+  {t:"3 aves que todos ven pero nadie conoce",tipo:"Educativo",i:"Una foto por ave + nombre + 1 dato que sorprende. Transiciones suaves en CapCut.",a:"Lo-fi suave o acústico"},
+  {t:"POV: madrugar para fotografiar aves",tipo:"Humor",i:"Fotos del amanecer, el termo, el campo vacío. Texto tipo 'nadie: / yo a las 5am en el bañado'.",a:"Audio viral de rutina mañanera"},
+  {t:"¿Podés identificar esta ave?",tipo:"Interactivo",i:"Foto recortada o pixelada → revelación al final. Genera comentarios y guardados automáticamente.",a:"Suspenso o countdown"},
+  {t:"Antes y después: cómo edito una foto",tipo:"Educativo",i:"RAW vs editada con texto explicando 2-3 ajustes clave. Muy buscado por fotógrafos.",a:"Instrumental tranquilo"},
+  {t:"Las aves más llamativas de Córdoba",tipo:"Showcase",i:"Tus mejores fotos en slideshow rápido con música. Simple y efectivo para llegar a gente nueva.",a:"Trending con energía positiva"},
+  {t:"El equipo que uso (y no es caro)",tipo:"Relatable",i:"Foto de tu D3500 y el 70-300 → las fotos que sacaste. Mucha gente se identifica.",a:"Lo-fi o acústico chill"},
+  {t:"¿Cuánto tiempo espero por una foto?",tipo:"Behind the scenes",i:"Fotos del mismo lugar en distintos momentos. Texto mostrando la paciencia que requiere.",a:"Ambient o naturaleza"},
+  {t:"Tendencia adaptada a aves",tipo:"Viral",i:"Tomá un audio viral del momento y adaptalo a una escena de avistamiento. El humor funciona.",a:"El trending del momento"},
+  {t:"5 cosas que aprendí fotografiando aves",tipo:"Educativo",i:"Una foto por lección. Texto directo, sin rodeos. Genera guardados y compartidos.",a:"Instrumental motivacional"},
+  {t:"El lugar secreto donde voy a fotografiar",tipo:"Local",i:"Mostrar el spot (sin revelar exactamente dónde). Genera curiosidad y conexión local.",a:"Naturaleza o acústico"},
+  {t:"Mi foto favorita y por qué",tipo:"Personal",i:"Una sola foto + historia larga en texto. Simple, auténtico, conecta emocionalmente.",a:"Instrumental suave"},
+];
+const HIST=[
+  "🎮 Mini juego: ¿A qué ave pertenece este pico? (foto recortada solo del pico)",
+  "📊 Encuesta: ¿Sabías que el Hornero es el ave nacional argentina? Sí / Recién me enteré",
+  "🎬 Behind the scenes: foto de tu setup en el campo hoy",
+  "❓ Pregunta: ¿Qué ave querés que fotografíe en la próxima salida?",
+  "🎮 Mini juego: Adiviná el ave por su silueta recortada",
+  "😄 Historia: algo gracioso que te pasó esperando una foto",
+  "📊 Encuesta: ¿Preferís fotos en vuelo o posadas?",
+  "💡 Dato curioso: algo sobre un ave que viste recientemente",
+  "🎬 Antes/después: mostrá una foto RAW vs editada en historia",
+  "🎮 Mini juego: ¿Cuántas aves ves escondidas en esta foto?",
+  "📊 Encuesta: ¿Madrugás para salir a fotografiar? Siempre / Jamás 😅",
+  "🗺️ Historia: el lugar más lindo donde fuiste a fotografiar en Córdoba",
+  "❓ Pregunta: ¿Desde dónde nos seguís? Poné tu ciudad 📍",
+  "💡 Curiosidad de la especie que publicaste esta semana",
+  "🎮 Mini juego: ¿Es macho o hembra? (especie con dimorfismo sexual)",
+  "📊 Encuesta: ¿Usarías binoculares? Sí / Prefiero la cámara",
+  "🎬 Behind the scenes: ¿qué llevás en la mochila cuando salís?",
+  "😄 Historia: la vez que caminaste 2km y el ave voló justo cuando ibas a disparar",
+  "❓ Pregunta: ¿Cuál es tu ave favorita de Argentina?",
+  "💡 Dato: ¿sabías que esta ave migra desde/hasta…?",
+  "🎮 Mini juego: ¿Qué está haciendo esta ave? (foto de comportamiento)",
+  "📊 Encuesta: ¿Preferís fotografiar al amanecer o al atardecer?",
+  "🎬 Mostrá el lugar donde vas a salir este fin de semana",
+  "❓ Pregunta: ¿Qué te resultó más difícil aprender en fotografía?",
+  "💡 Tip: el ajuste más importante para fotografiar aves en movimiento",
+  "🎮 Mini juego: ¿De qué país es esta ave? (especie no argentina)",
+  "😄 Historia: describí tu cara cuando después de 1 hora el ave por fin aparece",
+  "📊 Encuesta: ¿Editás tus fotos? Lightroom / Snapseed / No edito",
+];
+
+function fmt(d){return d.toISOString().split('T')[0];}
+function add(d,n){const x=new Date(d);x.setDate(x.getDate()+n);return x;}
+function col(dow){return dow===0?6:dow-1;}
+
+// Build days
+const DAYS=[];
+const C={f:0,r:0,h:0};
+for(let i=0;i<28;i++){
+  const date=add(TODAY,i),dow=date.getDay(),tasks=[];
+  if(dow===2||dow===5){
+    const d=FEED[C.f++%FEED.length];
+    tasks.push({id:`f-${fmt(date)}`,tipo:'feed',icon:'🖼️',label:'Carrusel de especie',sub:'Elegís el ave en el momento',detail:d.cap,ht:d.ht,badge:'FEED',color:'var(--feed)'});
+  }
+  if(dow===3||dow===4||dow===0){
+    const d=REELS[C.r++%REELS.length];
+    tasks.push({id:`r-${fmt(date)}`,tipo:'reel',icon:'🎬',label:`Reel: ${d.t}`,sub:d.tipo,detail:d.i,extra:`🎵 Audio: ${d.a}`,badge:'REEL',color:'var(--reel)'});
+  }
+  tasks.push({id:`h-${fmt(date)}`,tipo:'hist',icon:'📖',label:'Historia del día',sub:'Interacción con seguidores',detail:HIST[C.h++%HIST.length],badge:'HISTORIA',color:'var(--hist)'});
+  tasks.push({id:`c-${fmt(date)}`,tipo:'com',icon:'💬',label:'Tarea de comunidad',sub:'Al mediodía · ~15 min',detail:'① Comentar 5 fotos de otras cuentas con comentarios genuinos.\n② Explorar #AvesArgentinas y #AvesCórdoba, dar likes.\n③ Responder todos los DMs y comentarios recibidos.',badge:'COMUNIDAD',color:'var(--com)'});
+  DAYS.push({date,dateStr:fmt(date),dow,week:Math.floor(i/7)+1,tasks});
+}
+const DMAP={};DAYS.forEach(d=>{DMAP[d.dateStr]=d;});
+
+// State
+let done={},selDate=fmt(TODAY),expTask=null;
+try{const s=localStorage.getItem(SK);if(s)done=JSON.parse(s);}catch(e){}
+function save(){try{localStorage.setItem(SK,JSON.stringify(done));}catch(e){}}
+
+// Stats
+function stats(){
+  const all=DAYS.flatMap(d=>d.tasks);
+  const d=all.filter(t=>done[t.id]).length;
+  const p=all.filter(t=>(t.tipo==='feed'||t.tipo==='reel')&&done[t.id]).length;
+  const pct=Math.round(d/all.length*100);
+  document.getElementById('s-done').textContent=d;
+  document.getElementById('s-total').textContent=all.length;
+  document.getElementById('s-posts').textContent=p;
+  document.getElementById('nav-pct').textContent=pct+'%';
+  document.getElementById('nav-fill').style.width=pct+'%';
+}
+
+// Render calendar
+function renderCal(){
+  const todayStr=fmt(TODAY);
+  let h=`<div class="legend">
+    <div class="leg-item"><div class="dot" style="background:var(--feed)"></div>Carrusel</div>
+    <div class="leg-item"><div class="dot" style="background:var(--reel)"></div>Reel</div>
+    <div class="leg-item"><div class="dot" style="background:var(--hist)"></div>Historia</div>
+    <div class="leg-item"><div class="dot" style="background:var(--com)"></div>Comunidad</div>
+  </div>`;
+  [1,2,3,4].forEach(w=>{
+    const week=DAYS.filter(d=>d.week===w);
+    h+=`<div class="cal-week-label">Semana ${w} · ${MESES[week[0].date.getMonth()]}</div><div class="cal-grid">`;
+    DMON.forEach(d=>{h+=`<div class="cal-hcell">${d}</div>`;});
+    if(w===1){const off=col(week[0].dow);for(let i=0;i<off;i++)h+=`<div></div>`;}
+    week.forEach(day=>{
+      const tasks=day.tasks;
+      const allDone=tasks.every(t=>done[t.id]);
+      const hasFeed=tasks.some(t=>t.tipo==='feed');
+      const hasReel=tasks.some(t=>t.tipo==='reel');
+      const isSel=day.dateStr===selDate;
+      const isTod=day.dateStr===todayStr;
+      let cls='cal-day';
+      if(isSel)cls+=' sel';
+      else if(allDone)cls+=' done-all';
+      if(isTod&&!isSel)cls+=' tod';
+      h+=`<div class="${cls}" onclick="selDay('${day.dateStr}')">
+        <div class="cal-day-num">${day.date.getDate()}</div>
+        <div class="cal-dots">
+          ${hasFeed?`<div class="dot" style="background:var(--feed)"></div>`:''}
+          ${hasReel?`<div class="dot" style="background:var(--reel)"></div>`:''}
+          <div class="dot" style="background:var(--hist)"></div>
+        </div>
+      </div>`;
+    });
+    h+=`</div>`;
+  });
+  h+=`<div class="tips-box"><div class="tips-ttl">Recordatorios clave</div>
+    ${['Los Reels son miércoles, jueves y domingo — nunca aparecen en tu feed.',
+       'El ave del carrusel la elegís vos el día que publicás, sin preparar de antemano.',
+       'Para armar un Reel con fotos: CapCut → 6-8 fotos → música → texto. Listo en 15 min.',
+       'La tarea de comunidad al mediodía: 15 minutos, 5 comentarios genuinos.',
+       'Llevá aparte un registro de qué especies ya publicaste (una nota en el celu alcanza).',
+    ].map(t=>`<div class="tip-row"><span class="tip-arr">→</span><span>${t}</span></div>`).join('')}
+  </div>`;
+  document.getElementById('vcal').innerHTML=h;
+}
+
+// Render day
+function renderDay(){
+  const day=DMAP[selDate];if(!day)return;
+  const todayStr=fmt(TODAY);
+  const dc=day.tasks.filter(t=>done[t.id]).length;
+  let h=`<div class="back-btn" onclick="showCal()">← Volver al calendario</div>`;
+  h+=`<div class="day-hdr">
+    <div class="day-big">${day.date.getDate()}</div>
+    <div class="day-info">
+      <div class="day-name">${DMON[col(day.dow)]}, ${MESES[day.date.getMonth()]}</div>
+      ${day.dateStr===todayStr?`<div class="day-today">● Hoy</div>`:''}
+    </div>
+    <div class="day-count">
+      <span class="day-cnt" style="color:${dc===day.tasks.length?'var(--feed)':'var(--v1)'}">${dc}/${day.tasks.length}</span>
+      <span class="day-cnt-lbl">completadas</span>
+    </div>
+  </div>`;
+  day.tasks.forEach(task=>{
+    const isDone=!!done[task.id];
+    const isExp=expTask===task.id;
+    const secLbl=task.tipo==='feed'?'Caption sugerido':task.tipo==='reel'?'Idea de contenido':task.tipo==='hist'?'Idea de hoy':'Pasos';
+    h+=`<div class="task-card${isDone?' done':''}" id="tc-${task.id}">
+      <div class="task-hdr" onclick="togExp('${task.id}')">
+        <input type="checkbox" class="task-cb" ${isDone?'checked':''} onclick="event.stopPropagation();togDone('${task.id}')">
+        <span class="task-ico">${task.icon}</span>
+        <div class="task-inf">
+          <div class="task-ttl">${task.label}</div>
+          <div class="task-sub">${task.sub}</div>
+        </div>
+        <span class="task-badge" style="background:${task.color}">${task.badge}</span>
+        <span class="task-arr">${isExp?'▲':'▼'}</span>
+      </div>
+      <div class="task-body${isExp?' open':''}">
+        <div class="task-sec">
+          <div class="task-sec-lbl">${secLbl}</div>
+          <div class="task-detail">${task.detail}</div>
+          ${task.extra?`<div class="task-detail" style="margin-top:.35rem;font-style:italic;color:var(--ti)">${task.extra}</div>`:''}
+        </div>
+        ${task.ht?`<div class="task-ht">${task.ht}</div>`:''}
+      </div>
+    </div>`;
+  });
+  document.getElementById('vday').innerHTML=h;
+}
+
+function selDay(ds){selDate=ds;expTask=null;showDay();}
+function showCal(){document.getElementById('vcal').style.display='block';document.getElementById('vday').style.display='none';renderCal();stats();}
+function showDay(){document.getElementById('vcal').style.display='none';document.getElementById('vday').style.display='block';renderDay();stats();}
+function togDone(id){done[id]=!done[id];save();renderDay();stats();}
+function togExp(id){expTask=expTask===id?null:id;renderDay();}
+
+renderCal();stats();
+</script>
+</body>
+</html>
