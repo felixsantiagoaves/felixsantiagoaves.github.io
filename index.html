@@ -400,6 +400,18 @@ body{padding-bottom:48px;}
   }
   #page-sobre-mi.active .share-btn-hero:hover{opacity:1;}
 }
+
+/* ── ÚLTIMO VIDEO ── */
+.ultimo-video{margin:.8rem 0;}
+.ultimo-video-label{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;}
+.ultimo-video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:var(--v1);overflow:hidden;}
+.ultimo-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.ultimo-video-titulo{font-family:'Caveat',cursive;font-size:1rem;color:var(--ti);text-align:center;margin-top:.5rem;opacity:.8;}
+
+.yt-thumb-link{display:block;position:absolute;inset:0;width:100%;height:100%;}
+.yt-thumb-link img{width:100%;height:100%;object-fit:cover;}
+.yt-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.7);color:white;font-size:1.8rem;width:56px;height:56px;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.yt-thumb-link:hover .yt-play-btn{background:#ff0000;}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -449,6 +461,15 @@ body{padding-bottom:48px;}
     <button class="carrusel-btn carrusel-prev" onclick="campoNav(-1)">‹</button>
     <button class="carrusel-btn carrusel-next" onclick="campoNav(1)">›</button>
     <div class="carrusel-dots" id="campo-dots"></div>
+  </div>
+  <div class="ultimo-video">
+    <p class="ultimo-video-label">— Último video —</p>
+    <div class="ultimo-video-wrap" id="yt-wrap">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:'Caveat',cursive;color:rgba(255,255,255,.4);font-size:1rem;">Cargando...</span>
+      </div>
+    </div>
+    <p class="ultimo-video-titulo" id="yt-titulo"></p>
   </div>
   <p class="hero-bio">Fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
     <div class="novedades">
@@ -1399,6 +1420,33 @@ function loadCarrusel() {
     .catch(() => {}); // silencioso si no hay fotos
 }
 
+
+async function loadUltimoVideo() {
+  try {
+    const rss = 'https://www.youtube.com/feeds/videos.xml?channel_id=UC4PPFEZBxfZk8om4TvhbCkQ';
+    const api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss) + '&count=20';
+    const res = await fetch(api);
+    const data = await res.json();
+    if(data.status === 'ok' && data.items.length > 0) {
+      const videos = data.items.filter(v => !v.link.includes('/shorts/'));
+      if(videos.length === 0) return;
+      const video = videos[0];
+      const videoId = video.link.includes('v=')
+        ? video.link.split('v=')[1].split('&')[0]
+        : video.guid.split(':').pop();
+      const wrap = document.getElementById('yt-wrap');
+      wrap.innerHTML = `
+        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener" class="yt-thumb-link">
+          <img src="https://img.youtube.com/vi/${videoId}/mqdefault.jpg" alt="${video.title}" style="width:100%;display:block;">
+          <div class="yt-play-btn">▶</div>
+        </a>`;
+      document.getElementById('yt-titulo').textContent = video.title;
+    }
+  } catch(e) {
+    document.getElementById('yt-wrap').innerHTML = '';
+  }
+}
+
 function init() {
   const s = localStorage.getItem('av_avist');
   avist = Object.assign({}, AVIST_INITIAL, s ? JSON.parse(s) : {});
@@ -1410,7 +1458,7 @@ function init() {
     if(pj.bio) { document.getElementById('hero-bio').textContent=pj.bio; document.getElementById('e-bio').value=pj.bio; }
     if(pj.ubi) { document.getElementById('hero-ubi').textContent='📍 '+pj.ubi; document.getElementById('e-ubi').value=pj.ubi; }
   }
-  renderAlbum();  updStats();  loadCarrusel();
+  renderAlbum();  updStats();  loadCarrusel();  loadUltimoVideo();
   buildFooter();
   // Leer hash de la URL y navegar a esa sección
   const hash = window.location.hash.replace('#','');
