@@ -402,15 +402,16 @@ body{padding-bottom:48px;}
 }
 
 /* ── ÚLTIMO VIDEO YT ── */
-.yt-card{display:block;text-decoration:none;background:var(--v1);overflow:hidden;margin:.2rem 0;}
-.yt-card:hover .yt-play{background:#ff0000;}
-.yt-thumb{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;background:#1a2018;}
+.yt-section-label{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin:.8rem 0 .5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;}
+.yt-card{display:block;text-decoration:none;background:var(--v1);overflow:hidden;}
+.yt-thumb{position:relative;width:100%;padding-bottom:56.25%;background:#1a2018;overflow:hidden;}
 .yt-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .2s;}
 .yt-card:hover .yt-thumb img{opacity:.85;}
 .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.75);color:white;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:background .2s;}
+.yt-card:hover .yt-play{background:#ff0000;}
 .yt-info{padding:.6rem .8rem;}
-.yt-label{font-family:'Caveat',cursive;font-size:.8rem;color:var(--ar);opacity:.7;text-transform:uppercase;letter-spacing:1px;}
-.yt-titulo{font-family:'Playfair Display',serif;font-size:.85rem;color:var(--cr);line-height:1.3;margin-top:.2rem;}
+.yt-info-label{font-family:'Caveat',cursive;font-size:.8rem;color:var(--ar);opacity:.7;text-transform:uppercase;letter-spacing:1px;}
+.yt-info-titulo{font-family:'Playfair Display',serif;font-size:.85rem;color:var(--cr);line-height:1.3;margin-top:.2rem;}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -1418,37 +1419,33 @@ async function loadUltimoVideo() {
     const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
     const res = await fetch(proxy);
     const data = await res.json();
-    // Parsear XML
     const parser = new DOMParser();
     const xml = parser.parseFromString(data.contents, 'text/xml');
     const entries = xml.querySelectorAll('entry');
-    // Filtrar shorts
     let video = null;
     for(const entry of entries) {
       const link = entry.querySelector('link')?.getAttribute('href') || '';
       if(!link.includes('/shorts/')) { video = entry; break; }
     }
     if(!video) return;
-    const videoId = video.querySelector('videoId')?.textContent || 
+    const videoId = video.querySelector('videoId')?.textContent ||
                     video.querySelector('id')?.textContent?.split(':').pop();
     const titulo = video.querySelector('title')?.textContent || '';
     const thumbUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     document.getElementById('yt-container').innerHTML = `
-      <p style="font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;">— Último video —</p>
+      <p class="yt-section-label">— Último video —</p>
       <a href="${videoUrl}" target="_blank" rel="noopener" class="yt-card">
         <div class="yt-thumb">
           <img src="${thumbUrl}" alt="${titulo}" loading="lazy">
           <div class="yt-play">▶</div>
         </div>
         <div class="yt-info">
-          <div class="yt-label">YouTube</div>
-          <div class="yt-titulo">${titulo}</div>
+          <div class="yt-info-label">YouTube</div>
+          <div class="yt-info-titulo">${titulo}</div>
         </div>
       </a>`;
-  } catch(e) {
-    // Silencioso — si falla no muestra nada
-  }
+  } catch(e) { /* silencioso */ }
 }
 
 function init() {
