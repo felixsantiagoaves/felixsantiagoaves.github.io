@@ -1117,7 +1117,9 @@ const FICHAS = {
   'Pyrocephalus rubinus': {estado:'El rojo más intenso de los pajaritos', curiosidad:'El macho tiene un rojo carmesí inconfundible que contrasta con sus alas negras. Es uno de los tiránidos más llamativos de Argentina y suele posarse en lugares visibles para cantar.'},
   'Rupornis magnirostris': {estado:'El gavilán más común de Sudamérica', curiosidad:'Es el rapaz más frecuente y adaptable de la región. Se lo encuentra tanto en bordes de monte como en zonas urbanas y arboledas. Su grito agudo y repetitivo es uno de los sonidos más característicos del campo argentino.'},
   'Turdus rufiventris': {estado:'El zorzal más común de Argentina', curiosidad:'Es el zorzal más difundido del país y uno de los cantores más melodiosos. Su vientre rojizo lo distingue fácilmente. Se adapta muy bien a parques y jardines urbanos.'},
-  'Anser anser': {estado:'Ganso doméstico de origen europeo', curiosidad:'Es el ancestro silvestre del ganso doméstico, originario de Europa y Asia. Los ejemplares observados en parques suelen ser asilvestrados, pero conservan todos los comportamientos típicos de la especie.'}
+  'Anser anser': {estado:'Ganso doméstico de origen europeo', curiosidad:'Es el ancestro silvestre del ganso doméstico, originario de Europa y Asia. Los ejemplares observados en parques suelen ser asilvestrados, pero conservan todos los comportamientos típicos de la especie.'},
+  'Columbina picui': {estado:'La palomita más pequeña del campo', curiosidad:'Es una de las palomas más abundantes de Argentina. Se mueve en grupos por el suelo buscando semillas y es inconfundible por las marcas blancas en sus alas visibles en vuelo.'},
+  'Paroaria coronata': {estado:'El cardenal emblemático del Río de la Plata', curiosidad:'Su copete rojo escarlata lo hace uno de los pájaros más reconocibles de Argentina. Muy apreciado como mascota, en estado silvestre habita bordes de monte y zonas arboladas cerca del agua.'}
 };
 
 const AVIST_INITIAL = {
@@ -1193,7 +1195,9 @@ const AVIST_INITIAL = {
   339:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/pyrocephalus_rubinus.jpg",notas:""},
   19:{fecha:"2026-04-02",lugar:"UNRC",foto:"fotos/rupornis_magnirostris.jpg",notas:""},
   410:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/turdus_rufiventris.jpg",notas:""},
-  416:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/anser_anser.jpg",notas:""}
+  416:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/anser_anser.jpg",notas:""},
+  227:{fecha:"2026-04-25",lugar:"UNRC",foto:"fotos/columbina_picui.jpg",notas:""},
+  287:{fecha:"2026-04-25",lugar:"UNRC",foto:"fotos/paroaria_coronata.jpg",notas:""}
 };
 let avist = Object.assign({}, AVIST_INITIAL);
 let curId = null;
@@ -1262,7 +1266,7 @@ function irAlbum(filtroVal){
 
 
 // ── MAPA ─────────────────────────────────────────────────────────────────────
-const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 10, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 13, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}];
+const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 10, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 15, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató", "Torcacita Picuí", "Cardenal Copete Rojo"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}];
 let lugarActivo = null;
 let mapaAvesOrdenadas = [];
 let modalNavDir = 1;
@@ -1868,7 +1872,7 @@ document.addEventListener("DOMContentLoaded", buildFooter);
         <div class="mapa-lugar-header" id="lugar-header-1" onclick="mapaClick(1)">
           <div>
             <div class="mapa-lugar-nombre">UNRC</div>
-            <div class="mapa-lugar-count" id="lugar-count-1">13 especies</div>
+            <div class="mapa-lugar-count" id="lugar-count-1">15 especies</div>
           </div>
           <span class="mapa-lugar-arrow">▼</span>
         </div>
