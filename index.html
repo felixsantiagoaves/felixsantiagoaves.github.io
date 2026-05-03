@@ -1,5 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--
+=======================================================================
+  DOCUMENTACIÓN PARA CLAUDE — LEER ANTES DE MODIFICAR EL ARCHIVO
+=======================================================================
+
+Este es el archivo HTML principal de una web personal de avistamiento
+de aves en Córdoba, Argentina. A continuación se explica cómo está
+estructurado y cómo realizar las operaciones más comunes.
+
+-----------------------------------------------------------------------
+1. ESTRUCTURA DE DATOS PRINCIPAL
+-----------------------------------------------------------------------
+
+A) ARRAY DE ESPECIES — const AVES = [ ... ]
+   Lista completa de las 416 especies posibles (el álbum).
+   Cada entrada tiene la forma:
+     {id:N, nombre:"Nombre científico", comun:"Nombre común", familia:"Familia", familiaEsp:"Familia en español"}
+   Ejemplo:
+     {id:19, nombre:"Rupornis magnirostris", comun:"Taguató", familia:"Accipitridae", familiaEsp:"Aguiluchos y Gavilanes"}
+
+B) AVISTAMIENTOS — const AVIST_INITIAL = { ... }
+   Registra qué especies fueron encontradas, cuándo y dónde.
+   La clave es el id de la especie del array AVES.
+   Formato:
+     id:{fecha:"AAAA-MM-DD", lugar:"Nombre del lugar", foto:"fotos/nombre_cientifico_en_minusculas.jpg", notas:""}
+   Ejemplo:
+     19:{fecha:"2026-04-02", lugar:"UNRC", foto:"fotos/rupornis_magnirostris.jpg", notas:""}
+   IMPORTANTE: Las fotos siguen la convención nombre_cientifico_en_minusculas.jpg
+   con guiones bajos. Ej: "Rupornis magnirostris" → "rupornis_magnirostris.jpg"
+   Las fotos se guardan en la carpeta /fotos/ del repositorio (el usuario las sube manualmente).
+
+C) FICHAS — const FICHAS = { ... }  (puede llamarse INFO_AVES en versiones anteriores)
+   Contiene el texto que aparece en el modal al hacer click en una especie encontrada.
+   La clave es el nombre científico como string.
+   Formato:
+     'Nombre científico': {estado:'Frase corta descriptiva', curiosidad:'Texto más largo con datos interesantes.'}
+   Ejemplo:
+     'Rupornis magnirostris': {estado:'El gavilán más común de Sudamérica', curiosidad:'Es el rapaz más frecuente...'}
+   Si una especie encontrada no tiene entrada en FICHAS, el modal no mostrará
+   estado ni curiosidad. Siempre agregar una entrada al registrar un avistamiento.
+
+D) MAPA — const LUGARES_MAP = [ ... ]
+   Lista de lugares de avistamiento que aparecen en el mapa interactivo.
+   Formato:
+     {"id": N, "nombre": "Nombre del lugar", "lat": -XX.XXXX, "lon": -XX.XXXX, "count": N, "especies": ["Nombre común 1", "Nombre común 2", ...]}
+   El "count" debe coincidir con la cantidad de elementos en "especies".
+   Además del array, hay elementos HTML para cada lugar (ver sección 3).
+
+-----------------------------------------------------------------------
+2. CÓMO AGREGAR UN NUEVO AVISTAMIENTO
+-----------------------------------------------------------------------
+
+Datos necesarios: Nombre común, nombre científico, fecha (DD/MM/AAAA), lugar.
+
+Pasos:
+  1. Buscar el id de la especie en el array AVES por nombre científico.
+  2. Agregar una línea en AVIST_INITIAL con ese id, fecha en formato AAAA-MM-DD,
+     lugar, y foto con la convención nombre_cientifico.jpg.
+  3. Agregar entrada en FICHAS con estado y curiosidad.
+  4. Actualizar LUGARES_MAP: incrementar "count" y agregar el nombre común a "especies".
+  5. Actualizar el contador HTML del lugar correspondiente (ver sección 3).
+
+Si la especie NO existe en el array AVES (caso raro, ej: especie introducida):
+  - Agregar al final del array AVES con id = total_especies + 1.
+  - Actualizar los textos "N especies" del encabezado de la web (buscar "416 especies").
+  - Luego seguir los pasos anteriores.
+
+-----------------------------------------------------------------------
+3. PANEL HTML DEL MAPA
+-----------------------------------------------------------------------
+
+Además del array LUGARES_MAP en JavaScript, cada lugar tiene su bloque HTML
+en la sección del mapa. Buscar "mapa-lugar-item" para encontrarlos.
+Cada bloque tiene la forma:
+  <div class="mapa-lugar-item" id="lugar-item-N">
+    <div class="mapa-lugar-header" id="lugar-header-N" onclick="mapaClick(N)">
+      <div>
+        <div class="mapa-lugar-nombre">Nombre del lugar</div>
+        <div class="mapa-lugar-count" id="lugar-count-N">N especies</div>
+      </div>
+      <span class="mapa-lugar-arrow">▼</span>
+    </div>
+    <ul class="mapa-lugar-especies" id="lugar-especies-N"></ul>
+  </div>
+
+Al agregar un nuevo lugar, copiar este bloque con el id N = último id + 1.
+El contador "lugar-count-N" debe actualizarse manualmente al agregar especies.
+
+-----------------------------------------------------------------------
+4. CÓMO AGREGAR UN NUEVO LUGAR AL MAPA
+-----------------------------------------------------------------------
+
+  1. Agregar entrada al final del array LUGARES_MAP con el nuevo id, nombre,
+     coordenadas (lat/lon), count inicial y lista de especies.
+  2. Agregar el bloque HTML correspondiente (ver sección 3) después del último
+     bloque existente, antes del cierre del contenedor del panel.
+
+-----------------------------------------------------------------------
+5. CONVENCIONES GENERALES
+-----------------------------------------------------------------------
+
+  - Fechas: siempre en formato AAAA-MM-DD en el JS, DD/MM/AAAA cuando el usuario las informa.
+  - Fotos: fotos/nombre_cientifico_en_minusculas_con_guiones_bajos.jpg
+    El usuario sube las fotos manualmente a la carpeta /fotos/ del repositorio.
+  - Nombres de lugares: usar exactamente el mismo string en AVIST_INITIAL y en LUGARES_MAP.
+  - El usuario puede informar registros mal identificados: en ese caso hay que
+    cambiar el id en AVIST_INITIAL, el nombre en LUGARES_MAP["especies"], la foto,
+    y la entrada en FICHAS. También verificar que el nombre en AVES sea correcto.
+
+-----------------------------------------------------------------------
+6. LUGARES ACTUALES (referencia rápida)
+-----------------------------------------------------------------------
+
+  id 0 → Río Cuarto
+  id 1 → UNRC
+  id 2 → Parque Sarmiento
+  id 3 → Villa Rumipal
+  id 4 → Lago Villa Dalcar, Río Cuarto
+  id 5 → Laguna Rivero, Alcira Gigena
+  id 6 → Reserva Provincial Chocancharava
+
+=======================================================================
+-->
 <head>
 <meta charset="UTF-8">
 <!-- Google tag (gtag.js) -->
@@ -1119,7 +1242,12 @@ const FICHAS = {
   'Turdus rufiventris': {estado:'El zorzal más común de Argentina', curiosidad:'Es el zorzal más difundido del país y uno de los cantores más melodiosos. Su vientre rojizo lo distingue fácilmente. Se adapta muy bien a parques y jardines urbanos.'},
   'Anser anser': {estado:'Ganso doméstico de origen europeo', curiosidad:'Es el ancestro silvestre del ganso doméstico, originario de Europa y Asia. Los ejemplares observados en parques suelen ser asilvestrados, pero conservan todos los comportamientos típicos de la especie.'},
   'Columbina picui': {estado:'La palomita más pequeña del campo', curiosidad:'Es una de las palomas más abundantes de Argentina. Se mueve en grupos por el suelo buscando semillas y es inconfundible por las marcas blancas en sus alas visibles en vuelo.'},
-  'Paroaria coronata': {estado:'El cardenal emblemático del Río de la Plata', curiosidad:'Su copete rojo escarlata lo hace uno de los pájaros más reconocibles de Argentina. Muy apreciado como mascota, en estado silvestre habita bordes de monte y zonas arboladas cerca del agua.'}
+  'Paroaria coronata': {estado:'El cardenal emblemático del Río de la Plata', curiosidad:'Su copete rojo escarlata lo hace uno de los pájaros más reconocibles de Argentina. Muy apreciado como mascota, en estado silvestre habita bordes de monte y zonas arboladas cerca del agua.'},
+  'Xolmis irupero': {estado:'La monjita más blanca de la llanura', curiosidad:'Su plumaje completamente blanco con puntas negras en las alas la hace inconfundible. Suele posarse en alambrados y arbustos expuestos, desde donde vigila el territorio.'},
+  'Anas flavirostris': {estado:'El pato más pequeño y común de Argentina', curiosidad:'Es uno de los patos más abundantes del país. Se mueve en parejas o pequeños grupos en espejos de agua tranquilos. Su pico amarillo con una franja negra central es su rasgo más distintivo.'},
+  'Neoxolmis coronatus': {estado:'Monjita de la estepa patagónica', curiosidad:'Es una de las monjitas más llamativas por su corona rufa y diseño contrastante. Habita pastizales abiertos y estepa, y es menos común que otras monjitas en la provincia de Córdoba.'},
+  'Lessonia rufa': {estado:'Pequeño tiránido de los bañados', curiosidad:'El macho tiene un llamativo dorso rufo que contrasta con su cabeza y alas negras. Habita bordes de bañados y pastizales húmedos, donde se mueve cerca del suelo buscando insectos.'},
+  'Sicalis luteola': {estado:'El misto del campo abierto', curiosidad:'Es uno de los pájaros amarillos más comunes de los pastizales abiertos de Argentina. Forma bandadas numerosas fuera de la época reproductiva y su canto es un trino suave y continuo.'}
 };
 
 const AVIST_INITIAL = {
@@ -1198,7 +1326,12 @@ const AVIST_INITIAL = {
   416:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/anser_anser.jpg",notas:""},
   227:{fecha:"2026-04-25",lugar:"UNRC",foto:"fotos/columbina_picui.jpg",notas:""},
   287:{fecha:"2026-04-25",lugar:"UNRC",foto:"fotos/paroaria_coronata.jpg",notas:""},
-  66:{fecha:"2026-04-28",lugar:"Río Cuarto",foto:"fotos/mimus_triurus.jpg",notas:""}
+  66:{fecha:"2026-04-28",lugar:"Río Cuarto",foto:"fotos/mimus_triurus.jpg",notas:""},
+  357:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/xolmis_irupero.jpg",notas:""},
+  233:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/anas_flavirostris.jpg",notas:""},
+  360:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/neoxolmis_coronatus.jpg",notas:""},
+  372:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/lessonia_rufa.jpg",notas:""},
+  298:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/sicalis_luteola.jpg",notas:""}
 };
 let avist = Object.assign({}, AVIST_INITIAL);
 let curId = null;
@@ -1267,7 +1400,7 @@ function irAlbum(filtroVal){
 
 
 // ── MAPA ─────────────────────────────────────────────────────────────────────
-const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 11, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde", "Calandria Real"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 15, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató", "Torcacita Picuí", "Cardenal Copete Rojo"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}];
+const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 11, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde", "Calandria Real"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 15, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató", "Torcacita Picuí", "Cardenal Copete Rojo"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}, {"id": 6, "nombre": "Reserva Provincial Chocancharava", "lat": -33.12101611098728, "lon": -64.29258510270435, "count": 5, "especies": ["Monjita Blanca", "Pato Barcino", "Monjita Coronada", "Sobrepuesto Austral", "Misto"]}];
 let lugarActivo = null;
 let mapaAvesOrdenadas = [];
 let modalNavDir = 1;
@@ -1918,6 +2051,16 @@ document.addEventListener("DOMContentLoaded", buildFooter);
           <span class="mapa-lugar-arrow">▼</span>
         </div>
         <ul class="mapa-lugar-especies" id="lugar-especies-5"></ul>
+      </div>
+<div class="mapa-lugar-item" id="lugar-item-6">
+        <div class="mapa-lugar-header" id="lugar-header-6" onclick="mapaClick(6)">
+          <div>
+            <div class="mapa-lugar-nombre">Reserva Provincial Chocancharava</div>
+            <div class="mapa-lugar-count" id="lugar-count-6">5 especies</div>
+          </div>
+          <span class="mapa-lugar-arrow">▼</span>
+        </div>
+        <ul class="mapa-lugar-especies" id="lugar-especies-6"></ul>
       </div>
 
         </div>
