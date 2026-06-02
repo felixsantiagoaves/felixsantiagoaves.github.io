@@ -120,6 +120,8 @@ El contador "lugar-count-N" debe actualizarse manualmente al agregar especies.
   id 4 → Lago Villa Dalcar, Río Cuarto
   id 5 → Laguna Rivero, Alcira Gigena
   id 6 → Reserva Provincial Chocancharava
+  id 7 → Caminos Rurales Tosquita
+  id 8 → Bañado del Tigre Muerto, Tosquita
 
 =======================================================================
 -->
@@ -1254,7 +1256,27 @@ const FICHAS = {
   'Chroicocephalus maculipennis': {estado:'La gaviota de los lagos y ríos del interior', curiosidad:'A diferencia de otras gaviotas, esta especie frecuenta cuerpos de agua dulce tierra adentro. En época reproductiva desarrolla un capucho marrón oscuro muy llamativo que pierde en invierno.'},
   'Polioptila dumicola': {estado:'Pequeña y activa entre los arbustos', curiosidad:'Es un pajarillo muy ágil e inquieto, difícil de seguir entre la vegetación. El macho tiene un diseño bicolor azul y blanco muy elegante. Su canto es fino y agudo, y suele moverse en parejas.'},
   'Molothrus rufoaxillaris': {estado:'El parásito de cría más especializado', curiosidad:'Es un tordo parásito que pone sus huevos casi exclusivamente en nidos del Tordo Músico. Es más pequeño y menos común que otros tordos, y su pico corto y robusto lo distingue claramente.'},
-  'Rauenia bonariensis': {estado:'El naranjero del monte serrano', curiosidad:'El macho luce un llamativo plumaje naranja y negro que lo hace inconfundible. Habita bordes de monte y jardines arbolados. Su canto melodioso y fuerte es uno de los más agradables de las sierras cordobesas.'}
+  'Rauenia bonariensis': {estado:'El naranjero del monte serrano', curiosidad:'El macho luce un llamativo plumaje naranja y negro que lo hace inconfundible. Habita bordes de monte y jardines arbolados. Su canto melodioso y fuerte es uno de los más agradables de las sierras cordobesas.'},
+  'Anas georgica': {estado:'El pato maicero de las lagunas pampeanas', curiosidad:'Es uno de los patos más comunes de Argentina. Se alimenta principalmente de semillas de gramíneas, de ahí su nombre popular. Forma grandes concentraciones en lagunas y arrozales.'},
+  'Ardea cocoi': {estado:'La garza más grande de Sudamérica', curiosidad:'Con casi un metro de altura es la garza más imponente del continente. Solitaria y paciente, caza peces inmóvil al borde del agua. Su vuelo es majestuoso con el cuello recogido en S.'},
+  'Chauna torquata': {estado:'El guardián ruidoso de los bañados', curiosidad:'Su llamado fuerte y penetrante se escucha a kilómetros de distancia. A pesar de su tamaño, vuela muy bien y puede planear a gran altura. Tiene espolones óseos en las alas que usa para defenderse.'},
+  'Elanus leucurus': {estado:'El milano blanco de los campos abiertos', curiosidad:'Es uno de los rapaces más elegantes, con su plumaje blanco y gris perla y sus ojos rojos. Caza insectos y pequeños roedores cerniendo en el aire. Suele posarse en lo alto de postes y árboles aislados.'},
+  'Himantopus mexicanus': {estado:'Las patas más largas del reino de las aves', curiosidad:'Proporcionalmente tiene las patas más largas de todas las aves del mundo. Sus largas extremidades rosadas le permiten vadear aguas profundas donde otras limícolas no llegan. Muy ruidoso y agresivo al defender el nido.'},
+  'Phoenicopterus chilensis': {estado:'El flamenco de las lagunas andinas y pampeanas', curiosidad:'Su coloración rosa se debe a los pigmentos de los crustáceos que filtra del agua. Filtra el barro con su pico especialmente adaptado en posición invertida. Forma colonias de miles de individuos en lagunas salinas.'},
+  'Theristicus melanopis': {estado:'La bandurria de los campos abiertos', curiosidad:'Su llamado áspero y repetitivo es uno de los sonidos más característicos de la llanura cordobesa. Vuela en grupos en formación y recorre grandes distancias entre dormideros y zonas de alimentación.'},
+  'Cinclodes fuscus': {estado:'La remolinera de los caminos rurales', curiosidad:'Es muy confiada y se acerca a las personas sin miedo. Camina activamente por el suelo moviendo la cola de arriba a abajo. Frecuenta bordes de caminos, acequias y pastizales húmedos.'},
+  'Circus cinereus': {estado:'El gavilán cazador de bañados', curiosidad:'Vuela bajo y lento sobre los pastizales y bañados en busca de presas. El macho tiene un elegante plumaje gris y blanco con barras rojizas en el pecho. Nidifica directamente en el suelo entre la vegetación alta.'},
+  'Mimus patagonicus': {estado:'La calandria del monte seco patagónico', curiosidad:'Es una calandria más discreta que sus parientes, propia del monte árido. Tiene hábitos terrestres marcados y corre ágilmente entre los arbustos. Su canto es variado aunque menos exuberante que el de otras calandrias.'},
+  'Ammodramus humeralis': {estado:'El cachilo de los pastizales abiertos', curiosidad:'Es un pájaro terrestre que prefiere pastizales cortos y campos cultivados. Su mancha amarilla en el hombro solo se ve de cerca. Corre entre los pastos en lugar de volar cuando se siente amenazado.'},
+  'Agelasticus thilius': {estado:'El varillero de los juncales', curiosidad:'El macho negro con hombros amarillo-verdosos es inconfundible en los bañados. Vive en colonias en juncales y totorales. Es parásito de cría ocasional del Tordo Pico Corto.'},
+  'Spatula platalea': {estado:'El pato con el pico más curioso', curiosidad:'Su pico ensanchado en forma de espátula es único entre los patos argentinos. Lo usa para filtrar el agua en movimientos de barrido lateral. Es un pato migratorio que llega desde el sur en otoño.'},
+  'Nothura maculosa': {estado:'La perdiz más común de Argentina', curiosidad:'Es el tinamú más abundante y distribuido del país. Vive en pastizales y campos cultivados. Cuando se asusta levanta vuelo explosivo y corto para luego correr entre los pastos.'},
+  'Tringa melanoleuca': {estado:'El playero migratorio de lagunas', curiosidad:'Es un playero migratorio que viene desde Norteamérica cada verano austral. Se distingue del Pitotoy Chico por su tamaño mayor y su llamado fuerte de tres notas. Frecuenta orillas de lagunas y bañados.'},
+  'Chloroceryle americana': {estado:'El martín pescador del monte ribereño', curiosidad:'Es más pequeño y discreto que el Martín Pescador Grande. Su plumaje verde y blanco le da excelente camuflaje entre la vegetación ribereña. Caza desde una rama baja lanzándose en picada al agua.'},
+  'Parabuteo unicinctus': {estado:'El gavilán cooperativo de la llanura', curiosidad:'Es uno de los pocos rapaces que caza en grupos familiares coordinados. Varios individuos rodean a la presa desde distintos ángulos. Su frente y hombros rojizos lo distinguen de otros gavilanes.'},
+  'Spatula versicolor': {estado:'El pato capuchino de los bañados', curiosidad:'El macho tiene un plumaje muy elaborado con cabeza castaño-verdosa iridiscente. Es uno de los patos más coloridos de Argentina. Prefiere lagunas someras con vegetación flotante donde filtra el agua con su pico.'},
+  'Serpophaga nigricans': {estado:'El piojito de los bordes ribereños', curiosidad:'A diferencia de otros piojitos, este prefiere las orillas de ríos y arroyos con vegetación. Mueve la cola constantemente hacia arriba y abajo mientras busca insectos. Su canto es un chip metálico muy repetitivo.'},
+  'Pseudoleistes virescens': {estado:'El pecho amarillo de los pastizales húmedos', curiosidad:'Su brillante pecho amarillo contrasta con el dorso negro verdoso. Habita pastizales húmedos y bordes de bañados donde forrajea en grupos. Es una especie amenazada por la pérdida de pastizales naturales en la pampa.'}
 };
 
 const AVIST_INITIAL = {
@@ -1345,7 +1367,29 @@ const AVIST_INITIAL = {
   136:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/chroicocephalus_maculipennis.jpg",notas:""},
   281:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/polioptila_dumicola.jpg",notas:""},
   395:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/molothrus_rufoaxillaris.jpg",notas:""},
-  303:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/rauenia_bonariensis.jpg",notas:""}
+  303:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/rauenia_bonariensis.jpg",notas:""},
+  242:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/anas_georgica.jpg",notas:""},
+  132:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/ardea_cocoi.jpg",notas:""},
+  79:{fecha:"2026-05-31",lugar:"Bañado del Tigre Muerto, Tosquita",foto:"fotos/chauna_torquata.jpg",notas:""},
+  16:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/elanus_leucurus.jpg",notas:""},
+  322:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/himantopus_mexicanus.jpg",notas:""},
+  106:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/phoenicopterus_chilensis.jpg",notas:""},
+  34:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/theristicus_melanopis.jpg",notas:""},
+  241:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/anas_bahamensis.jpg",notas:""},
+  201:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/cinclodes_fuscus.jpg",notas:""},
+  12:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/circus_cinereus.jpg",notas:""},
+  65:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/mimus_patagonicus.jpg",notas:""},
+  284:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/ammodramus_humeralis.jpg",notas:""},
+  397:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/agelasticus_thilius.jpg",notas:""},
+  238:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/spatula_platalea.jpg",notas:""},
+  324:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/nothura_maculosa.jpg",notas:""},
+  265:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/tringa_melanoleuca.jpg",notas:""},
+  218:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/chloroceryle_americana.jpg",notas:""},
+  13:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/parabuteo_unicinctus.jpg",notas:""},
+  366:{fecha:"2026-05-31",lugar:"Bañado del Tigre Muerto, Tosquita",foto:"fotos/hymenops_perspicillatus.jpg",notas:""},
+  235:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/spatula_versicolor.jpg",notas:""},
+  367:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/serpophaga_nigricans.jpg",notas:""},
+  392:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/pseudoleistes_virescens.jpg",notas:""}
 };
 let avist = Object.assign({}, AVIST_INITIAL);
 let curId = null;
@@ -1414,7 +1458,7 @@ function irAlbum(filtroVal){
 
 
 // ── MAPA ─────────────────────────────────────────────────────────────────────
-const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 11, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde", "Calandria Real"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 15, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató", "Torcacita Picuí", "Cardenal Copete Rojo"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}, {"id": 6, "nombre": "Reserva Provincial Chocancharava", "lat": -33.12101611098728, "lon": -64.29258510270435, "count": 12, "especies": ["Monjita Blanca", "Pato Barcino", "Monjita Coronada", "Sobrepuesto Austral", "Misto", "Leñatero", "Gaucho Pardo", "Loro Barranquero", "Gaviota Capucho Café", "Tacuarita Azul", "Tordo Pico Corto", "Naranjero"]}];
+const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 11, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde", "Calandria Real"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 15, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató", "Torcacita Picuí", "Cardenal Copete Rojo"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 13, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón"]}, {"id": 6, "nombre": "Reserva Provincial Chocancharava", "lat": -33.12101611098728, "lon": -64.29258510270435, "count": 12, "especies": ["Monjita Blanca", "Pato Barcino", "Monjita Coronada", "Sobrepuesto Austral", "Misto", "Leñatero", "Gaucho Pardo", "Loro Barranquero", "Gaviota Capucho Café", "Tacuarita Azul", "Tordo Pico Corto", "Naranjero"]}, {"id": 7, "nombre": "Caminos Rurales Tosquita", "lat": -33.7414217, "lon": -64.361675, "count": 20, "especies": ["Pato Maicero", "Garza Mora", "Milano Blanco", "Tero Real", "Flamenco Austral", "Bandurria Austral", "Pato Gargantilla", "Remolinera Parda", "Gavilán Ceniciento", "Calandria Mora", "Cachilo Ceja Amarilla", "Varillero Ala Amarilla", "Pato Cuchara", "Inambú Campestre", "Pitotoy Grande", "Martín Pescador Chico", "Gavilán Mixto", "Pato Capuchino", "Piojito Gris", "Pecho Amarillo"]}, {"id": 8, "nombre": "Bañado del Tigre Muerto, Tosquita", "lat": -33.6667, "lon": -64.1666, "count": 2, "especies": ["Chajá", "Pico de Plata"]}];
 let lugarActivo = null;
 let mapaAvesOrdenadas = [];
 let modalNavDir = 1;
@@ -2075,6 +2119,26 @@ document.addEventListener("DOMContentLoaded", buildFooter);
           <span class="mapa-lugar-arrow">▼</span>
         </div>
         <ul class="mapa-lugar-especies" id="lugar-especies-6"></ul>
+      </div>
+<div class="mapa-lugar-item" id="lugar-item-7">
+        <div class="mapa-lugar-header" id="lugar-header-7" onclick="mapaClick(7)">
+          <div>
+            <div class="mapa-lugar-nombre">Caminos Rurales Tosquita</div>
+            <div class="mapa-lugar-count" id="lugar-count-7">20 especies</div>
+          </div>
+          <span class="mapa-lugar-arrow">▼</span>
+        </div>
+        <ul class="mapa-lugar-especies" id="lugar-especies-7"></ul>
+      </div>
+<div class="mapa-lugar-item" id="lugar-item-8">
+        <div class="mapa-lugar-header" id="lugar-header-8" onclick="mapaClick(8)">
+          <div>
+            <div class="mapa-lugar-nombre">Bañado del Tigre Muerto, Tosquita</div>
+            <div class="mapa-lugar-count" id="lugar-count-8">2 especies</div>
+          </div>
+          <span class="mapa-lugar-arrow">▼</span>
+        </div>
+        <ul class="mapa-lugar-especies" id="lugar-especies-8"></ul>
       </div>
 
         </div>
