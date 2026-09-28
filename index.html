@@ -5,130 +5,70 @@
   DOCUMENTACIÓN PARA CLAUDE — LEER ANTES DE MODIFICAR EL ARCHIVO
 =======================================================================
 
-Este es el archivo HTML principal de una web personal de avistamiento
-de aves en Córdoba, Argentina. A continuación se explica cómo está
-estructurado y cómo realizar las operaciones más comunes.
+Web personal de avistamiento de aves en Córdoba, Argentina. Los avistamientos
+y el mapa son un REFLEJO de la cuenta de eBird del usuario: no se cargan a
+mano en este HTML, se generan con un script desde el CSV de eBird.
 
 -----------------------------------------------------------------------
-1. ESTRUCTURA DE DATOS PRINCIPAL
+1. DÓNDE VIVE CADA COSA
 -----------------------------------------------------------------------
 
-A) ARRAY DE ESPECIES — const AVES = [ ... ]
-   Lista completa de las 415 especies posibles (el álbum).
-   Cada entrada tiene la forma:
-     {id:N, nombre:"Nombre científico", comun:"Nombre común", familia:"Familia", familiaEsp:"Familia en español"}
-   Ejemplo:
-     {id:19, nombre:"Rupornis magnirostris", comun:"Taguató", familia:"Accipitridae", familiaEsp:"Aguiluchos y Gavilanes"}
+A) const AVES = [ ... ]            (en este HTML)
+   Las 415 especies posibles (el álbum). Forma:
+     {id:N, nombre:"Nombre científico", comun:"Nombre común", familia:"...", familiaEsp:"..."}
 
-B) AVISTAMIENTOS — const AVIST_INITIAL = { ... }
-   Registra qué especies fueron encontradas, cuándo y dónde.
-   La clave es el id de la especie del array AVES.
-   Formato:
-     id:{fecha:"AAAA-MM-DD", lugar:"Nombre del lugar", foto:"fotos/nombre_cientifico_en_minusculas.jpg", notas:""}
-   Ejemplo:
-     19:{fecha:"2026-04-02", lugar:"UNRC", foto:"fotos/rupornis_magnirostris.jpg", notas:""}
-   IMPORTANTE: Las fotos siguen la convención nombre_cientifico_en_minusculas.jpg
-   con guiones bajos. Ej: "Rupornis magnirostris" → "rupornis_magnirostris.jpg"
-   Las fotos se guardan en la carpeta /fotos/ del repositorio (el usuario las sube manualmente).
+B) avistamientos.json              (archivo aparte, GENERADO, no editar a mano)
+   Lo escribe sync/sync_ebird.py. Se carga con fetch() al abrir la web.
+     "avistamientos": { "<id especie>": {fecha:"AAAA-MM-DD", lugar:"Nombre", foto:"fotos/x.jpg" | null, notas:""} }
+     "lugares": [ {id, nombre, lat, lon, count, ids:[id de especie, ...]} ]
+   - fecha/lugar = PRIMER registro de esa especie en eBird.
+   - Cada lugar de "lugares" lista TODAS las especies vistas ahí (ids).
+   - foto null => la web muestra la silueta de la familia.
 
-C) FICHAS — const FICHAS = { ... }  (puede llamarse INFO_AVES en versiones anteriores)
-   Contiene el texto que aparece en el modal al hacer click en una especie encontrada.
-   La clave es el nombre científico como string.
-   Formato:
-     'Nombre científico': {estado:'Frase corta descriptiva', curiosidad:'Texto más largo con datos interesantes.'}
-   Ejemplo:
-     'Rupornis magnirostris': {estado:'El gavilán más común de Sudamérica', curiosidad:'Es el rapaz más frecuente...'}
-   Si una especie encontrada no tiene entrada en FICHAS, el modal no mostrará
-   estado ni curiosidad. Siempre agregar una entrada al registrar un avistamiento.
+C) const FICHAS = { ... }          (en este HTML)
+   Texto del modal de cada especie encontrada. La clave es el nombre científico:
+     'Nombre científico': {estado:'Frase corta', curiosidad:'Texto más largo.'}
+   Toda especie que aparezca en avistamientos.json debe tener ficha.
+   Este es el único paso de contenido que NO sale de eBird.
 
-D) MAPA — const LUGARES_MAP = [ ... ]
-   Lista de lugares de avistamiento que aparecen en el mapa interactivo.
-   Formato:
-     {"id": N, "nombre": "Nombre del lugar", "lat": -XX.XXXX, "lon": -XX.XXXX, "count": N, "especies": ["Nombre común 1", "Nombre común 2", ...]}
-   El "count" debe coincidir con la cantidad de elementos en "especies".
-   Además del array, hay elementos HTML para cada lugar (ver sección 3).
+D) sync/lugares.json               (configuración de lugares)
+   Une cada Location ID de eBird con el nombre que se ve en la web (y, si hace
+   falta, coordenadas propias). Dos IDs con el mismo "nombre" se fusionan en un lugar.
+   El lugar "Río Cuarto" (ex "Rio Cuarto - Casa") usa coordenadas genéricas A PROPÓSITO:
+   no publicar la ubicación exacta de la casa.
+
+E) El panel del mapa se genera por JS (buildMapaPanel) a partir de "lugares".
+   Ya no hay bloques HTML por lugar ni contadores para actualizar a mano.
 
 -----------------------------------------------------------------------
-2. CÓMO AGREGAR UN NUEVO AVISTAMIENTO
+2. CÓMO ACTUALIZAR LA WEB
 -----------------------------------------------------------------------
 
-Datos necesarios: Nombre común, nombre científico, fecha (DD/MM/AAAA), lugar.
+  1. eBird > My eBird > Download My Data (llega por mail) => MyEBirdData.csv
+  2. Desde la raíz del repo:  python sync/sync_ebird.py MyEBirdData.csv
+  3. El script imprime un resumen. Hay que resolver:
+       - "FALTA FICHA": agregar la entrada en FICHAS (estado + curiosidad).
+       - "Sin foto todavía": el usuario sube fotos/nombre_cientifico_en_minusculas.jpg
+         y vuelve a correr el script (la detecta sola).
+       - "Lugares nuevos sin nombre": agregar el ID en sync/lugares.json con nombre prolijo.
+       - "Registros que no se pudieron asignar": son identificaciones tipo "A/B", "sp."
+         o domésticos; no van al álbum.
+  4. Subir index.html (si se tocó FICHAS), avistamientos.json, sync/ y fotos/.
 
-Pasos:
-  1. Buscar el id de la especie en el array AVES por nombre científico.
-  2. Agregar una línea en AVIST_INITIAL con ese id, fecha en formato AAAA-MM-DD,
-     lugar, y foto con la convención nombre_cientifico.jpg.
-  3. Agregar entrada en FICHAS con estado y curiosidad.
-  4. Actualizar LUGARES_MAP: incrementar "count" y agregar el nombre común a "especies".
-  5. Actualizar el contador HTML del lugar correspondiente (ver sección 3).
-
-Si la especie NO existe en el array AVES (caso raro, ej: especie introducida):
-  - Agregar al final del array AVES con id = total_especies + 1.
-  - Actualizar los textos "N especies" del encabezado de la web (buscar "415 especies").
-  - Luego seguir los pasos anteriores.
-
------------------------------------------------------------------------
-3. PANEL HTML DEL MAPA
------------------------------------------------------------------------
-
-Además del array LUGARES_MAP en JavaScript, cada lugar tiene su bloque HTML
-en la sección del mapa. Buscar "mapa-lugar-item" para encontrarlos.
-Cada bloque tiene la forma:
-  <div class="mapa-lugar-item" id="lugar-item-N">
-    <div class="mapa-lugar-header" id="lugar-header-N" onclick="mapaClick(N)">
-      <div>
-        <div class="mapa-lugar-nombre">Nombre del lugar</div>
-        <div class="mapa-lugar-count" id="lugar-count-N">N especies</div>
-      </div>
-      <span class="mapa-lugar-arrow">▼</span>
-    </div>
-    <ul class="mapa-lugar-especies" id="lugar-especies-N"></ul>
-  </div>
-
-Al agregar un nuevo lugar, copiar este bloque con el id N = último id + 1.
-El contador "lugar-count-N" debe actualizarse manualmente al agregar especies.
+Si una especie NO existe en AVES (caso raro): agregarla al final con id = total + 1
+y actualizar los textos "415 especies" del encabezado.
 
 -----------------------------------------------------------------------
-4. CÓMO AGREGAR UN NUEVO LUGAR AL MAPA
+3. CONVENCIONES
 -----------------------------------------------------------------------
 
-  1. Agregar entrada al final del array LUGARES_MAP con el nuevo id, nombre,
-     coordenadas (lat/lon), count inicial y lista de especies.
-  2. Agregar el bloque HTML correspondiente (ver sección 3) después del último
-     bloque existente, antes del cierre del contenedor del panel.
-
------------------------------------------------------------------------
-5. CONVENCIONES GENERALES
------------------------------------------------------------------------
-
-  - Fechas: siempre en formato AAAA-MM-DD en el JS, DD/MM/AAAA cuando el usuario las informa.
-  - Fotos: fotos/nombre_cientifico_en_minusculas_con_guiones_bajos.jpg
-    El usuario sube las fotos manualmente a la carpeta /fotos/ del repositorio.
-  - Nombres de lugares: usar exactamente el mismo string en AVIST_INITIAL y en LUGARES_MAP.
-  - El usuario puede informar registros mal identificados: en ese caso hay que
-    cambiar el id en AVIST_INITIAL, el nombre en LUGARES_MAP["especies"], la foto,
-    y la entrada en FICHAS. También verificar que el nombre en AVES sea correcto.
-
------------------------------------------------------------------------
-6. LUGARES ACTUALES (referencia rápida)
------------------------------------------------------------------------
-
-  id 0 → Río Cuarto
-  id 1 → UNRC
-  id 2 → Parque Sarmiento
-  id 3 → Villa Rumipal
-  id 4 → Lago Villa Dalcar, Río Cuarto
-  id 5 → Laguna Rivero, Alcira Gigena
-  id 6 → Reserva Provincial Chocancharava
-  id 7 → Caminos Rurales Tosquita
-  id 8 → Bañado del Tigre Muerto, Tosquita
-  id 9 → Dique La Viña
-  id 10 → Sendero la piedra encajada, Los Hornillos, Cba
-  id 11 → El Rincon del Molle, Villa de las Rosas, Cba
-  id 12 → Balneario Villa Cura Brochero, Cba
-  id 13 → Bañado Arroyo Chico, Santa Catalina
-  id 14 → Laguna Los Medanitos, Paso del Durazno
-  id 15 → Reserva Hídrica Achiras
+  - Fechas: AAAA-MM-DD.
+  - Fotos: fotos/nombre_cientifico_en_minusculas_con_guiones_bajos.jpg (las sube el usuario).
+  - Si eBird corrige una identificación, se corrige en eBird y se vuelve a correr el script.
+  - localStorage (edición desde el navegador): solo aporta "notas" y especies marcadas a mano;
+    fecha/lugar/foto siempre salen de avistamientos.json.
+  - La web hay que abrirla desde un servidor (GitHub Pages o similar): con doble clic
+    (file://) el navegador bloquea fetch() y no cargan ni avistamientos ni galería.
 
 =======================================================================
 -->
@@ -1329,164 +1269,34 @@ const FICHAS = {
   'Accipiter striatus': {estado:'El esparvero veloz de los bosques', curiosidad:'Es un rapaz pequeño y ágil especializado en cazar aves al vuelo entre la vegetación densa. Su vuelo corto y rápido con aleteos y planeos alternativos lo hace difícil de seguir. En invierno aparece en zonas urbanas arboladas.'},
   'Aramus guarauna': {estado:'El carau de los bañados profundos', curiosidad:'Su llamado nocturno fuerte y lastimero, parecido a un lamento humano, es inconfundible en los bañados. Camina lentamente entre la vegetación acuática buscando caracoles, su alimento principal. Es el único representante de su familia en el mundo.'},
   'Leptasthenura aegithaloides': {estado:'El coludito de cola negra y larga', curiosidad:'Muy similar al Coludito Copetón pero sin cresta. Habita zonas arbustivas secas y monte bajo donde trepa activamente en busca de insectos. En invierno suele bajar a zonas más bajas y aparecer en grupos junto a otras especies.'},
-  'Suiriri suiriri': {estado:'El suirirí discreto del monte abierto', curiosidad:'Es uno de los tiránidos más difíciles de identificar por su aspecto grisáceo y apagado. Se distingue por su canto repetitivo y su comportamiento tranquilo posado en ramas expuestas del monte. Habita zonas secas y arbustivas.'}
+  'Suiriri suiriri': {estado:'El suirirí discreto del monte abierto', curiosidad:'Es uno de los tiránidos más difíciles de identificar por su aspecto grisáceo y apagado. Se distingue por su canto repetitivo y su comportamiento tranquilo posado en ramas expuestas del monte. Habita zonas secas y arbustivas.'},
+  'Riparia riparia': {estado:'Golondrina viajera que cría en el hemisferio norte', curiosidad:'Cría en barrancas de ríos del hemisferio norte y pasa el verano austral en Sudamérica. Es una de las golondrinas más pequeñas de la región y se reconoce por la banda parda que cruza el pecho blanco.'},
+  'Tachycineta leucopyga': {estado:'La golondrina patagónica que llega con el frío', curiosidad:'Cría en la Patagonia y Chile, y en la temporada fría se desplaza hacia el norte, por eso aparece en Córdoba en invierno. Tiene el dorso azul metálico, el vientre blanco y la rabadilla blanca bien marcada.'},
+  'Nothoprocta cinerascens': {estado:'Tinamú esquivo de los montes secos', curiosidad:'Vive en arbustales y pastizales del Chaco seco y el monte. Confía en su plumaje camuflado para pasar inadvertido y, si se lo sorprende, sale volando de golpe. Suele delatarse más por su canto que por la vista.'},
+  'Saltatricula multicolor': {estado:'Habitante multicolor del Chaco seco', curiosidad:'Vive en montes espinosos y arbustales del centro y norte argentino. Su plumaje combina gris, castaño, negro y blanco, y su nombre científico alude justamente a esa mezcla. Se lo ve seguido en el suelo, buscando semillas.'},
+  'Tachycineta leucorrhoa': {estado:'La golondrina de la ceja blanca', curiosidad:'Se reconoce por la pequeña ceja blanca frente al ojo, el dorso azul metálico y la rabadilla blanca. Cría en huecos de árboles y postes, y es muy común sobre lagunas y campos abiertos.'},
+  'Hirundinea ferruginea': {estado:'Tiránido de barrancas y paredones', curiosidad:'Le gusta posarse en paredones rocosos y barrancas, desde donde sale a cazar insectos al vuelo. Cuando abre las alas muestra parches color canela en las alas y en la base de la cola.'},
+  'Campephilus leucopogon': {estado:'El gran carpintero de los montes', curiosidad:'Es uno de los carpinteros más grandes de la Argentina y se destaca por su dorso claro. Golpea los troncos con dobles golpes de tambor que se oyen desde lejos, y es un buen indicador de monte en buen estado.'},
+  'Synallaxis frontalis': {estado:'Hornerito esquivo del monte bajo', curiosidad:'Vive oculto en la espesura de arbustales y bordes de monte, y se oye mucho más de lo que se ve. Construye nidos cerrados de palitos, como los de otros miembros de su grupo.'},
+  'Setophaga pitiayumi': {estado:'Pequeño arañero de pecho amarillo', curiosidad:'Tiene el dorso gris azulado y el pecho amarillo. Se mueve sin pausa entre el follaje buscando insectos y arañas, muchas veces junto a bandadas mixtas de otras aves del monte.'},
+  'Saltator coerulescens': {estado:'Pepitero de pico robusto y buen cantor', curiosidad:'De plumaje gris con ceja blanca y vientre acanelado, tiene un pico grueso ideal para frutos, brotes y semillas. Suele cantar desde perchas expuestas del monte, con frases ricas y variadas.'},
+  'Cyclarhis gujanensis': {estado:'La voz que no se calla en el monte', curiosidad:'Su nombre popular imita su canto, una frase que repite incansablemente durante todo el día. Es más fácil de oír que de ver: se mueve despacio entre el follaje buscando orugas e insectos. Tiene el pico robusto con punta ganchuda y una ceja rojiza.'},
+  'Rhynchotus rufescens': {estado:'La perdiz grande de los pastizales', curiosidad:'Es una de las tinamúes más grandes de los pastizales y muestra las alas rojizas cuando vuela. Como en otros tinámidos, el macho es quien incuba los huevos y cuida a los pichones.'},
+  'Nothoprocta pentlandii': {estado:'Tinamú de las laderas serranas', curiosidad:'Habita pastizales y arbustales de sierras y zonas de altura. Su plumaje críptico lo vuelve casi invisible entre la paja, y su silbido resuena en los pastizales al amanecer y al atardecer.'},
+  'Mareca sibilatrix': {estado:'El pato del silbido', curiosidad:'Su nombre científico alude a su llamado silbado. Tiene la cabeza blanca y negra con reflejos verdosos y los flancos canela, y suele pastar en orillas y pastizales inundados cerca de lagunas.'},
+  'Glaucidium nana': {estado:'Lechucita diurna con ojos falsos en la nuca', curiosidad:'Tiene dos manchas oscuras en la nuca que parecen ojos y desconciertan a posibles depredadores. Es activo de día, caza aves pequeñas, insectos y roedores, y muchas veces los pajaritos del monte lo rodean para alborotarlo.'},
+  'Phacellodomus sibilatrix': {estado:'Arquitecto de nidos de ramitas', curiosidad:'Construye voluminosos nidos de palitos entrelazados en arbustos y árboles del monte. Es un hornero de tamaño chico que suele andar en parejas, moviéndose entre las ramas bajas.'},
+  'Stigmatura budytoides': {estado:'El tiránido de la cola larga y movediza', curiosidad:'Mantiene la cola larga, con puntas blancas, en constante movimiento: la levanta y la abre mientras recorre arbustos en busca de insectos. Suele andar en pareja y cantar a dúo.'},
+  'Microspingus torquatus': {estado:'Pequeño habitante del monte con collar negro', curiosidad:'Su nombre alude a la banda negra que cruza el pecho como un collar. Frecuenta montes y arbustales serranos y chaqueños, donde recorre las ramas bajas en parejas o grupos chicos.'},
+  'Hydropsalis torquata': {estado:'Atajacaminos de cola en tijera', curiosidad:'El macho tiene la cola larga y profundamente ahorquillada, que abre en tijera al volar. Es crepuscular y nocturno: de día pasa quieto en el suelo, camuflado entre la hojarasca, y al anochecer se lo ve seguido en caminos de tierra.'},
+  'Cranioleuca pyrrhophia': {estado:'Trepador de cabeza listada', curiosidad:'Se reconoce por la cabeza rayada y las alas y cola rojizas. Recorre ramas y troncos buscando insectos, a menudo en parejas o sumado a bandadas mixtas, y construye un nido cerrado de palitos.'},
+  'Pygochelidon cyanoleuca': {estado:'Pequeña golondrina de vientre blanco', curiosidad:'Tiene el dorso azul oscuro brillante, el vientre blanco y la cola apenas escotada. Nidifica en huecos de paredes, barrancas y árboles, y las poblaciones del sur se desplazan hacia el norte en invierno.'},
+  'Alopochelidon fucata': {estado:'Golondrina de cabeza rojiza, discreta y poco común', curiosidad:'Se distingue por la cabeza y la nuca de tono rojizo. Frecuenta pastizales y bañados, donde caza insectos volando bajo, y pasa más inadvertida que otras golondrinas más abundantes.'},
+  'Hirundo rustica': {estado:'Viajera de miles de kilómetros', curiosidad:'Cría en el hemisferio norte y pasa el verano austral en Sudamérica, en un viaje de miles de kilómetros. Se reconoce por la cola larga y ahorquillada, el dorso azul metálico y la garganta rojiza.'},
+  'Anthus chii': {estado:'Cachirla pequeña de pastizales', curiosidad:'Recorre el suelo de pastizales y bordes de caminos con pasos rápidos, moviendo la cola. En el vuelo de cortejo el macho asciende cantando y luego desciende en picada hasta el suelo.'}
 };
 
-const AVIST_INITIAL = {
-  223:{fecha:"2026-03-06",lugar:"Parque Sarmiento",foto:"fotos/columba_livia.jpg",notas:""},
-  105:{fecha:"2026-03-06",lugar:"Parque Sarmiento",foto:"fotos/sturnus_vulgaris.jpg",notas:""},
-  193:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/furnarius_rufus.jpg",notas:""},
-  331:{fecha:"2025-12-10",lugar:"Río Cuarto",foto:"fotos/pitangus_sulphuratus.jpg",notas:""},
-  225:{fecha:"2026-01-05",lugar:"Río Cuarto",foto:"fotos/patagioenas_picazuro.jpg",notas:""},
-  228:{fecha:"2025-12-25",lugar:"Río Cuarto",foto:"fotos/zenaida_auriculata.jpg",notas:""},
-  162:{fecha:"2025-12-24",lugar:"Río Cuarto",foto:"fotos/passer_domesticus.jpg",notas:""},
-  296:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/sicalis_flaveola.jpg",notas:""},
-  204:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/spinus_magellanicus.jpg",notas:""},
-  90:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/vanellus_chilensis.jpg",notas:""},
-  163:{fecha:"2026-01-03",lugar:"Río Cuarto",foto:"fotos/caracara_plancus.jpg",notas:""},
-  164:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/daptrius_chimango.jpg",notas:""},
-  53:{fecha:"2025-12-27",lugar:"Río Cuarto",foto:"fotos/athene_cunicularia.jpg",notas:""},
-  114:{fecha:"2025-12-25",lugar:"Lago Villa Dalcar, Río Cuarto",foto:"fotos/fulica_leucoptera.jpg",notas:""},
-  130:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/ardea_alba.jpg",notas:""},
-  213:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/rollandia_rolland.jpg",notas:""},
-  74:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/colaptes_campestris.jpg",notas:""},
-  77:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/colaptes_melanochloros.jpg",notas:""},
-  396:{fecha:"2025-12-24",lugar:"Río Cuarto",foto:"fotos/molothrus_bonariensis.jpg",notas:""},
-  307:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/saltator_aurantiirostris.jpg",notas:""},
-  64:{fecha:"2025-12-25",lugar:"Río Cuarto",foto:"fotos/mimus_saturninus.jpg",notas:""},
-  93:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/ciconia_maguari.jpg",notas:""},
-  279:{fecha:"2025-12-30",lugar:"Río Cuarto",foto:"fotos/troglodytes_musculus.jpg",notas:""},
-  103:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/guira_guira.jpg",notas:""},
-  82:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/zonotrichia_capensis.jpg",notas:""},
-  165:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/falco_sparverius.jpg",notas:""},
-  365:{fecha:"2025-12-29",lugar:"Parque Sarmiento",foto:"fotos/machetornis_rixosa.jpg",notas:""},
-  127:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/egretta_thula.jpg",notas:""},
-  39:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/platalea_ajaja.jpg",notas:""},
-  219:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/megaceryle_torquata.jpg",notas:""},
-  239:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/amazonetta_brasiliensis.jpg",notas:""},
-  209:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/myiopsitta_monachus.jpg",notas:""},
-  366:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/hymenops_perspicillatus.jpg",notas:""},
-  282:{fecha:"2026-01-18",lugar:"Villa Rumipal",foto:"fotos/coryphospingus_cucullatus.jpg",notas:""},
-  241:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/anas_bahamensis.jpg",notas:""},
-  255:{fecha:"2025-12-28",lugar:"Río Cuarto",foto:"fotos/chlorostilbon_lucidus.jpg",notas:""},
-  43:{fecha:"2025-12-29",lugar:"Parque Sarmiento",foto:"fotos/nannopterum_brasilianum.jpg",notas:""},
-  379:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/tachuris_rubrigastra.jpg",notas:""},
-  125:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/syrigma_sibilatrix.jpg",notas:""},
-  394:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/agelaioides_badius.jpg",notas:""},
-  156:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/progne_tapera.jpg",notas:""},
-  224:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/patagioenas_maculosa.jpg",notas:""},
-  299:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/microspingus_melanoleucus.jpg",notas:""},
-  409:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/turdus_chiguanco.jpg",notas:""},
-  155:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/progne_elegans.jpg",notas:""},
-  131:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/nycticorax_nycticorax.jpg",notas:""},
-  248:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/dendrocygna_viduata.jpg",notas:""},
-  247:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/dendrocygna_bicolor.jpg",notas:""},
-  38:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/plegadis_chihi.jpg",notas:""},
-  312:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/poospiza_whitii.jpg",notas:""},
-  290:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/sporophila_caerulescens.jpg",notas:""},
-  362:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/myiophobus_fasciatus.jpg",notas:""},
-  203:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/jacana_jacana.jpg",notas:""},
-  178:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/drymornis_bridgesii.jpg",notas:""},
-  115:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/fulica_rufifrons.jpg",notas:""},
-  214:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/podiceps_major.jpg",notas:""},
-  81:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/rhynchospiza_strigiceps.jpg",notas:""},
-  351:{fecha:"2026-01-18",lugar:"Villa Rumipal",foto:"fotos/elaenia_parvirostris.jpg",notas:""},
-  96:{fecha:"2026-01-18",lugar:"Villa Rumipal",foto:"fotos/phytotoma_rutila.jpg",notas:""},
-  264:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/tringa_flavipes.jpg",notas:""},
-  232:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/coscoroba_coscoroba.jpg",notas:""},
-  37:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/phimosus_infuscatus.jpg",notas:""},
-  134:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/botaurus_involucris.jpg",notas:""},
-  126:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/butorides_striata.jpg",notas:""},
-  315:{fecha:"2026-02-17",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/embernagra_platensis.jpg",notas:""},
-  128:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/ardea_ibis.jpg",notas:""},
-  380:{fecha:"2026-01-17",lugar:"Villa Rumipal",foto:"fotos/tyrannus_savana.jpg",notas:""},
-  171:{fecha:"2025-12-25",lugar:"Lago Villa Dalcar, Río Cuarto",foto:"fotos/pseudoseisura_lophotes.jpg",notas:""},
-  183:{fecha:"2025-12-27",lugar:"UNRC",foto:"fotos/coryphistera_alaudina.jpg",notas:""},
-  339:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/pyrocephalus_rubinus.jpg",notas:""},
-  19:{fecha:"2026-04-02",lugar:"UNRC",foto:"fotos/rupornis_magnirostris.jpg",notas:""},
-  410:{fecha:"2026-03-31",lugar:"Parque Sarmiento",foto:"fotos/turdus_rufiventris.jpg",notas:""},
-  227:{fecha:"2026-04-25",lugar:"UNRC",foto:"fotos/columbina_picui.jpg",notas:""},
-  287:{fecha:"2026-04-25",lugar:"UNRC",foto:"fotos/paroaria_coronata.jpg",notas:""},
-  66:{fecha:"2026-04-28",lugar:"Río Cuarto",foto:"fotos/mimus_triurus.jpg",notas:""},
-  357:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/xolmis_irupero.jpg",notas:""},
-  233:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/anas_flavirostris.jpg",notas:""},
-  360:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/neoxolmis_coronatus.jpg",notas:""},
-  372:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/lessonia_rufa.jpg",notas:""},
-  298:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/sicalis_luteola.jpg",notas:""},
-  195:{fecha:"2026-05-02",lugar:"Reserva Provincial Chocancharava",foto:"fotos/anumbius_annumbi.jpg",notas:""},
-  354:{fecha:"2026-05-09",lugar:"Reserva Provincial Chocancharava",foto:"fotos/agriornis_micropterus.jpg",notas:""},
-  211:{fecha:"2026-05-16",lugar:"Reserva Provincial Chocancharava",foto:"fotos/cyanoliseus_patagonus.jpg",notas:""},
-  136:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/chroicocephalus_maculipennis.jpg",notas:""},
-  281:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/polioptila_dumicola.jpg",notas:""},
-  395:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/molothrus_rufoaxillaris.jpg",notas:""},
-  303:{fecha:"2026-05-23",lugar:"Reserva Provincial Chocancharava",foto:"fotos/rauenia_bonariensis.jpg",notas:""},
-  242:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/anas_georgica.jpg",notas:""},
-  132:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/ardea_cocoi.jpg",notas:""},
-  79:{fecha:"2026-05-31",lugar:"Bañado del Tigre Muerto, Tosquita",foto:"fotos/chauna_torquata.jpg",notas:""},
-  16:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/elanus_leucurus.jpg",notas:""},
-  322:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/himantopus_mexicanus.jpg",notas:""},
-  106:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/phoenicopterus_chilensis.jpg",notas:""},
-  34:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/theristicus_melanopis.jpg",notas:""},
-  241:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/anas_bahamensis.jpg",notas:""},
-  201:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/cinclodes_fuscus.jpg",notas:""},
-  12:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/circus_cinereus.jpg",notas:""},
-  65:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/mimus_patagonicus.jpg",notas:""},
-  284:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/ammodramus_humeralis.jpg",notas:""},
-  397:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/agelasticus_thilius.jpg",notas:""},
-  238:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/spatula_platalea.jpg",notas:""},
-  324:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/nothura_maculosa.jpg",notas:""},
-  265:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/tringa_melanoleuca.jpg",notas:""},
-  218:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/chloroceryle_americana.jpg",notas:""},
-  13:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/parabuteo_unicinctus.jpg",notas:""},
-  366:{fecha:"2026-05-31",lugar:"Bañado del Tigre Muerto, Tosquita",foto:"fotos/hymenops_perspicillatus.jpg",notas:""},
-  235:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/spatula_versicolor.jpg",notas:""},
-  367:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/serpophaga_nigricans.jpg",notas:""},
-  392:{fecha:"2026-05-31",lugar:"Caminos Rurales Tosquita",foto:"fotos/pseudoleistes_virescens.jpg",notas:""},
-  370:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/serpophaga_subcristata.jpg",notas:""},
-  168:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/falco_femoralis.jpg",notas:""},
-  252:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/sappho_sparganurus.jpg",notas:""},
-  10:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/geranoaetus_polyosoma.jpg",notas:""},
-  208:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/psilopsiagon_aymara.jpg",notas:""},
-  169:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/tarphonomus_certhioides.jpg",notas:""},
-  174:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/asthenes_baeri.jpg",notas:""},
-  371:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/serpophaga_griseicapilla.jpg",notas:""},
-  387:{fecha:"2026-06-12",lugar:"Dique La Viña",foto:"fotos/icterus_pyrrhopterus.jpg",notas:""},
-  45:{fecha:"2026-06-11",lugar:"Sendero la piedra encajada, Los Hornillos, Cba",foto:"fotos/vultur_gryphus.jpg",notas:""},
-  229:{fecha:"2026-06-11",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/leptotila_verreauxi.jpg",notas:""},
-  73:{fecha:"2026-06-11",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/melanerpes_candidus.jpg",notas:""},
-  40:{fecha:"2026-06-11",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/thamnophilus_caerulescens.jpg",notas:""},
-  26:{fecha:"2026-06-11",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/myioborus_brunniceps.jpg",notas:""},
-  408:{fecha:"2026-06-10",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/turdus_amaurochalinus.jpg",notas:""},
-  68:{fecha:"2026-06-10",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/piranga_flava.jpg",notas:""},
-  216:{fecha:"2026-06-10",lugar:"Balneario Villa Cura Brochero, Cba",foto:"fotos/podilymbus_podiceps.jpg",notas:""},
-  207:{fecha:"2026-06-09",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/thectocercus_acuticaudatus.jpg",notas:""},
-  48:{fecha:"2026-06-12",lugar:"El Rincon del Molle, Villa de las Rosas, Cba",foto:"fotos/coragyps_atratus.jpg",notas:""},
-  4:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/geranoaetus_melanoleucus.jpg",notas:""},
-  15:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/circus_buffoni.jpg",notas:""},
-  170:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/upucerthia_dumetaria.jpg",notas:""},
-  191:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/phacellodomus_striaticollis.jpg",notas:""},
-  175:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/asthenes_pyrrholeuca.jpg",notas:""},
-  280:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/cistothorus_platensis.jpg",notas:""},
-  61:{fecha:"2026-06-20",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/anthus_hellmayri.jpg",notas:""},
-  217:{fecha:"2026-06-27",lugar:"Laguna Los Medanitos, Paso del Durazno",foto:"fotos/podiceps_occipitalis.jpg",notas:""},
-  118:{fecha:"2026-06-27",lugar:"Laguna Los Medanitos, Paso del Durazno",foto:"fotos/pardirallus_sanguinolentus.jpg",notas:""},
-  116:{fecha:"2026-06-27",lugar:"Laguna Los Medanitos, Paso del Durazno",foto:"fotos/fulica_armillata.jpg",notas:""},
-  194:{fecha:"2026-06-27",lugar:"Laguna Los Medanitos, Paso del Durazno",foto:"fotos/phleocryptes_melanops.jpg",notas:""},
-  246:{fecha:"2026-06-27",lugar:"Laguna Los Medanitos, Paso del Durazno",foto:"fotos/callonetta_leucophrys.jpg",notas:""},
-  182:{fecha:"2026-07-03",lugar:"Río Cuarto",foto:"fotos/leptasthenura_platensis.jpg",notas:""},
-  60:{fecha:"2026-07-09",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/anthus_correndera.jpg",notas:""},
-  293:{fecha:"2026-07-09",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/diuca_diuca.jpg",notas:""},
-  244:{fecha:"2026-07-19",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/netta_peposaca.jpg",notas:""},
-  245:{fecha:"2026-07-19",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/oxyura_vittata.jpg",notas:""},
-  236:{fecha:"2026-07-19",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/spatula_cyanoptera.jpg",notas:""},
-  234:{fecha:"2026-07-19",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/heteronetta_atricapilla.jpg",notas:""},
-  121:{fecha:"2026-07-19",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/gallinula_galeata.jpg",notas:""},
-  398:{fecha:"2026-07-19",lugar:"Laguna Rivero, Alcira Gigena",foto:"fotos/chrysomus_ruficapillus.jpg",notas:""},
-  222:{fecha:"2026-07-26",lugar:"Río Cuarto",foto:"fotos/accipiter_striatus.jpg",notas:""},
-  67:{fecha:"2026-07-27",lugar:"Reserva Hídrica Achiras",foto:"fotos/aramus_guarauna.jpg",notas:""},
-  181:{fecha:"2026-07-27",lugar:"Bañado Arroyo Chico, Santa Catalina",foto:"fotos/leptasthenura_aegithaloides.jpg",notas:""},
-  375:{fecha:"2026-07-28",lugar:"Río Cuarto",foto:"fotos/suiriri_suiriri.jpg",notas:""}
-};
+let AVIST_INITIAL = {};   // se carga desde avistamientos.json (ver cargarDatos)
 let avist = Object.assign({}, AVIST_INITIAL);
 let curId = null;
 let filtro = 'enc';
@@ -1554,7 +1364,7 @@ function irAlbum(filtroVal){
 
 
 // ── MAPA ─────────────────────────────────────────────────────────────────────
-const LUGARES_MAP = [{"id": 0, "nombre": "Río Cuarto", "lat": -33.1232, "lon": -64.3493, "count": 14, "especies": ["Benteveo", "Paloma Picazuró", "Torcaza", "Gorrión", "Carancho", "Lechucita Vizcachera", "Tordo Renegrido", "Calandria Grande", "Ratona", "Picaflor Verde", "Calandria Real", "Coludito Copetón", "Esparvero Estriado", "Suirirí Gris"]}, {"id": 1, "nombre": "UNRC", "lat": -33.1197, "lon": -64.2938, "count": 15, "especies": ["Hornero", "Jilguero Dorado", "Tero", "Chimango", "Carpintero Campestre", "Pirincho", "Chingolo", "Halconcito Colorado", "Cotorra", "Chiflón", "Tordo Músico", "Crestudo", "Taguató", "Torcacita Picuí", "Cardenal Copete Rojo"]}, {"id": 2, "nombre": "Parque Sarmiento", "lat": -33.105, "lon": -64.338, "count": 7, "especies": ["Picabuey", "Biguá", "Paloma Bravía", "Estornino Pinto", "Churrinche", "Zorzal Colorado", "Ganso Común"]}, {"id": 3, "nombre": "Villa Rumipal", "lat": -32.1581, "lon": -64.5093, "count": 28, "especies": ["Garza Blanca", "Carpintero Real", "Pepitero de Collar", "Garcita Blanca", "Martín Pescador Grande", "Pato Cutirí", "Brasita de Fuego", "Golondrina Parda", "Paloma Manchada", "Monterita Cabeza Negra", "Zorzal Chiguanco", "Golondrina Negra", "Garza Bruja", "Sirirí Pampa", "Sirirí Colorado", "Cuervillo de Cañada", "Sietevestidos Serrano", "Corbatita", "Mosqueta Estriada", "Jacana", "Chinchero Grande", "Gallareta Escudete Rojo", "Macá Grande", "Cachilo Chaqueño", "Fiofío Pico Corto", "Cortarramas", "Garcita Bueyera", "Tijereta"]}, {"id": 4, "nombre": "Lago Villa Dalcar, Río Cuarto", "lat": -33.1069, "lon": -64.3754, "count": 2, "especies": ["Gallareta Chica", "Cacholote Castaño"]}, {"id": 5, "nombre": "Laguna Rivero, Alcira Gigena", "lat": -32.7828, "lon": -64.3394, "count": 19, "especies": ["Cabecitanegra", "Macá Cara Blanca", "Cigüeña Americana", "Espátula Rosada", "Pico de Plata", "Pato Gargantilla", "Tachurí Sietecolores", "Pitotoy Chico", "Coscoroba", "Cuervillo Cara Pelada", "Mirasol Estriado", "Garcita Azulada", "Verdón", "Pato Picazo", "Pato Zambullidor Chico", "Pato Colorado", "Pato Cabeza Negra", "Pollona Negra", "Varillero Congo"]}, {"id": 6, "nombre": "Reserva Provincial Chocancharava", "lat": -33.12101611098728, "lon": -64.29258510270435, "count": 12, "especies": ["Monjita Blanca", "Pato Barcino", "Monjita Coronada", "Sobrepuesto Austral", "Misto", "Leñatero", "Gaucho Pardo", "Loro Barranquero", "Gaviota Capucho Café", "Tacuarita Azul", "Tordo Pico Corto", "Naranjero"]}, {"id": 7, "nombre": "Caminos Rurales Tosquita", "lat": -33.7414217, "lon": -64.361675, "count": 20, "especies": ["Pato Maicero", "Garza Mora", "Milano Blanco", "Tero Real", "Flamenco Austral", "Bandurria Austral", "Pato Gargantilla", "Remolinera Parda", "Gavilán Ceniciento", "Calandria Mora", "Cachilo Ceja Amarilla", "Varillero Ala Amarilla", "Pato Cuchara", "Inambú Campestre", "Pitotoy Grande", "Martín Pescador Chico", "Gavilán Mixto", "Pato Capuchino", "Piojito Gris", "Pecho Amarillo"]}, {"id": 8, "nombre": "Bañado del Tigre Muerto, Tosquita", "lat": -33.6667, "lon": -64.1666, "count": 2, "especies": ["Chajá", "Pico de Plata"]}, {"id": 9, "nombre": "Dique La Viña", "lat": -31.870599869251986, "lon": -65.03479846836336, "count": 9, "especies": ["Piojito Tiquitiqui", "Halcón Plomizo", "Picaflor Cometa", "Aguilucho Ñanco", "Catita Serrana Grande", "Bandurrita Chaqueña", "Canastero Chaqueño", "Piojito Trinador", "Boyerito"]}, {"id": 10, "nombre": "Sendero la piedra encajada, Los Hornillos, Cba", "lat": -31.901078164404872, "lon": -64.96676538925638, "count": 1, "especies": ["Cóndor Andino"]}, {"id": 11, "nombre": "El Rincon del Molle, Villa de las Rosas, Cba", "lat": -31.960790466179933, "lon": -65.01716290883417, "count": 8, "especies": ["Yerutí Gris", "Carpintero Blanco", "Choca Corona Negruzca", "Arañero Corona Rojiza", "Zorzal Chalchalero", "Fueguero", "Calancate Cabeza Azul", "Jote Cabeza Negra"]}, {"id": 12, "nombre": "Balneario Villa Cura Brochero, Cba", "lat": -31.70612908699028, "lon": -65.01150074885712, "count": 1, "especies": ["Maca Pico Grueso"]}, {"id": 13, "nombre": "Bañado Arroyo Chico, Santa Catalina", "lat": -33.21263635421962, "lon": -64.45643973200526, "count": 10, "especies": ["Aguila Mora", "Gavilán Planeador", "Bandurrita Esteparia", "Espinero Pecho Manchado", "Canastero Coludo", "Ratona Aperdizada", "Cachirla Pálida", "Cachirla Goteada", "Diuca", "Coludito Cola Negra"]}, {"id": 14, "nombre": "Laguna Los Medanitos, Paso del Durazno", "lat": -33.15589590274583, "lon": -63.98954745748123, "count": 5, "especies": ["Macá Plateado", "Gallineta Pico Pintado", "Gallareta Ligas Rojas", "Junquero", "Pato de Collar"]}, {"id": 15, "nombre": "Reserva Hídrica Achiras", "lat": -33.17193248085537, "lon": -64.97205489545436, "count": 1, "especies": ["Carau"]}];
+let LUGARES_MAP = [];   // se carga desde avistamientos.json (ver cargarDatos)
 let lugarActivo = null;
 let mapaAvesOrdenadas = [];
 let modalNavDir = 1;
@@ -1562,12 +1372,8 @@ let modalNavDir = 1;
 function mapaIrEspecie(idAve) {
   const lugar = LUGARES_MAP[lugarActivo];
   if(lugar) {
-    const idsLugar = [];
-    for(const [idStr, av] of Object.entries(avist)) {
-      if(av.lugar === lugar.nombre) idsLugar.push(parseInt(idStr));
-    }
     mapaAvesOrdenadas = AVES
-      .filter(a => idsLugar.includes(a.id))
+      .filter(a => lugar.ids.includes(a.id) && avist[a.id])
       .sort((a,b) => a.comun.localeCompare(b.comun,'es'));
   }
   openM(idAve);
@@ -1594,14 +1400,10 @@ function mapaClick(idx) {
   // Poblar especies del lugar
   const ul = document.getElementById(`lugar-especies-${idx}`);
   if(ul && !ul.dataset.loaded) {
-    const especiesEnLugar = [];
-    for(const [idStr, av] of Object.entries(avist)) {
-      if(av.lugar === lugar.nombre) {
-        const ave = AVES.find(a => a.id === parseInt(idStr));
-        if(ave) especiesEnLugar.push({id: parseInt(idStr), comun: ave.comun});
-      }
-    }
-    const lista = (especiesEnLugar.length > 0 ? especiesEnLugar : lugar.especies.map(e=>({id:null,comun:e})))
+    const lista = lugar.ids
+      .filter(id => avist[id])
+      .map(id => { const ave = AVES.find(a => a.id === id); return ave ? {id: id, comun: ave.comun} : null; })
+      .filter(Boolean)
       .sort((a,b) => a.comun.localeCompare(b.comun,'es'));
     ul.innerHTML = lista.map(e =>
       e.id != null
@@ -1615,6 +1417,35 @@ function mapaClick(idx) {
       if(li && li.dataset.aveid) mapaIrEspecie(parseInt(li.dataset.aveid));
     });
   }
+}
+
+
+// Carga avistamientos.json (lo genera sync/sync_ebird.py desde el CSV de eBird)
+async function cargarDatos() {
+  try {
+    const res = await fetch('avistamientos.json?v=' + Date.now());
+    const d = await res.json();
+    AVIST_INITIAL = d.avistamientos || {};
+    LUGARES_MAP = d.lugares || [];
+  } catch(e) {
+    console.error('No se pudo cargar avistamientos.json', e);
+  }
+}
+function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function buildMapaPanel() {
+  const panel = document.getElementById('mapa-panel');
+  if(!panel) return;
+  panel.innerHTML = LUGARES_MAP.map((l, i) => `
+    <div class="mapa-lugar-item" id="lugar-item-${i}">
+      <div class="mapa-lugar-header" id="lugar-header-${i}" onclick="mapaClick(${i})">
+        <div>
+          <div class="mapa-lugar-nombre">${escHtml(l.nombre)}</div>
+          <div class="mapa-lugar-count" id="lugar-count-${i}">${l.count} especie${l.count === 1 ? '' : 's'}</div>
+        </div>
+        <span class="mapa-lugar-arrow">▼</span>
+      </div>
+      <ul class="mapa-lugar-especies" id="lugar-especies-${i}"></ul>
+    </div>`).join('');
 }
 
 function initLeafletMap() {
@@ -1754,7 +1585,15 @@ async function loadUltimoVideo() {
 
 function init() {
   const s = localStorage.getItem('av_avist');
-  avist = Object.assign({}, AVIST_INITIAL, s ? JSON.parse(s) : {});
+  avist = Object.assign({}, AVIST_INITIAL);
+  if(s) {
+    try {
+      for(const [k, v] of Object.entries(JSON.parse(s))) {
+        if(AVIST_INITIAL[k]) { if(v && v.notas) avist[k] = Object.assign({}, AVIST_INITIAL[k], {notas: v.notas}); }
+        else avist[k] = v;   // marcadas a mano en el navegador
+      }
+    } catch(e) {}
+  }
   const r = localStorage.getItem('av_redes'); if(r) redesData = JSON.parse(r);
   const p = localStorage.getItem('av_perfil');
   if(p) {
@@ -2133,7 +1972,8 @@ document.addEventListener('keydown', e => {
     else if(e.key==='Escape') closeM();
   }
 });
-init();
+const domListo = new Promise(r => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', r) : r());
+Promise.all([cargarDatos(), domListo]).then(() => { init(); buildMapaPanel(); });
 document.addEventListener("DOMContentLoaded", buildFooter);
 </script>
 
@@ -2147,169 +1987,8 @@ document.addEventListener("DOMContentLoaded", buildFooter);
         <div id="mapa-iframe-wrap">
           <iframe id="mapa-iframe" src="https://www.openstreetmap.org/export/embed.html?bbox=-65.0,-33.6,-63.8,-32.0&layer=mapnik" allowfullscreen loading="lazy"></iframe>
         </div>
-        <div class="mapa-panel">
-          <div class="mapa-lugar-item" id="lugar-item-0">
-        <div class="mapa-lugar-header" id="lugar-header-0" onclick="mapaClick(0)">
-          <div>
-            <div class="mapa-lugar-nombre">Río Cuarto</div>
-            <div class="mapa-lugar-count" id="lugar-count-0">14 especies</div>
+        <div class="mapa-panel" id="mapa-panel">
           </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-0"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-1">
-        <div class="mapa-lugar-header" id="lugar-header-1" onclick="mapaClick(1)">
-          <div>
-            <div class="mapa-lugar-nombre">UNRC</div>
-            <div class="mapa-lugar-count" id="lugar-count-1">15 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-1"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-2">
-        <div class="mapa-lugar-header" id="lugar-header-2" onclick="mapaClick(2)">
-          <div>
-            <div class="mapa-lugar-nombre">Parque Sarmiento</div>
-            <div class="mapa-lugar-count" id="lugar-count-2">6 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-2"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-3">
-        <div class="mapa-lugar-header" id="lugar-header-3" onclick="mapaClick(3)">
-          <div>
-            <div class="mapa-lugar-nombre">Villa Rumipal</div>
-            <div class="mapa-lugar-count" id="lugar-count-3">28 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-3"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-4">
-        <div class="mapa-lugar-header" id="lugar-header-4" onclick="mapaClick(4)">
-          <div>
-            <div class="mapa-lugar-nombre">Lago Villa Dalcar, Río Cuarto</div>
-            <div class="mapa-lugar-count" id="lugar-count-4">2 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-4"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-5">
-        <div class="mapa-lugar-header" id="lugar-header-5" onclick="mapaClick(5)">
-          <div>
-            <div class="mapa-lugar-nombre">Laguna Rivero, Alcira Gigena</div>
-            <div class="mapa-lugar-count" id="lugar-count-5">19 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-5"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-6">
-        <div class="mapa-lugar-header" id="lugar-header-6" onclick="mapaClick(6)">
-          <div>
-            <div class="mapa-lugar-nombre">Reserva Provincial Chocancharava</div>
-            <div class="mapa-lugar-count" id="lugar-count-6">12 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-6"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-7">
-        <div class="mapa-lugar-header" id="lugar-header-7" onclick="mapaClick(7)">
-          <div>
-            <div class="mapa-lugar-nombre">Caminos Rurales Tosquita</div>
-            <div class="mapa-lugar-count" id="lugar-count-7">20 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-7"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-8">
-        <div class="mapa-lugar-header" id="lugar-header-8" onclick="mapaClick(8)">
-          <div>
-            <div class="mapa-lugar-nombre">Bañado del Tigre Muerto, Tosquita</div>
-            <div class="mapa-lugar-count" id="lugar-count-8">2 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-8"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-9">
-        <div class="mapa-lugar-header" id="lugar-header-9" onclick="mapaClick(9)">
-          <div>
-            <div class="mapa-lugar-nombre">Dique La Viña</div>
-            <div class="mapa-lugar-count" id="lugar-count-9">9 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-9"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-10">
-        <div class="mapa-lugar-header" id="lugar-header-10" onclick="mapaClick(10)">
-          <div>
-            <div class="mapa-lugar-nombre">Sendero la piedra encajada, Los Hornillos, Cba</div>
-            <div class="mapa-lugar-count" id="lugar-count-10">1 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-10"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-11">
-        <div class="mapa-lugar-header" id="lugar-header-11" onclick="mapaClick(11)">
-          <div>
-            <div class="mapa-lugar-nombre">El Rincon del Molle, Villa de las Rosas, Cba</div>
-            <div class="mapa-lugar-count" id="lugar-count-11">8 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-11"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-12">
-        <div class="mapa-lugar-header" id="lugar-header-12" onclick="mapaClick(12)">
-          <div>
-            <div class="mapa-lugar-nombre">Balneario Villa Cura Brochero, Cba</div>
-            <div class="mapa-lugar-count" id="lugar-count-12">1 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-12"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-13">
-        <div class="mapa-lugar-header" id="lugar-header-13" onclick="mapaClick(13)">
-          <div>
-            <div class="mapa-lugar-nombre">Bañado Arroyo Chico, Santa Catalina</div>
-            <div class="mapa-lugar-count" id="lugar-count-13">10 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-13"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-14">
-        <div class="mapa-lugar-header" id="lugar-header-14" onclick="mapaClick(14)">
-          <div>
-            <div class="mapa-lugar-nombre">Laguna Los Medanitos, Paso del Durazno</div>
-            <div class="mapa-lugar-count" id="lugar-count-14">5 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-14"></ul>
-      </div>
-<div class="mapa-lugar-item" id="lugar-item-15">
-        <div class="mapa-lugar-header" id="lugar-header-15" onclick="mapaClick(15)">
-          <div>
-            <div class="mapa-lugar-nombre">Reserva Hídrica Achiras</div>
-            <div class="mapa-lugar-count" id="lugar-count-15">1 especies</div>
-          </div>
-          <span class="mapa-lugar-arrow">▼</span>
-        </div>
-        <ul class="mapa-lugar-especies" id="lugar-especies-15"></ul>
-      </div>
-
-        </div>
       </div>
     </div>
 </div>
