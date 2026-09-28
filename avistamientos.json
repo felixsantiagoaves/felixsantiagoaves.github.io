@@ -4,1050 +4,1225 @@
  "avistamientos": {
   "4": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/geranoaetus_melanoleucus.jpg",
    "notas": ""
   },
   "10": {
    "fecha": "2026-06-12",
+   "hora": "10:00",
    "lugar": "Dique La Viña",
    "foto": "fotos/geranoaetus_polyosoma.jpg",
    "notas": ""
   },
   "12": {
    "fecha": "2026-05-31",
+   "hora": "09:03",
    "lugar": "Camino rural (-33.742, -64.417)",
    "foto": "fotos/circus_cinereus.jpg",
    "notas": ""
   },
   "13": {
    "fecha": "2026-05-31",
+   "hora": "13:27",
    "lugar": "Ruta Provincial S292 (-33.833, -64.151)",
    "foto": "fotos/parabuteo_unicinctus.jpg",
    "notas": ""
   },
   "15": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/circus_buffoni.jpg",
    "notas": ""
   },
   "16": {
    "fecha": "2026-05-31",
+   "hora": "09:03",
    "lugar": "Camino rural (-33.742, -64.417)",
    "foto": "fotos/elanus_leucurus.jpg",
    "notas": ""
   },
   "19": {
    "fecha": "2026-04-03",
+   "hora": "08:00",
    "lugar": "UNRC",
    "foto": "fotos/rupornis_magnirostris.jpg",
    "notas": ""
   },
   "26": {
    "fecha": "2026-06-11",
+   "hora": "17:00",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/myioborus_brunniceps.jpg",
    "notas": ""
   },
   "27": {
    "fecha": "2026-08-16",
+   "hora": "08:00",
    "lugar": "La Casona, Los Hornillos, Cba",
    "foto": null,
    "notas": ""
   },
   "30": {
    "fecha": "2026-09-20",
+   "hora": "07:52",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": null,
    "notas": ""
   },
   "34": {
    "fecha": "2026-05-31",
+   "hora": "11:23",
    "lugar": "Camino rural (-33.813, -64.318)",
    "foto": "fotos/theristicus_melanopis.jpg",
    "notas": ""
   },
   "37": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/phimosus_infuscatus.jpg",
    "notas": ""
   },
   "38": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/plegadis_chihi.jpg",
    "notas": ""
   },
   "39": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/platalea_ajaja.jpg",
    "notas": ""
   },
   "40": {
    "fecha": "2026-06-11",
+   "hora": "17:00",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/thamnophilus_caerulescens.jpg",
    "notas": ""
   },
   "43": {
    "fecha": "2025-12-29",
+   "hora": "06:30",
    "lugar": "Parque Sarmiento",
    "foto": "fotos/nannopterum_brasilianum.jpg",
    "notas": ""
   },
   "45": {
    "fecha": "2026-06-11",
+   "hora": "12:00",
    "lugar": "Sendero la piedra encajada, Los Hornillos, Cba",
    "foto": "fotos/vultur_gryphus.jpg",
    "notas": ""
   },
   "48": {
    "fecha": "2026-02-08",
+   "hora": "18:00",
    "lugar": "Paseo de la Costanera",
    "foto": "fotos/coragyps_atratus.jpg",
    "notas": ""
   },
   "52": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "53": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/athene_cunicularia.jpg",
    "notas": ""
   },
   "59": {
    "fecha": "2026-09-20",
+   "hora": "07:52",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": null,
    "notas": ""
   },
   "60": {
    "fecha": "2026-07-09",
+   "hora": "08:30",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/anthus_correndera.jpg",
    "notas": ""
   },
   "61": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/anthus_hellmayri.jpg",
    "notas": ""
   },
   "64": {
    "fecha": "2025-12-25",
+   "hora": "07:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/mimus_saturninus.jpg",
    "notas": ""
   },
   "65": {
    "fecha": "2026-05-31",
+   "hora": "09:03",
    "lugar": "Camino rural (-33.742, -64.417)",
    "foto": "fotos/mimus_patagonicus.jpg",
    "notas": ""
   },
   "66": {
    "fecha": "2026-04-28",
+   "hora": "10:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/mimus_triurus.jpg",
    "notas": ""
   },
   "67": {
    "fecha": "2026-07-27",
+   "hora": "08:58",
    "lugar": "Reserva Hídrica Achiras",
    "foto": "fotos/aramus_guarauna.jpg",
    "notas": ""
   },
   "68": {
    "fecha": "2026-06-10",
+   "hora": "08:30",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/piranga_flava.jpg",
    "notas": ""
   },
   "73": {
    "fecha": "2026-06-11",
+   "hora": "09:00",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/melanerpes_candidus.jpg",
    "notas": ""
   },
   "74": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/colaptes_campestris.jpg",
    "notas": ""
   },
   "75": {
    "fecha": "2026-08-16",
+   "hora": "08:00",
    "lugar": "La Casona, Los Hornillos, Cba",
    "foto": null,
    "notas": ""
   },
   "77": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/colaptes_melanochloros.jpg",
    "notas": ""
   },
   "79": {
    "fecha": "2026-05-31",
+   "hora": "13:47",
    "lugar": "Bañado del Tigre Muerto, Tosquita",
    "foto": "fotos/chauna_torquata.jpg",
    "notas": ""
   },
   "81": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/rhynchospiza_strigiceps.jpg",
    "notas": ""
   },
   "82": {
    "fecha": "2025-12-16",
+   "hora": "19:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/zonotrichia_capensis.jpg",
    "notas": ""
   },
   "90": {
    "fecha": "2025-12-16",
+   "hora": "19:15",
    "lugar": "Río Cuarto",
    "foto": "fotos/vanellus_chilensis.jpg",
    "notas": ""
   },
   "93": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/ciconia_maguari.jpg",
    "notas": ""
   },
   "96": {
    "fecha": "2026-01-18",
+   "hora": "06:30",
    "lugar": "Villa Rumipal",
    "foto": "fotos/phytotoma_rutila.jpg",
    "notas": ""
   },
   "103": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/guira_guira.jpg",
    "notas": ""
   },
   "105": {
    "fecha": "2026-03-06",
+   "hora": "18:30",
    "lugar": "Parque Sarmiento",
    "foto": "fotos/sturnus_vulgaris.jpg",
    "notas": ""
   },
   "106": {
    "fecha": "2026-05-31",
+   "hora": "11:23",
    "lugar": "Camino rural (-33.813, -64.318)",
    "foto": "fotos/phoenicopterus_chilensis.jpg",
    "notas": ""
   },
   "114": {
    "fecha": "2025-12-25",
+   "hora": "18:00",
    "lugar": "Lago Villa Dalcar, Río Cuarto",
    "foto": "fotos/fulica_leucoptera.jpg",
    "notas": ""
   },
   "115": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/fulica_rufifrons.jpg",
    "notas": ""
   },
   "116": {
    "fecha": "2026-06-27",
+   "hora": "09:00",
    "lugar": "Laguna Los Medanitos, Paso del Durazno",
    "foto": "fotos/fulica_armillata.jpg",
    "notas": ""
   },
   "118": {
    "fecha": "2026-06-27",
+   "hora": "09:00",
    "lugar": "Laguna Los Medanitos, Paso del Durazno",
    "foto": "fotos/pardirallus_sanguinolentus.jpg",
    "notas": ""
   },
   "121": {
    "fecha": "2026-07-19",
+   "hora": "08:08",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/gallinula_galeata.jpg",
    "notas": ""
   },
   "125": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/syrigma_sibilatrix.jpg",
    "notas": ""
   },
   "126": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/butorides_striata.jpg",
    "notas": ""
   },
   "127": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/egretta_thula.jpg",
    "notas": ""
   },
   "128": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/ardea_ibis.jpg",
    "notas": ""
   },
   "130": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/ardea_alba.jpg",
    "notas": ""
   },
   "131": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/nycticorax_nycticorax.jpg",
    "notas": ""
   },
   "132": {
    "fecha": "2026-05-31",
+   "hora": "11:23",
    "lugar": "Camino rural (-33.813, -64.318)",
    "foto": "fotos/ardea_cocoi.jpg",
    "notas": ""
   },
   "134": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/botaurus_involucris.jpg",
    "notas": ""
   },
   "136": {
    "fecha": "2026-05-23",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/chroicocephalus_maculipennis.jpg",
    "notas": ""
   },
   "151": {
    "fecha": "2026-09-20",
+   "hora": "07:52",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": null,
    "notas": ""
   },
   "152": {
    "fecha": "2026-09-20",
+   "hora": "07:52",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": null,
    "notas": ""
   },
   "153": {
    "fecha": "2026-08-08",
+   "hora": "08:52",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": null,
    "notas": ""
   },
   "155": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/progne_elegans.jpg",
    "notas": ""
   },
   "156": {
    "fecha": "2026-01-06",
+   "hora": "07:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/progne_tapera.jpg",
    "notas": ""
   },
   "157": {
    "fecha": "2026-07-27",
+   "hora": "13:22",
    "lugar": "Laguna Seca (Suco)",
    "foto": null,
    "notas": ""
   },
   "160": {
    "fecha": "2026-09-20",
+   "hora": "07:52",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": null,
    "notas": ""
   },
   "161": {
    "fecha": "2026-01-06",
+   "hora": "07:00",
    "lugar": "Río Cuarto",
    "foto": null,
    "notas": ""
   },
   "162": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/passer_domesticus.jpg",
    "notas": ""
   },
   "163": {
    "fecha": "2025-12-26",
+   "hora": "07:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/caracara_plancus.jpg",
    "notas": ""
   },
   "164": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/daptrius_chimango.jpg",
    "notas": ""
   },
   "165": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/falco_sparverius.jpg",
    "notas": ""
   },
   "168": {
    "fecha": "2026-06-12",
+   "hora": "10:00",
    "lugar": "Dique La Viña",
    "foto": "fotos/falco_femoralis.jpg",
    "notas": ""
   },
   "169": {
    "fecha": "2026-06-12",
+   "hora": "12:30",
    "lugar": "Dique La Viña - Ingreso Sur",
    "foto": "fotos/tarphonomus_certhioides.jpg",
    "notas": ""
   },
   "170": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/upucerthia_dumetaria.jpg",
    "notas": ""
   },
   "171": {
    "fecha": "2026-01-03",
+   "hora": "18:00",
    "lugar": "Parque Ecológico Urbano",
    "foto": "fotos/pseudoseisura_lophotes.jpg",
    "notas": ""
   },
   "174": {
    "fecha": "2026-06-12",
+   "hora": "12:30",
    "lugar": "Dique La Viña - Ingreso Sur",
    "foto": "fotos/asthenes_baeri.jpg",
    "notas": ""
   },
   "175": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/asthenes_pyrrholeuca.jpg",
    "notas": ""
   },
   "178": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/drymornis_bridgesii.jpg",
    "notas": ""
   },
   "181": {
    "fecha": "2026-07-27",
+   "hora": "15:44",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/leptasthenura_aegithaloides.jpg",
    "notas": ""
   },
   "182": {
    "fecha": "2026-07-03",
+   "hora": "13:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/leptasthenura_platensis.jpg",
    "notas": ""
   },
   "183": {
    "fecha": "2026-04-03",
+   "hora": "08:00",
    "lugar": "UNRC",
    "foto": "fotos/coryphistera_alaudina.jpg",
    "notas": ""
   },
   "184": {
    "fecha": "2026-09-20",
+   "hora": "07:52",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": null,
    "notas": ""
   },
   "189": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "191": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/phacellodomus_striaticollis.jpg",
    "notas": ""
   },
   "193": {
    "fecha": "2025-12-15",
+   "hora": "18:09",
    "lugar": "Río Cuarto",
    "foto": "fotos/furnarius_rufus.jpg",
    "notas": ""
   },
   "194": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/phleocryptes_melanops.jpg",
    "notas": ""
   },
   "195": {
    "fecha": "2026-05-02",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/anumbius_annumbi.jpg",
    "notas": ""
   },
   "198": {
    "fecha": "2026-08-16",
+   "hora": "08:00",
    "lugar": "La Casona, Los Hornillos, Cba",
    "foto": null,
    "notas": ""
   },
   "201": {
    "fecha": "2026-05-31",
+   "hora": "08:18",
    "lugar": "Ruta Nacional 35 (-33.727, -64.428)",
    "foto": "fotos/cinclodes_fuscus.jpg",
    "notas": ""
   },
   "203": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/jacana_jacana.jpg",
    "notas": ""
   },
   "204": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/spinus_magellanicus.jpg",
    "notas": ""
   },
   "207": {
    "fecha": "2026-06-09",
+   "hora": "17:00",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/thectocercus_acuticaudatus.jpg",
    "notas": ""
   },
   "208": {
    "fecha": "2026-06-12",
+   "hora": "10:00",
    "lugar": "Dique La Viña",
    "foto": "fotos/psilopsiagon_aymara.jpg",
    "notas": ""
   },
   "209": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/myiopsitta_monachus.jpg",
    "notas": ""
   },
   "211": {
    "fecha": "2026-05-16",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/cyanoliseus_patagonus.jpg",
    "notas": ""
   },
   "213": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/rollandia_rolland.jpg",
    "notas": ""
   },
   "214": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/podiceps_major.jpg",
    "notas": ""
   },
   "216": {
    "fecha": "2026-06-10",
+   "hora": "14:00",
    "lugar": "Balneario Villa Cura Brochero, Cba",
    "foto": "fotos/podilymbus_podiceps.jpg",
    "notas": ""
   },
   "217": {
    "fecha": "2026-06-27",
+   "hora": "09:00",
    "lugar": "Laguna Los Medanitos, Paso del Durazno",
    "foto": "fotos/podiceps_occipitalis.jpg",
    "notas": ""
   },
   "218": {
    "fecha": "2026-05-31",
+   "hora": "13:12",
    "lugar": "Ruta Provincial S292 (-33.833, -64.163)",
    "foto": "fotos/chloroceryle_americana.jpg",
    "notas": ""
   },
   "219": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/megaceryle_torquata.jpg",
    "notas": ""
   },
   "222": {
    "fecha": "2026-07-26",
+   "hora": "12:28",
    "lugar": "Río Cuarto",
    "foto": "fotos/accipiter_striatus.jpg",
    "notas": ""
   },
   "223": {
    "fecha": "2025-12-18",
+   "hora": "19:24",
    "lugar": "Las Higueras",
    "foto": "fotos/columba_livia.jpg",
    "notas": ""
   },
   "224": {
    "fecha": "2025-12-18",
+   "hora": "19:24",
    "lugar": "Las Higueras",
    "foto": "fotos/patagioenas_maculosa.jpg",
    "notas": ""
   },
   "225": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/patagioenas_picazuro.jpg",
    "notas": ""
   },
   "227": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/columbina_picui.jpg",
    "notas": ""
   },
   "228": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/zenaida_auriculata.jpg",
    "notas": ""
   },
   "229": {
    "fecha": "2026-06-11",
+   "hora": "09:00",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/leptotila_verreauxi.jpg",
    "notas": ""
   },
   "232": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/coscoroba_coscoroba.jpg",
    "notas": ""
   },
   "233": {
    "fecha": "2026-05-02",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/anas_flavirostris.jpg",
    "notas": ""
   },
   "234": {
    "fecha": "2026-07-19",
+   "hora": "08:08",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/heteronetta_atricapilla.jpg",
    "notas": ""
   },
   "235": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/spatula_versicolor.jpg",
    "notas": ""
   },
   "236": {
    "fecha": "2026-07-19",
+   "hora": "08:08",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/spatula_cyanoptera.jpg",
    "notas": ""
   },
   "238": {
    "fecha": "2026-05-31",
+   "hora": "11:23",
    "lugar": "Camino rural (-33.813, -64.318)",
    "foto": "fotos/spatula_platalea.jpg",
    "notas": ""
   },
   "239": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/amazonetta_brasiliensis.jpg",
    "notas": ""
   },
   "241": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/anas_bahamensis.jpg",
    "notas": ""
   },
   "242": {
    "fecha": "2026-05-31",
+   "hora": "11:23",
    "lugar": "Camino rural (-33.813, -64.318)",
    "foto": "fotos/anas_georgica.jpg",
    "notas": ""
   },
   "243": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "244": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/netta_peposaca.jpg",
    "notas": ""
   },
   "245": {
    "fecha": "2026-07-19",
+   "hora": "08:08",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/oxyura_vittata.jpg",
    "notas": ""
   },
   "246": {
    "fecha": "2026-04-03",
+   "hora": "08:00",
    "lugar": "UNRC",
    "foto": "fotos/callonetta_leucophrys.jpg",
    "notas": ""
   },
   "247": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/dendrocygna_bicolor.jpg",
    "notas": ""
   },
   "248": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/dendrocygna_viduata.jpg",
    "notas": ""
   },
   "252": {
    "fecha": "2026-06-12",
+   "hora": "10:00",
    "lugar": "Dique La Viña",
    "foto": "fotos/sappho_sparganurus.jpg",
    "notas": ""
   },
   "255": {
    "fecha": "2025-12-24",
+   "hora": "07:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/chlorostilbon_lucidus.jpg",
    "notas": ""
   },
   "264": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/tringa_flavipes.jpg",
    "notas": ""
   },
   "265": {
    "fecha": "2026-05-31",
+   "hora": "13:12",
    "lugar": "Ruta Provincial S292 (-33.833, -64.163)",
    "foto": "fotos/tringa_melanoleuca.jpg",
    "notas": ""
   },
   "279": {
    "fecha": "2025-12-28",
+   "hora": "07:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/troglodytes_musculus.jpg",
    "notas": ""
   },
   "280": {
    "fecha": "2026-06-20",
+   "hora": "09:00",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/cistothorus_platensis.jpg",
    "notas": ""
   },
   "281": {
    "fecha": "2026-05-23",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/polioptila_dumicola.jpg",
    "notas": ""
   },
   "282": {
    "fecha": "2026-01-18",
+   "hora": "06:30",
    "lugar": "Villa Rumipal",
    "foto": "fotos/coryphospingus_cucullatus.jpg",
    "notas": ""
   },
   "284": {
    "fecha": "2026-05-31",
+   "hora": "09:03",
    "lugar": "Camino rural (-33.742, -64.417)",
    "foto": "fotos/ammodramus_humeralis.jpg",
    "notas": ""
   },
   "287": {
    "fecha": "2026-04-25",
+   "hora": "08:30",
    "lugar": "UNRC",
    "foto": "fotos/paroaria_coronata.jpg",
    "notas": ""
   },
   "290": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/sporophila_caerulescens.jpg",
    "notas": ""
   },
   "293": {
    "fecha": "2026-07-09",
+   "hora": "08:30",
    "lugar": "Bañado Arroyo Chico, Santa Catalina",
    "foto": "fotos/diuca_diuca.jpg",
    "notas": ""
   },
   "296": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/sicalis_flaveola.jpg",
    "notas": ""
   },
   "298": {
    "fecha": "2026-05-02",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/sicalis_luteola.jpg",
    "notas": ""
   },
   "299": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/microspingus_melanoleucus.jpg",
    "notas": ""
   },
   "302": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "303": {
    "fecha": "2026-05-23",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/rauenia_bonariensis.jpg",
    "notas": ""
   },
   "305": {
    "fecha": "2026-07-27",
+   "hora": "08:58",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "306": {
    "fecha": "2026-08-16",
+   "hora": "08:00",
    "lugar": "La Casona, Los Hornillos, Cba",
    "foto": null,
    "notas": ""
   },
   "307": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/saltator_aurantiirostris.jpg",
    "notas": ""
   },
   "312": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/poospiza_whitii.jpg",
    "notas": ""
   },
   "315": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/embernagra_platensis.jpg",
    "notas": ""
   },
   "322": {
    "fecha": "2026-05-31",
+   "hora": "11:23",
    "lugar": "Camino rural (-33.813, -64.318)",
    "foto": "fotos/himantopus_mexicanus.jpg",
    "notas": ""
   },
   "323": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "324": {
    "fecha": "2026-05-31",
+   "hora": "13:12",
    "lugar": "Ruta Provincial S292 (-33.833, -64.163)",
    "foto": "fotos/nothura_maculosa.jpg",
    "notas": ""
   },
   "325": {
    "fecha": "2026-07-27",
+   "hora": "08:58",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "327": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "331": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/pitangus_sulphuratus.jpg",
    "notas": ""
   },
   "333": {
    "fecha": "2026-08-16",
+   "hora": "18:00",
    "lugar": "Dique La Viña",
    "foto": null,
    "notas": ""
   },
   "338": {
    "fecha": "2026-08-30",
+   "hora": "08:54",
    "lugar": "Reserva Hídrica Achiras",
    "foto": null,
    "notas": ""
   },
   "339": {
    "fecha": "2026-03-31",
+   "hora": "07:30",
    "lugar": "Parque Sarmiento",
    "foto": "fotos/pyrocephalus_rubinus.jpg",
    "notas": ""
   },
   "351": {
    "fecha": "2026-01-18",
+   "hora": "06:30",
    "lugar": "Villa Rumipal",
    "foto": "fotos/elaenia_parvirostris.jpg",
    "notas": ""
   },
   "354": {
    "fecha": "2026-05-09",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/agriornis_micropterus.jpg",
    "notas": ""
   },
   "357": {
    "fecha": "2026-05-02",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/xolmis_irupero.jpg",
    "notas": ""
   },
   "360": {
    "fecha": "2026-05-02",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/neoxolmis_coronatus.jpg",
    "notas": ""
   },
   "362": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/myiophobus_fasciatus.jpg",
    "notas": ""
   },
   "365": {
    "fecha": "2025-12-29",
+   "hora": "06:30",
    "lugar": "Parque Sarmiento",
    "foto": "fotos/machetornis_rixosa.jpg",
    "notas": ""
   },
   "366": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/hymenops_perspicillatus.jpg",
    "notas": ""
   },
   "367": {
    "fecha": "2026-02-08",
+   "hora": "18:00",
    "lugar": "Paseo de la Costanera",
    "foto": "fotos/serpophaga_nigricans.jpg",
    "notas": ""
   },
   "370": {
    "fecha": "2026-06-12",
+   "hora": "10:00",
    "lugar": "Dique La Viña",
    "foto": "fotos/serpophaga_subcristata.jpg",
    "notas": ""
   },
   "371": {
    "fecha": "2026-06-12",
+   "hora": "12:30",
    "lugar": "Dique La Viña - Ingreso Sur",
    "foto": "fotos/serpophaga_griseicapilla.jpg",
    "notas": ""
   },
   "372": {
    "fecha": "2026-05-02",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/lessonia_rufa.jpg",
    "notas": ""
   },
   "375": {
    "fecha": "2026-07-28",
+   "hora": "12:40",
    "lugar": "Río Cuarto",
    "foto": "fotos/suiriri_suiriri.jpg",
    "notas": ""
   },
   "379": {
    "fecha": "2026-02-17",
+   "hora": "07:59",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/tachuris_rubrigastra.jpg",
    "notas": ""
   },
   "380": {
    "fecha": "2025-12-18",
+   "hora": "19:24",
    "lugar": "Las Higueras",
    "foto": "fotos/tyrannus_savana.jpg",
    "notas": ""
   },
   "387": {
    "fecha": "2026-06-12",
+   "hora": "12:30",
    "lugar": "Dique La Viña - Ingreso Sur",
    "foto": "fotos/icterus_pyrrhopterus.jpg",
    "notas": ""
   },
   "392": {
    "fecha": "2026-05-31",
+   "hora": "09:54",
    "lugar": "Camino rural (-33.742, -64.373)",
    "foto": "fotos/pseudoleistes_virescens.jpg",
    "notas": ""
   },
   "394": {
    "fecha": "2025-12-27",
+   "hora": "07:00",
    "lugar": "UNRC",
    "foto": "fotos/agelaioides_badius.jpg",
    "notas": ""
   },
   "395": {
    "fecha": "2026-05-23",
+   "hora": "08:30",
    "lugar": "Reserva Provincial Chocancharava",
    "foto": "fotos/molothrus_rufoaxillaris.jpg",
    "notas": ""
   },
   "396": {
    "fecha": "2025-12-08",
+   "hora": "16:00",
    "lugar": "Río Cuarto",
    "foto": "fotos/molothrus_bonariensis.jpg",
    "notas": ""
   },
   "397": {
    "fecha": "2026-05-31",
+   "hora": "10:01",
    "lugar": "Camino rural (-33.741, -64.362)",
    "foto": "fotos/agelasticus_thilius.jpg",
    "notas": ""
   },
   "398": {
    "fecha": "2026-07-19",
+   "hora": "08:08",
    "lugar": "Laguna Rivero, Alcira Gigena",
    "foto": "fotos/chrysomus_ruficapillus.jpg",
    "notas": ""
   },
   "406": {
    "fecha": "2026-08-17",
+   "hora": "08:00",
    "lugar": "La Casona, Los Hornillos, Cba",
    "foto": null,
    "notas": ""
   },
   "408": {
    "fecha": "2026-06-10",
+   "hora": "08:30",
    "lugar": "El Rincón del Molle, Villa de las Rosas, Cba",
    "foto": "fotos/turdus_amaurochalinus.jpg",
    "notas": ""
   },
   "409": {
    "fecha": "2026-01-17",
+   "hora": "06:30",
    "lugar": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "foto": "fotos/turdus_chiguanco.jpg",
    "notas": ""
   },
   "410": {
    "fecha": "2026-03-31",
+   "hora": "07:30",
    "lugar": "Parque Sarmiento",
    "foto": "fotos/turdus_rufiventris.jpg",
    "notas": ""
