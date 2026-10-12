@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-28",
+ "generado": "2026-10-12",
  "fuente": "MyEBirdData.csv",
  "avistamientos": {
   "4": {
@@ -79,6 +79,13 @@
    "foto": "fotos/theristicus_melanopis.jpg",
    "notas": ""
   },
+  "35": {
+   "fecha": "2026-10-10",
+   "hora": "16:46",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/theristicus_caudatus.jpg",
+   "notas": ""
+  },
   "37": {
    "fecha": "2026-02-17",
    "hora": "07:59",
@@ -119,6 +126,13 @@
    "hora": "12:00",
    "lugar": "Sendero la piedra encajada, Los Hornillos, Cba",
    "foto": "fotos/vultur_gryphus.jpg",
+   "notas": ""
+  },
+  "47": {
+   "fecha": "2026-10-10",
+   "hora": "08:06",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/cathartes_aura.jpg",
    "notas": ""
   },
   "48": {
@@ -289,6 +303,13 @@
    "foto": "fotos/phoenicopterus_chilensis.jpg",
    "notas": ""
   },
+  "112": {
+   "fecha": "2026-10-10",
+   "hora": "14:17",
+   "lugar": "Cerca de Achiras (-33.166, -65.015)",
+   "foto": null,
+   "notas": ""
+  },
   "114": {
    "fecha": "2025-12-25",
    "hora": "18:00",
@@ -387,6 +408,13 @@
    "foto": "fotos/chroicocephalus_maculipennis.jpg",
    "notas": ""
   },
+  "144": {
+   "fecha": "2026-10-10",
+   "hora": "16:46",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/sterna_trudeaui.jpg",
+   "notas": ""
+  },
   "151": {
    "fecha": "2026-09-20",
    "hora": "07:52",
@@ -426,7 +454,7 @@
    "fecha": "2026-07-27",
    "hora": "13:22",
    "lugar": "Laguna Seca (Suco)",
-   "foto": "fotos/tachycineta_leucopyga.jpg",
+   "foto": null,
    "notas": ""
   },
   "160": {
@@ -975,6 +1003,13 @@
    "foto": "fotos/saltator_aurantiirostris.jpg",
    "notas": ""
   },
+  "308": {
+   "fecha": "2026-10-10",
+   "hora": "08:06",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/catamenia_analis.jpg",
+   "notas": ""
+  },
   "312": {
    "fecha": "2026-01-17",
    "hora": "06:30",
@@ -1059,6 +1094,13 @@
    "foto": "fotos/elaenia_parvirostris.jpg",
    "notas": ""
   },
+  "352": {
+   "fecha": "2026-10-10",
+   "hora": "08:06",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/elaenia_albiceps.jpg",
+   "notas": ""
+  },
   "354": {
    "fecha": "2026-05-09",
    "hora": "08:30",
@@ -1106,6 +1148,13 @@
    "hora": "18:00",
    "lugar": "Paseo de la Costanera",
    "foto": "fotos/serpophaga_nigricans.jpg",
+   "notas": ""
+  },
+  "369": {
+   "fecha": "2026-10-10",
+   "hora": "08:06",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/camptostoma_obsoletum.jpg",
    "notas": ""
   },
   "370": {
@@ -1164,6 +1213,13 @@
    "foto": "fotos/pseudoleistes_virescens.jpg",
    "notas": ""
   },
+  "393": {
+   "fecha": "2026-10-03",
+   "hora": "08:18",
+   "lugar": "Bañado Arroyo Chico, Santa Catalina",
+   "foto": null,
+   "notas": ""
+  },
   "394": {
    "fecha": "2025-12-27",
    "hora": "07:00",
@@ -1199,6 +1255,13 @@
    "foto": "fotos/chrysomus_ruficapillus.jpg",
    "notas": ""
   },
+  "403": {
+   "fecha": "2026-10-10",
+   "hora": "08:06",
+   "lugar": "Reserva Hídrica Achiras",
+   "foto": "fotos/streptoprocne_zonaris.jpg",
+   "notas": ""
+  },
   "406": {
    "fecha": "2026-08-17",
    "hora": "08:00",
@@ -1226,6 +1289,13 @@
    "lugar": "Parque Sarmiento",
    "foto": "fotos/turdus_rufiventris.jpg",
    "notas": ""
+  },
+  "416": {
+   "fecha": "2026-10-10",
+   "hora": "14:17",
+   "lugar": "Cerca de Achiras (-33.166, -65.015)",
+   "foto": "fotos/astur_bicolor.jpg",
+   "notas": ""
   }
  },
  "lugares": [
@@ -1234,12 +1304,16 @@
    "nombre": "Reserva Hídrica Achiras",
    "lat": -33.17164,
    "lon": -64.9667,
-   "count": 89,
+   "count": 115,
    "ids": [
+    4,
     10,
     19,
+    35,
     37,
+    38,
     43,
+    47,
     48,
     52,
     64,
@@ -1251,18 +1325,26 @@
     90,
     103,
     105,
+    112,
     114,
     115,
     116,
     118,
     121,
     125,
+    126,
     127,
     130,
     131,
     132,
     136,
+    144,
+    151,
+    152,
     153,
+    155,
+    156,
+    160,
     163,
     164,
     165,
@@ -1274,6 +1356,7 @@
     193,
     194,
     195,
+    198,
     201,
     209,
     211,
@@ -1290,6 +1373,7 @@
     229,
     232,
     233,
+    235,
     236,
     239,
     241,
@@ -1298,14 +1382,17 @@
     245,
     246,
     248,
+    255,
     279,
     281,
     296,
+    298,
     299,
     302,
     303,
     305,
     307,
+    308,
     315,
     322,
     323,
@@ -1314,21 +1401,123 @@
     327,
     331,
     338,
+    339,
+    352,
     354,
     357,
     365,
+    366,
     367,
+    369,
+    370,
     371,
+    375,
     387,
     394,
     395,
     396,
+    403,
     406,
-    408
+    408,
+    409,
+    410
    ]
   },
   {
    "id": 1,
+   "nombre": "Bañado Arroyo Chico, Santa Catalina",
+   "lat": -33.21846,
+   "lon": -64.45758,
+   "count": 84,
+   "ids": [
+    4,
+    15,
+    38,
+    43,
+    48,
+    53,
+    59,
+    60,
+    61,
+    64,
+    66,
+    74,
+    77,
+    82,
+    90,
+    96,
+    103,
+    105,
+    118,
+    125,
+    127,
+    130,
+    153,
+    156,
+    160,
+    162,
+    163,
+    164,
+    165,
+    169,
+    170,
+    171,
+    175,
+    181,
+    191,
+    193,
+    195,
+    201,
+    204,
+    209,
+    211,
+    223,
+    224,
+    225,
+    227,
+    228,
+    233,
+    235,
+    236,
+    239,
+    241,
+    242,
+    243,
+    244,
+    246,
+    248,
+    279,
+    280,
+    281,
+    293,
+    296,
+    298,
+    303,
+    307,
+    315,
+    322,
+    323,
+    324,
+    325,
+    327,
+    331,
+    339,
+    357,
+    360,
+    366,
+    367,
+    371,
+    372,
+    380,
+    393,
+    394,
+    395,
+    396,
+    397
+   ]
+  },
+  {
+   "id": 2,
    "nombre": "Reserva Provincial Chocancharava",
    "lat": -33.12069,
    "lon": -64.28905,
@@ -1417,7 +1606,7 @@
    ]
   },
   {
-   "id": 2,
+   "id": 3,
    "nombre": "Laguna Rivero, Alcira Gigena",
    "lat": -32.78007,
    "lon": -64.33772,
@@ -1497,85 +1686,60 @@
    ]
   },
   {
-   "id": 3,
-   "nombre": "Bañado Arroyo Chico, Santa Catalina",
-   "lat": -33.21846,
-   "lon": -64.45758,
-   "count": 69,
+   "id": 4,
+   "nombre": "Río Cuarto",
+   "lat": -33.1232,
+   "lon": -64.3493,
+   "count": 44,
    "ids": [
-    4,
-    15,
-    38,
+    19,
     48,
-    53,
-    60,
-    61,
     64,
     66,
     74,
     77,
     82,
     90,
-    96,
     103,
     105,
-    118,
-    125,
-    127,
-    130,
-    153,
+    136,
+    155,
+    156,
+    161,
     162,
     163,
     164,
     165,
-    169,
-    170,
     171,
-    175,
-    181,
-    191,
+    182,
     193,
-    195,
-    201,
     204,
     209,
-    211,
+    222,
     223,
     224,
     225,
     227,
     228,
-    233,
-    235,
-    236,
-    241,
-    242,
-    244,
-    246,
+    255,
     279,
-    280,
-    293,
+    287,
     296,
     298,
     303,
-    307,
-    315,
-    322,
-    324,
     331,
-    357,
-    360,
-    366,
+    339,
+    365,
     367,
-    372,
+    375,
+    380,
     394,
     395,
-    396,
-    397
+    396
    ]
   },
   {
-   "id": 4,
+   "id": 5,
    "nombre": "La Casona, Los Hornillos, Cba",
    "lat": -31.90435,
    "lon": -64.98974,
@@ -1627,7 +1791,7 @@
    ]
   },
   {
-   "id": 5,
+   "id": 6,
    "nombre": "El Rincón del Molle, Villa de las Rosas, Cba",
    "lat": -31.96086,
    "lon": -65.01744,
@@ -1674,56 +1838,6 @@
     408,
     409,
     410
-   ]
-  },
-  {
-   "id": 6,
-   "nombre": "Río Cuarto",
-   "lat": -33.1232,
-   "lon": -64.3493,
-   "count": 41,
-   "ids": [
-    19,
-    48,
-    64,
-    66,
-    74,
-    77,
-    82,
-    90,
-    103,
-    105,
-    136,
-    155,
-    156,
-    161,
-    162,
-    163,
-    164,
-    165,
-    171,
-    182,
-    193,
-    204,
-    209,
-    222,
-    223,
-    224,
-    225,
-    227,
-    228,
-    255,
-    279,
-    296,
-    298,
-    331,
-    365,
-    367,
-    375,
-    380,
-    394,
-    395,
-    396
    ]
   },
   {
@@ -1872,6 +1986,50 @@
   },
   {
    "id": 10,
+   "nombre": "Cerca de Achiras (-33.166, -65.015)",
+   "lat": -33.16639,
+   "lon": -65.01542,
+   "count": 35,
+   "ids": [
+    47,
+    48,
+    64,
+    66,
+    74,
+    77,
+    82,
+    112,
+    163,
+    164,
+    165,
+    171,
+    174,
+    178,
+    182,
+    183,
+    184,
+    193,
+    208,
+    209,
+    224,
+    227,
+    228,
+    229,
+    279,
+    324,
+    327,
+    331,
+    339,
+    362,
+    394,
+    406,
+    409,
+    410,
+    416
+   ]
+  },
+  {
+   "id": 11,
    "nombre": "Dique La Viña",
    "lat": -31.87076,
    "lon": -65.03505,
@@ -1910,7 +2068,7 @@
    ]
   },
   {
-   "id": 11,
+   "id": 12,
    "nombre": "Bañado del Tigre Muerto, Tosquita",
    "lat": -33.6667,
    "lon": -64.1666,
@@ -1948,7 +2106,7 @@
    ]
   },
   {
-   "id": 12,
+   "id": 13,
    "nombre": "Reserva Aguada de los Pájaros, Villa Rumipal",
    "lat": -32.15803,
    "lon": -64.5094,
@@ -1986,7 +2144,7 @@
    ]
   },
   {
-   "id": 13,
+   "id": 14,
    "nombre": "Laguna Seca (Suco)",
    "lat": -33.32628,
    "lon": -64.8614,
@@ -2021,7 +2179,7 @@
    ]
   },
   {
-   "id": 14,
+   "id": 15,
    "nombre": "Las Higueras",
    "lat": -33.09395,
    "lon": -64.28584,
@@ -2056,7 +2214,7 @@
    ]
   },
   {
-   "id": 15,
+   "id": 16,
    "nombre": "Calle Los Pájaros",
    "lat": -33.10174,
    "lon": -64.30492,
@@ -2085,7 +2243,7 @@
    ]
   },
   {
-   "id": 16,
+   "id": 17,
    "nombre": "Lotes Barrio Universitario",
    "lat": -33.1095,
    "lon": -64.31308,
@@ -2114,7 +2272,7 @@
    ]
   },
   {
-   "id": 17,
+   "id": 18,
    "nombre": "Parque Sarmiento",
    "lat": -33.10551,
    "lon": -64.3336,
@@ -2143,7 +2301,7 @@
    ]
   },
   {
-   "id": 18,
+   "id": 19,
    "nombre": "Camino rural (-33.813, -64.318)",
    "lat": -33.81273,
    "lon": -64.31826,
@@ -2168,7 +2326,7 @@
    ]
   },
   {
-   "id": 19,
+   "id": 20,
    "nombre": "Desagües de Banda Norte, barrio universitario",
    "lat": -33.11055,
    "lon": -64.30657,
@@ -2193,7 +2351,7 @@
    ]
   },
   {
-   "id": 20,
+   "id": 21,
    "nombre": "Dique La Viña - Ingreso Sur",
    "lat": -31.87305,
    "lon": -65.0317,
@@ -2216,7 +2374,7 @@
    ]
   },
   {
-   "id": 21,
+   "id": 22,
    "nombre": "Camino rural (-33.742, -64.417)",
    "lat": -33.74201,
    "lon": -64.41747,
@@ -2238,7 +2396,7 @@
    ]
   },
   {
-   "id": 22,
+   "id": 23,
    "nombre": "Estacionamiento Chango Más",
    "lat": -33.13112,
    "lon": -64.38223,
@@ -2260,7 +2418,7 @@
    ]
   },
   {
-   "id": 23,
+   "id": 24,
    "nombre": "Ruta Nacional 35 (-33.727, -64.428)",
    "lat": -33.72715,
    "lon": -64.42764,
@@ -2282,7 +2440,7 @@
    ]
   },
   {
-   "id": 24,
+   "id": 25,
    "nombre": "Camino rural (-33.741, -64.362)",
    "lat": -33.74142,
    "lon": -64.36168,
@@ -2303,7 +2461,7 @@
    ]
   },
   {
-   "id": 25,
+   "id": 26,
    "nombre": "Villa Rumipal",
    "lat": -32.18911,
    "lon": -64.47745,
@@ -2324,7 +2482,7 @@
    ]
   },
   {
-   "id": 26,
+   "id": 27,
    "nombre": "Parque Ecológico Urbano",
    "lat": -33.10868,
    "lon": -64.37547,
@@ -2344,7 +2502,7 @@
    ]
   },
   {
-   "id": 27,
+   "id": 28,
    "nombre": "Balneario Villa Cura Brochero, Cba",
    "lat": -31.70629,
    "lon": -65.01158,
@@ -2362,7 +2520,7 @@
    ]
   },
   {
-   "id": 28,
+   "id": 29,
    "nombre": "Camino rural (-33.759, -64.318)",
    "lat": -33.75903,
    "lon": -64.31837,
@@ -2379,7 +2537,7 @@
    ]
   },
   {
-   "id": 29,
+   "id": 30,
    "nombre": "Paseo de la Costanera",
    "lat": -33.11696,
    "lon": -64.33999,
@@ -2396,7 +2554,7 @@
    ]
   },
   {
-   "id": 30,
+   "id": 31,
    "nombre": "Ruta Provincial S292 (-33.833, -64.163)",
    "lat": -33.8334,
    "lon": -64.1635,
@@ -2413,7 +2571,21 @@
    ]
   },
   {
-   "id": 31,
+   "id": 32,
+   "nombre": "Cerca de Achiras (-33.163, -64.990)",
+   "lat": -33.16288,
+   "lon": -64.99017,
+   "count": 5,
+   "ids": [
+    64,
+    204,
+    303,
+    331,
+    396
+   ]
+  },
+  {
+   "id": 33,
    "nombre": "Camino rural (-33.742, -64.373)",
    "lat": -33.74157,
    "lon": -64.37278,
@@ -2426,7 +2598,7 @@
    ]
   },
   {
-   "id": 32,
+   "id": 34,
    "nombre": "Lago Villa Dalcar, Río Cuarto",
    "lat": -33.10686,
    "lon": -64.3754,
@@ -2439,7 +2611,7 @@
    ]
   },
   {
-   "id": 33,
+   "id": 35,
    "nombre": "Ruta Provincial S292 (-33.833, -64.131)",
    "lat": -33.83331,
    "lon": -64.13127,
@@ -2451,7 +2623,7 @@
    ]
   },
   {
-   "id": 34,
+   "id": 36,
    "nombre": "Ruta Provincial S292 (-33.834, -64.234)",
    "lat": -33.83397,
    "lon": -64.23436,
@@ -2462,7 +2634,7 @@
    ]
   },
   {
-   "id": 35,
+   "id": 37,
    "nombre": "Ruta 148, Cba",
    "lat": -32.17213,
    "lon": -65.16902,
@@ -2472,7 +2644,7 @@
    ]
   },
   {
-   "id": 36,
+   "id": 38,
    "nombre": "Ruta Provincial S292 (-33.833, -64.151)",
    "lat": -33.83339,
    "lon": -64.15075,
