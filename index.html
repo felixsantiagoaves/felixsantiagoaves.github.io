@@ -53,7 +53,7 @@ E) El panel del mapa se genera por JS (buildMapaPanel) a partir de "lugares".
        - "Lugares nuevos sin nombre": agregar el ID en sync/lugares.json con nombre prolijo.
        - "Registros que no se pudieron asignar": son identificaciones tipo "A/B", "sp."
          o domésticos; no van al álbum.
-  4. Subir index.html (si se tocó FICHAS), avistamientos.json, sync/ y fotos/.
+  4. Subir index.html (si se tocó FICHAS), avistamientos.json, registros.json, sync/ y fotos/.
 
 Si una especie NO existe en AVES (caso raro): agregarla al final con id = total + 1
 y actualizar los textos "N especies" del encabezado (buscar "416 especies").
@@ -73,7 +73,27 @@ y actualizar los textos "N especies" del encabezado (buscar "416 especies").
     ambas columnas reservan ese alto y se compactan en pantallas bajas (media queries max-height).
 
 -----------------------------------------------------------------------
-4. CONVENCIONES
+4. GALERÍA (pestaña Galería) — dinámica
+-----------------------------------------------------------------------
+
+  - Se muestra TODO lo que haya en la carpeta galeria/ (jpg, jpeg, png, webp, gif, avif). No hay que editar nada:
+    se sube la foto al repo y aparece sola (puede tardar 1-2 min hasta que GitHub Pages publica).
+  - La carpeta se lista con la API pública de GitHub (loadGaleria). El repo se deduce solo si el sitio está en
+    <usuario>.github.io; con dominio propio hay que completar GALERIA_REPO = 'usuario/repo' en el script.
+  - Nombre del archivo, siempre en este orden:   DDMMAAAA-DSC_0249-especie en minúsculas.jpg
+      * DDMMAAAA = fecha del encuentro (10102026 = 10 Oct 2026). Es opcional pero recomendable.
+      * El código de cámara se ignora. La especie se busca entre los nombres comunes de AVES
+        (sin importar mayúsculas ni tildes). Si no la reconoce, igual muestra la foto con el texto del nombre.
+      * El LUGAR sale de registros.json (especie + fecha). Si ese día la especie se vio en 2 o más lugares,
+        o todavía no está en eBird/CSV, no se muestra lugar (nunca se inventa).
+      * registros.json lo genera sync/sync_ebird.py junto con avistamientos.json: hay que subirlo cada vez.
+  - Orden: fotos con fecha, de la más nueva a la más vieja; después las que no tienen fecha.
+  - Opcional: galeria/galeria.json = [{"archivo":"x.jpg","nombre":"...","lugar":"..."}] pisa lo que sale del nombre
+    (y es el respaldo si la API de GitHub no responde). No es obligatorio.
+  - Conviene subir fotos livianas (~1600-2000 px de lado largo, <500 KB): la galería carga los archivos tal cual.
+
+-----------------------------------------------------------------------
+5. CONVENCIONES
 -----------------------------------------------------------------------
 
   - Fechas: AAAA-MM-DD.
@@ -1583,30 +1603,128 @@ function openCampoLB(idx) {
 }
 
 
+// ---------- GALERÍA DINÁMICA ----------
+// Muestra todas las imágenes de la carpeta galeria/. Los datos salen del NOMBRE del archivo:
+//   DDMMAAAA-DSC_0249-jote cabeza colorada.jpg   (fecha - código de cámara - especie)
+// Ver sección 4 (GALERÍA) del comentario de arriba.
+// Si el sitio NO está en <usuario>.github.io (dominio propio), poner acá 'usuario/repo':
+const GALERIA_REPO = '';
+const GALERIA_EXT = /\.(jpe?g|png|webp|gif|avif)$/i;
+let galeriaCargando = false, galeriaCargada = false;
+
+function galeriaRepo(h = location.hostname, p = location.pathname) {
+  if (GALERIA_REPO) return GALERIA_REPO;
+  const m = /^([a-z0-9-]+)\.github\.io$/i.exec(h);
+  if (!m) return null;
+  const primero = p.split('/').filter(Boolean)[0];
+  return m[1] + '/' + (primero && !/\.html?$/i.test(primero) ? primero : m[1] + '.github.io');
+}
+
+function galNorm(s) {
+  return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[_\s]+/g, ' ').trim();
+}
+
+function galFecha(s) { // 'DDMMAAAA' -> 'AAAA-MM-DD' (o null si no es una fecha real)
+  if (!/^\d{8}$/.test(s)) return null;
+  const d = +s.slice(0, 2), m = +s.slice(2, 4), y = +s.slice(4);
+  const t = new Date(Date.UTC(y, m - 1, d));
+  if (y < 1990 || y > 2100 || t.getUTCDate() !== d || t.getUTCMonth() !== m - 1) return null;
+  return `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+
+function galInterpretar(archivo, idxEspecies) {
+  const base = archivo.replace(/\.[^.]+$/, '').normalize('NFC');
+  const partes = base.split('-');
+  const fecha = galFecha(partes[0].trim());
+  const desde = fecha ? 1 : 0;
+  let ave = null;
+  // la especie es lo que viene después del código de cámara; se prueba cada "cola" del nombre
+  for (let i = desde; i < partes.length && !ave; i++) {
+    const cola = galNorm(partes.slice(i).join('-').replace(/\s*(\(\d+\)|copia|copy)\s*$/i, '').replace(/[\s_]+\d{1,2}$/, ''));
+    if (!cola) continue;
+    if (idxEspecies.exacto[cola]) ave = idxEspecies.exacto[cola];
+    else {
+      const c = idxEspecies.lista.filter(a => a.n.startsWith(cola) && cola.length >= 4);
+      if (c.length === 1) ave = c[0].a;
+    }
+  }
+  const crudo = partes.slice(Math.min(desde + 1, partes.length - 1)).join(' ').replace(/_/g, ' ').trim() || base;
+  const bonito = crudo.replace(/\b\p{L}/gu, c => c.toUpperCase());
+  return { fecha, ave, nombre: ave ? ave.comun : bonito };
+}
+
+function galLugar(info, reg) {
+  if (!info.ave || !reg) return '';
+  const dias = reg.r[String(info.ave.id)];
+  if (!dias) return '';
+  let idx;
+  if (info.fecha) idx = dias[info.fecha] || [];
+  else idx = [...new Set([].concat(...Object.values(dias)))];
+  return idx.length === 1 ? reg.lugares[idx[0]] : ''; // si hay 0 o varios lugares, no se inventa
+}
+
+function galeriaUrl(archivo) {
+  return 'galeria/' + encodeURIComponent(archivo).replace(/'/g, '%27');
+}
+
+function galeriaFalla(img) { // imagen que no existe (p. ej. recién subida y todavía no publicada)
+  const card = img.closest('.foto-item');
+  if (!card) return;
+  const i = GALERIA.findIndex(f => f.src === card.dataset.src);
+  if (i >= 0) GALERIA.splice(i, 1);
+  card.remove();
+}
+
+function openLBsrc(el) {
+  const i = GALERIA.findIndex(f => f.src === el.dataset.src);
+  if (i >= 0) openLB(i);
+}
+
 function loadGaleria() {
-  if(GALERIA.length > 0) return; // ya cargada
-  fetch('galeria/galeria.json')
-    .then(r => r.json())
-    .then(fotos => {
-      fotos.forEach(f => GALERIA.push({
-        src: 'galeria/' + f.archivo,
-        nombre: f.nombre,
-        lugar: f.lugar
-      }));
-      const grid = document.getElementById('foto-grid');
-      grid.innerHTML = fotos.map((f, i) => `
-        <div class="foto-item" onclick="openLB(${i})">
-          <img src="galeria/${f.archivo}" style="width:100%;display:block" alt="${f.nombre}" loading="lazy">
-          <div class="foto-caption">
-            <strong>${f.nombre}</strong>
-            <span>${f.lugar}</span>
-          </div>
-        </div>`).join('');
-    })
-    .catch(() => {
-      document.getElementById('foto-grid').innerHTML = 
-        '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">No se pudieron cargar las fotos.</p>';
+  if (galeriaCargada || galeriaCargando) return;
+  galeriaCargando = true;
+  const grid = document.getElementById('foto-grid');
+  const json = u => fetch(u).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  const repo = galeriaRepo();
+  const listado = repo
+    ? json(`https://api.github.com/repos/${repo}/contents/galeria`)
+        .then(l => l.filter(e => e.type === 'file' && GALERIA_EXT.test(e.name)).map(e => e.name))
+        .catch(() => null)
+    : Promise.resolve(null);
+  const manual = json('galeria/galeria.json').catch(() => []);
+  const registros = json('registros.json').catch(() => null);
+
+  Promise.all([listado, manual, registros]).then(([nombres, fotosJson, reg]) => {
+    const idx = { exacto: {}, lista: [] };
+    AVES.forEach(a => { const n = galNorm(a.comun); idx.exacto[n] = a; idx.lista.push({ n, a }); });
+    const ov = {};
+    (Array.isArray(fotosJson) ? fotosJson : []).forEach(f => { if (f && f.archivo) ov[f.archivo.normalize('NFC')] = f; });
+    const archivos = nombres ? nombres.slice() : [];
+    Object.keys(ov).forEach(a => { if (!archivos.some(n => n.normalize('NFC') === a)) archivos.push(a); });
+
+    const fotos = archivos.map(a => {
+      const info = galInterpretar(a, idx);
+      const o = ov[a.normalize('NFC')];
+      const lugar = o && o.lugar != null ? o.lugar : [galLugar(info, reg), info.fecha ? fmtFecha(info.fecha) : ''].filter(Boolean).join(' · ');
+      return { src: galeriaUrl(a), nombre: (o && o.nombre) || info.nombre, lugar, fecha: info.fecha || '' };
     });
+    fotos.sort((x, y) => (y.fecha || '').localeCompare(x.fecha || '') || x.nombre.localeCompare(y.nombre));
+
+    GALERIA.length = 0;
+    fotos.forEach(f => GALERIA.push({ src: f.src, nombre: f.nombre, lugar: f.lugar }));
+    if (!fotos.length) {
+      grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">Todavía no hay fotos en la galería.</p>';
+    } else {
+      grid.innerHTML = fotos.map(f => `
+        <div class="foto-item" data-src="${f.src}" onclick="openLBsrc(this)">
+          <img src="${f.src}" style="width:100%;display:block" alt="${escHtml(f.nombre).replace(/"/g, '&quot;')}" loading="lazy" onerror="galeriaFalla(this)">
+          <div class="foto-caption"><strong>${escHtml(f.nombre)}</strong><span>${escHtml(f.lugar)}</span></div>
+        </div>`).join('');
+    }
+    galeriaCargada = true;
+  }).catch(() => {
+    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">No se pudieron cargar las fotos.</p>';
+  }).finally(() => { galeriaCargando = false; });
 }
 
 
