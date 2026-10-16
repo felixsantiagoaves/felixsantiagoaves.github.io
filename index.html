@@ -88,8 +88,8 @@ y actualizar los textos "N especies" del encabezado (buscar "416 especies").
         o todavía no está en eBird/CSV, no se muestra lugar (nunca se inventa).
       * registros.json lo genera sync/sync_ebird.py junto con avistamientos.json: hay que subirlo cada vez.
   - Orden: fotos con fecha, de la más nueva a la más vieja; después las que no tienen fecha.
-  - Opcional: galeria/galeria.json = [{"archivo":"x.jpg","nombre":"...","lugar":"..."}] pisa lo que sale del nombre
-    (y es el respaldo si la API de GitHub no responde). No es obligatorio.
+  - No existe más galeria.json: la galería muestra solo las fotos que haya en la carpeta, con los datos del nombre.
+    Si la API de GitHub no responde (límite de pedidos), se avisa con un mensaje en vez de mostrar fotos.
   - Conviene subir fotos livianas (~1600-2000 px de lado largo, <500 KB): la galería carga los archivos tal cual.
 
 -----------------------------------------------------------------------
@@ -1607,7 +1607,7 @@ function openCampoLB(idx) {
 // Muestra todas las imágenes de la carpeta galeria/. Los datos salen del NOMBRE del archivo:
 //   DDMMAAAA-DSC_0249-jote cabeza colorada.jpg   (fecha - código de cámara - especie)
 // Ver sección 4 (GALERÍA) del comentario de arriba.
-// Si el sitio NO está en <usuario>.github.io (dominio propio), poner acá 'usuario/repo':
+// El repo se deduce solo desde <usuario>.github.io. Si algún día se usa dominio propio, poner acá 'usuario/repo':
 const GALERIA_REPO = '';
 const GALERIA_EXT = /\.(jpe?g|png|webp|gif|avif)$/i;
 let galeriaCargando = false, galeriaCargada = false;
@@ -1691,22 +1691,16 @@ function loadGaleria() {
         .then(l => l.filter(e => e.type === 'file' && GALERIA_EXT.test(e.name)).map(e => e.name))
         .catch(() => null)
     : Promise.resolve(null);
-  const manual = json('galeria/galeria.json').catch(() => []);
   const registros = json('registros.json').catch(() => null);
 
-  Promise.all([listado, manual, registros]).then(([nombres, fotosJson, reg]) => {
+  Promise.all([listado, registros]).then(([nombres, reg]) => {
+    if (!nombres) throw new Error('sin listado');
     const idx = { exacto: {}, lista: [] };
     AVES.forEach(a => { const n = galNorm(a.comun); idx.exacto[n] = a; idx.lista.push({ n, a }); });
-    const ov = {};
-    (Array.isArray(fotosJson) ? fotosJson : []).forEach(f => { if (f && f.archivo) ov[f.archivo.normalize('NFC')] = f; });
-    const archivos = nombres ? nombres.slice() : [];
-    Object.keys(ov).forEach(a => { if (!archivos.some(n => n.normalize('NFC') === a)) archivos.push(a); });
-
-    const fotos = archivos.map(a => {
+    const fotos = nombres.map(a => {
       const info = galInterpretar(a, idx);
-      const o = ov[a.normalize('NFC')];
-      const lugar = o && o.lugar != null ? o.lugar : [galLugar(info, reg), info.fecha ? fmtFecha(info.fecha) : ''].filter(Boolean).join(' · ');
-      return { src: galeriaUrl(a), nombre: (o && o.nombre) || info.nombre, lugar, fecha: info.fecha || '' };
+      const lugar = [galLugar(info, reg), info.fecha ? fmtFecha(info.fecha) : ''].filter(Boolean).join(' · ');
+      return { src: galeriaUrl(a), nombre: info.nombre, lugar, fecha: info.fecha || '' };
     });
     fotos.sort((x, y) => (y.fecha || '').localeCompare(x.fecha || '') || x.nombre.localeCompare(y.nombre));
 
