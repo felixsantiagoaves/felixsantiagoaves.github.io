@@ -691,6 +691,53 @@ body{padding-bottom:48px;}
 [data-theme=dark] .nov-sub{color:#b8a58a;}
 [data-theme=dark] #page-sobre-mi .hero-body > p[style]{color:#c4a882 !important;}
 [data-theme=dark] .tema-btn{background:#ede0d4;color:#2a1f14;}
+
+/* ── Portada en celular: todo más compacto (en escritorio no cambia nada) ── */
+.accesos,.share-movil,.bio-mas{display:none;}
+@media(max-width:768px){
+  #page-sobre-mi .hero-top{padding:.9rem 1rem 1.1rem;}
+  #page-sobre-mi .logo-hero{display:none;}
+  #page-sobre-mi .hero-nombre{font-size:1.5rem;margin-bottom:.2rem;}
+  #page-sobre-mi .hero-ubi{font-size:.66rem;letter-spacing:1.4px;margin-bottom:.6rem;}
+  #page-sobre-mi .stats-franja{margin-top:0;}
+  #page-sobre-mi .stats-titulo{padding:.15rem .6rem;font-size:.9rem;}
+  #page-sobre-mi .stat-item{padding:.4rem .25rem;}
+  #page-sobre-mi .stat-num{font-size:1.45rem;}
+  #page-sobre-mi .stat-label{font-size:.52rem;letter-spacing:.6px;}
+  #page-sobre-mi .prog-hero{margin-top:.55rem;}
+  #page-sobre-mi .album-cta{margin-top:.6rem;padding:.4rem 1.5rem;}
+  #page-sobre-mi .album-cta small{font-size:.95rem;}
+  .accesos{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;max-width:520px;margin:.6rem auto 0;}
+  .acceso{background:rgba(255,255,255,.06);border:1px solid rgba(196,168,100,.3);color:var(--cr);padding:.4rem .2rem;font-size:.56rem;letter-spacing:.8px;text-transform:uppercase;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.15rem;transition:background .2s;}
+  .acceso span{font-size:1rem;line-height:1;}
+  .acceso:active{background:rgba(196,168,100,.25);}
+  #page-sobre-mi .recientes{margin-top:.5rem;}
+  #page-sobre-mi .rec-track{padding:.2rem .2rem .3rem;gap:.6rem;}
+  #page-sobre-mi .rec-circulo{width:44px;height:44px;}
+  #page-sobre-mi .rec-item{flex-basis:58px;}
+  #page-sobre-mi .rec-nom{font-size:.82rem;margin-top:.2rem;}
+  #page-sobre-mi .share-btn-hero{display:none;}
+  #page-sobre-mi .hero-body{padding:.9rem 1rem 1.2rem;}
+  #page-sobre-mi .hero-body > p[style]{margin-bottom:.4rem !important;font-size:.78rem !important;}
+  #page-sobre-mi .carrusel-wrap{margin-bottom:.7rem;}
+  #page-sobre-mi .carrusel-slide img{aspect-ratio:2.3/1;}
+  #page-sobre-mi .hero-bio{font-size:.9rem;line-height:1.55;margin-bottom:.7rem;}
+  #page-sobre-mi .hero-bio.corta{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.1rem;}
+  .bio-mas{display:block;margin:0 auto .6rem;background:none;border:none;color:var(--ti);font-family:'Caveat',cursive;font-size:1rem;text-decoration:underline;cursor:pointer;}
+  #page-sobre-mi .novedades{grid-template-columns:1fr 1fr;gap:.5rem;}
+  #page-sobre-mi .nov2{margin-top:.5rem;}
+  #page-sobre-mi .nov-card{padding:.55rem .65rem;}
+  #page-sobre-mi .nov-label{font-size:.52rem;letter-spacing:.7px;margin-bottom:.25rem;}
+  #page-sobre-mi .nov-card.clickable .nov-label::after{display:none;}
+  #page-sobre-mi .nov-val{font-size:.88rem;line-height:1.2;margin-bottom:.1rem;}
+  #page-sobre-mi .nov-sub{font-size:.82rem;line-height:1.1;}
+  #page-sobre-mi .hito-val{font-size:1.1rem;}
+  #page-sobre-mi .hito-bar{margin:.3rem 0 .25rem;height:5px;}
+  #page-sobre-mi .dia-fila{gap:.5rem;}
+  #page-sobre-mi .dia-fila .rec-circulo{flex:0 0 36px;width:36px;height:36px;}
+  .share-movil{display:block;margin:.9rem auto 0;background:transparent;border:1px solid var(--ar);color:var(--ti);font-family:'Caveat',cursive;font-size:1.05rem;padding:.25rem 1rem;cursor:pointer;}
+}
+@media(max-width:768px){.hito-extra{display:none}}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -729,6 +776,12 @@ body{padding-bottom:48px;}
     </div>
     <div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill" style="width:0%"></div></div>
     <button class="album-cta" onclick="irAlbum('enc')"><span>Explorar el álbum <b>→</b></span><small id="cta-album-count">416 especies por descubrir</small></button>
+    <div class="accesos">
+      <button class="acceso" onclick="irPagina('album')"><span>📖</span>Álbum</button>
+      <button class="acceso" onclick="irPagina('mapa')"><span>📍</span>Mapa</button>
+      <button class="acceso" onclick="irPagina('galeria')"><span>📷</span>Galería</button>
+      <button class="acceso" onclick="irPagina('datos')"><span>📊</span>Datos</button>
+    </div>
     <div class="recientes" id="recientes" style="display:none">
       <div class="rec-titulo">Últimas especies sumadas</div>
       <div class="rec-track" id="rec-track"></div>
@@ -748,7 +801,8 @@ body{padding-bottom:48px;}
     <button class="carrusel-btn carrusel-next" onclick="campoNav(1)">›</button>
     <div class="carrusel-dots" id="campo-dots"></div>
   </div>
-  <p class="hero-bio">Fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
+  <p class="hero-bio corta">Fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
+  <button class="bio-mas" onclick="toggleBio(this)">Leer más</button>
     <div class="novedades">
       <div class="nov-card">
         <div class="nov-label" data-hint="Ver ficha →">Última ave registrada</div>
@@ -773,6 +827,7 @@ body{padding-bottom:48px;}
         <div class="dia-fila"></div>
       </div>
     </div>
+    <button class="share-movil" onclick="shareSitio()">↗ Compartir álbum</button>
   </div>
 </div>
   </div>
@@ -2273,6 +2328,13 @@ function iniReveal() {
   document.querySelectorAll('.rv:not(.rv-obs)').forEach((el, i) => { el.classList.add('rv-obs'); _io.observe(el); });
 }
 
+// ── Portada (celular): accesos directos y bio plegable ──
+function irPagina(id) { showPage(id, document.querySelector('.nav-links a[onclick*="' + id + '"]')); window.scrollTo({top: 0}); }
+function toggleBio(b) {
+  const p = b.previousElementSibling; const corta = p.classList.toggle('corta');
+  b.textContent = corta ? 'Leer más' : 'Leer menos';
+}
+
 // ── Portada: próximo hito y ave del día ──
 function buildHito() {
   const card = document.getElementById('hito-card'); if(!card) return;
@@ -2282,7 +2344,7 @@ function buildHito() {
   if(!nx) { lab.textContent = 'Álbum completo'; val.innerHTML = v + ' <small>especies</small>'; bar.style.width = '100%'; sub.textContent = '¡Llegaste a todas!'; return; }
   lab.textContent = 'Camino a las ' + nx;
   val.innerHTML = v + ' <small>/ ' + nx + '</small>';
-  sub.textContent = 'Faltan ' + (nx - v) + ' especie' + (nx - v === 1 ? '' : 's') + ' para el próximo hito';
+  sub.innerHTML = 'Faltan ' + (nx - v) + ' especie' + (nx - v === 1 ? '' : 's') + '<span class="hito-extra"> para el próximo hito</span>';
   bar.style.width = '0%';
   requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = Math.round(v / nx * 100) + '%'; }));
   card.onclick = () => irDatos('num');
