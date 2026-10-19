@@ -2467,8 +2467,8 @@ function construirMapa() {
     iconCreateFunction: c => {
       const hijos = c.getAllChildMarkers(), n = hijos.length, esp = new Set();
       hijos.forEach(h => h.options.ids.forEach(id => esp.add(id)));
-      const sz = Math.round(34 + Math.min(16, n * 1.6));
-      return L.divIcon({className: 'mk-wrap', html: `<div class="mk mk-g" style="width:${sz}px;height:${sz}px" title="${n} lugares · ${esp.size} especies">${n}</div>`, iconSize: [sz, sz]});
+      const sz = Math.round(Math.max(34, 26 + 22 * Math.sqrt(esp.size / max)));
+      return L.divIcon({className: 'mk-wrap', html: `<div class="mk mk-g" style="width:${sz}px;height:${sz}px" title="${n} lugares · ${esp.size} especies distintas">${esp.size}</div>`, iconSize: [sz, sz]});
     }
   });
   mapaMarkers = LUGARES_MAP.map((l, i) => {
@@ -3433,7 +3433,7 @@ document.addEventListener("DOMContentLoaded", buildFooter);
       <div class="mapa-titulo-wrap">
         <p class="mapa-titulo">Mis salidas de campo</p>
         <div class="mapa-barra" role="group" aria-label="Zona del mapa"><button class="mreg-b on" data-v="todos" onclick="mapaVer('todos')">Mis lugares</button><button class="mreg-b" data-v="cba" onclick="mapaVer('cba')">Córdoba</button><button class="mreg-b" data-v="arg" onclick="mapaVer('arg')">Argentina</button></div>
-        <p class="mapa-leyenda"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (tocalo para abrirlo)</p>
+        <p class="mapa-leyenda"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (n.º de especies distintas; tocalo para abrirlo)</p>
       </div>
       <div class="mapa-wrap"><div id="mapa-leaflet" aria-label="Mapa de mis lugares de observación"></div></div>
     </div>
