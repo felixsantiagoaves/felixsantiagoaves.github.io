@@ -693,31 +693,28 @@ body{padding-bottom:48px;}
 [data-theme=dark] .tema-btn{background:#ede0d4;color:#2a1f14;}
 
 /* ── Portada en celular: todo más compacto (en escritorio no cambia nada) ── */
-.accesos,.share-movil,.bio-mas{display:none;}
+.share-movil,.bio-mas{display:none;}
 @media(max-width:768px){
-  #page-sobre-mi .hero-top{padding:.9rem 1rem 1.1rem;}
-  #page-sobre-mi .logo-hero{display:none;}
-  #page-sobre-mi .hero-nombre{font-size:1.5rem;margin-bottom:.2rem;}
-  #page-sobre-mi .hero-ubi{font-size:.66rem;letter-spacing:1.4px;margin-bottom:.6rem;}
+  #page-sobre-mi .hero-top{padding:1.5rem 1rem 1.6rem;}
+  #page-sobre-mi .logo-hero{width:44px;height:44px;margin-bottom:.6rem;}
+  #page-sobre-mi .hero-nombre{font-size:1.7rem;margin-bottom:.3rem;}
+  #page-sobre-mi .hero-ubi{font-size:.68rem;letter-spacing:1.6px;margin-bottom:.9rem;}
   #page-sobre-mi .stats-franja{margin-top:0;}
   #page-sobre-mi .stats-titulo{padding:.15rem .6rem;font-size:.9rem;}
   #page-sobre-mi .stat-item{padding:.4rem .25rem;}
   #page-sobre-mi .stat-num{font-size:1.45rem;}
   #page-sobre-mi .stat-label{font-size:.52rem;letter-spacing:.6px;}
-  #page-sobre-mi .prog-hero{margin-top:.55rem;}
-  #page-sobre-mi .album-cta{margin-top:.6rem;padding:.4rem 1.5rem;}
-  #page-sobre-mi .album-cta small{font-size:.95rem;}
-  .accesos{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;max-width:520px;margin:.6rem auto 0;}
-  .acceso{background:rgba(255,255,255,.06);border:1px solid rgba(196,168,100,.3);color:var(--cr);padding:.4rem .2rem;font-size:.56rem;letter-spacing:.8px;text-transform:uppercase;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.15rem;transition:background .2s;}
-  .acceso span{font-size:1rem;line-height:1;}
-  .acceso:active{background:rgba(196,168,100,.25);}
-  #page-sobre-mi .recientes{margin-top:.5rem;}
+  #page-sobre-mi .prog-hero{margin-top:.8rem;}
+  #page-sobre-mi .album-cta{margin-top:.9rem;padding:.4rem 1.4rem;background:transparent;color:var(--ar);border:1px solid rgba(196,168,100,.55);box-shadow:none;font-size:.95rem;font-weight:600;}
+  #page-sobre-mi .album-cta small{font-size:.9rem;opacity:.7;}
+  #page-sobre-mi .album-cta:hover{background:rgba(196,168,100,.12);transform:none;box-shadow:none;}
+  #page-sobre-mi .recientes{margin-top:.9rem;}
   #page-sobre-mi .rec-track{padding:.2rem .2rem .3rem;gap:.6rem;}
   #page-sobre-mi .rec-circulo{width:44px;height:44px;}
   #page-sobre-mi .rec-item{flex-basis:58px;}
   #page-sobre-mi .rec-nom{font-size:.82rem;margin-top:.2rem;}
   #page-sobre-mi .share-btn-hero{display:none;}
-  #page-sobre-mi .hero-body{padding:.9rem 1rem 1.2rem;}
+  #page-sobre-mi .hero-body{padding:1.3rem 1rem 1.5rem;}
   #page-sobre-mi .hero-body > p[style]{margin-bottom:.4rem !important;font-size:.78rem !important;}
   #page-sobre-mi .carrusel-wrap{margin-bottom:.7rem;}
   #page-sobre-mi .carrusel-slide img{aspect-ratio:2.3/1;}
@@ -776,12 +773,6 @@ body{padding-bottom:48px;}
     </div>
     <div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill" style="width:0%"></div></div>
     <button class="album-cta" onclick="irAlbum('enc')"><span>Explorar el álbum <b>→</b></span><small id="cta-album-count">416 especies por descubrir</small></button>
-    <div class="accesos">
-      <button class="acceso" onclick="irPagina('album')"><span>📖</span>Álbum</button>
-      <button class="acceso" onclick="irPagina('mapa')"><span>📍</span>Mapa</button>
-      <button class="acceso" onclick="irPagina('galeria')"><span>📷</span>Galería</button>
-      <button class="acceso" onclick="irPagina('datos')"><span>📊</span>Datos</button>
-    </div>
     <div class="recientes" id="recientes" style="display:none">
       <div class="rec-titulo">Últimas especies sumadas</div>
       <div class="rec-track" id="rec-track"></div>
