@@ -589,6 +589,22 @@ body{padding-bottom:48px;}
 .hito-chip{padding:.2rem .7rem;border:1.5px solid var(--co);border-radius:20px;font-size:.75rem;font-weight:700;color:var(--ti);}
 .hito-chip.ok{background:var(--v2);border-color:var(--v2);color:var(--cr);}
 .hito-chip.next{border-color:var(--am);color:var(--v1);}
+.dat-filtro{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;min-height:2.1rem;}
+.dfl-hint{font-family:'Caveat',cursive;font-size:1.05rem;color:var(--ti);}
+.dfl-chip{background:var(--v2);color:var(--cr);border:0;padding:.35rem .8rem;border-radius:20px;font-weight:700;font-size:.76rem;cursor:pointer;font-family:inherit;}
+.dfl-b{background:transparent;border:1.5px solid var(--ar);color:var(--v1);padding:.3rem .8rem;border-radius:20px;font-size:.72rem;font-weight:700;cursor:pointer;font-family:inherit;}
+.dfl-b:hover{border-color:var(--v2);}
+.hb.sel .hb-n{font-weight:700;color:var(--v1);}
+.hb.dim{opacity:.4;}
+.ch-hit{fill:transparent;cursor:pointer;}
+.ch-hit:hover{fill:rgba(74,124,53,.08);}
+.ch-g{transition:opacity .2s;}
+.ch-dim{opacity:.3;}
+.ch-num{fill:var(--v1);font-size:11px;font-weight:700;font-family:'Lato',sans-serif;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none;}
+.ch-num.ch-sel{font-size:13px;}
+.ch-numw{fill:#fff;font-size:11px;font-weight:700;font-family:'Lato',sans-serif;pointer-events:none;}
+.ch-guia{stroke:var(--am);stroke-width:1.5;stroke-dasharray:4 4;}
+.ch-read{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--v1);min-height:1.5rem;margin-top:.45rem;}
 .ch-svg{width:100%;height:auto;display:block;overflow:visible;}
 .ch-grid{stroke:var(--co);stroke-width:1;}
 .ch-axis{fill:var(--ti);font-size:11px;font-family:'Lato',sans-serif;}
@@ -681,7 +697,9 @@ body{padding-bottom:48px;}
   .lb-hint{display:none;}
   .ch-axis{font-size:19px;}
   .ch-val{font-size:22px;}
-  .ch-alt{display:none;}
+  .ch-num,.ch-numw{font-size:19px;}
+  .ch-num.ch-sel{font-size:22px;}
+  .ch-num{stroke-width:4px;}
 }
 @media(prefers-reduced-motion:reduce){
   .foto-item{animation:none;}
@@ -704,6 +722,10 @@ body{padding-bottom:48px;}
 [data-theme=dark] #busqueda,[data-theme=dark] .album-filtros select,[data-theme=dark] .gal-controles select,[data-theme=dark] .gal-controles input{background:#161a11;color:#e8dccb;border-color:#38422d;}
 [data-theme=dark] .hito-bar,[data-theme=dark] .hb-bar{background:#38422d;}
 [data-theme=dark] .ch-grid{stroke:#38422d;}
+[data-theme=dark] .ch-num{fill:#e6d9c3;stroke:#222819;}
+[data-theme=dark] .dfl-b{color:#d8e0c4;}
+[data-theme=dark] .ch-read{color:#d8e0c4;}
+[data-theme=dark] .hb.sel .hb-n{color:#e6d9c3;}
 [data-theme=dark] .ch-dot{fill:#e6d9c3;}
 [data-theme=dark] .ch-area{opacity:.22;}
 [data-theme=dark] .hito-chip.ok,[data-theme=dark] .fam-chip.vista{color:#ede0d4;fill:#ede0d4;}
@@ -3285,85 +3307,159 @@ function ejesY(max, W, L, R, T, H, B) {
   for(let v = 0; v <= max; v += s) { const y = T + (H - T - B) * (1 - v / max); g += `<line class="ch-grid" x1="${L}" x2="${W - R}" y1="${y}" y2="${y}"/><text class="ch-axis" x="${L - 6}" y="${y + 4}" text-anchor="end">${v}</text>`; }
   return g;
 }
-function chartAcumulado(meses, nuevasPorMes) {
-  const W = 640, H = 240, L = 34, R = 18, T = 22, B = 28, n = meses.length;
+// ── Estadísticas interactivas: tocar un mes, un lugar o un grupo filtra todo lo demás ──
+let DF = {mes: null, lug: null, grp: null}, DROWS = null, DMESES = [];
+const mesLargo = ym => MESES_L[+ym.slice(5) - 1] + ' ' + ym.slice(0, 4);
+function prepararFilas(r) {
+  const idx = r.lugares.map(n => LUGARES_MAP.findIndex(l => l.nombre === n));
+  const gr = {}; AVES.forEach(a => { gr[a.id] = a.familiaEsp; });
+  DROWS = [];
+  Object.entries(r.r).forEach(([sid, dias]) => {
+    const id = +sid, av = avist[id]; if(!gr[id]) return;
+    Object.entries(dias).forEach(([f, pls]) => DROWS.push({id, f, ym: f.slice(0, 7), pl: pls.map(j => idx[j]).filter(i => i >= 0), g: gr[id], lif: !!av && av.fecha === f, foto: !!(av && av.foto)}));
+  });
+  const ms = [...new Set(DROWS.map(x => x.ym))].sort();
+  DMESES = ms.length ? mesesEntre(ms[0], ms[ms.length - 1]) : [];
+}
+function dFilas(skip) {
+  return DROWS.filter(x => (skip === 'mes' || !DF.mes || x.ym === DF.mes) && (skip === 'lug' || DF.lug === null || x.pl.includes(DF.lug)) && (skip === 'grp' || !DF.grp || x.g === DF.grp));
+}
+function datFiltro(t, k) {
+  if(t === 'lug') k = +k;
+  DF[t] = DF[t] === k ? null : k;
+  pintarNumeros();
+}
+function datQuitar(t) { DF[t] = null; pintarNumeros(); }
+function datLimpiar() { DF = {mes: null, lug: null, grp: null}; pintarNumeros(); }
+const _movil = () => window.innerWidth <= 768;
+// índices a rotular sin que se pisen: se cuenta desde el último y se salta según el espacio disponible
+function idxPaso(n, pitch, w) {
+  const step = Math.max(1, Math.ceil(w * 1.15 / Math.max(1, pitch))), out = new Set();
+  for(let i = n - 1; i >= 0; i -= step) out.add(i);
+  return out;
+}
+function chartAcumulado(meses, nuevasPorMes, sel) {
+  const W = 640, H = 240, L = 34, R = 22, T = 26, B = 28, n = meses.length, mov = _movil();
   let c = 0; const cum = meses.map(m => (c += nuevasPorMes[m] || 0));
   const max = niceMax(cum[n - 1] || 1);
   const x = i => L + (W - L - R) * (n === 1 ? .5 : i / (n - 1)), y = v => T + (H - T - B) * (1 - v / max);
+  const pitch = n > 1 ? (W - L - R) / (n - 1) : W;
   const pts = cum.map((v, i) => [x(i), y(v)]);
   const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
   const area = d + ` L${x(n - 1).toFixed(1)} ${y(0)} L${x(0).toFixed(1)} ${y(0)} Z`;
-  const paso = Math.ceil(n / 6);
-  const etiq = meses.map((m, i) => (i % paso === 0 || i === n - 1) ? `<text class="ch-axis" x="${x(i)}" y="${H - 8}" text-anchor="middle">${ymLabel(m)}</text>` : '').join('');
-  const dots = pts.map((p, i) => `<circle class="ch-dot" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${i === n - 1 ? 5 : 3}"><title>${ymLabel(meses[i])}: ${cum[i]} especies</title></circle>`).join('');
-  return `<svg class="ch-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Especies acumuladas por mes">${ejesY(max, W, L, R, T, H, B)}<path class="ch-area" d="${area}"/><path class="ch-line" pathLength="1" d="${d}"/>${dots}<text class="ch-val" x="${Math.min(pts[n - 1][0], W - 20)}" y="${pts[n - 1][1] - 11}" text-anchor="middle">${cum[n - 1]}</text>${etiq}</svg>`;
+  const ejeX = idxPaso(n, pitch, mov ? 78 : 48), valX = idxPaso(n, pitch, mov ? 40 : 26);
+  const selI = sel ? meses.indexOf(sel) : -1;
+  const etiq = [...ejeX].map(i => `<text class="ch-axis" x="${x(i).toFixed(1)}" y="${H - 8}" text-anchor="middle">${ymLabel(meses[i])}</text>`).join('');
+  const vals = [...new Set([...valX, ...(selI >= 0 ? [selI] : [])])].filter(i => cum[i] > 0 || i === selI).map(i => `<text class="ch-num${i === selI ? ' ch-sel' : ''}" x="${Math.min(Math.max(pts[i][0], L + 8), W - 14).toFixed(1)}" y="${(pts[i][1] - 9).toFixed(1)}" text-anchor="middle">${cum[i]}</text>`).join('');
+  const dots = pts.map((p, i) => `<circle class="ch-dot" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${i === selI ? 6 : i === n - 1 ? 5 : n > 18 ? 2 : 3}"/>`).join('');
+  const guia = selI >= 0 ? `<line class="ch-guia" x1="${pts[selI][0].toFixed(1)}" x2="${pts[selI][0].toFixed(1)}" y1="${T}" y2="${H - B}"/>` : '';
+  const hit = meses.map((m, i) => { const w = n === 1 ? W - L - R : (W - L - R) / (n - 1); return `<rect class="ch-hit" x="${(x(i) - w / 2).toFixed(1)}" y="${T - 10}" width="${w.toFixed(1)}" height="${H - T - B + 10}" onclick="datFiltro('mes','${m}')"><title>${mesLargo(m)}: +${nuevasPorMes[m] || 0} nuevas · ${cum[i]} acumuladas</title></rect>`; }).join('');
+  const nn = nuevasPorMes[sel] || 0, lec = selI >= 0 ? `${mesLargo(sel)} · ${nn} nueva${nn === 1 ? '' : 's'} · ${cum[selI]} acumulada${cum[selI] === 1 ? '' : 's'}` : '';
+  return `<svg class="ch-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Especies acumuladas por mes">${ejesY(max, W, L, R, T, H, B)}<path class="ch-area" d="${area}"/><path class="ch-line" pathLength="1" d="${d}"/>${guia}${dots}${vals}${etiq}${hit}</svg><div class="ch-read">${lec}</div>`;
 }
-function chartMensual(meses, nuevas, vistas) {
-  const W = 640, H = 240, L = 34, R = 18, T = 22, B = 28, n = meses.length;
+function chartMensual(meses, nuevas, vistas, sel) {
+  const W = 640, H = 240, L = 34, R = 18, T = 26, B = 28, n = meses.length, mov = _movil();
   const max = niceMax(Math.max(1, ...meses.map(m => vistas[m] || 0)));
-  const paso = (W - L - R) / n, bw = Math.min(40, paso * .62);
+  const paso = (W - L - R) / n, bw = Math.min(40, paso * .68);
   const y = v => T + (H - T - B) * (1 - v / max);
-  let bars = '', etiq = '';
+  const numW = mov ? 40 : 26, cabe = paso >= numW * 1.15;
+  const ejeX = idxPaso(n, paso, mov ? 78 : 48);
+  const mx = meses.reduce((b, m) => (vistas[m] || 0) > (vistas[b] || 0) ? m : b, meses[0]);
+  let bars = '', etiq = '', hit = '';
   meses.forEach((m, i) => {
-    const cx = L + paso * (i + .5), nu = nuevas[m] || 0, tot = vistas[m] || 0, rep = Math.max(0, tot - nu);
-    bars += `<g><title>${ymLabel(m)}: ${tot} especies (${nu} nuevas)</title><rect class="ch-bar ch-old" x="${cx - bw / 2}" y="${y(tot)}" width="${bw}" height="${y(nu) - y(tot)}"/><rect class="ch-bar ch-new" x="${cx - bw / 2}" y="${y(nu)}" width="${bw}" height="${y(0) - y(nu)}"/></g>`;
-    etiq += `<text class="ch-axis${i % 2 ? ' ch-alt' : ''}" x="${cx}" y="${H - 8}" text-anchor="middle">${ymLabel(m)}</text>`;
+    const cx = L + paso * (i + .5), nu = nuevas[m] || 0, tot = vistas[m] || 0;
+    const dim = sel && sel !== m ? ' ch-dim' : '';
+    bars += `<g class="ch-g${dim}"><rect class="ch-bar ch-old" x="${(cx - bw / 2).toFixed(1)}" y="${y(tot).toFixed(1)}" width="${bw.toFixed(1)}" height="${(y(nu) - y(tot)).toFixed(1)}"/><rect class="ch-bar ch-new" x="${(cx - bw / 2).toFixed(1)}" y="${y(nu).toFixed(1)}" width="${bw.toFixed(1)}" height="${(y(0) - y(nu)).toFixed(1)}"/>`;
+    if(tot && (cabe || m === sel || m === mx || i === n - 1)) bars += `<text class="ch-num" x="${cx.toFixed(1)}" y="${(y(tot) - 5).toFixed(1)}" text-anchor="middle">${tot}</text>`;
+    if(nu && (cabe || m === sel) && y(0) - y(nu) >= (mov ? 26 : 15)) bars += `<text class="ch-numw" x="${cx.toFixed(1)}" y="${(y(nu) + (mov ? 20 : 12)).toFixed(1)}" text-anchor="middle">${nu}</text>`;
+    bars += '</g>';
+    if(ejeX.has(i)) etiq += `<text class="ch-axis" x="${cx.toFixed(1)}" y="${H - 8}" text-anchor="middle">${ymLabel(m)}</text>`;
+    hit += `<rect class="ch-hit" x="${(cx - paso / 2).toFixed(1)}" y="${T - 14}" width="${paso.toFixed(1)}" height="${H - T - B + 14}" onclick="datFiltro('mes','${m}')"><title>${mesLargo(m)}: ${tot} especies (${nu} nuevas)</title></rect>`;
   });
-  return `<svg class="ch-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Especies registradas por mes">${ejesY(max, W, L, R, T, H, B)}${bars}${etiq}</svg>
-    <div class="ch-leg"><span><i class="ch-new"></i>Especies nuevas</span><span><i class="ch-old"></i>Ya conocidas</span></div>`;
+  const tv = vistas[sel] || 0, nn = nuevas[sel] || 0, lec = sel ? `${mesLargo(sel)} · ${tv} especie${tv === 1 ? '' : 's'} registrada${tv === 1 ? '' : 's'} · ${nn} nueva${nn === 1 ? '' : 's'} (lifer${nn === 1 ? '' : 's'})` : '';
+  return `<svg class="ch-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Especies registradas por mes">${ejesY(max, W, L, R, T, H, B)}${bars}${etiq}${hit}</svg>
+    <div class="ch-leg"><span><i class="ch-new"></i>Nuevas (lifers)</span><span><i class="ch-old"></i>Ya conocidas</span></div><div class="ch-read">${lec}</div>`;
 }
-function hbarras(items, max) {
-  return items.map(it => `<div class="hb" ${it.on ? `onclick="${it.on}"` : ''}><span class="hb-n" title="${escHtml(it.n)}">${escHtml(it.n)}</span><span class="hb-bar"><i class="hb-fill" style="--w:${Math.round(it.v / max * 100)}%"></i></span><span class="hb-v">${it.v}</span></div>`).join('');
+function hbarras(items, max, sel, tipo) {
+  return items.map(it => `<div class="hb${sel === it.k ? ' sel' : sel !== null && sel !== undefined && sel !== '' ? ' dim' : ''}" data-k="${escHtml(String(it.k))}" onclick="datFiltro('${tipo}',this.dataset.k)"><span class="hb-n" title="${escHtml(it.n)}">${escHtml(it.n)}</span><span class="hb-bar"><i class="hb-fill" style="--w:${Math.round(it.v / max * 100)}%"></i></span><span class="hb-v">${it.v}</span></div>`).join('') || '<div class="dat-vacio">Sin registros con este filtro</div>';
 }
+function topPor(rows, keyFn, nombreFn, sel) {
+  const m = new Map();
+  rows.forEach(x => keyFn(x).forEach(k => { if(!m.has(k)) m.set(k, new Set()); m.get(k).add(x.id); }));
+  let l = [...m.entries()].map(([k, st]) => ({k, n: nombreFn(k), v: st.size})).sort((a, b) => b.v - a.v || String(a.n).localeCompare(String(b.n), 'es'));
+  let top = l.slice(0, 8);
+  if(sel !== null && sel !== '' && !top.some(t => t.k === sel)) { const f = l.find(t => t.k === sel); if(f) top = top.slice(0, 7).concat(f); }
+  return top;
+}
+function pintarNumeros() {
+  if(!DROWS) return;
+  const $ = id => document.getElementById(id); if(!$('dat-filtro')) return;
+  // barra de filtros
+  const f = $('dat-filtro'), chips = [];
+  const chip = (t, txt) => `<button class="dfl-chip" onclick="datQuitar('${t}')" title="Quitar este filtro">${escHtml(txt)} ✕</button>`;
+  if(DF.mes) chips.push(chip('mes', mesLargo(DF.mes)));
+  if(DF.lug !== null) chips.push(chip('lug', LUGARES_MAP[DF.lug].nombre));
+  if(DF.grp) chips.push(chip('grp', DF.grp));
+  f.innerHTML = chips.length
+    ? chips.join('') + '<button class="dfl-b" onclick="datLimpiar()">Limpiar todo</button>'
+      + (DF.lug !== null ? `<button class="dfl-b" onclick="irMapaLugar(${DF.lug})">Ver en el mapa →</button>` : '')
+      + (DF.grp ? `<button class="dfl-b" data-k="${escHtml(DF.grp)}" onclick="irAlbumFamilia(this.dataset.k,false)">Ver en el álbum →</button>` : '')
+    : '<span class="dfl-hint">Tocá un mes, un lugar o un grupo y todo lo demás se filtra.</span>';
+  // KPIs
+  const rows = dFilas(null), sids = new Set(), lugs = new Set(), fotos = new Set(), dias = {}, meses = {};
+  rows.forEach(x => { sids.add(x.id); x.pl.forEach(p => lugs.add(p)); if(x.foto) fotos.add(x.id); (dias[x.f] = dias[x.f] || new Set()).add(x.id); (meses[x.ym] = meses[x.ym] || new Set()).add(x.id); });
+  const mejor = o => Object.keys(o).sort((a, b) => o[b].size - o[a].size || b.localeCompare(a))[0];
+  const set = (id, t) => { $(id).textContent = t; };
+  set('k-esp', sids.size); set('k-lug', lugs.size); set('k-foto', fotos.size);
+  set('k-fotos-s', sids.size ? Math.round(fotos.size / sids.size * 100) + '% de las especies' : '');
+  set('k-dias', Object.keys(dias).length);
+  const bd = mejor(dias), bm = mejor(meses);
+  set('k-mejor', bd ? dias[bd].size : '—'); set('k-mejor-s', bd ? fmtFecha(bd) : '');
+  set('k-mes', bm ? meses[bm].size : '—'); set('k-mes-s', bm ? mesLargo(bm) : '');
+  // series por mes (respetan lugar y grupo, no el mes elegido)
+  const rm = dFilas('mes'), sm = {}, nuevas = {}, vistas = {};
+  rm.forEach(x => { (sm[x.ym] = sm[x.ym] || new Set()).add(x.id); if(x.lif) nuevas[x.ym] = (nuevas[x.ym] || 0) + 1; });
+  Object.keys(sm).forEach(m => { vistas[m] = sm[m].size; });
+  if(DMESES.length) { $('ch-acum').innerHTML = chartAcumulado(DMESES, nuevas, DF.mes); $('ch-mensual').innerHTML = chartMensual(DMESES, nuevas, vistas, DF.mes); }
+  // lugares y grupos (respetan los otros dos filtros)
+  const lt = topPor(dFilas('lug'), x => x.pl, k => LUGARES_MAP[k].nombre, DF.lug);
+  $('ch-lugares').innerHTML = hbarras(lt, Math.max(1, ...lt.map(t => t.v)), DF.lug, 'lug');
+  const gt = topPor(dFilas('grp'), x => [x.g], k => k, DF.grp);
+  $('ch-grupos').innerHTML = hbarras(gt, Math.max(1, ...gt.map(t => t.v)), DF.grp || null, 'grp');
+}
+let _rzT;
+window.addEventListener('resize', () => { clearTimeout(_rzT); _rzT = setTimeout(() => { if(DROWS && document.getElementById('dat-num') && document.getElementById('dat-num').offsetParent) pintarNumeros(); }, 200); });
 function buildDatos() {
   const ids = Object.keys(avist);
   const v = ids.length, nx = HITOS.find(h => h > v);
   const reg = ids.map(id => Object.assign({id: +id}, avist[id])).filter(r => r.fecha).sort((a, b) => fechaHoraKey(a).localeCompare(fechaHoraKey(b)) || a.id - b.id);
   const nFoto = reg.filter(r => r.foto).length;
 
-  // — Números —
-  const nuevas = {}; reg.forEach(r => { const m = r.fecha.slice(0, 7); nuevas[m] = (nuevas[m] || 0) + 1; });
-  const meses = reg.length ? mesesEntre(reg[0].fecha.slice(0, 7), reg[reg.length - 1].fecha.slice(0, 7)) : [];
-  const lugares = LUGARES_MAP.map((l, i) => ({n: l.nombre, v: l.count, on: `irMapaLugar(${i})`})).sort((a, b) => b.v - a.v).slice(0, 8);
-  const porFam = {}; AVES.forEach(a => { const f = porFam[a.familiaEsp] = porFam[a.familiaEsp] || {t: 0, s: 0}; f.t++; if(avist[a.id]) f.s++; });
   const porFamR = {}; avesReg().forEach(a => { const f = porFamR[a.familiaEsp] = porFamR[a.familiaEsp] || {t: 0, s: 0}; f.t++; if(visto(a)) f.s++; });
-  const famTop = Object.entries(porFam).filter(([, f]) => f.s).sort((a, b) => b[1].s - a[1].s).slice(0, 8).map(([n, f]) => ({n, v: f.s, on: `irAlbumFamilia('${n.replace(/'/g, "\\'")}',false)`}));
   const chips = HITOS.map(h => `<span class="hito-chip ${v >= h ? 'ok' : h === nx ? 'next' : ''}">${h}${v >= h ? ' ✓' : ''}</span>`).join('');
+  const nuevas = {}; reg.forEach(r => { const m = r.fecha.slice(0, 7); nuevas[m] = (nuevas[m] || 0) + 1; });
+  DF = {mes: null, lug: null, grp: null};
   document.getElementById('dat-num').innerHTML = `<div class="dat-grid">
     <div class="dat-card rv"><div class="dat-h">${nx ? 'Camino a las ' + nx + ' especies' : 'Álbum completo'}</div>
       <div class="dat-s">${nx ? v + ' de ' + nx + ' · faltan ' + (nx - v) : '¡Las viste todas!'}</div>
       <div class="hito-bar"><i style="width:${Math.round(v / (nx || v) * 100)}%"></i></div>
       <div class="hito-chips">${chips}</div></div>
-    <div class="dat-kpi rv"><b>${v}</b><span>Especies vistas</span></div>
-    <div class="dat-kpi rv" style="--d:.06s"><b>${LUGARES_MAP.length}</b><span>Lugares</span></div>
-    <div class="dat-kpi rv" style="--d:.12s"><b>${nFoto}</b><span>Con foto</span><small>${Math.round(nFoto / Math.max(1, v) * 100)}% del álbum</small></div>
+    <div class="dat-filtro" id="dat-filtro"><span class="dfl-hint">Cargando…</span></div>
+    <div class="dat-kpi rv"><b id="k-esp">${v}</b><span>Especies vistas</span></div>
+    <div class="dat-kpi rv" style="--d:.06s"><b id="k-lug">${LUGARES_MAP.length}</b><span>Lugares</span></div>
+    <div class="dat-kpi rv" style="--d:.12s"><b id="k-foto">${nFoto}</b><span>Con foto</span><small id="k-fotos-s">${Math.round(nFoto / Math.max(1, v) * 100)}% de las especies</small></div>
     <div class="dat-kpi rv"><b id="k-dias">…</b><span>Días de registro</span></div>
     <div class="dat-kpi rv" style="--d:.06s"><b id="k-mejor">…</b><span>Mejor día</span><small id="k-mejor-s"></small></div>
     <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mejor mes</span><small id="k-mes-s"></small></div>
-    <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum mes a mes</div>${meses.length ? chartAcumulado(meses, nuevas) : '<div class="dat-vacio">Todavía no hay datos</div>'}</div>
-    <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Cuántas aves distintas registré cada mes</div><div id="ch-mensual"><div class="dat-vacio">Cargando…</div></div></div>
-    <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para verlo en el mapa</div>${hbarras(lugares, Math.max(1, lugares[0] ? lugares[0].v : 1))}</div>
-    <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para ver sus especies</div>${hbarras(famTop, Math.max(1, famTop[0] ? famTop[0].v : 1))}</div>
+    <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum. Tocá un mes para filtrar.</div><div id="ch-acum"><div class="dat-vacio">Cargando…</div></div></div>
+    <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Aves distintas registradas cada mes, y cuántas fueron nuevas</div><div id="ch-mensual"><div class="dat-vacio">Cargando…</div></div></div>
+    <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-lugares"></div></div>
+    <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-grupos"></div></div>
   </div>`;
   cargarRegistros().then(r => {
-    const box = document.getElementById('ch-mensual'); if(!box) return;
-    if(!r) { box.innerHTML = '<div class="dat-vacio">No se pudo cargar el detalle mensual</div>'; ['k-dias', 'k-mejor', 'k-mes'].forEach(i => { document.getElementById(i).textContent = '—'; }); return; }
-    const porDia = {}, porMes = {};
-    Object.entries(r.r).forEach(([sid, dias]) => Object.keys(dias).forEach(f => {
-      (porDia[f] = porDia[f] || new Set()).add(sid);
-      (porMes[f.slice(0, 7)] = porMes[f.slice(0, 7)] || new Set()).add(sid);
-    }));
-    const vistas = {}; Object.keys(porMes).forEach(m => { vistas[m] = porMes[m].size; });
-    const mm = Object.keys(porMes).sort();
-    const mesesR = mm.length ? mesesEntre(mm[0], mm[mm.length - 1]) : [];
-    box.innerHTML = mesesR.length ? chartMensual(mesesR, nuevas, vistas) : '<div class="dat-vacio">Sin datos</div>';
-    const dias = Object.keys(porDia);
-    document.getElementById('k-dias').textContent = dias.length;
-    const bd = dias.sort((a, b) => porDia[b].size - porDia[a].size || b.localeCompare(a))[0];
-    if(bd) { document.getElementById('k-mejor').textContent = porDia[bd].size; document.getElementById('k-mejor-s').textContent = fmtFecha(bd); }
-    const bm = mm.sort((a, b) => vistas[b] - vistas[a] || b.localeCompare(a))[0];
-    if(bm) { document.getElementById('k-mes').textContent = vistas[bm]; document.getElementById('k-mes-s').textContent = MESES_L[+bm.slice(5) - 1] + ' ' + bm.slice(0, 4); }
-    iniReveal();
+    if(!document.getElementById('dat-filtro')) return;
+    if(!r) { document.getElementById('dat-filtro').innerHTML = '<span class="dfl-hint">No se pudo cargar el detalle de las salidas</span>'; ['k-dias', 'k-mejor', 'k-mes'].forEach(i => { document.getElementById(i).textContent = '—'; }); return; }
+    prepararFilas(r); pintarNumeros(); iniReveal();
   });
 
   // — Línea de tiempo (de la más nueva a la más vieja; el número es el orden en que la fui sumando) —
