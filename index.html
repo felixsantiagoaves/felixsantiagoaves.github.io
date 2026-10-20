@@ -90,6 +90,9 @@ Si una especie NO existe en AVES (caso raro): agregarla al final con id = total 
         o todavía no está en eBird/CSV, no se muestra lugar (nunca se inventa).
       * registros.json lo genera sync/sync_ebird.py junto con avistamientos.json: hay que subirlo cada vez.
   - Orden: fotos con fecha, de la más nueva a la más vieja; después las que no tienen fecha.
+  - OTROS ANIMALES (anfibios, roedores, etc.): subir las fotos a galeria/fauna/ con el mismo formato de nombre
+    (DDMMAAAA-IMG_0123-escuerzo.jpg). Aparece sola una pestaña "Otros animales" dentro de Galería (si la carpeta está
+    vacía o no existe, no se muestra). El nombre sale del archivo; no se busca en el álbum de aves ni suma a las estadísticas.
   - No existe más galeria.json: la galería muestra solo las fotos que haya en la carpeta, con los datos del nombre.
     Si la API de GitHub no responde (límite de pedidos), se avisa con un mensaje en vez de mostrar fotos.
   - Conviene subir fotos livianas (~1600-2000 px de lado largo, <500 KB): la galería carga los archivos tal cual.
@@ -771,6 +774,10 @@ body{padding-bottom:48px;}
 @media(max-width:700px){.mapa-leyenda{font-size:.62rem;padding:0 .5rem;}.mapa-wrap{height:calc(100svh - 56px - 42px - 140px);}}
 [data-theme=dark] .mapa-leyenda{color:#a9b385;}[data-theme=dark] .mapa-leyenda .lg-2{background:#ede0d4;}
 [data-theme=dark] .mk.mk-g{background:#ede0d4;color:#2a3120;border-color:#8f9a6a;}
+.gal-tabs-wrap{text-align:center;padding:1.2rem 1rem 0;}
+.gtab-b{background:transparent;border:none;color:var(--ti);font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;padding:.4rem 1.2rem;cursor:pointer;transition:background .2s,color .2s;}
+.gtab-b:hover,.gtab-b.on{background:var(--v2);color:var(--cr);}
+[data-theme=dark] .gtab-b{color:#cdbfa8;}[data-theme=dark] .gtab-b:hover,[data-theme=dark] .gtab-b.on{background:#656d4a;color:#ede0d4;}
 </style>
 
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAE7klEQVR4nM2Xa0wUVxTHz713ZtkFimgM1tayighofBTRgHTd1WqaWmMr1YYoKrEYaySNadKmj1SS+qEaTT+IVrAGHysmqLQ+2mptTCMVFVRQK74QUGBDtEIxis7z3tMP07H6ZRk2NPZ8mclN7pzfOfc/55xLpr+ZgfAcjT5P5/0KQCnl9rs3MalxxPDkqwAAhFDxnwIQQgUhVAghmCzJyns5eVXF35S9nDpqTKcFRsICSJE7Jkgp5ZxzCQBgSubUmoL8woSkEckBAADd0B0FFxEApZQLIRjnXPImJjUuXbLivv+117MAADjnJmPM8Xf7BGCdJxIhBIuJjr2fO3/xpfk5eZlutzvFdqyoilq289u602dOZAAQwTlnYYNx5thKN6KgiEhmTJ9VvXVTec+iBQUBl8slAwAwxqSfjh6oXl64sEvTNDJubPoVAKSUhhehowwgIkFElpoypqEgf6U5aWKW70kElLKGK5eulJZt5JybAz75aPX99AmT/Ws3FJ204SMGsDcPiIvvXLxw2bU5b82bKkkSsdPd3d3VVVpWfPVyw4XE+Tl5re++k+u3gIUgxNkPFhbAVnl2VuB6ztu5fsPQNQCIYoxJFfuDVQd/3DdicsYULCkOxg+Ii/faYKbJRWfXnx5CCCIiiRjANs5NAgAgy66os+dP12/bsdkdGxMb99WX65XUlDF+REQASwdnaqvrdgRLoptabkwihKAQIqwIHQFER8eIzq579zZuXtd8u+1WwuIFBXfemDk7G+BJumlbe2vbjmBJqKr6eDaAdXy9RQ8AQMI1I1sDQxKGhhhlxpSsqe3vL1mZ6Xa73aZpGpIkyYqiqJUH9tRUVAYnKsrjOLv0Ior+KEQEAZB4PNHK6s++lod7kwJPNkqSfOTYoVO7yr9LvNd5d5q1JuumabicOHYEQCkRnAtp/Nj0O8O9SX5N15QoV5Snsel646Yt6xVVVQetKvz07rUbDc37vt+dZRiGu58zYJmmqRRRCJfsctddOPtH0ZqPvSuWrbo8Z/Y8HwBAdpYfAr4ZTWW7tnTVnjuVCeBcA04rIRBCKSGEdHf/9VjT1ZjmWzd5e6i1DcASYvLI1OS1azZmFn2+rvaVYd4mRCS9FSHHAE+bJDEqhJAO/1wZ+ODDRQN3lm89oaiqZoEgTvPPzCwtLh82YVxGPcCzc0K/ACACAgDIsktTVeWF4J5t0wpX5YeO/nr4lKoqiq7rqsfjcb84ZOgjJ1mIeCCxih4zAABa22+NOnB4b/yDhw8eMsYkzrlpGEav5w8Q4TzwT1SEcy4NHpzQkb9wecvsWXN9iIhCCM4YkyhljobdPgMQS96EMWbMnZNbnZe7dPzAgYN8dh9ARPbDoYrfz9WdHt1vpfhp03SNvzR0WEvRF+vMlOS0wNN94Hx9zcWyXVukG41X/U6/13cAVeFpqWM7UpLTfKZp6JIkuzo6QqHtu0tv/3biFx+ApXxEpE7qQEQa0HWNWk/drNgfPLO3cveER497fJY2ek97RABomWBMIowxPF9fc3FTyYbY9lBrAODfQRWg96j7DICIQCxjAgXWnq1+terk8VgAAMaYKYRgfYm6zwAuV5ToedTTE9yzre7IsYPpqqbG2um27wWRWi/zABWIgo4amXZNN3TW2taSYq07azROLCy93VJvNl8f/ex6/zgH+B/cjv8GzV54EhPOhCcAAAAASUVORK5CYII=">
@@ -949,6 +956,7 @@ body{padding-bottom:48px;}
     <h2 class="page-title">Mis mejores <em>fotos</em></h2>
     <p class="page-sub">Un registro visual de mis encuentros</p>
   </div>
+  <div class="gal-tabs-wrap" id="gal-tabs-wrap" style="display:none"><div class="mapa-barra" role="group" aria-label="Tipo de fotos"><button class="gtab-b on" data-g="aves" onclick="galTab('aves')">Aves</button><button class="gtab-b" data-g="fauna" onclick="galTab('fauna')">Otros animales</button></div></div>
   <div class="gal-controles" id="gal-controles">
     <input type="text" id="gal-q" placeholder="🔍  Buscar por especie o lugar..." oninput="galSet(this.value,null)">
     <select id="gal-anio" onchange="galSet(null,this.value)"></select>
@@ -2580,7 +2588,7 @@ function galInterpretar(archivo, idxEspecies) {
     }
   }
   const crudo = partes.slice(Math.min(desde + 1, partes.length - 1)).join(' ').replace(/_/g, ' ').trim() || base;
-  const bonito = crudo.replace(/\b\p{L}/gu, c => c.toUpperCase());
+  const bonito = crudo.replace(/(^|\s)(\p{L})/gu, (m, sp, c) => sp + c.toUpperCase());
   return { fecha, ave, nombre: ave ? ave.comun : bonito };
 }
 
@@ -2594,14 +2602,16 @@ function galLugar(info, reg) {
   return idx.length === 1 ? reg.lugares[idx[0]] : ''; // si hay 0 o varios lugares, no se inventa
 }
 
-function galeriaUrl(archivo) {
-  return 'galeria/' + encodeURIComponent(archivo).replace(/'/g, '%27');
+function galeriaUrl(archivo, sub) {
+  return 'galeria/' + (sub ? sub + '/' : '') + encodeURIComponent(archivo).replace(/'/g, '%27');
 }
 
 function galeriaFalla(img) { // imagen que no existe (p. ej. recién subida y todavía no publicada)
   const card = img.closest('.foto-item');
   if(!card) return;
-  GALERIA_ALL = GALERIA_ALL.filter(f => f.src !== card.dataset.src);
+  GAL_AVES = GAL_AVES.filter(f => f.src !== card.dataset.src);
+  GAL_FAUNA = GAL_FAUNA.filter(f => f.src !== card.dataset.src);
+  GALERIA_ALL = galTabActual === 'fauna' ? GAL_FAUNA : GAL_AVES;
   galFiltroUI();
   renderGaleria();
 }
@@ -2616,26 +2626,30 @@ function loadGaleria() {
   galeriaCargando = true;
   const grid = document.getElementById('foto-grid');
   const repo = galeriaRepo();
-  const listado = repo
-    ? fetch(`https://api.github.com/repos/${repo}/contents/galeria`)
+  const listar = sub => repo
+    ? fetch(`https://api.github.com/repos/${repo}/contents/galeria${sub ? '/' + sub : ''}`)
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(l => l.filter(e => e.type === 'file' && GALERIA_EXT.test(e.name)).map(e => e.name))
         .catch(() => null)
     : Promise.resolve(null);
 
-  Promise.all([listado, cargarRegistros()]).then(([nombres, reg]) => {
+  Promise.all([listar(''), listar('fauna'), cargarRegistros()]).then(([nombres, nomFauna, reg]) => {
     if (!nombres) throw new Error('sin listado');
     const idx = { exacto: {}, lista: [] };
     AVES.forEach(a => { const n = galNorm(a.comun); idx.exacto[n] = a; idx.lista.push({ n, a }); });
-    const fotos = nombres.map(a => {
+    const orden = (x, y) => (y.fecha || '').localeCompare(x.fecha || '') || x.nombre.localeCompare(y.nombre);
+    GAL_AVES = nombres.map(a => {
       const info = galInterpretar(a, idx);
       const lugar = [galLugar(info, reg), info.fecha ? fmtFecha(info.fecha) : ''].filter(Boolean).join(' · ');
       return { src: galeriaUrl(a), nombre: info.nombre, lugar, fecha: info.fecha || '', aveId: info.ave ? info.ave.id : 0 };
-    });
-    fotos.sort((x, y) => (y.fecha || '').localeCompare(x.fecha || '') || x.nombre.localeCompare(y.nombre));
-    GALERIA_ALL = fotos;
-    galFiltroUI();
-    renderGaleria();
+    }).sort(orden);
+    // Otros animales (carpeta galeria/fauna/): mismo formato de nombre, pero sin buscar la especie en el álbum de aves
+    const sinAves = { exacto: {}, lista: [] };
+    GAL_FAUNA = (nomFauna || []).map(a => {
+      const info = galInterpretar(a, sinAves);
+      return { src: galeriaUrl(a, 'fauna'), nombre: info.nombre, lugar: info.fecha ? fmtFecha(info.fecha) : '', fecha: info.fecha || '', aveId: 0 };
+    }).sort(orden);
+    galTab('aves');
     galeriaCargada = true;
   }).catch(() => {
     grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">No se pudieron cargar las fotos.</p>';
@@ -3328,7 +3342,16 @@ function buildDatos() {
 function famLista(id) { const a = AVES.find(x => x.id === id); return avesReg().filter(x => x.familiaEsp === a.familiaEsp).sort((p, q) => p.tx - q.tx); }
 
 // ── Galería: filtros ──
-let GALERIA_ALL = [], galQ = '', galAnio = '';
+let GALERIA_ALL = [], GAL_AVES = [], GAL_FAUNA = [], galTabActual = 'aves', galQ = '', galAnio = '';
+// Pestañas de la galería: Aves / Otros animales (la pestaña de animales solo aparece si hay fotos en galeria/fauna/)
+function galTab(t) {
+  if(t === 'fauna' && !GAL_FAUNA.length) t = 'aves';
+  galTabActual = t; GALERIA_ALL = t === 'fauna' ? GAL_FAUNA : GAL_AVES; galQ = ''; galAnio = '';
+  const q = document.getElementById('gal-q'); if(q) { q.value = ''; q.placeholder = t === 'fauna' ? '🔍  Buscar por nombre...' : '🔍  Buscar por especie o lugar...'; }
+  const w = document.getElementById('gal-tabs-wrap'); if(w) w.style.display = GAL_FAUNA.length ? '' : 'none';
+  document.querySelectorAll('.gtab-b').forEach(b => b.classList.toggle('on', b.dataset.g === t));
+  galFiltroUI(); renderGaleria();
+}
 function galFiltroUI() {
   const box = document.getElementById('gal-controles'); if(!box) return;
   box.classList.toggle('on', GALERIA_ALL.length >= 4);
@@ -3346,7 +3369,7 @@ function renderGaleria() {
   const cnt = document.getElementById('gal-count');
   if(cnt) cnt.textContent = lista.length + ' foto' + (lista.length === 1 ? '' : 's');
   if(!GALERIA_ALL.length) {
-    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">Todavía no hay fotos en la galería.</p>';
+    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">'+(galTabActual === 'fauna' ? 'Todavía no hay fotos de otros animales.' : 'Todavía no hay fotos en la galería.')+'</p>';
   } else if(!lista.length) {
     grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">No hay fotos con ese criterio 🔍</p>';
   } else {
