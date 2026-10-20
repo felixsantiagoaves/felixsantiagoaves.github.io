@@ -251,6 +251,9 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .trab-btns{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;}
 .trab-btn{display:inline-block;padding:.7rem 1.3rem;background:var(--v1);color:#fff;text-decoration:none;font-size:.74rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;border:1px solid var(--v1);transition:all .2s;}
 .trab-btn:hover{background:var(--v2);border-color:var(--v2);}
+.trab-alt{font-size:.78rem;color:var(--ti);margin:1rem 0 0;}
+.trab-alt a{color:var(--v1);text-decoration:underline;font-weight:700;}
+[data-theme=dark] .trab-alt a{color:#d8e0c4;}
 .trab-btn2{background:transparent;color:var(--v1);}
 .trab-btn2:hover{background:var(--v1);color:#fff;}
 .mk-copy{font-size:.72rem;line-height:1.6;color:var(--ti);margin:1.2rem 0 0;padding-top:1rem;border-top:1px solid var(--co);}
@@ -913,9 +916,10 @@ body{padding-bottom:48px;}
       <h3 id="trab-t" class="trab-h">Trabajemos <em>juntos</em></h3>
       <p class="trab-p">¿Una colaboración, una nota, una salida de campo o el uso de alguna foto? Escribime y lo charlamos.</p>
       <div class="trab-btns">
-        <a class="trab-btn" href="#redes" onclick="return mailContacto(event)">✉ Escribime</a>
-        <a class="trab-btn trab-btn2" href="https://ig.me/m/felix_santiago_aves" target="_blank" rel="noopener">Mensaje en Instagram</a>
+        <a class="trab-btn" id="btn-mail" href="#redes">✉ Escribime</a>
+        <a class="trab-btn trab-btn2" href="https://www.instagram.com/felix_santiago_aves/" target="_blank" rel="noopener">Escribime por Instagram</a>
       </div>
+      <p class="trab-alt">¿No se abre tu correo? <a href="#redes" id="btn-copiar" onclick="return copiarMail(event)">Copiar mi mail</a></p>
     </section>
     <p class="redes-tit">Mis redes</p>
     <div class="redes-grid" id="redes-grid">
@@ -2564,10 +2568,17 @@ function mapaAlbum(i) {
 
 
 
-function mailContacto(e){
-  if(e) e.preventDefault();
-  const u=['santiagoallendes','gmail.com'];
-  location.href='mailto:'+u.join('@')+'?subject='+encodeURIComponent('Contacto desde Félix Santiago Aves');
+const _m=['santiagoallendes','gmail.com'];
+function iniMail(){
+  const b=document.getElementById('btn-mail');
+  if(b) b.href='mailto:'+_m.join('@')+'?subject='+encodeURIComponent('Contacto desde Félix Santiago Aves');
+}
+function copiarMail(e){
+  e.preventDefault();
+  const t=_m.join('@'), el=document.getElementById('btn-copiar');
+  const ok=()=>{ el.textContent='Copiado: '+t; };
+  const fb=()=>{ el.textContent=t; };
+  try{ navigator.clipboard.writeText(t).then(ok,fb); }catch(x){ fb(); }
   return false;
 }
 function buildFooter() {
@@ -3496,6 +3507,7 @@ function lbVerFicha() {
 const domListo = new Promise(r => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', r) : r());
 Promise.all([cargarDatos(), domListo]).then(() => { init(); });
 document.addEventListener("DOMContentLoaded", buildFooter);
+document.addEventListener("DOMContentLoaded", iniMail);
 </script>
 
   <!-- MAPA -->
