@@ -1,9 +1,849 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://felixsantiagoaves.github.io/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+<loc>https://felixsantiagoaves.github.io/</loc>
+<lastmod>2026-10-20</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/geranoaetus_melanoleucus.jpg</image:loc>
+<image:title>Aguila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Aguila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/geranoaetus_polyosoma.jpg</image:loc>
+<image:title>Aguilucho Ñanco (Geranoaetus polyosoma)</image:title>
+<image:caption>Aguilucho Ñanco, Geranoaetus polyosoma. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/circus_cinereus.jpg</image:loc>
+<image:title>Gavilán Ceniciento (Circus cinereus)</image:title>
+<image:caption>Gavilán Ceniciento, Circus cinereus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/parabuteo_unicinctus.jpg</image:loc>
+<image:title>Gavilán Mixto (Parabuteo unicinctus)</image:title>
+<image:caption>Gavilán Mixto, Parabuteo unicinctus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/circus_buffoni.jpg</image:loc>
+<image:title>Gavilán Planeador (Circus buffoni)</image:title>
+<image:caption>Gavilán Planeador, Circus buffoni. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/elanus_leucurus.jpg</image:loc>
+<image:title>Milano Blanco (Elanus leucurus)</image:title>
+<image:caption>Milano Blanco, Elanus leucurus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/rupornis_magnirostris.jpg</image:loc>
+<image:title>Taguató (Rupornis magnirostris)</image:title>
+<image:caption>Taguató, Rupornis magnirostris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/myioborus_brunniceps.jpg</image:loc>
+<image:title>Arañero Corona Rojiza (Myioborus brunniceps)</image:title>
+<image:caption>Arañero Corona Rojiza, Myioborus brunniceps. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/theristicus_melanopis.jpg</image:loc>
+<image:title>Bandurria Austral (Theristicus melanopis)</image:title>
+<image:caption>Bandurria Austral, Theristicus melanopis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/theristicus_caudatus.jpg</image:loc>
+<image:title>Bandurria Boreal (Theristicus caudatus)</image:title>
+<image:caption>Bandurria Boreal, Theristicus caudatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/phimosus_infuscatus.jpg</image:loc>
+<image:title>Cuervillo Cara Pelada (Phimosus infuscatus)</image:title>
+<image:caption>Cuervillo Cara Pelada, Phimosus infuscatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/plegadis_chihi.jpg</image:loc>
+<image:title>Cuervillo de Cañada (Plegadis chihi)</image:title>
+<image:caption>Cuervillo de Cañada, Plegadis chihi. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/platalea_ajaja.jpg</image:loc>
+<image:title>Espátula Rosada (Platalea ajaja)</image:title>
+<image:caption>Espátula Rosada, Platalea ajaja. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/thamnophilus_caerulescens.jpg</image:loc>
+<image:title>Choca Corona Negruzca (Thamnophilus caerulescens)</image:title>
+<image:caption>Choca Corona Negruzca, Thamnophilus caerulescens. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/nannopterum_brasilianum.jpg</image:loc>
+<image:title>Biguá (Nannopterum brasilianum)</image:title>
+<image:caption>Biguá, Nannopterum brasilianum. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/vultur_gryphus.jpg</image:loc>
+<image:title>Cóndor Andino (Vultur gryphus)</image:title>
+<image:caption>Cóndor Andino, Vultur gryphus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/cathartes_aura.jpg</image:loc>
+<image:title>Jote Cabeza Colorada (Cathartes aura)</image:title>
+<image:caption>Jote Cabeza Colorada, Cathartes aura. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/coragyps_atratus.jpg</image:loc>
+<image:title>Jote Cabeza Negra (Coragyps atratus)</image:title>
+<image:caption>Jote Cabeza Negra, Coragyps atratus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/glaucidium_nana.jpg</image:loc>
+<image:title>Caburé Grande (Glaucidium nana)</image:title>
+<image:caption>Caburé Grande, Glaucidium nana. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/athene_cunicularia.jpg</image:loc>
+<image:title>Lechucita Vizcachera (Athene cunicularia)</image:title>
+<image:caption>Lechucita Vizcachera, Athene cunicularia. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anthus_chii.jpg</image:loc>
+<image:title>Cachirla Chica (Anthus chii)</image:title>
+<image:caption>Cachirla Chica, Anthus chii. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anthus_correndera.jpg</image:loc>
+<image:title>Cachirla Goteada (Anthus correndera)</image:title>
+<image:caption>Cachirla Goteada, Anthus correndera. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anthus_hellmayri.jpg</image:loc>
+<image:title>Cachirla Pálida (Anthus hellmayri)</image:title>
+<image:caption>Cachirla Pálida, Anthus hellmayri. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/mimus_saturninus.jpg</image:loc>
+<image:title>Calandria Grande (Mimus saturninus)</image:title>
+<image:caption>Calandria Grande, Mimus saturninus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/mimus_patagonicus.jpg</image:loc>
+<image:title>Calandria Mora (Mimus patagonicus)</image:title>
+<image:caption>Calandria Mora, Mimus patagonicus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/mimus_triurus.jpg</image:loc>
+<image:title>Calandria Real (Mimus triurus)</image:title>
+<image:caption>Calandria Real, Mimus triurus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/aramus_guarauna.jpg</image:loc>
+<image:title>Carau (Aramus guarauna)</image:title>
+<image:caption>Carau, Aramus guarauna. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/piranga_flava.jpg</image:loc>
+<image:title>Fueguero (Piranga flava)</image:title>
+<image:caption>Fueguero, Piranga flava. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/melanerpes_candidus.jpg</image:loc>
+<image:title>Carpintero Blanco (Melanerpes candidus)</image:title>
+<image:caption>Carpintero Blanco, Melanerpes candidus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/colaptes_campestris.jpg</image:loc>
+<image:title>Carpintero Campestre (Colaptes campestris)</image:title>
+<image:caption>Carpintero Campestre, Colaptes campestris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/campephilus_leucopogon.jpg</image:loc>
+<image:title>Carpintero Lomo Blanco (Campephilus leucopogon)</image:title>
+<image:caption>Carpintero Lomo Blanco, Campephilus leucopogon. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/colaptes_melanochloros.jpg</image:loc>
+<image:title>Carpintero Real (Colaptes melanochloros)</image:title>
+<image:caption>Carpintero Real, Colaptes melanochloros. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/chauna_torquata.jpg</image:loc>
+<image:title>Chajá (Chauna torquata)</image:title>
+<image:caption>Chajá, Chauna torquata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/rhynchospiza_strigiceps.jpg</image:loc>
+<image:title>Cachilo Chaqueño (Rhynchospiza strigiceps)</image:title>
+<image:caption>Cachilo Chaqueño, Rhynchospiza strigiceps. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/zonotrichia_capensis.jpg</image:loc>
+<image:title>Chingolo (Zonotrichia capensis)</image:title>
+<image:caption>Chingolo, Zonotrichia capensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/vanellus_chilensis.jpg</image:loc>
+<image:title>Tero (Vanellus chilensis)</image:title>
+<image:caption>Tero, Vanellus chilensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/ciconia_maguari.jpg</image:loc>
+<image:title>Cigüeña Americana (Ciconia maguari)</image:title>
+<image:caption>Cigüeña Americana, Ciconia maguari. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/phytotoma_rutila.jpg</image:loc>
+<image:title>Cortarramas (Phytotoma rutila)</image:title>
+<image:caption>Cortarramas, Phytotoma rutila. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/guira_guira.jpg</image:loc>
+<image:title>Pirincho (Guira guira)</image:title>
+<image:caption>Pirincho, Guira guira. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/sturnus_vulgaris.jpg</image:loc>
+<image:title>Estornino Pinto (Sturnus vulgaris)</image:title>
+<image:caption>Estornino Pinto, Sturnus vulgaris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/phoenicopterus_chilensis.jpg</image:loc>
+<image:title>Flamenco Austral (Phoenicopterus chilensis)</image:title>
+<image:caption>Flamenco Austral, Phoenicopterus chilensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/fulica_leucoptera.jpg</image:loc>
+<image:title>Gallareta Chica (Fulica leucoptera)</image:title>
+<image:caption>Gallareta Chica, Fulica leucoptera. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/fulica_rufifrons.jpg</image:loc>
+<image:title>Gallareta Escudete Rojo (Fulica rufifrons)</image:title>
+<image:caption>Gallareta Escudete Rojo, Fulica rufifrons. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/fulica_armillata.jpg</image:loc>
+<image:title>Gallareta Ligas Rojas (Fulica armillata)</image:title>
+<image:caption>Gallareta Ligas Rojas, Fulica armillata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/pardirallus_sanguinolentus.jpg</image:loc>
+<image:title>Gallineta Pico Pintado (Pardirallus sanguinolentus)</image:title>
+<image:caption>Gallineta Pico Pintado, Pardirallus sanguinolentus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/gallinula_galeata.jpg</image:loc>
+<image:title>Pollona Negra (Gallinula galeata)</image:title>
+<image:caption>Pollona Negra, Gallinula galeata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/syrigma_sibilatrix.jpg</image:loc>
+<image:title>Chiflón (Syrigma sibilatrix)</image:title>
+<image:caption>Chiflón, Syrigma sibilatrix. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/butorides_striata.jpg</image:loc>
+<image:title>Garcita Azulada (Butorides striata)</image:title>
+<image:caption>Garcita Azulada, Butorides striata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/egretta_thula.jpg</image:loc>
+<image:title>Garcita Blanca (Egretta thula)</image:title>
+<image:caption>Garcita Blanca, Egretta thula. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/ardea_ibis.jpg</image:loc>
+<image:title>Garcita Bueyera (Ardea ibis)</image:title>
+<image:caption>Garcita Bueyera, Ardea ibis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/ardea_alba.jpg</image:loc>
+<image:title>Garza Blanca (Ardea alba)</image:title>
+<image:caption>Garza Blanca, Ardea alba. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/nycticorax_nycticorax.jpg</image:loc>
+<image:title>Garza Bruja (Nycticorax nycticorax)</image:title>
+<image:caption>Garza Bruja, Nycticorax nycticorax. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/ardea_cocoi.jpg</image:loc>
+<image:title>Garza Mora (Ardea cocoi)</image:title>
+<image:caption>Garza Mora, Ardea cocoi. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/botaurus_involucris.jpg</image:loc>
+<image:title>Mirasol Estriado (Botaurus involucris)</image:title>
+<image:caption>Mirasol Estriado, Botaurus involucris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/chroicocephalus_maculipennis.jpg</image:loc>
+<image:title>Gaviota Capucho Café (Chroicocephalus maculipennis)</image:title>
+<image:caption>Gaviota Capucho Café, Chroicocephalus maculipennis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/sterna_trudeaui.jpg</image:loc>
+<image:title>Gaviotín Lagunero (Sterna trudeaui)</image:title>
+<image:caption>Gaviotín Lagunero, Sterna trudeaui. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/pygochelidon_cyanoleuca.jpg</image:loc>
+<image:title>Golondrina Barranquera (Pygochelidon cyanoleuca)</image:title>
+<image:caption>Golondrina Barranquera, Pygochelidon cyanoleuca. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/alopochelidon_fucata.jpg</image:loc>
+<image:title>Golondrina Cabeza Rojiza (Alopochelidon fucata)</image:title>
+<image:caption>Golondrina Cabeza Rojiza, Alopochelidon fucata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/progne_elegans.jpg</image:loc>
+<image:title>Golondrina Negra (Progne elegans)</image:title>
+<image:caption>Golondrina Negra, Progne elegans. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/progne_tapera.jpg</image:loc>
+<image:title>Golondrina Parda (Progne tapera)</image:title>
+<image:caption>Golondrina Parda, Progne tapera. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/hirundo_rustica.jpg</image:loc>
+<image:title>Golondrina Tijerita (Hirundo rustica)</image:title>
+<image:caption>Golondrina Tijerita, Hirundo rustica. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/passer_domesticus.jpg</image:loc>
+<image:title>Gorrión (Passer domesticus)</image:title>
+<image:caption>Gorrión, Passer domesticus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/caracara_plancus.jpg</image:loc>
+<image:title>Carancho (Caracara plancus)</image:title>
+<image:caption>Carancho, Caracara plancus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/daptrius_chimango.jpg</image:loc>
+<image:title>Chimango (Daptrius chimango)</image:title>
+<image:caption>Chimango, Daptrius chimango. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/falco_sparverius.jpg</image:loc>
+<image:title>Halconcito Colorado (Falco sparverius)</image:title>
+<image:caption>Halconcito Colorado, Falco sparverius. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/falco_femoralis.jpg</image:loc>
+<image:title>Halcón Plomizo (Falco femoralis)</image:title>
+<image:caption>Halcón Plomizo, Falco femoralis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/tarphonomus_certhioides.jpg</image:loc>
+<image:title>Bandurrita Chaqueña (Tarphonomus certhioides)</image:title>
+<image:caption>Bandurrita Chaqueña, Tarphonomus certhioides. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/upucerthia_dumetaria.jpg</image:loc>
+<image:title>Bandurrita Esteparia (Upucerthia dumetaria)</image:title>
+<image:caption>Bandurrita Esteparia, Upucerthia dumetaria. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/pseudoseisura_lophotes.jpg</image:loc>
+<image:title>Cacholote Castaño (Pseudoseisura lophotes)</image:title>
+<image:caption>Cacholote Castaño, Pseudoseisura lophotes. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/asthenes_baeri.jpg</image:loc>
+<image:title>Canastero Chaqueño (Asthenes baeri)</image:title>
+<image:caption>Canastero Chaqueño, Asthenes baeri. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/asthenes_pyrrholeuca.jpg</image:loc>
+<image:title>Canastero Coludo (Asthenes pyrrholeuca)</image:title>
+<image:caption>Canastero Coludo, Asthenes pyrrholeuca. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/drymornis_bridgesii.jpg</image:loc>
+<image:title>Chinchero Grande (Drymornis bridgesii)</image:title>
+<image:caption>Chinchero Grande, Drymornis bridgesii. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/leptasthenura_aegithaloides.jpg</image:loc>
+<image:title>Coludito Cola Negra (Leptasthenura aegithaloides)</image:title>
+<image:caption>Coludito Cola Negra, Leptasthenura aegithaloides. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/leptasthenura_platensis.jpg</image:loc>
+<image:title>Coludito Copetón (Leptasthenura platensis)</image:title>
+<image:caption>Coludito Copetón, Leptasthenura platensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/coryphistera_alaudina.jpg</image:loc>
+<image:title>Crestudo (Coryphistera alaudina)</image:title>
+<image:caption>Crestudo, Coryphistera alaudina. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/cranioleuca_pyrrhophia.jpg</image:loc>
+<image:title>Curutié Blanco (Cranioleuca pyrrhophia)</image:title>
+<image:caption>Curutié Blanco, Cranioleuca pyrrhophia. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/phacellodomus_sibilatrix.jpg</image:loc>
+<image:title>Espinero Chico (Phacellodomus sibilatrix)</image:title>
+<image:caption>Espinero Chico, Phacellodomus sibilatrix. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/phacellodomus_striaticollis.jpg</image:loc>
+<image:title>Espinero Pecho Manchado (Phacellodomus striaticollis)</image:title>
+<image:caption>Espinero Pecho Manchado, Phacellodomus striaticollis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/furnarius_rufus.jpg</image:loc>
+<image:title>Hornero (Furnarius rufus)</image:title>
+<image:caption>Hornero, Furnarius rufus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/phleocryptes_melanops.jpg</image:loc>
+<image:title>Junquero (Phleocryptes melanops)</image:title>
+<image:caption>Junquero, Phleocryptes melanops. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anumbius_annumbi.jpg</image:loc>
+<image:title>Leñatero (Anumbius annumbi)</image:title>
+<image:caption>Leñatero, Anumbius annumbi. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/cinclodes_fuscus.jpg</image:loc>
+<image:title>Remolinera Parda (Cinclodes fuscus)</image:title>
+<image:caption>Remolinera Parda, Cinclodes fuscus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/jacana_jacana.jpg</image:loc>
+<image:title>Jacana (Jacana jacana)</image:title>
+<image:caption>Jacana, Jacana jacana. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/spinus_magellanicus.jpg</image:loc>
+<image:title>Cabecitanegra (Spinus magellanicus)</image:title>
+<image:caption>Cabecitanegra, Spinus magellanicus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/thectocercus_acuticaudatus.jpg</image:loc>
+<image:title>Calancate Cabeza Azul (Thectocercus acuticaudatus)</image:title>
+<image:caption>Calancate Cabeza Azul, Thectocercus acuticaudatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/psilopsiagon_aymara.jpg</image:loc>
+<image:title>Catita Serrana Grande (Psilopsiagon aymara)</image:title>
+<image:caption>Catita Serrana Grande, Psilopsiagon aymara. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/myiopsitta_monachus.jpg</image:loc>
+<image:title>Cotorra (Myiopsitta monachus)</image:title>
+<image:caption>Cotorra, Myiopsitta monachus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/cyanoliseus_patagonus.jpg</image:loc>
+<image:title>Loro Barranquero (Cyanoliseus patagonus)</image:title>
+<image:caption>Loro Barranquero, Cyanoliseus patagonus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/rollandia_rolland.jpg</image:loc>
+<image:title>Macá Cara Blanca (Rollandia rolland)</image:title>
+<image:caption>Macá Cara Blanca, Rollandia rolland. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/podiceps_major.jpg</image:loc>
+<image:title>Macá Grande (Podiceps major)</image:title>
+<image:caption>Macá Grande, Podiceps major. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/podilymbus_podiceps.jpg</image:loc>
+<image:title>Macá Pico Grueso (Podilymbus podiceps)</image:title>
+<image:caption>Macá Pico Grueso, Podilymbus podiceps. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/podiceps_occipitalis.jpg</image:loc>
+<image:title>Macá Plateado (Podiceps occipitalis)</image:title>
+<image:caption>Macá Plateado, Podiceps occipitalis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/chloroceryle_americana.jpg</image:loc>
+<image:title>Martín Pescador Chico (Chloroceryle americana)</image:title>
+<image:caption>Martín Pescador Chico, Chloroceryle americana. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/megaceryle_torquata.jpg</image:loc>
+<image:title>Martín Pescador Grande (Megaceryle torquata)</image:title>
+<image:caption>Martín Pescador Grande, Megaceryle torquata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/accipiter_striatus.jpg</image:loc>
+<image:title>Esparvero Estriado (Accipiter striatus)</image:title>
+<image:caption>Esparvero Estriado, Accipiter striatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/columba_livia.jpg</image:loc>
+<image:title>Paloma Bravía (Columba livia)</image:title>
+<image:caption>Paloma Bravía, Columba livia. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/patagioenas_maculosa.jpg</image:loc>
+<image:title>Paloma Manchada (Patagioenas maculosa)</image:title>
+<image:caption>Paloma Manchada, Patagioenas maculosa. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/patagioenas_picazuro.jpg</image:loc>
+<image:title>Paloma Picazuró (Patagioenas picazuro)</image:title>
+<image:caption>Paloma Picazuró, Patagioenas picazuro. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/columbina_picui.jpg</image:loc>
+<image:title>Torcacita Picuí (Columbina picui)</image:title>
+<image:caption>Torcacita Picuí, Columbina picui. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/zenaida_auriculata.jpg</image:loc>
+<image:title>Torcaza (Zenaida auriculata)</image:title>
+<image:caption>Torcaza, Zenaida auriculata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/leptotila_verreauxi.jpg</image:loc>
+<image:title>Yerutí Gris (Leptotila verreauxi)</image:title>
+<image:caption>Yerutí Gris, Leptotila verreauxi. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/coscoroba_coscoroba.jpg</image:loc>
+<image:title>Coscoroba (Coscoroba coscoroba)</image:title>
+<image:caption>Coscoroba, Coscoroba coscoroba. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anas_flavirostris.jpg</image:loc>
+<image:title>Pato Barcino (Anas flavirostris)</image:title>
+<image:caption>Pato Barcino, Anas flavirostris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/heteronetta_atricapilla.jpg</image:loc>
+<image:title>Pato Cabeza Negra (Heteronetta atricapilla)</image:title>
+<image:caption>Pato Cabeza Negra, Heteronetta atricapilla. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/spatula_versicolor.jpg</image:loc>
+<image:title>Pato Capuchino (Spatula versicolor)</image:title>
+<image:caption>Pato Capuchino, Spatula versicolor. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/spatula_cyanoptera.jpg</image:loc>
+<image:title>Pato Colorado (Spatula cyanoptera)</image:title>
+<image:caption>Pato Colorado, Spatula cyanoptera. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/spatula_platalea.jpg</image:loc>
+<image:title>Pato Cuchara (Spatula platalea)</image:title>
+<image:caption>Pato Cuchara, Spatula platalea. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/amazonetta_brasiliensis.jpg</image:loc>
+<image:title>Pato Cutirí (Amazonetta brasiliensis)</image:title>
+<image:caption>Pato Cutirí, Amazonetta brasiliensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anas_bahamensis.jpg</image:loc>
+<image:title>Pato Gargantilla (Anas bahamensis)</image:title>
+<image:caption>Pato Gargantilla, Anas bahamensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/anas_georgica.jpg</image:loc>
+<image:title>Pato Maicero (Anas georgica)</image:title>
+<image:caption>Pato Maicero, Anas georgica. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/mareca_sibilatrix.jpg</image:loc>
+<image:title>Pato Overo (Mareca sibilatrix)</image:title>
+<image:caption>Pato Overo, Mareca sibilatrix. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/netta_peposaca.jpg</image:loc>
+<image:title>Pato Picazo (Netta peposaca)</image:title>
+<image:caption>Pato Picazo, Netta peposaca. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/oxyura_vittata.jpg</image:loc>
+<image:title>Pato Zambullidor Chico (Oxyura vittata)</image:title>
+<image:caption>Pato Zambullidor Chico, Oxyura vittata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/callonetta_leucophrys.jpg</image:loc>
+<image:title>Pato de Collar (Callonetta leucophrys)</image:title>
+<image:caption>Pato de Collar, Callonetta leucophrys. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/dendrocygna_bicolor.jpg</image:loc>
+<image:title>Sirirí Colorado (Dendrocygna bicolor)</image:title>
+<image:caption>Sirirí Colorado, Dendrocygna bicolor. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/dendrocygna_viduata.jpg</image:loc>
+<image:title>Sirirí Pampa (Dendrocygna viduata)</image:title>
+<image:caption>Sirirí Pampa, Dendrocygna viduata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/sappho_sparganurus.jpg</image:loc>
+<image:title>Picaflor Cometa (Sappho sparganurus)</image:title>
+<image:caption>Picaflor Cometa, Sappho sparganurus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/chlorostilbon_lucidus.jpg</image:loc>
+<image:title>Picaflor Verde (Chlorostilbon lucidus)</image:title>
+<image:caption>Picaflor Verde, Chlorostilbon lucidus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/tringa_flavipes.jpg</image:loc>
+<image:title>Pitotoy Chico (Tringa flavipes)</image:title>
+<image:caption>Pitotoy Chico, Tringa flavipes. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/tringa_melanoleuca.jpg</image:loc>
+<image:title>Pitotoy Grande (Tringa melanoleuca)</image:title>
+<image:caption>Pitotoy Grande, Tringa melanoleuca. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/troglodytes_musculus.jpg</image:loc>
+<image:title>Ratona (Troglodytes musculus)</image:title>
+<image:caption>Ratona, Troglodytes musculus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/cistothorus_platensis.jpg</image:loc>
+<image:title>Ratona Aperdizada (Cistothorus platensis)</image:title>
+<image:caption>Ratona Aperdizada, Cistothorus platensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/polioptila_dumicola.jpg</image:loc>
+<image:title>Tacuarita Azul (Polioptila dumicola)</image:title>
+<image:caption>Tacuarita Azul, Polioptila dumicola. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/coryphospingus_cucullatus.jpg</image:loc>
+<image:title>Brasita de Fuego (Coryphospingus cucullatus)</image:title>
+<image:caption>Brasita de Fuego, Coryphospingus cucullatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/ammodramus_humeralis.jpg</image:loc>
+<image:title>Cachilo Ceja Amarilla (Ammodramus humeralis)</image:title>
+<image:caption>Cachilo Ceja Amarilla, Ammodramus humeralis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/paroaria_coronata.jpg</image:loc>
+<image:title>Cardenal Copete Rojo (Paroaria coronata)</image:title>
+<image:caption>Cardenal Copete Rojo, Paroaria coronata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/sporophila_caerulescens.jpg</image:loc>
+<image:title>Corbatita (Sporophila caerulescens)</image:title>
+<image:caption>Corbatita, Sporophila caerulescens. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/diuca_diuca.jpg</image:loc>
+<image:title>Diuca (Diuca diuca)</image:title>
+<image:caption>Diuca, Diuca diuca. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/sicalis_flaveola.jpg</image:loc>
+<image:title>Jilguero Dorado (Sicalis flaveola)</image:title>
+<image:caption>Jilguero Dorado, Sicalis flaveola. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/sicalis_luteola.jpg</image:loc>
+<image:title>Misto (Sicalis luteola)</image:title>
+<image:caption>Misto, Sicalis luteola. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/microspingus_melanoleucus.jpg</image:loc>
+<image:title>Monterita Cabeza Negra (Microspingus melanoleucus)</image:title>
+<image:caption>Monterita Cabeza Negra, Microspingus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/rauenia_bonariensis.jpg</image:loc>
+<image:title>Naranjero (Rauenia bonariensis)</image:title>
+<image:caption>Naranjero, Rauenia bonariensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/saltator_aurantiirostris.jpg</image:loc>
+<image:title>Pepitero de Collar (Saltator aurantiirostris)</image:title>
+<image:caption>Pepitero de Collar, Saltator aurantiirostris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/catamenia_analis.jpg</image:loc>
+<image:title>Piquitodeoro Chico (Catamenia analis)</image:title>
+<image:caption>Piquitodeoro Chico, Catamenia analis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/poospiza_whitii.jpg</image:loc>
+<image:title>Sietevestidos Serrano (Poospiza whitii)</image:title>
+<image:caption>Sietevestidos Serrano, Poospiza whitii. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/embernagra_platensis.jpg</image:loc>
+<image:title>Verdón (Embernagra platensis)</image:title>
+<image:caption>Verdón, Embernagra platensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/himantopus_mexicanus.jpg</image:loc>
+<image:title>Tero-real (Himantopus mexicanus)</image:title>
+<image:caption>Tero-real, Himantopus mexicanus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/nothura_maculosa.jpg</image:loc>
+<image:title>Inambú Campestre (Nothura maculosa)</image:title>
+<image:caption>Inambú Campestre, Nothura maculosa. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/pitangus_sulphuratus.jpg</image:loc>
+<image:title>Benteveo (Pitangus sulphuratus)</image:title>
+<image:caption>Benteveo, Pitangus sulphuratus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/hirundinea_ferruginea.jpg</image:loc>
+<image:title>Birro Colorado (Hirundinea ferruginea)</image:title>
+<image:caption>Birro Colorado, Hirundinea ferruginea. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/pyrocephalus_rubinus.jpg</image:loc>
+<image:title>Churrinche (Pyrocephalus rubinus)</image:title>
+<image:caption>Churrinche, Pyrocephalus rubinus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/elaenia_parvirostris.jpg</image:loc>
+<image:title>Fiofío Pico Corto (Elaenia parvirostris)</image:title>
+<image:caption>Fiofío Pico Corto, Elaenia parvirostris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/elaenia_albiceps.jpg</image:loc>
+<image:title>Fiofío Silbón (Elaenia albiceps)</image:title>
+<image:caption>Fiofío Silbón, Elaenia albiceps. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/agriornis_micropterus.jpg</image:loc>
+<image:title>Gaucho Pardo (Agriornis micropterus)</image:title>
+<image:caption>Gaucho Pardo, Agriornis micropterus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/xolmis_irupero.jpg</image:loc>
+<image:title>Monjita Blanca (Xolmis irupero)</image:title>
+<image:caption>Monjita Blanca, Xolmis irupero. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/neoxolmis_coronatus.jpg</image:loc>
+<image:title>Monjita Coronada (Neoxolmis coronatus)</image:title>
+<image:caption>Monjita Coronada, Neoxolmis coronatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/myiophobus_fasciatus.jpg</image:loc>
+<image:title>Mosqueta Estriada (Myiophobus fasciatus)</image:title>
+<image:caption>Mosqueta Estriada, Myiophobus fasciatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/machetornis_rixosa.jpg</image:loc>
+<image:title>Picabuey (Machetornis rixosa)</image:title>
+<image:caption>Picabuey, Machetornis rixosa. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/hymenops_perspicillatus.jpg</image:loc>
+<image:title>Pico de Plata (Hymenops perspicillatus)</image:title>
+<image:caption>Pico de Plata, Hymenops perspicillatus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/serpophaga_nigricans.jpg</image:loc>
+<image:title>Piojito Gris (Serpophaga nigricans)</image:title>
+<image:caption>Piojito Gris, Serpophaga nigricans. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/camptostoma_obsoletum.jpg</image:loc>
+<image:title>Piojito Silbón (Camptostoma obsoletum)</image:title>
+<image:caption>Piojito Silbón, Camptostoma obsoletum. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/serpophaga_subcristata.jpg</image:loc>
+<image:title>Piojito Tiquitiqui (Serpophaga subcristata)</image:title>
+<image:caption>Piojito Tiquitiqui, Serpophaga subcristata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/serpophaga_griseicapilla.jpg</image:loc>
+<image:title>Piojito Trinador (Serpophaga griseicapilla)</image:title>
+<image:caption>Piojito Trinador, Serpophaga griseicapilla. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/lessonia_rufa.jpg</image:loc>
+<image:title>Sobrepuesto Austral (Lessonia rufa)</image:title>
+<image:caption>Sobrepuesto Austral, Lessonia rufa. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/suiriri_suiriri.jpg</image:loc>
+<image:title>Suirirí Gris (Suiriri suiriri)</image:title>
+<image:caption>Suirirí Gris, Suiriri suiriri. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/tachuris_rubrigastra.jpg</image:loc>
+<image:title>Tachurí Sietecolores (Tachuris rubrigastra)</image:title>
+<image:caption>Tachurí Sietecolores, Tachuris rubrigastra. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/tyrannus_savana.jpg</image:loc>
+<image:title>Tijereta (Tyrannus savana)</image:title>
+<image:caption>Tijereta, Tyrannus savana. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/icterus_pyrrhopterus.jpg</image:loc>
+<image:title>Boyerito (Icterus pyrrhopterus)</image:title>
+<image:caption>Boyerito, Icterus pyrrhopterus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/pseudoleistes_virescens.jpg</image:loc>
+<image:title>Pecho Amarillo (Pseudoleistes virescens)</image:title>
+<image:caption>Pecho Amarillo, Pseudoleistes virescens. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/agelaioides_badius.jpg</image:loc>
+<image:title>Tordo Músico (Agelaioides badius)</image:title>
+<image:caption>Tordo Músico, Agelaioides badius. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/molothrus_rufoaxillaris.jpg</image:loc>
+<image:title>Tordo Pico Corto (Molothrus rufoaxillaris)</image:title>
+<image:caption>Tordo Pico Corto, Molothrus rufoaxillaris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/molothrus_bonariensis.jpg</image:loc>
+<image:title>Tordo Renegrido (Molothrus bonariensis)</image:title>
+<image:caption>Tordo Renegrido, Molothrus bonariensis. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/agelasticus_thilius.jpg</image:loc>
+<image:title>Varillero Ala Amarilla (Agelasticus thilius)</image:title>
+<image:caption>Varillero Ala Amarilla, Agelasticus thilius. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/chrysomus_ruficapillus.jpg</image:loc>
+<image:title>Varillero Congo (Chrysomus ruficapillus)</image:title>
+<image:caption>Varillero Congo, Chrysomus ruficapillus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/streptoprocne_zonaris.jpg</image:loc>
+<image:title>Vencejo de Collar (Streptoprocne zonaris)</image:title>
+<image:caption>Vencejo de Collar, Streptoprocne zonaris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/turdus_amaurochalinus.jpg</image:loc>
+<image:title>Zorzal Chalchalero (Turdus amaurochalinus)</image:title>
+<image:caption>Zorzal Chalchalero, Turdus amaurochalinus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/turdus_chiguanco.jpg</image:loc>
+<image:title>Zorzal Chiguanco (Turdus chiguanco)</image:title>
+<image:caption>Zorzal Chiguanco, Turdus chiguanco. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiagoaves.github.io/fotos/turdus_rufiventris.jpg</image:loc>
+<image:title>Zorzal Colorado (Turdus rufiventris)</image:title>
+<image:caption>Zorzal Colorado, Turdus rufiventris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+</image:image>
+</url>
 </urlset>
