@@ -243,7 +243,8 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 
 /* REDES */
 .redes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:600px;margin:0 auto;}
-.trab,.mkit{max-width:600px;margin:2.6rem auto 0;text-align:center;}
+.trab{max-width:600px;margin:0 auto 2.4rem;text-align:center;padding-bottom:2rem;border-bottom:1px solid var(--co);}
+.redes-tit{text-align:center;font-size:.68rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:var(--ti);margin:0 0 1.2rem;}
 .trab-h{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--v1);font-weight:400;}
 .trab-h em{font-style:italic;color:var(--v3);}
 .trab-p{font-size:.92rem;line-height:1.7;color:var(--ti);margin:.5rem 0 1rem;}
@@ -252,17 +253,10 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .trab-btn:hover{background:var(--v2);border-color:var(--v2);}
 .trab-btn2{background:transparent;color:var(--v1);}
 .trab-btn2:hover{background:var(--v1);color:#fff;}
-.mk-quien{font-size:.9rem;line-height:1.7;color:var(--tx);margin:0 0 1.1rem;}
-.mk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;}
-.mk-k{background:white;border:1px solid var(--co);padding:.9rem .4rem;box-shadow:0 2px 10px rgba(0,0,0,.05);}
-.mk-k b{display:block;font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--v1);line-height:1.1;}
-.mk-k span{display:block;font-size:.58rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:var(--ti);margin-top:.3rem;}
-.mk-nota{font-size:.78rem;color:var(--ti);margin:.9rem 0 0;font-family:'Caveat',cursive;font-size:1.05rem;}
 .mk-copy{font-size:.72rem;line-height:1.6;color:var(--ti);margin:1.2rem 0 0;padding-top:1rem;border-top:1px solid var(--co);}
 .lb-copy{position:absolute;bottom:.35rem;left:0;right:0;text-align:center;font-size:.6rem;color:rgba(255,255,255,.45);pointer-events:none;}
-[data-theme=dark] .mk-k{background:#222819;border-color:#38422d;}
 [data-theme=dark] .mk-quien{color:#cbbfae;}
-[data-theme=dark] .trab-h,[data-theme=dark] .mk-k b{color:#d8e0c4;}
+[data-theme=dark] .trab-h{color:#d8e0c4;}
 [data-theme=dark] .trab-btn2{color:#d8e0c4;border-color:#d8e0c4;}
 .red-card{background:white;border:1px solid var(--co);border-radius:0;padding:1.6rem 1.2rem;text-decoration:none;color:var(--tx);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;align-items:center;gap:.6rem;}
 .red-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12);border-color:var(--v3);}
@@ -831,7 +825,7 @@ body{padding-bottom:48px;}
       <li><a href="#" onclick="showPage('mapa',this);return false">Mapa</a></li>
       <li><a href="#" onclick="showPage('galeria',this);return false">Galería</a></li>
       <li><a href="#" onclick="showPage('datos',this);return false">Datos</a></li>
-      <li><a href="#" onclick="showPage('redes',this);return false">Redes</a></li>
+      <li><a href="#" onclick="showPage('redes',this);return false">Contacto</a></li>
     </ul>
   </div>
 </nav>
@@ -911,10 +905,19 @@ body{padding-bottom:48px;}
 <div id="page-redes" class="page">
   <div class="page-header">
     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-logo class="page-header-logo" alt="logo">
-    <h2 class="page-title">Encontrame <em>en</em></h2>
-    <p class="page-sub">Mis redes y contacto</p>
+    <h2 class="page-title">Contacto <em>y redes</em></h2>
+    <p class="page-sub">Escribime o encontrame donde quieras</p>
   </div>
   <div class="page-body">
+    <section class="trab trab-top" aria-labelledby="trab-t">
+      <h3 id="trab-t" class="trab-h">Trabajemos <em>juntos</em></h3>
+      <p class="trab-p">¿Una colaboración, una nota, una salida de campo o el uso de alguna foto? Escribime y lo charlamos.</p>
+      <div class="trab-btns">
+        <a class="trab-btn" href="#redes" onclick="return mailContacto(event)">✉ Escribime</a>
+        <a class="trab-btn trab-btn2" href="https://ig.me/m/felix_santiago_aves" target="_blank" rel="noopener">Mensaje en Instagram</a>
+      </div>
+    </section>
+    <p class="redes-tit">Mis redes</p>
     <div class="redes-grid" id="redes-grid">
       <a href="https://www.instagram.com/felix_santiago_aves" target="_blank" class="red-card">
         <div class="red-icon" style="background:#E1306C15">
@@ -967,22 +970,7 @@ body{padding-bottom:48px;}
         <div class="red-handle">Felix_Santiago</div>
       </a>
     </div>
-    <section class="trab" aria-labelledby="trab-t">
-      <h3 id="trab-t" class="trab-h">Trabajemos <em>juntos</em></h3>
-      <p class="trab-p">¿Una colaboración, una nota, una salida de campo o el uso de alguna foto? Escribime y lo charlamos.</p>
-      <div class="trab-btns">
-        <a class="trab-btn" href="#redes" onclick="return mailContacto(event)">✉ Escribime</a>
-        <a class="trab-btn trab-btn2" href="https://ig.me/m/felix_santiago_aves" target="_blank" rel="noopener">Mensaje en Instagram</a>
-      </div>
-    </section>
-    <section class="mkit" aria-labelledby="mk-t">
-      <h3 id="mk-t" class="trab-h">Media <em>kit</em></h3>
-      <p class="trab-p">Quién soy y mis números, siempre actualizados.</p>
-      <p class="mk-quien">Félix Santiago Allendes · fotógrafo de aves y naturaleza desde Río Cuarto, Córdoba, Argentina. Registro mis salidas en eBird y las comparto en este diario de campo visual.</p>
-      <div class="mk-grid" id="mk-grid"></div>
-      <p class="mk-nota" id="mk-nota"></p>
-      <p class="mk-copy">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, escribime.</p>
-    </section>
+    <p class="mk-copy" style="max-width:600px;margin:2rem auto 0">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, escribime.</p>
   </div>
 </div>
 <!-- DATOS -->
@@ -2582,21 +2570,6 @@ function mailContacto(e){
   location.href='mailto:'+u.join('@')+'?subject='+encodeURIComponent('Contacto desde Félix Santiago Aves');
   return false;
 }
-// Seguidores: no se pueden leer solos; se actualizan a mano (fecha = cuándo se tomó el dato)
-const MK_REDES = {instagram: 745, fecha: '2026-10-20'};
-function buildMediaKit(){
-  const g=document.getElementById('mk-grid'); if(!g) return;
-  const v=Object.keys(avist).length;
-  const nc=LISTA_REG.cba.length, na=LISTA_REG.arg.length;
-  const vc=LISTA_REG.cba.filter(a=>vistaCba(a.id)).length;
-  const nFoto=Object.values(avist).filter(r=>r.foto).length;
-  const k=(b,t)=>`<div class="mk-k"><b>${b}</b><span>${t}</span></div>`;
-  g.innerHTML=k(v,'Especies vistas')+k(Math.round(vc/nc*100)+'%','Aves de Córdoba')+k(Math.round(v/na*100)+'%','Aves de Argentina')
-    +k(nFoto,'Especies con foto')+k(LUGARES_MAP.length,'Lugares')+k(fmtN(MK_REDES.instagram),'Seguidores en Instagram');
-  const fechas=Object.values(avist).map(r=>r.fecha).filter(Boolean).sort();
-  const nota=document.getElementById('mk-nota');
-  if(nota&&fechas.length) nota.textContent='Registrando aves desde '+fmtFecha(fechas[0])+'.';
-}
 function buildFooter() {
   const gf = document.getElementById('site-footer-global');
   if(!gf) return;
@@ -2793,10 +2766,9 @@ function showPage(id,el) {
   if(id==='mapa'){setTimeout(initLeafletMap,100);}
   if(id==='galeria'){loadGaleria();}
   if(id==='datos'){buildDatos();}
-  if(id==='redes'){buildMediaKit();}
   if(el) el.classList.add('active');
   history.replaceState(null,'','#'+id);
-  const titles={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Datos · Félix Santiago Aves','redes':'Redes · Félix Santiago Aves'};
+  const titles={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Datos · Félix Santiago Aves','redes':'Contacto · Félix Santiago Aves'};
   document.title = titles[id] || 'Félix Santiago Aves';
 }
 
@@ -3071,7 +3043,7 @@ function shareAve() {
 
 function closeM(){document.getElementById('modal-ov').classList.remove('open');avesOrdenadas=[];mapaAvesOrdenadas=[];
   const pid=((document.querySelector('.page.active')||{}).id||'page-album').replace('page-','');
-  const titulos={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Datos · Félix Santiago Aves','redes':'Redes · Félix Santiago Aves'};
+  const titulos={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Datos · Félix Santiago Aves','redes':'Contacto · Félix Santiago Aves'};
   try{history.replaceState(null,'','#'+pid);}catch(e){}
   document.title=titulos[pid]||'Félix Santiago Aves';}
 
