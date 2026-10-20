@@ -251,6 +251,8 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 .trab-btns{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;}
 .trab-btn{display:inline-block;padding:.7rem 1.3rem;background:var(--v1);color:#fff;text-decoration:none;font-size:.74rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;border:1px solid var(--v1);transition:all .2s;}
 .trab-btn:hover{background:var(--v2);border-color:var(--v2);}
+.nl-c{display:none;}
+@media(max-width:400px){.nl-l{display:none;}.nl-c{display:inline;}}
 .trab-alt{font-size:.78rem;color:var(--ti);margin:1rem 0 0;}
 .trab-alt a{color:var(--v1);text-decoration:underline;font-weight:700;}
 [data-theme=dark] .trab-alt a{color:#d8e0c4;}
@@ -827,7 +829,7 @@ body{padding-bottom:48px;}
       <li><a href="#" id="nav-album" onclick="showPage('album',this);return false">Álbum<span class="nav-badge" id="nav-album-badge"></span></a></li>
       <li><a href="#" onclick="showPage('mapa',this);return false">Mapa</a></li>
       <li><a href="#" onclick="showPage('galeria',this);return false">Galería</a></li>
-      <li><a href="#" onclick="showPage('datos',this);return false">Datos</a></li>
+      <li><a href="#" onclick="showPage('datos',this);return false"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
       <li><a href="#" onclick="showPage('redes',this);return false">Contacto</a></li>
     </ul>
   </div>
@@ -1032,7 +1034,7 @@ body{padding-bottom:48px;}
       <button class="fb2" id="btn-mas" onclick="toggleMasFiltros()">Filtros ▾</button>
     </div>
     <div class="album-filtros" id="album-filtros">
-      <label>Familia<select id="sel-fam" onchange="setFam(this.value)"></select></label>
+      <label>Grupo<select id="sel-fam" onchange="setFam(this.value)"></select></label>
       <label>Lugar<select id="sel-lug" onchange="setLug(this.value)"></select></label>
       <label>Orden<select id="sel-ord" onchange="setOrden(this.value)"><option value="az">A → Z</option><option value="tax">Taxonómico (como eBird)</option><option value="rec">Más recientes primero</option><option value="ant">Más antiguas primero</option></select></label>
       <button class="fb2" onclick="limpiarFiltros()">Limpiar</button>
@@ -2779,7 +2781,7 @@ function showPage(id,el) {
   if(id==='datos'){buildDatos();}
   if(el) el.classList.add('active');
   history.replaceState(null,'','#'+id);
-  const titles={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Datos · Félix Santiago Aves','redes':'Contacto · Félix Santiago Aves'};
+  const titles={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Estadísticas · Félix Santiago Aves','redes':'Contacto · Félix Santiago Aves'};
   document.title = titles[id] || 'Félix Santiago Aves';
 }
 
@@ -2980,7 +2982,7 @@ function openM(id) {
       fichaEl.innerHTML=`
         <div class="ficha-row"><span class="ficha-label">Nombre común</span><span class="ficha-val">${ave.comun}</span></div>
         <div class="ficha-row"><span class="ficha-label">Nombre científico</span><span class="ficha-cientifico">${ave.nombre}</span></div>
-        <div class="ficha-row"><span class="ficha-label">Familia</span><span class="ficha-val">${ave.familiaEsp}</span></div>
+        <div class="ficha-row"><span class="ficha-label">Grupo</span><span class="ficha-val">${ave.familiaEsp}</span></div>
         <div class="ficha-row ficha-col"><span class="ficha-label">Característica</span><span class="ficha-val ficha-car">${ficha.estado}</span></div>
         ${ficha.curiosidad?`<div class="ficha-row ficha-col"><span class="ficha-label">Dato curioso</span><span class="ficha-val ficha-dato">${ficha.curiosidad}</span></div>`:''}`;
       fichaEl.style.display='block';
@@ -3054,7 +3056,7 @@ function shareAve() {
 
 function closeM(){document.getElementById('modal-ov').classList.remove('open');avesOrdenadas=[];mapaAvesOrdenadas=[];
   const pid=((document.querySelector('.page.active')||{}).id||'page-album').replace('page-','');
-  const titulos={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Datos · Félix Santiago Aves','redes':'Contacto · Félix Santiago Aves'};
+  const titulos={'sobre-mi':'Félix Santiago Aves','album':'Álbum · Félix Santiago Aves','mapa':'Mapa · Félix Santiago Aves','galeria':'Galería · Félix Santiago Aves','datos':'Estadísticas · Félix Santiago Aves','redes':'Contacto · Félix Santiago Aves'};
   try{history.replaceState(null,'','#'+pid);}catch(e){}
   document.title=titulos[pid]||'Félix Santiago Aves';}
 
@@ -3233,7 +3235,7 @@ function avesFiltradas() {
 }
 function initFiltrosAlbum() {
   const fams = [...new Set(avesReg().map(a => a.familiaEsp))].sort((a, b) => famIdx(a) - famIdx(b));
-  document.getElementById('sel-fam').innerHTML = '<option value="">Todas las familias</option>' + fams.map(f => `<option>${escHtml(f)}</option>`).join('');
+  document.getElementById('sel-fam').innerHTML = '<option value="">Todos los grupos</option>' + fams.map(f => `<option>${escHtml(f)}</option>`).join('');
   document.getElementById('sel-lug').innerHTML = '<option value="">Todos los lugares</option>' + LUGARES_MAP.map((l, i) => `<option value="${i}">${escHtml(l.nombre)} (${l.count})</option>`).join('');
 }
 function actualizarFiltrosUI() {
@@ -3337,11 +3339,11 @@ function buildDatos() {
     <div class="dat-kpi rv" style="--d:.12s"><b>${nFoto}</b><span>Con foto</span><small>${Math.round(nFoto / Math.max(1, v) * 100)}% del álbum</small></div>
     <div class="dat-kpi rv"><b id="k-dias">…</b><span>Días de registro</span></div>
     <div class="dat-kpi rv" style="--d:.06s"><b id="k-mejor">…</b><span>Mejor día</span><small id="k-mejor-s"></small></div>
-    <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mes más rico</span><small id="k-mes-s"></small></div>
+    <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mejor mes</span><small id="k-mes-s"></small></div>
     <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum mes a mes</div>${meses.length ? chartAcumulado(meses, nuevas) : '<div class="dat-vacio">Todavía no hay datos</div>'}</div>
     <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Cuántas aves distintas registré cada mes</div><div id="ch-mensual"><div class="dat-vacio">Cargando…</div></div></div>
-    <div class="dat-card half rv"><div class="dat-h">Lugares más ricos</div><div class="dat-s">Tocá uno para verlo en el mapa</div>${hbarras(lugares, Math.max(1, lugares[0] ? lugares[0].v : 1))}</div>
-    <div class="dat-card half rv"><div class="dat-h">Familias más vistas</div><div class="dat-s">Tocá una para ver sus especies</div>${hbarras(famTop, Math.max(1, famTop[0] ? famTop[0].v : 1))}</div>
+    <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para verlo en el mapa</div>${hbarras(lugares, Math.max(1, lugares[0] ? lugares[0].v : 1))}</div>
+    <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para ver sus especies</div>${hbarras(famTop, Math.max(1, famTop[0] ? famTop[0].v : 1))}</div>
   </div>`;
   cargarRegistros().then(r => {
     const box = document.getElementById('ch-mensual'); if(!box) return;
@@ -3388,13 +3390,13 @@ function buildDatos() {
   const vR = avesReg().filter(visto).length, falt = avesReg().length - vR;
   const fams = Object.entries(porFamR).map(([n, f]) => ({n, t: f.t, s: f.s, m: f.t - f.s})).sort((a, b) => famIdx(a.n) - famIdx(b.n));
   const completas = fams.filter(f => f.m === 0).length;
-  document.getElementById('dat-falt').innerHTML = `<div class="reg-sel" role="group" aria-label="Región"><button class="reg-b${REGION === 'cba' ? ' on' : ''}" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b${REGION === 'arg' ? ' on' : ''}" data-reg="arg" onclick="setRegion('arg')">Argentina</button></div><div class="fam-resumen">Me faltan <b>${fmtN(falt)}</b> especies de ${fmtN(avesReg().length)} · ${completas} familia${completas === 1 ? '' : 's'} completa${completas === 1 ? '' : 's'}</div>
+  document.getElementById('dat-falt').innerHTML = `<div class="reg-sel" role="group" aria-label="Región"><button class="reg-b${REGION === 'cba' ? ' on' : ''}" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b${REGION === 'arg' ? ' on' : ''}" data-reg="arg" onclick="setRegion('arg')">Argentina</button></div><div class="fam-resumen">Me faltan <b>${fmtN(falt)}</b> especies de ${fmtN(avesReg().length)} · ${completas} grupo${completas === 1 ? '' : 's'} completo${completas === 1 ? '' : 's'}</div>
     <div class="fam-lista">${fams.map((f, i) => {
       const aves = avesReg().filter(a => a.familiaEsp === f.n).sort((a, b) => (!!visto(b) - !!visto(a)) * -1 || a.tx - b.tx);
       const esc = f.n.replace(/'/g, "\\'");
       return `<details class="fam-det rv${f.m === 0 ? ' completa' : ''}" style="--d:${Math.min(i * .03, .4)}s"><summary><span class="hb-n">${escHtml(f.n)}</span><span class="hb-bar"><i class="hb-fill" style="--w:${Math.round(f.s / f.t * 100)}%"></i></span><span class="hb-v">${f.s}/${f.t}</span></summary>
         <div class="fam-cuerpo">${aves.map(a => `<button class="fam-chip${visto(a) ? ' vista' : ''}" onclick="abrirDesdePortada(${a.id}, famLista(${a.id}))">${visto(a) ? '✓ ' : ''}${escHtml(a.comun)}</button>`).join('')}
-        <button class="fam-ir" onclick="irAlbumFamilia('${esc}',${f.m > 0})">${f.m > 0 ? 'Ver solo las que me faltan en el álbum →' : 'Ver la familia en el álbum →'}</button></div></details>`;
+        <button class="fam-ir" onclick="irAlbumFamilia('${esc}',${f.m > 0})">${f.m > 0 ? 'Ver solo las que me faltan en el álbum →' : 'Ver el grupo en el álbum →'}</button></div></details>`;
     }).join('')}</div>`;
   iniReveal();
 }
