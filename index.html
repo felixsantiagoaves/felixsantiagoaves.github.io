@@ -589,7 +589,12 @@ body{padding-bottom:48px;}
 .hito-chip{padding:.2rem .7rem;border:1.5px solid var(--co);border-radius:20px;font-size:.75rem;font-weight:700;color:var(--ti);}
 .hito-chip.ok{background:var(--v2);border-color:var(--v2);color:var(--cr);}
 .hito-chip.next{border-color:var(--am);color:var(--v1);}
-.dat-filtro{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;min-height:2.1rem;}
+.dat-filtro{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;min-height:2.1rem;}
+.dat-filtro.act{position:sticky;top:var(--navh,54px);z-index:60;background:var(--cr);padding:.55rem .6rem;border:1px solid var(--co);box-shadow:0 4px 12px rgba(0,0,0,.12);}
+.dfl-res{flex-basis:100%;font-size:.8rem;color:var(--tx);}
+.dfl-res b{font-family:'Playfair Display',serif;color:var(--v1);font-size:1rem;}
+[data-theme=dark] .dat-filtro.act{background:#1d2318;border-color:#38422d;}
+[data-theme=dark] .dfl-res,[data-theme=dark] .dfl-res b{color:#e8dccb;}
 .dfl-hint{font-family:'Caveat',cursive;font-size:1.05rem;color:var(--ti);}
 .dfl-chip{background:var(--v2);color:var(--cr);border:0;padding:.35rem .8rem;border-radius:20px;font-weight:700;font-size:.76rem;cursor:pointer;font-family:inherit;}
 .dfl-b{background:transparent;border:1.5px solid var(--ar);color:var(--v1);padding:.3rem .8rem;border-radius:20px;font-size:.72rem;font-weight:700;cursor:pointer;font-family:inherit;}
@@ -687,19 +692,29 @@ body{padding-bottom:48px;}
 @media(max-width:480px){.nav-badge{display:none !important;}}
 @media(max-width:380px){.nav-links a{font-size:.56rem !important;padding:1rem .22rem !important;letter-spacing:.2px !important;}.nav-logo img{height:22px !important;}}
 @media(max-width:768px){
-  .dat-grid{grid-template-columns:repeat(2,1fr);}
+  .dat-grid{grid-template-columns:repeat(3,1fr);}
   .dat-kpi{grid-column:span 1;}
-  .dat-card,.dat-card.half{grid-column:span 2;}
+  .dat-card,.dat-card.half{grid-column:span 3;}
+  .dat-filtro{grid-column:span 3;}
+  #ch-lugares .hb,#ch-grupos .hb{grid-template-columns:1fr 34px;grid-template-areas:'n v' 'b b';gap:.2rem .5rem;padding:.3rem .2rem;}
+  #ch-lugares .hb-n,#ch-grupos .hb-n{grid-area:n;font-size:.85rem;}
+  #ch-lugares .hb-v,#ch-grupos .hb-v{grid-area:v;}
+  #ch-lugares .hb-bar,#ch-grupos .hb-bar{grid-area:b;}
   .gal-controles{padding:1rem 1rem 0;}
   .gal-count{margin-left:0;}
   .fam-det summary{grid-template-columns:1fr 54px;}
   .fam-det .hb-bar{grid-column:1 / -1;grid-row:2;}
   .lb-hint{display:none;}
-  .ch-axis{font-size:19px;}
-  .ch-val{font-size:22px;}
-  .ch-num,.ch-numw{font-size:19px;}
-  .ch-num.ch-sel{font-size:22px;}
-  .ch-num{stroke-width:4px;}
+  .ch-axis{font-size:10.5px;}
+  .ch-val{font-size:12px;}
+  .ch-num,.ch-numw{font-size:11px;}
+  .ch-num.ch-sel{font-size:13px;}
+  .dat-grid{gap:.6rem;}
+  .dat-card{padding:.9rem .9rem;}
+  .dat-kpi{padding:.7rem .3rem;}
+  .dat-kpi b{font-size:1.5rem;}
+  .dat-kpi span{font-size:.52rem;letter-spacing:.6px;}
+  .dat-kpi small{font-size:.8rem;line-height:1.1;}
 }
 @media(prefers-reduced-motion:reduce){
   .foto-item{animation:none;}
@@ -3339,7 +3354,7 @@ function idxPaso(n, pitch, w) {
   return out;
 }
 function chartAcumulado(meses, nuevasPorMes, sel) {
-  const W = 640, H = 240, L = 34, R = 22, T = 26, B = 28, n = meses.length, mov = _movil();
+  const mov = _movil(), W = mov ? 360 : 640, H = mov ? 250 : 240, L = mov ? 30 : 34, R = mov ? 16 : 22, T = 26, B = 28, n = meses.length;
   let c = 0; const cum = meses.map(m => (c += nuevasPorMes[m] || 0));
   const max = niceMax(cum[n - 1] || 1);
   const x = i => L + (W - L - R) * (n === 1 ? .5 : i / (n - 1)), y = v => T + (H - T - B) * (1 - v / max);
@@ -3347,10 +3362,10 @@ function chartAcumulado(meses, nuevasPorMes, sel) {
   const pts = cum.map((v, i) => [x(i), y(v)]);
   const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
   const area = d + ` L${x(n - 1).toFixed(1)} ${y(0)} L${x(0).toFixed(1)} ${y(0)} Z`;
-  const ejeX = idxPaso(n, pitch, mov ? 78 : 48), valX = idxPaso(n, pitch, mov ? 40 : 26);
+  const ejeX = idxPaso(n, pitch, mov ? 46 : 48), valX = idxPaso(n, pitch, mov ? 24 : 26);
   const selI = sel ? meses.indexOf(sel) : -1;
   const etiq = [...ejeX].map(i => `<text class="ch-axis" x="${x(i).toFixed(1)}" y="${H - 8}" text-anchor="middle">${ymLabel(meses[i])}</text>`).join('');
-  const vals = [...new Set([...valX, ...(selI >= 0 ? [selI] : [])])].filter(i => cum[i] > 0 || i === selI).map(i => `<text class="ch-num${i === selI ? ' ch-sel' : ''}" x="${Math.min(Math.max(pts[i][0], L + 8), W - 14).toFixed(1)}" y="${(pts[i][1] - 9).toFixed(1)}" text-anchor="middle">${cum[i]}</text>`).join('');
+  const vals = [...new Set([...valX, ...(selI >= 0 ? [selI] : [])])].filter(i => cum[i] > 0 || i === selI).map(i => `<text class="ch-num${i === selI ? ' ch-sel' : ''}" x="${Math.min(Math.max(pts[i][0], L + 8), W - 10).toFixed(1)}" y="${(pts[i][1] - 9).toFixed(1)}" text-anchor="middle">${cum[i]}</text>`).join('');
   const dots = pts.map((p, i) => `<circle class="ch-dot" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${i === selI ? 6 : i === n - 1 ? 5 : n > 18 ? 2 : 3}"/>`).join('');
   const guia = selI >= 0 ? `<line class="ch-guia" x1="${pts[selI][0].toFixed(1)}" x2="${pts[selI][0].toFixed(1)}" y1="${T}" y2="${H - B}"/>` : '';
   const hit = meses.map((m, i) => { const w = n === 1 ? W - L - R : (W - L - R) / (n - 1); return `<rect class="ch-hit" x="${(x(i) - w / 2).toFixed(1)}" y="${T - 10}" width="${w.toFixed(1)}" height="${H - T - B + 10}" onclick="datFiltro('mes','${m}')"><title>${mesLargo(m)}: +${nuevasPorMes[m] || 0} nuevas · ${cum[i]} acumuladas</title></rect>`; }).join('');
@@ -3358,12 +3373,12 @@ function chartAcumulado(meses, nuevasPorMes, sel) {
   return `<svg class="ch-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Especies acumuladas por mes">${ejesY(max, W, L, R, T, H, B)}<path class="ch-area" d="${area}"/><path class="ch-line" pathLength="1" d="${d}"/>${guia}${dots}${vals}${etiq}${hit}</svg><div class="ch-read">${lec}</div>`;
 }
 function chartMensual(meses, nuevas, vistas, sel) {
-  const W = 640, H = 240, L = 34, R = 18, T = 26, B = 28, n = meses.length, mov = _movil();
+  const mov = _movil(), W = mov ? 360 : 640, H = mov ? 250 : 240, L = mov ? 30 : 34, R = mov ? 12 : 18, T = 26, B = 28, n = meses.length;
   const max = niceMax(Math.max(1, ...meses.map(m => vistas[m] || 0)));
   const paso = (W - L - R) / n, bw = Math.min(40, paso * .68);
   const y = v => T + (H - T - B) * (1 - v / max);
-  const numW = mov ? 40 : 26, cabe = paso >= numW * 1.15;
-  const ejeX = idxPaso(n, paso, mov ? 78 : 48);
+  const numW = mov ? 22 : 26, cabe = paso >= numW * 1.15;
+  const ejeX = idxPaso(n, paso, mov ? 46 : 48);
   const mx = meses.reduce((b, m) => (vistas[m] || 0) > (vistas[b] || 0) ? m : b, meses[0]);
   let bars = '', etiq = '', hit = '';
   meses.forEach((m, i) => {
@@ -3371,7 +3386,7 @@ function chartMensual(meses, nuevas, vistas, sel) {
     const dim = sel && sel !== m ? ' ch-dim' : '';
     bars += `<g class="ch-g${dim}"><rect class="ch-bar ch-old" x="${(cx - bw / 2).toFixed(1)}" y="${y(tot).toFixed(1)}" width="${bw.toFixed(1)}" height="${(y(nu) - y(tot)).toFixed(1)}"/><rect class="ch-bar ch-new" x="${(cx - bw / 2).toFixed(1)}" y="${y(nu).toFixed(1)}" width="${bw.toFixed(1)}" height="${(y(0) - y(nu)).toFixed(1)}"/>`;
     if(tot && (cabe || m === sel || m === mx || i === n - 1)) bars += `<text class="ch-num" x="${cx.toFixed(1)}" y="${(y(tot) - 5).toFixed(1)}" text-anchor="middle">${tot}</text>`;
-    if(nu && (cabe || m === sel) && y(0) - y(nu) >= (mov ? 26 : 15)) bars += `<text class="ch-numw" x="${cx.toFixed(1)}" y="${(y(nu) + (mov ? 20 : 12)).toFixed(1)}" text-anchor="middle">${nu}</text>`;
+    if(nu && (cabe || m === sel) && y(0) - y(nu) >= (mov ? 15 : 15)) bars += `<text class="ch-numw" x="${cx.toFixed(1)}" y="${(y(nu) + 12).toFixed(1)}" text-anchor="middle">${nu}</text>`;
     bars += '</g>';
     if(ejeX.has(i)) etiq += `<text class="ch-axis" x="${cx.toFixed(1)}" y="${H - 8}" text-anchor="middle">${ymLabel(m)}</text>`;
     hit += `<rect class="ch-hit" x="${(cx - paso / 2).toFixed(1)}" y="${T - 14}" width="${paso.toFixed(1)}" height="${H - T - B + 14}" onclick="datFiltro('mes','${m}')"><title>${mesLargo(m)}: ${tot} especies (${nu} nuevas)</title></rect>`;
@@ -3400,10 +3415,13 @@ function pintarNumeros() {
   if(DF.mes) chips.push(chip('mes', mesLargo(DF.mes)));
   if(DF.lug !== null) chips.push(chip('lug', LUGARES_MAP[DF.lug].nombre));
   if(DF.grp) chips.push(chip('grp', DF.grp));
+  f.classList.toggle('act', chips.length > 0);
+  const nv = document.querySelector('nav'); if(nv) document.documentElement.style.setProperty('--navh', nv.offsetHeight + 'px');
   f.innerHTML = chips.length
     ? chips.join('') + '<button class="dfl-b" onclick="datLimpiar()">Limpiar todo</button>'
       + (DF.lug !== null ? `<button class="dfl-b" onclick="irMapaLugar(${DF.lug})">Ver en el mapa →</button>` : '')
       + (DF.grp ? `<button class="dfl-b" data-k="${escHtml(DF.grp)}" onclick="irAlbumFamilia(this.dataset.k,false)">Ver en el álbum →</button>` : '')
+      + '<span class="dfl-res" id="dfl-res"></span>'
     : '<span class="dfl-hint">Tocá un mes, un lugar o un grupo y todo lo demás se filtra.</span>';
   // KPIs
   const rows = dFilas(null), sids = new Set(), lugs = new Set(), fotos = new Set(), dias = {}, meses = {};
@@ -3416,6 +3434,7 @@ function pintarNumeros() {
   const bd = mejor(dias), bm = mejor(meses);
   set('k-mejor', bd ? dias[bd].size : '—'); set('k-mejor-s', bd ? fmtFecha(bd) : '');
   set('k-mes', bm ? meses[bm].size : '—'); set('k-mes-s', bm ? mesLargo(bm) : '');
+  const rs = $('dfl-res'); if(rs) rs.innerHTML = `<b>${sids.size}</b> especie${sids.size === 1 ? '' : 's'} · <b>${lugs.size}</b> lugar${lugs.size === 1 ? '' : 'es'} · <b>${Object.keys(dias).length}</b> día${Object.keys(dias).length === 1 ? '' : 's'}`;
   // series por mes (respetan lugar y grupo, no el mes elegido)
   const rm = dFilas('mes'), sm = {}, nuevas = {}, vistas = {};
   rm.forEach(x => { (sm[x.ym] = sm[x.ym] || new Set()).add(x.id); if(x.lif) nuevas[x.ym] = (nuevas[x.ym] || 0) + 1; });
