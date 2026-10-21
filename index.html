@@ -854,6 +854,25 @@ body{padding-bottom:48px;}
 .gtab-b{background:transparent;border:none;color:var(--ti);font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;padding:.4rem 1.2rem;cursor:pointer;transition:background .2s,color .2s;}
 .gtab-b:hover,.gtab-b.on{background:var(--v2);color:var(--cr);}
 [data-theme=dark] .gtab-b{color:#cdbfa8;}[data-theme=dark] .gtab-b:hover,[data-theme=dark] .gtab-b.on{background:#656d4a;color:#ede0d4;}
+
+/* --- Botones: todos en píldora (mismo estilo que los selectores del mapa) --- */
+.fb,.fb2,.trab-btn{border-radius:100px;font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:1.1px;border:1px solid var(--v3);padding:.4rem 1rem;line-height:1.4;}
+.fb,.fb2{background:transparent;color:var(--ti);}
+.fb:hover,.fb.active,.fb2:hover,.fb2.on{background:var(--v2);color:var(--cr);border-color:var(--v2);}
+.trab-btn{padding:.6rem 1.4rem;font-size:.7rem;}
+.trab-btn2{background:transparent;color:var(--ti);border-color:var(--v3);}
+.trab-btn2:hover{background:var(--v2);color:var(--cr);border-color:var(--v2);}
+.album-filtros select{border-radius:100px;padding:.4rem .9rem;}
+[data-theme=dark] .fb,[data-theme=dark] .fb2{background:transparent;color:#cdbfa8;border-color:#4a5538;}
+[data-theme=dark] .fb:hover,[data-theme=dark] .fb.active,[data-theme=dark] .fb2:hover,[data-theme=dark] .fb2.on{background:#656d4a;color:#ede0d4;border-color:#656d4a;}
+[data-theme=dark] .trab-btn2{color:#cdbfa8;border-color:#4a5538;}
+[data-theme=dark] .trab-btn2:hover{background:#656d4a;color:#ede0d4;border-color:#656d4a;}
+/* Barra de progreso del Álbum legible en claro y oscuro */
+.prog-wrap{background:rgba(65,72,51,.16);}
+.prog-txt{color:var(--ti);}
+[data-theme=dark] .prog-wrap{background:rgba(255,255,255,.15);}
+[data-theme=dark] .prog-txt{color:var(--ar);}
+@media(max-width:400px){.nav-links a{padding:1rem .24rem !important;letter-spacing:.3px !important;}}
 </style>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -2612,7 +2631,7 @@ function mapaAlbum(i) {
 
 
 
-const _m=['santiagoallendes','gmail.com'];
+const _m=['hola','felixsantiago.com.ar'];
 function iniMail(){
   const b=document.getElementById('btn-mail');
   if(b) b.href='mailto:'+_m.join('@')+'?subject='+encodeURIComponent('Contacto desde Félix Santiago Aves');
