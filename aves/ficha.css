@@ -133,3 +133,4 @@ details.mas[open] summary{margin-bottom:.5rem;}
   .pn a:last-child{text-align:left;}
 }
 @media(max-width:380px){.top nav a{padding:1rem .22rem;letter-spacing:0;font-size:.58rem;}.top-in{padding:.2rem .5rem;}}
+#mapa-ave{position:relative;z-index:0;isolation:isolate;}
