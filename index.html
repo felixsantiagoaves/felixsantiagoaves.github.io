@@ -2985,7 +2985,7 @@ function renderAlbum() {
   avesFilt.forEach((ave, i) => {
       const enc=visto(ave);
       const av=enc?avist[ave.id]:null;
-      const fotoHTML = av&&av.foto ? `<img class="fig-foto" src="${av.foto}" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">` : getSilueta(ave.familiaEsp);
+      const fotoHTML = av&&av.foto ? `<img class="fig-foto" loading="lazy" decoding="async" src="${av.foto}" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">` : getSilueta(ave.familiaEsp);
       html += `<div class="fig ${enc?'enc':'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="animation-delay:${Math.min(i*0.04,0.6)}s">
         <span class="fig-num">#${String(numMap[ave.id]).padStart(3,'0')}</span>
         <span class="fig-star">✓</span>
