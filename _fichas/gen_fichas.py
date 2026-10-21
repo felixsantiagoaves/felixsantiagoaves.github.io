@@ -53,7 +53,7 @@ for sid, r in AVIST['avistamientos'].items():
     if not r.get('foto') or id_ not in AVES or not os.path.exists(os.path.join(RAIZ, r['foto'])): continue
     ave = AVES[id_]; comun = FUENTES.get(id_, {}).get('comun') or arreglar(ave['comun'])
     w, h = dims(r['foto'].replace('fotos/', '', 1))
-    ESP.append({'id': id_, 'slug': slugify(comun), 'comun': comun, 'sci': ave['nombre'], 'grupo': ave['familiaEsp'], 'thumb': '/' + r['foto'], 'w': w, 'h': h, 'completa': id_ in FUENTES})
+    ESP.append({'id': id_, 'slug': slugify(comun), 'comun': comun, 'sci': ave['nombre'], 'grupo': ave['familiaEsp'], 'thumb': '/' + r['foto'], 'w': w, 'h': h, 'completa': id_ in FUENTES, 'ok': id_ in FUENTES and bool(FX.get(str(id_), {}).get('fotos'))})
 ESP.sort(key=lambda e: fold(e['comun']))
 assert len({e['slug'] for e in ESP}) == len(ESP), 'slugs repetidos'
 POS = {e['id']: i for i, e in enumerate(ESP)}
@@ -63,7 +63,8 @@ def otras(e):
     if len(mismo) < 3: mismo += [x for x in ESP[i+1:] + ESP[:i] if x not in mismo][:3 - len(mismo)]
     return mismo
 def tarjeta(x, cls='card'):
-    return (f'<a class="{cls}" href="/aves/{x["slug"]}/"><img src="{x["thumb"]}" width="{x["w"]}" height="{x["h"]}" loading="lazy" decoding="async" alt="{esc(x["comun"])} ({esc(x["sci"])}), fotografiada por Félix Santiago">'
+    ins = '<span class="ins" title="Ficha completa, con mis fotos">★ Ficha completa</span>' if x.get('ok') else ''
+    return (f'<a class="{cls}" href="/aves/{x["slug"]}/">{ins}<img src="{x["thumb"]}" width="{x["w"]}" height="{x["h"]}" loading="lazy" decoding="async" alt="{esc(x["comun"])} ({esc(x["sci"])}), fotografiada por Félix Santiago">'
             f'<span class="n">{esc(x["comun"])}</span><span class="c">{esc(x["sci"])}</span></a>')
 
 paginas = {}
