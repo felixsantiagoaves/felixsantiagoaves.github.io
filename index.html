@@ -897,6 +897,23 @@ body{padding-bottom:48px;}
 [data-theme=dark] .m-links a{color:#cdbfa8;}
 [data-theme=dark] .m-th.on{border-color:#a68a64;}
 [data-theme=dark] .enc-l{color:#cdbfa8;}[data-theme=dark] .enc-c{color:#b9c48f;}[data-theme=dark] .enc-lista h4{color:#cdbfa8;}
+
+/* Ficha: foto sin recortes, miniaturas que entran en el ancho, encuentros acotados */
+.modal-prev.fx{aspect-ratio:3/2 !important;}
+.modal-prev img.zoomable{object-fit:contain;background:#1e2417;}
+.m-thumbs.on{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;overflow:visible;}
+.m-th{width:100%;height:auto;aspect-ratio:4/3;}
+.enc-lista li.extra{display:none;}
+.enc-lista ul.all li.extra{display:flex;}
+.enc-lista ul.all{max-height:17rem;overflow-y:auto;}
+.enc-mas{margin-top:.5rem;background:transparent;border:1px solid var(--v3);border-radius:100px;color:var(--ti);font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;padding:.4rem 1rem;cursor:pointer;}
+.enc-mas:hover{background:var(--v2);color:var(--cr);border-color:var(--v2);}
+[data-theme=dark] .enc-mas{color:#cdbfa8;border-color:#4a5538;}
+[data-theme=dark] .enc-mas:hover{background:#656d4a;color:#ede0d4;border-color:#656d4a;}
+
+/* Ficha con scroll propio cuando es más alta que la pantalla */
+.modal-ov{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
+.modal-ov .modal{margin:auto;}
 </style>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -3134,10 +3151,25 @@ function mSlide(i) {
   img.dataset.i = i;
 }
 function mAbrirLB(i) { if(mFotos.length) openLB(i == null ? +(document.getElementById('m-img').dataset.i || 0) : i, mFotos); }
+const MAX_FOTOS = 4, MAX_ENC = 4;
+function elegirFotos(ex, max) {  // una por día (las más recientes primero) hasta completar; así se ven distintos días
+  const por = {}; ex.forEach(x => (por[x.d] = por[x.d] || []).push(x));
+  const dias = Object.keys(por).sort().reverse(), out = [];
+  for(let r = 0; out.length < max; r++) {
+    let hubo = false;
+    for(const d of dias) { if(por[d][r]) { out.push(por[d][r]); hubo = true; if(out.length >= max) break; } }
+    if(!hubo) break;
+  }
+  return out.sort((a, b) => b.d.localeCompare(a.d) || a.f.localeCompare(b.f));
+}
+function mVerTodos(btn) {
+  const ul = document.querySelector('#m-enc-lista ul'); const on = ul.classList.toggle('all');
+  btn.textContent = on ? 'Ver menos' : btn.dataset.t;
+}
 function pintarMas(ave) {
   const id = ave.id, th = document.getElementById('m-thumbs'), el = document.getElementById('m-enc-lista'), lk = document.getElementById('m-links');
   th.className = 'm-thumbs'; th.innerHTML = ''; el.style.display = 'none'; el.innerHTML = ''; mFotos = [];
-  const img = document.getElementById('m-img'); img.classList.remove('zoomable'); img.onclick = null; delete img.dataset.i;
+  const img = document.getElementById('m-img'); img.classList.remove('zoomable'); img.onclick = null; delete img.dataset.i; document.getElementById('m-prev').classList.remove('fx');
   const q = encodeURIComponent(ave.nombre), w = ave.nombre.replace(/ /g, '_');
   lk.innerHTML = '<div class="ficha-label">Para saber más</div>'
     + '<a href="https://es.wikipedia.org/wiki/' + w + '" target="_blank" rel="noopener">Wikipedia</a>'
@@ -3145,12 +3177,12 @@ function pintarMas(ave) {
     + '<a href="https://www.inaturalist.org/taxa/search?q=' + q + '" target="_blank" rel="noopener">iNaturalist</a>';
   Promise.all([cargarFotosX(), cargarRegistros()]).then(() => {
     if(curId !== id) return;
-    const ex = (FOTOSX[id] && FOTOSX[id].fotos) || [];
+    const ex = elegirFotos((FOTOSX[id] && FOTOSX[id].fotos) || [], MAX_FOTOS);
     const lug = (REGISTROS && REGISTROS.lugares) || [], reg = (REGISTROS && REGISTROS.r && REGISTROS.r[id]) || {};
     const lugDe = d => { const a = reg[d]; return a && a.length === 1 ? lug[a[0]] : ''; };
     mFotos = ex.map(x => ({src: 'fotos/' + x.f, d: x.d, nombre: ave.comun + ' · ' + fmtFecha(x.d), lugar: lugDe(x.d)}));
     if(mFotos.length) {
-      img.classList.add('zoomable'); img.onclick = () => mAbrirLB();
+      img.classList.add('zoomable'); img.onclick = () => mAbrirLB(); document.getElementById('m-prev').classList.add('fx');
       mSlide(0);
       if(mFotos.length > 1) {
         th.innerHTML = mFotos.map((f, k) => '<img class="m-th' + (k ? '' : ' on') + '" src="' + f.src + '" loading="lazy" alt="' + escHtml(f.nombre) + '" onclick="mSlide(' + k + ')">').join('');
@@ -3159,11 +3191,11 @@ function pintarMas(ave) {
     }
     const fechas = Object.keys(reg).sort().reverse();
     if(fechas.length) {
-      el.innerHTML = '<h4>Mis encuentros (' + fechas.length + ')</h4><ul>' + fechas.map(d => {
+      el.innerHTML = '<h4>Mis encuentros (' + fechas.length + ')</h4><ul>' + fechas.map((d, n0) => {
         const k = mFotos.findIndex(f => f.d === d), n = mFotos.filter(f => f.d === d).length;
         const lugares = (reg[d] || []).map(i => lug[i]).filter(Boolean).join(' · ');
-        return '<li' + (k >= 0 ? ' class="foto" onclick="mAbrirLB(' + k + ')"' : '') + '><span class="enc-f">' + fmtFecha(d) + '</span><span class="enc-l">' + escHtml(lugares) + '</span>' + (k >= 0 ? '<span class="enc-c">📷 ' + n + '</span>' : '') + '</li>';
-      }).join('') + '</ul>';
+        return '<li class="' + (k >= 0 ? 'foto' : '') + (n0 >= MAX_ENC ? ' extra' : '') + '"' + (k >= 0 ? ' onclick="mAbrirLB(' + k + ')"' : '') + '><span class="enc-f">' + fmtFecha(d) + '</span><span class="enc-l">' + escHtml(lugares) + '</span>' + (k >= 0 ? '<span class="enc-c">📷 ' + n + '</span>' : '') + '</li>';
+      }).join('') + '</ul>' + (fechas.length > MAX_ENC ? '<button class="enc-mas" data-t="Ver los ' + (fechas.length - MAX_ENC) + ' anteriores" onclick="mVerTodos(this)">Ver los ' + (fechas.length - MAX_ENC) + ' anteriores</button>' : '');
       el.style.display = 'block';
     }
   });
