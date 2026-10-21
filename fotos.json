@@ -1,0 +1,72 @@
+{
+ "fotos": {
+  "409": {
+   "especie": "Turdus chiguanco",
+   "fotos": [
+    {
+     "f": "mas/turdus_chiguanco/10062026-DSC_0103.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/turdus_chiguanco/10062026-DSC_0433.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/turdus_chiguanco/16082026-DSC_0037.jpg",
+     "d": "2026-08-16"
+    }
+   ]
+  },
+  "4": {
+   "especie": "Geranoaetus melanoleucus",
+   "fotos": [
+    {
+     "f": "mas/geranoaetus_melanoleucus/20062026-DSC_0313.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/geranoaetus_melanoleucus/27072026-DSC_0422.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/geranoaetus_melanoleucus/27072026-DSC_0431.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/geranoaetus_melanoleucus/27072026-DSC_0502.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/geranoaetus_melanoleucus/27072026-DSC_0517.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/geranoaetus_melanoleucus/27072026-DSC_0522.jpg",
+     "d": "2026-07-27"
+    }
+   ]
+  },
+  "118": {
+   "especie": "Pardirallus sanguinolentus",
+   "fotos": [
+    {
+     "f": "mas/pardirallus_sanguinolentus/27062026-DSC_0134.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/pardirallus_sanguinolentus/27062026-DSC_0142.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/pardirallus_sanguinolentus/27062026-DSC_0157.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/pardirallus_sanguinolentus/27062026-DSC_0362.jpg",
+     "d": "2026-06-27"
+    }
+   ]
+  }
+ },
+ "generado": "2026-10-21"
+}
