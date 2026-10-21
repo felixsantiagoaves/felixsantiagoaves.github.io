@@ -232,14 +232,15 @@ nav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px
 }
 
 /* HEADER COMPARTIDO para todas las páginas */
-.page-header{background:var(--v1);padding:2.5rem 2rem 3rem;text-align:center;position:relative;overflow:hidden;}
-.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(166,138,100,.15) 0%,transparent 70%);pointer-events:none;}
-.page-header-logo{width:48px;height:48px;object-fit:contain;margin:0 auto .8rem;display:block;opacity:.7;}
-.page-title{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--cr);margin-bottom:.3rem;}
-.page-title em{color:var(--am);font-style:italic;}
-.page-sub{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--ar);}
-.page-body{max-width:900px;margin:0 auto;padding:2.5rem 2rem;}
-.page-body-wide{max-width:1200px;margin:0 auto;padding:2.5rem 2rem;}
+.page-header{background:transparent;padding:1.1rem 1rem .5rem;text-align:center;position:relative;}
+.page-header-logo{display:none;}
+.page-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ti);margin:0 0 .15rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;}
+.page-title::before{content:'— ';}
+.page-title::after{content:' —';}
+.page-title em{color:inherit;font-style:normal;}
+.page-sub{font-family:'Caveat',cursive;font-size:1.05rem;color:var(--ti);}
+.page-body{max-width:900px;margin:0 auto;padding:1.4rem 2rem 2.5rem;}
+.page-body-wide{max-width:1200px;margin:0 auto;padding:1.4rem 2rem 2.5rem;}
 
 /* REDES */
 .redes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:600px;margin:0 auto;}
@@ -737,6 +738,7 @@ body{padding-bottom:48px;}
 [data-theme=dark] #busqueda,[data-theme=dark] .album-filtros select,[data-theme=dark] .gal-controles select,[data-theme=dark] .gal-controles input{background:#161a11;color:#e8dccb;border-color:#38422d;}
 [data-theme=dark] .hito-bar,[data-theme=dark] .hb-bar{background:#38422d;}
 [data-theme=dark] .ch-grid{stroke:#38422d;}
+[data-theme=dark] .page-title,[data-theme=dark] .page-sub{color:#cbbfae;}
 [data-theme=dark] .ch-num{fill:#e6d9c3;stroke:#222819;}
 [data-theme=dark] .dfl-b{color:#d8e0c4;}
 [data-theme=dark] .ch-read{color:#d8e0c4;}
