@@ -1,0 +1,35 @@
+{
+ "id": 26,
+ "resumen": "Arañero Corona Rojiza (Myioborus brunniceps): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 12 cm"
+  ],
+  [
+   "Ambientes",
+   "Bosques de montaña y ambientes más secos y fríos hacia el sur"
+  ],
+  [
+   "Distribución",
+   "Del centro de Bolivia al noroeste y centro de Argentina"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide unos 12 cm. Las partes superiores son grisáceas con el lomo oliváceo y la corona castaño rojiza; las partes inferiores son amarillas. La cola es negra con los costados y la base inferior blancos, y tiene una línea blanca entre el pico y el ojo y un semianillo ocular blanco."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Hasta la segunda mitad del siglo XX vivía solo en selvas de montaña, desde el centro de Bolivia hasta el noroeste argentino. Después se expandió hacia el sur y el sudeste, incluso a ambientes más secos y fríos. En Argentina se lo encuentra en Catamarca, Córdoba, Jujuy, La Rioja, Salta, San Juan, San Luis, Santiago del Estero y Tucumán."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Myioborus brunniceps",
+   "u": "https://es.wikipedia.org/wiki/Myioborus_brunniceps"
+  }
+ ],
+ "comun": "Arañero Corona Rojiza"
+}

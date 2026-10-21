@@ -1,0 +1,55 @@
+{
+ "id": 387,
+ "resumen": "Boyerito (Icterus pyrrhopterus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "19 cm"
+  ],
+  [
+   "Ambientes",
+   "Bordes de bosque, bosques secos, parques y jardines"
+  ],
+  [
+   "Alimentación",
+   "Invertebrados, frutos, flores y néctar"
+  ],
+  [
+   "Altitud",
+   "Hasta unos 1.700 m"
+  ],
+  [
+   "Puesta",
+   "3 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es esbelto, de 19 cm, con cola larga y patas pardo oscuras. El plumaje es negro intenso con brillo azulado, y tiene una mancha en el hombro que va del amarillo al castaño rojizo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativo de Sudamérica y se distribuye en Argentina, Bolivia, Brasil, Paraguay y Uruguay, con un registro en Chile. Vive en bordes de bosque y tierras arboladas, incluidos bosques secos, claros, sabanas, plantaciones, parques y jardines urbanos, hasta unos 1.700 m de altitud."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta en las copas de los árboles o en el borde del bosque. Come invertebrados, frutos, flores y néctar."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Construye un nido en forma de bolsa. La hembra pone tres huevos."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Icterus pyrrhopterus",
+   "u": "https://es.wikipedia.org/wiki/Icterus_pyrrhopterus"
+  },
+  {
+   "t": "EcoRegistros: Boyerito",
+   "u": "https://www.ecoregistros.org/ficha/Icterus-pyrrhopterus"
+  }
+ ],
+ "comun": "Boyerito"
+}

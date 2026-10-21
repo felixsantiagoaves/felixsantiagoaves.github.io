@@ -1,0 +1,39 @@
+{
+ "id": 170,
+ "resumen": "Bandurrita Esteparia (Upucerthia dumetaria): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Ambientes",
+   "Arbustales de la estepa patagónica y matorrales andinos"
+  ],
+  [
+   "Altitud",
+   "Hasta unos 3.900 m"
+  ],
+  [
+   "Distribución",
+   "Andes y Patagonia; en invierno llega al centro de Argentina"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Es nativa del sur y oeste de Sudamérica. Se extiende por los Andes desde el sur de Perú, pasando por Bolivia y Argentina, hasta el centro de Chile y Tierra del Fuego, y por la Patagonia. Vive en los arbustos de la estepa patagónica y es menos numerosa en los matorrales andinos del norte, hasta unos 3.900 m. En invierno migra hacia el centro de la Argentina y el sur de Uruguay, y por eso se la ve en Córdoba."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El nombre del género combina Upupa y Certhia, por la forma del pico, y el epíteto dumetaria alude a los arbustos. Fue descrita en 1832 con localidad tipo en las orillas del Río Negro, en la Patagonia. Antes se la consideraba la misma especie que Upucerthia saturatior, y se reconoció como especie aparte en 2009. Se reconocen tres subespecies."
+  },
+  {
+   "t": "Conservación",
+   "p": "Se la describe como bastante común en sus hábitats naturales."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Upucerthia dumetaria",
+   "u": "https://es.wikipedia.org/wiki/Upucerthia_dumetaria"
+  }
+ ],
+ "comun": "Bandurrita Esteparia"
+}

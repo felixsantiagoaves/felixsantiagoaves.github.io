@@ -1,0 +1,63 @@
+{
+ "id": 331,
+ "resumen": "Benteveo (Pitangus sulphuratus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "21 a 26 cm"
+  ],
+  [
+   "Ambientes",
+   "Áreas abiertas y semiabiertas, rurales y urbanas; cerca del agua"
+  ],
+  [
+   "Alimentación",
+   "Invertebrados, frutos y pequeños vertebrados"
+  ],
+  [
+   "Altitud",
+   "Hasta unos 1.500 m"
+  ],
+  [
+   "Puesta",
+   "2 a 5 huevos"
+  ],
+  [
+   "Estado",
+   "Preocupación Menor (UICN)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Tiene cabeza grande, pico largo y fuerte con la punta en gancho, patas cortas y alas largas. El lomo y la cola son pardo verdosos; la cabeza es negra con dos cejas blancas y la garganta blanca; el pecho y el vientre son amarillo intenso, y tiene una corona amarilla oculta. Macho y hembra son iguales. Su canto fuerte y chillón es lo más característico."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativo del Neotrópico y llega desde el sur de Estados Unidos (Texas) hasta el norte de la Patagonia argentina. Es muy común en ambientes abiertos y semiabiertos, tanto rurales como urbanos, y prefiere lugares cercanos al agua. En zonas boscosas suele quedarse en las orillas de lagos y ríos."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Aunque parece serio, es pacífico y solo se vuelve agresivo para defender el nido. Come sobre todo invertebrados (larvas, lombrices, insectos que caza en vuelo), además de frutas, pequeños roedores, reptiles y peces, que mata golpeándolos contra una rama. A veces saquea nidos de aves pequeñas."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Se reproduce de primavera a verano. Macho y hembra construyen juntos un nido voluminoso y esférico, de aspecto desordenado, con fibras vegetales secas y cubierto por fuera con pajas largas, trapos e incluso bolsas de plástico. La puesta es de 2 a 5 huevos."
+  },
+  {
+   "t": "Conservación",
+   "p": "Está catalogado como Preocupación Menor."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Pitangus sulphuratus",
+   "u": "https://es.wikipedia.org/wiki/Pitangus_sulphuratus"
+  },
+  {
+   "t": "EcoRegistros: Benteveo",
+   "u": "https://www.ecoregistros.org/ficha/Pitangus-sulphuratus"
+  }
+ ],
+ "comun": "Benteveo"
+}

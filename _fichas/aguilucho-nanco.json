@@ -1,0 +1,55 @@
+{
+ "id": 10,
+ "resumen": "Aguilucho Ñanco (Geranoaetus polyosoma): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "45 a 62 cm"
+  ],
+  [
+   "Envergadura",
+   "113 a 151 cm"
+  ],
+  [
+   "Ambientes",
+   "Bosques abiertos, arbustales y estepas"
+  ],
+  [
+   "Alimentación",
+   "Pequeños mamíferos, reptiles, aves e invertebrados; también carroña"
+  ],
+  [
+   "Puesta",
+   "1 a 3 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 45 a 62 cm y tiene una envergadura de 113 a 151 cm. Macho y hembra se distinguen bien: el macho suele tener el dorso gris y el vientre blanco (existe también un morfo todo grisáceo), y la hembra tiene hombros y parte del dorso canela o rojizos (puede haber un morfo oscuro). En ambos la cola es blanca con finas rayas negras y una banda negra subterminal. Los juveniles pasan por varias fases de plumaje, del gris al rufo y al pardo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita desde Colombia y Ecuador hasta el extremo sur del continente, pasando por Perú, Bolivia, Paraguay, Uruguay, gran parte de la Argentina y todo Chile, además de islas cercanas como las Malvinas. Está en distintas altitudes, incluso el altiplano, pero es más frecuente en la costa y en las zonas bajas de los Andes. Prefiere ambientes no selváticos: bosques abiertos, arbustales y estepas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es un buen cazador: vuela en círculos sobre la presa y se lanza en diagonal para golpearla con las garras. Come pequeños mamíferos, reptiles, aves pequeñas, invertebrados y anfibios, y también carroña de manera oportunista. En vuelo despliega las alas en toda su longitud. Es monógamo."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Suele anidar en riscos y pone de uno a tres huevos."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Geranoaetus polyosoma",
+   "u": "https://es.wikipedia.org/wiki/Geranoaetus_polyosoma"
+  },
+  {
+   "t": "EcoRegistros: Aguilucho Ñanco",
+   "u": "https://www.ecoregistros.org/ficha/Geranoaetus-polyosoma"
+  }
+ ],
+ "comun": "Aguilucho Ñanco"
+}

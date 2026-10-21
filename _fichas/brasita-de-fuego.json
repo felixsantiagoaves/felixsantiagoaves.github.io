@@ -1,0 +1,59 @@
+{
+ "id": 282,
+ "resumen": "Brasita de Fuego (Coryphospingus cucullatus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "13 a 14 cm (macho)"
+  ],
+  [
+   "Ambientes",
+   "Arbustales, bosques bajos y áreas cultivadas"
+  ],
+  [
+   "Alimentación",
+   "Semillas e insectos"
+  ],
+  [
+   "Altitud",
+   "Sobre todo por debajo de los 1.500 m"
+  ],
+  [
+   "Época de cría",
+   "Septiembre a febrero"
+  ],
+  [
+   "Puesta",
+   "3 a 5 huevos blancos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El macho mide unos 13 a 14 cm. Es pardo grisáceo por arriba, con alas pardas y cola casi negra; el copete erguido es rojo intenso en el centro y está enmarcado por dos bandas oscuras, y la cara, el pecho y el vientre son rojos. Tiene un anillo blanco alrededor del ojo y el pico cónico. La hembra es parda en la cabeza, el dorso y las alas, no tiene copete y muestra el obispillo rojizo y el vientre rosado oscuro."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Su área está dividida en dos zonas: una en el norte de Sudamérica y otra amplia que va del sureste de Brasil al oeste de Bolivia y sigue por Paraguay hasta el centro y oeste de la Argentina y Uruguay. Vive en arbustales, bosques bajos y áreas cultivadas, sobre todo por debajo de los 1.500 m, y es común en la región chaqueña."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se lo encuentra solo o en grupos; es nervioso, inquieto y asustadizo. Come semillas e insectos, que captura en vuelo o en el suelo. En la época de cría no es muy territorial y varias parejas pueden agruparse."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Se reproduce entre septiembre y febrero. Ambos padres construyen un nido en forma de taza, con material vegetal, líquenes y tela de araña, en árboles o arbustos. Pone huevos blancos, de tres a cinco por puesta, y ambos padres alimentan a los pichones."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Coryphospingus cucullatus",
+   "u": "https://es.wikipedia.org/wiki/Coryphospingus_cucullatus"
+  },
+  {
+   "t": "EcoRegistros: Brasita de Fuego",
+   "u": "https://www.ecoregistros.org/ficha/Coryphospingus-cucullatus"
+  }
+ ],
+ "comun": "Brasita de Fuego"
+}

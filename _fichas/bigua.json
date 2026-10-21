@@ -1,0 +1,59 @@
+{
+ "id": 43,
+ "resumen": "Biguá (Nannopterum brasilianum): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "70 a 75 cm"
+  ],
+  [
+   "Envergadura",
+   "Unos 100 cm"
+  ],
+  [
+   "Peso",
+   "1 a 1,5 kg"
+  ],
+  [
+   "Ambientes",
+   "Lagunas, ríos y costas; siempre cerca del agua"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo peces pequeños"
+  ],
+  [
+   "Puesta",
+   "Hasta 5 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un cormorán delgado y relativamente pequeño, de 70 a 75 cm. Fuera de la época de cría es casi todo negro, con un parche amarillo castaño en la garganta. En la temporada reproductiva aparecen mechones blancos a los lados de la cabeza y el parche de la garganta se bordea de blanco. Los juveniles son pardos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye por los trópicos y subtrópicos de América, desde el Golfo de México hasta el sur del continente. Es residente, aunque algunas poblaciones se desplazan hacia el norte en el invierno austral. Se lo ve siempre sobre el agua o cerca de ella, a menudo posado en postes y alambrados de lagunas poco profundas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta principalmente de peces pequeños y también de renacuajos, ranas e insectos acuáticos. Pesca zambulléndose y propulsándose bajo el agua con las patas, y suele hacerlo en grupos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Es monógamo y cría en colonias. El nido es una plataforma de ramitas con una depresión central, ubicada en árboles. Pone hasta cinco huevos, que incuban ambos padres durante unos 25 a 30 días, y los dos alimentan a las crías."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Hay dos criterios en uso. Wikipedia lo trata como Phalacrocorax brasilianus; acá sigo la lista de eBird, que lo ubica en el género Nannopterum (un estudio filogenético de 2014 propuso separar ese grupo). Además, las poblaciones del norte se consideran a veces una especie aparte, Phalacrocorax olivaceus."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Phalacrocorax brasilianus",
+   "u": "https://es.wikipedia.org/wiki/Nannopterum_brasilianus"
+  }
+ ],
+ "comun": "Biguá"
+}
