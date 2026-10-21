@@ -167,10 +167,18 @@ for E in ESP:
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
-<header class="top"><div class="top-in">
-  <a class="brand" href="/"><img src="/favicon-48.png" alt="" width="26" height="26"><span>Félix Santiago Aves</span></a>
-  <nav><a href="/#sobre-mi">Inicio</a><a href="/#album">Álbum</a><a class="on" href="/aves/">Especies</a><a href="/#mapa">Mapa</a><a href="/#galeria">Galería</a><a href="/#redes">Contacto</a></nav>
-</div></header>
+<nav class="gnav"><div class="nav-i">
+  <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"></a>
+  <ul class="nav-links">
+    <li><a href="/#sobre-mi">Sobre mí</a></li>
+    <li><a href="/#album">Álbum</a></li>
+    <li><a class="active" href="/aves/">Especies</a></li>
+    <li><a href="/#mapa">Mapa</a></li>
+    <li><a href="/#galeria">Galería</a></li>
+    <li><a href="/#datos"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li><a href="/#redes">Contacto</a></li>
+  </ul>
+</div></nav>
 <main class="wrap">
   <p class="crumbs"><a href="/">Inicio</a> › <a href="/aves/">Especies</a> › {esc(comun)}</p>
   <div class="hero">
@@ -245,10 +253,18 @@ ipage = f'''<!DOCTYPE html>
 <script type="application/ld+json">{json.dumps(ild, ensure_ascii=False)}</script>
 </head>
 <body>
-<header class="top"><div class="top-in">
-  <a class="brand" href="/"><img src="/favicon-48.png" alt="" width="26" height="26"><span>Félix Santiago Aves</span></a>
-  <nav><a href="/#sobre-mi">Inicio</a><a href="/#album">Álbum</a><a class="on" href="/aves/">Especies</a><a href="/#mapa">Mapa</a><a href="/#galeria">Galería</a><a href="/#redes">Contacto</a></nav>
-</div></header>
+<nav class="gnav"><div class="nav-i">
+  <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"></a>
+  <ul class="nav-links">
+    <li><a href="/#sobre-mi">Sobre mí</a></li>
+    <li><a href="/#album">Álbum</a></li>
+    <li><a class="active" href="/aves/">Especies</a></li>
+    <li><a href="/#mapa">Mapa</a></li>
+    <li><a href="/#galeria">Galería</a></li>
+    <li><a href="/#datos"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li><a href="/#redes">Contacto</a></li>
+  </ul>
+</div></nav>
 <main class="wrap">
   <p class="crumbs"><a href="/">Inicio</a> › Especies</p>
   <h1>Especies que fotografié</h1>
