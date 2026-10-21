@@ -873,6 +873,8 @@ body{padding-bottom:48px;}
 [data-theme=dark] .prog-wrap{background:rgba(255,255,255,.15);}
 [data-theme=dark] .prog-txt{color:var(--ar);}
 @media(max-width:400px){.nav-links a{padding:1rem .24rem !important;letter-spacing:.3px !important;}}
+@media(max-width:460px){.nav-links a{padding:1rem .2rem !important;font-size:.55rem !important;letter-spacing:0 !important;}}
+@media(max-width:340px){.nav-links a{padding:1rem .12rem !important;font-size:.5rem !important;}}
 
 /* Ficha: carrusel de fotos, encuentros y enlaces */
 .m-left{min-width:0;}
@@ -903,6 +905,7 @@ body{padding-bottom:48px;}
     <ul class="nav-links">
       <li><a href="#" class="active" onclick="showPage('sobre-mi',this);return false">Sobre mí</a></li>
       <li><a href="#" id="nav-album" onclick="showPage('album',this);return false">Álbum<span class="nav-badge" id="nav-album-badge"></span></a></li>
+      <li><a href="aves/">Especies</a></li>
       <li><a href="#" onclick="showPage('mapa',this);return false">Mapa</a></li>
       <li><a href="#" onclick="showPage('galeria',this);return false">Galería</a></li>
       <li><a href="#" onclick="showPage('datos',this);return false"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
@@ -3121,7 +3124,7 @@ function pintarLink(ave) {
   box.style.display = 'none'; box.innerHTML = '';
   cargarPaginas().then(() => {
     if(curId !== id || !PAGINAS[id]) return;
-    box.innerHTML = '<a class="pill-link" href="aves/' + PAGINAS[id] + '/">Ver ficha completa →</a><p>Fotos, mapa de mis avistamientos, comportamiento y más.</p>';
+    box.innerHTML = '<a class="pill-link" href="aves/' + PAGINAS[id] + '/">Ver ficha completa →</a><p>Mis fotos, el mapa de mis avistamientos y más.</p>';
     box.style.display = 'block';
     const d = document.querySelector('#m-ficha .ficha-dato'); if(d) d.closest('.ficha-row').style.display = 'none';
   });

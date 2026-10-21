@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera las páginas individuales de especie (aves/<slug>/index.html), aves/indice.json y sitemap.xml.
 Uso: gen_fichas.py RAIZ_SITIO CARPETA_FUENTES   (fuentes = fichas-src/*.json)"""
-import sys, os, json, subprocess, html
+import sys, os, json, subprocess, html, re, unicodedata
 from datetime import date
 from urllib.parse import quote
 from xml.sax.saxutils import escape as xesc
@@ -34,11 +34,43 @@ def dims(rel):
         with Image.open(os.path.join(RAIZ, 'fotos', rel)) as im: return im.size
     except Exception: return (1280, 853)
 
-paginas = {}
+def slugify(t):
+    t = unicodedata.normalize('NFD', t); t = ''.join(c for c in t if unicodedata.category(c) != 'Mn')
+    return re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
+def arreglar(c): return re.sub(r'\bAguila\b', 'Águila', c)
+def fold(t): return ''.join(c for c in unicodedata.normalize('NFD', t.lower()) if unicodedata.category(c) != 'Mn')
+
+# Fuentes con texto completo (por id) y lista de todas las especies con foto
+FUENTES = {}
 for fn in sorted(os.listdir(SRC)):
-    if not fn.endswith('.json'): continue
-    slug = fn[:-5]; S = json.load(open(os.path.join(SRC, fn), encoding='utf-8')); id_ = S['id']; ave = AVES[id_]
-    sci, comun, grupo = ave['nombre'], S.get('comun', ave['comun']), ave['familiaEsp']; ficha = FICHAS.get(sci, {})
+    if fn.endswith('.json'):
+        S0 = json.load(open(os.path.join(SRC, fn), encoding='utf-8')); FUENTES[S0['id']] = S0
+ESP = []
+for sid, r in AVIST['avistamientos'].items():
+    id_ = int(sid)
+    if not r.get('foto') or id_ not in AVES or not os.path.exists(os.path.join(RAIZ, r['foto'])): continue
+    ave = AVES[id_]; comun = FUENTES.get(id_, {}).get('comun') or arreglar(ave['comun'])
+    w, h = dims(r['foto'].replace('fotos/', '', 1))
+    ESP.append({'id': id_, 'slug': slugify(comun), 'comun': comun, 'sci': ave['nombre'], 'grupo': ave['familiaEsp'], 'thumb': '/' + r['foto'], 'w': w, 'h': h, 'completa': id_ in FUENTES})
+ESP.sort(key=lambda e: fold(e['comun']))
+assert len({e['slug'] for e in ESP}) == len(ESP), 'slugs repetidos'
+POS = {e['id']: i for i, e in enumerate(ESP)}
+
+def otras(e):
+    i = POS[e['id']]; mismo = [x for x in ESP[i+1:] + ESP[:i] if x['grupo'] == e['grupo']][:3]
+    if len(mismo) < 3: mismo += [x for x in ESP[i+1:] + ESP[:i] if x not in mismo][:3 - len(mismo)]
+    return mismo
+def tarjeta(x, cls='card'):
+    return (f'<a class="{cls}" href="/aves/{x["slug"]}/"><img src="{x["thumb"]}" width="{x["w"]}" height="{x["h"]}" loading="lazy" decoding="async" alt="{esc(x["comun"])} ({esc(x["sci"])}), fotografiada por Félix Santiago">'
+            f'<span class="n">{esc(x["comun"])}</span><span class="c">{esc(x["sci"])}</span></a>')
+
+paginas = {}
+for E in ESP:
+    id_ = E['id']; slug = E['slug']; S = FUENTES.get(id_); base_mode = S is None
+    if base_mode:
+        S = {'id': id_, 'resumen': '', 'datos': [], 'secciones': [], 'fuentes': []}; ave = AVES[id_]
+    else: ave = AVES[id_]
+    sci, comun, grupo = E['sci'], E['comun'], E['grupo']; ficha = FICHAS.get(sci, {})
     url = f'{BASE}aves/{slug}/'
     extras = sorted(FX.get(str(id_), {}).get('fotos', []), key=lambda x: (x['d'], x['f']), reverse=True)
     reg = REG['r'].get(str(id_), {})
@@ -70,8 +102,14 @@ for fn in sorted(os.listdir(SRC)):
     primero = ''
     if fechas:
         d0 = fechas[-1]; primero = f'<p class="primero"><strong>Primer registro</strong>{larga(d0)} · {esc(" · ".join(LUG[i] for i in reg[d0]))}</p>'
+    if base_mode:
+        n_lug = len({i for d in fechas for i in reg[d]})
+        S['resumen'] = f'{comun} ({sci}): mis fotos y el mapa de mis avistamientos de esta especie, con la fecha y el lugar de cada encuentro.'
+        S['datos'] = ([['Encuentros', str(len(fechas))], ['Lugares', str(n_lug)], ['Último registro', corta(fechas[0])]] if fechas else [])
     datos = ''.join(f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in S.get('datos', []))
     secs = ''.join(f'<h2>{esc(s["t"])}</h2><p>{esc(s["p"])}</p>' for s in S['secciones'])
+    if base_mode:
+        secs = '<div class="pendiente"><strong>Ficha en preparación</strong>Todavía no escribí la descripción de esta especie (cómo reconocerla, dónde vive, qué come y cómo nidifica). Cuando lo haga, va a tener las fuentes citadas. Mientras tanto podés ver mis fotos, el mapa de mis avistamientos y los enlaces para saber más.</div>'
     curioso = f'<div class="curioso"><strong>Dato curioso</strong>{esc(ficha["curiosidad"])}</div>' if ficha.get('curiosidad') else ''
     gal = ''
     if fotos:
@@ -82,14 +120,14 @@ for fn in sorted(os.listdir(SRC)):
         gal = f'<section class="sec" id="fotos"><div class="fotos-h"><h2>Mis fotos</h2><span>{len(fotos)} {"foto" if len(fotos)==1 else "fotos"}</span></div><div class="galeria">{figs}</div></section>'
     fuentes = ''.join(f'<li><a href="{esc(f["u"])}" target="_blank" rel="noopener">{esc(f["t"])}</a></li>' for f in S['fuentes'])
     q = quote(sci)
-    saber = (f'<a class="pill" href="https://es.wikipedia.org/wiki/{sci.replace(" ", "_")}" target="_blank" rel="noopener">Wikipedia</a>'
+    saber = ((f'<a class="pill" href="https://es.wikipedia.org/wiki/{sci.replace(" ", "_")}" target="_blank" rel="noopener">Wikipedia</a>' if not base_mode else f'<a class="pill" href="https://es.wikipedia.org/w/index.php?search={q}" target="_blank" rel="noopener">Wikipedia</a>') +
              f'<a class="pill" href="https://xeno-canto.org/explore?query={q}" target="_blank" rel="noopener">Escuchar su canto</a>'
              f'<a class="pill" href="https://www.inaturalist.org/taxa/search?q={q}" target="_blank" rel="noopener">iNaturalist</a>')
     hero_html = ''
     if hero:
         cap = f'{corta(hero["d"])}{(" · " + esc(hero["lug"])) if hero["lug"] else ""}' if hero['d'] else ''
         hero_html = (f'<figure class="hero-fig"><img src="{hero["src"]}" width="{hero["w"]}" height="{hero["h"]}" alt="{esc(alt)}" fetchpriority="high" id="hero-img"'
-                     
+                     + (f' data-full="{hero["src"]}" data-alt="{esc(alt)}" data-cap="{esc(comun)}"' if not fotos else '')
                      + f'>{f"<figcaption>{cap}</figcaption>" if cap else ""}</figure>')
     title = f'{comun} ({sci}) · Félix Santiago Aves'
     imgs_ld = [{'@type': 'ImageObject', '@id': f'{url}#foto-{i+1}', 'contentUrl': p['abs'], 'name': f'{comun} ({sci})', 'caption': alt, 'creator': {'@id': BASE + '#felix'},
@@ -100,10 +138,12 @@ for fn in sorted(os.listdir(SRC)):
          'about': {'@type': 'Taxon', 'name': sci, 'alternateName': comun, 'taxonRank': 'Species'}, **({'primaryImageOfPage': {'@id': f'{url}#foto-1'}} if imgs_ld else {})},
         {'@type': 'BreadcrumbList', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': BASE},
-            {'@type': 'ListItem', 'position': 2, 'name': 'Álbum', 'item': BASE + '#album'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Especies', 'item': BASE + 'aves/'},
             {'@type': 'ListItem', 'position': 3, 'name': comun, 'item': url}]}] + imgs_ld}
     og_img = (f'<meta property="og:image" content="{hero["abs"]}"><meta property="og:image:width" content="{hero["w"]}"><meta property="og:image:height" content="{hero["h"]}">'
               f'<meta property="og:image:alt" content="{esc(alt)}"><meta name="twitter:image" content="{hero["abs"]}">') if hero else ''
+    i0 = POS[id_]; ant, sig = ESP[i0-1], ESP[(i0+1) % len(ESP)]
+    pn_html = f'<a href="/aves/{ant["slug"]}/"><small>← Anterior</small>{esc(ant["comun"])}</a><a href="/aves/{sig["slug"]}/"><small>Siguiente →</small>{esc(sig["comun"])}</a>'
     page = f'''<!DOCTYPE html>
 <html lang="es-AR">
 <head>
@@ -129,10 +169,10 @@ for fn in sorted(os.listdir(SRC)):
 <body>
 <header class="top"><div class="top-in">
   <a class="brand" href="/"><img src="/favicon-48.png" alt="" width="26" height="26"><span>Félix Santiago Aves</span></a>
-  <nav><a href="/#sobre-mi">Inicio</a><a class="on" href="/#album">Álbum</a><a href="/#mapa">Mapa</a><a href="/#galeria">Galería</a><a href="/#redes">Contacto</a></nav>
+  <nav><a href="/#sobre-mi">Inicio</a><a href="/#album">Álbum</a><a class="on" href="/aves/">Especies</a><a href="/#mapa">Mapa</a><a href="/#galeria">Galería</a><a href="/#redes">Contacto</a></nav>
 </div></header>
 <main class="wrap">
-  <p class="crumbs"><a href="/">Inicio</a> › <a href="/#album">Álbum</a> › {esc(comun)}</p>
+  <p class="crumbs"><a href="/">Inicio</a> › <a href="/aves/">Especies</a> › {esc(comun)}</p>
   <div class="hero">
     {hero_html}
     <div class="hero-txt">
@@ -142,7 +182,7 @@ for fn in sorted(os.listdir(SRC)):
       {f'<p class="car">{esc(ficha["estado"])}</p>' if ficha.get('estado') else ''}
       {primero}
       <dl class="datos">{datos}</dl>
-      <div class="acciones"><button class="pill fill" id="compartir" type="button">Compartir</button><a class="pill" href="/#album">← Volver al Álbum</a></div>
+      <div class="acciones"><button class="pill fill" id="compartir" type="button">Compartir</button><a class="pill" href="/aves/">← Todas las especies</a></div>
     </div>
   </div>
   {gal}
@@ -154,7 +194,9 @@ for fn in sorted(os.listdir(SRC)):
       <section class="sec"><h2>Para saber más</h2><div class="saber">{saber}</div></section>
     </aside>
   </div>
-  <section class="sec fuentes"><h2>Fuentes</h2><ul>{fuentes}</ul><p class="nota-fuentes">Los textos están escritos con mis palabras a partir de estas fuentes. Los datos de avistamientos y las fotos son propios.</p></section>
+  {f'<section class="sec fuentes"><h2>Fuentes</h2><ul>{fuentes}</ul><p class="nota-fuentes">Los textos están escritos con mis palabras a partir de estas fuentes. Los datos de avistamientos y las fotos son propios.</p></section>' if S['fuentes'] else ''}
+  <nav class="pn" aria-label="Otras fichas">{pn_html}</nav>
+  <section class="sec otras"><h2>Otras fichas</h2><div class="grid mini">{"".join(tarjeta(x) for x in otras(E))}</div><p><a class="pill" href="/aves/">Ver todas las especies</a></p></section>
   <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/#redes">escribime</a>.</p>
 </main>
 <button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
@@ -170,6 +212,74 @@ for fn in sorted(os.listdir(SRC)):
 
 json.dump({k: v['slug'] for k, v in paginas.items()}, open(os.path.join(RAIZ, 'aves', 'indice.json'), 'w'), ensure_ascii=False)
 
+
+# Índice de especies /aves/
+grupos = sorted({e['grupo'] for e in ESP}, key=fold)
+cards = ''.join(f'<li data-q="{esc(fold(e["comun"] + " " + e["sci"]))}" data-g="{esc(e["grupo"])}">{tarjeta(e)}</li>' for e in ESP)
+opts = ''.join(f'<option value="{esc(g)}">{esc(g)}</option>' for g in grupos)
+IURL = BASE + 'aves/'
+ititle = 'Especies de aves que fotografié · Félix Santiago Aves'
+idesc = f'{len(ESP)} especies de aves de Argentina fotografiadas por Félix Santiago, cada una con su ficha: mis fotos, el mapa de mis avistamientos y datos de la especie.'
+ild = {'@context': 'https://schema.org', '@graph': [
+    {'@type': 'CollectionPage', '@id': IURL, 'url': IURL, 'name': ititle, 'description': idesc, 'inLanguage': 'es-AR', 'isPartOf': {'@id': BASE + '#web'}, 'author': {'@id': BASE + '#felix'}},
+    {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': BASE}, {'@type': 'ListItem', 'position': 2, 'name': 'Especies', 'item': IURL}]}]}
+ipage = f'''<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5B10D1495"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-X5B10D1495');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{esc(ititle)}</title>
+<meta name="description" content="{esc(idesc)}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#3f4733">
+<link rel="canonical" href="{IURL}">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_AR"><meta property="og:site_name" content="Félix Santiago Aves">
+<meta property="og:title" content="{esc(ititle)}"><meta property="og:description" content="{esc(idesc)}"><meta property="og:url" content="{IURL}">
+<meta property="og:image" content="{BASE}preview.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(ititle)}"><meta name="twitter:description" content="{esc(idesc)}"><meta name="twitter:image" content="{BASE}preview.jpg">
+<link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}}catch(e){{}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/aves/ficha.css">
+<script type="application/ld+json">{json.dumps(ild, ensure_ascii=False)}</script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="/"><img src="/favicon-48.png" alt="" width="26" height="26"><span>Félix Santiago Aves</span></a>
+  <nav><a href="/#sobre-mi">Inicio</a><a href="/#album">Álbum</a><a class="on" href="/aves/">Especies</a><a href="/#mapa">Mapa</a><a href="/#galeria">Galería</a><a href="/#redes">Contacto</a></nav>
+</div></header>
+<main class="wrap">
+  <p class="crumbs"><a href="/">Inicio</a> › Especies</p>
+  <h1>Especies que fotografié</h1>
+  <p class="intro">{len(ESP)} especies de aves, cada una con su ficha: mis fotos, el mapa de dónde la vi y datos de la especie. Las fichas se van completando de a poco.</p>
+  <div class="filtros">
+    <input type="search" id="q" placeholder="Buscar por nombre común o científico" aria-label="Buscar especie" autocomplete="off">
+    <select id="g" aria-label="Filtrar por grupo"><option value="">Todos los grupos</option>{opts}</select>
+  </div>
+  <p class="cuenta" id="cuenta" aria-live="polite">{len(ESP)} especies</p>
+  <ul class="grid" id="lista">{cards}</ul>
+  <p class="vacio" id="vacio" hidden>No encontré ninguna especie con ese nombre.</p>
+  <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/#redes">escribime</a>.</p>
+</main>
+<button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
+<script src="/aves/ficha.js" defer></script>
+<script>
+(function(){{
+  var q=document.getElementById('q'), g=document.getElementById('g'), c=document.getElementById('cuenta'), v=document.getElementById('vacio'), li=[].slice.call(document.querySelectorAll('#lista li')), t=li.length;
+  function fold(s){{ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }}
+  function f(){{ var k=fold(q.value.trim()), gr=g.value, n=0;
+    li.forEach(function(e){{ var ok=(!k||e.getAttribute('data-q').indexOf(k)>-1)&&(!gr||e.getAttribute('data-g')===gr); e.hidden=!ok; if(ok) n++; }});
+    c.textContent=(n===t?t+' especies':n+(n===1?' especie':' especies')+' de '+t); v.hidden=n>0; }}
+  q.addEventListener('input',f); g.addEventListener('change',f);
+}})();
+</script>
+</body>
+</html>
+'''
+open(os.path.join(RAIZ, 'aves', 'index.html'), 'w', encoding='utf-8').write(ipage)
+print('índice:', len(ESP), 'especies')
+
 # Sitemap: inicio + páginas de especie, con fotos para Google Imágenes
 out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
 def url_entry(loc, imgs, prio, freq):
@@ -182,7 +292,8 @@ home = []
 for sid, r in sorted(AVIST['avistamientos'].items(), key=lambda kv: int(kv[0])):
     if r.get('foto') and int(sid) in AVES: home.append((BASE + quote(r['foto']), AVES[int(sid)]['comun'], AVES[int(sid)]['nombre']))
 out += url_entry(BASE, home, '1.0', 'weekly')
-for sid, p in paginas.items(): out += url_entry(f'{BASE}aves/{p["slug"]}/', [(u, p['comun'], p['sci']) for u in p['fotos'][:10]], '0.8', 'monthly')
+out += url_entry(BASE + 'aves/', [], '0.9', 'weekly')
+for sid, p in paginas.items(): out += url_entry(f'{BASE}aves/{p["slug"]}/', [(u, p['comun'], p['sci']) for u in p['fotos'][:10]], '0.8' if FUENTES.get(int(sid)) else '0.6', 'monthly')
 out += ['</urlset>', '']
 open(os.path.join(RAIZ, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))
 print('sitemap:', len(home), 'fotos en inicio,', len(paginas), 'páginas')
