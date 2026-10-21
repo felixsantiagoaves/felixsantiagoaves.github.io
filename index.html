@@ -873,6 +873,30 @@ body{padding-bottom:48px;}
 [data-theme=dark] .prog-wrap{background:rgba(255,255,255,.15);}
 [data-theme=dark] .prog-txt{color:var(--ar);}
 @media(max-width:400px){.nav-links a{padding:1rem .24rem !important;letter-spacing:.3px !important;}}
+
+/* Ficha: carrusel de fotos, encuentros y enlaces */
+.m-left{min-width:0;}
+.m-thumbs{display:none;gap:.4rem;overflow-x:auto;margin-top:.5rem;padding-bottom:.2rem;}
+.m-thumbs.on{display:flex;}
+.m-th{flex:0 0 auto;width:68px;height:50px;object-fit:cover;border:2px solid transparent;cursor:pointer;opacity:.7;transition:opacity .15s,border-color .15s;background:var(--co);}
+.m-th:hover{opacity:1;}
+.m-th.on{border-color:var(--v2);opacity:1;}
+.modal-prev img.zoomable{cursor:zoom-in;}
+.enc-lista h4,.m-links .ficha-label{margin:0 0 .5rem;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:var(--ti);font-weight:700;}
+.enc-lista ul{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
+.enc-lista li{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;background:white;border-left:3px solid var(--v3);font-size:.82rem;color:var(--tx);}
+.enc-lista li.foto{cursor:pointer;border-left-color:var(--v2);}
+.enc-lista li.foto:hover{background:var(--cr);}
+.enc-f{font-weight:700;white-space:nowrap;}
+.enc-l{color:var(--ti);flex:1;min-width:0;}
+.enc-c{font-size:.68rem;letter-spacing:.5px;color:var(--v2);font-weight:700;white-space:nowrap;}
+.m-links{font-size:.82rem;}
+.m-links a{color:var(--v2);text-decoration:underline;margin-right:.9rem;white-space:nowrap;}
+[data-theme=dark] .enc-lista li{background:#2a301f;color:#e6dccb;}
+[data-theme=dark] .enc-lista li.foto:hover{background:#353c28;}
+[data-theme=dark] .m-links a{color:#cdbfa8;}
+[data-theme=dark] .m-th.on{border-color:#a68a64;}
+[data-theme=dark] .enc-l{color:#cdbfa8;}[data-theme=dark] .enc-c{color:#b9c48f;}[data-theme=dark] .enc-lista h4{color:#cdbfa8;}
 </style>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1129,9 +1153,12 @@ body{padding-bottom:48px;}
       <button class="modal-close" onclick="closeM()">✕</button>
     </div>
     <div class="modal-bd">
+      <div class="m-left">
       <div class="modal-prev" id="m-prev">
         <div class="prev-ph" id="m-ph"></div>
         <img id="m-img" style="display:none" alt="">
+      </div>
+      <div class="m-thumbs" id="m-thumbs"></div>
       </div>
       <div class="modal-right-col">
         <div id="m-ficha" class="ficha-section" style="display:none"></div>
@@ -1147,6 +1174,8 @@ body{padding-bottom:48px;}
           <span class="pending-badge">○ Aún no encontrada</span>
           <div class="pending-info" id="m-pending-detail"></div>
         </div>
+        <div class="enc-lista" id="m-enc-lista" style="display:none"></div>
+        <div class="m-links" id="m-links"></div>
       </div>
 
     </div>
@@ -3085,8 +3114,59 @@ function openM(id) {
   const pendReset=document.getElementById('m-pending-info');
   if(av && pendReset) pendReset.style.display='none';
 
+  pintarMas(ave);
   document.getElementById('modal-ov').classList.add('open');
   updateModalArrows();
+}
+
+
+// ── FICHA: fotos extra (fotos.json) + encuentros + enlaces ─────────────────────
+let FOTOSX = null, _fxP = null, mFotos = [];
+function cargarFotosX() {
+  if(!_fxP) _fxP = fetch('fotos.json').then(r => r.ok ? r.json() : null).catch(() => null).then(d => (FOTOSX = (d && d.fotos) || {}));
+  return _fxP;
+}
+function mSlide(i) {
+  const f = mFotos[i]; if(!f) return;
+  const img = document.getElementById('m-img');
+  img.src = f.src; img.alt = f.nombre + ' · Félix Santiago'; img.style.display = 'block';
+  document.querySelectorAll('#m-thumbs .m-th').forEach((t, k) => t.classList.toggle('on', k === i));
+  img.dataset.i = i;
+}
+function mAbrirLB(i) { if(mFotos.length) openLB(i == null ? +(document.getElementById('m-img').dataset.i || 0) : i, mFotos); }
+function pintarMas(ave) {
+  const id = ave.id, th = document.getElementById('m-thumbs'), el = document.getElementById('m-enc-lista'), lk = document.getElementById('m-links');
+  th.className = 'm-thumbs'; th.innerHTML = ''; el.style.display = 'none'; el.innerHTML = ''; mFotos = [];
+  const img = document.getElementById('m-img'); img.classList.remove('zoomable'); img.onclick = null; delete img.dataset.i;
+  const q = encodeURIComponent(ave.nombre), w = ave.nombre.replace(/ /g, '_');
+  lk.innerHTML = '<div class="ficha-label">Para saber más</div>'
+    + '<a href="https://es.wikipedia.org/wiki/' + w + '" target="_blank" rel="noopener">Wikipedia</a>'
+    + '<a href="https://xeno-canto.org/explore?query=' + q + '" target="_blank" rel="noopener">Escuchar su canto</a>'
+    + '<a href="https://www.inaturalist.org/taxa/search?q=' + q + '" target="_blank" rel="noopener">iNaturalist</a>';
+  Promise.all([cargarFotosX(), cargarRegistros()]).then(() => {
+    if(curId !== id) return;
+    const ex = (FOTOSX[id] && FOTOSX[id].fotos) || [];
+    const lug = (REGISTROS && REGISTROS.lugares) || [], reg = (REGISTROS && REGISTROS.r && REGISTROS.r[id]) || {};
+    const lugDe = d => { const a = reg[d]; return a && a.length === 1 ? lug[a[0]] : ''; };
+    mFotos = ex.map(x => ({src: 'fotos/' + x.f, d: x.d, nombre: ave.comun + ' · ' + fmtFecha(x.d), lugar: lugDe(x.d)}));
+    if(mFotos.length) {
+      img.classList.add('zoomable'); img.onclick = () => mAbrirLB();
+      mSlide(0);
+      if(mFotos.length > 1) {
+        th.innerHTML = mFotos.map((f, k) => '<img class="m-th' + (k ? '' : ' on') + '" src="' + f.src + '" loading="lazy" alt="' + escHtml(f.nombre) + '" onclick="mSlide(' + k + ')">').join('');
+        th.classList.add('on');
+      }
+    }
+    const fechas = Object.keys(reg).sort().reverse();
+    if(fechas.length) {
+      el.innerHTML = '<h4>Mis encuentros (' + fechas.length + ')</h4><ul>' + fechas.map(d => {
+        const k = mFotos.findIndex(f => f.d === d), n = mFotos.filter(f => f.d === d).length;
+        const lugares = (reg[d] || []).map(i => lug[i]).filter(Boolean).join(' · ');
+        return '<li' + (k >= 0 ? ' class="foto" onclick="mAbrirLB(' + k + ')"' : '') + '><span class="enc-f">' + fmtFecha(d) + '</span><span class="enc-l">' + escHtml(lugares) + '</span>' + (k >= 0 ? '<span class="enc-c">📷 ' + n + '</span>' : '') + '</li>';
+      }).join('') + '</ul>';
+      el.style.display = 'block';
+    }
+  });
 }
 
 function closeMO(e){if(e.target===document.getElementById('modal-ov'))closeM();}
