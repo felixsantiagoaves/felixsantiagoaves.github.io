@@ -1,0 +1,52 @@
+<!-- LIGHTBOX GALERÍA -->
+<div class="lightbox" id="lightbox" onclick="lbClickOut(event)">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <button class="lb-arrow lb-prev" id="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="lb-img" id="lb-img" src="" alt="" draggable="false">
+  <div class="lb-caption" id="lb-caption"></div>
+  <div class="lb-sub" id="lb-sub"></div>
+  <button class="lb-ficha" id="lb-ficha" onclick="lbVerFicha()" style="display:none">Ver ficha de la especie →</button>
+  <div class="lb-copy">© Félix Santiago Allendes · Uso solo con permiso</div>
+  <div class="lb-hint">Doble toque o pellizco para ampliar · deslizá para cambiar</div>
+  <button class="lb-arrow lb-next" id="lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal-ov" onclick="closeMO(event)">
+  <button class="m-float-arrow m-float-prev" id="m-prev-btn" onclick="modalNav(-1);event.stopPropagation()">‹</button>
+  <button class="m-float-arrow m-float-next" id="m-next-btn" onclick="modalNav(1);event.stopPropagation()">›</button>
+  <div class="modal">
+    <div class="modal-hd">
+      <div><h3 id="m-nombre"></h3><p id="m-comun"></p></div>
+      <button class="modal-close" onclick="closeM()">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="m-left">
+      <div class="modal-prev" id="m-prev">
+        <div class="prev-ph" id="m-ph"></div>
+        <img id="m-img" style="display:none" alt="">
+      </div>
+      </div>
+      <div class="modal-right-col">
+        <div id="m-ficha" class="ficha-section" style="display:none"></div>
+        <div id="m-enc-info" style="display:none">
+          <span class="found-badge">✓ Encontrada</span>
+          <div class="avist-info" id="m-avist"></div>
+          <button class="share-btn" onclick="shareAve()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Compartir
+          </button>
+        </div>
+        <div id="m-pending-info" style="display:none">
+          <span class="pending-badge">○ Aún no encontrada</span>
+          <div class="pending-info" id="m-pending-detail"></div>
+        </div>
+        <div class="m-pagina" id="m-pagina" style="display:none"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast">
+</div>

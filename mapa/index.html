@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Página generada con _build/build.py: para cambiarla, editar _build/fragmentos/mapa.html (o assets/) y volver a correr el script. Guía completa: _build/LEEME-CLAUDE.md -->
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5B10D1495"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X5B10D1495');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa de mis salidas de campo · Félix Santiago Aves</title>
+<meta name="description" content="Mapa interactivo de mis salidas de campo: los lugares de Córdoba y Argentina donde observé aves, con la lista de especies de cada uno.">
+<meta name="theme-color" content="#3f4733">
+<script>try{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://felixsantiago.com.ar/#web", "url": "https://felixsantiago.com.ar/", "name": "Félix Santiago Aves", "alternateName": "Félix Santiago Allendes", "inLanguage": "es-AR", "description": "Diario de campo visual de Félix Santiago Allendes: álbum de aves de Córdoba y Argentina, mapa interactivo de salidas y galería de fotos de aves. Desde Río Cuarto, Córdoba.", "publisher": {"@id": "https://felixsantiago.com.ar/#felix"}}, {"@type": "Person", "@id": "https://felixsantiago.com.ar/#felix", "name": "Félix Santiago Allendes", "alternateName": ["Félix Santiago Aves", "Felix Santiago Aves", "felix_santiago_aves", "Félix Santiago"], "jobTitle": "Fotógrafo y observador de aves", "url": "https://felixsantiago.com.ar/", "image": "https://felixsantiago.com.ar/icon-192.png", "homeLocation": {"@type": "Place", "name": "Río Cuarto, Córdoba, Argentina"}, "sameAs": ["https://www.instagram.com/felix_santiago_aves", "https://www.tiktok.com/@felix_santiago_aves", "https://www.youtube.com/@FelixSantiagoAves", "https://www.facebook.com/profile.php?id=61586101313880", "https://ebird.org/profile/ODUwOTI1MA/world"]}, {"@type": "WebPage", "@id": "https://felixsantiago.com.ar/mapa/", "url": "https://felixsantiago.com.ar/mapa/", "name": "Mapa de mis salidas de campo · Félix Santiago Aves", "description": "Mapa interactivo de mis salidas de campo: los lugares de Córdoba y Argentina donde observé aves, con la lista de especies de cada uno.", "inLanguage": "es-AR", "isPartOf": {"@id": "https://felixsantiago.com.ar/#web"}, "author": {"@id": "https://felixsantiago.com.ar/#felix"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://felixsantiago.com.ar/"}, {"@type": "ListItem", "position": 2, "name": "Mapa de mis salidas de campo", "item": "https://felixsantiago.com.ar/mapa/"}]}]}
+</script>
+<link rel="canonical" href="https://felixsantiago.com.ar/mapa/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Félix Santiago Aves">
+<meta property="og:title" content="Mapa de mis salidas de campo · Félix Santiago Aves">
+<meta property="og:description" content="Mapa interactivo de mis salidas de campo: los lugares de Córdoba y Argentina donde observé aves, con la lista de especies de cada uno.">
+<meta property="og:url" content="https://felixsantiago.com.ar/mapa/">
+<meta property="og:image" content="https://felixsantiago.com.ar/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Félix Santiago Aves: diario de campo visual de aves de Argentina">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mapa de mis salidas de campo · Félix Santiago Aves">
+<meta name="twitter:description" content="Mapa interactivo de mis salidas de campo: los lugares de Córdoba y Argentina donde observé aves, con la lista de especies de cada uno.">
+<meta name="twitter:image" content="https://felixsantiago.com.ar/preview.jpg">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=4c972442">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<button class="tema-btn" id="tema-btn" onclick="toggleTema()" aria-label="Cambiar entre modo claro y modo oscuro" title="Modo oscuro">☾</button>
+<nav>
+  <div class="nav-i">
+    <div class="nav-logo"><a href="/"><img src="/logo-nav.png" alt="Felix Santiago Aves" style="height:38px;display:block;"></a></div>
+    <ul class="nav-links">
+      <li><a href="/">Sobre mí</a></li>
+      <li><a href="/album/" id="nav-album">Álbum<span class="nav-badge" id="nav-album-badge"></span></a></li>
+      <li><a href="/aves/">Especies</a></li>
+      <li><a href="/mapa/" class="active">Mapa</a></li>
+      <li><a href="/galeria/">Galería</a></li>
+      <li><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="page-mapa" class="page active">
+    <div class="mapa-section">
+      <div class="mapa-titulo-wrap">
+        <p class="mapa-titulo">Mis salidas de campo</p>
+        <div class="mapa-barra" role="group" aria-label="Zona del mapa"><button class="mreg-b on" data-v="todos" onclick="mapaVer('todos')">Mis lugares</button><button class="mreg-b" data-v="cba" onclick="mapaVer('cba')">Córdoba</button><button class="mreg-b" data-v="arg" onclick="mapaVer('arg')">Argentina</button></div>
+        <p class="mapa-leyenda"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (n.º de especies distintas; tocalo para abrirlo)</p>
+      </div>
+      <div class="mapa-wrap"><div id="mapa-leaflet" aria-label="Mapa de mis lugares de observación"></div></div>
+    </div>
+</div>
+
+<!-- LIGHTBOX GALERÍA -->
+<div class="lightbox" id="lightbox" onclick="lbClickOut(event)">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <button class="lb-arrow lb-prev" id="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="lb-img" id="lb-img" src="" alt="" draggable="false">
+  <div class="lb-caption" id="lb-caption"></div>
+  <div class="lb-sub" id="lb-sub"></div>
+  <button class="lb-ficha" id="lb-ficha" onclick="lbVerFicha()" style="display:none">Ver ficha de la especie →</button>
+  <div class="lb-copy">© Félix Santiago Allendes · Uso solo con permiso</div>
+  <div class="lb-hint">Doble toque o pellizco para ampliar · deslizá para cambiar</div>
+  <button class="lb-arrow lb-next" id="lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal-ov" onclick="closeMO(event)">
+  <button class="m-float-arrow m-float-prev" id="m-prev-btn" onclick="modalNav(-1);event.stopPropagation()">‹</button>
+  <button class="m-float-arrow m-float-next" id="m-next-btn" onclick="modalNav(1);event.stopPropagation()">›</button>
+  <div class="modal">
+    <div class="modal-hd">
+      <div><h3 id="m-nombre"></h3><p id="m-comun"></p></div>
+      <button class="modal-close" onclick="closeM()">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="m-left">
+      <div class="modal-prev" id="m-prev">
+        <div class="prev-ph" id="m-ph"></div>
+        <img id="m-img" style="display:none" alt="">
+      </div>
+      </div>
+      <div class="modal-right-col">
+        <div id="m-ficha" class="ficha-section" style="display:none"></div>
+        <div id="m-enc-info" style="display:none">
+          <span class="found-badge">✓ Encontrada</span>
+          <div class="avist-info" id="m-avist"></div>
+          <button class="share-btn" onclick="shareAve()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Compartir
+          </button>
+        </div>
+        <div id="m-pending-info" style="display:none">
+          <span class="pending-badge">○ Aún no encontrada</span>
+          <div class="pending-info" id="m-pending-detail"></div>
+        </div>
+        <div class="m-pagina" id="m-pagina" style="display:none"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast">
+</div>
+
+<footer id="site-footer-global"></footer>
+<script src="/assets/datos.js?v=4c972442"></script>
+<script src="/assets/site.js?v=4c972442"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<div id="page-album" class="page active">
+  <div class="page-header">
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-logo class="page-header-logo" alt="logo">
+    <h2 class="page-title">Álbum de <em>Aves</em></h2>
+    <p class="page-sub" id="album-sub">Córdoba · 416 especies</p>
+    <div class="reg-sel" role="group" aria-label="Región"><button class="reg-b on" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b" data-reg="arg" onclick="setRegion('arg')">Argentina</button></div>
+    <div class="prog-wrap"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <p class="prog-txt" id="prog-txt">0 de 416 especies encontradas</p>
+  </div>
+  <div class="album-controls">
+    <div class="album-controls-inner">
+      <input type="text" id="busqueda" placeholder="🔍  Buscar por nombre..." oninput="buscar(this.value)" style="flex:1;padding:.5rem .9rem;border:1.5px solid var(--co);border-radius:100px;font-family:'Lato',sans-serif;font-size:.88rem;color:var(--tx);min-width:180px;">
+      <button class="fb" onclick="setFiltro('todas',this)">Todas</button>
+      <button class="fb active" onclick="setFiltro('enc',this)">✓ Encontradas</button>
+      <button class="fb" onclick="setFiltro('no',this)">○ Faltantes</button>
+      <button class="fb2" id="btn-mas" onclick="toggleMasFiltros()">Filtros ▾</button>
+    </div>
+    <div class="album-filtros" id="album-filtros">
+      <label>Grupo<select id="sel-fam" onchange="setFam(this.value)"></select></label>
+      <label>Lugar<select id="sel-lug" onchange="setLug(this.value)"></select></label>
+      <label>Orden<select id="sel-ord" onchange="setOrden(this.value)"><option value="az">A → Z</option><option value="tax">Taxonómico (como eBird)</option><option value="rec">Más recientes primero</option><option value="ant">Más antiguas primero</option></select></label>
+      <button class="fb2" onclick="limpiarFiltros()">Limpiar</button>
+    </div>
+  </div>
+  <div class="page-body-wide">
+    <div id="album-container"></div>
+  </div>
+</div>

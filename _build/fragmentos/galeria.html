@@ -1,0 +1,17 @@
+<div id="page-galeria" class="page active">
+  <div class="page-header">
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-logo class="page-header-logo" alt="logo">
+    <h2 class="page-title">Mis mejores <em>fotos</em></h2>
+    <p class="page-sub">Un registro visual de mis encuentros</p>
+  </div>
+  <div class="gal-tabs-wrap" id="gal-tabs-wrap" style="display:none"><div class="mapa-barra" role="group" aria-label="Tipo de fotos"><button class="gtab-b on" data-g="aves" onclick="galTab('aves')">Aves</button><button class="gtab-b" data-g="fauna" onclick="galTab('fauna')">Otros animales</button></div></div>
+  <div class="gal-controles" id="gal-controles">
+    <input type="text" id="gal-q" placeholder="🔍  Buscar por especie o lugar..." oninput="galSet(this.value,null)">
+    <select id="gal-anio" onchange="galSet(null,this.value)"></select>
+    <span class="gal-count" id="gal-count"></span>
+  </div>
+  <div class="page-body-wide">
+    <div class="foto-grid" id="foto-grid"></div>
+
+  </div>
+</div>

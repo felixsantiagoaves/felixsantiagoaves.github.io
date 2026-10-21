@@ -1,0 +1,68 @@
+<div id="page-sobre-mi" class="page active">
+
+  <!-- HERO OSCURO -->
+  <div class="hero-top">
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-logo alt="Felix Santiago Aves" class="logo-hero">
+    <h1 class="hero-nombre">Félix <em>Santiago</em> Aves</h1>
+    <p class="hero-ubi">Río Cuarto · Córdoba · Argentina</p>
+    <div class="stats-franja">
+      <div class="stats-titulo">Estadísticas</div>
+      <div class="stats-kpis">
+        <div class="stat-item" onclick="irAlbum('enc')" style="cursor:pointer"><span class="stat-num" id="s-vistas">0</span><span class="stat-label">Especies vistas ↗</span></div>
+        <div class="stat-item" onclick="irAlbumRegion('cba')" style="cursor:pointer"><span class="stat-num" id="s-cba">0%</span><span class="stat-label" id="s-cba-l">En Córdoba ↗</span></div>
+        <div class="stat-item" onclick="irAlbumRegion('arg')" style="cursor:pointer"><span class="stat-num" id="s-arg">0%</span><span class="stat-label" id="s-arg-l">En Argentina ↗</span></div>
+      </div>
+    </div>
+    <div class="prog-dual">
+      <div class="prog-fila"><span class="prog-fl">Córdoba</span><div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill" style="width:0%"></div></div><span class="prog-fv" id="prog-fv-cba"></span></div>
+      <div class="prog-fila"><span class="prog-fl">Argentina</span><div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill2" style="width:0%"></div></div><span class="prog-fv" id="prog-fv-arg"></span></div>
+    </div>
+    <div class="recientes" id="recientes" style="display:none">
+      <div class="rec-titulo">Últimas especies sumadas</div>
+      <div class="rec-track" id="rec-track"></div>
+    </div>
+    <button class="album-cta" onclick="irAlbum('enc')"><span>Explorar el álbum <b>→</b></span><small id="cta-album-count">416 especies por descubrir</small></button>
+  <button class="share-btn-hero" onclick="shareSitio()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    Compartir álbum
+  </button>
+</div>
+
+  <!-- CUERPO CLARO -->
+  <div class="hero-body">
+    <p style="font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;">— En el campo —</p>
+    <div class="carrusel-wrap" id="campo-carrusel">
+    <div class="carrusel-track" id="campo-track"></div>
+    <button class="carrusel-btn carrusel-prev" onclick="campoNav(-1)">‹</button>
+    <button class="carrusel-btn carrusel-next" onclick="campoNav(1)">›</button>
+    <div class="carrusel-dots" id="campo-dots"></div>
+  </div>
+  <p class="hero-bio corta">Soy Félix Santiago Allendes, fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
+  <button class="bio-mas" onclick="toggleBio(this)">Leer más</button>
+    <div class="novedades">
+      <div class="nov-card">
+        <div class="nov-label" data-hint="Ver ficha →">Última ave registrada</div>
+        <div class="nov-val" id="nov-ave">—</div>
+        <div class="nov-sub" id="nov-ave-fecha">Sin registros aún</div>
+      </div>
+      <div class="nov-card">
+        <div class="nov-label" data-hint="Ver en el mapa →">Última localización</div>
+        <div class="nov-val" id="nov-lugar">—</div>
+        <div class="nov-sub" id="nov-lugar-fecha">Sin registros aún</div>
+      </div>
+    </div>
+    <div class="novedades nov2">
+      <div class="nov-card hito-card clickable" id="hito-card">
+        <div class="nov-label" data-hint="Ver mis números →">Próximo hito</div>
+        <div class="hito-val">—</div>
+        <div class="hito-bar"><i></i></div>
+        <div class="nov-sub"></div>
+      </div>
+      <div class="nov-card dia-card clickable" id="dia-card">
+        <div class="nov-label" data-hint="Ver ficha →">Ave del día</div>
+        <div class="dia-fila"></div>
+      </div>
+    </div>
+    <button class="share-movil" onclick="shareSitio()">↗ Compartir álbum</button>
+  </div>
+</div>

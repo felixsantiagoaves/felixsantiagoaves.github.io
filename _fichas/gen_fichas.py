@@ -24,7 +24,7 @@ const i=s.indexOf('\\nconst AVES = [\\n'), j=s.indexOf('\\n];',i);
 const AVES=eval('('+s.slice(i+'\\nconst AVES = '.length, j+2)+')');
 const k=s.indexOf('\\nconst FICHAS = {\\n'); const e=s.indexOf('\\n};',k);
 const FICHAS=eval('('+s.slice(k+'\\nconst FICHAS = '.length, e+2)+')');
-process.stdout.write(JSON.stringify({AVES,FICHAS}));""", os.path.join(RAIZ, 'index.html')], capture_output=True, text=True, check=True).stdout
+process.stdout.write(JSON.stringify({AVES,FICHAS}));""", os.path.join(RAIZ, 'assets', 'datos.js')], capture_output=True, text=True, check=True).stdout
 D = json.loads(js); AVES = {a['id']: a for a in D['AVES']}; FICHAS = D['FICHAS']
 REG = json.load(open(os.path.join(RAIZ, 'registros.json'), encoding='utf-8'))
 AVIST = json.load(open(os.path.join(RAIZ, 'avistamientos.json'), encoding='utf-8'))
@@ -133,7 +133,7 @@ for E in ESP:
                      + f'>{f"<figcaption>{cap}</figcaption>" if cap else ""}</figure>')
     title = f'{comun} ({sci}) · Félix Santiago Aves'
     imgs_ld = [{'@type': 'ImageObject', '@id': f'{url}#foto-{i+1}', 'contentUrl': p['abs'], 'name': f'{comun} ({sci})', 'caption': alt, 'creator': {'@id': BASE + '#felix'},
-                'copyrightHolder': {'@id': BASE + '#felix'}, 'copyrightNotice': '© Félix Santiago Allendes. Uso solo con permiso previo y por escrito.', 'license': BASE + '#redes', 'acquireLicensePage': BASE + '#redes'}
+                'copyrightHolder': {'@id': BASE + '#felix'}, 'copyrightNotice': '© Félix Santiago Allendes. Uso solo con permiso previo y por escrito.', 'license': BASE + 'contacto/', 'acquireLicensePage': BASE + 'contacto/'}
                for i, p in enumerate(fotos[:10])]
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'WebPage', '@id': url, 'url': url, 'name': title, 'description': S['resumen'], 'inLanguage': 'es-AR', 'isPartOf': {'@id': BASE + '#web'}, 'author': {'@id': BASE + '#felix'},
@@ -172,13 +172,13 @@ for E in ESP:
 <nav class="gnav"><div class="nav-i">
   <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"></a>
   <ul class="nav-links">
-    <li><a href="/#sobre-mi">Sobre mí</a></li>
-    <li><a href="/#album">Álbum</a></li>
+    <li><a href="/">Sobre mí</a></li>
+    <li><a href="/album/">Álbum</a></li>
     <li><a class="active" href="/aves/">Especies</a></li>
-    <li><a href="/#mapa">Mapa</a></li>
-    <li><a href="/#galeria">Galería</a></li>
-    <li><a href="/#datos"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
-    <li><a href="/#redes">Contacto</a></li>
+    <li><a href="/mapa/">Mapa</a></li>
+    <li><a href="/galeria/">Galería</a></li>
+    <li><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
 <main class="wrap">
@@ -207,7 +207,7 @@ for E in ESP:
   {f'<section class="sec fuentes"><h2>Fuentes</h2><ul>{fuentes}</ul><p class="nota-fuentes">Los textos están escritos con mis palabras a partir de estas fuentes. Los datos de avistamientos y las fotos son propios.</p></section>' if S['fuentes'] else ''}
   <nav class="pn" aria-label="Otras fichas">{pn_html}</nav>
   <section class="sec otras"><h2>Otras fichas</h2><div class="grid mini">{"".join(tarjeta(x) for x in otras(E))}</div><p><a class="pill" href="/aves/">Ver todas las especies</a></p></section>
-  <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/#redes">escribime</a>.</p>
+  <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/contacto/">escribime</a>.</p>
 </main>
 <button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="x" aria-label="Cerrar">✕</button><button class="pv" aria-label="Anterior">‹</button><button class="nx" aria-label="Siguiente">›</button><img src="" alt=""><p><span class="cap"></span><small>© Félix Santiago Allendes · Uso solo con permiso</small></p></div>
@@ -258,13 +258,13 @@ ipage = f'''<!DOCTYPE html>
 <nav class="gnav"><div class="nav-i">
   <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"></a>
   <ul class="nav-links">
-    <li><a href="/#sobre-mi">Sobre mí</a></li>
-    <li><a href="/#album">Álbum</a></li>
+    <li><a href="/">Sobre mí</a></li>
+    <li><a href="/album/">Álbum</a></li>
     <li><a class="active" href="/aves/">Especies</a></li>
-    <li><a href="/#mapa">Mapa</a></li>
-    <li><a href="/#galeria">Galería</a></li>
-    <li><a href="/#datos"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
-    <li><a href="/#redes">Contacto</a></li>
+    <li><a href="/mapa/">Mapa</a></li>
+    <li><a href="/galeria/">Galería</a></li>
+    <li><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
 <main class="wrap">
@@ -278,7 +278,7 @@ ipage = f'''<!DOCTYPE html>
   <p class="cuenta" id="cuenta" aria-live="polite">{len(ESP)} especies</p>
   <ul class="grid" id="lista">{cards}</ul>
   <p class="vacio" id="vacio" hidden>No encontré ninguna especie con ese nombre.</p>
-  <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/#redes">escribime</a>.</p>
+  <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/contacto/">escribime</a>.</p>
 </main>
 <button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
 <script src="/aves/ficha.js?v={VER}" defer></script>
@@ -304,13 +304,14 @@ def url_entry(loc, imgs, prio, freq):
     o = ['<url>', f'<loc>{loc}</loc>', f'<lastmod>{date.today().isoformat()}</lastmod>', f'<changefreq>{freq}</changefreq>', f'<priority>{prio}</priority>']
     for u, comun, sci in imgs:
         o += ['<image:image>', f'<image:loc>{u}</image:loc>', f'<image:title>{xesc(comun)} ({xesc(sci)})</image:title>',
-              f'<image:caption>{xesc(comun)}, {xesc(sci)}. Fotografiada por Félix Santiago en Argentina.</image:caption>', f'<image:license>{BASE}#redes</image:license>', '</image:image>']
+              f'<image:caption>{xesc(comun)}, {xesc(sci)}. Fotografiada por Félix Santiago en Argentina.</image:caption>', f'<image:license>{BASE}contacto/</image:license>', '</image:image>']
     return o + ['</url>']
 home = []
 for sid, r in sorted(AVIST['avistamientos'].items(), key=lambda kv: int(kv[0])):
     if r.get('foto') and int(sid) in AVES: home.append((BASE + quote(r['foto']), AVES[int(sid)]['comun'], AVES[int(sid)]['nombre']))
 out += url_entry(BASE, home, '1.0', 'weekly')
 out += url_entry(BASE + 'aves/', [], '0.9', 'weekly')
+for carp, prio in [('album', '0.9'), ('galeria', '0.8'), ('mapa', '0.7'), ('estadisticas', '0.6'), ('contacto', '0.5')]: out += url_entry(BASE + carp + '/', [], prio, 'weekly' if carp != 'contacto' else 'yearly')
 for sid, p in paginas.items(): out += url_entry(f'{BASE}aves/{p["slug"]}/', [(u, p['comun'], p['sci']) for u in p['fotos'][:10]], '0.8' if FUENTES.get(int(sid)) else '0.6', 'monthly')
 out += ['</urlset>', '']
 open(os.path.join(RAIZ, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))
