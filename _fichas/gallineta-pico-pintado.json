@@ -1,0 +1,59 @@
+{
+ "id": 118,
+ "resumen": "Gallineta Pico Pintado (Pardirallus sanguinolentus): cómo reconocerla, dónde vive, qué come y cómo anida, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Ambientes",
+   "Humedales de agua dulce con vegetación densa"
+  ],
+  [
+   "Alimentación",
+   "Omnívora: insectos, moluscos, lombrices y semillas"
+  ],
+  [
+   "Actividad",
+   "Amanecer, atardecer y noche"
+  ],
+  [
+   "Puesta",
+   "4 a 6 huevos"
+  ],
+  [
+   "Estado",
+   "Preocupación Menor (UICN)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es un rálido de tamaño mediano, de cuerpo robusto y hábitos terrestres y esquivos. Tiene el plumaje oscuro, con tonos grisáceos y pardo oliváceos, el pico largo y recto de color verdoso a amarillento con matices azulados, y las patas largas y rojizas. Los sexos son casi iguales, aunque los machos tienden a ser algo más grandes. También se la conoce como gallineta común, pidén o rascón plomizo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en humedales de agua dulce con vegetación emergente densa: bañados, pantanos, juncales, bordes de lagunas y pastizales inundables. También usa ambientes modificados, como canales de riego o campos inundados, mientras haya cobertura vegetal. Su distribución va desde Perú hasta las islas Malvinas y desde Chile hasta Brasil; en la Argentina, del norte hasta el norte de la Patagonia, con una subespecie propia en Tierra del Fuego."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es tímida y rara vez sale a lugares abiertos: camina o corre entre la vegetación y solo vuela distancias cortas cuando la molestan. Es más activa al amanecer, al atardecer y de noche, y muchas veces se la detecta antes por sus voces fuertes que por la vista. Es omnívora: come insectos y sus larvas, moluscos, pequeños crustáceos, lombrices, y también semillas y brotes tiernos, que busca con movimientos lentos entre el barro y la base de las plantas."
+  },
+  {
+   "t": "Reproducción",
+   "p": "Cría sobre todo en primavera y verano. Construye una plataforma de tallos y hojas secos, oculta en la vegetación y cerca del agua. La puesta es de unos 4 a 6 huevos claros con manchas más oscuras. Ambos padres incuban y cuidan a los pollos, que dejan el nido poco después de nacer pero siguen protegidos por los adultos."
+  },
+  {
+   "t": "Conservación",
+   "p": "Está catalogada como Preocupación Menor por su amplia distribución. Las amenazas son locales: la pérdida, el drenaje y la contaminación de los humedales."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "EcoRegistros: Gallineta Común",
+   "u": "https://www.ecoregistros.org/sheet/especie.php?id=114"
+  },
+  {
+   "t": "Wikipedia: Pardirallus sanguinolentus",
+   "u": "https://es.wikipedia.org/wiki/Pardirallus_sanguinolentus"
+  }
+ ],
+ "comun": "Gallineta Pico Pintado"
+}

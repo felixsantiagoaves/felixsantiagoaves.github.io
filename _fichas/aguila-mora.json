@@ -1,0 +1,63 @@
+{
+ "id": 4,
+ "resumen": "Águila Mora (Geranoaetus melanoleucus): cómo reconocerla, dónde vive, qué come y cómo anida, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "60 a 76 cm"
+  ],
+  [
+   "Envergadura",
+   "149 a 184 cm"
+  ],
+  [
+   "Ambientes",
+   "Montañas, estepas, pastizales y laderas rocosas"
+  ],
+  [
+   "Alimentación",
+   "Mamíferos medianos, aves, reptiles y carroña"
+  ],
+  [
+   "Puesta",
+   "1 a 3 huevos (generalmente 2)"
+  ],
+  [
+   "Estado",
+   "Preocupación Menor (UICN)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es una rapaz grande, de alas anchas y cola muy corta, lo que le da una silueta triangular en vuelo. El adulto es gris oscuro por arriba, con el pecho negro y el vientre blanco con finas barras. Los jóvenes son muy oscuros, con tonos castaño rojizo en el dorso y el vientre beige con manchas pardas muy juntas. Vuela con aleteos cortos y la cola erguida. La hembra es más grande que el macho."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Frecuenta montañas, bosques abiertos, estepas arbustivas, pastizales, matorrales y laderas rocosas. Se la encuentra a lo largo de los Andes, desde el norte de Sudamérica hasta Tierra del Fuego, y en el sudeste del continente. En la Argentina está presente en buena parte del país, de la cordillera a la meseta patagónica."
+  },
+  {
+   "t": "Qué come y cómo caza",
+   "p": "Caza sobre todo mamíferos medianos, como roedores y liebres, y también aves, reptiles e invertebrados; ocasionalmente come carroña. Suele estar sola o en pareja, caza desde un vuelo bajo o desde una percha elevada, y se la ve planeando a media mañana y media tarde, cuando se forman las corrientes de aire caliente. Se documentaron parejas que cazan palomas en cooperación: una ave dispersa la bandada y la otra se lanza desde arriba sobre las que quedan separadas."
+  },
+  {
+   "t": "Reproducción",
+   "p": "Anida en grietas de peñascos, en repisas o en la copa de árboles altos, en nidos grandes que reutiliza durante años. Pone de uno a tres huevos, generalmente dos, que ambos adultos incuban durante unos 30 días. La cría ocurre sobre todo en primavera."
+  },
+  {
+   "t": "Conservación",
+   "p": "Está catalogada como Preocupación Menor y sus poblaciones son relativamente estables. Las amenazas locales son la persecución humana, la disminución de sus presas y los cambios en el hábitat."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "EcoRegistros: Águila Mora",
+   "u": "https://ecoregistros.org/ficha/Geranoaetus-melanoleucus&idpais=46"
+  },
+  {
+   "t": "Wikipedia: Geranoaetus melanoleucus",
+   "u": "https://es.wikipedia.org/wiki/Geranoaetus_melanoleucus"
+  }
+ ],
+ "comun": "Águila Mora"
+}

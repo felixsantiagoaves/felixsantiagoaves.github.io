@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
 <loc>https://felixsantiago.com.ar/</loc>
-<lastmod>2026-10-20</lastmod>
+<lastmod>2026-10-21</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
 <image:image>
@@ -1011,6 +1011,102 @@
 <image:loc>https://felixsantiago.com.ar/fotos/turdus_rufiventris.jpg</image:loc>
 <image:title>Zorzal Colorado (Turdus rufiventris)</image:title>
 <image:caption>Zorzal Colorado, Turdus rufiventris. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+</url>
+<url>
+<loc>https://felixsantiago.com.ar/aves/aguila-mora/</loc>
+<lastmod>2026-10-21</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/geranoaetus_melanoleucus/27072026-DSC_0522.jpg</image:loc>
+<image:title>Águila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Águila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/geranoaetus_melanoleucus/27072026-DSC_0517.jpg</image:loc>
+<image:title>Águila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Águila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/geranoaetus_melanoleucus/27072026-DSC_0502.jpg</image:loc>
+<image:title>Águila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Águila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/geranoaetus_melanoleucus/27072026-DSC_0431.jpg</image:loc>
+<image:title>Águila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Águila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/geranoaetus_melanoleucus/27072026-DSC_0422.jpg</image:loc>
+<image:title>Águila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Águila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/geranoaetus_melanoleucus/20062026-DSC_0313.jpg</image:loc>
+<image:title>Águila Mora (Geranoaetus melanoleucus)</image:title>
+<image:caption>Águila Mora, Geranoaetus melanoleucus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+</url>
+<url>
+<loc>https://felixsantiago.com.ar/aves/gallineta-pico-pintado/</loc>
+<lastmod>2026-10-21</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/pardirallus_sanguinolentus/27062026-DSC_0362.jpg</image:loc>
+<image:title>Gallineta Pico Pintado (Pardirallus sanguinolentus)</image:title>
+<image:caption>Gallineta Pico Pintado, Pardirallus sanguinolentus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/pardirallus_sanguinolentus/27062026-DSC_0157.jpg</image:loc>
+<image:title>Gallineta Pico Pintado (Pardirallus sanguinolentus)</image:title>
+<image:caption>Gallineta Pico Pintado, Pardirallus sanguinolentus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/pardirallus_sanguinolentus/27062026-DSC_0142.jpg</image:loc>
+<image:title>Gallineta Pico Pintado (Pardirallus sanguinolentus)</image:title>
+<image:caption>Gallineta Pico Pintado, Pardirallus sanguinolentus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/pardirallus_sanguinolentus/27062026-DSC_0134.jpg</image:loc>
+<image:title>Gallineta Pico Pintado (Pardirallus sanguinolentus)</image:title>
+<image:caption>Gallineta Pico Pintado, Pardirallus sanguinolentus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+</url>
+<url>
+<loc>https://felixsantiago.com.ar/aves/zorzal-chiguanco/</loc>
+<lastmod>2026-10-21</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/turdus_chiguanco/16082026-DSC_0037.jpg</image:loc>
+<image:title>Zorzal Chiguanco (Turdus chiguanco)</image:title>
+<image:caption>Zorzal Chiguanco, Turdus chiguanco. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/turdus_chiguanco/10062026-DSC_0433.jpg</image:loc>
+<image:title>Zorzal Chiguanco (Turdus chiguanco)</image:title>
+<image:caption>Zorzal Chiguanco, Turdus chiguanco. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/#redes</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/mas/turdus_chiguanco/10062026-DSC_0103.jpg</image:loc>
+<image:title>Zorzal Chiguanco (Turdus chiguanco)</image:title>
+<image:caption>Zorzal Chiguanco, Turdus chiguanco. Fotografiada por Félix Santiago en Argentina.</image:caption>
 <image:license>https://felixsantiago.com.ar/#redes</image:license>
 </image:image>
 </url>

@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+"""Genera las páginas individuales de especie (aves/<slug>/index.html), aves/indice.json y sitemap.xml.
+Uso: gen_fichas.py RAIZ_SITIO CARPETA_FUENTES   (fuentes = fichas-src/*.json)"""
+import sys, os, json, subprocess, html
+from datetime import date
+from urllib.parse import quote
+from xml.sax.saxutils import escape as xesc
+from PIL import Image
+
+RAIZ, SRC = sys.argv[1], sys.argv[2]
+BASE = 'https://felixsantiago.com.ar/'
+MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+MES3 = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+esc = lambda s: html.escape(str(s), quote=True)
+def larga(d): y, m, dd = d.split('-'); return f'{int(dd)} de {MESES[int(m)-1]} de {y}'
+def corta(d): y, m, dd = d.split('-'); return f'{int(dd)} {MES3[int(m)-1]} {y}'
+
+# Datos del sitio (AVES y FICHAS salen del index.html)
+js = subprocess.run(['node', '-e', """
+const fs=require('fs');const s=fs.readFileSync(process.argv[1],'utf8');
+const i=s.indexOf('\\nconst AVES = [\\n'), j=s.indexOf('\\n];',i);
+const AVES=eval('('+s.slice(i+'\\nconst AVES = '.length, j+2)+')');
+const k=s.indexOf('\\nconst FICHAS = {\\n'); const e=s.indexOf('\\n};',k);
+const FICHAS=eval('('+s.slice(k+'\\nconst FICHAS = '.length, e+2)+')');
+process.stdout.write(JSON.stringify({AVES,FICHAS}));""", os.path.join(RAIZ, 'index.html')], capture_output=True, text=True, check=True).stdout
+D = json.loads(js); AVES = {a['id']: a for a in D['AVES']}; FICHAS = D['FICHAS']
+REG = json.load(open(os.path.join(RAIZ, 'registros.json'), encoding='utf-8'))
+AVIST = json.load(open(os.path.join(RAIZ, 'avistamientos.json'), encoding='utf-8'))
+FX = json.load(open(os.path.join(RAIZ, 'fotos.json'), encoding='utf-8')).get('fotos', {}) if os.path.exists(os.path.join(RAIZ, 'fotos.json')) else {}
+LUG = REG['lugares']
+
+def dims(rel):
+    try:
+        with Image.open(os.path.join(RAIZ, 'fotos', rel)) as im: return im.size
+    except Exception: return (1280, 853)
+
+paginas = {}
+for fn in sorted(os.listdir(SRC)):
+    if not fn.endswith('.json'): continue
+    slug = fn[:-5]; S = json.load(open(os.path.join(SRC, fn), encoding='utf-8')); id_ = S['id']; ave = AVES[id_]
+    sci, comun, grupo = ave['nombre'], S.get('comun', ave['comun']), ave['familiaEsp']; ficha = FICHAS.get(sci, {})
+    url = f'{BASE}aves/{slug}/'
+    extras = sorted(FX.get(str(id_), {}).get('fotos', []), key=lambda x: (x['d'], x['f']), reverse=True)
+    reg = REG['r'].get(str(id_), {})
+    def lugar_de(d):
+        a = reg.get(d, []); return LUG[a[0]] if len(a) == 1 else ''
+    # fotos
+    fotos = []
+    for x in extras:
+        w, h = dims(x['f']); fotos.append({'src': f'/fotos/{quote(x["f"])}', 'abs': f'{BASE}fotos/{quote(x["f"])}', 'd': x['d'], 'lug': lugar_de(x['d']), 'w': w, 'h': h, 'f': x['f']})
+    if S.get('portada'):
+        fotos.sort(key=lambda p: p['f'] != S['portada'])
+    principal = AVIST['avistamientos'].get(str(id_), {}).get('foto')
+    if fotos: hero = fotos[0]
+    elif principal:
+        w, h = Image.open(os.path.join(RAIZ, principal)).size; hero = {'src': '/' + principal, 'abs': BASE + principal, 'd': '', 'lug': '', 'w': w, 'h': h, 'f': principal}
+    else: hero = None
+    alt = f'{comun} ({sci}), fotografiada por Félix Santiago en Argentina'
+    # encuentros
+    fechas = sorted(reg.keys(), reverse=True)
+    n_foto = lambda d: sum(1 for p in fotos if p['d'] == d)
+    def li(d):
+        lugares = ' · '.join(LUG[i] for i in reg[d]); n = n_foto(d)
+        return f'<li class="{"foto" if n else ""}"><b>{corta(d)}</b><span>{esc(lugares)}</span>' + (f'<em>📷 {n}</em>' if n else '') + '</li>'
+    enc_html = ''
+    if fechas:
+        ver = fechas[:6]; resto = fechas[6:]
+        enc_html = f'<ul class="enc">{"".join(li(d) for d in ver)}</ul>'
+        if resto: enc_html += f'<details class="mas"><summary class="pill">Ver los {len(resto)} anteriores</summary><ul class="enc">{"".join(li(d) for d in resto)}</ul></details>'
+    primero = ''
+    if fechas:
+        d0 = fechas[-1]; primero = f'<p class="primero"><strong>Primer registro</strong>{larga(d0)} · {esc(" · ".join(LUG[i] for i in reg[d0]))}</p>'
+    datos = ''.join(f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in S.get('datos', []))
+    secs = ''.join(f'<h2>{esc(s["t"])}</h2><p>{esc(s["p"])}</p>' for s in S['secciones'])
+    curioso = f'<div class="curioso"><strong>Dato curioso</strong>{esc(ficha["curiosidad"])}</div>' if ficha.get('curiosidad') else ''
+    gal = ''
+    if fotos:
+        figs = ''.join(
+            f'<figure><a href="{p["src"]}" data-full="{p["src"]}" data-alt="{esc(alt)}" data-cap="{esc(comun + " · " + corta(p["d"]) + (" · " + p["lug"] if p["lug"] else ""))}">'
+            f'<img src="{p["src"]}" width="{p["w"]}" height="{p["h"]}" loading="lazy" decoding="async" alt="{esc(alt)}"></a>'
+            f'<figcaption>{corta(p["d"])}{(" · " + esc(p["lug"])) if p["lug"] else ""}</figcaption></figure>' for p in fotos)
+        gal = f'<section class="sec" id="fotos"><div class="fotos-h"><h2>Mis fotos</h2><span>{len(fotos)} {"foto" if len(fotos)==1 else "fotos"}</span></div><div class="galeria">{figs}</div></section>'
+    fuentes = ''.join(f'<li><a href="{esc(f["u"])}" target="_blank" rel="noopener">{esc(f["t"])}</a></li>' for f in S['fuentes'])
+    q = quote(sci)
+    saber = (f'<a class="pill" href="https://es.wikipedia.org/wiki/{sci.replace(" ", "_")}" target="_blank" rel="noopener">Wikipedia</a>'
+             f'<a class="pill" href="https://xeno-canto.org/explore?query={q}" target="_blank" rel="noopener">Escuchar su canto</a>'
+             f'<a class="pill" href="https://www.inaturalist.org/taxa/search?q={q}" target="_blank" rel="noopener">iNaturalist</a>')
+    hero_html = ''
+    if hero:
+        cap = f'{corta(hero["d"])}{(" · " + esc(hero["lug"])) if hero["lug"] else ""}' if hero['d'] else ''
+        hero_html = (f'<figure class="hero-fig"><img src="{hero["src"]}" width="{hero["w"]}" height="{hero["h"]}" alt="{esc(alt)}" fetchpriority="high" id="hero-img"'
+                     
+                     + f'>{f"<figcaption>{cap}</figcaption>" if cap else ""}</figure>')
+    title = f'{comun} ({sci}) · Félix Santiago Aves'
+    imgs_ld = [{'@type': 'ImageObject', '@id': f'{url}#foto-{i+1}', 'contentUrl': p['abs'], 'name': f'{comun} ({sci})', 'caption': alt, 'creator': {'@id': BASE + '#felix'},
+                'copyrightHolder': {'@id': BASE + '#felix'}, 'copyrightNotice': '© Félix Santiago Allendes. Uso solo con permiso previo y por escrito.', 'license': BASE + '#redes', 'acquireLicensePage': BASE + '#redes'}
+               for i, p in enumerate(fotos[:10])]
+    ld = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'WebPage', '@id': url, 'url': url, 'name': title, 'description': S['resumen'], 'inLanguage': 'es-AR', 'isPartOf': {'@id': BASE + '#web'}, 'author': {'@id': BASE + '#felix'},
+         'about': {'@type': 'Taxon', 'name': sci, 'alternateName': comun, 'taxonRank': 'Species'}, **({'primaryImageOfPage': {'@id': f'{url}#foto-1'}} if imgs_ld else {})},
+        {'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': BASE},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Álbum', 'item': BASE + '#album'},
+            {'@type': 'ListItem', 'position': 3, 'name': comun, 'item': url}]}] + imgs_ld}
+    og_img = (f'<meta property="og:image" content="{hero["abs"]}"><meta property="og:image:width" content="{hero["w"]}"><meta property="og:image:height" content="{hero["h"]}">'
+              f'<meta property="og:image:alt" content="{esc(alt)}"><meta name="twitter:image" content="{hero["abs"]}">') if hero else ''
+    page = f'''<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5B10D1495"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-X5B10D1495');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(S['resumen'])}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#3f4733">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="article"><meta property="og:locale" content="es_AR"><meta property="og:site_name" content="Félix Santiago Aves">
+<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(S['resumen'])}"><meta property="og:url" content="{url}">
+{og_img}
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(S['resumen'])}">
+<link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}}catch(e){{}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/aves/ficha.css">
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="/"><img src="/favicon-48.png" alt="" width="26" height="26"><span>Félix Santiago Aves</span></a>
+  <nav><a href="/#sobre-mi">Inicio</a><a class="on" href="/#album">Álbum</a><a href="/#mapa">Mapa</a><a href="/#galeria">Galería</a><a href="/#redes">Contacto</a></nav>
+</div></header>
+<main class="wrap">
+  <p class="crumbs"><a href="/">Inicio</a> › <a href="/#album">Álbum</a> › {esc(comun)}</p>
+  <div class="hero">
+    {hero_html}
+    <div class="hero-txt">
+      <p class="grupo">{esc(grupo)}</p>
+      <h1>{esc(comun)}</h1>
+      <p class="sci">{esc(sci)}</p>
+      {f'<p class="car">{esc(ficha["estado"])}</p>' if ficha.get('estado') else ''}
+      {primero}
+      <dl class="datos">{datos}</dl>
+      <div class="acciones"><button class="pill fill" id="compartir" type="button">Compartir</button><a class="pill" href="/#album">← Volver al Álbum</a></div>
+    </div>
+  </div>
+  {gal}
+  <div class="cols">
+    <div class="texto">{curioso}{secs}</div>
+    <aside>
+      <section class="sec"><h2>Dónde la vi</h2><div id="mapa-ave" data-id="{id_}" role="img" aria-label="Mapa con los lugares donde registré esta especie"></div><p class="mapa-nota" id="mapa-nota"></p></section>
+      {f'<section class="sec"><h2>Mis encuentros ({len(fechas)})</h2>{enc_html}</section>' if fechas else ''}
+      <section class="sec"><h2>Para saber más</h2><div class="saber">{saber}</div></section>
+    </aside>
+  </div>
+  <section class="sec fuentes"><h2>Fuentes</h2><ul>{fuentes}</ul><p class="nota-fuentes">Los textos están escritos con mis palabras a partir de estas fuentes. Los datos de avistamientos y las fotos son propios.</p></section>
+  <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/#redes">escribime</a>.</p>
+</main>
+<button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="x" aria-label="Cerrar">✕</button><button class="pv" aria-label="Anterior">‹</button><button class="nx" aria-label="Siguiente">›</button><img src="" alt=""><p><span class="cap"></span><small>© Félix Santiago Allendes · Uso solo con permiso</small></p></div>
+<script src="/aves/ficha.js" defer></script>
+</body>
+</html>
+'''
+    os.makedirs(os.path.join(RAIZ, 'aves', slug), exist_ok=True)
+    open(os.path.join(RAIZ, 'aves', slug, 'index.html'), 'w', encoding='utf-8').write(page)
+    paginas[str(id_)] = {'slug': slug, 'fotos': [p['abs'] for p in fotos] or ([hero['abs']] if hero else []), 'comun': comun, 'sci': sci}
+    print('OK', slug, f'{len(fotos)} fotos, {len(fechas)} encuentros')
+
+json.dump({k: v['slug'] for k, v in paginas.items()}, open(os.path.join(RAIZ, 'aves', 'indice.json'), 'w'), ensure_ascii=False)
+
+# Sitemap: inicio + páginas de especie, con fotos para Google Imágenes
+out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+def url_entry(loc, imgs, prio, freq):
+    o = ['<url>', f'<loc>{loc}</loc>', f'<lastmod>{date.today().isoformat()}</lastmod>', f'<changefreq>{freq}</changefreq>', f'<priority>{prio}</priority>']
+    for u, comun, sci in imgs:
+        o += ['<image:image>', f'<image:loc>{u}</image:loc>', f'<image:title>{xesc(comun)} ({xesc(sci)})</image:title>',
+              f'<image:caption>{xesc(comun)}, {xesc(sci)}. Fotografiada por Félix Santiago en Argentina.</image:caption>', f'<image:license>{BASE}#redes</image:license>', '</image:image>']
+    return o + ['</url>']
+home = []
+for sid, r in sorted(AVIST['avistamientos'].items(), key=lambda kv: int(kv[0])):
+    if r.get('foto') and int(sid) in AVES: home.append((BASE + quote(r['foto']), AVES[int(sid)]['comun'], AVES[int(sid)]['nombre']))
+out += url_entry(BASE, home, '1.0', 'weekly')
+for sid, p in paginas.items(): out += url_entry(f'{BASE}aves/{p["slug"]}/', [(u, p['comun'], p['sci']) for u in p['fotos'][:10]], '0.8', 'monthly')
+out += ['</urlset>', '']
+open(os.path.join(RAIZ, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))
+print('sitemap:', len(home), 'fotos en inicio,', len(paginas), 'páginas')

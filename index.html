@@ -876,44 +876,18 @@ body{padding-bottom:48px;}
 
 /* Ficha: carrusel de fotos, encuentros y enlaces */
 .m-left{min-width:0;}
-.m-thumbs{display:none;gap:.4rem;overflow-x:auto;margin-top:.5rem;padding-bottom:.2rem;}
-.m-thumbs.on{display:flex;}
-.m-th{flex:0 0 auto;width:68px;height:50px;object-fit:cover;border:2px solid transparent;cursor:pointer;opacity:.7;transition:opacity .15s,border-color .15s;background:var(--co);}
-.m-th:hover{opacity:1;}
-.m-th.on{border-color:var(--v2);opacity:1;}
-.modal-prev img.zoomable{cursor:zoom-in;}
-.enc-lista h4,.m-links .ficha-label{margin:0 0 .5rem;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:var(--ti);font-weight:700;}
-.enc-lista ul{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
-.enc-lista li{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;background:white;border-left:3px solid var(--v3);font-size:.82rem;color:var(--tx);}
-.enc-lista li.foto{cursor:pointer;border-left-color:var(--v2);}
-.enc-lista li.foto:hover{background:var(--cr);}
-.enc-f{font-weight:700;white-space:nowrap;}
-.enc-l{color:var(--ti);flex:1;min-width:0;}
-.enc-c{font-size:.68rem;letter-spacing:.5px;color:var(--v2);font-weight:700;white-space:nowrap;}
-.m-links{font-size:.82rem;}
-.m-links a{color:var(--v2);text-decoration:underline;margin-right:.9rem;white-space:nowrap;}
-[data-theme=dark] .enc-lista li{background:#2a301f;color:#e6dccb;}
-[data-theme=dark] .enc-lista li.foto:hover{background:#353c28;}
-[data-theme=dark] .m-links a{color:#cdbfa8;}
-[data-theme=dark] .m-th.on{border-color:#a68a64;}
-[data-theme=dark] .enc-l{color:#cdbfa8;}[data-theme=dark] .enc-c{color:#b9c48f;}[data-theme=dark] .enc-lista h4{color:#cdbfa8;}
 
 /* Ficha: foto sin recortes, miniaturas que entran en el ancho, encuentros acotados */
-.modal-prev.fx{aspect-ratio:3/2 !important;}
-.modal-prev img.zoomable{object-fit:contain;background:#1e2417;}
-.m-thumbs.on{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;overflow:visible;}
-.m-th{width:100%;height:auto;aspect-ratio:4/3;}
-.enc-lista li.extra{display:none;}
-.enc-lista ul.all li.extra{display:flex;}
-.enc-lista ul.all{max-height:17rem;overflow-y:auto;}
-.enc-mas{margin-top:.5rem;background:transparent;border:1px solid var(--v3);border-radius:100px;color:var(--ti);font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;padding:.4rem 1rem;cursor:pointer;}
-.enc-mas:hover{background:var(--v2);color:var(--cr);border-color:var(--v2);}
-[data-theme=dark] .enc-mas{color:#cdbfa8;border-color:#4a5538;}
-[data-theme=dark] .enc-mas:hover{background:#656d4a;color:#ede0d4;border-color:#656d4a;}
 
 /* Ficha con scroll propio cuando es más alta que la pantalla */
 .modal-ov{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
 .modal-ov .modal{margin:auto;}
+
+.m-pagina{margin-top:.2rem;}
+.m-pagina p{margin:.5rem 0 0;font-size:.8rem;color:var(--ti);}
+.pill-link{display:inline-block;background:var(--v2);color:var(--cr);border:1px solid var(--v2);border-radius:100px;font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;padding:.5rem 1.2rem;text-decoration:none;}
+.pill-link:hover{background:var(--v1);border-color:var(--v1);}
+[data-theme=dark] .pill-link{background:#656d4a;border-color:#656d4a;color:#ede0d4;}
 </style>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1175,7 +1149,6 @@ body{padding-bottom:48px;}
         <div class="prev-ph" id="m-ph"></div>
         <img id="m-img" style="display:none" alt="">
       </div>
-      <div class="m-thumbs" id="m-thumbs"></div>
       </div>
       <div class="modal-right-col">
         <div id="m-ficha" class="ficha-section" style="display:none"></div>
@@ -1191,8 +1164,7 @@ body{padding-bottom:48px;}
           <span class="pending-badge">○ Aún no encontrada</span>
           <div class="pending-info" id="m-pending-detail"></div>
         </div>
-        <div class="enc-lista" id="m-enc-lista" style="display:none"></div>
-        <div class="m-links" id="m-links"></div>
+        <div class="m-pagina" id="m-pagina" style="display:none"></div>
       </div>
 
     </div>
@@ -2321,7 +2293,7 @@ const FICHAS = {
   'Spinus magellanicus': {estado:'Capucha negra y debilidad por los cardos', curiosidad:'El macho tiene una llamativa capucha negra. Se mueve en bandadas y es atraído por los cardos y otras plantas con semillas pequeñas.'},
   'Vanellus chilensis': {estado:'Vigilante ruidoso del pastizal', curiosidad:'Defiende su territorio con gran agresividad, incluso frente a animales mucho más grandes. Sus gritos, de día y de noche, delatan a cualquier intruso.'},
   'Caracara plancus': {estado:'Halcón que camina buscando comida', curiosidad:'A diferencia de la mayoría de los halcones, camina mucho por el suelo buscando carroña e invertebrados. Es muy frecuente en los campos y al costado de las rutas.'},
-  'Daptrius chimango': {estado:'Oportunista, come casi de todo', curiosidad:'Es uno de los rapaces más abundantes de Argentina. Come carroña, insectos, huevos y hasta restos de basura, y tolera bien la presencia humana.'},
+  'Daptrius chimango': {estado:'Oportunista, come casi de todo', curiosidad:'Es una de las rapaces más abundantes de Argentina. Come carroña, insectos, huevos y hasta restos de basura, y tolera bien la presencia humana.'},
   'Athene cunicularia': {estado:'Lechuza diurna que vive en cuevas', curiosidad:'Vive en cuevas que ella misma excava o que toma prestadas de vizcachas. A diferencia de otras lechuzas, es activa también de día.'},
   'Fulica leucoptera': {estado:'Nadadora de dedos lobulados', curiosidad:'Sus dedos lobulados le sirven para nadar y para caminar sobre la vegetación flotante. Muy territorial, persigue a otras aves acuáticas que se acercan al nido.'},
   'Ardea ibis': {estado:'Acompaña al ganado', curiosidad:'Originaria de África, llegó sola a América a fines del siglo XIX y se expandió por todo el continente. Sigue al ganado para comer los insectos que levanta a su paso.'},
@@ -2379,7 +2351,7 @@ const FICHAS = {
   'Embernagra platensis': {estado:'Voz fuerte en pajonales húmedos', curiosidad:'Habita exclusivamente en pajonales húmedos y bordes de bañados. Su canto fuerte y repetitivo es muy característico de los humedales cordobeses.'},
   'Coryphistera alaudina': {estado:'Cresta y andar en grupos ruidosos', curiosidad:'Se mueve en grupos por el monte seco, caminando por el suelo y entre las ramas. Tiene una cresta bien visible y un canto fuerte.'},
   'Pyrocephalus rubinus': {estado:'Macho de rojo carmesí', curiosidad:'El macho tiene un rojo carmesí inconfundible que contrasta con sus alas negras. Es uno de los tiránidos más llamativos de Argentina y suele posarse en lugares visibles para cantar.'},
-  'Rupornis magnirostris': {estado:'Gavilán común de bordes de monte', curiosidad:'Es uno de los rapaces más frecuentes de la región. Se lo ve en bordes de monte, arboledas y zonas urbanas, y su grito agudo se oye desde lejos.'},
+  'Rupornis magnirostris': {estado:'Gavilán común de bordes de monte', curiosidad:'Es una de las rapaces más frecuentes de la región. Se lo ve en bordes de monte, arboledas y zonas urbanas, y su grito agudo se oye desde lejos.'},
   'Turdus rufiventris': {estado:'Zorzal de vientre rojizo y buen cantor', curiosidad:'Es el zorzal más difundido del país y uno de los cantores más melodiosos. Su vientre rojizo lo distingue fácilmente. Se adapta muy bien a parques y jardines urbanos.'},
   'Columbina picui': {estado:'Palomita con franja blanca en el ala', curiosidad:'Es una de las palomas más abundantes de Argentina. Se mueve en grupos por el suelo buscando semillas y es inconfundible por las marcas blancas en sus alas visibles en vuelo.'},
   'Paroaria coronata': {estado:'Copete rojo escarlata', curiosidad:'Su copete rojo lo hace inconfundible. Vive en bordes de monte y zonas arboladas cerca del agua, y la captura para jaula lo ha afectado.'},
@@ -2398,7 +2370,7 @@ const FICHAS = {
   'Anas georgica': {estado:'Pato común de lagunas y bañados', curiosidad:'Es uno de los patos más comunes de Argentina. Se alimenta de semillas y plantas acuáticas, y suele formar grupos numerosos en lagunas.'},
   'Ardea cocoi': {estado:'La garza más grande de Sudamérica', curiosidad:'Es una garza muy grande, de cuello largo y dorso gris. Caza peces desde la orilla, inmóvil, y vuela con el cuello recogido.'},
   'Chauna torquata': {estado:'Grito potente y espolones en las alas', curiosidad:'Su grito fuerte se escucha a gran distancia. Tiene espolones óseos en las alas que usa para defenderse, y a pesar de su tamaño vuela muy bien.'},
-  'Elanus leucurus': {estado:'Rapaz blanco y gris de ojos rojos', curiosidad:'Es uno de los rapaces más elegantes, con su plumaje blanco y gris perla y sus ojos rojos. Caza insectos y pequeños roedores cerniendo en el aire. Suele posarse en lo alto de postes y árboles aislados.'},
+  'Elanus leucurus': {estado:'Rapaz blanco y gris de ojos rojos', curiosidad:'Es una de las rapaces más elegantes, con su plumaje blanco y gris perla y sus ojos rojos. Caza insectos y pequeños roedores cerniendo en el aire. Suele posarse en lo alto de postes y árboles aislados.'},
   'Himantopus mexicanus': {estado:'Patas rosadas larguísimas', curiosidad:'Tiene las patas rosadas larguísimas para su tamaño, de las más largas entre las aves. Le permiten vadear aguas más profundas. Es muy ruidoso y agresivo al defender el nido.'},
   'Phoenicopterus chilensis': {estado:'Flamenco que filtra el agua con el pico al revés', curiosidad:'Filtra pequeños animales del agua con el pico invertido. Su color rosado viene de los pigmentos de su alimento. Forma colonias grandes en lagunas salinas.'},
   'Theristicus melanopis': {estado:'Bandurria de cara negra', curiosidad:'Su llamado áspero y repetitivo es uno de los sonidos más característicos de la llanura cordobesa. Vuela en grupos en formación y recorre grandes distancias entre dormideros y zonas de alimentación.'},
@@ -2434,7 +2406,7 @@ const FICHAS = {
   'Podilymbus podiceps': {estado:'Macá de pico grueso y gran buceador', curiosidad:'Se distingue de otros macáes por su pico grueso y corto con una banda negra en época reproductiva. Es un excelente buceador que captura peces e invertebrados acuáticos sumergiéndose por completo.'},
   'Thectocercus acuticaudatus': {estado:'Loro de cabeza azul y cola larga', curiosidad:'Su cabeza azul intensa contrasta con el resto del cuerpo verde. Forma bandadas ruidosas que recorren los bosques serranos en busca de frutos y semillas. Es muy llamativo en vuelo por su cola larga y puntiaguda.'},
   'Coragyps atratus': {estado:'Jote negro de cabeza gris', curiosidad:'Suele verse en grupos numerosos planeando en busca de carroña, a veces junto a otras especies de jotes. Su plumaje completamente negro y cabeza desnuda gris lo distinguen fácilmente en vuelo.'},
-  'Geranoaetus melanoleucus': {estado:'Águila de alas largas y cola corta', curiosidad:'Es uno de los rapaces más grandes de Argentina. Su silueta en vuelo es inconfundible: alas largas y cola corta en forma de abanico. Caza mamíferos medianos como liebres y vizcachas en terrenos abiertos.'},
+  'Geranoaetus melanoleucus': {estado:'Águila de alas largas y cola corta', curiosidad:'Es una de las rapaces más grandes de Argentina. Su silueta en vuelo es inconfundible: alas largas y cola corta en forma de abanico. Caza mamíferos medianos como liebres y vizcachas en terrenos abiertos.'},
   'Circus buffoni': {estado:'Gavilán que planea bajo sobre bañados', curiosidad:'Vuela muy bajo y lento sobre bañados y pajonales, con las alas en V característica. El macho negro con pecho blanco es muy llamativo. Es menos frecuente que el Gavilán Ceniciento y más ligado a los humedales.'},
   'Upucerthia dumetaria': {estado:'Pico curvo y andar por el suelo', curiosidad:'Camina activamente por el suelo entre arbustos y pajonales, raramente volando. Su pico largo y curvado le permite explorar grietas y la hojarasca en busca de insectos. Canta desde lo alto de los arbustos en primavera.'},
   'Phacellodomus striaticollis': {estado:'Nidos de ramitas espinosas', curiosidad:'Construye nidos voluminosos con ramitas espinosas, similares a los del Leñatero pero más pequeños. Vive en parejas en pastizales con arbustos, donde es más fácil escucharlo que verlo.'},
@@ -3119,7 +3091,7 @@ function openM(id) {
   if(encInfo){
     if(av){
       encInfo.style.display='block';
-      if(avistEl) avistEl.innerHTML=`<p>📅 <strong>Fecha:</strong> ${fmtFecha(av.fecha)}</p>${av.lugar?`<p>📍 <strong>Lugar:</strong> ${av.lugar}${av.prov&&av.prov.length?' · '+av.prov.map(p=>PROV[p]||p).join(', '):''}</p>`:''} ${av.notas?`<p>📝 <strong>Notas:</strong> ${av.notas}</p>`:''}`;
+      if(avistEl) avistEl.innerHTML=`<p>📅 <strong>Primer registro:</strong> ${fmtFecha(av.fecha)}</p>${av.lugar?`<p>📍 <strong>Lugar:</strong> ${av.lugar}${av.prov&&av.prov.length?' · '+av.prov.map(p=>PROV[p]||p).join(', '):''}</p>`:''} ${av.notas?`<p>📝 <strong>Notas:</strong> ${av.notas}</p>`:''}`;
     } else {
       encInfo.style.display='none';
       const pendEl=document.getElementById('m-pending-info');
@@ -3131,73 +3103,27 @@ function openM(id) {
   const pendReset=document.getElementById('m-pending-info');
   if(av && pendReset) pendReset.style.display='none';
 
-  pintarMas(ave);
+  pintarLink(ave);
   document.getElementById('modal-ov').classList.add('open');
   updateModalArrows();
 }
 
 
-// ── FICHA: fotos extra (fotos.json) + encuentros + enlaces ─────────────────────
-let FOTOSX = null, _fxP = null, mFotos = [];
-function cargarFotosX() {
-  if(!_fxP) _fxP = fetch('fotos.json').then(r => r.ok ? r.json() : null).catch(() => null).then(d => (FOTOSX = (d && d.fotos) || {}));
-  return _fxP;
+// ── FICHA COMPLETA: cada especie con página propia (aves/indice.json) ───────────
+let PAGINAS = null, _pgP = null;
+function cargarPaginas() {
+  if(!_pgP) _pgP = fetch('aves/indice.json').then(r => r.ok ? r.json() : {}).catch(() => ({})).then(d => (PAGINAS = d));
+  return _pgP;
 }
-function mSlide(i) {
-  const f = mFotos[i]; if(!f) return;
-  const img = document.getElementById('m-img');
-  img.src = f.src; img.alt = f.nombre + ' · Félix Santiago'; img.style.display = 'block';
-  document.querySelectorAll('#m-thumbs .m-th').forEach((t, k) => t.classList.toggle('on', k === i));
-  img.dataset.i = i;
-}
-function mAbrirLB(i) { if(mFotos.length) openLB(i == null ? +(document.getElementById('m-img').dataset.i || 0) : i, mFotos); }
-const MAX_FOTOS = 4, MAX_ENC = 4;
-function elegirFotos(ex, max) {  // una por día (las más recientes primero) hasta completar; así se ven distintos días
-  const por = {}; ex.forEach(x => (por[x.d] = por[x.d] || []).push(x));
-  const dias = Object.keys(por).sort().reverse(), out = [];
-  for(let r = 0; out.length < max; r++) {
-    let hubo = false;
-    for(const d of dias) { if(por[d][r]) { out.push(por[d][r]); hubo = true; if(out.length >= max) break; } }
-    if(!hubo) break;
-  }
-  return out.sort((a, b) => b.d.localeCompare(a.d) || a.f.localeCompare(b.f));
-}
-function mVerTodos(btn) {
-  const ul = document.querySelector('#m-enc-lista ul'); const on = ul.classList.toggle('all');
-  btn.textContent = on ? 'Ver menos' : btn.dataset.t;
-}
-function pintarMas(ave) {
-  const id = ave.id, th = document.getElementById('m-thumbs'), el = document.getElementById('m-enc-lista'), lk = document.getElementById('m-links');
-  th.className = 'm-thumbs'; th.innerHTML = ''; el.style.display = 'none'; el.innerHTML = ''; mFotos = [];
-  const img = document.getElementById('m-img'); img.classList.remove('zoomable'); img.onclick = null; delete img.dataset.i; document.getElementById('m-prev').classList.remove('fx');
-  const q = encodeURIComponent(ave.nombre), w = ave.nombre.replace(/ /g, '_');
-  lk.innerHTML = '<div class="ficha-label">Para saber más</div>'
-    + '<a href="https://es.wikipedia.org/wiki/' + w + '" target="_blank" rel="noopener">Wikipedia</a>'
-    + '<a href="https://xeno-canto.org/explore?query=' + q + '" target="_blank" rel="noopener">Escuchar su canto</a>'
-    + '<a href="https://www.inaturalist.org/taxa/search?q=' + q + '" target="_blank" rel="noopener">iNaturalist</a>';
-  Promise.all([cargarFotosX(), cargarRegistros()]).then(() => {
-    if(curId !== id) return;
-    const ex = elegirFotos((FOTOSX[id] && FOTOSX[id].fotos) || [], MAX_FOTOS);
-    const lug = (REGISTROS && REGISTROS.lugares) || [], reg = (REGISTROS && REGISTROS.r && REGISTROS.r[id]) || {};
-    const lugDe = d => { const a = reg[d]; return a && a.length === 1 ? lug[a[0]] : ''; };
-    mFotos = ex.map(x => ({src: 'fotos/' + x.f, d: x.d, nombre: ave.comun + ' · ' + fmtFecha(x.d), lugar: lugDe(x.d)}));
-    if(mFotos.length) {
-      img.classList.add('zoomable'); img.onclick = () => mAbrirLB(); document.getElementById('m-prev').classList.add('fx');
-      mSlide(0);
-      if(mFotos.length > 1) {
-        th.innerHTML = mFotos.map((f, k) => '<img class="m-th' + (k ? '' : ' on') + '" src="' + f.src + '" loading="lazy" alt="' + escHtml(f.nombre) + '" onclick="mSlide(' + k + ')">').join('');
-        th.classList.add('on');
-      }
-    }
-    const fechas = Object.keys(reg).sort().reverse();
-    if(fechas.length) {
-      el.innerHTML = '<h4>Mis encuentros (' + fechas.length + ')</h4><ul>' + fechas.map((d, n0) => {
-        const k = mFotos.findIndex(f => f.d === d), n = mFotos.filter(f => f.d === d).length;
-        const lugares = (reg[d] || []).map(i => lug[i]).filter(Boolean).join(' · ');
-        return '<li class="' + (k >= 0 ? 'foto' : '') + (n0 >= MAX_ENC ? ' extra' : '') + '"' + (k >= 0 ? ' onclick="mAbrirLB(' + k + ')"' : '') + '><span class="enc-f">' + fmtFecha(d) + '</span><span class="enc-l">' + escHtml(lugares) + '</span>' + (k >= 0 ? '<span class="enc-c">📷 ' + n + '</span>' : '') + '</li>';
-      }).join('') + '</ul>' + (fechas.length > MAX_ENC ? '<button class="enc-mas" data-t="Ver los ' + (fechas.length - MAX_ENC) + ' anteriores" onclick="mVerTodos(this)">Ver los ' + (fechas.length - MAX_ENC) + ' anteriores</button>' : '');
-      el.style.display = 'block';
-    }
+function urlFicha(id) { return PAGINAS && PAGINAS[id] ? 'https://felixsantiago.com.ar/aves/' + PAGINAS[id] + '/' : null; }
+function pintarLink(ave) {
+  const id = ave.id, box = document.getElementById('m-pagina');
+  box.style.display = 'none'; box.innerHTML = '';
+  cargarPaginas().then(() => {
+    if(curId !== id || !PAGINAS[id]) return;
+    box.innerHTML = '<a class="pill-link" href="aves/' + PAGINAS[id] + '/">Ver ficha completa →</a><p>Fotos, mapa de mis avistamientos, comportamiento y más.</p>';
+    box.style.display = 'block';
+    const d = document.querySelector('#m-ficha .ficha-dato'); if(d) d.closest('.ficha-row').style.display = 'none';
   });
 }
 
@@ -3218,7 +3144,7 @@ function shareSitio() {
 function shareAve() {
   const ave = AVES.find(a => a.id === curId);
   if(!ave) return;
-  const url = 'https://felixsantiago.com.ar/#' + slugAve(ave.comun);
+  const url = urlFicha(ave.id) || ('https://felixsantiago.com.ar/#' + slugAve(ave.comun));
   const texto = ave.comun + ' (' + ave.nombre + ') — Registrada en Argentina. Mirá mi álbum de aves: ' + url;
   if(navigator.share) {
     navigator.share({ title: ave.comun, text: texto, url: url });

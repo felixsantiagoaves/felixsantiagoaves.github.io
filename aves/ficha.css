@@ -1,0 +1,98 @@
+/* Página individual de especie · Félix Santiago Aves */
+:root{--v1:#414833;--v2:#656d4a;--v3:#a68a64;--ti:#7f5539;--ar:#c4a882;--cr:#ede0d4;--co:#ddd0c0;--ma:#5c3d28;--tx:#2a1f14;--card:#fffdf9;--bg:#ede0d4;--mut:#7f5539;}
+[data-theme=dark]{--bg:#161a11;--card:#1e2417;--co:#3a4430;--tx:#e8dccb;--mut:#cdbfa8;--ti:#cdbfa8;--v2:#8a9468;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Lato',sans-serif;font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:var(--v2);}
+img{max-width:100%;height:auto;display:block;}
+.top{background:#3f4733;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.18);}
+.top-in{max-width:1100px;margin:0 auto;padding:.2rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--cr);text-decoration:none;font-family:'Playfair Display',serif;font-size:1rem;padding:.55rem 0;}
+.brand img{width:26px;height:26px;border-radius:6px;}
+.top nav{display:flex;}
+.top nav a{color:#ddd0c0;text-decoration:none;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:1rem .65rem;border-bottom:3px solid transparent;}
+.top nav a:hover,.top nav a.on{color:#a68a64;border-bottom-color:#a68a64;}
+.wrap{max-width:1100px;margin:0 auto;padding:1.2rem 1rem 3rem;}
+.crumbs{font-size:.78rem;color:var(--mut);margin:.2rem 0 1rem;}
+.crumbs a{color:var(--mut);}
+.hero{display:grid;grid-template-columns:1.45fr 1fr;gap:1.4rem;align-items:start;}
+.hero-fig{margin:0;position:relative;background:#1e2417;}
+.hero-fig img{width:100%;aspect-ratio:3/2;object-fit:cover;cursor:zoom-in;}
+.hero-fig figcaption{font-size:.72rem;color:var(--mut);padding:.45rem .1rem 0;background:var(--bg);}
+.hero-txt{background:var(--card);border:1px solid var(--co);padding:1.3rem 1.3rem 1.2rem;}
+.grupo{margin:0;font-size:.68rem;letter-spacing:1.3px;text-transform:uppercase;color:var(--ti);font-weight:700;}
+h1{margin:.2rem 0 0;font-family:'Playfair Display',serif;font-size:2.1rem;line-height:1.15;color:var(--v1);}
+[data-theme=dark] h1{color:#e8dccb;}
+.sci{margin:.2rem 0 .6rem;font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--ti);}
+.car{margin:0 0 1rem;font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ti);line-height:1.2;}
+.primero{margin:0 0 1rem;font-size:.9rem;padding:.6rem .8rem;border-left:3px solid var(--v2);background:var(--bg);}
+.primero strong{display:block;font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--ti);}
+.datos{margin:0;display:grid;gap:.1rem;}
+.datos div{display:grid;grid-template-columns:7.2rem 1fr;gap:.6rem;padding:.4rem 0;border-top:1px solid var(--co);font-size:.88rem;}
+.datos dt{font-size:.66rem;letter-spacing:1.1px;text-transform:uppercase;color:var(--ti);font-weight:700;padding-top:.15rem;}
+.datos dd{margin:0;}
+.acciones{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.pill{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid var(--v3);border-radius:100px;color:var(--ti);font-family:'Lato',sans-serif;font-size:.68rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;padding:.45rem 1rem;cursor:pointer;text-decoration:none;line-height:1.4;}
+.pill:hover,.pill.fill{background:var(--v2);color:#ede0d4;border-color:var(--v2);}
+[data-theme=dark] .pill{border-color:#4a5538;}
+[data-theme=dark] .pill:hover,[data-theme=dark] .pill.fill{background:#656d4a;border-color:#656d4a;}
+h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--v1);margin:0 0 .6rem;line-height:1.25;}
+[data-theme=dark] h2{color:#e8dccb;}
+.sec{margin-top:2.2rem;}
+.fotos-h{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;}
+.fotos-h span{font-size:.78rem;color:var(--mut);}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.7rem;}
+.galeria figure{margin:0;background:var(--card);border:1px solid var(--co);}
+.galeria a{display:block;background:#1e2417;}
+.galeria img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:opacity .2s;}
+.galeria a:hover img{opacity:.88;}
+.galeria figcaption{font-size:.74rem;padding:.4rem .6rem .5rem;color:var(--mut);line-height:1.35;}
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:2rem;align-items:start;margin-top:2.2rem;}
+.cols .sec:first-child{margin-top:0;}
+.texto p{margin:0 0 1.5rem;max-width:68ch;}
+.texto h2{margin-top:1.7rem;}
+.texto h2:first-child{margin-top:0;}
+.curioso{background:var(--card);border-left:3px solid var(--v3);padding:.9rem 1.1rem;margin:0 0 1.5rem;max-width:68ch;}
+.curioso strong{display:block;font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--ti);margin-bottom:.2rem;}
+#mapa-ave{height:340px;background:#e3ddcc;border:1px solid var(--co);}
+[data-theme=dark] #mapa-ave{background:#1b2014;}
+#mapa-ave .leaflet-tile-pane{filter:sepia(.5) saturate(.7) hue-rotate(28deg) brightness(.98) contrast(.95);}
+[data-theme=dark] #mapa-ave .leaflet-tile-pane{filter:sepia(.4) saturate(.6) hue-rotate(28deg) brightness(.55) contrast(1.05);}
+.mapa-nota{font-size:.78rem;color:var(--mut);margin:.4rem 0 0;}
+.enc{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;}
+.enc li{display:flex;gap:.6rem;align-items:baseline;padding:.45rem .7rem;background:var(--card);border-left:3px solid var(--v3);font-size:.88rem;}
+.enc li.foto{border-left-color:var(--v2);}
+.enc b{white-space:nowrap;}
+.enc span{color:var(--mut);flex:1;min-width:0;}
+.enc em{font-style:normal;font-size:.68rem;font-weight:700;letter-spacing:.5px;color:var(--v2);white-space:nowrap;}
+details.mas{margin-top:.5rem;}
+details.mas summary{list-style:none;display:inline-block;}
+details.mas summary::-webkit-details-marker{display:none;}
+details.mas[open] summary{margin-bottom:.5rem;}
+.saber{display:flex;flex-wrap:wrap;gap:.5rem;}
+.fuentes{font-size:.88rem;}
+.fuentes ul{margin:.3rem 0 0;padding-left:1.1rem;}
+.nota-fuentes{font-size:.78rem;color:var(--mut);margin:.6rem 0 0;}
+.pie{margin-top:2.6rem;padding-top:1.1rem;border-top:1px solid var(--co);font-size:.76rem;color:var(--mut);line-height:1.6;}
+.pie a{color:var(--mut);}
+.tema-btn{position:fixed;left:10px;bottom:10px;width:34px;height:34px;border-radius:50%;border:1px solid #c4a882;background:#414833;color:#ede0d4;font-size:1rem;cursor:pointer;opacity:.85;z-index:60;}
+[data-theme=dark] .tema-btn{background:#ede0d4;color:#2a1f14;}
+/* Visor de fotos */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:200;flex-direction:column;align-items:center;justify-content:center;padding:1rem;}
+.lb.open{display:flex;}
+.lb img{max-width:96vw;max-height:78vh;object-fit:contain;}
+.lb p{color:#ddd0c0;font-size:.85rem;margin:.7rem 0 0;text-align:center;}
+.lb small{display:block;color:rgba(255,255,255,.5);font-size:.7rem;margin-top:.2rem;}
+.lb button{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;font-size:1.6rem;width:46px;height:46px;border-radius:50%;cursor:pointer;}
+.lb .x{top:.8rem;right:.8rem;}.lb .pv{left:.6rem;top:50%;}.lb .nx{right:.6rem;top:50%;}
+.lb button:disabled{opacity:.25;cursor:default;}
+@media(max-width:860px){
+  .hero,.cols{grid-template-columns:1fr;}
+  h1{font-size:1.8rem;}
+  .top nav a{padding:1rem .45rem;font-size:.66rem;letter-spacing:.5px;}
+  .brand span{display:none;}
+  .galeria{grid-template-columns:repeat(2,1fr);}
+  #mapa-ave{height:280px;}
+}
+@media(max-width:380px){.top nav a{padding:1rem .3rem;font-size:.6rem;}.datos div{grid-template-columns:1fr;gap:0;}}

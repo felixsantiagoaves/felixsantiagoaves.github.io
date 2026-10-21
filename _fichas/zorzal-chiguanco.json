@@ -1,0 +1,67 @@
+{
+ "id": 409,
+ "resumen": "Zorzal Chiguanco (Turdus chiguanco): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "25 a 30 cm"
+  ],
+  [
+   "Ambientes",
+   "Serranías, quebradas, arbustales y bosques abiertos; también ciudades"
+  ],
+  [
+   "Alimentación",
+   "Omnívoro: lombrices, insectos, arañas y frutos"
+  ],
+  [
+   "Altitud",
+   "Hasta unos 4.200 m; en Argentina, sobre todo entre 1.500 y 3.500 m"
+  ],
+  [
+   "Puesta",
+   "2 a 4 huevos azul verdosos"
+  ],
+  [
+   "Estado",
+   "Preocupación Menor (UICN)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un zorzal grande, de 25 a 30 cm. El macho es pardo negruzco o ahumado, casi uniforme, con el pico anaranjado a amarillo anaranjado, las patas de amarillentas a anaranjadas y un anillo amarillo alrededor del ojo. La hembra es más apagada y parduzca, y los jóvenes tienen el plumaje escamado y el pecho y la garganta estriados. La población argentina es más oscura y con el anillo del ojo más intenso. Puede confundirse con el Zorzal Cabeza Negra y con el Zorzal Negro."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita los Andes, desde Ecuador hasta el centro-oeste de la Argentina y el norte y centro de Chile. En nuestro país va de Jujuy y Salta hasta Chubut, con poblaciones aisladas en las Sierras Centrales de Córdoba y San Luis. Prefiere ambientes serranos: quebradas, roquedales, arbustales, bosques abiertos, cardonales y pastizales de altura, y también se adapta a áreas urbanas y ambientes modificados. Hay registros sueltos en la llanura pampeana cuyo origen todavía no está claro."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es confiado y bastante visible: camina por el suelo con carreras cortas y levanta la cola, solo, en pareja o en grupos chicos. En la época reproductiva canta desde perchas expuestas. Es omnívoro: come lombrices, insectos, arañas y otros artrópodos del suelo, además de frutos y bayas, incluso cultivados."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Hace un nido abierto en forma de taza con ramitas, fibras, barro y musgos, en arbustos o árboles pequeños. Pone de dos a cuatro huevos azul verdosos pálidos con manchas castañas y grises. En la Argentina, el Tordo Renegrido parasita sus nidos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "La población del centro-oeste argentino (subespecie anthracinus) a veces se trata como una especie aparte, Turdus anthracinus. Acá sigo la lista de eBird, que la mantiene dentro de Turdus chiguanco."
+  },
+  {
+   "t": "Conservación",
+   "p": "Está catalogado como Preocupación Menor. Es común o localmente abundante y tolera bien los ambientes modificados."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "EcoRegistros: Zorzal Chiguanco",
+   "u": "https://www.ecoregistros.org/ficha/Turdus-anthracinus"
+  },
+  {
+   "t": "Wikipedia: Turdus chiguanco",
+   "u": "https://es.wikipedia.org/wiki/Turdus_chiguanco"
+  }
+ ],
+ "comun": "Zorzal Chiguanco"
+}
