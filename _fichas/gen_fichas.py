@@ -8,6 +8,8 @@ from xml.sax.saxutils import escape as xesc
 from PIL import Image
 
 RAIZ, SRC = sys.argv[1], sys.argv[2]
+import hashlib
+VER = hashlib.md5(open(os.path.join(RAIZ, 'aves', 'ficha.css'), 'rb').read() + open(os.path.join(RAIZ, 'aves', 'ficha.js'), 'rb').read()).hexdigest()[:8]
 BASE = 'https://felixsantiago.com.ar/'
 MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
 MES3 = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
@@ -163,7 +165,7 @@ for E in ESP:
 <link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>try{{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}}catch(e){{}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/aves/ficha.css">
+<link rel="stylesheet" href="/aves/ficha.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
@@ -209,7 +211,7 @@ for E in ESP:
 </main>
 <button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="x" aria-label="Cerrar">✕</button><button class="pv" aria-label="Anterior">‹</button><button class="nx" aria-label="Siguiente">›</button><img src="" alt=""><p><span class="cap"></span><small>© Félix Santiago Allendes · Uso solo con permiso</small></p></div>
-<script src="/aves/ficha.js" defer></script>
+<script src="/aves/ficha.js?v={VER}" defer></script>
 </body>
 </html>
 '''
@@ -249,7 +251,7 @@ ipage = f'''<!DOCTYPE html>
 <link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>try{{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}}catch(e){{}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/aves/ficha.css">
+<link rel="stylesheet" href="/aves/ficha.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ild, ensure_ascii=False)}</script>
 </head>
 <body>
@@ -279,7 +281,7 @@ ipage = f'''<!DOCTYPE html>
   <p class="pie">© Félix Santiago Allendes. Todas las fotografías de este sitio son de mi autoría y no pueden usarse, copiarse ni publicarse sin mi permiso previo y por escrito. Para pedir una licencia de uso, <a href="/#redes">escribime</a>.</p>
 </main>
 <button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
-<script src="/aves/ficha.js" defer></script>
+<script src="/aves/ficha.js?v={VER}" defer></script>
 <script>
 (function(){{
   var q=document.getElementById('q'), g=document.getElementById('g'), c=document.getElementById('cuenta'), v=document.getElementById('vacio'), li=[].slice.call(document.querySelectorAll('#lista li')), t=li.length;
