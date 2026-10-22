@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "13 a 14 cm (macho)"
+   "13,5 cm"
   ],
   [
    "Ambientes",
@@ -30,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "El macho mide unos 13 a 14 cm. Es pardo grisáceo por arriba, con alas pardas y cola casi negra; el copete erguido es rojo intenso en el centro y está enmarcado por dos bandas oscuras, y la cara, el pecho y el vientre son rojos. Tiene un anillo blanco alrededor del ojo y el pico cónico. La hembra es parda en la cabeza, el dorso y las alas, no tiene copete y muestra el obispillo rojizo y el vientre rosado oscuro."
+   "p": "Es un fringílido de sotobosque con un copete que levanta, un anillo ocular blanco y un pico cónico y grueso, blanquecino. En la forma de la Mesopotamia el macho es pardo oscuro arriba y rojo intenso abajo, con el copete carmesí bordeado por dos bandas negras. En la forma del Chaco y las Yungas (hasta 1700 m) el macho es sobre todo pardo arriba y rojo rosado abajo. La hembra es color galleta arriba, con la rabadilla castaña, la cola pardo oscura, las loras blanquecinas, la garganta ante y las partes inferiores pardo rosadas."
   },
   {
    "t": "Dónde vive",
@@ -39,6 +39,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Se lo encuentra solo o en grupos; es nervioso, inquieto y asustadizo. Come semillas e insectos, que captura en vuelo o en el suelo. En la época de cría no es muy territorial y varias parejas pueden agruparse."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una frase de tono medio que repite, algo como \"wher cho wher cho\" o \"wher chido wher chido\", a veces con notas de más; puede parecerse al de algunas tangaras. El llamado es un \"tsi\" o \"pip\" muy agudo."
   },
   {
    "t": "Nidificación",
@@ -53,6 +57,9 @@
   {
    "t": "EcoRegistros: Brasita de Fuego",
    "u": "https://www.ecoregistros.org/ficha/Coryphospingus-cucullatus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Brasita de Fuego"

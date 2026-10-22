@@ -3,6 +3,10 @@
  "resumen": "Gavilán Planeador (Circus buffoni): dónde vive y cómo se lo llama, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "50 a 52 cm"
+  ],
+  [
    "Distribución",
    "Sudamérica, de Colombia a las Malvinas"
   ],
@@ -12,6 +16,10 @@
   ]
  ],
  "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es muy común solo en los esteros del noreste. Tiene las alas notoriamente más largas que el Gavilán Ceniciento y las sostiene en una V más profunda. En la forma clara el adulto tiene la cabeza blanca y negra con un collar negro y las partes inferiores blancas; es negro arriba con las alas grises y hasta 5 anchas bandas negras en la cola. La hembra se parece pero con el negro reemplazado por pardo y las partes inferiores lavadas de ante o con finas estrías pardas. La forma oscura es hollín abajo con el vientre castaño, y desde lejos parece negra. A diferencia del Gavilán Ceniciento, el adulto claro tiene la cabeza oscura."
+  },
   {
    "t": "Dónde vive",
    "p": "Es una especie sudamericana: según Wikipedia, se encuentra desde Colombia hasta las Malvinas y desde Chile hasta Trinidad."
@@ -25,6 +33,9 @@
   {
    "t": "Wikipedia: Aguilucho de Azara (Circus buffoni)",
    "u": "https://es.wikipedia.org/wiki/Circus_buffoni"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gavilán Planeador"

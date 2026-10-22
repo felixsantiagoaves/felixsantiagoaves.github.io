@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 32 cm"
+   "32 cm"
   ],
   [
    "Hábitat",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es un carpintero grande, de unos 32 cm. El dorso y las alas son pardos con listas blancas, y el pecho es amarillo. Mira bien la garganta y la mancha malar: en Colaptes campestroides, la forma del centro-este de Argentina, la corona es negra, la garganta es blanca y baja desde el cuello una banda amarillo vivo hasta el pecho; el macho tiene la mancha malar roja y la hembra negruzca."
+   "p": "Tiene la corona y la nuca negras, la cara blanca y los costados del cuello y el pecho amarillo anaranjado, que contrastan, y la rabadilla blanca. En la forma campestroides la garganta es blanca y una malar rojo opaco indica que es macho. En el extremo norte de Misiones hay aves que son cruza de las dos formas, con garganta moteada o casi toda negra; ahí la malar negra indica hembra."
   },
   {
    "t": "Dónde vive",
@@ -57,6 +57,9 @@
   {
    "t": "Wikipedia: Colaptes campestris",
    "u": "https://es.wikipedia.org/wiki/Colaptes_campestris"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Carpintero Campestre"

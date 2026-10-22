@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "55 cm"
+   "42 cm"
   ],
   [
    "Hábitat",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide unos 55 cm y es más grande que la Gallareta Chica. Tiene la cabeza y el cuello negruzcos y el resto del cuerpo más claro, sobre todo abajo. El pico y el escudete frontal son amarillos, separados por una mancha roja. Las patas son amarillentas oliváceas y llevan unas \"ligas\" rojas en la tibia que no se ven cuando está en el agua; de ahí el nombre."
+   "p": "El adulto tiene el escudete frontal puntiagudo, amarillento o blanco, con una línea roja transversal en la base, y el pico blanco o amarillento. En vuelo muestra menos blanco a los costados de la zona anal que las otras gallaretas. Hay que fijarse en la posición de las \"ligas\" rojas. El juvenil es la más pálida de las gallaretas de tierras bajas."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +45,9 @@
   {
    "t": "Wikipedia: Fulica armillata",
    "u": "https://es.wikipedia.org/wiki/Fulica_armillata"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gallareta Ligas Rojas"

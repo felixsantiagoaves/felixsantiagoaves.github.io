@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "70 a 75 cm"
+   "72 cm"
   ],
   [
    "Envergadura",
@@ -30,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es un cormorán delgado y relativamente pequeño, de 70 a 75 cm. Fuera de la época de cría es casi todo negro, con un parche amarillo castaño en la garganta. En la temporada reproductiva aparecen mechones blancos a los lados de la cabeza y el parche de la garganta se bordea de blanco. Los juveniles son pardos."
+   "p": "Es un cormorán grande, casi todo negro, con el cuello marcadamente quebrado en vuelo. En época de cría el adulto tiene una línea blanca que rodea el buche gular y pequeñas plumas blancas a los lados de la cabeza. Fuera de la cría es más pardo, con tonos oliva en el dorso y las alas, y sin marcas blancas en la cabeza. El juvenil es pardo muy pálido en la garganta y el pecho. A menudo se posa con las alas abiertas para secarlas."
   },
   {
    "t": "Dónde vive",
@@ -53,6 +53,9 @@
   {
    "t": "Wikipedia: Phalacrocorax brasilianus",
    "u": "https://es.wikipedia.org/wiki/Nannopterum_brasilianus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Biguá"

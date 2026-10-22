@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 19 cm"
+   "18,5 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide unos 19 cm y pesa en promedio 37 g. La cabeza, el copete, la garganta y la parte superior del pecho son rojos. La nuca es gris con puntos blancos, el dorso gris, el vientre blanco, y las alas y la cola negruzcas. El pico es rosado o blanquecino y las patas negruzcas. Es monotípica: no tiene subespecies."
+   "p": "El adulto tiene la cara, la garganta y el copete erguido carmesí, el dorso gris y las partes inferiores blancas, con el blanco subiendo por los costados del cuello. El juvenil es pardo arriba, con la cara, la garganta y un copete incipiente castaño cálido o pardo. A veces se junta con el Cardenal Amarillo y la Cardenilla."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Anda en parejas, grupos o bandadas, a veces de hasta 50 aves. Es bastante terrícola, aunque se posa en ramas, y busca alimento desde el suelo hasta unos 6 m de altura. Come sobre todo semillas y frutos, y también insectos como hormigas y termitas aladas. Su canto es una serie rítmica de notas melodiosas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una serie lenta y rica de gorjeos melodiosos, y también suelta un revoltijo lento de chillidos y silbidos. El llamado es un \"chwik\" nasal y lleno."
   },
   {
    "t": "Nidificación",
@@ -53,6 +57,9 @@
   {
    "t": "Wikipedia: Cardenilla crestada (Paroaria coronata)",
    "u": "https://es.wikipedia.org/wiki/Paroaria_coronata"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cardenal Copete Rojo"

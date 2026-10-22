@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "60 a 76 cm"
+   "61 a 75 cm"
   ],
   [
    "Envergadura",
@@ -30,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Es una rapaz grande, de alas anchas y cola muy corta, lo que le da una silueta triangular en vuelo. El adulto es gris oscuro por arriba, con el pecho negro y el vientre blanco con finas barras. Los jóvenes son muy oscuros, con tonos castaño rojizo en el dorso y el vientre beige con manchas pardas muy juntas. Vuela con aleteos cortos y la cola erguida. La hembra es más grande que el macho."
+   "p": "Es una rapaz robusta, de pico fuerte, cola corta y tarsos cortos; ambos sexos son iguales. El adulto de la forma austral (Andes y Patagonia) tiene la cabeza gris, que se vuelve negruzca en el manto y el pecho, cobertoras alares gris claro que contrastan, y el vientre blanco o blanco grisáceo con fino vermiculado negro. El joven tiene el pecho leonado o ante con manchas pardo oscuras gruesas y un \"chaleco\" negro que contrasta; a diferencia del adulto, sus primarias no llegan a la punta de la cola. Al tercer año es casi todo negro, con motas blancas en la nuca y muslos barrados de castaño."
   },
   {
    "t": "Dónde vive",
@@ -57,6 +57,9 @@
   {
    "t": "Wikipedia: Geranoaetus melanoleucus",
    "u": "https://es.wikipedia.org/wiki/Geranoaetus_melanoleucus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Águila Mora"

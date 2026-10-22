@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "21 a 26 cm"
+   "24 cm"
   ],
   [
    "Ambientes",
@@ -30,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Tiene cabeza grande, pico largo y fuerte con la punta en gancho, patas cortas y alas largas. El lomo y la cola son pardo verdosos; la cabeza es negra con dos cejas blancas y la garganta blanca; el pecho y el vientre son amarillo intenso, y tiene una corona amarilla oculta. Macho y hembra son iguales. Su canto fuerte y chillón es lo más característico."
+   "p": "Es un mosquero grande, vistoso y confiado, de pico robusto y una corona dorada oculta. En el adulto de la forma más extendida la cabeza es negra con una ceja blanca que se une en la frente y la garganta blanca; es pardo por arriba y amarillo por abajo. Abre la cresta cuando exhibe."
   },
   {
    "t": "Dónde vive",
@@ -39,6 +39,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Aunque parece serio, es pacífico y solo se vuelve agresivo para defender el nido. Come sobre todo invertebrados (larvas, lombrices, insectos que caza en vuelo), además de frutas, pequeños roedores, reptiles y peces, que mata golpeándolos contra una rama. A veces saquea nidos de aves pequeñas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Es muy vocal: el nombre mismo, y \"kiskadee\" en inglés, imitan el canto diurno, que suele cantar en dúo. El repertorio es variado, con un fuerte \"WAAAAH\", notas quejosas y trinos."
   },
   {
    "t": "Nidificación",
@@ -57,6 +61,9 @@
   {
    "t": "EcoRegistros: Benteveo",
    "u": "https://www.ecoregistros.org/ficha/Pitangus-sulphuratus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Benteveo"

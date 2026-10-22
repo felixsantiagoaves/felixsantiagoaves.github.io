@@ -121,7 +121,7 @@ for E in ESP:
             f'<img src="{p["src"]}" width="{p["w"]}" height="{p["h"]}" loading="lazy" decoding="async" alt="{esc(alt)}"></a>'
             f'<figcaption>{corta(p["d"])}{(" · " + esc(p["lug"])) if p["lug"] else ""}</figcaption></figure>' for p in fotos)
         gal = f'<section class="sec" id="fotos"><div class="fotos-h"><h2>Mis fotos</h2><span>{len(fotos)} {"foto" if len(fotos)==1 else "fotos"}</span></div><div class="galeria">{figs}</div></section>'
-    fuentes = ''.join(f'<li><a href="{esc(f["u"])}" target="_blank" rel="noopener">{esc(f["t"])}</a></li>' for f in S['fuentes'])
+    fuentes = ''.join((f'<li><a href="{esc(f["u"])}" target="_blank" rel="noopener">{esc(f["t"])}</a></li>' if f.get('u') else f'<li>{esc(f["t"])}</li>') for f in S['fuentes'])
     q = quote(sci)
     saber = ((f'<a class="pill" href="https://es.wikipedia.org/wiki/{sci.replace(" ", "_")}" target="_blank" rel="noopener">Wikipedia</a>' if not base_mode else f'<a class="pill" href="https://es.wikipedia.org/w/index.php?search={q}" target="_blank" rel="noopener">Wikipedia</a>') +
              f'<a class="pill" href="https://xeno-canto.org/explore?query={q}" target="_blank" rel="noopener">Escuchar su canto</a>'

@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "10 a 14 cm"
+   "11,5 a 13 cm"
   ],
   [
    "Ambientes",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide entre 10 y 14 cm. El macho es verdoso arriba y amarillo abajo, con capucha negra, rabadilla amarilla y alas y cola negras con franjas amarillas muy llamativas en vuelo. La hembra no tiene capucha: la cabeza es grisácea, el dorso más pálido y la parte inferior más verdosa que amarilla. Los juveniles se parecen a la hembra."
+   "p": "En las tierras bajas del norte y las sierras centrales es el único cabecitanegra con capucha. El macho de la forma de las tierras bajas mide unos 13 cm, tiene el pico más grueso, la capucha más extendida y la rabadilla más brillante; la forma andina (11,5 cm) tiene el pico delicado y la capucha limitada a la cara y la garganta, y es de cola notablemente corta. La hembra se parece al macho pero sin capucha. En vuelo se nota la franja alar amarilla y una banda negra en la cola."
   },
   {
    "t": "Dónde vive",
@@ -49,6 +49,9 @@
   {
    "t": "Wikipedia: Spinus magellanicus",
    "u": "https://es.wikipedia.org/wiki/Spinus_magellanicus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cabecitanegra"

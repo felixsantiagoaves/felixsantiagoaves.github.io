@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "46 a 56 cm"
+   "49 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 46 a 56 cm (los sudamericanos suelen ser más chicos que los norteamericanos) y pesa de 450 a 525 g. Es marrón rojizo brillante adelante y en la cara interna de las alas, y se oscurece hacia atrás, hasta la cola; las alas son verdosas y broncíneas, con reflejos metálicos. Una franja de plumas blancas enmarca la piel desnuda rosada de la cara. Los sexos son iguales, aunque los machos son más grandes."
+   "p": "Es de las tierras bajas, y en invierno convive con el Cuervillo Cara Pelada y con el Yanavico. En época de cría el adulto tiene el pico gris o rosado con la base y las loras rojas, anteojos blancos finos, los tarsos rojizos, y la cabeza, el cuello y las partes inferiores castaño cobrizo, con las alas negras brillantes de verde. Fuera de la cría tiene la cabeza y el cuello oscuros con finas estrías blancas, sin anteojos ni brillo castaño, y las patas grises. En vuelo tiene alas bastante puntiagudas y delgadas con las cobertoras menores castañas, y las patas sobresalen mucho de la cola; las bandadas van en V."
   },
   {
    "t": "Dónde vive",
@@ -53,6 +53,9 @@
   {
    "t": "Wikipedia: Morito cariblanco (Plegadis chihi)",
    "u": "https://es.wikipedia.org/wiki/Plegadis_chihi"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cuervillo de Cañada"

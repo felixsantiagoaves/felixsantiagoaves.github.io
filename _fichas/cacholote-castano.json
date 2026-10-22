@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "26 cm"
+   "27 cm"
   ],
   [
    "Ambientes",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Con 26 cm es la mayor especie de su familia, los hornero y afines (Furnariidae). Tiene el iris amarillo y una cresta llamativa, más grisácea y oscura que el resto. La parte superior es parda, con la rabadilla y la cola rufo oscuras; la cara y la garganta son rufas, y la parte inferior es parda con plumas escamadas más pálidas."
+   "p": "Es el hornero y pariente más grande y más escandaloso: terrestre y arbóreo, hace nidos enormes de palitos. El adulto tiene el iris amarillo, una cresta visible y la garganta, la nuca y la cola castaño rufo que contrastan."
   },
   {
    "t": "Dónde vive",
@@ -33,6 +33,10 @@
    "p": "Camina por el suelo en pequeños grupos familiares y busca su alimento revolviendo hojas secas, ramas y estiércol seco. Su canto es estridente, normalmente en dúo, y más áspero que el del Cacholote Pardo (Pseudoseisura unirufa), al que se parece en general."
   },
   {
+   "t": "Cómo suena",
+   "p": "El canto es una cacofonía inconfundible de notas muy fuertes y ásperas que se vuelven más rápidas, cortas y graves hacia el final; a menudo otro ave hace dúo con notas más silbadas o raspantes, y dura de 12 a 16 segundos. El llamado es un cloqueo fuerte, a veces en serie."
+  },
+  {
    "t": "Nidificación",
    "p": "Construye un nido alargado con ramas secas y otros materiales, como estiércol, pieles de víbora y plumas de aves grandes."
   }
@@ -41,6 +45,9 @@
   {
    "t": "Wikipedia: Pseudoseisura lophotes",
    "u": "https://es.wikipedia.org/wiki/Pseudoseisura_lophotes"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cacholote Castaño"

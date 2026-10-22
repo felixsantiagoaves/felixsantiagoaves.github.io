@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Alrededor de 16 cm"
+   "16 cm"
   ],
   [
    "Hábitat",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide alrededor de 16 cm. La corona está estriada de canela y pardo oscuro, tiene una lista superciliar blanca y angosta, la nuca estriada blanquecina y el manto gris pardusco uniforme. Las alas tienen un parche rufo canela en las plumas de vuelo y la garganta es blanca. La cola es negruzca, muy larga y escalonada, con las plumas centrales que sobresalen como una prolongación espinosa."
+   "p": "Cría en la Patagonia y llega en invierno hasta las tierras bajas del centro. La forma de la estepa se parece a la del Coludito Copetón pero tiene la corona estriada de ante, el manto más frío y gris y las partes inferiores más pálidas. Se diferencia del Coludito Copetón por los bordes blancos de la cola y la cresta más chica. La forma del bosque del noroeste patagónico es más oscura."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Se alimenta de pequeños artrópodos que encuentra entre las ramas y hojas de arbustos y árboles. Se desplaza en parejas o en pequeños grupos, sobre arbustos y árboles pequeños, y ocasionalmente baja a los pastos o al suelo; usa la cola rígida como apoyo al trepar. El llamado habitual es muy débil, y cuando se asusta emite un chillido fuerte y sostenido que ayuda a ubicarlo. En Argentina, su canto es una serie irregular de notas y trinos agudos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un parloteo largo, fluctuante, de tono medio, con notas chillonas, que dura 4 segundos o más. El llamado más común es una serie muy rápida y corta de notas zumbantes, metálicas y agudas, en menos de un segundo. También da trinos suaves."
   },
   {
    "t": "Nidificación",
@@ -49,6 +53,9 @@
   {
    "t": "Wikipedia: Tijeral colinegro (Leptasthenura aegithaloides)",
    "u": "https://es.wikipedia.org/wiki/Leptasthenura_aegithaloides"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Coludito Cola Negra"

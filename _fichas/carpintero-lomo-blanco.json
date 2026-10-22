@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Alrededor de 28 cm"
+   "33 cm"
   ],
   [
    "Hábitat",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide unos 28 cm. Tiene el vientre negro, las tapadas canela y un triángulo color crema en el dorso, que le da el nombre. El macho tiene la cabeza, el copete y el cuello rojos, salvo una pequeña mancha blanca y negra en la oreja. La hembra tiene el frente del copete negro, una banda crema que va del pico al oído bordeada de negro y el cuello negro. El iris es amarillo."
+   "p": "Tiene el manto crema. En vuelo se ve un gran parche canela en la base de las primarias y otro más chico en el carpo. El macho tiene la cabeza escarlata y un copete puntiagudo, con una mancha ovalada blanca y negra en la mejilla. La hembra tiene una ancha lista blanca en la mejilla bordeada de negro, y la frente negra que se extiende hasta la punta del copete. Coincide con el Carpintero Negro, el Carpintero Garganta Estriada y el Carpintero Garganta Negra."
   },
   {
    "t": "Dónde vive",
@@ -53,6 +53,9 @@
   {
    "t": "Wikipedia (en): Cream-backed woodpecker",
    "u": "https://en.wikipedia.org/wiki/Cream-backed_woodpecker"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Carpintero Lomo Blanco"

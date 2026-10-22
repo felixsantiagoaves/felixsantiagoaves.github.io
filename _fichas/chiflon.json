@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "50 a 60 cm"
+   "57 cm"
   ],
   [
    "Hábitat",
@@ -25,12 +25,20 @@
  ],
  "secciones": [
   {
+   "t": "Cómo reconocerlo",
+   "p": "El adulto tiene el pico rosado con la punta negra, la piel de la cara celeste, la gorra oscura y el cuello ante. El dorso y las alas son gris azulado, con las cobertoras canela estriadas de negro. En vuelo se ve sobre todo gris arriba y crema ante abajo, con la rabadilla y la cola blancas, y los aleteos son poco profundos y arqueados. El juvenil es gris pálido arriba, con ante en el dorso superior y cobertoras canela finamente estriadas de negro."
+  },
+  {
    "t": "Dónde vive",
    "p": "Es una garza de unos 50 a 60 cm que vive en la parte oriental de Sudamérica. La subespecie sibilatrix se encuentra en Brasil, Uruguay, Paraguay y el norte de Argentina, con registros en Chile; otra subespecie, fostersmithi, vive en Colombia y Venezuela. Aparece sobre todo en humedales, pero también en campos y árboles."
   },
   {
    "t": "Comportamiento y alimentación",
    "p": "Se alimenta de insectos y lombrices. Vive en grupos o en parejas. Antes del apareamiento, danza y vuela emitiendo un grito."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Silba de dos a cuatro veces, con notas de flauta que se oyen de lejos."
   },
   {
    "t": "Nidificación",
@@ -45,6 +53,9 @@
   {
    "t": "Wikipedia: Garza chiflona (Syrigma sibilatrix)",
    "u": "https://es.wikipedia.org/wiki/Syrigma_sibilatrix"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Chiflón"

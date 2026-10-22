@@ -3,8 +3,8 @@
  "resumen": "Flamenco Austral (Phoenicopterus chilensis): cómo reconocerlo, dónde vive y cómo se alimenta, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
-   "Altura",
-   "1,10 a 1,30 m"
+   "Largo",
+   "100 cm"
   ],
   [
    "Hábitat",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 1,10 a 1,30 m de altura. El plumaje es rosado claro (salmón), con zonas más oscuras cerca de la cola. El pico es grande, curvado hacia abajo, claro en la base y negro en la punta. Las patas son claras, con la articulación del tarso rosa intenso, y los ojos son amarillos."
+   "p": "El adulto en cría tiene las patas grises con las \"rodillas\" y los pies rosados, y el pecho rosado. Las cobertoras alares y las escapulares inferiores son rojizas. El pico es largo, con la parte distal negra y curvada, y la base blanquecina; el iris es pálido. En vuelo las cobertoras alares son todas rojas, arriba y abajo. Fuera de la cría se parece al Parina Grande, salvo que las remeras quedan completamente ocultas. El juvenil es claramente más pardo que sus parientes, y se nota la forma del pico."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +45,9 @@
   {
    "t": "Wikipedia: Flamenco chileno (Phoenicopterus chilensis)",
    "u": "https://es.wikipedia.org/wiki/Phoenicopterus_chilensis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Flamenco Austral"

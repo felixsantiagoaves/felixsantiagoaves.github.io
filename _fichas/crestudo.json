@@ -3,6 +3,10 @@
  "resumen": "Crestudo (Coryphistera alaudina): dónde vive y cómo se llama, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "16,5 cm"
+  ],
+  [
    "Distribución",
    "Del sureste de Bolivia al centro sur de Argentina"
   ],
@@ -25,8 +29,16 @@
  ],
  "secciones": [
   {
+   "t": "Cómo reconocerlo",
+   "p": "Es un hornero gregario, terrestre y arbóreo, con un copete negruzco que mantiene erguido. El adulto tiene una media luna blanca debajo del ojo y las cobertoras auriculares castañas, y las bases de la cola rufas."
+  },
+  {
    "t": "Dónde vive",
    "p": "Se distribuye desde el sureste de Bolivia y el oeste de Paraguay hacia el sur hasta el centro sur de Argentina, y hacia el este hasta el extremo suroeste de Brasil y el noroeste de Uruguay. Habita bosques abiertos y matorrales del chaco, con pastos cortos o terreno desnudo, principalmente por debajo de los 500 m. Se lo considera bastante común y visible en su ambiente. Se reconocen dos subespecies: campicola y alaudina."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Su voz común es un \"zhheerrrrr\" débil, apagado pero metálico, a veces seguido de un trino rápido y metálico. Los grupos excitados sueltan una mezcla de raspidos, parloteos y silbidos suaves."
   },
   {
    "t": "Una nota sobre el nombre",
@@ -37,6 +49,9 @@
   {
    "t": "Wikipedia: Coryphistera alaudina",
    "u": "https://es.wikipedia.org/wiki/Coryphistera_alaudina"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Crestudo"

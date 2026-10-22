@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 66 cm"
+   "68 cm"
   ],
   [
    "Envergadura",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide unos 66 cm, con una envergadura de unos 100 cm. El cuerpo es de tono bronceado, con la cabeza y el cuello grisáceos. Tiene patas largas y un pico largo, algo curvado y amarillento. Las alas son largas y anchas, con las primarias bien separadas en vuelo, y la cola es corta."
+   "p": "Es un ave grande de pantano, de pico largo y recto, cuello notablemente largo y delgado y tarsos finos. Anda sola o en pareja, pero se vuelve muy gregaria en invierno. El adulto tiene el pico amarillento con la punta oscura y el plumaje pardo oscuro, estriado de blanco en la nuca y el dorso superior. En vuelo da aleteos altos y rígidos, con las patas largas colgando hacia abajo."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Se alimenta de pequeña fauna acuática, principalmente caracoles; en otras fuentes se detalla que son sobre todo caracoles del género Pomacea. Busca en aguas poco profundas y sobre vegetación flotante. Es una voz inconfundible: un lamento fuerte, algo como \"krau-krau-krau\", más frecuente al amanecer, al atardecer y de noche. Camina con un andar levemente ondulante, que da la impresión de que rengueara."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Es muy vocal: un \"krrraaawww\" fuerte y gruñidos, que se oyen con frecuencia también de noche."
   },
   {
    "t": "Nidificación",
@@ -57,6 +61,9 @@
   {
    "t": "Wikipedia (en): Limpkin",
    "u": "https://en.wikipedia.org/wiki/Limpkin"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Carau"

@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Hasta 130 cm (unos 85 cm de altura)"
+   "119 cm"
   ],
   [
    "Hábitat",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide hasta 130 cm del pico a la punta de la cola y unos 85 cm de altura de pie. Los adultos son blancos, con la cabeza, el cuello y el pecho con reflejos grises. Las primarias, las secundarias y las supracaudales son negras y tornasoladas, y la cola es negra. La cara desnuda es roja, el pico es verde azulado atrás y rojo violáceo adelante, y las patas son rojas. En la época de celo los colores de las partes desnudas se intensifican. Los juveniles son oscuros, con cola blanquecina y pico y patas negros, y se aclaran al crecer."
+   "p": "Es una cigüeña grande, de pico recto y grueso en la base. El adulto tiene las patas y la piel entre el pico y el ojo rojas, y es casi todo blanco con las remeras negras expuestas. En vuelo se distingue del Tuyuyú por el forro alar blanco muy ancho, casi hasta el borde de salida, y porque desde abajo solo se ven los bordes negros de la cola. El juvenil tiene el pico oscuro y es casi todo negro, con la cara blanca."
   },
   {
    "t": "Dónde vive",
@@ -53,6 +53,9 @@
   {
    "t": "Wikipedia: Cigüeña maguari (Ciconia maguari)",
    "u": "https://es.wikipedia.org/wiki/Ciconia_maguari"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cigüeña Americana"

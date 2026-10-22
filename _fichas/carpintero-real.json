@@ -3,6 +3,10 @@
  "resumen": "Carpintero Real (Colaptes melanochloros): dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "29 cm"
+  ],
+  [
    "Distribución",
    "Centro y centro-sur de Sudamérica"
   ],
@@ -26,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Tiene un plumaje duro, poco abundante y rígido. Machos y hembras tienen una mancha carmín en la nuca, por eso también se lo llama carpintero de nuca roja."
+   "p": "Tiene la corona negra y la nuca escarlata, la cara blanquecina y las partes inferiores manchadas. El manto es de un verde vivo, barrado de pardo. El macho tiene la malar rojo oscuro y la hembra la tiene negra."
   },
   {
    "t": "Dónde vive",
@@ -49,6 +53,9 @@
   {
    "t": "Wikipedia: Pájaro carpintero real (Colaptes melanochloros)",
    "u": "https://es.wikipedia.org/wiki/Colaptes_melanochloros"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Carpintero Real"

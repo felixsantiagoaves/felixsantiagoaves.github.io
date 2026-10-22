@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 12 cm"
+   "13 cm"
   ],
   [
    "Ambientes",
@@ -18,17 +18,24 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide unos 12 cm. Las partes superiores son grisáceas con el lomo oliváceo y la corona castaño rojiza; las partes inferiores son amarillas. La cola es negra con los costados y la base inferior blancos, y tiene una línea blanca entre el pico y el ojo y un semianillo ocular blanco."
+   "p": "Es un pajarito inquieto y curioso que abre la cola mientras se mueve en el estrato medio y alto del monte, a menudo con bandadas mixtas. El adulto es gris pizarra arriba, con anteojos blancos, la gorra castaña y el dorso verde; las plumas externas de la cola son blancas y el cuerpo es amarillo brillante debajo. El juvenil es más opaco, sin gorra ni dorso verde, con la garganta y el pecho superior oscuros y el amarillo más pálido."
   },
   {
    "t": "Dónde vive",
    "p": "Hasta la segunda mitad del siglo XX vivía solo en selvas de montaña, desde el centro de Bolivia hasta el noroeste argentino. Después se expandió hacia el sur y el sudeste, incluso a ambientes más secos y fríos. En Argentina se lo encuentra en Catamarca, Córdoba, Jujuy, La Rioja, Salta, San Juan, San Luis, Santiago del Estero y Tucumán."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un trino muy agudo, rápido y chillón que va subiendo y dura de 3 a 4 segundos. El llamado es un \"tic\" audible, parecido al de la Pitiayumí pero más lleno y grave."
   }
  ],
  "fuentes": [
   {
    "t": "Wikipedia: Myioborus brunniceps",
    "u": "https://es.wikipedia.org/wiki/Myioborus_brunniceps"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Arañero Corona Rojiza"

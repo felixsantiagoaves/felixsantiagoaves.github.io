@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "14 a 16 cm"
+   "16 cm"
   ],
   [
    "Hábitat",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 14 a 16 cm. En el macho las alas son negras con borde gris y barras blancas, la cola es negra con puntas blancas, y el pecho y gran parte de la cabeza son grises, con la corona negra. La hembra tiene las alas pardo negruzcas con bordes rufos y barras blancas o beige, la espalda parda y las partes inferiores naranjas o canela en algunas subespecies. Varía según la subespecie."
+   "p": "Hay varias subespecies. La del norte de Misiones tiene la gorra negra, el manto, la garganta y el pecho grises, que se vuelven blancos abajo, y la cola negruzca con manchas blancas en la cara inferior. La de las Yungas y el Chaco tiene el manto gris oliváceo y un lavado ocre sobre el pecho, el vientre y los flancos. La hembra tiene la gorra pardo cálido y la cara gris, una o dos barras alares blancas finas, y el vientre y la zona anal ocráceos."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Come sobre todo insectos y otros artrópodos, y se registró que también come semillas y frutos. Suele estar sola o en parejas, en niveles bajos y dentro de la maleza densa, por eso es difícil de ver. Mientras se alimenta se la observa limpiarse la cola y agitar las alas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Canta una serie monótona de 6 a 10 notas medianas, a ritmo parejo (kaw-kaw-kaw…). Sus llamados incluyen notas nasales y raspidos cortos."
   },
   {
    "t": "Nidificación",
@@ -53,6 +57,9 @@
   {
    "t": "Wikipedia: Batará variable (Thamnophilus caerulescens)",
    "u": "https://es.wikipedia.org/wiki/Thamnophilus_caerulescens"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Choca Corona Negruzca"

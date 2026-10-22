@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 43 cm"
+   "35 cm"
   ],
   [
    "Hábitat",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide unos 43 cm. El cuerpo es negro apizarrado, con la cabeza y el cuello más oscuros, y el ápice de las secundarias es blanco (de ahí leucoptera). El pico es amarillo y el escudete frontal, redondeado, amarillo o anaranjado, nunca rojo. El iris es rojo castaño."
+   "p": "El adulto tiene el escudete frontal redondeado y algo abultado, blanco, amarillo o amarillo anaranjado, y el pico blanquecino. En vuelo muestra el borde posterior de las secundarias blanco. El juvenil es en general color hollín, a veces con la garganta blanquecina."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +45,9 @@
   {
    "t": "Wikipedia: Fulica leucoptera",
    "u": "https://es.wikipedia.org/wiki/Fulica_leucoptera"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gallareta Chica"

@@ -3,6 +3,10 @@
  "resumen": "Churrinche (Pyrocephalus rubinus): cómo reconocerlo, dónde vive, cómo caza y su migración, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "13,5 cm"
+  ],
+  [
    "Macho",
    "Rojo brillante, con alas, cola y antifaz oscuros"
   ],
@@ -26,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "El macho es inconfundible: rojo brillante, con las alas, la cola y un antifaz oscuros. La hembra es de color pardo."
+   "p": "Es un mosquero chico, de ambientes abiertos y con diferencias entre sexos. El macho adulto tiene la corona y las partes inferiores bermellón. La hembra es parda arriba, con bordes blancos en las alas pero sin barras alares, y blanca abajo con estrías pardas difusas y las subcaudales de amarillo a amarillo anaranjado (rosadas en los inmaduros). Es residente en las tierras bajas del norte y migra al sur hasta el norte de la Patagonia."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +39,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Es un ave de percha: vigila desde un punto fijo, vuela unos metros para atrapar un insecto en el aire y vuelve al mismo lugar. Su canto es agudo y ascendente. Los machos del área argentino-uruguaya responden a cantos de machos del Cono Sur, pero no a los del resto del continente."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "En el vuelo ondulado de exhibición hace un tartamudeo muy rápido que sube y acelera y termina en un trino metálico. El llamado es un silbido débil, corto y ascendente."
   },
   {
    "t": "Una nota sobre el nombre",
@@ -49,6 +57,9 @@
   {
    "t": "Wikipedia: Mosquero cardenal (Pyrocephalus rubinus)",
    "u": "https://es.wikipedia.org/wiki/Pyrocephalus_rubinus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Churrinche"

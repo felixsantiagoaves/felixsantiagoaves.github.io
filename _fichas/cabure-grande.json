@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 20 cm"
+   "18 cm"
   ],
   [
    "Cola",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es un mochuelo de unos 20 cm. La cabeza, el dorso y las cobertoras son gris pardo con algo de castaño y manchas claras; la garganta y la ceja son blancas, y el pecho y el abdomen tienen rayas gruesas blanquecinas, pardas y negruzcas. Tiene dos manchas negras en la nuca, los \"ojos falsos\". El pico es corto y ganchudo, y las patas y los ojos son amarillos."
+   "p": "Es un mochuelo del bosque patagónico y, en forma dispersa, de la estepa. La forma parda es mucho más numerosa que la rojiza. Tiene la corona casi siempre estriada, con manchas blancas o ante a los lados del pecho y los flancos, más marcadas que en el Caburé Chico, y la cola rufa con 9 a 11 barras negras. El juvenil tiene la corona poco marcada, la ceja reducida y sin manchas en el pecho."
   },
   {
    "t": "Cómo distinguirlo del Caburé Chico",
@@ -39,6 +39,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Tiene costumbres relativamente diurnas. Por su tamaño pequeño, su vuelo silencioso y porque se queda inmóvil en la rama, pasa fácilmente inadvertido. Es agresivo con sus presas y caza animales incluso más grandes que él, a los que mata rápido con las garras."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Canta una serie larga de notas \"tut\" (18 a 20 en 5 segundos), más agudas, rápidas y menos resonantes que las del Caburé Chico."
   },
   {
    "t": "Nidificación",
@@ -61,6 +65,9 @@
   {
    "t": "Aves del Litoral (UNL): Caburé Chico",
    "u": "https://www.fcv.unl.edu.ar/aves/categorias/strigidae/cabure-chico/"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Caburé Grande"

@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "46 a 56 cm"
+   "54 cm"
   ],
   [
    "Peso",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 46 a 56 cm y pesa alrededor de 600 g. Es negro o pardo oscuro en casi todo el cuerpo, con tonos verdosos o broncíneos metálicos en el cuello y las alas. Tiene una zona sin plumas, rojiza o rosácea, desde la base del pico hasta detrás de los ojos, que da origen a su nombre; el pico y las patas suelen ser del mismo color. Los juveniles son completamente negros, incluidos pico, patas y cara."
+   "p": "Es un ibis de pantano, de patas cortas, con piel desnuda en la cara y la base del pico gruesa. Convive con el Cuervillo de Cañada y rara vez con el Yanavico. En época de cría el adulto tiene la cara roja y el pico y las patas rosados, y es sobre todo negro con brillo verde. Fuera de la cría el pico es amarillento y el plumaje más pardo y con menos brillo. En vuelo tiene las alas bastante anchas y redondeadas, las patas no pasan la cola, y las bandadas van en formación suelta."
   },
   {
    "t": "Dónde vive",
@@ -49,6 +49,9 @@
   {
    "t": "Wikipedia: Ibis afeitado (Phimosus infuscatus)",
    "u": "https://es.wikipedia.org/wiki/Phimosus_infuscatus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cuervillo Cara Pelada"

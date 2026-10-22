@@ -3,6 +3,10 @@
  "resumen": "Golondrina Cabeza Rojiza (Alopochelidon fucata): dónde vive y qué se sabe de ella, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "12 cm"
+  ],
+  [
    "Distribución",
    "Centro de Sudamérica"
   ],
@@ -17,8 +21,16 @@
  ],
  "secciones": [
   {
+   "t": "Cómo reconocerlo",
+   "p": "Es una golondrina chica, compacta y parda, con la cola ligeramente escotada, que está en las tierras bajas y las laderas del norte entre fines de agosto y abril. El adulto tiene la corona parda y las loras oscuras; la ceja, las cobertoras auriculares, un fino collar en la nuca, la garganta y el pecho superior son canela, y es blanca abajo. En vuelo se ve uniforme arriba, con el collar, la garganta y el pecho canela, y una silueta cuadrada."
+  },
+  {
    "t": "Dónde vive",
    "p": "Habita el centro de Sudamérica, desde el sureste de Perú y de Bolivia hasta Brasil, Uruguay y el norte y centro de la Argentina; es ocasional en las Malvinas y en Chile. Ocupa áreas abiertas o de tipo parque, como pastizales, sabanas y humedales, siempre a baja altitud. Después de la reproducción migra hacia el norte del subcontinente en otoño."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto son notas ásperas seguidas de un gorjeo corto y rico, repetido."
   },
   {
    "t": "Una nota sobre el nombre",
@@ -29,6 +41,9 @@
   {
    "t": "Wikipedia: Alopochelidon fucata",
    "u": "https://es.wikipedia.org/wiki/Alopochelidon_fucata"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Golondrina Cabeza Rojiza"

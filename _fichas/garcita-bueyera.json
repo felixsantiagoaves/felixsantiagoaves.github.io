@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "46 a 56 cm"
+   "50 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 46 a 56 cm, pesa entre 270 y 512 g y tiene una envergadura de 88 a 96 cm; los machos son algo más grandes. Fuera de la cría es casi totalmente blanca, con pico amarillo y patas amarillo grisáceas. En la época de cría desarrolla tonos anaranjados en la espalda, el cuello y la cresta, y el pico, las patas y el iris se vuelven rojizos. Los juveniles no tienen plumas anaranjadas y el pico es negro."
+   "p": "Es una garcita robusta y gregaria, de cuello y patas relativamente cortos. El adulto en cría tiene el pico y las patas amarillos o rojizos, y es blanco con la corona, el pecho y las plumas ornamentales color jengibre. Fuera de la cría es todo blanco, y el tarso sobresale de la cola."
   },
   {
    "t": "Dónde vive",
@@ -53,6 +53,9 @@
   {
    "t": "Wikipedia: Garcilla bueyera (Bubulcus ibis)",
    "u": "https://es.wikipedia.org/wiki/Bubulcus_ibis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Garcita Bueyera"

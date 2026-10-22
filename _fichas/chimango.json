@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 40 cm"
+   "37 a 41 cm"
   ],
   [
    "Hábitat",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide unos 40 cm. El plumaje es pardo y moteado con manchas claras; la garganta, el pecho y el abdomen son más claros y la cabeza es parda. La rabadilla es blanca. En vuelo se ven franjas claras en las primarias y la base blanquecina de la cola. Hay un leve dimorfismo: las patas del macho son amarillentas y las de la hembra y los juveniles, grises."
+   "p": "Es el caracara más chico: de alas angostas y rectangulares, con una mancha clara en la base de las primarias y la rabadilla clara; a menudo es gregario y busca carroña en el suelo. El adulto típico (37 cm) tiene el pico y los tarsos amarillos y la cera durazno o anaranjada (algunos individuos la tienen más opaca y rosada); es pardo uniforme con una lista oscura detrás del ojo. En vuelo se ve el destello blanquecino de las primarias y una rabadilla grande color crema. La forma del bosque patagónico (41 cm) es más grande y bastante más oscura, sin esa lista. El juvenil se parece al adulto pero tiene la cera gris opaca, el manto y las escapulares bordeados de ante, y no tiene la banda oscura de la cola."
   },
   {
    "t": "Dónde vive",
@@ -49,6 +49,9 @@
   {
    "t": "Wikipedia: Daptrius chimango",
    "u": "https://es.wikipedia.org/wiki/Daptrius_chimango"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Chimango"

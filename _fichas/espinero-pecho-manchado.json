@@ -3,6 +3,10 @@
  "resumen": "Espinero Pecho Manchado (Phacellodomus striaticollis): dónde vive y cómo reconocer el ambiente donde se lo encuentra, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "17,5 cm"
+  ],
+  [
    "Distribución",
    "Noreste de Argentina, sudeste de Brasil, Uruguay y Paraguay"
   ],
@@ -21,6 +25,10 @@
  ],
  "secciones": [
   {
+   "t": "Cómo reconocerlo",
+   "p": "Vive en arbustos de los pantanos de la Pampa. El adulto tiene el iris ámbar o amarillo opaco, la corona rufa con una pequeña zona parda en la frente, una ceja blanquecina opaca y las plumas externas de la cola rufo opaco. El pecho está lavado de rufo, con pequeñas estrías blancas. Se solapa con el Espinero Frente Rojiza y con el Espinero Grande."
+  },
+  {
    "t": "Dónde vive",
    "p": "Es nativo del sudeste de Sudamérica: noreste de Argentina, sudeste de Brasil, Uruguay y Paraguay. Habita en bordes arbustivos de bosques en galería y del monte, y en enmarañados de terrenos pantanosos abiertos, casi siempre cerca del agua y hasta unos 700 m de altitud. Se lo describe como poco común."
   },
@@ -37,6 +45,9 @@
   {
    "t": "Wikipedia: Espinero pechimoteado (Phacellodomus striaticollis)",
    "u": "https://es.wikipedia.org/wiki/Phacellodomus_striaticollis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Espinero Pecho Manchado"

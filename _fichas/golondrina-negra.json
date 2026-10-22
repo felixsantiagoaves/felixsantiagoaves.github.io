@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "20 a 22 cm"
+   "18,5 cm"
   ],
   [
    "Plumaje",
@@ -18,7 +18,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 20 a 22 cm. Todo el cuerpo es negro con tonos azul iridiscente. El macho es casi indistinguible del de la Golondrina Negra Peruana (Progne murphyi)."
+   "p": "Se la ve sobre todo en la Patagonia, las sierras centrales y el noroeste, entre fines de agosto y comienzos de abril. El macho es todo azul violáceo brillante, y en vuelo tiene la cola más ahorquillada que la Golondrina Doméstica y la Golondrina Purpúrea. La hembra tiene el dorso azul violáceo brillante y las partes inferiores pardas, moteadas de marcas pálidas en forma de media luna, más visibles en las subcaudales, y la cola profundamente ahorquillada."
   },
   {
    "t": "Dónde vive",
@@ -33,6 +33,9 @@
   {
    "t": "Wikipedia: Golondrina sureña (Progne elegans)",
    "u": "https://es.wikipedia.org/wiki/Progne_elegans"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Golondrina Negra"

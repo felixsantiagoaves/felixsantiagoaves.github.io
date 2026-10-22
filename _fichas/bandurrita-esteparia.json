@@ -3,6 +3,10 @@
  "resumen": "Bandurrita Esteparia (Upucerthia dumetaria): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "21,5 cm"
+  ],
+  [
    "Ambientes",
    "Arbustales de la estepa patagónica y matorrales andinos"
   ],
@@ -17,8 +21,16 @@
  ],
  "secciones": [
   {
+   "t": "Cómo reconocerlo",
+   "p": "Tiene el pico largo y curvado hacia abajo, y el pecho marcadamente escamado de negro. Las esquinas de la cola son canela. La forma típica cría en la estepa patagónica y llega en invierno hasta el norte del país; la forma residente del noroeste es más cálida por arriba. El juvenil tiene más escamado en las partes inferiores y estrías claras en la nuca y el manto superior."
+  },
+  {
    "t": "Dónde vive",
    "p": "Es nativa del sur y oeste de Sudamérica. Se extiende por los Andes desde el sur de Perú, pasando por Bolivia y Argentina, hasta el centro de Chile y Tierra del Fuego, y por la Patagonia. Vive en los arbustos de la estepa patagónica y es menos numerosa en los matorrales andinos del norte, hasta unos 3.900 m. En invierno migra hacia el centro de la Argentina y el sur de Uruguay, y por eso se la ve en Córdoba."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una serie continua de notas parecidas, como campanitas, que suben y bajan y cambian de velocidad (pli-pli-pli…). El llamado es un \"keep\" agudo."
   },
   {
    "t": "Una nota sobre el nombre",
@@ -33,6 +45,9 @@
   {
    "t": "Wikipedia: Upucerthia dumetaria",
    "u": "https://es.wikipedia.org/wiki/Upucerthia_dumetaria"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Bandurrita Esteparia"

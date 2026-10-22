@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "18 a 21 cm"
+   "20 cm"
   ],
   [
    "Peso",
@@ -26,11 +26,15 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 18 a 21 cm y pesa unos 65 g. El dorso y la cola son verde intenso, el pecho y la rabadilla oliva o canela blancuzco, y la cara y la garganta blancas con un casco pardo grisáceo. El pico y las patas son rosado pálido. Es algo más grande que su pariente la Catita Serrana Chica (Psilopsiagon aurifrons) y se distingue por la coloración."
+   "p": "Es una cotorrita gregaria de terreno abierto y montañoso, de cola puntiaguda y vuelo alto y algo ondulado. El adulto tiene la gorra parda y a veces una máscara oscura, y la garganta y el pecho gris pálido que contrastan, con un lavado amarillo a los lados. En vuelo puede recordar a la Cotorra y a la forma luchsi de la Cotorra, pero es mucho más chica y rápida; se ven las partes centrales de abajo blanquecinas."
   },
   {
    "t": "Dónde vive",
    "p": "Se la encuentra en Argentina y Bolivia, en matorral tropical o subtropical de gran altitud."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Sus llamados son secos y entrecortados."
   },
   {
    "t": "Una nota sobre el nombre",
@@ -41,6 +45,9 @@
   {
    "t": "Wikipedia: Psilopsiagon aymara",
    "u": "https://es.wikipedia.org/wiki/Psilopsiagon_aymara"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Catita Serrana Grande"

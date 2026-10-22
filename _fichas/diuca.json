@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "16 a 17 cm"
+   "15,5 cm"
   ],
   [
    "Hábitat",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 16 a 17 cm. Es gris, con una gran mancha blanca en la garganta y el abdomen y zonas color acanela en el bajo vientre. Las alas y la cola son negruzcas, y la cola tiene una mancha blanca en la punta. Las hembras son algo más pequeñas y de un pardo ligeramente más marcado."
+   "p": "Es un fringílido robusto, de pico corto y cónico, muy extendido y a menudo gregario; en invierno migra hacia el norte. El adulto es esencialmente gris arriba, con la corona levantada, y tiene grandes manchas blancas en la cola. Es blanco abajo, con una ancha banda pectoral gris y un pequeño parche rojizo en los flancos. El juvenil es más pardo arriba, con la banda pectoral poco definida y el vientre ante."
   },
   {
    "t": "Dónde vive",
@@ -31,6 +31,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Come principalmente semillas; en la época de cría suma artrópodos y, a veces, frutos. Pasa la mayor parte del tiempo picoteando el suelo, aunque también se posa en arbustos y árboles bajos. En invierno forma pequeños grupos familiares. Canta sobre todo por las mañanas, con un canto melodioso, continuo y lento. No es muy territorial, pero durante la cría puede ser muy agresiva si algo se acerca al nido."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto, sobre todo al amanecer, es suave y mesurado, y se repite, con frases como \"SCHup-CHI…\"; se parece bastante al del Cardenal Amarillo. Los llamados incluyen notas \"schup\", \"kwip\" y \"chip\"."
   },
   {
    "t": "Nidificación",
@@ -45,6 +49,9 @@
   {
    "t": "Wikipedia: Diuca diuca",
    "u": "https://es.wikipedia.org/wiki/Diuca_diuca"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Diuca"

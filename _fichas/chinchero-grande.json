@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "29 a 35 cm"
+   "31 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 29 a 35 cm y pesa entre 76 y 90 g el macho y entre 87 y 110 g la hembra. La cabeza es castaño oscuro, la cara y la nuca castaño claro, con dos líneas blanquecinas, una sobre cada ojo y otra debajo. El dorso es castaño claro con tono pardo, la garganta blanquecina y el pecho y el abdomen blanquecinos con plumas orilladas de castaño. Lo más llamativo es el pico largo: la parte de arriba es pardo oscura y la mandíbula, clara con la punta oscura."
+   "p": "Es terrestre y arbóreo, con un pico larguísimo y curvado hacia abajo. El adulto tiene la corona despeinada, una ceja blanca marcada y un bigote blanco, las partes inferiores densamente estriadas de blanco y la cola rufa."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Forrajea solo o en pareja, a veces junto a otros furnáridos. Busca alimento en troncos y ramas grandes y también en el suelo, donde escarba la tierra suelta con la cola abierta; puede cavar hasta 5 o 6 cm para sacar larvas. Come insectos de muchos órdenes, además de pequeños anfibios, reptiles, huevos de reptiles y aves, y pichones de aves menores. En el suelo se desplaza con torpeza, aunque puede correr distancias cortas. Su canto es una serie rápida de notas agudas y chillonas que descienden y terminan en una secuencia enredada."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una risa larga, potente, elástica y metálica, que se acelera hacia el final y termina con una carraspera rápida; a menudo se abrevia a las primeras notas. El llamado es un \"CHITIK\" seco de dos sílabas."
   },
   {
    "t": "Nidificación",
@@ -49,6 +53,9 @@
   {
    "t": "Wikipedia: Trepatroncos chinchero (Drymornis bridgesii)",
    "u": "https://es.wikipedia.org/wiki/Drymornis_bridgesii"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Chinchero Grande"

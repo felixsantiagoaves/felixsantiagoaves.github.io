@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "19 a 23 cm"
+   "22 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 19 a 23 cm y pesa de 58 a 101 g. Es negro iridiscente con brillos púrpura o verdes, salpicado de blanco, sobre todo en invierno. Los juveniles son pardo grisáceos. El pico es negro o pardo negruzco en invierno y amarillo en verano."
+   "p": "En época de cría los adultos tienen el pico amarillo, fino y puntiagudo, y el plumaje negro con brillo azul verdoso; fuera de la cría están muy moteados de ante y el pico es oscuro. En vuelo las alas son triangulares. En la Argentina es común en zonas urbanas y la Pampa, y se está expandiendo al sur hasta Río Negro y al oeste hasta Mendoza."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Es sobre todo insectívoro (arañas, larvas, lombrices, caracoles), pero también come granos, semillas, frutas, néctar y restos de comida. Es muy gregario: forma grandes bandadas y dormideros comunales, y en vuelo las bandadas son masas compactas y cambiantes. Es ruidoso. Su canto es variado y poco musical, con gran capacidad para imitar sonidos del entorno."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Imita todo tipo de sonidos. El llamado común es un \"tzhreee\" agudo."
   },
   {
    "t": "Nidificación",
@@ -49,6 +53,9 @@
   {
    "t": "Wikipedia: Estornino pinto (Sturnus vulgaris)",
    "u": "https://es.wikipedia.org/wiki/Sturnus_vulgaris"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Estornino Pinto"

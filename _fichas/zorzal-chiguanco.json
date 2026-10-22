@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "25 a 30 cm"
+   "27 cm"
   ],
   [
    "Ambientes",
@@ -30,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es un zorzal grande, de 25 a 30 cm. El macho es pardo negruzco o ahumado, casi uniforme, con el pico anaranjado a amarillo anaranjado, las patas de amarillentas a anaranjadas y un anillo amarillo alrededor del ojo. La hembra es más apagada y parduzca, y los jóvenes tienen el plumaje escamado y el pecho y la garganta estriados. La población argentina es más oscura y con el anillo del ojo más intenso. Puede confundirse con el Zorzal Cabeza Negra y con el Zorzal Negro."
+   "p": "Está en los Andes hasta 3600 m, hacia el sur hasta Neuquén, en las sierras centrales hasta 2200 m, y de forma dispersa en el norte de la Patagonia. El macho adulto tiene el pico fuerte anaranjado, el anillo ocular amarillo y las patas anaranjado pálido. Es pardo hollín oscuro y uniforme, a menudo más pálido abajo. La hembra es más pálida y parduzca en general, con el pico y el anillo ocular más opacos."
   },
   {
    "t": "Dónde vive",
@@ -39,6 +39,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Es confiado y bastante visible: camina por el suelo con carreras cortas y levanta la cola, solo, en pareja o en grupos chicos. En la época reproductiva canta desde perchas expuestas. Es omnívoro: come lombrices, insectos, arañas y otros artrópodos del suelo, además de frutos y bayas, incluso cultivados."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una frase constante de silbidos puros, musicales y finos, con mucha variación de tono y generalmente con al menos una nota trinada o vibrada; se repite una y otra vez. Los llamados son silbidos secos y fuertes, \"ZIK\" o \"WEAK\", a menudo en pares o tríos, y notas graves \"chuk\"."
   },
   {
    "t": "Nidificación",
@@ -61,6 +65,9 @@
   {
    "t": "Wikipedia: Turdus chiguanco",
    "u": "https://es.wikipedia.org/wiki/Turdus_chiguanco"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Zorzal Chiguanco"

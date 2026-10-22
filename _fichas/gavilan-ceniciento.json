@@ -3,6 +3,10 @@
  "resumen": "Gavilán Ceniciento (Circus cinereus): dónde vive y qué come, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "42 a 48 cm"
+  ],
+  [
    "Distribución",
    "De Colombia al sur de Sudamérica, con la Patagonia incluida"
   ],
@@ -16,6 +20,10 @@
   ]
  ],
  "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un aguilucho de campo abierto; algunos se mueven al norte en invierno. El macho adulto tiene la cabeza, el pecho superior y las partes superiores gris ceniza, con el vientre barrado en rufo y blanco que contrasta. La hembra tiene la cabeza y el manto pardos, una ceja blanquecina, rayas en la nuca y la cola gris con finas bandas negruzcas y una banda subterminal más ancha. El juvenil tiene las cobertoras alares bordeadas de canela, a diferencia del Gavilán Planeador, y las partes inferiores ante con estrías pardas difusas y densas. En vuelo sostiene las alas en una V poco profunda, y el macho es gris pálido arriba, con las primarias distales y el borde posterior de las secundarias negros."
+  },
   {
    "t": "Dónde vive",
    "p": "Habita en Sudamérica, desde el norte de Chile hasta el sur de Brasil y desde la Patagonia argentina hasta Colombia. En la Argentina aparece entre Tierra del Fuego y el norte del país, y entre Mendoza y la costa bonaerense, aunque con densidades distintas."
@@ -33,6 +41,9 @@
   {
    "t": "Wikipedia: Vari (Circus cinereus)",
    "u": "https://es.wikipedia.org/wiki/Circus_cinereus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gavilán Ceniciento"

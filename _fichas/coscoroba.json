@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "90 a 115 cm"
+   "98 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 90 a 115 cm. Los machos pesan en promedio 4,6 kg (de 3,8 a 5,4) y las hembras 3,8 kg (de 3,2 a 4,5). No hay dimorfismo sexual en el plumaje. No es totalmente blanca: tiene las primarias negras, el pico rojo y aplanado, y las patas rosadas."
+   "p": "Es un \"cisne\" poco común, blanco, de patas largas y pico parecido al de un pato. El adulto es todo blanco con el pico rojo brillante, de aspecto ceroso. En vuelo se ve blanco con las puntas de las primarias negras. El juvenil tiene el pico gris, la gorra negruzca y un lavado pardo grisáceo en el dorso."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento",
    "p": "Es sociable con su propia especie y con otras. Vive en parejas o en grupos pequeños, de hasta unos 100 individuos. Durante la migración vuela con flamencos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Su grito, que se oye de lejos, recuerda a un clarín y suena como su nombre: \"Cos-co-roba\"."
   },
   {
    "t": "Nidificación",
@@ -53,6 +57,9 @@
   {
    "t": "Wikipedia: Cisne coscoroba (Coscoroba coscoroba)",
    "u": "https://es.wikipedia.org/wiki/Coscoroba_coscoroba"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Coscoroba"

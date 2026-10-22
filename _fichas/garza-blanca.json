@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "80 a 105 cm"
+   "94 cm"
   ],
   [
    "Envergadura",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide de 80 a 105 cm de pico a cola, con una envergadura de 130 a 170 cm, y pesa entre 700 y 1500 g. Es blanca, con pico amarillo y patas y dedos negros. En el plumaje reproductivo tiene en el dorso plumas ornamentales largas y finas que suele erizar. Machos y hembras son idénticos, y los juveniles se parecen a los adultos fuera de la cría."
+   "p": "El adulto fuera de la cría es todo blanco, con el pico amarillo y las patas negruzcas, que sobresalen bien más allá de la cola en vuelo. Tiene las alas más anchas y el vuelo más lento que la Garcita Blanca, que es más chica. En época de cría las loras se ponen verde brillante y contrastan con el pico amarillo, y aparecen elaboradas plumas escapulares."
   },
   {
    "t": "Dónde vive",
@@ -53,6 +53,9 @@
   {
    "t": "Wikipedia: Garceta grande (Ardea alba)",
    "u": "https://es.wikipedia.org/wiki/Ardea_alba"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Garza Blanca"

@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide unos 11 cm. El macho tiene el pico amarillo verdoso y es gris por arriba, a veces con tinte pardusco, sobre todo en el primer año, y algunos tienen una mancha blanca en el ala. La garganta alta es negra, con una banda malar blanca y la garganta baja blanca, y una banda negra en el pecho forma un \"doble collar\". La hembra y los jóvenes son color arena, con el pico oscuro por arriba y amarillento por abajo."
+   "p": "El macho adulto tiene el pico amarillento, es gris arriba con las loras negruzcas, y un babero y una banda pectoral negros. La hembra es pardo oliváceo arriba y ante abajo, a veces con un leve lavado oliva en el pecho."
   },
   {
    "t": "Dónde vive",
@@ -37,6 +37,10 @@
    "p": "Se alimenta de semillas. El canto del macho es corto y repetitivo, muy fácil de reconocer."
   },
   {
+   "t": "Cómo suena",
+   "p": "El canto es una serie muy rápida de silbidos cortos y agudos y notas raspantes, de 1,5 a 2 segundos; suele descender en tono y terminar en notas enfáticas, pero es muy variable. Los llamados son notas nasales cortas y agudas."
+  },
+  {
    "t": "Una nota sobre el nombre",
    "p": "Se la llama corbatita o corbatita común en Argentina, Paraguay y Bolivia; gargantillo común en Uruguay; y corbatita de doble collar en Chile. Sporophila viene del griego (\"semilla\" y \"amante\") y caerulescens del latín (\"de color azul oscuro\")."
   }
@@ -45,6 +49,9 @@
   {
    "t": "Wikipedia: Semillero corbatita (Sporophila caerulescens)",
    "u": "https://es.wikipedia.org/wiki/Sporophila_caerulescens"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Corbatita"

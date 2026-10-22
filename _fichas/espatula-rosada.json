@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 71 cm"
+   "80 cm"
   ],
   [
    "Pico",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide unos 71 cm. Los adultos son casi totalmente rosados, con la barra del hombro y la rabadilla rojo rosáceo; los inmaduros son blancos con tintes rosados. El color proviene de los carotenoides de los invertebrados que consume. El pico es largo y chato, se ensancha y se redondea en la punta como una cuchara, y junto con la piel desnuda de la cabeza es verde amarillento."
+   "p": "Tiene el pico largo y aplanado, con la punta en forma de espátula. A menudo anda en grupos o con garzas. El adulto en cría tiene el pico de amarillento a negro, las loras anaranjadas, la corona desnuda color azufre y las patas largas y rojizas. Tiene un mechón pectoral rosado, y el dorso inferior, las alas y el vientre rosados, con las escapulares, la rabadilla y la zona anal magenta. El inmaduro no tiene magenta en el plumaje y la cabeza es toda blanca. Se notan las pequeñas puntas negras de las primarias."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +45,9 @@
   {
    "t": "Wikipedia: Platalea ajaja",
    "u": "https://es.wikipedia.org/wiki/Platalea_ajaja"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Espátula Rosada"

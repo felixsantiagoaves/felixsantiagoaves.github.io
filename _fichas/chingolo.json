@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "13 a 15 cm"
+   "15,5 a 16,5 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 13 a 15 cm y pesa entre 20 y 25 g. La corona y la cara son grises con una banda negra, la garganta es blanca y tiene un collar en la nuca color canela o castaño rojizo. El pecho y el vientre son pardo claro o blanquecinos, los costados grisáceos y el dorso pardo manchado de negro. El pico es corto y recto. Los juveniles tienen un plumaje más uniforme, con jaspeado más oscuro en el pecho."
+   "p": "Es el gorrión omnipresente, de cresta permanente, y se junta en bandadas, sobre todo en invierno. En el adulto de las tierras bajas del centro-norte la corona es gris con bandas negras a los costados, una lista ocular negra y otra que bordea las cobertoras auriculares; la nuca y los costados del pecho son rufos y contrastan, con una mancha negra. Hay muchas subespecies parecidas. La forma austral (16,5 cm; cría en el sur de la Patagonia y migra al norte) es más grande y no tiene las bandas negras de la cabeza. El juvenil no tiene el rufo de la nuca ni del pecho, es apenas crestado y es blanco abajo, con un tinte ante en el pecho y fino moteado negro."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Come sobre todo semillas, y también gusanos que recoge en el suelo. Es solitario y forma parejas en la época reproductiva; rara vez se junta en bandadas. Pasa mucho tiempo en árboles y arbustos y sigue activo hasta el anochecer. La subespecie australis es migratoria. El canto es exclusivo del macho: un tema de tres tiempos seguido de un trino, y ese trino es característico de cada población, porque los pichones lo aprenden de los adultos de su grupo."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Varía según la zona. El canto más común tiene 2 o 3 silbidos musicales y un trino. En el Monte el trino suele ser reemplazado por un raspido corto. El de la forma austral no tiene trino, solo silbidos. De noche puede dar cantos complejos, aislados e impredecibles."
   },
   {
    "t": "Nidificación",
@@ -49,6 +53,9 @@
   {
    "t": "Wikipedia: Zonotrichia capensis",
    "u": "https://es.wikipedia.org/wiki/Zonotrichia_capensis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Chingolo"

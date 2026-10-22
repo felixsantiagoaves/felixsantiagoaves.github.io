@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 37 cm"
+   "33 cm"
   ],
   [
    "Peso",
@@ -18,11 +18,15 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es un loro de unos 37 cm y 140 a 190 g, predominantemente verde, con tonos azulados en la cabeza, la corona, las mejillas y las orejas. El pecho puede ser azul, aunque lo más común es verde o verde amarillento. La cola es verde en la punta y pardo rojiza por debajo, y tiene anillos blancos alrededor de los ojos."
+   "p": "Es un loro de cola larga y puntiaguda y pico de dos colores, que anda en bandadas chicas o grandes. El adulto tiene la corona y la cara azuladas, la mandíbula superior y las patas rosadas, y en vuelo se ve la cola rojiza por debajo."
   },
   {
    "t": "Dónde vive",
    "p": "Se distribuye de forma discontinua por Sudamérica, desde el Caribe hasta el norte de la Patagonia argentina."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Su voz es más áspera que la del Calancate Ala Roja y la del Calancante Cara Roja, aunque muy parecida."
   },
   {
    "t": "Una nota sobre el nombre",
@@ -37,6 +41,9 @@
   {
    "t": "Wikipedia: Thectocercus acuticaudatus",
    "u": "https://es.wikipedia.org/wiki/Thectocercus_acuticaudatus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Calancate Cabeza Azul"

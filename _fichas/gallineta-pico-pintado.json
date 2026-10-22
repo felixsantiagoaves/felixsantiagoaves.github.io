@@ -3,6 +3,10 @@
  "resumen": "Gallineta Pico Pintado (Pardirallus sanguinolentus): cómo reconocerla, dónde vive, qué come y cómo anida, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "29 a 38 cm"
+  ],
+  [
    "Ambientes",
    "Humedales de agua dulce con vegetación densa"
   ],
@@ -26,7 +30,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Es un rálido de tamaño mediano, de cuerpo robusto y hábitos terrestres y esquivos. Tiene el plumaje oscuro, con tonos grisáceos y pardo oliváceos, el pico largo y recto de color verdoso a amarillento con matices azulados, y las patas largas y rojizas. Los sexos son casi iguales, aunque los machos tienden a ser algo más grandes. También se la conoce como gallineta común, pidén o rascón plomizo."
+   "p": "Es un rálido de tamaño mediano, de pico y patas largos, de pantano. La forma típica (29 cm) tiene el pico verde con la base de la mandíbula superior celeste y una mancha roja en la base de la inferior (más opaca fuera de la cría); es oliva arriba, con los centros de las secundarias y terciarias negruzcos, y la cara y las partes inferiores grises. La forma de Tierra del Fuego (38 cm) es pardo rojiza arriba, sin marcas negruzcas en las alas. El juvenil tiene el pico oscuro y es todo pardo con la garganta blanquecina."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +39,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Es tímida y rara vez sale a lugares abiertos: camina o corre entre la vegetación y solo vuela distancias cortas cuando la molestan. Es más activa al amanecer, al atardecer y de noche, y muchas veces se la detecta antes por sus voces fuertes que por la vista. Es omnívora: come insectos y sus larvas, moluscos, pequeños crustáceos, lombrices, y también semillas y brotes tiernos, que busca con movimientos lentos entre el barro y la base de las plantas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto del macho es una serie penetrante y chillona (creeaw-tree creeaw-tree…); en dúo la hembra suelta un retumbo grave. También da un zumbido grave que sube y baja y se acelera hacia el final. Los llamados incluyen notas agudas y una de dos notas, \"kill-it\". Algunas voces suenan parecidas a las de la Gallineta Chica."
   },
   {
    "t": "Reproducción",
@@ -53,6 +61,9 @@
   {
    "t": "Wikipedia: Pardirallus sanguinolentus",
    "u": "https://es.wikipedia.org/wiki/Pardirallus_sanguinolentus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gallineta Pico Pintado"

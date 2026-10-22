@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 20 cm"
+   "23 cm"
   ],
   [
    "Ambientes",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide unos 20 cm y tiene tonos apagados: dorso pardo grisáceo con la rabadilla rufa, y alas oscuras con una mancha blanca grande y bien visible, que también aparece en el borde externo de la cola. La garganta y el vientre son blanquecinos y los flancos ocráceos."
+   "p": "Es una especie endémica que cría en el desierto del Monte del norte de la Patagonia (octubre a febrero) y en las sierras centrales, y pasa el invierno por las tierras bajas del norte y los Andes hasta 2800 m. El adulto tiene la corona y el dorso grisáceos, con la rabadilla pardo rufa que contrasta, y un panel blanco llamativo en el ala plegada. La cola es negra con plumas externas blancas. En vuelo contrastan las primarias y las plumas centrales negras con las secundarias, el carpo y la cola externa blancos. En invierno se solapa con la Calandria Mora."
   },
   {
    "t": "Dónde vive",
@@ -41,6 +41,9 @@
   {
    "t": "Wikipedia: Mimus triurus",
    "u": "https://es.wikipedia.org/wiki/Mimus_triurus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Calandria Real"

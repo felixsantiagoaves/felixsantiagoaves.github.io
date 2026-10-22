@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "45 a 62 cm"
+   "47 a 55 cm"
   ],
   [
    "Envergadura",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 45 a 62 cm y tiene una envergadura de 113 a 151 cm. Macho y hembra se distinguen bien: el macho suele tener el dorso gris y el vientre blanco (existe también un morfo todo grisáceo), y la hembra tiene hombros y parte del dorso canela o rojizos (puede haber un morfo oscuro). En ambos la cola es blanca con finas rayas negras y una banda negra subterminal. Los juveniles pasan por varias fases de plumaje, del gris al rufo y al pardo."
+   "p": "Es una rapaz muy variable, y las formas de altura son más grandes. La más común es la forma clara: gris por arriba y blanca abajo, con nuca y dorso rufos, gorra y alas grises y mejillas blancas. También hay una forma oscura, de cabeza, alas y partes inferiores gris hollín con la cola blanca y una banda negra subterminal, y una forma de vientre rufo. En las formas oscura y de vientre rufo las primarias llegan a la punta de la cola o apenas la pasan; en la forma barrada de los Andes del noroeste, por encima de los 3000 m, las primarias la superan. El juvenil de la forma clara es pardo oscuro arriba, con una gran mancha facial castaña y un bigote negruzco ancho, y es ante abajo con estrías pardo oscuras en el pecho."
   },
   {
    "t": "Dónde vive",
@@ -49,6 +49,9 @@
   {
    "t": "EcoRegistros: Aguilucho Ñanco",
    "u": "https://www.ecoregistros.org/ficha/Geranoaetus-polyosoma"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Aguilucho Ñanco"

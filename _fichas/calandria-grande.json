@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 27 cm"
+   "24,5 cm"
   ],
   [
    "Ambientes",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide unos 27 cm y es de colores apagados: dorso pardo grisáceo con rayas oscuras poco notorias, alas más oscuras, a veces con bordes blancos, y vientre y garganta blanquecinos. En vuelo la cola muestra dos manchas blancas."
+   "p": "Se parece a la Calandria Mora, pero está vagamente estriada de pardo oscuro por arriba y a veces tiene la rabadilla rufescente. Las estrías de los flancos son limitadas. En vuelo se ve la cola larga y parda, con la punta ancha blanca y un borde fino blanco. Convive con la Calandria Mora en el noroeste y el norte de la Patagonia."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +45,9 @@
   {
    "t": "Wikipedia: Mimus saturninus",
    "u": "https://es.wikipedia.org/wiki/Mimus_saturninus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Calandria Grande"

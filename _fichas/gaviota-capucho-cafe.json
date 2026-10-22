@@ -3,6 +3,10 @@
  "resumen": "Gaviota Capucho Café (Chroicocephalus maculipennis): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "38 cm"
+  ],
+  [
    "Pico y patas",
    "Rojo oscuro"
   ],
@@ -22,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "La cabeza y la garganta son pardo oscuro, con un semicírculo blanco detrás del ojo. El cuello, el pecho y el abdomen son blancos; el dorso y las cobertoras son grises, las primarias blancas (algunas con la punta negra) y las secundarias grises. El pico y las patas son rojo oscuro."
+   "p": "Cría por toda la costa, el norte y el sur andino, y en invierno se mueve al norte. El adulto en época de cría tiene el pico y los tarsos rojizos y la capucha parda, cortada en ángulo recto desde la nuca; a veces tiene un lavado rosado en el pecho. Fuera de la cría tiene una media luna negra en las cobertoras auriculares. En vuelo se ve una cuña blanca en las primarias distales y el forro alar más blanco que sus parientes. En su primer invierno tiene el pico rojo con la punta negra y una barra negra en las cobertoras alares."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +49,9 @@
   {
    "t": "Wikipedia: Chroicocephalus maculipennis",
    "u": "https://es.wikipedia.org/wiki/Chroicocephalus_maculipennis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gaviota Capucho Café"

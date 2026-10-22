@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "Unos 47 cm"
+   "39 cm"
   ],
   [
    "Escudete",
@@ -22,7 +22,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Mide unos 47 cm, un tamaño intermedio entre la Gallareta Chica y la Gallareta Ligas Rojas. Tiene la cabeza y el cuello negros, más intensos que el resto del cuerpo, que es negruzco ceniciento, con el pecho y el abdomen algo más claros y las subcaudales laterales blancas. El escudete frontal es fino, termina en punta y es rojo intenso oscuro; también es rojo el pico hasta las fosas nasales y la mandíbula inferior, y el resto del pico es amarillo fuerte. Las patas son amarillo verdosas y el iris es rojo. Se distingue de la Gallareta Ligas Rojas por ese escudete rojo: la otra tiene el pico amarillo verdoso con poco rojo."
+   "p": "Nada con la cola erguida y es más esquiva que las otras gallaretas de tierras bajas: vive en juncales y rara vez en aguas abiertas. El adulto tiene un escudete frontal empinado y puntiagudo, rojo oscuro, y el pico amarillo. En vuelo se notan los grandes costados blancos de la zona anal. El juvenil tiene la frente notablemente empinada y la garganta blanquecina."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +45,9 @@
   {
    "t": "Wikipedia: Fulica rufifrons",
    "u": "https://es.wikipedia.org/wiki/Fulica_rufifrons"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gallareta Escudete Rojo"

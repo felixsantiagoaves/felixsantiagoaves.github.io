@@ -3,6 +3,10 @@
  "resumen": "Garcita Blanca (Egretta thula): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
  "datos": [
   [
+   "Largo",
+   "54 cm"
+  ],
+  [
    "Plumaje",
    "Blanco; en la cría, con plumas delicadas en cabeza, cuello y dorso"
   ],
@@ -22,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerla",
-   "p": "Es una garza pequeña y blanca. Fuera de la temporada de cría tiene el pico negro y los pies amarillo brillante. En la cría el plumaje es blanco puro, con plumas delicadas que cuelgan de la cabeza, el cuello y el dorso; ambos sexos las tienen y las erizan para exhibirse en el nido."
+   "p": "El adulto en época de cría es todo blanco, con el pico negro con la base amarilla y la piel loral amarilla, y las patas negras con los dedos amarillos. El juvenil recuerda a la Garza Azul juvenil, pero el tarso oliva muestra a menudo amarillo atrás o negro adelante, y el pico es más largo y de culmen más recto. No tiene las puntas oscuras de las primarias en vuelo."
   },
   {
    "t": "Dónde vive",
@@ -45,6 +49,9 @@
   {
    "t": "Wikipedia: Garceta nívea (Egretta thula)",
    "u": "https://es.wikipedia.org/wiki/Egretta_thula"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Garcita Blanca"

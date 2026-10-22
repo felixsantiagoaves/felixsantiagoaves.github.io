@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "55 a 60 cm"
+   "60 cm"
   ],
   [
    "Distribución",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es una rapaz de 55 a 60 cm. Tiene la parte superior de la cabeza negruzca y el resto de la cabeza y el cuello blanco grisáceo; el dorso y el pecho muestran líneas anchas pardas y blanco grisáceo. La cara es desnuda. En vuelo se ve una mancha clara en las alas y una cola blanquecina que termina en una banda negra."
+   "p": "Es el caracara más grande, de pico enorme y cresta aplanada, y suele andar solo o en pareja; ambos sexos son iguales. El adulto tiene la cera grande, rosada o naranja, la gorra negra y la nuca crema, el manto superior y el pecho finamente barrados de blanco y negro, y las alas y el vientre pardo oscuro. En vuelo se lo ve de cuello largo, con las primarias casi blancas visibles desde muy lejos y la cola casi blanca con una banda negra terminal. El juvenil tiene la gorra parda, el pecho y el manto superior estriados de ante sobre pardo, y las alas y el vientre más pálidos que el adulto."
   },
   {
    "t": "Dónde vive",
@@ -57,6 +57,9 @@
   {
    "t": "Wikipedia (en): Crested caracara",
    "u": "https://en.wikipedia.org/wiki/Crested_caracara"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Carancho"

@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "14 a 16 cm"
+   "15 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 14 a 16 cm y pesa alrededor de 30 g. El macho es gris abajo, con una mancha negra en el pecho que llega a la garganta, bandas curvas negras o chocolate sobre los ojos, alas chocolate con una banda blanca y, en la época de cortejo, el pico negro. La hembra es gris casi uniforme en las partes inferiores y el pecho, con tono pardo en las alas, el píleo y la cola, y una banda superciliar más clara. Las patas son rosadas en ambos sexos."
+   "p": "El macho adulto tiene la corona y las mejillas grises, bordeadas por una nuca parda, y un babero y pecho superior negros llamativos. Es pardo arriba, estriado de negro, y grisáceo abajo, con una corta barra alar blanca. La hembra es poco llamativa: corona parda opaca y una fina lista ocular, que bordea una ceja posterior ante bien visible, con la cara y las partes inferiores grisáceas. Es común en pueblos de todo el país, y también en caldenales y a veces en espinal."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Come semillas silvestres y cultivadas y desperdicios humanos; en la temporada cálida suma insectos, sobre todo langostas y saltamontes, con los que alimenta a los pichones. Es sedentario y gregario: se alimenta en el suelo dando brincos y forma bandadas que se juntan a dormir. Es confiado en las ciudades grandes y más cauteloso en los pueblos chicos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Es ruidoso: da series de pío poco musicales y estridentes, o breves gorjeos metálicos."
   },
   {
    "t": "Nidificación",
@@ -53,6 +57,9 @@
   {
    "t": "Wikipedia: Gorrión común (Passer domesticus)",
    "u": "https://es.wikipedia.org/wiki/Passer_domesticus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Gorrión"

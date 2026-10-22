@@ -4,7 +4,7 @@
  "datos": [
   [
    "Largo",
-   "18 a 19,5 cm"
+   "18,5 cm"
   ],
   [
    "Peso",
@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Mide de 18 a 19,5 cm y pesa entre 30 y 57 g. Tiene el pico negruzco o grisáceo, las patas pardo grisáceas y el iris amarillo anaranjado. El macho tiene la frente y la parte de abajo castañas, la corona, la nuca y el dorso gris pardusco con tenues estrías, las alas pardas con bandas blancas y la cola parda con la punta blanca en las plumas externas. La hembra tiene el dorso grisáceo con estrías pardas oscuras y la parte de abajo canela clara, también con estrías."
+   "p": "El macho adulto tiene la frente y las partes inferiores de un rufo bastante brillante, es gris arriba con una ancha barra blanca en las cobertoras medianas y la punta de la cola blanca. La hembra es pardo grisácea arriba, densamente estriada de pardo oscuro, con la rabadilla grisácea lisa y finas barras alares blancas; es ante abajo, estriada de pardo oscuro. El juvenil tiene el iris oscuro o naranja, es pardo arriba con estrías oscuras y canela opaco abajo, con estrías difusas a los lados del pecho."
   },
   {
    "t": "Dónde vive",
@@ -35,6 +35,10 @@
   {
    "t": "Comportamiento y alimentación",
    "p": "Come principalmente frutos, hojas y flores, además de semillas y algunos insectos. Se deja ver entre los matorrales, solo o en pareja. Su canto es muy característico: una nota larga y áspera, comparada con el sonido de una bisagra oxidada."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un sonido extraño, arrastrado, como una puerta que chirría, con 2 a 6 frases (WRREEEH wreeeh wreeeh…). Los llamados incluyen una nota seca y arrastrada \"reek\" y raspidos más largos."
   },
   {
    "t": "Nidificación",
@@ -49,6 +53,9 @@
   {
    "t": "Wikipedia: Cortarramas argentino (Phytotoma rutila)",
    "u": "https://es.wikipedia.org/wiki/Phytotoma_rutila"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
  "comun": "Cortarramas"
