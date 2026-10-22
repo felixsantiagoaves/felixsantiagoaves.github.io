@@ -745,3 +745,4 @@ body{padding-bottom:48px;}
 }
 @media(max-width:380px){.nav-links a{font-size:.58rem !important;padding:1rem .3rem !important;letter-spacing:0 !important;}.nav-logo img{height:24px !important;}}
 @media(max-width:340px){.nav-links a{font-size:.52rem !important;padding:1rem .2rem !important;}.nav-logo img{height:20px !important;}}
+@media(max-width:768px){#page-sobre-mi .logo-hero{display:none;}#page-sobre-mi .hero-top{padding-top:1rem;}}
