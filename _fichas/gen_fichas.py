@@ -63,7 +63,7 @@ def otras(e):
     if len(mismo) < 3: mismo += [x for x in ESP[i+1:] + ESP[:i] if x not in mismo][:3 - len(mismo)]
     return mismo
 def tarjeta(x, cls='card'):
-    ins = '<span class="ins" title="Ficha completa, con mis fotos">★ Ficha completa</span>' if x.get('ok') else ''
+    ins = '<span class="ins" title="Ficha completa, con mis fotos">★ Completa</span>' if x.get('ok') else ''
     return (f'<a class="{cls}" href="/aves/{x["slug"]}/">{ins}<img src="{x["thumb"]}" width="{x["w"]}" height="{x["h"]}" loading="lazy" decoding="async" alt="{esc(x["comun"])} ({esc(x["sci"])}), fotografiada por Félix Santiago">'
             f'<span class="n">{esc(x["comun"])}</span><span class="c">{esc(x["sci"])}</span></a>')
 

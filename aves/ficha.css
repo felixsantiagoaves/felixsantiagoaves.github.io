@@ -137,5 +137,5 @@ nav.gnav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px
 @media(max-width:340px){.gnav .nav-links a{padding:1rem .12rem;font-size:.5rem;}.gnav .nav-logo img{height:26px;}}
 @media(max-width:380px){.gnav .nav-logo img{height:22px;}}
 
-.card .ins{position:absolute;top:.5rem;left:.5rem;z-index:1;background:var(--v1);color:#f3ead9;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.22rem .55rem;border-radius:100px;box-shadow:0 1px 4px rgba(0,0,0,.35);}
+.card .ins{position:absolute;top:.4rem;left:.4rem;z-index:1;background:var(--v1);color:#f3ead9;font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.14rem .42rem;border-radius:100px;box-shadow:0 1px 4px rgba(0,0,0,.35);}
 [data-theme=dark] .card .ins{background:#d9c9a8;color:#1e2417;}
