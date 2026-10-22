@@ -34,7 +34,7 @@
   },
   {
    "t": "Dónde vive",
-   "p": "Vive en humedales de agua dulce con vegetación emergente densa: bañados, pantanos, juncales, bordes de lagunas y pastizales inundables. También usa ambientes modificados, como canales de riego o campos inundados, mientras haya cobertura vegetal. Su distribución va desde Perú hasta las islas Malvinas y desde Chile hasta Brasil; en la Argentina, del norte hasta el norte de la Patagonia, con una subespecie propia en Tierra del Fuego."
+   "p": "En la Argentina es ampliamente distribuida, del norte hasta el norte de la Patagonia, con una subespecie propia en Tierra del Fuego; Narosky la ubica en ambientes palustres y dice que a veces se posa sobre arbustos. Vive en humedales de agua dulce con vegetación emergente densa: bañados, pantanos, juncales, bordes de lagunas y pastizales inundables. También usa ambientes modificados, como canales de riego o campos inundados, mientras haya cobertura vegetal. Su distribución total va desde Perú hasta las islas Malvinas y desde Chile hasta Brasil."
   },
   {
    "t": "Comportamiento y alimentación",
@@ -47,6 +47,10 @@
   {
    "t": "Reproducción",
    "p": "Cría sobre todo en primavera y verano. Construye una plataforma de tallos y hojas secos, oculta en la vegetación y cerca del agua. La puesta es de unos 4 a 6 huevos claros con manchas más oscuras. Ambos padres incuban y cuidan a los pollos, que dejan el nido poco después de nacer pero siguen protegidos por los adultos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Narosky y Yzurieta la llaman Gallineta Común; Pearman y Areta, Gallineta Pico Pintado (nombre de la lista de eBird). Hay discusión sobre el género: antes se la ubicaba en Rallus, y hoy se usa Pardirallus."
   },
   {
    "t": "Conservación",
@@ -64,6 +68,9 @@
   },
   {
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
  "comun": "Gallineta Pico Pintado"

@@ -34,7 +34,7 @@
   },
   {
    "t": "Dónde vive",
-   "p": "Habita los Andes, desde Ecuador hasta el centro-oeste de la Argentina y el norte y centro de Chile. En nuestro país va de Jujuy y Salta hasta Chubut, con poblaciones aisladas en las Sierras Centrales de Córdoba y San Luis. Prefiere ambientes serranos: quebradas, roquedales, arbustales, bosques abiertos, cardonales y pastizales de altura, y también se adapta a áreas urbanas y ambientes modificados. Hay registros sueltos en la llanura pampeana cuyo origen todavía no está claro."
+   "p": "En la Argentina va de Jujuy y Salta hasta Chubut, con poblaciones aisladas en las Sierras Centrales de Córdoba y San Luis. Pearman y Areta lo dan en los Andes hasta unos 3600 m, al sur hasta Neuquén, en las Sierras Centrales hasta unos 2200 m y de forma dispersa en el norte de la Patagonia; Narosky agrega que está en expansión hacia el sur. Prefiere ambientes serranos: quebradas, roquedales, arbustales, bosques abiertos, cardonales y pastizales de altura, y también se adapta a áreas urbanas y ambientes modificados. Hay registros sueltos en la llanura pampeana cuyo origen todavía no está claro. En conjunto habita los Andes, desde Ecuador hasta el centro-oeste de la Argentina y el norte y centro de Chile."
   },
   {
    "t": "Comportamiento y alimentación",
@@ -68,6 +68,9 @@
   },
   {
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
  "comun": "Zorzal Chiguanco"

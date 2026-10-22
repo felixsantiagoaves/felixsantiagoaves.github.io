@@ -30,7 +30,7 @@
   },
   {
    "t": "Dónde vive",
-   "p": "Es originario de Eurasia y el norte de África y hoy está presente en áreas urbanas de las zonas templadas de casi todo el mundo. En Estados Unidos, por ejemplo, se soltaron cien ejemplares de Inglaterra en Brooklyn y la medida se repitió en otras ciudades. Vive en ambientes habitados, como calles, parques, jardines, huertas y granjas."
+   "p": "En la Argentina es muy abundante y vive junto al ser humano, en áreas rurales y poblados de todo el país; Pearman y Areta anotan que también ocupa algunos bosques de caldén y, a veces, de espinal. Es una especie introducida: es originaria de Eurasia y el norte de África. Vive en ambientes habitados, como calles, parques, jardines, huertas y granjas."
   },
   {
    "t": "Comportamiento y alimentación",
@@ -47,10 +47,6 @@
   {
    "t": "Una nota sobre el nombre",
    "p": "Wikipedia lo titula gorrión común; también se lo llama pardal y chilero, y en Estados Unidos gorrión inglés."
-  },
-  {
-   "t": "Conservación",
-   "p": "En enero de 2016 SEO/BirdLife lo eligió ave del año para denunciar su descenso poblacional en España."
   }
  ],
  "fuentes": [
@@ -60,6 +56,9 @@
   },
   {
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
  "comun": "Gorrión"
