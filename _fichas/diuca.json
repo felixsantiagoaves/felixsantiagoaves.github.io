@@ -1,0 +1,51 @@
+{
+ "id": 293,
+ "resumen": "Diuca (Diuca diuca): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "16 a 17 cm"
+  ],
+  [
+   "Hábitat",
+   "Zonas abiertas, arbustales, jardines, cultivos, estepas y praderas"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo semillas"
+  ],
+  [
+   "Puesta",
+   "2 a 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide de 16 a 17 cm. Es gris, con una gran mancha blanca en la garganta y el abdomen y zonas color acanela en el bajo vientre. Las alas y la cola son negruzcas, y la cola tiene una mancha blanca en la punta. Las hembras son algo más pequeñas y de un pardo ligeramente más marcado."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativa del Cono Sur de Sudamérica. Cría desde el noroeste de Argentina (con una población en el sur de Bolivia) y el norte de Chile hasta el sur de Argentina y el estrecho de Magallanes. En invierno algunas aves migran al este de Argentina, el oeste de Uruguay y el suroeste de Brasil. Vive en zonas abiertas, arbustales, jardines, cultivos, estepas y praderas, sobre todo por debajo de los 2000 m; en el noroeste argentino llega hasta los 3600 m."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come principalmente semillas; en la época de cría suma artrópodos y, a veces, frutos. Pasa la mayor parte del tiempo picoteando el suelo, aunque también se posa en arbustos y árboles bajos. En invierno forma pequeños grupos familiares. Canta sobre todo por las mañanas, con un canto melodioso, continuo y lento. No es muy territorial, pero durante la cría puede ser muy agresiva si algo se acerca al nido."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Cría desde fines de agosto hasta diciembre. El nido, de pastos y fibras, está en arbustos, árboles pequeños o matorrales, nunca en el suelo. Pone de 2 a 4 huevos azul verdoso pálido con muchas manchas café verdosas u oliváceas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El nombre proviene de la palabra araucana \"diuca\" o \"siuca\". Fue descrita por Juan Ignacio Molina en 1782 y pertenece a la familia Thraupidae."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Diuca diuca",
+   "u": "https://es.wikipedia.org/wiki/Diuca_diuca"
+  }
+ ],
+ "comun": "Diuca"
+}

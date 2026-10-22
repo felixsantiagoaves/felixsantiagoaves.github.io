@@ -1,0 +1,55 @@
+{
+ "id": 105,
+ "resumen": "Estornino Pinto (Sturnus vulgaris): cómo reconocerlo, su llegada a la Argentina, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "19 a 23 cm"
+  ],
+  [
+   "Peso",
+   "58 a 101 g"
+  ],
+  [
+   "Origen",
+   "Europa y Asia templada; introducido en América"
+  ],
+  [
+   "Puesta",
+   "4 o 5 huevos azul claro"
+  ],
+  [
+   "Conservación",
+   "Preocupación menor (UICN); especie invasora"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 19 a 23 cm y pesa de 58 a 101 g. Es negro iridiscente con brillos púrpura o verdes, salpicado de blanco, sobre todo en invierno. Los juveniles son pardo grisáceos. El pico es negro o pardo negruzco en invierno y amarillo en verano."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativo del Paleártico (Europa y Asia templada). En la Argentina se lo observó por primera vez anidando en Buenos Aires en 1987; su área se expande unos 7,5 km por año y ya llega a la región pampeana, Mendoza y San Luis. En La Plata, con más de 30 000 aves, se lo considera plaga. Vive en zonas urbanas y suburbanas, campos agrícolas, praderas, bosques abiertos y costas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es sobre todo insectívoro (arañas, larvas, lombrices, caracoles), pero también come granos, semillas, frutas, néctar y restos de comida. Es muy gregario: forma grandes bandadas y dormideros comunales, y en vuelo las bandadas son masas compactas y cambiantes. Es ruidoso. Su canto es variado y poco musical, con gran capacidad para imitar sonidos del entorno."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en cavidades naturales o artificiales, como árboles, edificios y cajas nido. El nido se hace con paja, hierba y ramitas, con forro de plumas y hojas. Pone 4 o 5 huevos azul claro (a veces blancos), que se incuban 13 días; las crías pasan unas tres semanas en el nido. Hace normalmente una o dos puestas al año."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo clasifica como de Preocupación menor y estimó su población mundial en 310 millones de aves en 2004. Aun así figura en la lista de las 100 especies invasoras más dañinas de la UICN, por sus efectos donde fue introducido."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Estornino pinto (Sturnus vulgaris)",
+   "u": "https://es.wikipedia.org/wiki/Sturnus_vulgaris"
+  }
+ ],
+ "comun": "Estornino Pinto"
+}

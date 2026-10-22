@@ -1,0 +1,51 @@
+{
+ "id": 114,
+ "resumen": "Gallareta Chica (Fulica leucoptera): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 43 cm"
+  ],
+  [
+   "Hábitat",
+   "Lagos y lagunas de agua dulce y salobre"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo granos y plantas; también insectos y moluscos"
+  ],
+  [
+   "Puesta",
+   "4 a 9 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide unos 43 cm. El cuerpo es negro apizarrado, con la cabeza y el cuello más oscuros, y el ápice de las secundarias es blanco (de ahí leucoptera). El pico es amarillo y el escudete frontal, redondeado, amarillo o anaranjado, nunca rojo. El iris es rojo castaño."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en el sudeste de Brasil, la costa de Ecuador, Uruguay, Chile, Paraguay, Bolivia y en toda la Argentina, incluidas las Malvinas. Ocupa lagos y lagunas de agua dulce y salobre, y anida en zonas bajas con vegetación o pajonales."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es una especie abundante que camina mucho y ocupa todo tipo de ambientes acuáticos; vuela más que otras gallaretas sudamericanas. Es granívora, con Paspalum repens como componente principal; en invierno, si escasea el alimento, come también cereales como trigo, avena, maíz y girasol. Complementa la dieta con insectos, larvas y moluscos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida entre la vegetación o en pajonales. Si no hay vegetación suficiente, construye un nido flotante amarrado a la vegetación acuática, a plena vista. Pone de 4 a 9 huevos castaño claro con numerosas pintas oscuras. Los pichones son nidífugos y dejan el nido a las 6 horas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se la conoce como tagua chica, focha de frente amarilla y gallareta escudete amarillo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Fulica leucoptera",
+   "u": "https://es.wikipedia.org/wiki/Fulica_leucoptera"
+  }
+ ],
+ "comun": "Gallareta Chica"
+}

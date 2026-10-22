@@ -1,0 +1,55 @@
+{
+ "id": 37,
+ "resumen": "Cuervillo Cara Pelada (Phimosus infuscatus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "46 a 56 cm"
+  ],
+  [
+   "Peso",
+   "Alrededor de 600 g"
+  ],
+  [
+   "Hábitat",
+   "Pantanos, humedales, prados y campos inundados"
+  ],
+  [
+   "Puesta",
+   "1 a 6 huevos azul verdoso"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 46 a 56 cm y pesa alrededor de 600 g. Es negro o pardo oscuro en casi todo el cuerpo, con tonos verdosos o broncíneos metálicos en el cuello y las alas. Tiene una zona sin plumas, rojiza o rosácea, desde la base del pico hasta detrás de los ojos, que da origen a su nombre; el pico y las patas suelen ser del mismo color. Los juveniles son completamente negros, incluidos pico, patas y cara."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye desde Colombia y Venezuela hasta el norte de Argentina y Uruguay, y por gran parte de Brasil, con Paraguay y el noreste de Bolivia. Vive en pantanos abiertos, sabanas, marismas, humedales, prados, campos inundados y arrozales."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come lombrices, peces pequeños, crustáceos, insectos acuáticos, moluscos, granos y hojas. Escarba en la tierra húmeda y en el agua con el pico curvo y lo cierra al detectar una presa. Suele formar grandes bandadas, con su especie o con otros ibis; se alimenta en grupos pequeños, pero puede juntarse en grupos de varios cientos. Es poco territorial y poco agresivo, salvo que haya competencia por el alimento."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en colonias, a menudo mezcladas con otras aves acuáticas, en árboles y arbustos sobre pantanos y a orillas de ríos. La época se asocia a la temporada de lluvias: octubre a noviembre en buena parte de Sudamérica. El nido es una plataforma pequeña de hierbas acuáticas y ramitas, de unos 35 cm, que suele reutilizar año tras año. Pone de uno a seis huevos azul verdoso, que ambos padres incuban de 21 a 23 días; los pichones salen del nido a las tres semanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia lo llama ibis afeitado; también figura como coquito, ibis de cara roja y cuervo de pantano de cara pelada."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo clasifica como de Preocupación menor, por ser bastante común y tener un área de distribución amplia. Las principales amenazas son el cambio climático y la contaminación, que reducen y degradan los humedales donde vive."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Ibis afeitado (Phimosus infuscatus)",
+   "u": "https://es.wikipedia.org/wiki/Phimosus_infuscatus"
+  }
+ ],
+ "comun": "Cuervillo Cara Pelada"
+}

@@ -1,0 +1,51 @@
+{
+ "id": 106,
+ "resumen": "Flamenco Austral (Phoenicopterus chilensis): cómo reconocerlo, dónde vive y cómo se alimenta, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Altura",
+   "1,10 a 1,30 m"
+  ],
+  [
+   "Hábitat",
+   "Lagunas, salares, estuarios y desembocaduras"
+  ],
+  [
+   "Alimentación",
+   "Filtra invertebrados, camarones y moluscos"
+  ],
+  [
+   "Conservación",
+   "Casi amenazado (UICN, desde 2004)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 1,10 a 1,30 m de altura. El plumaje es rosado claro (salmón), con zonas más oscuras cerca de la cola. El pico es grande, curvado hacia abajo, claro en la base y negro en la punta. Las patas son claras, con la articulación del tarso rosa intenso, y los ojos son amarillos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Anida en Argentina, Bolivia, Chile, Perú y Uruguay (en Argentina, en múltiples colonias). Es migrador no reproductivo en el sur de Brasil y visitante ocasional en Ecuador, Paraguay y las Malvinas. Vive en aguas poco profundas como lagunas, salares, estuarios y desembocaduras de ríos."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Remueve el sedimento con las patas y filtra los organismos en suspensión con las láminas del pico. Come invertebrados, camarones y moluscos. Al girar 360° deja anillos de alimentación en la superficie del sedimento."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama flamenco chileno o flamenco austral (este último en Argentina, Bolivia y Uruguay). En kunza se lo llamaba solor o tokoko."
+  },
+  {
+   "t": "Conservación",
+   "p": "Según Wikipedia, está clasificado como Casi amenazado en la Lista Roja de la UICN desde 2004."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Flamenco chileno (Phoenicopterus chilensis)",
+   "u": "https://es.wikipedia.org/wiki/Phoenicopterus_chilensis"
+  }
+ ],
+ "comun": "Flamenco Austral"
+}

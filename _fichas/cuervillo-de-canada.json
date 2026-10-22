@@ -1,0 +1,59 @@
+{
+ "id": 38,
+ "resumen": "Cuervillo de Cañada (Plegadis chihi): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "46 a 56 cm"
+  ],
+  [
+   "Peso",
+   "450 a 525 g"
+  ],
+  [
+   "Hábitat",
+   "Pantanos, lagunas, pastizales inundados y campos agrícolas"
+  ],
+  [
+   "Alimentación",
+   "Caracoles, insectos, crustáceos y anfibios"
+  ],
+  [
+   "Puesta",
+   "3 a 4 huevos en promedio"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 46 a 56 cm (los sudamericanos suelen ser más chicos que los norteamericanos) y pesa de 450 a 525 g. Es marrón rojizo brillante adelante y en la cara interna de las alas, y se oscurece hacia atrás, hasta la cola; las alas son verdosas y broncíneas, con reflejos metálicos. Una franja de plumas blancas enmarca la piel desnuda rosada de la cara. Los sexos son iguales, aunque los machos son más grandes."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se extiende por América desde el suroeste de Estados Unidos hasta el centro de Argentina y el sur de Chile. La población sudamericana va desde el sur de Brasil y el sureste de Bolivia hasta el norte de Argentina, y no migra; también hay una población aislada en la costa chilena. Vive en pantanos de agua dulce y salada con juncos, y alrededor de estanques, ríos, praderas inundadas y campos agrícolas, siempre que haya aguas poco profundas para alimentarse."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es principalmente carnívoro: come insectos, crustáceos, arañas, caracoles, sanguijuelas y anfibios, y los caracoles y babosas pueden ser entre el 55 y el 90 % de la dieta. Se alimenta sondeando el suelo y el fango con el pico, en aguas de menos de 20 cm, a veces en bandadas de varios cientos. Es social, gregario y nómada: se desplaza cuando la zona de alimentación se seca. Vuela con el cuello y las patas extendidos, en formación en V."
+  },
+  {
+   "t": "Nidificación",
+   "p": "En Sudamérica nidifica en noviembre y diciembre. Ambos sexos construyen el nido, normalmente entre el follaje denso de arbustos o juncos, o en árboles no muy altos sobre el agua. Hace una puesta al año, de 3 a 4 huevos en promedio, que eclosionan tras unos 20 días de incubación. Las crías dejan el nido a las cinco semanas y son independientes a las ocho."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia lo llama morito cariblanco; también figura como ibis de cara blanca y cuervo de pantano."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo clasifica como de Preocupación menor, por su amplia distribución y sus poblaciones estables o en aumento. Entre las amenazas se citan el cambio climático, la contaminación que degrada los hábitats, la caza y los pesticidas agrícolas."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Morito cariblanco (Plegadis chihi)",
+   "u": "https://es.wikipedia.org/wiki/Plegadis_chihi"
+  }
+ ],
+ "comun": "Cuervillo de Cañada"
+}

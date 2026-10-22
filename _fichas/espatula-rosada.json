@@ -1,0 +1,51 @@
+{
+ "id": 39,
+ "resumen": "Espátula Rosada (Platalea ajaja): cómo reconocerla, dónde vive, qué come y cómo cría, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 71 cm"
+  ],
+  [
+   "Pico",
+   "En forma de cuchara"
+  ],
+  [
+   "Hábitat",
+   "Ciénagas, pantanos, manglares y aguas poco profundas"
+  ],
+  [
+   "Puesta",
+   "1 a 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide unos 71 cm. Los adultos son casi totalmente rosados, con la barra del hombro y la rabadilla rojo rosáceo; los inmaduros son blancos con tintes rosados. El color proviene de los carotenoides de los invertebrados que consume. El pico es largo y chato, se ensancha y se redondea en la punta como una cuchara, y junto con la piel desnuda de la cabeza es verde amarillento."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye desde el sur de Estados Unidos hasta Sudamérica. Vive en llanos, manglares, bosques pantanosos, ciénagas, pantanos y charcos en sabanas y áreas abiertas, cerca del nivel del mar."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come crustáceos, insectos y larvas, moluscos, anfibios, peces, plantas acuáticas y semillas. Se alimenta moviendo el pico de un lado a otro en el lodo y en aguas poco profundas. Vive sola o en grupos pequeños, a veces junto a corocoras, garzas y garzones."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Pone de 1 a 4 huevos blancos y manchados, con una incubación de 22 a 24 días. Ambos padres alimentan a los pichones por regurgitación; los jóvenes dejan el nido a las 4 o 5 semanas, pero siguen dependiendo de los padres más allá de las 8 semanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia la nombra como Ajaia ajaja y Platalea ajaja, y también la llama sibiya."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Platalea ajaja",
+   "u": "https://es.wikipedia.org/wiki/Platalea_ajaja"
+  }
+ ],
+ "comun": "Espátula Rosada"
+}

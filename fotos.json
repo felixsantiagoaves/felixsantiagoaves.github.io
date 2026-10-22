@@ -1276,6 +1276,380 @@
      "d": "2026-07-27"
     }
    ]
+  },
+  "38": {
+   "especie": "Plegadis chihi",
+   "fotos": [
+    {
+     "f": "mas/plegadis_chihi/03012026-DSC_0032.jpg",
+     "d": "2026-01-03"
+    },
+    {
+     "f": "mas/plegadis_chihi/08082026-DSC_0387.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/plegadis_chihi/08082026-DSC_0394.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/plegadis_chihi/08082026-DSC_0449.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/plegadis_chihi/17022026-DSC_0086.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/plegadis_chihi/17022026-DSC_0089.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/plegadis_chihi/17022026-DSC_0101.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/plegadis_chihi/17022026-DSC_0102.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/plegadis_chihi/17022026-DSC_0419.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/plegadis_chihi/17022026-DSC_0425.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/plegadis_chihi/24122025-DSC_0272.jpg",
+     "d": "2025-12-24"
+    },
+    {
+     "f": "mas/plegadis_chihi/24122025-DSC_0274.jpg",
+     "d": "2025-12-24"
+    }
+   ]
+  },
+  "37": {
+   "especie": "Phimosus infuscatus",
+   "fotos": [
+    {
+     "f": "mas/phimosus_infuscatus/03042026-DSC_0068.jpg",
+     "d": "2026-04-03"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/03042026-DSC_0073.jpg",
+     "d": "2026-04-03"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/17022026-DSC_0129.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/17022026-DSC_0134.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/17022026-DSC_0195.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/17022026-DSC_0196.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/17022026-DSC_0480.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/phimosus_infuscatus/17022026-DSC_0483.jpg",
+     "d": "2026-02-17"
+    }
+   ]
+  },
+  "191": {
+   "especie": "Phacellodomus striaticollis",
+   "fotos": [
+    {
+     "f": "mas/phacellodomus_striaticollis/03102026-DSC_0139.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/phacellodomus_striaticollis/20062026-DSC_0367.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/phacellodomus_striaticollis/20062026-DSC_0387.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/phacellodomus_striaticollis/20062026-DSC_0397.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/phacellodomus_striaticollis/20062026-DSC_0399.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/phacellodomus_striaticollis/20062026-DSC_0405.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/phacellodomus_striaticollis/27062026-DSC_0385.jpg",
+     "d": "2026-06-27"
+    }
+   ]
+  },
+  "105": {
+   "especie": "Sturnus vulgaris",
+   "fotos": [
+    {
+     "f": "mas/sturnus_vulgaris/06032026-DSC_0620.jpg",
+     "d": "2026-03-06"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/06032026-DSC_0635.jpg",
+     "d": "2026-03-06"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/06032026-DSC_0651.jpg",
+     "d": "2026-03-06"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/06032026-DSC_0654.jpg",
+     "d": "2026-03-06"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/06032026-DSC_0665.jpg",
+     "d": "2026-03-06"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/06032026-DSC_0673.jpg",
+     "d": "2026-03-06"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/31032026-DSC_0280.jpg",
+     "d": "2026-03-31"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/31032026-DSC_0283.jpg",
+     "d": "2026-03-31"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/31032026-DSC_0293.jpg",
+     "d": "2026-03-31"
+    },
+    {
+     "f": "mas/sturnus_vulgaris/31032026-DSC_0310.jpg",
+     "d": "2026-03-31"
+    }
+   ]
+  },
+  "293": {
+   "especie": "Diuca diuca",
+   "fotos": [
+    {
+     "f": "mas/diuca_diuca/08082026-DSC_0238.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/diuca_diuca/09072026-DSC_0404.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/diuca_diuca/09072026-DSC_0423.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/diuca_diuca/09072026-DSC_0430.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/diuca_diuca/27072026-DSC_0686.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/diuca_diuca/27072026-DSC_0691.jpg",
+     "d": "2026-07-27"
+    }
+   ]
+  },
+  "115": {
+   "especie": "Fulica rufifrons",
+   "fotos": [
+    {
+     "f": "mas/fulica_rufifrons/17012026-DSC_0458.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/fulica_rufifrons/17012026-DSC_0461.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/fulica_rufifrons/17012026-DSC_0462.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/fulica_rufifrons/19072026-DSC_0050.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/fulica_rufifrons/19072026-DSC_0053.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/fulica_rufifrons/19072026-DSC_0233.jpg",
+     "d": "2026-07-19"
+    }
+   ]
+  },
+  "39": {
+   "especie": "Platalea ajaja",
+   "fotos": [
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0300.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0318.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0319.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0326.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0327.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0328.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0330.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0332.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/platalea_ajaja/17022026-DSC_0346.jpg",
+     "d": "2026-02-17"
+    }
+   ]
+  },
+  "116": {
+   "especie": "Fulica armillata",
+   "fotos": [
+    {
+     "f": "mas/fulica_armillata/19072026-DSC_0217.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/fulica_armillata/27062026-DSC_0087.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/fulica_armillata/27072026-DSC_0170.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_armillata/27072026-DSC_0223.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_armillata/27072026-DSC_0225.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_armillata/27072026-DSC_0248.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_armillata/27072026-DSC_0249.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_armillata/27072026-DSC_0256.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_armillata/30082026-DSC_0050.jpg",
+     "d": "2026-08-30"
+    }
+   ]
+  },
+  "114": {
+   "especie": "Fulica leucoptera",
+   "fotos": [
+    {
+     "f": "mas/fulica_leucoptera/25122025-DSC_0384.jpg",
+     "d": "2025-12-25"
+    },
+    {
+     "f": "mas/fulica_leucoptera/25122025-DSC_0390.jpg",
+     "d": "2025-12-25"
+    },
+    {
+     "f": "mas/fulica_leucoptera/25122025-DSC_0536.jpg",
+     "d": "2025-12-25"
+    },
+    {
+     "f": "mas/fulica_leucoptera/25122025-DSC_0546.jpg",
+     "d": "2025-12-25"
+    },
+    {
+     "f": "mas/fulica_leucoptera/27062026-DSC_0408.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/fulica_leucoptera/27072026-DSC_0041.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/fulica_leucoptera/27072026-DSC_0122.jpg",
+     "d": "2026-07-27"
+    }
+   ]
+  },
+  "106": {
+   "especie": "Phoenicopterus chilensis",
+   "fotos": [
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0352.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0371.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0378.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0393.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0397.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0412.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/phoenicopterus_chilensis/31052026-DSC_0502.jpg",
+     "d": "2026-05-31"
+    }
+   ]
   }
  },
  "generado": "2026-10-22"

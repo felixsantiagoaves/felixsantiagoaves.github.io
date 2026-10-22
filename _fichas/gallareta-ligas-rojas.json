@@ -1,0 +1,51 @@
+{
+ "id": 116,
+ "resumen": "Gallareta Ligas Rojas (Fulica armillata): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "55 cm"
+  ],
+  [
+   "Hábitat",
+   "Lagos y lagunas"
+  ],
+  [
+   "Alimentación",
+   "Vegetación acuática"
+  ],
+  [
+   "Puesta",
+   "4 a 7 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide unos 55 cm y es más grande que la Gallareta Chica. Tiene la cabeza y el cuello negruzcos y el resto del cuerpo más claro, sobre todo abajo. El pico y el escudete frontal son amarillos, separados por una mancha roja. Las patas son amarillentas oliváceas y llevan unas \"ligas\" rojas en la tibia que no se ven cuando está en el agua; de ahí el nombre."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en Brasil, Paraguay, Uruguay, Argentina y Chile hasta Tierra del Fuego, y también en las islas Malvinas, Georgias del Sur y Sandwich del Sur. Ocupa lagos y lagunas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta de vegetación acuática. Vive en grupos, incluso junto a otras especies como la Gallareta Chica. Nada y bucea bien y, ante una alarma, se refugia en la vegetación. Su nido es parasitado por el Pato Rinconero, que pone allí sus huevos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Nidifica en las orillas de lagunas y lagos, entre la vegetación. Construye un nido grande de juncos y pone de 4 a 7 huevos castaño claro, salpicados de pintas rojizas y negruzcas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se la llama focha de pico rojo, focha de ligas, gallareta grande, tagua y tagua común."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Fulica armillata",
+   "u": "https://es.wikipedia.org/wiki/Fulica_armillata"
+  }
+ ],
+ "comun": "Gallareta Ligas Rojas"
+}

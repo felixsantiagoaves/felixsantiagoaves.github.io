@@ -1,0 +1,43 @@
+{
+ "id": 191,
+ "resumen": "Espinero Pecho Manchado (Phacellodomus striaticollis): dónde vive y cómo reconocer el ambiente donde se lo encuentra, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Distribución",
+   "Noreste de Argentina, sudeste de Brasil, Uruguay y Paraguay"
+  ],
+  [
+   "Hábitat",
+   "Bordes arbustivos de bosques en galería y del monte; enmarañados cerca del agua"
+  ],
+  [
+   "Altitud",
+   "Hasta 700 m"
+  ],
+  [
+   "Conservación",
+   "Preocupación menor (UICN)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Es nativo del sudeste de Sudamérica: noreste de Argentina, sudeste de Brasil, Uruguay y Paraguay. Habita en bordes arbustivos de bosques en galería y del monte, y en enmarañados de terrenos pantanosos abiertos, casi siempre cerca del agua y hasta unos 700 m de altitud. Se lo describe como poco común."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El género Phacellodomus alude al \"amontonado de palitos\" que caracteriza el nido de estas especies. En otras fuentes se lo llama espinero pechirrayado, y en Uruguay tío-tío. Se diferencia de su pariente Phacellodomus maculipectus, sobre todo en el plumaje y en la voz."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera una especie de Preocupación menor."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Espinero pechimoteado (Phacellodomus striaticollis)",
+   "u": "https://es.wikipedia.org/wiki/Phacellodomus_striaticollis"
+  }
+ ],
+ "comun": "Espinero Pecho Manchado"
+}
