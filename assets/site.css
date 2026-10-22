@@ -859,3 +859,34 @@ body{padding-bottom:48px;}
 @media(max-width:640px) and (max-height:760px){.m-left{margin-top:0;}.modal-bd{padding-top:.6rem;}}
 @media(max-width:640px) and (max-height:700px){.modal-prev img{max-height:clamp(100px,24vh,200px);}}
 @media(max-width:640px) and (max-height:700px){.modal-prev:has(#m-img[style*="none"]){height:clamp(70px,13vh,100px);}}
+
+/* ===== Ficha del álbum en pantallas grandes: aprovechar el espacio ===== */
+@media(min-width:769px){
+  .modal-ov{padding:1.5rem 5rem;}
+  .modal{max-width:min(1320px,100%);}
+  .modal-hd{padding:1.3rem 2rem;}
+  .modal-hd h3{font-size:1.6rem;}
+  .modal-hd p{font-size:.85rem;}
+  .modal-bd{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:2rem;padding:1.8rem 2rem 2rem;}
+  .modal-prev{aspect-ratio:auto;min-height:0;background:none;display:flex;justify-content:center;align-items:flex-start;}
+  .modal-prev img{position:static;inset:auto;width:100%;height:auto;max-height:calc(100vh - 15rem);object-fit:contain;}
+  .modal-prev:has(#m-img[style*="none"]){aspect-ratio:4/3;}
+  .ficha-section{padding:1.1rem 1.3rem;}
+  .ficha-label{font-size:.76rem;}
+  .ficha-val,.ficha-cientifico{font-size:1rem;}
+  .ficha-col .ficha-val{line-height:1.6;}
+  .avist-info{font-size:1rem;line-height:1.8;}
+  .pill-link{font-size:.78rem;padding:.6rem 1.3rem;}
+  .m-pagina p{font-size:.9rem;}
+}
+@media(min-width:769px) and (max-height:820px){
+  .modal-ov{padding:.8rem 4rem;}
+  .modal-hd{padding:.7rem 1.5rem;}
+  .modal-hd h3{font-size:1.3rem;}
+  .modal-bd{padding:1rem 1.5rem 1.2rem;gap:1.5rem;}
+  .modal-prev img{max-height:calc(100vh - 10.5rem);}
+  .ficha-section{padding:.8rem 1rem;margin-bottom:.6rem;}
+  .ficha-val,.ficha-cientifico,.avist-info{font-size:.9rem;}
+  .avist-info{line-height:1.6;}
+  .modal-right-col{gap:.6rem;}
+}
