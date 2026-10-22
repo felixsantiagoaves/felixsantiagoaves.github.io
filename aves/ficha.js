@@ -49,19 +49,31 @@
     var lugares=Object.keys(por).map(function(k){return por[k];});
     if(!lugares.length){ el.style.display='none'; if(nota) nota.style.display='none'; return; }
     var css=document.createElement('link'); css.rel='stylesheet'; css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'; document.head.appendChild(css);
-    var sc=document.createElement('script'); sc.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    sc.onload=function(){
-      var m=L.map(el,{scrollWheelZoom:false}), pts=[];
+    var css2=document.createElement('link'); css2.rel='stylesheet'; css2.href='https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css'; document.head.appendChild(css2);
+    function cargar(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+    cargar('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',function(){ cargar('https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js',function(){
+      var m=L.map(el,{scrollWheelZoom:false}), pts=[], total=0;
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(m);
       function f(d){ var p=d.split('-'); return p[2]+'/'+p[1]+'/'+p[0]; }
+      lugares.forEach(function(p){ total+=p.c; });
+      var max=Math.max.apply(null,lugares.map(function(p){return p.c;}).concat([total>1?total:1]));
+      function tam(n,base){ return Math.round(Math.max(base,base-8+22*Math.sqrt(n/max))); }
+      var grupo=L.markerClusterGroup({maxClusterRadius:46,showCoverageOnHover:false,spiderfyOnMaxZoom:true,disableClusteringAtZoom:14,
+        iconCreateFunction:function(c){
+          var h=c.getAllChildMarkers(), n=0, i; for(i=0;i<h.length;i++) n+=h[i].options.cnt;
+          var sz=tam(n,34);
+          return L.divIcon({className:'mk-wrap',html:'<div class="mk mk-g" style="width:'+sz+'px;height:'+sz+'px" title="'+n+(n===1?' encuentro':' encuentros')+' en '+h.length+(h.length===1?' lugar':' lugares')+'">'+n+'</div>',iconSize:[sz,sz]});
+        }});
       lugares.forEach(function(p){
-        var c=coords[p.n], ll=[c.lat,c.lon]; pts.push(ll);
-        L.circleMarker(ll,{radius:7+Math.min(10,Math.sqrt(p.c)*3),color:'#414833',weight:2,fillColor:'#a68a64',fillOpacity:.85}).addTo(m)
-         .bindPopup('<b>'+p.n.replace(/</g,'&lt;')+'</b><br>'+p.c+(p.c===1?' encuentro':' encuentros')+' · último: '+f(p.u));
+        var c=coords[p.n], ll=[c.lat,c.lon], sz=tam(p.c,26); pts.push(ll);
+        var ic=L.divIcon({className:'mk-wrap',html:'<div class="mk" style="width:'+sz+'px;height:'+sz+'px">'+p.c+'</div>',iconSize:[sz,sz],iconAnchor:[sz/2,sz/2],popupAnchor:[0,-sz/2]});
+        var mk=L.marker(ll,{icon:ic,title:p.n,riseOnHover:true,cnt:p.c});
+        mk.bindPopup('<b>'+p.n.replace(/</g,'&lt;')+'</b><br>'+p.c+(p.c===1?' encuentro':' encuentros')+' · último: '+f(p.u),{className:'mk-pop'});
+        grupo.addLayer(mk);
       });
+      m.addLayer(grupo);
       if(pts.length===1) m.setView(pts[0],11); else m.fitBounds(pts,{padding:[30,30],maxZoom:12});
-      if(nota) nota.textContent=lugares.length+(lugares.length===1?' lugar':' lugares')+'. El tamaño del círculo indica cuántas veces la vi en cada uno.';
-    };
-    document.head.appendChild(sc);
+      if(nota) nota.textContent=lugares.length+(lugares.length===1?' lugar':' lugares')+'. Cada círculo suma cuántas veces la vi; al acercar el mapa se separan por lugar.';
+    }); });
   }).catch(function(){ el.style.display='none'; });
 })();
