@@ -1,0 +1,65 @@
+{
+ "comun": "Pato Cutirí",
+ "resumen": "Pato Cutirí (Amazonetta brasiliensis): cómo reconocerlo por su pico y patas rojos y su silbido, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "35 a 44 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas y piedemonte del norte"
+  ],
+  [
+   "Hábitat",
+   "Esteros, sabanas inundadas y lagunas"
+  ],
+  [
+   "Alimentación",
+   "Granos, frutas, raíces, insectos y artrópodos"
+  ],
+  [
+   "Puesta",
+   "6 a 20 huevos, en pastizales"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es pardo, de corona, cuello dorsal, rabadilla, alas y cola de un negro brillante, con la cara y los costados del cuello claros. Tiene un espejo azul y una zona triangular blanca en el ápice de las remeras internas, visible en vuelo. El pico y las patas son rojos. En la hembra el pico es plomizo, y tiene manchas blancas junto al ojo, entre el pico y el ojo, y en la garganta. Mide unos 35 cm según Narosky y 44 cm según Pearman."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en esteros, sabanas inundadas y lagunas del norte del país, en tierras bajas y piedemonte."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es confiado. Suele volar en parejas, a baja altura, y la hembra suele volar delante del macho. Su dieta es mayormente vegetal, con granos, frutas y raíces, y la complementa con insectos y artrópodos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Silba, algo como pi..uí."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Pone entre 6 y 20 huevos, que la hembra incuba durante unos 25 a 28 días. Anida en pastizales y los nidos están bien ocultos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo registra también como pato cutirí chico y pato cutirí grande, según las subespecies."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Amazonetta brasiliensis",
+   "u": "https://es.wikipedia.org/wiki/Amazonetta_brasiliensis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 239
+}

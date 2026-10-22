@@ -1,0 +1,57 @@
+{
+ "comun": "Paloma Manchada",
+ "resumen": "Paloma Manchada (Patagioenas maculosa): cómo reconocerla por las pecas blancas de las alas y cómo se diferencia de la picazuró, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "32 a 35 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Amplia, en gran parte del país"
+  ],
+  [
+   "Hábitat",
+   "Bosques, estepas arbustivas, áreas rurales y poblados"
+  ],
+  [
+   "Iris",
+   "Gris o blanquecino"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es gris con el dorso y las cubiertas de las alas pardos, y estas últimas están llenas de pecas blancas, que es lo que la distingue. Tiene el iris claro (gris o blanquecino) y el cuello sin los filetes de la picazuró. En vuelo se la distingue de la picazuró por las cubiertas muy manchadas. Mide unos 32 a 35 cm según la guía."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Está muy extendida. La guía de Narosky la cita en bosques, estepas arbustivas, áreas rurales y poblados, y dice que está en expansión."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "A veces anda con la picazuró, a la que se parece mucho en vuelo, sobre todo la raza del noroeste. Es algo más confiada y más plomiza que ella."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Tiene una voz parecida a la de la picazuró, pero más ronca y potente: un arrullo grave y gutural, como wrraaóh… wroh-wro wrooh…, repetido."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se llama «manchada» por las pecas blancas de las alas. En el extremo norte de Jujuy y Salta, por encima de los 2800 m, vive la raza albipennis, que tiene blancas las cubiertas mayores del ala."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Patagioenas maculosa",
+   "u": "https://es.wikipedia.org/wiki/Patagioenas_maculosa"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 224
+}

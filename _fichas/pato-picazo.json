@@ -1,0 +1,53 @@
+{
+ "comun": "Pato Picazo",
+ "resumen": "Pato Picazo (Netta peposaca): cómo reconocerlo por su pico rosado con carúncula roja y el negro con brillo, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "43 a 56 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Residente en la Pampa; en invierno llega al norte"
+  ],
+  [
+   "Hábitat",
+   "Humedales"
+  ],
+  [
+   "Alimentación",
+   "Se alimenta en la superficie, sin sumergirse"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es robusto y anda en bandadas. El macho es negro con brillo, con el pico rosado y una carúncula roja en la base y el iris rojizo. Los flancos son cenicientos y tiene una banda alar, el subcaudal y la parte inferior del ala blancos, bien visibles en vuelo. La hembra es parda, con el dorso más oscuro, el periocular y la garganta blancuzcos y el pico plomizo. Mide unos 43 cm según Narosky y 56 cm según Pearman."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en humedales. Según la guía de Pearman es residente en la Pampa, esporádico en la Patagonia, y pasa el invierno en las tierras bajas del norte."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Aunque se lo agrupa con los patos buceadores o porrones, se alimenta en la superficie y no se sumerge. Es un volador fuerte y a veces forma bandadas en V."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El nombre científico, Netta peposaca, combina la palabra griega nêssa (pato) con una transcripción latinizada del nombre guaraní de la especie, «ype pepo sakâ». En la Argentina, Bolivia, Perú y Uruguay se lo llama pato picazo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Netta peposaca",
+   "u": "https://es.wikipedia.org/wiki/Netta_peposaca"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 244
+}

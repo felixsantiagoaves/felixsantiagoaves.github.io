@@ -1,0 +1,61 @@
+{
+ "comun": "Pato Overo",
+ "resumen": "Pato Overo (Mareca sibilatrix): cómo reconocerlo por la frente blanca y su silbido, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "37 a 48 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Amplia en tierras bajas; el de la población austral migra al norte en invierno"
+  ],
+  [
+   "Hábitat",
+   "Humedales"
+  ],
+  [
+   "Alimentación",
+   "Vegetación acuática y semillas"
+  ],
+  [
+   "Puesta",
+   "5 a 8 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Tiene una amplia frente y mejillas blancas, y el resto de la cabeza y el cuello negros con brillo verde. El dorso es negro, marginado de blanco, y el pecho es barrado. Los flancos son color canela y el vientre es blanco. En vuelo se ven una gran mancha alar y la rabadilla blancas, muy notables. La hembra y el juvenil son más pálidos. Mide unos 37 cm según Narosky y 48 cm según Pearman."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en humedales de las tierras bajas. La población austral migra hacia el norte en invierno."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Tiene un vuelo errático y suele andar en grupos. Se alimenta de vegetación acuática y semillas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Tiene un silbo largo y trinado; la guía de Pearman lo describe como un weee-poorr nasal."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Elige sitios secos, algo alejados de la orilla, y esconde el nido entre matas de pasto o cardos, forrado con plumillas. Pone de cinco a ocho huevos. La hembra incuba durante 26 días y después el padre acompaña a la familia y la defiende junto con la madre."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Mareca sibilatrix",
+   "u": "https://es.wikipedia.org/wiki/Mareca_sibilatrix"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 243
+}

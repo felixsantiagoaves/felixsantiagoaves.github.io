@@ -1,0 +1,61 @@
+{
+ "comun": "Pato Maicero",
+ "resumen": "Pato Maicero (Anas georgica): cómo reconocerlo por su pico amarillo con el culmen negro y su cola aguda, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "39 a 49 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Amplia, en gran parte del país"
+  ],
+  [
+   "Hábitat",
+   "Humedales, cercanías y áreas rurales"
+  ],
+  [
+   "Alimentación",
+   "Invertebrados, algas y granos"
+  ],
+  [
+   "Puesta",
+   "3 a 12 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es gregario y de cuello largo y delgado. La cola es aguda. Es pardo ocráceo, con la corona acanelada y el dorso, el pecho y los flancos manchados. La garganta, el cuello y el resto ventral son casi blancuzcos. El pico es amarillo con el culmen negro. En vuelo muestra un espejo negro entre fajas ocres. Mide unos 39 cm según Narosky y 49 cm según Pearman. La hembra tiene la cola menos aguda."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Está muy extendido por el país y vive en humedales, sus cercanías y áreas rurales."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Vuela rápido y con agilidad. Come pequeños invertebrados terrestres, algas y granos, y también aprovecha cultivos como arroz, trigo, cebada y soja."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es una pequeña depresión en el suelo junto a la orilla, forrada con plumas finas, y hay hierba cerca para cubrir los huevos cuando la hembra se ausenta. Pone entre 3 y 12 huevos. La incubación la hace la hembra, durante unos 26 días, y después el macho se queda con la familia."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Según Wikipedia, el nombre «maicero» viene de que también come granos."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Anas georgica",
+   "u": "https://es.wikipedia.org/wiki/Anas_georgica"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 242
+}

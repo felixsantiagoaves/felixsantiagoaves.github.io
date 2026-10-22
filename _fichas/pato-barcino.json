@@ -1,0 +1,61 @@
+{
+ "comun": "Pato Barcino",
+ "resumen": "Pato Barcino (Anas flavirostris): cómo reconocer a este pato pequeño de pico amarillo y cómo anida, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "33 a 41 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Amplia, en humedales de gran parte del país"
+  ],
+  [
+   "Hábitat",
+   "Humedales"
+  ],
+  [
+   "Alimentación",
+   "Vegetales y pequeños invertebrados"
+  ],
+  [
+   "Puesta",
+   "5 a 8 huevos, en árboles"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un pato compacto, de cabeza redondeada y cola corta y algo puntiaguda. El pico es corto y amarillo, con el culmen negro. La cabeza es oscura y el cuello también, y el pecho está manchado de negro. El vientre es blancuzco y los flancos son lisos. En vuelo muestra un espejo negro entre fajas ocres y blancuzcas, y la parte de abajo de las alas es blanca. Mide unos 33 a 41 cm según la guía."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en humedales y está muy extendido por el país. La guía de Pearman agrega que llega localmente hasta los 2000 m en el noroeste."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Vuela bajo. Se alimenta de vegetales y pequeños invertebrados."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en árboles. Pone entre cinco y ocho huevos y la incubación dura veinticuatro días."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Narosky distingue una raza del noroeste, más grande (37 cm, contra 33 cm). También se lo llama pato paramuno, pato jergón chico o cerceta barcina."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Anas flavirostris",
+   "u": "https://es.wikipedia.org/wiki/Anas_flavirostris"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 233
+}

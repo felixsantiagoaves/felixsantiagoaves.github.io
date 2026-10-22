@@ -1,0 +1,61 @@
+{
+ "comun": "Pato Colorado",
+ "resumen": "Pato Colorado (Spatula cyanoptera): cómo reconocerlo por su color canela y su iris rojizo, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "36 a 47 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Amplia en tierras bajas"
+  ],
+  [
+   "Hábitat",
+   "Humedales"
+  ],
+  [
+   "Alimentación",
+   "Semillas, plantas, insectos y moluscos acuáticos"
+  ],
+  [
+   "Puesta",
+   "9 a 10 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Se parece al pato cuchara, incluso en el diseño del ala, pero es más chico, tiene el pico menor y es mucho más rufo. La cabeza y las partes inferiores son de un castaño canela brillante, con el subcaudal negro, y el iris es rojo (o amarillo a rojizo). Mide unos 36 cm según Narosky y entre 42 y 47 cm según Pearman."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita en humedales y está extendido en las tierras bajas. La guía de Pearman agrega que una raza más grande (orinomus) vive en el altiplano."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es omnívoro: come semillas, plantas, insectos y moluscos acuáticos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida cerca del agua, en zonas de vegetación baja. Pone nueve o diez huevos y la incubación dura unos veinticuatro días."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se lo llama cerceta canela, cerceta castaña, pato canelo o pato acanelado. Antes se lo clasificaba como Anas cyanoptera. Es una especie americana."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Spatula cyanoptera",
+   "u": "https://es.wikipedia.org/wiki/Spatula_cyanoptera"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 236
+}

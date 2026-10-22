@@ -1,0 +1,53 @@
+{
+ "comun": "Pato de Collar",
+ "resumen": "Pato de Collar (Callonetta leucophrys): cómo reconocerlo por su cabeza blanquecina con la coronilla negra y cómo anida en huecos de árboles, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "28 a 36 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas del norte"
+  ],
+  [
+   "Hábitat",
+   "Esteros, sabanas inundadas y lagunas"
+  ],
+  [
+   "Puesta",
+   "6 a 12 huevos blancos, en huecos de árboles"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es chico y llamativo. La cabeza y el cuello son blancuzcos, con una faja negra en la coronilla y el cuello dorsal. Las escapulares son rufas y el pecho es rosáceo con pecas negras. En las alas tiene una mancha circular blanca, notable en vuelo. Los flancos tienen un fino barrado. La hembra es más parda, con la ceja y manchas en la cabeza y el cuello blancas. Mide unos 28 cm según Narosky y 36 cm según Pearman."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en esteros, sabanas inundadas y lagunas de las tierras bajas del norte."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se posa en árboles. La dieta no está detallada en las fuentes que usé."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en huecos de árboles y, con poca frecuencia, en nidos de cotorra. Pone de seis a doce huevos blancos, que solo la hembra incuba durante 26 a 28 días."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Callonetta leucophrys",
+   "u": "https://es.wikipedia.org/wiki/Callonetta_leucophrys"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 246
+}
