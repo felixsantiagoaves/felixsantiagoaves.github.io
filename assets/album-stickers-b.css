@@ -86,3 +86,18 @@
 [data-theme=dark] #page-album.stickers{background:#161a11;}
 [data-theme=dark] .stickers .fig{background:#e9dfcf;}
 [data-theme=dark] .stickers .fig-co{color:#2d3322;}
+
+/* Ajustes: figuritas verticales y fondo igual al resto del sitio */
+#page-album.stickers{background:var(--cr);}
+[data-theme=dark] #page-album.stickers{background:#161a11;}
+.alb-pag{background:#f6efdf;}
+.stickers .album-grid.stk{grid-template-columns:repeat(auto-fill,minmax(138px,1fr));}
+.stickers .fig-img{height:auto;aspect-ratio:3/4;}
+.stickers .fig-silueta{height:100%;}
+.stickers .fig-foto{object-position:50% 40%;}
+@media(max-width:768px){
+  .stickers .album-grid.stk{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .8rem;}
+  .stickers .fig-img,.stickers .fig-silueta{height:auto;}
+  .stickers .fig-silueta{height:100%;}
+}
+.stickers .fig.no .fig-silueta img,.stickers .fig.no .sil-i{opacity:.65;}
