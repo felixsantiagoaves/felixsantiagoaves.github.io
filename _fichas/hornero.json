@@ -1,0 +1,69 @@
+{
+ "comun": "Hornero",
+ "resumen": "Hornero (Furnarius rufus): cómo reconocerlo, su nido de barro en forma de horno, su canto a dúo y por qué es el ave nacional, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "18 a 22 cm"
+  ],
+  [
+   "Distribución",
+   "Casi todo el país, desde ambientes naturales hasta ciudades"
+  ],
+  [
+   "Hábitat",
+   "Ambientes diversos y poblados; camina por el suelo"
+  ],
+  [
+   "Alimentación",
+   "Insectos y otros invertebrados que busca caminando"
+  ],
+  [
+   "Puesta",
+   "3 o 4 huevos blancos, en un nido de barro"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un pájaro terrícola y también arborícola, de dorso pardo o castaño, garganta blancuzca y el resto de abajo gris ocráceo o acanelado. La cola es rufa y contrasta con el dorso, y tiene una banda alar canela poco notable. Se lo reconoce enseguida por su andar elegante y pausado, como si desfilara. Macho y hembra son iguales. Los ejemplares del norte (de la raza paraguayae) son más chicos y con la nuca más rojiza que los del centro y el sur del área."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es muy común en el país y vive en ambientes muy diversos, incluidos los poblados: patios, plazas, calles y campos. Es sedentario y muy territorial; cada pareja defiende todo el año un territorio de entre un cuarto de hectárea y una hectárea. Se beneficia de la presencia humana."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Busca el alimento caminando por el suelo, entre hojas secas y vegetación baja. Come sobre todo insectos (grillos, cucarachas, escarabajos, hormigas, chinches), y también lombrices, caracoles y arañas; ocasionalmente semillas, frutos o pan. Le cuesta poco acercarse a la gente, y sus parejas suelen permanecer juntas durante años."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Canta a dúo, con voces distintas: el macho arranca con una serie de notas que se aceleran y se aflojan, y la hembra contesta con notas más definidas. Los individuos solos a veces cantan una versión corta. Entre sus llamados hay un \"krip\" metálico, que también sirve de alarma, y series de notas \"kee\"."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Construye un nido de barro, con forma de pequeño horno, bien visible, en sitios muy diversos. Lo hace con barro mezclado con fibras vegetales, crines y estiércol, y lo tapiza por dentro con pasto y plumas. La construcción empieza varios meses antes de la puesta, sobre todo entre abril y junio, y puede llevar desde unos días hasta cerca de un mes. La hembra pone de tres a cuatro huevos blancos, y ambos padres los incuban durante unos 16 o 17 días; los pichones pasan unos 25 días en el nido. Se reproduce en primavera y verano. Como el nido queda vacío después, otras aves lo aprovechan: por ejemplo, el jilguero dorado."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Furnarius viene del latín furnus, \"horno\", por la forma del nido; rufus alude al color rojizo del plumaje. Es el ave nacional de la Argentina desde 1928 y figuró en una moneda de 1985 y en el billete de mil pesos."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN la considera de Preocupación menor: es abundante y sus poblaciones aumentan."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Furnarius rufus",
+   "u": "https://es.wikipedia.org/wiki/Furnarius_rufus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 193
+}

@@ -1,0 +1,73 @@
+{
+ "comun": "Jilguero Dorado",
+ "resumen": "Jilguero Dorado (Sicalis flaveola): cómo distinguir al macho amarillo de la hembra pardusca, dónde anida y por qué se lo conoce como ave de jaula, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12 a 12,5 cm"
+  ],
+  [
+   "Distribución",
+   "Andes y tierras bajas, hasta el norte del Chubut"
+  ],
+  [
+   "Hábitat",
+   "Bosques, áreas rurales y poblados"
+  ],
+  [
+   "Alimentación",
+   "Semillas y brotes de pastos; algunos insectos"
+  ],
+  [
+   "Puesta",
+   "Huevos blancos, en huecos y nidos ajenos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un pinzón chico, y macho y hembra son muy distintos. El macho es amarillo oro, con el dorso oliva estriado de negro, y tiene la frente algo naranja, que es lo que lo identifica; las alas y la cola son negras con bordes amarillos. La hembra y el juvenil no tienen amarillo: el dorso es gris pardusco estriado de negro y la parte de abajo blancuzca, con el pecho y los flancos estriados. Tiene un panel alar oliva y los bordes de la cola también olivas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye por los Andes y las tierras bajas hasta el norte del Chubut, y se lo ve más bien en parejas. Frecuenta bosques, áreas rurales y poblados, y es bastante arborícola, aunque busca comida en el suelo."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come sobre todo semillas y brotes de gramíneas, y en menor medida insectos, que busca en el suelo. A veces se junta en grupos con uno o dos machos y varias hembras. Si se siente amenazado (por un gato o una rapaz) eriza las plumas, se estira y da llamados de alarma."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una serie variable de notas silbadas, trinos y gorjeos rápidos y agudos; cuando está inspirado puede ser más largo, penetrante y parlero. Entre los llamados hay un tzí agudo y notas suaves, tipo uip o swip."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en cavidades: huecos en árboles y bambúes, espacios bajo los techos de las casas y nidos abandonados de hornero. La hembra construye sola el nido y el macho la acompaña cantando. Los huevos son pequeños, blancos y de cáscara fina pero resistente, y los padres alimentan a los pichones de pico a pico."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama también chirigüe azafranado, y recibe muchos nombres regionales. Sicalis viene del griego y nombraba a un pajarito de cabeza negra sin identificar; flaveola viene del latín y significa amarillo o dorado. Es muy buscado como ave de jaula por su canto y su aspecto, y por eso fue introducido en varios países, como Hawái, Panamá, Puerto Rico y Jamaica."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Sicalis flaveola",
+   "u": "https://es.wikipedia.org/wiki/Sicalis_flaveola"
+  },
+  {
+   "t": "Wikipedia (en): Saffron finch",
+   "u": "https://en.wikipedia.org/wiki/Saffron_finch"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 296
+}

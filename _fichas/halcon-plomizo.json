@@ -1,0 +1,69 @@
+{
+ "comun": "Halcón Plomizo",
+ "resumen": "Halcón Plomizo (Falco femoralis): cómo reconocerlo por su vincha clara y su chaleco oscuro, cómo caza y de dónde viene su nombre, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "36 a 41 cm"
+  ],
+  [
+   "Distribución",
+   "Muy extendido por el país"
+  ],
+  [
+   "Hábitat",
+   "Áreas rurales, pastizales y sabanas"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo aves pequeñas e insectos grandes"
+  ],
+  [
+   "Puesta",
+   "2 o 3 huevos, en un nido de palitos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un halcón esbelto, de alas finas y cola larga y negra con barras blancas. El adulto tiene el dorso plomizo, una vincha ocrácea blancuzca que une las cejas por la nuca, un bigote y una faja auricular negros, y la garganta y las mejillas blancuzcas. El pecho es blancuzco con poco estriado y lleva un chaleco negruzco, mientras que el vientre y las piernas son canelas. Las alas plegadas llegan a la mitad de la cola. En vuelo se ven las cubiertas negras de las alas, con pecas blancas. El juvenil tiene el dorso pardo con bordes ocráceos y el pecho más estriado."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se lo encuentra por buena parte del país, sobre todo en áreas rurales, pastizales abiertos y sabanas. A escala continental ha desaparecido de muchas zonas, por ejemplo en el norte y el centro de México."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Caza en vuelo, con picadas rápidas. Come sobre todo aves pequeñas, también insectos y otros animales chicos; sus presas suelen pesar entre un quinto y la mitad de su propio peso. A veces planea al atardecer cazando insectos, y se ha visto cazando en campos que se queman, donde muchas aves huyen. En Brasil se lo observó siguiendo al aguará guazú y capturando las aves que este espanta. Las parejas pueden cazar en cooperación."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Hace una plataforma de palitos en un arbusto o árbol, a cualquier altura, y pone dos o tres huevos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Plomizo y aplomado hacen referencia al color plomo del plumaje, el gris azulado de la espalda y las alas. También se lo llama halcón aplomado, perdiguero, fajado o aleto. Antes se lo conocía en inglés como orange-breasted hobby porque su forma se parece a la de los alcotanes."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor a nivel global, aunque ha desaparecido de muchas partes de su distribución."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Falco femoralis",
+   "u": "https://es.wikipedia.org/wiki/Falco_femoralis"
+  },
+  {
+   "t": "Wikipedia (en): Aplomado falcon",
+   "u": "https://en.wikipedia.org/wiki/Aplomado_falcon"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 168
+}
