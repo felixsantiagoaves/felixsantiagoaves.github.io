@@ -1,0 +1,63 @@
+{
+ "id": 163,
+ "resumen": "Carancho (Caracara plancus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "55 a 60 cm"
+  ],
+  [
+   "Distribución",
+   "Centro y sur de Sudamérica, hasta Tierra del Fuego"
+  ],
+  [
+   "Hábitat",
+   "Campo abierto, bordes de monte y ciudades"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo carroña; también presas vivas y huevos"
+  ],
+  [
+   "Puesta",
+   "Típicamente 2 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es una rapaz de 55 a 60 cm. Tiene la parte superior de la cabeza negruzca y el resto de la cabeza y el cuello blanco grisáceo; el dorso y el pecho muestran líneas anchas pardas y blanco grisáceo. La cara es desnuda. En vuelo se ve una mancha clara en las alas y una cola blanquecina que termina en una banda negra."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye por el centro y sur de Sudamérica. Es muy adaptable: vive en bordes de bosque y en campo abierto, y también en grandes ciudades como Buenos Aires. Le sirven los campos ganaderos con pastoreo."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es oportunista y come sobre todo carroña, por ejemplo animales atropellados en las rutas. También caza insectos, pequeños mamíferos y aves, roba huevos de los nidos y consume frutos. Baja al suelo con frecuencia y camina más que otras rapaces. En vuelo alterna aleteos con planeos circulares. Su voz es áspera y fuerte, algo así como \"krak krak krak\". En zonas rurales suele ser perseguido porque ataca pollos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Construye un nido grande y de aspecto muy desordenado, con ramas, pasto y pelos, en árboles o arbustos. La puesta típica es de dos huevos (dato de Wikipedia en inglés, que lo marca como pendiente de cita). Se reproduce en primavera y verano en el sur de su área."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "La mayoría de sus nombres son onomatopéyicos. Félix de Azara registró \"carancho\" en el Río de la Plata, \"gaviao\" entre los portugueses de Brasil y \"caracará\" entre los guaraníes. También se la llama traro, y la palabra mapuche traru aparece en nombres como Lautaro."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN la considera de Preocupación menor; podría incluso beneficiarse de la deforestación."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Caracara plancus",
+   "u": "https://es.wikipedia.org/wiki/Caracara_plancus"
+  },
+  {
+   "t": "Wikipedia (en): Crested caracara",
+   "u": "https://en.wikipedia.org/wiki/Crested_caracara"
+  }
+ ],
+ "comun": "Carancho"
+}

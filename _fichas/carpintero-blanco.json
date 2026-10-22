@@ -1,0 +1,59 @@
+{
+ "id": 73,
+ "resumen": "Carpintero Blanco (Melanerpes candidus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "24 a 28 cm"
+  ],
+  [
+   "Hábitat",
+   "Pastizales, sabanas y parques"
+  ],
+  [
+   "Alimentación",
+   "Frutos, semillas, insectos y miel"
+  ],
+  [
+   "Nido",
+   "Cavidad en troncos"
+  ],
+  [
+   "Puesta",
+   "3 a 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide entre 24 y 28 cm. Es blanco por abajo y negro por arriba (espalda, alas y cola), con manchas amarillas alrededor del ojo, en la nuca y en el vientre. La hembra se distingue del macho porque no tiene la mancha amarilla de la nuca."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es endémico de Sudamérica: vive en Surinam, Brasil, Bolivia, Perú, Paraguay, Uruguay y Argentina. Prefiere pastizales, sobre todo con palmares, y aparece también en parques, plantaciones y suburbios."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se desplaza en grupos y suele volar a gran altura en áreas abiertas. Come frutos, semillas, insectos y miel, caza insectos en el aire y abre panales de avispas o abejas para comer las larvas, lo que ayuda a los productores de cítricos. Forrajea en grupos familiares ruidosos y hace desplazamientos cortos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Excava cavidades en troncos, y también se lo vio usar huecos naturales en rocas. Pone de tres a cuatro huevos y los pichones dejan el nido a los 35 días aproximadamente. Cría entre septiembre y noviembre y puede hacerlo de forma comunitaria, aunque se sabe poco de su reproducción."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor; su población parece estar en aumento y tiene un área de distribución muy grande."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Melanerpes candidus",
+   "u": "https://es.wikipedia.org/wiki/Melanerpes_candidus"
+  },
+  {
+   "t": "Wikipedia (en): White woodpecker",
+   "u": "https://en.wikipedia.org/wiki/White_woodpecker"
+  }
+ ],
+ "comun": "Carpintero Blanco"
+}

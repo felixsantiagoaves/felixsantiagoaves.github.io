@@ -1,0 +1,59 @@
+{
+ "id": 75,
+ "resumen": "Carpintero Lomo Blanco (Campephilus leucopogon): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Alrededor de 28 cm"
+  ],
+  [
+   "Hábitat",
+   "Bosques y sabanas de tipo chaqueño, yungas"
+  ],
+  [
+   "Alimentación",
+   "Larvas y escarabajos"
+  ],
+  [
+   "Voz",
+   "Un fuerte \"ptsiú\""
+  ],
+  [
+   "Nido",
+   "Cavidad que excava en árboles o palmeras"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide unos 28 cm. Tiene el vientre negro, las tapadas canela y un triángulo color crema en el dorso, que le da el nombre. El macho tiene la cabeza, el copete y el cuello rojos, salvo una pequeña mancha blanca y negra en la oreja. La hembra tiene el frente del copete negro, una banda crema que va del pico al oído bordeada de negro y el cuello negro. El iris es amarillo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en Brasil, Paraguay, Bolivia, Uruguay y Argentina, en bosques y sabanas de tipo chaqueño y en yungas, con pastizales con grupos de árboles y palmares. Es residente todo el año."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come principalmente larvas y escarabajos, que busca en árboles altos, a menudo aislados, y en troncos caídos. Suele dejarlos al descubierto a martillazos. Forrajea solo, salvo en la época de cría. Como otros Campephilus, golpea los árboles con fuerza y en un ritmo de dos golpes. Su voz es un fuerte \"ptsiú\"."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Excava su propio nido en un árbol o palmera; los pocos nidos conocidos estaban a 6 a 8 m de altura. La cría empieza en septiembre, sobre todo en octubre y noviembre, y ambos padres alimentan a los pichones. Los huevos son blancos y brillantes; el tamaño de la puesta no está bien documentado."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor: tiene un área grande y su población es estable, sin amenazas inmediatas identificadas."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Campephilus leucopogon",
+   "u": "https://es.wikipedia.org/wiki/Campephilus_leucopogon"
+  },
+  {
+   "t": "Wikipedia (en): Cream-backed woodpecker",
+   "u": "https://en.wikipedia.org/wiki/Cream-backed_woodpecker"
+  }
+ ],
+ "comun": "Carpintero Lomo Blanco"
+}

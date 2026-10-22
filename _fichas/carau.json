@@ -1,0 +1,63 @@
+{
+ "id": 67,
+ "resumen": "Carau (Aramus guarauna): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 66 cm"
+  ],
+  [
+   "Envergadura",
+   "Unos 100 cm"
+  ],
+  [
+   "Hábitat",
+   "Humedales y bañados con árboles"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo caracoles"
+  ],
+  [
+   "Familia",
+   "Aramidae, con una sola especie"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide unos 66 cm, con una envergadura de unos 100 cm. El cuerpo es de tono bronceado, con la cabeza y el cuello grisáceos. Tiene patas largas y un pico largo, algo curvado y amarillento. Las alas son largas y anchas, con las primarias bien separadas en vuelo, y la cola es corta."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en humedales y bañados con árboles, desde Florida, el Caribe y México hasta el norte de Argentina, y se registró también en Chile. La subespecie sudamericana es Aramus guarauna guarauna."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta de pequeña fauna acuática, principalmente caracoles; en otras fuentes se detalla que son sobre todo caracoles del género Pomacea. Busca en aguas poco profundas y sobre vegetación flotante. Es una voz inconfundible: un lamento fuerte, algo como \"krau-krau-krau\", más frecuente al amanecer, al atardecer y de noche. Camina con un andar levemente ondulante, que da la impresión de que rengueara."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Oculta el nido en vegetación densa de los bañados. La puesta es de unos seis huevos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama carau, carao, carrao o guariao, y en guaraní karãu. Una leyenda ligada al mundo guaraní cuenta de Karãu, un joven que descuidó a su madre moribunda por ir a bailar; como castigo, Tupã lo convirtió en un ave negra condenada a llorar a orillas de los arroyos. Es la única especie de la familia Aramidae, emparentada con las grullas."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Aramus guarauna",
+   "u": "https://es.wikipedia.org/wiki/Aramus_guarauna"
+  },
+  {
+   "t": "Wikipedia (en): Limpkin",
+   "u": "https://en.wikipedia.org/wiki/Limpkin"
+  }
+ ],
+ "comun": "Carau"
+}

@@ -1,0 +1,63 @@
+{
+ "id": 74,
+ "resumen": "Carpintero Campestre (Colaptes campestris / campestroides): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 32 cm"
+  ],
+  [
+   "Hábitat",
+   "Campo abierto, bosques abiertos y parques"
+  ],
+  [
+   "Alimentación",
+   "Principalmente en el suelo"
+  ],
+  [
+   "Nido",
+   "Cavidad que perfora él mismo"
+  ],
+  [
+   "Huevos",
+   "Blancos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un carpintero grande, de unos 32 cm. El dorso y las alas son pardos con listas blancas, y el pecho es amarillo. Mira bien la garganta y la mancha malar: en Colaptes campestroides, la forma del centro-este de Argentina, la corona es negra, la garganta es blanca y baja desde el cuello una banda amarillo vivo hasta el pecho; el macho tiene la mancha malar roja y la hembra negruzca."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es común en bosques abiertos, parques urbanos y zonas rurales. Se ha beneficiado de la deforestación: el pasto corto del ganado le facilita caminar, y las forestaciones de sombra y ornamentales le dan refugio y sitios para anidar."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "A diferencia de la mayoría de los carpinteros, se alimenta sobre todo en el suelo y mucho menos sobre troncos. Usa los árboles para descansar, pasar la noche y refugiarse del peligro."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Perfora su propio nido, generalmente en árboles; si faltan o son chicos, anida en barrancas. Los huevos son blancos y los pichones nacen desnudos y ciegos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo conoce como carpintero campestre, carpintero de campo o carpintero de las pampas. Durante décadas se lo trató como subespecie de Colaptes campestris, pero en 2014 se reconoció nuevamente a Colaptes campestroides como especie propia. La diferencia que se usa para separarlas es la garganta: blanca en campestroides y negra en campestris. Colaptes campestris, en sentido estricto, vive más al norte (Brasil, Bolivia, Paraguay y nordeste argentino), y campestroides ocupa el nordeste y centro-este de Argentina."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN clasifica a Colaptes campestroides como de Preocupación menor."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Colaptes campestroides",
+   "u": "https://es.wikipedia.org/wiki/Colaptes_campestroides"
+  },
+  {
+   "t": "Wikipedia: Colaptes campestris",
+   "u": "https://es.wikipedia.org/wiki/Colaptes_campestris"
+  }
+ ],
+ "comun": "Carpintero Campestre"
+}
