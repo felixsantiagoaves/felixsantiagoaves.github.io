@@ -77,3 +77,7 @@
     }); });
   }).catch(function(){ el.style.display='none'; });
 })();
+
+/* Protección básica de las fotos: sin menú contextual ni arrastre sobre imágenes */
+document.addEventListener('contextmenu',function(e){ if(e.target.closest && e.target.closest('img,.lb,.galeria,.hero-fig,.card')) e.preventDefault(); });
+document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG') e.preventDefault(); });

@@ -129,9 +129,9 @@ for E in ESP:
     hero_html = ''
     if hero:
         cap = f'{corta(hero["d"])}{(" · " + esc(hero["lug"])) if hero["lug"] else ""}' if hero['d'] else ''
-        hero_html = (f'<figure class="hero-fig"><img src="{hero["src"]}" width="{hero["w"]}" height="{hero["h"]}" alt="{esc(alt)}" fetchpriority="high" id="hero-img"'
+        hero_html = (f'<figure class="hero-fig"><div class="cr-w"><img src="{hero["src"]}" width="{hero["w"]}" height="{hero["h"]}" alt="{esc(alt)}" fetchpriority="high" id="hero-img"'
                      + (f' data-full="{hero["src"]}" data-alt="{esc(alt)}" data-cap="{esc(comun)}"' if not fotos else '')
-                     + f'>{f"<figcaption>{cap}</figcaption>" if cap else ""}</figure>')
+                     + f'></div>{f"<figcaption>{cap}</figcaption>" if cap else ""}</figure>')
     title = f'{comun} ({sci}) · Félix Santiago Aves'
     imgs_ld = [{'@type': 'ImageObject', '@id': f'{url}#foto-{i+1}', 'contentUrl': p['abs'], 'name': f'{comun} ({sci})', 'caption': alt, 'creator': {'@id': BASE + '#felix'},
                 'copyrightHolder': {'@id': BASE + '#felix'}, 'copyrightNotice': '© Félix Santiago Allendes. Uso solo con permiso previo y por escrito.', 'license': BASE + 'contacto/', 'acquireLicensePage': BASE + 'contacto/'}

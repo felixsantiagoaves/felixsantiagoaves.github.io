@@ -1166,10 +1166,10 @@ function renderGaleria() {
   } else {
     grid.innerHTML = lista.map(f => `
       <div class="foto-item" data-src="${f.src}" onclick="openLBsrc(this)">
-        <img src="${f.src}" style="width:100%;display:block" alt="${escHtml(f.nombre).replace(/"/g, '&quot;')}" loading="lazy" onload="this.classList.add('ok');this.parentNode.classList.add('ok')" onerror="galeriaFalla(this)">
+        <div class="foto-img cr-w"><img src="${f.src}" style="width:100%;display:block" alt="${escHtml(f.nombre).replace(/"/g, '&quot;')}" loading="lazy" onload="this.classList.add('ok');this.closest('.foto-item').classList.add('ok')" onerror="galeriaFalla(this)"></div>
         <div class="foto-caption">${f.aveId ? `<a class="foto-ficha" onclick="event.stopPropagation();verFichaFoto('${f.src}')">Ficha →</a>` : ''}<strong>${escHtml(f.nombre)}</strong><span>${escHtml(f.lugar)}</span></div>
       </div>`).join('');
-    grid.querySelectorAll('img').forEach(i => { if(i.complete && i.naturalWidth) { i.classList.add('ok'); i.parentNode.classList.add('ok'); } });
+    grid.querySelectorAll('img').forEach(i => { if(i.complete && i.naturalWidth) { i.classList.add('ok'); i.closest('.foto-item').classList.add('ok'); } });
   }
 }
 function verFichaFoto(src) {
@@ -1240,3 +1240,7 @@ const domListo = new Promise(r => document.readyState === 'loading' ? document.a
 Promise.all([cargarDatos(), domListo]).then(() => { init(); });
 document.addEventListener("DOMContentLoaded", buildFooter);
 document.addEventListener("DOMContentLoaded", iniMail);
+
+// Protección básica de las fotos: sin menú contextual ni arrastre sobre imágenes
+document.addEventListener('contextmenu', e => { if(e.target.closest && e.target.closest('img,.foto-item,.modal-prev,.lightbox,.fig')) e.preventDefault(); });
+document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
