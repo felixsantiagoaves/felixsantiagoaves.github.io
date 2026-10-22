@@ -43,7 +43,8 @@ def nav(activo):
         elif pid == 'album': lab = 'Álbum<span class="nav-badge" id="nav-album-badge"></span>'
         else: lab = nombre
         idattr = ' id="nav-album"' if pid == 'album' else ''
-        li.append(f'      <li><a href="{url}"{idattr}{cls}>{lab}</a></li>')
+        lic = ' class="nav-stats"' if pid == 'datos' else ''
+        li.append(f'      <li{lic}><a href="{url}"{idattr}{cls}>{lab}</a></li>')
     return ('<nav>\n  <div class="nav-i">\n    <div class="nav-logo"><a href="/"><img src="/logo-nav.png" alt="Felix Santiago Aves" style="height:38px;display:block;"></a></div>\n'
             '    <ul class="nav-links">\n' + '\n'.join(li) + '\n    </ul>\n  </div>\n</nav>')
 

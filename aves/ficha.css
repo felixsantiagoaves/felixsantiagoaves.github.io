@@ -139,3 +139,12 @@ nav.gnav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px
 
 .card .ins{position:absolute;top:.4rem;left:.4rem;z-index:1;background:var(--v1);color:#f3ead9;font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.14rem .42rem;border-radius:100px;box-shadow:0 1px 4px rgba(0,0,0,.35);}
 [data-theme=dark] .card .ins{background:#d9c9a8;color:#1e2417;}
+
+@media(max-width:600px){
+  .gnav .nav-links .nav-stats{display:none;}
+  .gnav .nav-links a{font-size:.64rem;padding:1rem .4rem;letter-spacing:.3px;}
+  .gnav .nav-logo img{height:30px;}
+  .datos div{grid-template-columns:5.6rem 1fr;gap:.45rem;padding:.3rem 0;font-size:.84rem;}
+  .datos dt{font-size:.6rem;letter-spacing:.8px;}
+}
+@media(max-width:380px){.gnav .nav-links a{font-size:.58rem;padding:1rem .3rem;letter-spacing:0;}.gnav .nav-logo img{height:24px;}}

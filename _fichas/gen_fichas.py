@@ -178,7 +178,7 @@ for E in ESP:
     <li><a class="active" href="/aves/">Especies</a></li>
     <li><a href="/mapa/">Mapa</a></li>
     <li><a href="/galeria/">Galería</a></li>
-    <li><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li class="nav-stats"><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
     <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
@@ -264,7 +264,7 @@ ipage = f'''<!DOCTYPE html>
     <li><a class="active" href="/aves/">Especies</a></li>
     <li><a href="/mapa/">Mapa</a></li>
     <li><a href="/galeria/">Galería</a></li>
-    <li><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li class="nav-stats"><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
     <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
