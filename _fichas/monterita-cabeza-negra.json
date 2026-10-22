@@ -1,0 +1,49 @@
+{
+ "id": 299,
+ "comun": "Monterita Cabeza Negra",
+ "resumen": "Monterita Cabeza Negra (Microspingus melanoleucus): cómo reconocerla por su gorra negra y su canto, y por qué cambió de género, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12 a 13 cm"
+  ],
+  [
+   "Distribución",
+   "Norte y centro del país, salvo Misiones"
+  ],
+  [
+   "Hábitat",
+   "Bosques, sabanas y cercanías de selvas"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es una monterita chica, confiada y recorredora, gris y blanca, con la cabeza negra, el dorso plomizo, el vientre blanco y el iris rojo. La cola tiene grandes manchas blancas. El juvenil es más pardo, con una máscara negruzca en lugar de la gorra, y por abajo teñido de ante, sobre todo en los flancos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en las tierras bajas y el piedemonte del norte, y en el centro del país, salvo en Misiones: en bosques bajos, matorrales, sabanas y cercanías de selvas. Es común."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Canta al amanecer un gorjeo musical, fino y repetitivo, de tres o cuatro notas (como tew-chewí-tiú). Entre los llamados hay un enredo rápido y chirriante que da en dúo, de hasta unos 7 segundos, y un SPIT metálico seco. Se la reconoce también por su tsp repetido y sonoro."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se la llama monterita cabeza negra o cabecinegra. Antes figuraba en el género Poospiza (Poospiza melanoleuca, como en la guía de Narosky); estudios genéticos llevaron a Burns y colaboradores (2016) a rescatar el género Microspingus, y así se la clasifica ahora. Microspingus combina las raíces griegas de \"pequeño\" y \"pinzón\", y melanoleucus, las de \"negro\" y \"blanco\"."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Microspingus melanoleucus",
+   "u": "https://es.wikipedia.org/wiki/Microspingus_melanoleucus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

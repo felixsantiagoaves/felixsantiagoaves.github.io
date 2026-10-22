@@ -1,0 +1,49 @@
+{
+ "id": 360,
+ "comun": "Monjita Coronada",
+ "resumen": "Monjita Coronada (Neoxolmis coronatus): cómo reconocerla por su gorra negra con vincha blanca, y su migración, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "20 a 21,5 cm"
+  ],
+  [
+   "Distribución",
+   "Cría en el centro del país; migra al norte"
+  ],
+  [
+   "Hábitat",
+   "Bosques y estepas arbustivas, con matorrales secos y árboles bajos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Narosky la describe como parecida a un benteveo blanco y negro. Tiene la corona negra, con una vincha blanca que rodea la frente, y una faja negra que sale del ojo hacia atrás, separada de la corona por el blanco. El dorso es gris pardusco, con barras grisáceas anchas en las cubiertas y filetes blancos; las remeras y la cola son negras. En vuelo se ven las alas negruzcas con una ancha banda blanca y un borde de fuga angosto."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Cría en el centro de la Argentina, en el desierto del Monte, en bosques y estepas arbustivas, áreas abiertas y semiabiertas con matorrales secos y árboles bajos, sobre todo por debajo de los 1500 m. Es poco común. En invierno migra hacia el norte, hasta Bolivia, Paraguay, Uruguay y el sudoeste de Brasil."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un silbido de dos notas, rico, suave y de largo alcance, que baja y sube (chuwo-weeee). El llamado es un corto y explosivo PWÉ; Narosky lo transcribe como un fiu corto."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se la llama viudita coronada o viudita boina negra (en Uruguay). Vieillot la describió en 1823 como Tyrannus coronatus; hoy se coloca en el género Neoxolmis, que combina el griego neos (\"nuevo\") con Xolmis, el género donde antes se la incluía, en lugar de Xolmis coronatus, que es como aparece en guías anteriores."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Neoxolmis coronatus",
+   "u": "https://es.wikipedia.org/wiki/Neoxolmis_coronatus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

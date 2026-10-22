@@ -2514,8 +2514,328 @@
    "especie": "Xolmis irupero",
    "fotos": [
     {
+     "f": "mas/xolmis_irupero/02052026-DSC_0075.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/xolmis_irupero/02052026-DSC_0082.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/xolmis_irupero/02052026-DSC_0088.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/xolmis_irupero/02052026-DSC_0329.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0152.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0164.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0169.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0181.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0184.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0191.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/09052026-DSC_0193.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/xolmis_irupero/23052026-DSC_0490.jpg",
+     "d": "2026-05-23"
+    },
+    {
      "f": "mas/xolmis_irupero/23052026-DSC_0492.jpg",
      "d": "2026-05-23"
+    },
+    {
+     "f": "mas/xolmis_irupero/27072026-DSC_0528.jpg",
+     "d": "2026-07-27"
+    },
+    {
+     "f": "mas/xolmis_irupero/27072026-DSC_0530.jpg",
+     "d": "2026-07-27"
+    }
+   ]
+  },
+  "360": {
+   "especie": "Neoxolmis coronatus",
+   "fotos": [
+    {
+     "f": "mas/neoxolmis_coronatus/02052026-DSC_0068.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/neoxolmis_coronatus/02052026-DSC_0097.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/neoxolmis_coronatus/09072026-DSC_0065.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/neoxolmis_coronatus/09072026-DSC_0080.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/neoxolmis_coronatus/09072026-DSC_0081.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/neoxolmis_coronatus/09072026-DSC_0100.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/neoxolmis_coronatus/09072026-DSC_0101.jpg",
+     "d": "2026-07-09"
+    }
+   ]
+  },
+  "298": {
+   "especie": "Sicalis luteola",
+   "fotos": [
+    {
+     "f": "mas/sicalis_luteola/02052026-DSC_0119.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/sicalis_luteola/02052026-DSC_0125.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/sicalis_luteola/02052026-DSC_0130.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/sicalis_luteola/02052026-DSC_0137.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/sicalis_luteola/09052026-DSC_0062.jpg",
+     "d": "2026-05-09"
+    },
+    {
+     "f": "mas/sicalis_luteola/09072026-DSC_0307.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/sicalis_luteola/20062026-DSC_0246.jpg",
+     "d": "2026-06-20"
+    }
+   ]
+  },
+  "303": {
+   "especie": "Rauenia bonariensis",
+   "fotos": [
+    {
+     "f": "mas/rauenia_bonariensis/03102026-DSC_0134.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/16082026-DSC_0336.jpg",
+     "d": "2026-08-16"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/17082026-DSC_0515.jpg",
+     "d": "2026-08-17"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/23052026-DSC_0191.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/23052026-DSC_0215.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/23052026-DSC_0229.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/23052026-DSC_0415.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/rauenia_bonariensis/23052026-DSC_0434.jpg",
+     "d": "2026-05-23"
+    }
+   ]
+  },
+  "216": {
+   "especie": "Podilymbus podiceps",
+   "fotos": [
+    {
+     "f": "mas/podilymbus_podiceps/10062026-DSC_0351.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/podilymbus_podiceps/10062026-DSC_0352.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/podilymbus_podiceps/10062026-DSC_0418.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/podilymbus_podiceps/10062026-DSC_0423.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/podilymbus_podiceps/10062026-DSC_0428.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/podilymbus_podiceps/12062026-DSC_0220.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/podilymbus_podiceps/30082026-DSC_0189.jpg",
+     "d": "2026-08-30"
+    }
+   ]
+  },
+  "299": {
+   "especie": "Microspingus melanoleucus",
+   "fotos": [
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0075.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0076.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0093.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0094.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0098.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0100.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0139.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0140.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/microspingus_melanoleucus/11062026-DSC_0268.jpg",
+     "d": "2026-06-11"
+    }
+   ]
+  },
+  "219": {
+   "especie": "Megaceryle torquata",
+   "fotos": [
+    {
+     "f": "mas/megaceryle_torquata/12062026-DSC_0245.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/megaceryle_torquata/12062026-DSC_0249.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/megaceryle_torquata/17012026-DSC_0511.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/megaceryle_torquata/17012026-DSC_0515.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/megaceryle_torquata/17012026-DSC_0517.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/megaceryle_torquata/17012026-DSC_0519.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/megaceryle_torquata/17012026-DSC_0521.jpg",
+     "d": "2026-01-17"
+    }
+   ]
+  },
+  "217": {
+   "especie": "Podiceps occipitalis",
+   "fotos": [
+    {
+     "f": "mas/podiceps_occipitalis/27062026-DSC_0340.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/podiceps_occipitalis/27062026-DSC_0346.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/podiceps_occipitalis/27062026-DSC_0352.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/podiceps_occipitalis/27062026-DSC_0358.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/podiceps_occipitalis/27062026-DSC_0361.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/podiceps_occipitalis/27062026-DSC_0375.jpg",
+     "d": "2026-06-27"
+    }
+   ]
+  },
+  "218": {
+   "especie": "Chloroceryle americana",
+   "fotos": [
+    {
+     "f": "mas/chloroceryle_americana/30082026-DSC_0232.jpg",
+     "d": "2026-08-30"
+    },
+    {
+     "f": "mas/chloroceryle_americana/30082026-DSC_0235.jpg",
+     "d": "2026-08-30"
+    },
+    {
+     "f": "mas/chloroceryle_americana/31052026-DSC_0638.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/chloroceryle_americana/31052026-DSC_0641.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/chloroceryle_americana/31052026-DSC_0642.jpg",
+     "d": "2026-05-31"
     }
    ]
   }

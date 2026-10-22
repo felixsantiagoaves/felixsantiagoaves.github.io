@@ -1,0 +1,61 @@
+{
+ "id": 218,
+ "comun": "Martín Pescador Chico",
+ "resumen": "Martín Pescador Chico (Chloroceryle americana): cómo distinguirlo del martín pescador mediano y cómo anida en las barrancas, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "17 a 21 cm"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas y piedemonte del norte"
+  ],
+  [
+   "Hábitat",
+   "Humedales, arroyos y ríos"
+  ],
+  [
+   "Alimentación",
+   "Insectos acuáticos"
+  ],
+  [
+   "Puesta",
+   "3 huevos, a veces 4, en un túnel en la barranca"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un martín pescador chico y con copete, de dorso verde, con motas blancas en todas las cubiertas alares y la cola barrada. Es una miniatura del martín pescador mediano, pero con motas en todas las cubiertas y flancos manchados. El macho tiene la garganta y el vientre blancos, con un collar pectoral rufo contrastante; la hembra tiene la garganta acanelada, un collar pectoral verde y un semicollar ventral también verde."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es un habitante de humedales, arroyos y ríos de las tierras bajas y el piedemonte del norte del país."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se posa en una rama baja y sombreada cerca del agua y desde ahí se lanza a pescar. Según una descripción de la especie, come sobre todo insectos acuáticos."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Cría en arroyos o ríos: excava en la barranca un túnel horizontal de alrededor de un metro. La hembra pone tres huevos, a veces cuatro."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "En la Argentina es martín pescador chico; en otras regiones se lo conoce como martín pescador verde (Green Kingfisher en inglés)."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Chloroceryle americana",
+   "u": "https://es.wikipedia.org/wiki/Chloroceryle_americana"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

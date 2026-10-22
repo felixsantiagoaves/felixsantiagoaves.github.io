@@ -1,0 +1,65 @@
+{
+ "id": 303,
+ "comun": "Naranjero",
+ "resumen": "Naranjero (Rauenia bonariensis): cómo reconocer al macho y a la hembra, qué frutos come y cómo hace el nido, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "17 cm"
+  ],
+  [
+   "Distribución",
+   "Noreste del país, al sur hasta el noreste de Buenos Aires; y una forma en el noroeste"
+  ],
+  [
+   "Hábitat",
+   "Bosques, sabanas, áreas rurales y poblados"
+  ],
+  [
+   "Alimentación",
+   "Frutos, semillas e insectos"
+  ],
+  [
+   "Puesta",
+   "3 huevos pintados, en un nido en forma de taza"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un tangará robusto, arborícola y de coloración llamativa. El macho tiene un capuchón celeste violáceo, el lorum y el dorso negros, las alas y la cola con filetes celestes, y la rabadilla y el pecho naranjas, con el vientre amarillo. La hembra es más discreta: dorso oliváceo y ventral ocráceo, con el pico de dos colores. El juvenil tiene plumajes intermedios. La forma del noroeste (schulzei) es más pálida y cremosa por abajo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se lo ve en bosques, sabanas, áreas rurales y poblados, entre el estrato medio y la copa de los árboles, sobre todo en bosques claros. Está en el noreste, al sur hasta el noreste de Buenos Aires, y una forma parecida vive en el noroeste (hasta 3450 m), al sur hasta el norte de la Patagonia."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Va solo, en pareja o en grupos y se desplaza con rapidez, buscando alimento entre las ramas y el follaje, en general entre 3 y 9 m de altura. Come frutos y semillas (traga enteros los de tala, y tritura los de ligustro, naranjillo y mora), y también insectos que caza en vuelo."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Canta una serie lenta, larga y repetitiva de notas ricas, generalmente en pares (ziu-sweet, ziu-sweet), que recuerda a la de una monterita; en el sur del área es más fuerte y enfática. Los llamados son notas nasales sueltas, de dos sílabas."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Se reproduce de octubre a febrero. Hace un nido en forma de taza con fibras vegetales entrelazadas, a dos o tres metros del suelo, en unos 12 o 13 días. La puesta es de tres huevos pálidos con pintas y rayas pardas y grises; la incubación dura unos 14 días y los pichones se quedan otros 14 en el nido."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Tiene el nombre científico Rauenia bonariensis en la guía de Pearman y en el listado actual; Narosky lo llama Thraupis bonariensis. El epíteto alude a Bonaria, el nombre en latín moderno de Buenos Aires. En otros países es la tangara azul y amarilla."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Rauenia bonariensis",
+   "u": "https://es.wikipedia.org/wiki/Rauenia_bonariensis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}
