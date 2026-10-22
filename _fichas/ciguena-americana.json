@@ -1,0 +1,59 @@
+{
+ "id": 93,
+ "resumen": "Cigüeña Americana (Ciconia maguari): cómo reconocerla, dónde vive y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Hasta 130 cm (unos 85 cm de altura)"
+  ],
+  [
+   "Hábitat",
+   "Lagunas y marjales"
+  ],
+  [
+   "Nido",
+   "Plataforma de juncos al borde del agua"
+  ],
+  [
+   "Puesta",
+   "Hasta 3 huevos blancos"
+  ],
+  [
+   "Hábitos",
+   "Gregaria"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide hasta 130 cm del pico a la punta de la cola y unos 85 cm de altura de pie. Los adultos son blancos, con la cabeza, el cuello y el pecho con reflejos grises. Las primarias, las secundarias y las supracaudales son negras y tornasoladas, y la cola es negra. La cara desnuda es roja, el pico es verde azulado atrás y rojo violáceo adelante, y las patas son rojas. En la época de celo los colores de las partes desnudas se intensifican. Los juveniles son oscuros, con cola blanquecina y pico y patas negros, y se aclaran al crecer."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se encuentra en Sudamérica: Argentina, Bolivia, Brasil, Colombia, Guyana, Guayana francesa, Paraguay, Surinam, Uruguay y Venezuela. Es visitante no reproductivo en Perú y vagante en Chile, Trinidad y las Islas Malvinas. Vive en regiones de lagunas o marjales."
+  },
+  {
+   "t": "Comportamiento",
+   "p": "Es gregaria y forma bandadas generalmente poco numerosas, aunque en épocas de sequía pueden reunir cientos de individuos. Vuela a gran altura y aprovecha las corrientes térmicas para describir círculos. Los padres alimentan a los pichones con pececillos y otras presas pequeñas."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Construye una plataforma de 1,20 a 1,30 m de diámetro externo con tallos de ciperáceas y otros juncos, al borde del agua o en zonas semianegadas, como esteros y bañados. Pone hasta tres huevos blancos, en días alternos. Los pichones nacen poco desarrollados y permanecen en el nido durante algunas semanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Además de cigüeña americana se la llama tuyango, tabuyayá, pillo o gabán peonío."
+  },
+  {
+   "t": "Conservación",
+   "p": "Su población se estima entre 50 y 100 mil ejemplares. La única amenaza identificada es la destrucción de humedales, aunque no parece estar en riesgo inmediato."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Cigüeña maguari (Ciconia maguari)",
+   "u": "https://es.wikipedia.org/wiki/Ciconia_maguari"
+  }
+ ],
+ "comun": "Cigüeña Americana"
+}

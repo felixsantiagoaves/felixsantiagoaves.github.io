@@ -1,0 +1,51 @@
+{
+ "id": 290,
+ "resumen": "Corbatita (Sporophila caerulescens): cómo reconocerla, dónde vive y su migración, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "11 cm"
+  ],
+  [
+   "Alimentación",
+   "Semillas"
+  ],
+  [
+   "Hábitat",
+   "Terrenos semiabiertos, arbustales y cultivos"
+  ],
+  [
+   "Migración",
+   "Las poblaciones del sur migran al norte en invierno"
+  ],
+  [
+   "Canto",
+   "Corto y repetitivo"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide unos 11 cm. El macho tiene el pico amarillo verdoso y es gris por arriba, a veces con tinte pardusco, sobre todo en el primer año, y algunos tienen una mancha blanca en el ala. La garganta alta es negra, con una banda malar blanca y la garganta baja blanca, y una banda negra en el pecho forma un \"doble collar\". La hembra y los jóvenes son color arena, con el pico oscuro por arriba y amarillento por abajo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Cría desde el norte de Bolivia y el centro y este de Brasil hasta Paraguay, Uruguay y gran parte de Argentina, hasta el norte de la Patagonia (Neuquén y Río Negro). Vive en terrenos semiabiertos, áreas arbustivas y cultivadas, principalmente por debajo de los 1500 m, y es generalmente común. En el invierno austral, las poblaciones del sur migran hacia el norte, y algunas llegan a la cuenca amazónica. Se registró como vagante en el centro de Chile y en las Islas Malvinas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta de semillas. El canto del macho es corto y repetitivo, muy fácil de reconocer."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se la llama corbatita o corbatita común en Argentina, Paraguay y Bolivia; gargantillo común en Uruguay; y corbatita de doble collar en Chile. Sporophila viene del griego (\"semilla\" y \"amante\") y caerulescens del latín (\"de color azul oscuro\")."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Semillero corbatita (Sporophila caerulescens)",
+   "u": "https://es.wikipedia.org/wiki/Sporophila_caerulescens"
+  }
+ ],
+ "comun": "Corbatita"
+}

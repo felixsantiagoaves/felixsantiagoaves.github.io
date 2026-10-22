@@ -1,0 +1,59 @@
+{
+ "id": 209,
+ "resumen": "Cotorra (Myiopsitta monachus): cómo reconocerla, dónde vive, qué come y sus nidos comunales, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "28 a 31 cm"
+  ],
+  [
+   "Peso",
+   "120 a 140 g"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo semillas"
+  ],
+  [
+   "Nido",
+   "Comunal, de ramas espinosas"
+  ],
+  [
+   "Puesta",
+   "5 a 8 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide de 28 a 31 cm y pesa entre 120 y 140 g. El dorso y la cola, larga y puntiaguda, son verde brillante. La frente, las mejillas, la garganta, el pecho y el vientre son gris claro. Las alas son verdeazuladas y se ven al volar. El pico es ocre y las patas grisáceas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativa del centro y sur de Sudamérica: Bolivia, Brasil, Argentina, Paraguay y Uruguay. En Argentina, originalmente llegaba hasta el sur de Córdoba, y hoy hay colonias en el sur de Buenos Aires. Anida en árboles y también en estructuras artificiales como torres de comunicación y tendidos eléctricos. Se estableció como especie introducida en Chile, Estados Unidos, México, España, Francia, Italia, Portugal, Reino Unido y otros países."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es muy gregaria y socialmente compleja, y vuela en bandadas ruidosas y rápidas, con aleteo constante. Come sobre todo semillas, tanto silvestres (como el cardo) como cultivadas (sorgo, maíz, arroz), y también frutos, flores e insectos. Tiene una gran variedad de chillidos y graznidos, y puede imitar palabras."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Es la única especie de loro que construye sus propios nidos. Son comunales, de ramas espinosas entretejidas, y pueden alojar varias parejas. Ponen de 5 a 8 huevos, con una incubación de unos 26 días."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se la llama cotorra argentina, perico monje, cata o catita."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN la clasifica como de Preocupación menor. En España, en cambio, figura en el Catálogo de Especies Exóticas Invasoras."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Cotorra argentina (Myiopsitta monachus)",
+   "u": "https://es.wikipedia.org/wiki/Myiopsitta_monachus"
+  }
+ ],
+ "comun": "Cotorra"
+}

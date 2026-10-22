@@ -1,0 +1,55 @@
+{
+ "id": 96,
+ "resumen": "Cortarramas (Phytotoma rutila): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "18 a 19,5 cm"
+  ],
+  [
+   "Peso",
+   "30 a 57 g"
+  ],
+  [
+   "Hábitat",
+   "Formaciones arbóreas o arbustivas semiáridas a áridas"
+  ],
+  [
+   "Alimentación",
+   "Frutos, hojas y flores"
+  ],
+  [
+   "Puesta",
+   "3 huevos, rara vez 4"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 18 a 19,5 cm y pesa entre 30 y 57 g. Tiene el pico negruzco o grisáceo, las patas pardo grisáceas y el iris amarillo anaranjado. El macho tiene la frente y la parte de abajo castañas, la corona, la nuca y el dorso gris pardusco con tenues estrías, las alas pardas con bandas blancas y la cola parda con la punta blanca en las plumas externas. La hembra tiene el dorso grisáceo con estrías pardas oscuras y la parte de abajo canela clara, también con estrías."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en el centro-sur de Sudamérica: desde el oeste de Bolivia y el noroeste de Argentina hasta el oeste de Paraguay, Uruguay, el suroeste de Brasil y el centro y norte de Argentina, y por el sur llega al nordeste de Chubut. Habita formaciones arbóreas o arbustivas semiáridas a áridas, sobre todo de baja altitud, y es localmente bastante común."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come principalmente frutos, hojas y flores, además de semillas y algunos insectos. Se deja ver entre los matorrales, solo o en pareja. Su canto es muy característico: una nota larga y áspera, comparada con el sonido de una bisagra oxidada."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Cría entre septiembre y febrero. El nido es semiesférico, de palitos con y sin espinas, y se sostiene en ramas de arbustos, árboles o enredaderas. Pone tres huevos, rara vez cuatro, ocres o verdes con pintas pardas oscuras y grises. La hembra incuba de 14 a 15 días y los pichones se quedan en el nido entre 15 y 17 días."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se llama cortaplantas de pecho rojo, y dentudo en Paraguay. El género Phytotoma combina raíces griegas que significan \"planta\" y \"cortar\"; el epíteto rutila viene del latín y alude a \"dorado\" o \"rojo\"."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Cortarramas argentino (Phytotoma rutila)",
+   "u": "https://es.wikipedia.org/wiki/Phytotoma_rutila"
+  }
+ ],
+ "comun": "Cortarramas"
+}

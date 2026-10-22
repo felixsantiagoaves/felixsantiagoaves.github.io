@@ -1,0 +1,43 @@
+{
+ "id": 183,
+ "resumen": "Crestudo (Coryphistera alaudina): dónde vive y cómo se llama, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Distribución",
+   "Del sureste de Bolivia al centro sur de Argentina"
+  ],
+  [
+   "Hábitat",
+   "Bosques abiertos y matorrales del chaco"
+  ],
+  [
+   "Altitud",
+   "Por debajo de los 500 m"
+  ],
+  [
+   "Subespecies",
+   "Dos: campicola y alaudina"
+  ],
+  [
+   "Otro nombre",
+   "Copetón (Uruguay)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye desde el sureste de Bolivia y el oeste de Paraguay hacia el sur hasta el centro sur de Argentina, y hacia el este hasta el extremo suroeste de Brasil y el noroeste de Uruguay. Habita bosques abiertos y matorrales del chaco, con pastos cortos o terreno desnudo, principalmente por debajo de los 500 m. Se lo considera bastante común y visible en su ambiente. Se reconocen dos subespecies: campicola y alaudina."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El nombre del género, Coryphistera, viene del griego y significa \"copete en la corona de la cabeza\". El epíteto alaudina viene del latín y significa \"parecida a una alondra\". En Uruguay también se lo llama copetón."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Coryphistera alaudina",
+   "u": "https://es.wikipedia.org/wiki/Coryphistera_alaudina"
+  }
+ ],
+ "comun": "Crestudo"
+}
