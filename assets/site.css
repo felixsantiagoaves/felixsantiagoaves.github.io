@@ -746,3 +746,51 @@ body{padding-bottom:48px;}
 @media(max-width:380px){.nav-links a{font-size:.58rem !important;padding:1rem .3rem !important;letter-spacing:0 !important;}.nav-logo img{height:24px !important;}}
 @media(max-width:340px){.nav-links a{font-size:.52rem !important;padding:1rem .2rem !important;}.nav-logo img{height:20px !important;}}
 @media(max-width:768px){#page-sobre-mi .logo-hero{display:none;}#page-sobre-mi .hero-top{padding-top:1rem;}}
+
+/* ===== Contacto en una sola pantalla (móvil) + flechas de fotos fuera de la imagen ===== */
+@media(max-width:600px){
+  #page-redes .page-header{padding:.7rem 1rem .2rem;}
+  #page-redes .page-sub{display:none;}
+  #page-redes .page-body{padding:.6rem 1rem .8rem;}
+  #page-redes .trab{margin-bottom:.9rem;padding-bottom:.9rem;}
+  #page-redes .trab-h{font-size:1.25rem;}
+  #page-redes .trab-p{font-size:.82rem;line-height:1.45;margin:.35rem 0 .7rem;}
+  #page-redes .trab-btns{gap:.5rem;flex-wrap:nowrap;}
+  #page-redes .trab-btn{padding:.55rem .7rem;font-size:.6rem;letter-spacing:.6px;white-space:nowrap;}
+  #page-redes .trab-alt{margin-top:.6rem;font-size:.72rem;}
+  #page-redes .redes-tit{margin-bottom:.6rem;}
+  #page-redes .redes-grid{grid-template-columns:repeat(3,1fr);gap:.55rem;}
+  #page-redes .red-card{padding:.7rem .3rem;gap:.35rem;}
+  #page-redes .red-icon{width:40px;height:40px;}
+  #page-redes .red-icon svg{width:22px;height:22px;}
+  #page-redes .red-icon svg[viewBox="0 0 80 32"]{width:44px;height:18px;}
+  #page-redes .red-name{font-size:.78rem;}
+  #page-redes .red-handle{display:none;}
+  #page-redes .mk-copy{font-size:.6rem;line-height:1.45;margin-top:.8rem;padding-top:.6rem;}
+  /* lightbox del álbum: flechas abajo, no sobre la foto */
+  .lb-img{max-height:68vh;}
+  .lb-arrow{top:auto;bottom:.9rem;transform:none;width:46px;height:46px;padding:0;border-radius:50%;font-size:1.5rem;display:flex;align-items:center;justify-content:center;}
+  .lb-prev{left:1rem;}.lb-next{right:1rem;}
+  .lb-counter{bottom:1.6rem;}
+  /* carrusel de la portada: se desliza con el dedo */
+  .carrusel-btn{display:none;}
+}
+
+/* Contacto compacto también en pantallas grandes */
+@media(min-width:601px){
+  #page-redes .page-header{padding:.8rem 1rem .1rem;}
+  #page-redes .page-sub{display:none;}
+  #page-redes .page-body{padding:.8rem 2rem 1rem;}
+  #page-redes .trab{margin-bottom:1.2rem;padding-bottom:1.2rem;}
+  #page-redes .trab-p{margin:.4rem 0 .8rem;line-height:1.5;}
+  #page-redes .trab-alt{margin-top:.7rem;}
+  #page-redes .redes-tit{margin-bottom:.7rem;}
+  #page-redes .redes-grid{grid-template-columns:repeat(5,1fr);max-width:760px;gap:.8rem;}
+  #page-redes .red-card{padding:.9rem .4rem;gap:.4rem;}
+  #page-redes .red-icon{width:44px;height:44px;}
+  #page-redes .red-icon svg{width:24px;height:24px;}
+  #page-redes .red-icon svg[viewBox="0 0 80 32"]{width:50px;height:20px;}
+  #page-redes .red-name{font-size:.82rem;}
+  #page-redes .red-handle{display:none;}
+  #page-redes .mk-copy{margin-top:1rem;padding-top:.7rem;}
+}
