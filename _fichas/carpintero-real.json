@@ -1,0 +1,55 @@
+{
+ "id": 77,
+ "resumen": "Carpintero Real (Colaptes melanochloros): dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Distribución",
+   "Centro y centro-sur de Sudamérica"
+  ],
+  [
+   "Hábitat",
+   "Bosques de tierras bajas y parques urbanos"
+  ],
+  [
+   "Alimentación",
+   "Insectos, larvas y hormigas"
+  ],
+  [
+   "Nido",
+   "Cavidad que perfora en árboles"
+  ],
+  [
+   "Huevos",
+   "Blancos y muy frágiles"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Tiene un plumaje duro, poco abundante y rígido. Machos y hembras tienen una mancha carmín en la nuca, por eso también se lo llama carpintero de nuca roja."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita el centro y centro-sur de Sudamérica: Argentina, Bolivia, Brasil, Paraguay, Colombia y Uruguay. En Argentina está en las provincias del norte, el litoral y partes de Neuquén y Río Negro. Vive en bosques secos y húmedos de tierras bajas, y también se adapta a parques urbanos."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come insectos, larvas y hormigas. Es un trepador muy especializado: perfora troncos con el pico para sacar larvas e insectos, se apoya en la cola rígida y tiene uñas en forma de gancho. Para beber, llena el pico de agua y echa la cabeza hacia atrás."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en árboles que perfora ella misma. Los huevos son blancos y muy frágiles, y los pichones nacen ciegos y desplumados."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El nombre científico combina palabras griegas que aluden a sus colores principales, negro y verde pálido. El carpintero de pecho dorado se incluye a veces como grupo subespecífico del sur y otras veces se considera una especie separada, Colaptes melanolaimus."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Pájaro carpintero real (Colaptes melanochloros)",
+   "u": "https://es.wikipedia.org/wiki/Colaptes_melanochloros"
+  }
+ ],
+ "comun": "Carpintero Real"
+}

@@ -1,0 +1,55 @@
+{
+ "id": 339,
+ "resumen": "Churrinche (Pyrocephalus rubinus): cómo reconocerlo, dónde vive, cómo caza y su migración, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Macho",
+   "Rojo brillante, con alas, cola y antifaz oscuros"
+  ],
+  [
+   "Hembra",
+   "Parda"
+  ],
+  [
+   "Hábitat",
+   "Montes secos, sabanas, praderas, campo y ciudades"
+  ],
+  [
+   "Caza",
+   "Insectos al vuelo, desde una percha"
+  ],
+  [
+   "Migración",
+   "En invierno se desplaza hacia el centro de Sudamérica"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El macho es inconfundible: rojo brillante, con las alas, la cola y un antifaz oscuros. La hembra es de color pardo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Nidifica sobre todo en Uruguay y en el centro y norte de Argentina, y en zonas cercanas de Bolivia, Paraguay y el sur de Brasil. Vive en bosques xerófilos, sabanas, praderas, áreas rurales y zonas urbanas con espacios abiertos. En el invierno austral se desplaza a una amplia zona del centro de Sudamérica, que incluye el noreste argentino, Paraguay, Bolivia y Brasil hasta la cuenca amazónica."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es un ave de percha: vigila desde un punto fijo, vuela unos metros para atrapar un insecto en el aire y vuelve al mismo lugar. Su canto es agudo y ascendente. Los machos del área argentino-uruguaya responden a cantos de machos del Cono Sur, pero no a los del resto del continente."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El género Pyrocephalus viene del griego y significa \"cabeza de fuego\", por la corona del macho; el epíteto rubinus alude al rubí. Además de churrinche se lo llama atrapamoscas pechirojo, saca-tu-real o capiturrín, entre otros nombres. Su taxonomía está en revisión: en 2016 se propuso elevar la subespecie típica a especie independiente, algo que adoptó el IOC, así que el nombre científico puede cambiar según la lista que se siga."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo clasifica como de Preocupación menor."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Mosquero cardenal (Pyrocephalus rubinus)",
+   "u": "https://es.wikipedia.org/wiki/Pyrocephalus_rubinus"
+  }
+ ],
+ "comun": "Churrinche"
+}

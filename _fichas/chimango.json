@@ -1,0 +1,55 @@
+{
+ "id": 164,
+ "resumen": "Chimango (Daptrius chimango): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 40 cm"
+  ],
+  [
+   "Hábitat",
+   "Vegetación baja, desde la costa hasta las llanuras"
+  ],
+  [
+   "Alimentación",
+   "Pequeñas presas y carroña"
+  ],
+  [
+   "Hábitos",
+   "Gregario, social y territorial; sedentario"
+  ],
+  [
+   "Puesta",
+   "2 a 3 huevos, a veces hasta 5"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide unos 40 cm. El plumaje es pardo y moteado con manchas claras; la garganta, el pecho y el abdomen son más claros y la cabeza es parda. La rabadilla es blanca. En vuelo se ven franjas claras en las primarias y la base blanquecina de la cola. Hay un leve dimorfismo: las patas del macho son amarillentas y las de la hembra y los juveniles, grises."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en el Cono Sur de Sudamérica: Chile, Argentina, Uruguay, Bolivia, Paraguay y el extremo sur de Brasil. Es sedentario. Ocupa terrenos con vegetación baja, desde la costa hasta las llanuras, y bosques abiertos, desde el nivel del mar hasta unos 1500 m. En Chile es frecuente en zonas residenciales e industriales."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Caza presas pequeñas como insectos, babosas, gusanos, larvas, crías de aves, roedores, peces pequeños, camarones y anfibios, y también es un buen carroñero. Es gregario, social y territorial, y puede ser agresivo con intrusos. Se adapta muy bien a distintos ambientes."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Construye el nido sobre vegetación que lo proteja del sol y la lluvia, solo o en colonias. Suele poner de 2 a 3 huevos con manchas rojas, aunque pueden ser hasta 5. Cría de septiembre a diciembre, con octubre como el mes de mayor actividad. La incubación dura de 26 a 32 días, los pichones dejan el nido a las cinco semanas y ambos padres participan en todas las tareas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo conoce como chimango o tiuque, y también como caracara chimango. Fue descrito originalmente en el género Polyborus y durante mucho tiempo se incluyó en Milvago. Los estudios genéticos mostraron que está más emparentado con los miembros del antiguo género Phalcoboenus, y por eso hoy se lo ubica en Daptrius; otras autoridades lo ubican en Chimango o en Phalcoboenus."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Daptrius chimango",
+   "u": "https://es.wikipedia.org/wiki/Daptrius_chimango"
+  }
+ ],
+ "comun": "Chimango"
+}

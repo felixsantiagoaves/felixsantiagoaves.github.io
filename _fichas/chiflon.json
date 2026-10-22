@@ -1,0 +1,51 @@
+{
+ "id": 125,
+ "resumen": "Chiflón (Syrigma sibilatrix): dónde vive, qué come y cómo se comporta, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "50 a 60 cm"
+  ],
+  [
+   "Hábitat",
+   "Humedales, campos y árboles"
+  ],
+  [
+   "Alimentación",
+   "Insectos y lombrices"
+  ],
+  [
+   "Hábitos",
+   "En grupos o en parejas"
+  ],
+  [
+   "Puesta",
+   "2 a 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Es una garza de unos 50 a 60 cm que vive en la parte oriental de Sudamérica. La subespecie sibilatrix se encuentra en Brasil, Uruguay, Paraguay y el norte de Argentina, con registros en Chile; otra subespecie, fostersmithi, vive en Colombia y Venezuela. Aparece sobre todo en humedales, pero también en campos y árboles."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta de insectos y lombrices. Vive en grupos o en parejas. Antes del apareamiento, danza y vuela emitiendo un grito."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Pone de 2 a 4 huevos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se la llama garza chiflona, garza silbadora o garza amarilla, además de chiflón."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Garza chiflona (Syrigma sibilatrix)",
+   "u": "https://es.wikipedia.org/wiki/Syrigma_sibilatrix"
+  }
+ ],
+ "comun": "Chiflón"
+}

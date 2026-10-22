@@ -1,0 +1,55 @@
+{
+ "id": 178,
+ "resumen": "Chinchero Grande (Drymornis bridgesii): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "29 a 35 cm"
+  ],
+  [
+   "Peso",
+   "76 a 110 g"
+  ],
+  [
+   "Hábitat",
+   "Bosques, matorrales y sabanas secos del Chaco y del Monte"
+  ],
+  [
+   "Alimentación",
+   "Insectos y pequeños vertebrados"
+  ],
+  [
+   "Puesta",
+   "3 huevos blancos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide de 29 a 35 cm y pesa entre 76 y 90 g el macho y entre 87 y 110 g la hembra. La cabeza es castaño oscuro, la cara y la nuca castaño claro, con dos líneas blanquecinas, una sobre cada ojo y otra debajo. El dorso es castaño claro con tono pardo, la garganta blanquecina y el pecho y el abdomen blanquecinos con plumas orilladas de castaño. Lo más llamativo es el pico largo: la parte de arriba es pardo oscura y la mandíbula, clara con la punta oscura."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativo del centro sur de Sudamérica: sureste de Bolivia, oeste de Paraguay, gran parte de Argentina, Uruguay y el sur de Brasil. Vive en bosques, matorrales y sabanas secos del Chaco y del Monte, hasta unos 600 m de altitud, y prefiere las formaciones de caranday y espinillo."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Forrajea solo o en pareja, a veces junto a otros furnáridos. Busca alimento en troncos y ramas grandes y también en el suelo, donde escarba la tierra suelta con la cola abierta; puede cavar hasta 5 o 6 cm para sacar larvas. Come insectos de muchos órdenes, además de pequeños anfibios, reptiles, huevos de reptiles y aves, y pichones de aves menores. En el suelo se desplaza con torpeza, aunque puede correr distancias cortas. Su canto es una serie rápida de notas agudas y chillonas que descienden y terminan en una secuencia enredada."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Nidifica de septiembre a diciembre. El nido es rudimentario, a altura baja o media, en huecos de árboles o en nidos abandonados de carpinteros del género Colaptes, con la base acolchada con hojas y corteza. Pone tres huevos blancos, la incubación dura de 14 a 16 días y los pichones se quedan de 16 a 21 días en el nido, alimentados por la pareja."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama chinchero grande en Argentina y Paraguay, y arañero grande o trepador grande en Uruguay. De su canto salen nombres onomatopéyicos como bil-bil, gil-gil o ruiz. Fue descrito en 1849 por Thomas Campbell Eyton, y el epíteto bridgesii honra al naturalista y colector británico Thomas Charles Bridges."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Trepatroncos chinchero (Drymornis bridgesii)",
+   "u": "https://es.wikipedia.org/wiki/Drymornis_bridgesii"
+  }
+ ],
+ "comun": "Chinchero Grande"
+}
