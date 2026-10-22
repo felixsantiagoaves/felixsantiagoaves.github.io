@@ -1,0 +1,50 @@
+{
+ "id": 81,
+ "resumen": "Cachilo Chaqueño (Rhynchospiza strigiceps): cómo reconocerlo, dónde vive y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "15,5 cm"
+  ],
+  [
+   "Distribución",
+   "Argentina, Paraguay y sur de Bolivia"
+  ],
+  [
+   "Hábitat",
+   "Bosques secos y matorral seco; chaco seco y serrano"
+  ],
+  [
+   "Altitud",
+   "Hasta unos 1500 m"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un chingolo de cola larga y cabeza rayada, con un pico grueso de dos colores. A menudo anda en bandaditas. El adulto tiene una fina línea negra entre el pico y el ojo, y una lista ocular y listas laterales en la corona de color rufo, con finas estrías negruzcas en la corona. Es mucho más chico que el Cachilo Vallisto, que no comparte su zona."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se encuentra en Argentina, Paraguay y el sur de Bolivia. Habita bosques secos subtropicales y zonas de matorral seco; en la Argentina cría sobre todo en el chaco seco y serrano, hasta unos 1500 m."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto está formado por frases musicales bien definidas que repite a intervalos parejos antes de pasar a otra frase. Cada frase puede ser un trino simple o llevar una nota introductoria seguida de la repetición de una nota o de un grupo de notas. Entre los llamados hay parloteos rápidos y líquidos, un \"tsink\" o \"chink\" metálico y un \"tsuee\" agudo."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia lo llama chingolo coronicastaño o cachilo de corona castaña. Fue descrito por Gould en 1839, y en la bibliografía aparece también como Zonotrichia, Aimophila y Peucaea strigiceps."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Rhynchospiza strigiceps",
+   "u": "https://es.wikipedia.org/wiki/Rhynchospiza_strigiceps"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "comun": "Cachilo Chaqueño"
+}
