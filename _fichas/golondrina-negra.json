@@ -1,0 +1,39 @@
+{
+ "id": 155,
+ "resumen": "Golondrina Negra (Progne elegans): cómo reconocerla y dónde vive, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "20 a 22 cm"
+  ],
+  [
+   "Plumaje",
+   "Negro con tonos azul iridiscente"
+  ],
+  [
+   "Hábitat",
+   "Bosques, pastizales y áreas urbanas"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide de 20 a 22 cm. Todo el cuerpo es negro con tonos azul iridiscente. El macho es casi indistinguible del de la Golondrina Negra Peruana (Progne murphyi)."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se encuentra en Sudamérica: Argentina, Bolivia, Brasil, Colombia, Panamá, Paraguay, Perú y Uruguay; en Chile se ha visto muy raramente. Ocupa bosques tropicales húmedos de tierras bajas, bosques de montaña tropicales o subtropicales, pastizales y áreas urbanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia la titula golondrina sureña y la menciona también como golondrina negra."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Golondrina sureña (Progne elegans)",
+   "u": "https://es.wikipedia.org/wiki/Progne_elegans"
+  }
+ ],
+ "comun": "Golondrina Negra"
+}

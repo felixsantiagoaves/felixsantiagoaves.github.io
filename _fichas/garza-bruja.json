@@ -1,0 +1,55 @@
+{
+ "id": 131,
+ "resumen": "Garza Bruja (Nycticorax nycticorax): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "60 a 65 cm"
+  ],
+  [
+   "Ojos",
+   "Rojo intenso en el adulto"
+  ],
+  [
+   "Actividad",
+   "Crepuscular y nocturna"
+  ],
+  [
+   "Alimentación",
+   "Peces, anfibios, pequeños reptiles e insectos"
+  ],
+  [
+   "Puesta",
+   "3 o 4 huevos verde azulado pálido"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es una garza rechoncha de tamaño medio, de cuello corto, que mide de 60 a 65 cm. El adulto tiene las partes inferiores blanquecinas grisáceas, la cara, la garganta y el vientre blancos, el píleo, la nuca y la espalda negruzcos, las alas grises, los ojos rojo intenso y las patas amarillo pálido. De la nuca salen dos o tres plumas blancas largas y estrechas, algo más largas en el macho. Los juveniles son veteados en marrón y blanco, con ojos color miel o amarillos, y no tienen las plumas de la nuca hasta el primer año."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Está ampliamente distribuida por Eurasia, África y América, y se reconocen cuatro subespecies. Las poblaciones del hemisferio norte son migratorias y las del hemisferio sur, sedentarias."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es de costumbres crepusculares y nocturnas, aunque durante la cría puede verse activa de día. Come peces, anfibios, pequeños reptiles e insectos y, excepcionalmente, algún ratón."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido, de palos y ramas, se construye a unos 4 o 5 m de altura en un árbol o matorral alto. La puesta es de 3 o 4 huevos verde azulado pálido; la incubación dura de 20 a 21 días y es compartida, y los pichones permanecen en el nido de 3 a 4 semanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia la titula martinete común; garza bruja y zorro de agua figuran entre sus nombres. El nombre científico deriva del griego nyktos (noche) y korax (cuervo), por sus hábitos nocturnos y sus graznidos parecidos a los del cuervo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Martinete común (Nycticorax nycticorax)",
+   "u": "https://es.wikipedia.org/wiki/Nycticorax_nycticorax"
+  }
+ ],
+ "comun": "Garza Bruja"
+}

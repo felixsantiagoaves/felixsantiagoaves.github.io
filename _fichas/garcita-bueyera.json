@@ -1,0 +1,59 @@
+{
+ "id": 128,
+ "resumen": "Garcita Bueyera (Ardea ibis): cómo reconocerla, su llegada a América, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "46 a 56 cm"
+  ],
+  [
+   "Peso",
+   "270 a 512 g"
+  ],
+  [
+   "Envergadura",
+   "88 a 96 cm"
+  ],
+  [
+   "Hábitat",
+   "Pastizales, zonas agrícolas, pantanos y manglares"
+  ],
+  [
+   "Puesta",
+   "3 o 4 huevos blanco azulado"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide de 46 a 56 cm, pesa entre 270 y 512 g y tiene una envergadura de 88 a 96 cm; los machos son algo más grandes. Fuera de la cría es casi totalmente blanca, con pico amarillo y patas amarillo grisáceas. En la época de cría desarrolla tonos anaranjados en la espalda, el cuello y la cresta, y el pico, las patas y el iris se vuelven rojizos. Los juveniles no tienen plumas anaranjadas y el pico es negro."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en sabanas, pastizales, manglares, pantanos, zonas agrícolas, embalses y canales de riego, en regiones tropicales, subtropicales y templadas. Fue vista por primera vez en América en 1877, en la frontera entre la Guayana Francesa y Surinam, probablemente tras cruzar el Atlántico, aunque no se estableció hasta los años 1930. Wikipedia la describe como la expansión natural más amplia y rápida de cualquier especie de ave."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come sobre todo insectos como saltamontes, grillos, moscas y polillas, además de arañas, ranas y lombrices. Acompaña al ganado, a otros mamíferos grandes y a la maquinaria agrícola para atrapar a los animales que espantan; según los estudios citados, su éxito de captura junto al ganado es 3,6 veces mayor que cuando come sola. Es silenciosa casi todo el año: emite una llamada sorda y gutural solo en las colonias de cría."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en colonias, generalmente cerca del agua y a menudo junto a otras aves zancudas. El nido es una plataforma de ramitas sobre árboles o arbustos, construida por ambos miembros de la pareja. Suele poner 3 o 4 huevos blanco azulado; la incubación dura unos 23 días y los pichones se independizan hacia los 45 días."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Muchos de sus nombres aluden a su costumbre de seguir al ganado: garcilla bueyera, garza ganadera y espulgabuey, entre otros. Bubulcus, el nombre del antiguo género, significa \"pastor\" en latín."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN la considera de Preocupación menor, con una población mundial estimada entre 3,8 y 6,7 millones de individuos. Los ganaderos la valoran porque controla garrapatas y tábanos."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Garcilla bueyera (Bubulcus ibis)",
+   "u": "https://es.wikipedia.org/wiki/Bubulcus_ibis"
+  }
+ ],
+ "comun": "Garcita Bueyera"
+}

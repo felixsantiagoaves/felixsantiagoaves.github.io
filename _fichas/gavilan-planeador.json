@@ -1,0 +1,31 @@
+{
+ "id": 15,
+ "resumen": "Gavilán Planeador (Circus buffoni): dónde vive y cómo se lo llama, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Distribución",
+   "Sudamérica, de Colombia a las Malvinas"
+  ],
+  [
+   "Subespecies",
+   "No se conocen"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Es una especie sudamericana: según Wikipedia, se encuentra desde Colombia hasta las Malvinas y desde Chile hasta Trinidad."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "No se le conocen subespecies. Además de gavilán planeador, se lo llama aguilucho grande, aguilucho de Azara, gavilán alilargo, aguilucho negro y vari huevetero, y Wikipedia lo titula aguilucho de Azara."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Aguilucho de Azara (Circus buffoni)",
+   "u": "https://es.wikipedia.org/wiki/Circus_buffoni"
+  }
+ ],
+ "comun": "Gavilán Planeador"
+}

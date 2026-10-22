@@ -1,0 +1,59 @@
+{
+ "id": 130,
+ "resumen": "Garza Blanca (Ardea alba): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "80 a 105 cm"
+  ],
+  [
+   "Envergadura",
+   "130 a 170 cm"
+  ],
+  [
+   "Peso",
+   "700 a 1500 g"
+  ],
+  [
+   "Pico y patas",
+   "Pico amarillo y patas negras"
+  ],
+  [
+   "Puesta",
+   "3 a 5 huevos verde azulado claro"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide de 80 a 105 cm de pico a cola, con una envergadura de 130 a 170 cm, y pesa entre 700 y 1500 g. Es blanca, con pico amarillo y patas y dedos negros. En el plumaje reproductivo tiene en el dorso plumas ornamentales largas y finas que suele erizar. Machos y hembras son idénticos, y los juveniles se parecen a los adultos fuera de la cría."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita todos los continentes excepto la Antártida. Vive en todo tipo de humedales de regiones templadas y tropicales y se adapta bien a zonas urbanas y suburbanas. Las poblaciones templadas del hemisferio norte migran al sur en invierno, y las de zonas tropicales y subtropicales son sedentarias."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "En aguas poco profundas o ambientes secos come peces, ranas, pequeños mamíferos y, ocasionalmente, aves pequeñas y reptiles; en tierra también pichones, cangrejos, caracoles, lombrices e insectos. Suele quedarse quieta esperando a la presa y la atrapa con el pico, que usa como arpón. Vuela lento con el cuello retraído, pero camina con el cuello estirado. Normalmente es silenciosa y emite graznidos estridentes si la molestan y en las colonias."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Cría en colonias sobre árboles cercanos a grandes lagos con carrizos, generalmente entre 3 y 12 m de altura. El nido, de ramitas entrelazadas y forrado con material vegetal, puede llegar a 1 m de ancho. Pone de 3 a 5 huevos verde azulado claro, que ambos padres incuban entre 23 y 26 días; los pichones vuelan a las 6 o 7 semanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Wikipedia la titula garceta grande. El nombre científico Ardea alba significa literalmente \"garza blanca\"."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN la clasifica como de Preocupación menor. A fines del siglo XIX fue cazada por sus plumas nupciales, y su población se recuperó en Norteamérica con las medidas de conservación."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Garceta grande (Ardea alba)",
+   "u": "https://es.wikipedia.org/wiki/Ardea_alba"
+  }
+ ],
+ "comun": "Garza Blanca"
+}

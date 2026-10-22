@@ -1,0 +1,51 @@
+{
+ "id": 136,
+ "resumen": "Gaviota Capucho Café (Chroicocephalus maculipennis): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Pico y patas",
+   "Rojo oscuro"
+  ],
+  [
+   "Hábitat",
+   "Pantanos, lagos, costa, pasturas y manglares"
+  ],
+  [
+   "Nidificación",
+   "Colonias, de noviembre a enero"
+  ],
+  [
+   "Puesta",
+   "2 a 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "La cabeza y la garganta son pardo oscuro, con un semicírculo blanco detrás del ojo. El cuello, el pecho y el abdomen son blancos; el dorso y las cobertoras son grises, las primarias blancas (algunas con la punta negra) y las secundarias grises. El pico y las patas son rojo oscuro."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Va desde el sur de Brasil y Uruguay, por el centro y sur de Chile, casi toda la Argentina, hasta las islas australes, Tierra del Fuego y las Malvinas. En invierno las poblaciones australes migran hacia el norte (sureste de Brasil, Paraguay, norte de Chile). Ocupa pantanos, lagos de agua dulce, aguas marinas costeras, pasturas y manglares."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come lombrices y larvas en campos recién arados, desperdicios de mataderos y frigoríficos, insectos, crustáceos, carroña y peces; durante la cría prefiere los peces. Vuela hacia prados y potreros del interior."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Forma colonias entre noviembre y enero, en juncales o pajonales al borde de lagunas o en islas de lagunas y ríos. Construye nidos flotantes y voluminosos de juncos y plantas acuáticas. Pone de 2 a 4 huevos, de color entre café con leche y amarillo oliváceo, con manchas oscuras gruesas. El Pato Cabeza Negra deposita sus huevos en sus nidos para que los incube."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "En Argentina, Uruguay y Paraguay se la llama gaviota capucho café; en parte de la Argentina también gaviota capuchina, y en Chile gaviota cáhuil, caulle o chelle."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Chroicocephalus maculipennis",
+   "u": "https://es.wikipedia.org/wiki/Chroicocephalus_maculipennis"
+  }
+ ],
+ "comun": "Gaviota Capucho Café"
+}

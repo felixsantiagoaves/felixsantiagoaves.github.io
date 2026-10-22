@@ -1,0 +1,51 @@
+{
+ "id": 127,
+ "resumen": "Garcita Blanca (Egretta thula): cómo reconocerla, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Plumaje",
+   "Blanco; en la cría, con plumas delicadas en cabeza, cuello y dorso"
+  ],
+  [
+   "Pico y patas",
+   "Pico negro y pies amarillo brillante"
+  ],
+  [
+   "Distribución",
+   "De Canadá a Argentina y Chile"
+  ],
+  [
+   "Alimentación",
+   "Peces y pequeños animales"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es una garza pequeña y blanca. Fuera de la temporada de cría tiene el pico negro y los pies amarillo brillante. En la cría el plumaje es blanco puro, con plumas delicadas que cuelgan de la cabeza, el cuello y el dorso; ambos sexos las tienen y las erizan para exhibirse en el nido."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es nativa de América, desde Canadá hasta Argentina y Chile. La subespecie Egretta thula thula va desde Estados Unidos hasta el centro de Argentina y Chile, y en las Indias Occidentales. Wikipedia menciona que vive en manglares de aguas dulces o saladas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se alimenta de día, caminando en busca de presas: peces y pequeños animales. A veces hurga el fondo del agua con los pies para espantarlas. Se reúne en grandes bandadas para dormir en los árboles."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida en colonias sobre los árboles."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se la llama también garceta nívea, garza dedos dorados, garza chica y chusmita. Fue descrita por Juan Ignacio Molina en 1782; Egretta viene del francés aigrette y thula del nombre mapuche del ave, trüla."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Garceta nívea (Egretta thula)",
+   "u": "https://es.wikipedia.org/wiki/Egretta_thula"
+  }
+ ],
+ "comun": "Garcita Blanca"
+}

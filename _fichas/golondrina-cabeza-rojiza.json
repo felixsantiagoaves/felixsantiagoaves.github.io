@@ -1,0 +1,35 @@
+{
+ "id": 152,
+ "resumen": "Golondrina Cabeza Rojiza (Alopochelidon fucata): dónde vive y qué se sabe de ella, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Distribución",
+   "Centro de Sudamérica"
+  ],
+  [
+   "Hábitat",
+   "Pastizales, sabanas y humedales, a baja altitud"
+  ],
+  [
+   "Familia",
+   "Hirundinidae (único miembro del género)"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Habita el centro de Sudamérica, desde el sureste de Perú y de Bolivia hasta Brasil, Uruguay y el norte y centro de la Argentina; es ocasional en las Malvinas y en Chile. Ocupa áreas abiertas o de tipo parque, como pastizales, sabanas y humedales, siempre a baja altitud. Después de la reproducción migra hacia el norte del subcontinente en otoño."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Es la única especie del género Alopochelidon, de la familia Hirundinidae, aunque tradicionalmente se la incluía en Stelgidopteryx. Temminck la describió en 1822 como Hirundo fucata, con localidad tipo \"Brasil\". Se diferencia de Stelgidopteryx porque sus primarias no tienen el borde exterior dentado. También se la conoce como golondrina cabecicastaña, cabeza castaña y cara rojiza."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Alopochelidon fucata",
+   "u": "https://es.wikipedia.org/wiki/Alopochelidon_fucata"
+  }
+ ],
+ "comun": "Golondrina Cabeza Rojiza"
+}

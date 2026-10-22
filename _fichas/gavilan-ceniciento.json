@@ -1,0 +1,39 @@
+{
+ "id": 12,
+ "resumen": "Gavilán Ceniciento (Circus cinereus): dónde vive y qué come, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Distribución",
+   "De Colombia al sur de Sudamérica, con la Patagonia incluida"
+  ],
+  [
+   "Familia",
+   "Accipitridae"
+  ],
+  [
+   "Alimentación",
+   "Insectos, aves, mamíferos y arácnidos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Dónde vive",
+   "p": "Habita en Sudamérica, desde el norte de Chile hasta el sur de Brasil y desde la Patagonia argentina hasta Colombia. En la Argentina aparece entre Tierra del Fuego y el norte del país, y entre Mendoza y la costa bonaerense, aunque con densidades distintas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "En su dieta hay insectos, aves, mamíferos y arácnidos. Por número de presas predominan los insectos, pero por biomasa son las aves y los mamíferos los que más aportan."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Es un ave de la familia Accipitridae y no se le reconocen subespecies. Wikipedia lo llama vari, y también figura como vari ceniciento, aguilucho vari y aguilucho ceniciento."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Vari (Circus cinereus)",
+   "u": "https://es.wikipedia.org/wiki/Circus_cinereus"
+  }
+ ],
+ "comun": "Gavilán Ceniciento"
+}
