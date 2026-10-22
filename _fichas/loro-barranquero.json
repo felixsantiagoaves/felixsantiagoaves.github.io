@@ -1,0 +1,69 @@
+{
+ "id": 211,
+ "comun": "Loro Barranquero",
+ "resumen": "Loro Barranquero (Cyanoliseus patagonus): cómo reconocerlo, sus colonias en barrancas y qué amenazas tiene, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "42 a 47 cm"
+  ],
+  [
+   "Distribución",
+   "Andes norte y centro, sierras centrales y Patagonia"
+  ],
+  [
+   "Hábitat",
+   "Sabanas, estepas arbustivas, barrancas y áreas rurales"
+  ],
+  [
+   "Alimentación",
+   "Frutos y semillas, entre ellas de cultivos"
+  ],
+  [
+   "Puesta",
+   "De 2 a 5 huevos, en cuevas en barrancas"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un loro grande, de cola larga, con aspecto de guacamayo, oliváceo en general. Tiene el lomo y la rabadilla amarillos (o verdosos), las remeras azules, la cola larga oliva azulada y el pecho pardo oscuro. El vientre es amarillo (o pardo) con una mancha roja en el centro, y el anillo del ojo es blanco. En vuelo se nota el vientre amarillo y un vuelo pesado, que suele hacer bajo, rasante al suelo. Macho y hembra son iguales."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Ocupa terrenos abiertos y áridos: sabanas, estepas arbustivas, barrancas y áreas rurales de los Andes del norte y del centro, las sierras centrales y la Patagonia. Se lo ve en bandadas bulliciosas, apiñadas en postes y cables. Las poblaciones del centro y sur del país pueden migrar al norte en invierno."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es muy gregario y ruidoso. Come frutos de algarrobo, molle, chañar y cactus y, en invierno, semillas de cultivos y de plantas silvestres como el cardo."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "La voz es nasal, áspera y a menudo larga, y lo hace durante gran parte del tiempo."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Excava madrigueras en barrancas de piedra caliza o arenisca, con túneles de hasta unos 3 metros que terminan en una cámara de nidificación, y anida en colonias grandes, a veces de las mayores registradas entre los loros. Reutiliza las cuevas de años anteriores y prefiere barrancas altas y grandes; si faltan, usa canteras o pozos. La cría empieza en septiembre y las puestas llegan hasta diciembre, de dos a cinco huevos. La hembra incuba entre 24 y 25 días y el macho la alimenta; ambos cuidan a los pichones, que dependen de los padres hasta cuatro meses. Es monógamo."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama barranquero porque anida en barrancos; también se lo conoce como loro tricahue."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor, pero sufre captura para el comercio de mascotas, destrucción del hábitat, cambio climático y contaminación."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Cyanoliseus patagonus",
+   "u": "https://es.wikipedia.org/wiki/Cyanoliseus_patagonus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

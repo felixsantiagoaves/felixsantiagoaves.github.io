@@ -1,0 +1,53 @@
+{
+ "id": 357,
+ "comun": "Monjita Blanca",
+ "resumen": "Monjita Blanca (Xolmis irupero): cómo reconocerla de lejos, su silbido y de dónde viene su nombre guaraní, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "17 a 18,5 cm"
+  ],
+  [
+   "Distribución",
+   "Todo el país"
+  ],
+  [
+   "Hábitat",
+   "Sabanas, bosques y áreas rurales"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es un tiránido chico, y el adulto es blanco: se nota hasta de lejos. Sólo tiene negras las primarias y la punta de la cola, de modo que en vuelo se ven las alas casi blancas, con la punta negra, y una cola corta y apenas escotada."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es muy común en todo el país, en sabanas, bosques y áreas rurales, y suele posarse en sitios bien visibles, como postes y alambrados."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se cierne en el aire (\"halconea\"), un comportamiento que comparte con otras aves de su familia."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un silbido humano, suave, fui... o fwee..., de dos notas bien separadas, una más aguda y otra más grave, con entonación ascendente. Los llamados son silbidos cortos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "El nombre de la especie, irupero, viene del guaraní iruperó, \"pájaro problemático\"; lo usó Félix de Azara para esta especie. En Uruguay se la llama viudita blanca común. El origen del nombre del género, Xolmis, es incierto."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Xolmis irupero",
+   "u": "https://es.wikipedia.org/wiki/Xolmis_irupero"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

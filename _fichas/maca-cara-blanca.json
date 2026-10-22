@@ -1,0 +1,69 @@
+{
+ "id": 213,
+ "comun": "Macá Cara Blanca",
+ "resumen": "Macá Cara Blanca (Rollandia rolland): cómo reconocerlo en plumaje nupcial y no nupcial, y cómo anida, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "23 a 26 cm"
+  ],
+  [
+   "Distribución",
+   "Extendido; en el noreste y la Patagonia"
+  ],
+  [
+   "Hábitat",
+   "Humedales, lagunas de agua dulce y costas"
+  ],
+  [
+   "Alimentación",
+   "Peces pequeños, alevines e invertebrados acuáticos"
+  ],
+  [
+   "Puesta",
+   "De 3 a 6 huevos blancos manchados de café"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un macá chico, de copete en la nuca, pico fino y puntiagudo, e iris rojo. Solitario o en grupos chicos. En plumaje nupcial tiene la cabeza, el cuello y el dorso negros, con un penacho blanco en la zona de las orejas, y el vientre y los flancos rufos. Fuera de la cría el pico es amarillento, con la parte de arriba negra; la cara y la garganta son blancas con líneas negruzcas, el dorso pardo oscuro, y el cuello y el pecho pardos. El juvenil tiene el cuello estriado y las dos rayas negras en la cara."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es un macá de agua dulce y de costa, que vive en humedales de todo el país. Las poblaciones de las tierras bajas del noreste y de la Patagonia se mueven hacia el norte en otoño."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come peces chicos, alevines e invertebrados acuáticos, y es muy buen buceador: pasa casi todo el tiempo en el agua. Suele andar en grupos, aunque también solo o en pareja, y comparte el hábitat con patos, gallaretas y otros macás. Ante un peligro se sumerge o se esconde entre juncos, dejando ver sólo la cabeza y parte del cuello."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Suele estar callado."
+  },
+  {
+   "t": "Nidificación",
+   "p": "En el sur de Chile anida de octubre a marzo. Arma el nido con vegetación húmeda (totora, juncos o pastos) entre pajonales cercanos a la orilla o sobre superficies firmes, y a veces lo hace flotante. La nidada es de tres a seis huevos blancos, manchados de tonos café."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama también macá común, macá de cara blanca, macá chico o pimpollo común. En la guía de Narosky aparece como Macá Común."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor, aunque se indica que sus poblaciones están disminuyendo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Rollandia rolland",
+   "u": "https://es.wikipedia.org/wiki/Rollandia_rolland"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

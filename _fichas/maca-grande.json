@@ -1,0 +1,65 @@
+{
+ "id": 214,
+ "comun": "Macá Grande",
+ "resumen": "Macá Grande (Podiceps major): cómo reconocer al más grande de los macás y su canto de lamento, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "44 cm según Narosky; 62 cm según Pearman"
+  ],
+  [
+   "Distribución",
+   "Extendido; residente en todo el país"
+  ],
+  [
+   "Hábitat",
+   "Humedales de agua dulce y costas de mar"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo peces; también plantas e insectos acuáticos"
+  ],
+  [
+   "Puesta",
+   "De 4 a 6 huevos blanco azulados"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es el más grande de los macás: esbelto, de cuello larguísimo, nuca con copete y un pico largo y agudo, como una daga, de color variable. En plumaje nupcial tiene la corona y una línea en la nuca negras, la cara y la garganta grises y el cuello rufo (castaño); el dorso es negruzco y el vientre blanco. Fuera de la cría se parece a un adulto desteñido, con la cara y la garganta blancas. El juvenil se distingue por la cara listada y los flancos ante. Las dos guías no coinciden en el tamaño: Narosky da 44 cm y Pearman 62 cm."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es residente y se distribuye ampliamente por el país, en humedales de agua dulce y en costas de mar. Es menos ribereño que otros macaes y descansa con la cabeza escondida entre las plumas del dorso."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es principalmente un cazador de peces: come peces chicos, alevines, y también plantas e insectos acuáticos. Antes de formar pareja, el macho y la hembra hacen danzas, y las parejas son muy fieles. En otoño migra en bandadas, sobre todo de noche."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El grito es melancólico y sonoro, un silbido que se oye de lejos (waaaa...) y se apaga hacia el final."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es una plataforma de restos vegetales, por lo general flotante y amarrada a plantas acuáticas, o asentada en microislas o en juncales y totorales densos. Pone de cuatro a seis huevos blanco azulados."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "En Chile se lo llama huala, del mapudungun wala, \"pato zambullidor\"; en la Argentina, Uruguay y Paraguay se usa sobre todo macá grande. Pearman lo ubica en un género aparte, Podicephorus major, mientras que Narosky lo llama Podiceps major; el nombre científico de esta ficha sigue la lista que uso en el sitio. El nombre Podiceps viene de podicis (ano) y pes (pie), por tener las patas muy atrás en el cuerpo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Podiceps major",
+   "u": "https://es.wikipedia.org/wiki/Podiceps_major"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}

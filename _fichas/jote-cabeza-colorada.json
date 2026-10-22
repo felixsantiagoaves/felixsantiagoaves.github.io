@@ -1,0 +1,69 @@
+{
+ "id": 47,
+ "comun": "Jote Cabeza Colorada",
+ "resumen": "Jote Cabeza Colorada (Cathartes aura): cómo distinguirlo del jote de cabeza negra, su fino olfato y cómo planea, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "55 a 65 cm; envergadura de 1,75 m"
+  ],
+  [
+   "Distribución",
+   "Casi todo el país"
+  ],
+  [
+   "Hábitat",
+   "Ambientes diversos"
+  ],
+  [
+   "Alimentación",
+   "Carroña de animales recién muertos"
+  ],
+  [
+   "Puesta",
+   "Generalmente 2 huevos, sin nido"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un buitre grande y esbelto, de cola bastante larga. El adulto es negro, con la cabeza pelada y roja (en los del norte, con la nuca blanca) y el pico cremoso. Las patas son rosadas. En vuelo mantiene las alas en una V abierta y planea con muy pocos aleteos: se ve la cara inferior con las remeras plateadas, que contrastan con las cubiertas negras, y la cola de punta algo redondeada. Los que bajan del sur de la Patagonia son más pardos y con la nuca roja oscura. El juvenil tiene la cabeza y las patas negruzcas (la cabeza gris) y el pico negro."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es común en casi todo el país y en ambientes muy diversos. Las poblaciones del norte de su área (Canadá y norte de Estados Unidos) migran al sur en invierno, a veces hasta Sudamérica."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es poco gregario. Come casi sólo carroña, sobre todo de animales recién muertos, y evita los cadáveres muy podridos. Tiene un olfato excepcional (los jotes sin olfato lo siguen hasta el cadáver) y encuentra la carroña incluso bajo el monte, guiado por el etanotiol, un gas que se produce al empezar la descomposición. Aprovecha las térmicas para planear durante horas; en el suelo se mueve con torpeza y le cuesta despegar."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Casi no vocaliza porque no tiene siringe: emite silbidos y gruñidos bajos. Si se siente amenazado en el nido, silba y regurgita."
+  },
+  {
+   "t": "Nidificación",
+   "p": "No construye nido: pone en el suelo de cuevas, acantilados, huecos de árboles o vegetación densa, normalmente dos huevos (de uno a tres). Ambos padres incuban entre 30 y 40 días. Los pichones nacen indefensos, se alimentan por regurgitación y permanecen en el nido nueve o diez semanas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Recibe muchos nombres: la Sociedad Española de Ornitología recomienda \"aura gallipavo\". Cathartes viene del griego kathartes, \"purificador\", y aura de una palabra indígena mexicana para este buitre."
+  },
+  {
+   "t": "Conservación",
+   "p": "La UICN lo considera de Preocupación menor, con poblaciones estables y unos cinco millones de individuos en el mundo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Cathartes aura",
+   "u": "https://es.wikipedia.org/wiki/Cathartes_aura"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ]
+}
