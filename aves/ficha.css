@@ -168,6 +168,6 @@ nav.gnav{background:var(--v1);position:sticky;top:0;z-index:100;box-shadow:0 2px
 /* Leyenda de derechos sobre las fotos (hecha con CSS: no está en los archivos de imagen) y sin arrastre */
 img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .cr-w{position:relative;display:block;}
-.cr-w::after,.galeria a::after{content:"© Félix Santiago";position:absolute;left:.5rem;bottom:.4rem;z-index:3;font:600 .62rem/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.75);pointer-events:none;}
+.cr-w::after,.galeria a::after{content:"© Félix Santiago Allendes";position:absolute;left:.5rem;bottom:.4rem;z-index:3;font:600 .62rem/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.75);pointer-events:none;}
 @media(max-width:600px){.cr-w::after,.galeria a::after{left:.4rem;bottom:.3rem;font-size:.55rem;}}
 .galeria a{position:relative;}

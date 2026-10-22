@@ -1244,3 +1244,25 @@ document.addEventListener("DOMContentLoaded", iniMail);
 // Protección básica de las fotos: sin menú contextual ni arrastre sobre imágenes
 document.addEventListener('contextmenu', e => { if(e.target.closest && e.target.closest('img,.foto-item,.modal-prev,.lightbox,.fig')) e.preventDefault(); });
 document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
+
+// La leyenda © del modal del álbum se ubica en la esquina de la foto real (la foto puede quedar centrada con bordes a los lados)
+(function(){
+  function ubicar(){
+    const pv=document.getElementById('m-prev'), im=document.getElementById('m-img');
+    if(!pv||!im||!im.naturalWidth||im.style.display==='none') return;
+    const a=pv.getBoundingClientRect(), b=im.getBoundingClientRect();
+    const k=Math.min(b.width/im.naturalWidth, b.height/im.naturalHeight);
+    const w=im.naturalWidth*k, h=im.naturalHeight*k;
+    const x=b.left-a.left+(b.width-w)/2, y=b.top-a.top+(b.height-h)/2;
+    pv.style.setProperty('--cr-l', x+'px');
+    pv.style.setProperty('--cr-b', (a.height-(y+h))+'px');
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    const im=document.getElementById('m-img'), pv=document.getElementById('m-prev');
+    if(!im||!pv) return;
+    im.addEventListener('load',ubicar);
+    window.addEventListener('resize',ubicar);
+    if(window.ResizeObserver) new ResizeObserver(ubicar).observe(pv);
+    new MutationObserver(ubicar).observe(im,{attributes:true,attributeFilter:['src','style']});
+  });
+})();
