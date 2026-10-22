@@ -7,8 +7,12 @@
    "Unos 20 cm"
   ],
   [
+   "Cola",
+   "6 a 11 barras pálidas, según el morfo"
+  ],
+  [
    "Distribución",
-   "Argentina y Chile"
+   "Patagonia y Andes; en otoño-invierno se desplaza hacia el centro y norte de Argentina"
   ],
   [
    "Hábitos",
@@ -22,11 +26,15 @@
  "secciones": [
   {
    "t": "Cómo reconocerlo",
-   "p": "Es un mochuelo de unos 20 cm. La cabeza, el dorso y las cobertoras son gris pardo con algo de castaño y manchas claras; la garganta y la ceja son blancas, y el pecho y el abdomen tienen rayas gruesas blanquecinas, pardas y negruzcas. La cola tiene bandas negruzcas y castañas. El pico es corto y ganchudo, y las patas y los ojos son amarillos."
+   "p": "Es un mochuelo de unos 20 cm. La cabeza, el dorso y las cobertoras son gris pardo con algo de castaño y manchas claras; la garganta y la ceja son blancas, y el pecho y el abdomen tienen rayas gruesas blanquecinas, pardas y negruzcas. Tiene dos manchas negras en la nuca, los \"ojos falsos\". El pico es corto y ganchudo, y las patas y los ojos son amarillos."
+  },
+  {
+   "t": "Cómo distinguirlo del Caburé Chico",
+   "p": "Es muy parecido al Caburé Chico (Glaucidium brasilianum), un poco menor, y la voz y las barras de la cola son los criterios principales. La cola del Caburé Grande tiene entre 6 y 11 barras pálidas, y varía con el morfo: unas 8 a 11 barras rojizas en el morfo pardo y 6 a 8 blanquecinas en el gris. El Caburé Chico tiene unas 5 o 6 barras angostas blancas en la cola. Ojo: el morfo gris del Caburé Grande puede tener tantas barras como el Chico, así que las barras solas no siempre alcanzan. Además, el Caburé Chico no está presente en la Patagonia."
   },
   {
    "t": "Dónde vive",
-   "p": "Vive en la Argentina y Chile, en el Cono Sur."
+   "p": "Vive en la Argentina y Chile. Cría en la Patagonia y los bosques andino-patagónicos en verano y, según una de las fuentes, en otoño e invierno se desplaza hacia el nordeste y se cree que llega al centro y norte del país, por eso puede aparecer en Córdoba en esa época. Llega hasta unos 1.500 m de altitud."
   },
   {
    "t": "Comportamiento y alimentación",
@@ -45,6 +53,14 @@
   {
    "t": "Wikipedia: Glaucidium nana",
    "u": "https://es.wikipedia.org/wiki/Glaucidium_nana"
+  },
+  {
+   "t": "COA Cauquén Real: Caburé Grande",
+   "u": "https://www.coacauquenrealsmandes.net.ar/contenidos_bosque/cabure_grande.htm"
+  },
+  {
+   "t": "Aves del Litoral (UNL): Caburé Chico",
+   "u": "https://www.fcv.unl.edu.ar/aves/categorias/strigidae/cabure-chico/"
   }
  ],
  "comun": "Caburé Grande"
