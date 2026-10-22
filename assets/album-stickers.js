@@ -8,7 +8,7 @@ function renderAlbum() {
   const fig = (ave, i) => {
     const enc = visto(ave), av = enc ? avist[ave.id] : null;
     const foto = av && av.foto
-      ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
+      ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${(typeof FOCO!=='undefined'&&FOCO[av.foto]!=null)?FOCO[av.foto]:50}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
       : getSilueta(ave.familiaEsp);
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
