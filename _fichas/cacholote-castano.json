@@ -1,0 +1,47 @@
+{
+ "id": 171,
+ "resumen": "Cacholote Castaño (Pseudoseisura lophotes): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "26 cm"
+  ],
+  [
+   "Ambientes",
+   "Bosques y matorrales chaqueños, montes de espinillo"
+  ],
+  [
+   "Altitud",
+   "Hasta unos 900 m"
+  ],
+  [
+   "Nido",
+   "Estructura alargada de ramas secas"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Con 26 cm es la mayor especie de su familia, los hornero y afines (Furnariidae). Tiene el iris amarillo y una cresta llamativa, más grisácea y oscura que el resto. La parte superior es parda, con la rabadilla y la cola rufo oscuras; la cara y la garganta son rufas, y la parte inferior es parda con plumas escamadas más pálidas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita el sur de Bolivia y el oeste de Paraguay y se extiende hacia el centro y sur de la Argentina, y hacia el este hasta el extremo sudoeste de Brasil y Uruguay. Vive en bosques y matorrales chaqueños y en montes de espinillo, hasta unos 900 m de altitud. Se la describe como bastante común."
+  },
+  {
+   "t": "Comportamiento",
+   "p": "Camina por el suelo en pequeños grupos familiares y busca su alimento revolviendo hojas secas, ramas y estiércol seco. Su canto es estridente, normalmente en dúo, y más áspero que el del Cacholote Pardo (Pseudoseisura unirufa), al que se parece en general."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Construye un nido alargado con ramas secas y otros materiales, como estiércol, pieles de víbora y plumas de aves grandes."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Pseudoseisura lophotes",
+   "u": "https://es.wikipedia.org/wiki/Pseudoseisura_lophotes"
+  }
+ ],
+ "comun": "Cacholote Castaño"
+}

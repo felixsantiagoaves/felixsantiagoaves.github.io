@@ -1,0 +1,51 @@
+{
+ "id": 52,
+ "resumen": "Caburé Grande (Glaucidium nana): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 20 cm"
+  ],
+  [
+   "Distribución",
+   "Argentina y Chile"
+  ],
+  [
+   "Hábitos",
+   "Relativamente diurno"
+  ],
+  [
+   "Puesta",
+   "3 a 5 huevos blancos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un mochuelo de unos 20 cm. La cabeza, el dorso y las cobertoras son gris pardo con algo de castaño y manchas claras; la garganta y la ceja son blancas, y el pecho y el abdomen tienen rayas gruesas blanquecinas, pardas y negruzcas. La cola tiene bandas negruzcas y castañas. El pico es corto y ganchudo, y las patas y los ojos son amarillos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Vive en la Argentina y Chile, en el Cono Sur."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Tiene costumbres relativamente diurnas. Por su tamaño pequeño, su vuelo silencioso y porque se queda inmóvil en la rama, pasa fácilmente inadvertido. Es agresivo con sus presas y caza animales incluso más grandes que él, a los que mata rápido con las garras."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Anida entre septiembre y noviembre en huecos de árboles y pone de 3 a 5 huevos blancos, opacos y bastante redondeados, de unos 30 × 25 mm."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo conoce como Caburé Grande, Chuncho o Mochuelo Patagónico, y a veces se escribe Glaucidium nanum."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Glaucidium nana",
+   "u": "https://es.wikipedia.org/wiki/Glaucidium_nana"
+  }
+ ],
+ "comun": "Caburé Grande"
+}

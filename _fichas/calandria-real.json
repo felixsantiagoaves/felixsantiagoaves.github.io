@@ -1,0 +1,47 @@
+{
+ "id": 66,
+ "resumen": "Calandria Real (Mimus triurus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 20 cm"
+  ],
+  [
+   "Ambientes",
+   "Estepas arbustivas y bosques xerófilos"
+  ],
+  [
+   "Alimentación",
+   "Insectos y frutos"
+  ],
+  [
+   "Distribución",
+   "Centro y norte de Argentina; las poblaciones del sur migran hacia el norte en invierno"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Mide unos 20 cm y tiene tonos apagados: dorso pardo grisáceo con la rabadilla rufa, y alas oscuras con una mancha blanca grande y bien visible, que también aparece en el borde externo de la cola. La garganta y el vientre son blanquecinos y los flancos ocráceos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Habita el sur de Bolivia, Paraguay y Brasil, todo Uruguay y el centro y norte de la Argentina, hasta el norte de Chubut. Las poblaciones del extremo sur migran hacia el norte en invierno, por eso es más fácil verla en Córdoba en esa época. Vive en estepas arbustivas y bosques xerófilos."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come insectos y frutos. Pasa parte del tiempo en el suelo, donde corre distancias cortas. Es muy territorial y echa a otras aves que se posan cerca, sin importar el tamaño."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Cría entre la primavera y el verano. Macho y hembra construyen un nido cóncavo, profundo y de aspecto desprolijo; la hembra incuba unas dos semanas. Los pichones se quedan unas dos semanas en el nido, luego se esconden en el follaje y siguen a los padres durante un mes o más. El Tordo Renegrido parasita sus nidos."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Mimus triurus",
+   "u": "https://es.wikipedia.org/wiki/Mimus_triurus"
+  }
+ ],
+ "comun": "Calandria Real"
+}

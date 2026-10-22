@@ -1,0 +1,55 @@
+{
+ "id": 204,
+ "resumen": "Cabecitanegra (Spinus magellanicus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "10 a 14 cm"
+  ],
+  [
+   "Ambientes",
+   "Muy variados: montes, parques, jardines y zonas serranas"
+  ],
+  [
+   "Alimentación",
+   "Semillas; insectos pequeños para las crías"
+  ],
+  [
+   "Altitud",
+   "Desde el nivel del mar hasta unos 5.000 m (en Chile)"
+  ],
+  [
+   "Puesta",
+   "Normalmente 3 o 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Mide entre 10 y 14 cm. El macho es verdoso arriba y amarillo abajo, con capucha negra, rabadilla amarilla y alas y cola negras con franjas amarillas muy llamativas en vuelo. La hembra no tiene capucha: la cabeza es grisácea, el dorso más pálido y la parte inferior más verdosa que amarilla. Los juveniles se parecen a la hembra."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Es propia de Sudamérica y se adapta a muchos ambientes y altitudes, desde el nivel del mar hasta unos 5.000 m en Chile. Vive en jardines y parques urbanos y prefiere zonas serranas con bosques y matorrales."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Fuera de la época de cría forma grandes bandadas que mantienen el contacto con silbidos constantes. Entre octubre y marzo las parejas se separan para buscar territorio: el macho persigue a la hembra cantando y mostrando la garganta negra. Come todo tipo de granos y, en época de cría, busca insectos pequeños como pulgones para alimentar a las crías."
+  },
+  {
+   "t": "Nidificación",
+   "p": "La hembra construye sola el nido en 7 a 9 días, con fibras vegetales, tallos y palitos, y lo forra con lana y pelos. Lo ubica en el extremo de una rama, a 3 o 4 m de altura. Pone normalmente 3 o 4 huevos blanco azulados con manchitas marrones y negras. La hembra incuba y cuida al principio a las crías, y el macho colabora después de unos días."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Antes se la ubicaba en los géneros Carduelis o Sporagra, y hoy eBird la lista como Spinus magellanicus. También se la conoce como Jilguero Encapuchado."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Spinus magellanicus",
+   "u": "https://es.wikipedia.org/wiki/Spinus_magellanicus"
+  }
+ ],
+ "comun": "Cabecitanegra"
+}

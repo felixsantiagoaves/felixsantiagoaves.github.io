@@ -1,0 +1,43 @@
+{
+ "id": 207,
+ "resumen": "Calancate Cabeza Azul (Thectocercus acuticaudatus): cómo reconocerlo, dónde vive, qué come y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "Unos 37 cm"
+  ],
+  [
+   "Peso",
+   "140 a 190 g"
+  ],
+  [
+   "Distribución",
+   "Discontinua, del Caribe al norte de la Patagonia argentina"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un loro de unos 37 cm y 140 a 190 g, predominantemente verde, con tonos azulados en la cabeza, la corona, las mejillas y las orejas. El pecho puede ser azul, aunque lo más común es verde o verde amarillento. La cola es verde en la punta y pardo rojiza por debajo, y tiene anillos blancos alrededor de los ojos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Se distribuye de forma discontinua por Sudamérica, desde el Caribe hasta el norte de la Patagonia argentina."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Hasta 2013 se lo incluía en el género Aratinga. Hoy es la única especie del género Thectocercus. Wikipedia lo llama Calancate Común; acá uso el nombre de eBird."
+  },
+  {
+   "t": "Conservación",
+   "p": "Wikipedia señala que se calcula que cada año se extrae el 80 % de los pichones para venderlos como mascotas, y que los métodos de captura matan a varios de ellos."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Thectocercus acuticaudatus",
+   "u": "https://es.wikipedia.org/wiki/Thectocercus_acuticaudatus"
+  }
+ ],
+ "comun": "Calancate Cabeza Azul"
+}
