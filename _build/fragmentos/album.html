@@ -9,6 +9,7 @@
   </div>
   <div class="album-controls">
     <div class="album-controls-inner">
+      <div class="reg-sel reg-sticky" role="group" aria-label="Región"><button class="reg-b on" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b" data-reg="arg" onclick="setRegion('arg')">Argentina</button></div>
       <input type="text" id="busqueda" placeholder="🔍  Buscar por nombre..." oninput="buscar(this.value)" style="flex:1;padding:.5rem .9rem;border:1.5px solid var(--co);border-radius:100px;font-family:'Lato',sans-serif;font-size:.88rem;color:var(--tx);min-width:180px;">
       <button class="fb active" onclick="setFiltro('todas',this)">Todas</button>
       <button class="fb" onclick="setFiltro('enc',this)">✓ Encontradas</button>

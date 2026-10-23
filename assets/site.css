@@ -1079,3 +1079,8 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 [data-theme=dark] .fm .m-pagina p{color:#7f5539;}
 
 #m-enc-info[style*="display: none"]{display:none !important;}
+
+/* Selector Córdoba/Argentina dentro de la barra fija del álbum */
+.reg-sticky{margin:0;flex:0 0 auto;}
+.reg-sticky .reg-b{padding:.4rem .85rem;}
+@media(max-width:768px){.reg-sticky{order:-1;}.reg-sticky .reg-b{padding:.3rem .7rem;font-size:.62rem;letter-spacing:.6px;}}

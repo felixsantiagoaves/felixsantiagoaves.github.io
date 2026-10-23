@@ -36,7 +36,7 @@
 <meta name="twitter:image" content="https://felixsantiago.com.ar/preview.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=1306f202">
+<link rel="stylesheet" href="/assets/site.css?v=a2d2c791">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -70,6 +70,7 @@
   </div>
   <div class="album-controls">
     <div class="album-controls-inner">
+      <div class="reg-sel reg-sticky" role="group" aria-label="Región"><button class="reg-b on" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b" data-reg="arg" onclick="setRegion('arg')">Argentina</button></div>
       <input type="text" id="busqueda" placeholder="🔍  Buscar por nombre..." oninput="buscar(this.value)" style="flex:1;padding:.5rem .9rem;border:1.5px solid var(--co);border-radius:100px;font-family:'Lato',sans-serif;font-size:.88rem;color:var(--tx);min-width:180px;">
       <button class="fb active" onclick="setFiltro('todas',this)">Todas</button>
       <button class="fb" onclick="setFiltro('enc',this)">✓ Encontradas</button>
@@ -144,8 +145,8 @@
 </div>
 
 <footer id="site-footer-global"></footer>
-<script src="/assets/datos.js?v=1306f202"></script>
-<script src="/assets/foco.js?v=1306f202"></script>
-<script src="/assets/site.js?v=1306f202"></script>
+<script src="/assets/datos.js?v=a2d2c791"></script>
+<script src="/assets/foco.js?v=a2d2c791"></script>
+<script src="/assets/site.js?v=a2d2c791"></script>
 </body>
 </html>
