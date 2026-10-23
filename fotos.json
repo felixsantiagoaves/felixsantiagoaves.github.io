@@ -3232,7 +3232,299 @@
      "d": "2026-08-30"
     }
    ]
+  },
+  "255": {
+   "especie": "Chlorostilbon lucidus",
+   "fotos": [
+    {
+     "f": "mas/chlorostilbon_lucidus/04012026-DSC_0285.jpg",
+     "d": "2026-01-04"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/04012026-DSC_0286.jpg",
+     "d": "2026-01-04"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/04012026-DSC_0362.jpg",
+     "d": "2026-01-04"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/04012026-DSC_0379.jpg",
+     "d": "2026-01-04"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/04012026-DSC_0383.jpg",
+     "d": "2026-01-04"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/16032026-DSC_0021.jpg",
+     "d": "2026-03-16"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/16032026-DSC_0022.jpg",
+     "d": "2026-03-16"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/18012026-DSC_0618.jpg",
+     "d": "2026-01-18"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/18012026-DSC_0624.jpg",
+     "d": "2026-01-18"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/18012026-DSC_0631.jpg",
+     "d": "2026-01-18"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/24122025-DSC_0291.jpg",
+     "d": "2025-12-24"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/26122025-DSC_0633.jpg",
+     "d": "2025-12-26"
+    },
+    {
+     "f": "mas/chlorostilbon_lucidus/28122025-DSC_1298.jpg",
+     "d": "2025-12-28"
+    }
+   ]
+  },
+  "367": {
+   "especie": "Serpophaga nigricans",
+   "fotos": [
+    {
+     "f": "mas/serpophaga_nigricans/09072026-DSC_0377.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/serpophaga_nigricans/27062026-DSC_0265.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/serpophaga_nigricans/27062026-DSC_0292.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/serpophaga_nigricans/27062026-DSC_0305.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/serpophaga_nigricans/30082026-DSC_0143.jpg",
+     "d": "2026-08-30"
+    },
+    {
+     "f": "mas/serpophaga_nigricans/30082026-DSC_0151.jpg",
+     "d": "2026-08-30"
+    },
+    {
+     "f": "mas/serpophaga_nigricans/31052026-DSC_0647.jpg",
+     "d": "2026-05-31"
+    }
+   ]
+  },
+  "307": {
+   "especie": "Saltator aurantiirostris",
+   "fotos": [
+    {
+     "f": "mas/saltator_aurantiirostris/10062026-DSC_0243.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/11062026-DSC_0204.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/11062026-DSC_0206.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/11062026-DSC_0211.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/11062026-DSC_0249.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/12062026-DSC_0345.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/17012026-DSC_0314.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/17012026-DSC_0326.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/17012026-DSC_0332.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/17012026-DSC_0357.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/17012026-DSC_0558.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/18012026-DSC_0633.jpg",
+     "d": "2026-01-18"
+    },
+    {
+     "f": "mas/saltator_aurantiirostris/18012026-DSC_0635.jpg",
+     "d": "2026-01-18"
+    }
+   ]
+  },
+  "365": {
+   "especie": "Machetornis rixosa",
+   "fotos": [
+    {
+     "f": "mas/machetornis_rixosa/10062026-DSC_0259.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/machetornis_rixosa/25122025-DSC_0001.jpg",
+     "d": "2025-12-25"
+    },
+    {
+     "f": "mas/machetornis_rixosa/29122025-DSC_0008.jpg",
+     "d": "2025-12-29"
+    },
+    {
+     "f": "mas/machetornis_rixosa/29122025-DSC_0009.jpg",
+     "d": "2025-12-29"
+    }
+   ]
+  },
+  "369": {
+   "especie": "Camptostoma obsoletum",
+   "fotos": [
+    {
+     "f": "mas/camptostoma_obsoletum/10102026-DSC_0102.jpg",
+     "d": "2026-10-10"
+    },
+    {
+     "f": "mas/camptostoma_obsoletum/10102026-DSC_0103.jpg",
+     "d": "2026-10-10"
+    },
+    {
+     "f": "mas/camptostoma_obsoletum/10102026-DSC_0104.jpg",
+     "d": "2026-10-10"
+    },
+    {
+     "f": "mas/camptostoma_obsoletum/10102026-DSC_0107.jpg",
+     "d": "2026-10-10"
+    }
+   ]
+  },
+  "252": {
+   "especie": "Sappho sparganurus",
+   "fotos": [
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0113.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0115.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0120.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0138.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0146.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0154.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0169.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0172.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0182.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0184.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/sappho_sparganurus/12062026-DSC_0193.jpg",
+     "d": "2026-06-12"
+    }
+   ]
+  },
+  "366": {
+   "especie": "Hymenops perspicillatus",
+   "fotos": [
+    {
+     "f": "mas/hymenops_perspicillatus/17022026-DSC_0143.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/hymenops_perspicillatus/19072026-DSC_0111.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/hymenops_perspicillatus/19072026-DSC_0113.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/hymenops_perspicillatus/20062026-DSC_0371.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/hymenops_perspicillatus/20062026-DSC_0372.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/hymenops_perspicillatus/20062026-DSC_0378.jpg",
+     "d": "2026-06-20"
+    },
+    {
+     "f": "mas/hymenops_perspicillatus/31052026-DSC_0784.jpg",
+     "d": "2026-05-31"
+    }
+   ]
+  },
+  "392": {
+   "especie": "Pseudoleistes virescens",
+   "fotos": [
+    {
+     "f": "mas/pseudoleistes_virescens/27062026-DSC_0015.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/pseudoleistes_virescens/27062026-DSC_0209.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/pseudoleistes_virescens/27062026-DSC_0211.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/pseudoleistes_virescens/31052026-DSC_0582.jpg",
+     "d": "2026-05-31"
+    }
+   ]
   }
  },
- "generado": "2026-10-22"
+ "generado": "2026-10-23"
 }

@@ -1,0 +1,53 @@
+{
+ "comun": "Picaflor Verde",
+ "resumen": "Picaflor Verde (Chlorostilbon lucidus): cómo distinguir al macho verde esmeralda de la hembra gris y dónde vive, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "9 cm"
+  ],
+  [
+   "Distribución",
+   "Norte y centro del país, sin las zonas cordilleranas altas"
+  ],
+  [
+   "Ambientes",
+   "Tierras bajas del norte y del centro y selva de yungas"
+  ],
+  [
+   "Estado",
+   "Muy común en buena parte de Sudamérica"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un picaflor pequeño, de pico recto. El macho de la forma que se ve al este del río Paraná y hacia el sur es verde brillante por completo, con la cola azul oscura y ahorquillada; el pico es rojo con la punta negra. La hembra tiene el pico más oscuro en la punta y a menudo con la mandíbula superior oscura, un antifaz oscuro con una mancha o línea blanca detrás del ojo, las puntas de la cola blancas y las partes de abajo grisáceas. Al oeste del Paraná vive otra forma, que se distingue por unos discos dorados en el vientre."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo describe como muy extendido en las tierras bajas del norte y del centro y en las yungas. Es muy común en amplias zonas de Sudamérica: está en todo Uruguay y Paraguay, en casi toda Bolivia (salvo las cumbres andinas), en el este de Brasil y en todo el centro y norte de la Argentina, salvo las zonas cordilleranas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Emite una serie de trinos secos y monótonos, parecidos a los de un grillo, y también charlas breves y más suaves."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo conoce también como picaflor común, colibrí verde y esmeralda pico rojo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Chlorostilbon lucidus",
+   "u": "https://es.wikipedia.org/wiki/Chlorostilbon_lucidus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 255
+}

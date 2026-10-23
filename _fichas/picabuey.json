@@ -1,0 +1,65 @@
+{
+ "comun": "Picabuey",
+ "resumen": "Picabuey (Machetornis rixosa): cómo reconocerlo, por qué se lo ve caminando sobre el lomo del ganado y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "19,5 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas del norte y los Andes hasta unos 2000 m, y hacia el sur hasta el norte de la Patagonia"
+  ],
+  [
+   "Ambientes",
+   "Áreas semiabiertas, zonas agrícolas y campo abierto cerca de construcciones"
+  ],
+  [
+   "Alimentación",
+   "Insectos que busca en el suelo o sobre el ganado"
+  ],
+  [
+   "Puesta",
+   "3 huevos, a veces 4 o 5"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un tirano de patas largas, pico bastante largo y delgado, y un parche coronario rojo que casi siempre queda oculto. Tiene el iris rojizo, la cabeza gris suave con un trazo oscuro en el ojo, el dorso pardo oliváceo con bordes claros, la garganta blanca, el pecho grisáceo y el resto de abajo amarillo. Macho y hembra son iguales. Pasa mucho tiempo caminando en el suelo."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Según la guía, está en las tierras bajas del norte y en los Andes hasta unos 2000 m, y llega hacia el sur hasta el norte de la Patagonia. Prefiere áreas semiabiertas, zonas agrícolas y el campo abierto que rodea las construcciones."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Suele andar en pareja o en pequeños grupos y es más terrestre que arborícola, aunque a veces se posa en arbustos o postes. Corre por el suelo para atrapar insectos y a veces los toma del lomo de grandes mamíferos, domésticos o silvestres, como los carpinchos, un ejemplo clásico de relación de beneficio mutuo."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un tintineo fino, metálico y rápido, algo como tsi tsi-wid-si, con mucha variación."
+  },
+  {
+   "t": "Nidificación",
+   "p": "En el Cono Sur cría de octubre a enero. Hace un nido expuesto y bien elaborado, en forma de media esfera o de taza, a baja o mediana altura. Le gusta usar nidos abandonados o semidestruidos de otras aves, huecos de palmeras u objetos diversos; lo arma con pajas, hojas o algunos palitos en la base y lo forra con cerdas, pelos o plumas. Pone tres huevos, a veces cuatro o cinco, de color crema con pintas y rayas castañas y grises. Incuba entre 14,5 y 17 días y los pichones se quedan en el nido de 16 a 17 días. El renegrido (Molothrus bonariensis) suele poner sus huevos en sus nidos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Machetornis combina palabras griegas que significan «guerrero» y «ave», y rixosa es latín para «peleador». El nombre picabuey se usa en la Argentina y Uruguay; en otros países lo llaman caballerizo, sirirí bueyero o atrapamoscas jinete."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Machetornis rixosa",
+   "u": "https://es.wikipedia.org/wiki/Machetornis_rixosa"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 365
+}

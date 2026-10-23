@@ -1,0 +1,69 @@
+{
+ "comun": "Piojito Silbón",
+ "resumen": "Piojito Silbón (Camptostoma obsoletum): cómo reconocerlo por la corona picuda y las dos barras canela, dónde vive y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas del norte y pie de sierras; llega hasta el centro de la Argentina"
+  ],
+  [
+   "Ambientes",
+   "Ambientes semiabiertos, bordes de bosque y zonas urbanas"
+  ],
+  [
+   "Alimentación",
+   "Insectos, otros invertebrados y frutos"
+  ],
+  [
+   "Altitud",
+   "Desde el nivel del mar hasta unos 2800 m"
+  ],
+  [
+   "Puesta",
+   "2 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un atrapamoscas pequeño y robusto que vive en el estrato medio y alto de la vegetación, con la corona claramente en punta. Tiene el pico corto, con la mandíbula inferior rosada, la corona gris y una mancha blanca delante del ojo, el dorso verde oliva opaco con dos barras alares canela, la garganta gris pálida, el pecho con un matiz oliva y el resto de abajo amarillo pálido."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da en las tierras bajas del norte y el pie de sierras. Es una especie muy extendida y tolerante a distintos ambientes, incluidos los urbanos: suele ser común en ambientes semiabiertos y bordes de bosque, desde el nivel del mar hasta unos 2800 m de altitud. En la Argentina llega hasta el centro del país."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Caza insectos y otros invertebrados, y también come frutos, sobre todo bayas de lorantáceas, la familia de los muérdagos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Es muy vocal. El canto del amanecer es un lamento corto y bastante parejo seguido de un trino breve, we-te-te-te-drriu; el canto del día es más rápido, más largo y a menudo descendente. La llamada más común es un silbido quejoso, feeeeít, con variaciones."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es esférico, hecho de material vegetal y con una entrada lateral; cuelga firmemente de las ramas, a una altura de 5 a 27 m. La hembra pone dos huevos blancos con puntitos color canela."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Camptostoma viene del griego y significa «boca curvada»; obsoletum es latín y quiere decir «liso» o «gastado». En la Argentina, Paraguay y Uruguay se lo llama piojito silbón; en otros países, mosquerito silbador o tiranuelo silbador."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Camptostoma obsoletum (mosquerito silbón)",
+   "u": "https://es.wikipedia.org/wiki/Camptostoma_obsoletum"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 369
+}
