@@ -1,0 +1,27 @@
+/* PROTOTIPO: estadísticas con estética figurita (solo /estadisticas/prototipo/) */
+#page-datos .dat-kpi{border:0;border-top:6px solid #414833;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.3),3px 5px 0 rgba(30,25,12,.28);transition:transform .2s,box-shadow .2s;}
+#page-datos .dat-kpi:nth-child(odd){transform:rotate(-.6deg);}
+#page-datos .dat-kpi:nth-child(even){transform:rotate(.5deg);}
+#page-datos .dat-kpi:hover{transform:rotate(0) translateY(-3px);box-shadow:0 0 0 1px rgba(0,0,0,.35),5px 8px 0 rgba(30,25,12,.26);}
+#page-datos .dat-kpi span{color:#414833;font-weight:900;}
+#page-datos .dat-card{border:0;border-top:6px solid #414833;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.28),3px 5px 0 rgba(30,25,12,.24);}
+#page-datos .dat-h{padding-bottom:.35rem;margin-bottom:.35rem;border-bottom:2px solid #414833;display:inline-block;}
+#page-datos .hito-chip{border-radius:2px;border:2px solid #414833;color:#414833;background:#fff;}
+#page-datos .hito-chip.ok{background:#414833;color:#ede0d4;}
+#page-datos .hito-chip.next{border-color:#c4a882;background:#f6efdf;}
+#page-datos .dat-filtro.act{border-radius:3px;box-shadow:3px 4px 0 rgba(30,25,12,.25);}
+[data-theme=dark] #page-datos .dat-kpi,[data-theme=dark] #page-datos .dat-card{border-top-color:#8a9468;}
+[data-theme=dark] #page-datos .dat-h{border-bottom-color:#8a9468;}
+[data-theme=dark] #page-datos .dat-kpi span{color:#a9b385;}
+[data-theme=dark] #page-datos .hito-chip{background:transparent;border-color:#8a9468;color:#cdbfa8;}
+[data-theme=dark] #page-datos .hito-chip.ok{background:#656d4a;color:#ede0d4;}
+@media(max-width:768px){#page-datos .dat-kpi{transform:none !important;}}
+#page-datos .fam-det{border:0;border-left:8px solid #414833;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.25),2px 3px 0 rgba(30,25,12,.22);margin-bottom:.45rem;}
+#page-datos .fam-det[open]{box-shadow:0 0 0 1px rgba(0,0,0,.3),4px 6px 0 rgba(30,25,12,.25);}
+#page-datos .fam-det summary .hb-n{font-family:'Lato',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.8px;font-size:.74rem;color:#2d3322;}
+#page-datos .fam-det summary .hb-v{background:#c4a882;color:#2a2a1c;border-radius:2px;padding:.15rem .4rem;text-align:center;font-family:'Lato',sans-serif;font-size:.72rem;}
+#page-datos .fam-det.completa{border-left-color:#8fa05a;}
+#page-datos .fam-det.completa summary .hb-v{background:#8fa05a;color:#1d2412;}
+#page-datos .fam-det .hb-bar,#page-datos .fam-det .hb-fill{border-radius:0;}
+#page-datos .fam-ir{border-radius:2px;}
+[data-theme=dark] #page-datos .fam-det summary .hb-n{color:#e6d9c3;}
