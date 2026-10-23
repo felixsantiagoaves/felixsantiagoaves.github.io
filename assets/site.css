@@ -1128,3 +1128,27 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 #page-sobre-mi .album-cta small{font-family:'Caveat',cursive;font-weight:400;font-size:1rem;letter-spacing:0;text-transform:none;opacity:.85;line-height:1.1;}
 #page-sobre-mi .album-cta:hover{background:var(--ar);color:var(--v1);box-shadow:none;transform:none;}
 #page-sobre-mi .album-cta:hover small{opacity:1;}
+
+/* Contacto: redes como figuritas verticales */
+#page-redes .redes-grid{grid-template-columns:repeat(5,minmax(0,1fr));max-width:880px;gap:1.2rem .9rem;padding:.4rem .3rem;}
+#page-redes .red-card{padding:6px 6px .75rem;gap:.5rem;border:0;border-radius:3px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.3),2px 4px 0 rgba(30,25,12,.28);transition:transform .2s,box-shadow .2s;}
+#page-redes .red-card:nth-child(odd){transform:rotate(-1.4deg);}
+#page-redes .red-card:nth-child(even){transform:rotate(1.2deg);}
+#page-redes .red-card:hover{transform:rotate(0) translateY(-5px) scale(1.03);box-shadow:0 0 0 1px rgba(0,0,0,.3),4px 9px 0 rgba(30,25,12,.25);border-color:transparent;}
+#page-redes .red-icon{width:100%;height:auto;aspect-ratio:4/5;border-radius:2px;}
+#page-redes .red-icon svg{width:42px;height:42px;}
+#page-redes .red-icon svg[viewBox="0 0 80 32"]{width:80%;height:auto;}
+#page-redes .red-name{font-size:.85rem;}
+#page-redes .red-handle{display:block;font-size:.8rem;padding:0 .2rem;overflow-wrap:anywhere;text-align:center;line-height:1.1;}
+@media(max-width:768px){
+  #page-redes .redes-grid{display:flex;flex-wrap:wrap;justify-content:center;max-width:420px;gap:.9rem .6rem;}
+  #page-redes .red-card{flex:0 0 calc((100% - 1.2rem)/3);}
+  #page-redes .red-card{padding:4px 4px .55rem;}
+  #page-redes .red-icon svg{width:30px;height:30px;}
+  #page-redes .red-name{font-size:.74rem;}
+  #page-redes .red-handle{display:none;}
+}
+[data-theme=dark] #page-redes .red-card{background:#e9dfcf;}
+[data-theme=dark] #page-redes .red-name{color:#2d3322;}
+[data-theme=dark] #page-redes .red-handle{color:#7f5539;}
