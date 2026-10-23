@@ -638,6 +638,8 @@ function openM(id) {
   const av=avist[id];
   // URL solo para aves encontradas
   if(av) { try{ history.replaceState(null,'',location.pathname+location.search+'#'+slugAve(ave.comun)); }catch(e){} document.title = ave.comun+' · Félix Santiago Aves'; }
+  const mNum = document.getElementById('m-num');
+  if(mNum) { const l = avesReg().slice().sort((a, b) => a.tx - b.tx), k = l.findIndex(a => a.id === id); mNum.textContent = k >= 0 ? 'N.º ' + String(k + 1).padStart(3, '0') : ''; }
   const mNombre = document.getElementById('m-nombre');
   const mComun = document.getElementById('m-comun');
   const slideClass = modalNavDir >= 0 ? 'modal-slide-right' : 'modal-slide-left';
