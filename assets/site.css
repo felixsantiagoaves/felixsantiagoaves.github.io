@@ -1114,3 +1114,16 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 #page-sobre-mi .album-cta small{font-family:'Lato',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:1px;opacity:.75;text-transform:uppercase;}
 #page-sobre-mi .album-cta small::before{content:none;margin:0;}
 #page-sobre-mi .album-cta:hover{box-shadow:4px 7px 0 rgba(15,12,5,.5);}
+
+/* Botón "Explorar el álbum": chico y delicado, como el recuadro de estadísticas */
+#page-sobre-mi .album-cta{display:inline-flex;flex-direction:column;align-items:center;gap:0;margin-top:1.1rem;padding:.4rem 1.6rem;background:rgba(0,0,0,.12);color:var(--ar);border:1px solid rgba(196,168,130,.55);border-radius:0;box-shadow:none;transform:none;}
+#page-sobre-mi .album-cta span{font-family:'Lato',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:2px;text-transform:uppercase;}
+#page-sobre-mi .album-cta small{font-family:'Caveat',cursive;font-weight:400;font-size:1rem;letter-spacing:0;text-transform:none;opacity:.85;line-height:1.1;}
+#page-sobre-mi .album-cta:hover{background:var(--ar);color:var(--v1);box-shadow:none;transform:none;}
+#page-sobre-mi .album-cta:hover small{opacity:1;}
+/* En el campo: en PC las fotos se achican según el alto de la pantalla para que no haya scroll */
+@media(min-width:769px){
+  .campo-grid{--ch:clamp(96px,calc((100vh - 665px)/2),190px);grid-template-columns:repeat(3,calc(var(--ch)*.8 + 10px));justify-content:center;max-width:none;}
+  .campo-fig img{aspect-ratio:auto;height:var(--ch);}
+}
+@media(max-width:768px){.campo-grid{max-width:300px;}}

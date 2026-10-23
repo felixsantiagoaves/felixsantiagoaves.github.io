@@ -357,7 +357,7 @@ function loadGaleria() {
 
 
 function loadCarrusel() {
-  fetch('/campo/campo.json')
+  fetch('/campo/campo.json?v=2', {cache: 'no-cache'})
     .then(r => r.json())
     .then(fotos => {
       // Llenar CAMPO_FOTOS para el lightbox
