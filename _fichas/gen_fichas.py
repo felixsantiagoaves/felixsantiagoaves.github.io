@@ -48,9 +48,11 @@ for fn in sorted(os.listdir(SRC)):
     if fn.endswith('.json'):
         S0 = json.load(open(os.path.join(SRC, fn), encoding='utf-8')); FUENTES[S0['id']] = S0
 ESP = []
+MIN_FOTOS = 4   # una especie tiene página propia solo si tiene la portada + al menos 3 fotos más
 for sid, r in AVIST['avistamientos'].items():
     id_ = int(sid)
     if not r.get('foto') or id_ not in AVES or not os.path.exists(os.path.join(RAIZ, r['foto'])): continue
+    if 1 + len(FX.get(sid, {}).get('fotos', [])) < MIN_FOTOS: continue
     ave = AVES[id_]; comun = FUENTES.get(id_, {}).get('comun') or arreglar(ave['comun'])
     w, h = dims(r['foto'].replace('fotos/', '', 1))
     ESP.append({'id': id_, 'slug': slugify(comun), 'comun': comun, 'sci': ave['nombre'], 'grupo': ave['familiaEsp'], 'thumb': '/' + r['foto'], 'w': w, 'h': h, 'completa': id_ in FUENTES, 'ok': id_ in FUENTES and bool(FX.get(str(id_), {}).get('fotos'))})
@@ -63,7 +65,7 @@ def otras(e):
     if len(mismo) < 3: mismo += [x for x in ESP[i+1:] + ESP[:i] if x not in mismo][:3 - len(mismo)]
     return mismo
 def tarjeta(x, cls='card'):
-    ins = '<span class="ins" title="Ficha completa, con mis fotos">★ Completa</span>' if x.get('ok') else ''
+    ins = ''
     return (f'<a class="{cls}" href="/aves/{x["slug"]}/">{ins}<img src="{x["thumb"]}" width="{x["w"]}" height="{x["h"]}" loading="lazy" decoding="async" alt="{esc(x["comun"])} ({esc(x["sci"])}), fotografiada por Félix Santiago">'
             f'<span class="n">{esc(x["comun"])}</span><span class="c">{esc(x["sci"])}</span></a>')
 
@@ -271,7 +273,7 @@ ipage = f'''<!DOCTYPE html>
 <main class="wrap">
   <p class="crumbs"><a href="/">Inicio</a> › Especies</p>
   <h1>Especies que fotografié</h1>
-  <p class="intro">{len(ESP)} especies de aves, cada una con su ficha: mis fotos, el mapa de dónde la vi y datos de la especie. Las fichas se van completando de a poco.</p>
+  <p class="intro">{len(ESP)} especies de aves que tengo bien fotografiadas, cada una con su ficha: mis fotos, el mapa de dónde la vi y datos de la especie. Se suman a medida que reúno más fotos de cada una.</p>
   <div class="filtros">
     <input type="search" id="q" placeholder="Buscar por nombre común o científico" aria-label="Buscar especie" autocomplete="off">
     <select id="g" aria-label="Filtrar por grupo"><option value="">Todos los grupos</option>{opts}</select>
@@ -296,7 +298,7 @@ ipage = f'''<!DOCTYPE html>
   var lg=new URLSearchParams(location.search).get('lugar');
   if(lg!==null){{ Promise.all([fetch('/avistamientos.json').then(function(r){{return r.json();}}), fetch('/aves/indice.json').then(function(r){{return r.json();}})]).then(function(r){{
     var L=(r[0].lugares||[])[+lg]; if(!L) return; ls={{}}; L.ids.forEach(function(i){{ if(r[1][i]) ls[r[1][i]]=1; }});
-    var b=document.getElementById('lugar-f'); b.hidden=false; b.innerHTML='Especies vistas en <strong></strong> · <a href="/aves/">ver todas</a>'; b.querySelector('strong').textContent=L.nombre; f(); }}).catch(function(){{}}); }}
+    var b=document.getElementById('lugar-f'); b.hidden=false; b.innerHTML='Especies con ficha vistas en <strong></strong> ('+Object.keys(ls).length+' de '+L.ids.length+') · <a href="/aves/">ver todas</a>'; b.querySelector('strong').textContent=L.nombre; f(); }}).catch(function(){{}}); }}
 }})();
 </script>
 </body>

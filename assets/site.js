@@ -726,7 +726,7 @@ function pintarLink(ave) {
   box.style.display = 'none'; box.innerHTML = '';
   cargarPaginas().then(() => {
     if(curId !== id || !PAGINAS[id]) return;
-    box.innerHTML = '<a class="pill-link" href="/aves/' + PAGINAS[id] + '/">Ver ficha completa →</a><p>Mis fotos, el mapa de mis avistamientos y más.</p>';
+    box.innerHTML = '<a class="pill-link" href="/aves/' + PAGINAS[id] + '/">Ver la ficha de la especie →</a><p>Mis fotos, el mapa de mis avistamientos y más.</p>';
     box.style.display = 'block';
     const d = document.querySelector('#m-ficha .ficha-dato'); if(d) d.closest('.ficha-row').style.display = 'none';
   });
