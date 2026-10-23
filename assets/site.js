@@ -175,7 +175,7 @@ function construirMapa() {
     const ic = L.divIcon({className: 'mk-wrap', html: `<div class="mk" style="width:${sz}px;height:${sz}px">${l.count}</div>`, iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2], popupAnchor: [0, -sz / 2]});
     const m = L.marker([l.lat, l.lon], {icon: ic, title: l.nombre, riseOnHover: true, ids: l.ids});
     mapaGrupo.addLayer(m);
-    m.bindPopup(() => mapaPopup(i), {className: 'mk-pop', maxWidth: 300, autoPanPaddingTopLeft: [16, 20], autoPanPaddingBottomRight: [16, 16]});
+    m.bindPopup(() => mapaPopup(i), {className: 'mk-pop', maxWidth: window.innerWidth < 700 ? 300 : 520, autoPanPaddingTopLeft: [16, 20], autoPanPaddingBottomRight: [16, 16]});
     m.on('popupopen', () => { const e = m.getElement(); if(e) e.querySelector('.mk').classList.add('on'); });
     m.on('popupclose', () => { const e = m.getElement(); if(e) e.querySelector('.mk').classList.remove('on'); });
     return m;
@@ -197,7 +197,7 @@ function mapaPopup(i) {
   const lista = l.ids.filter(id => avist[id]).map(id => AVES.find(a => a.id === id)).filter(Boolean).sort((a, b) => a.comun.localeCompare(b.comun, 'es'));
   const el = document.createElement('div'); el.className = 'mk-body';
   el.innerHTML = `<div class="mk-head"><div class="mk-tit">${escHtml(l.nombre)}</div><div class="mk-sub">${lista.length} especie${lista.length === 1 ? '' : 's'}${l.prov && PROV[l.prov] ? ' · ' + escHtml(PROV[l.prov]) : ''}</div></div>
-    <div class="mk-cont"><div class="mk-lista">${lista.map(a => `<button class="mk-sp" data-id="${a.id}">${escHtml(a.comun)}</button>`).join('')}</div>
+    <div class="mk-cont"><div class="mk-lista">${lista.map(a => { const f = avist[a.id] && avist[a.id].foto; return `<button class="mk-sp" data-id="${a.id}"><span class="mk-th">${f ? `<img src="/${f.replace(/^\//, '')}" style="object-position:${focoPos(f)}% 40%" loading="lazy" decoding="async" alt="">` : getSilueta(a.familiaEsp)}</span><span class="mk-sn">${escHtml(a.comun)}</span></button>`; }).join('')}</div>
     <button class="mk-alb">Ver en el álbum →</button></div>`;
   el.addEventListener('click', e => {
     const b = e.target.closest('.mk-sp');
