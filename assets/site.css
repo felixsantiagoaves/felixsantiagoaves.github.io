@@ -1142,11 +1142,11 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 #page-redes .red-name{font-size:.85rem;}
 #page-redes .red-handle{display:block;font-size:.8rem;padding:0 .2rem;overflow-wrap:anywhere;text-align:center;line-height:1.1;}
 @media(max-width:768px){
-  #page-redes .redes-grid{display:flex;flex-wrap:wrap;justify-content:center;max-width:420px;gap:.9rem .6rem;}
-  #page-redes .red-card{flex:0 0 calc((100% - 1.2rem)/3);}
-  #page-redes .red-card{padding:4px 4px .55rem;}
-  #page-redes .red-icon svg{width:30px;height:30px;}
-  #page-redes .red-name{font-size:.74rem;}
+  #page-redes .redes-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:420px;gap:.5rem;padding:.3rem 0;}
+  #page-redes .red-card{padding:3px 3px .4rem;gap:.3rem;}
+  #page-redes .red-icon svg{width:20px;height:20px;}
+  #page-redes .red-icon svg[viewBox="0 0 80 32"]{width:86%;}
+  #page-redes .red-name{font-size:.56rem;letter-spacing:0;}
   #page-redes .red-handle{display:none;}
 }
 [data-theme=dark] #page-redes .red-card{background:#e9dfcf;}
