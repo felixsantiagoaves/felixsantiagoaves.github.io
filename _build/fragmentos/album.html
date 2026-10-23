@@ -1,4 +1,4 @@
-<div id="page-album" class="page active">
+<div id="page-album" class="page active stickers">
   <div class="page-header">
     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-logo class="page-header-logo" alt="logo">
     <h2 class="page-title">Álbum de <em>Aves</em></h2>
@@ -10,19 +10,26 @@
   <div class="album-controls">
     <div class="album-controls-inner">
       <input type="text" id="busqueda" placeholder="🔍  Buscar por nombre..." oninput="buscar(this.value)" style="flex:1;padding:.5rem .9rem;border:1.5px solid var(--co);border-radius:100px;font-family:'Lato',sans-serif;font-size:.88rem;color:var(--tx);min-width:180px;">
-      <button class="fb" onclick="setFiltro('todas',this)">Todas</button>
-      <button class="fb active" onclick="setFiltro('enc',this)">✓ Encontradas</button>
+      <button class="fb active" onclick="setFiltro('todas',this)">Todas</button>
+      <button class="fb" onclick="setFiltro('enc',this)">✓ Encontradas</button>
       <button class="fb" onclick="setFiltro('no',this)">○ Faltantes</button>
       <button class="fb2" id="btn-mas" onclick="toggleMasFiltros()">Filtros ▾</button>
     </div>
     <div class="album-filtros" id="album-filtros">
       <label>Grupo<select id="sel-fam" onchange="setFam(this.value)"></select></label>
       <label>Lugar<select id="sel-lug" onchange="setLug(this.value)"></select></label>
-      <label>Orden<select id="sel-ord" onchange="setOrden(this.value)"><option value="az">A → Z</option><option value="tax">Taxonómico (como eBird)</option><option value="rec">Más recientes primero</option><option value="ant">Más antiguas primero</option></select></label>
+      <label>Orden<select id="sel-ord" onchange="setOrden(this.value)"><option value="tax">Taxonómico (páginas por familia)</option><option value="az">A → Z</option><option value="rec">Más recientes primero</option><option value="ant">Más antiguas primero</option></select></label>
       <button class="fb2" onclick="limpiarFiltros()">Limpiar</button>
     </div>
   </div>
   <div class="page-body-wide">
     <div id="album-container"></div>
   </div>
+</div>
+<div id="alb-nav" aria-label="Moverse por el álbum">
+  <span id="alb-nav-lbl"></span>
+  <button onclick="albNav('top')" title="Ir al principio" aria-label="Ir al principio">⤒</button>
+  <button class="alb-fam" onclick="albNav('prev')" title="Familia anterior" aria-label="Familia anterior">▲</button>
+  <button class="alb-fam" onclick="albNav('next')" title="Familia siguiente" aria-label="Familia siguiente">▼</button>
+  <button onclick="albNav('bot')" title="Ir al final" aria-label="Ir al final">⤓</button>
 </div>

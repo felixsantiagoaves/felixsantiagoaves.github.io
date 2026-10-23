@@ -29,7 +29,7 @@ const fmtN = n => n.toLocaleString('es-AR');
 let AVIST_INITIAL = {};   // se carga desde avistamientos.json (ver cargarDatos)
 let avist = Object.assign({}, AVIST_INITIAL);
 let curId = null;
-let filtro = 'enc';
+let filtro = 'todas';
 let busqTxt = '';
 
 const redes = {
@@ -546,35 +546,75 @@ function setRegion(r) {
 function irAlbumRegion(r) { if(aOtra('album','irAlbumRegion',[r])) return; REGION = r === 'cba' ? 'arg' : 'cba'; setRegion(r); irAlbum('todas'); }
 function renderAlbum() {
   const container = document.getElementById('album-container');
-
-  // Lista completa ordenada alfabéticamente — para numeración fija
-  const todasOrdenadas = avesReg().slice().sort((a,b) => a.comun.localeCompare(b.comun, 'es'));
-  const numMap = {};
-  todasOrdenadas.forEach((a, i) => numMap[a.id] = i + 1);
-
-  const avesFilt = avesFiltradas();
-
-  let html = '<div class="album-count">' + avesFilt.length + ' especie' + (avesFilt.length === 1 ? '' : 's') + '</div><div class="album-grid">';
-  avesFilt.forEach((ave, i) => {
-      const enc=visto(ave);
-      const av=enc?avist[ave.id]:null;
-      const fotoHTML = av&&av.foto ? `<img class="fig-foto" loading="lazy" decoding="async" src="${av.foto}" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">` : getSilueta(ave.familiaEsp);
-      html += `<div class="fig ${enc?'enc':'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="animation-delay:${Math.min(i*0.04,0.6)}s">
-        <span class="fig-num">#${String(numMap[ave.id]).padStart(3,'0')}</span>
-        <span class="fig-star">✓</span>
-        <div class="fig-img"><div class="fig-svg-wrap">${fotoHTML}</div></div>
-        <div class="fig-info">
-          <div class="fig-ci">${ave.nombre}</div>
-          <div class="fig-co">${ave.comun}</div>
-          <div class="fig-fecha">${av?fmtFecha(av.fecha):''}</div>
-        </div>
-      </div>`;
+  // Numeración fija: orden taxonómico dentro de la región (como eBird)
+  const todas = avesReg().slice().sort((a, b) => a.tx - b.tx);
+  const numMap = {}; todas.forEach((a, i) => numMap[a.id] = i + 1);
+  const fig = (ave, i) => {
+    const enc = visto(ave), av = enc ? avist[ave.id] : null;
+    const foco = (typeof FOCO !== 'undefined' && av && av.foto && FOCO[av.foto] != null) ? FOCO[av.foto] : 50;
+    const foto = av && av.foto
+      ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
+      : getSilueta(ave.familiaEsp);
+    const rot = (((ave.id * 37) % 7) - 3) * 0.7;
+    return `<div class="fig ${enc ? 'enc' : 'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
+      <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
+      <div class="fig-img"><div class="fig-svg-wrap">${foto}</div></div>
+      <div class="fig-info">
+        <div class="fig-co">${ave.comun}</div>
+        <div class="fig-ci">${ave.nombre}</div>
+        <div class="fig-fecha">${av ? fmtFecha(av.fecha) : 'Por encontrar'}</div>
+      </div></div>`;
+  };
+  const lista = avesFiltradas();
+  if (!lista.length) { container.innerHTML = `<div style="text-align:center;padding:3rem;font-family:'Caveat',cursive;font-size:1.2rem;color:var(--ti)">No se encontraron aves con ese criterio 🔍</div>`; albNavUpd(); return; }
+  let html = '<div class="album-count">' + lista.length + ' especie' + (lista.length === 1 ? '' : 's') + '</div>';
+  if (ordenAlbum === 'tax') {
+    const famsAll = [...new Set(todas.map(a => a.familiaEsp))];   // ya en orden taxonómico
+    const grupos = new Map();
+    lista.forEach(a => { if (!grupos.has(a.familiaEsp)) grupos.set(a.familiaEsp, []); grupos.get(a.familiaEsp).push(a); });
+    [...grupos.keys()].sort((a, b) => famsAll.indexOf(a) - famsAll.indexOf(b)).forEach(f => {
+      const tot = todas.filter(a => a.familiaEsp === f), ok = tot.filter(a => visto(a)).length;
+      html += `<section class="alb-pag" data-fam="${escHtml(f)}"><header class="alb-pag-hd"><span class="alb-pag-n">Página ${famsAll.indexOf(f) + 1}</span><h3>${escHtml(f)}</h3><span class="alb-pag-c${ok === tot.length ? ' full' : ''}">${ok} de ${tot.length}</span></header><div class="album-grid stk">${grupos.get(f).map(fig).join('')}</div></section>`;
     });
-  html += '</div>';
-
-  if(!avesFilt.length) html = `<div style="text-align:center;padding:3rem;font-family:'Caveat',cursive;font-size:1.2rem;color:var(--ti)">No se encontraron aves con ese criterio 🔍</div>`;
+  } else {
+    html += `<section class="alb-pag"><div class="album-grid stk">${lista.map(fig).join('')}</div></section>`;
+  }
   container.innerHTML = html;
+  albNavUpd();
 }
+
+// ── Botones flotantes del álbum: arriba / familia anterior / familia siguiente / abajo ──
+function albOff() {
+  const c = document.querySelector('.album-controls');
+  return 56 + (c && !c.classList.contains('fopen') ? c.offsetHeight : 0) + 10;
+}
+function albSecs() { return [...document.querySelectorAll('#album-container .alb-pag[data-fam]')]; }
+function albIr(y) { window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); }
+function albNav(w) {
+  const off = albOff(), secs = albSecs();
+  if (w === 'top') return albIr(0);
+  if (w === 'bot') return albIr(document.documentElement.scrollHeight);
+  const top = el => el.getBoundingClientRect().top + window.scrollY - off;
+  if (!secs.length) return;
+  const y = window.scrollY;
+  if (w === 'next') { const s = secs.find(e => top(e) > y + 6); return s ? albIr(top(s)) : albIr(document.documentElement.scrollHeight); }
+  const prev = secs.filter(e => top(e) < y - 6).pop();
+  return prev ? albIr(top(prev)) : albIr(0);
+}
+function albNavUpd() {
+  const nav = document.getElementById('alb-nav'); if (!nav) return;
+  const secs = albSecs(), off = albOff();
+  nav.classList.toggle('on', window.scrollY > 260);
+  nav.classList.toggle('sin-fam', !secs.length);
+  const lbl = document.getElementById('alb-nav-lbl'); if (!lbl) return;
+  let cur = null;
+  secs.forEach(e => { if (e.getBoundingClientRect().top <= off + 24) cur = e; });
+  lbl.textContent = cur ? cur.dataset.fam : '';
+}
+(function () {
+  let t = 0;
+  window.addEventListener('scroll', () => { if (t) return; t = requestAnimationFrame(() => { t = 0; albNavUpd(); }); }, { passive: true });
+})();
 
 function setFiltro(f, btn) {
   filtro=f;
@@ -860,7 +900,7 @@ function buildAveDia() {
 }
 
 // ── Álbum: filtros por familia, lugar y orden ──
-let famFiltro = '', lugFiltro = '', ordenAlbum = 'az';
+let famFiltro = '', lugFiltro = '', ordenAlbum = 'tax';
 function avesFiltradas() {
   const q = normTxt(busqTxt || '').trim();
   const ids = lugFiltro !== '' && LUGARES_MAP[+lugFiltro] ? new Set(LUGARES_MAP[+lugFiltro].ids) : null;
@@ -891,7 +931,7 @@ function initFiltrosAlbum() {
   document.getElementById('sel-lug').innerHTML = '<option value="">Todos los lugares</option>' + LUGARES_MAP.map((l, i) => `<option value="${i}">${escHtml(l.nombre)} (${l.count})</option>`).join('');
 }
 function actualizarFiltrosUI() {
-  const n = (famFiltro ? 1 : 0) + (lugFiltro !== '' ? 1 : 0) + (ordenAlbum !== 'az' ? 1 : 0);
+  const n = (famFiltro ? 1 : 0) + (lugFiltro !== '' ? 1 : 0) + (ordenAlbum !== 'tax' ? 1 : 0);
   const b = document.getElementById('btn-mas');
   if(b) { b.textContent = 'Filtros' + (n ? ' (' + n + ')' : '') + ' ▾'; b.classList.toggle('on', n > 0); }
   document.getElementById('sel-fam').value = famFiltro;
@@ -902,7 +942,7 @@ function toggleMasFiltros() { const o = document.getElementById('album-filtros')
 function setFam(v) { famFiltro = v; actualizarFiltrosUI(); renderAlbum(); }
 function setLug(v) { lugFiltro = v; actualizarFiltrosUI(); renderAlbum(); }
 function setOrden(v) { ordenAlbum = v; actualizarFiltrosUI(); renderAlbum(); }
-function limpiarFiltros() { famFiltro = ''; lugFiltro = ''; ordenAlbum = 'az'; busqTxt = ''; document.getElementById('busqueda').value = ''; actualizarFiltrosUI(); renderAlbum(); }
+function limpiarFiltros() { famFiltro = ''; lugFiltro = ''; ordenAlbum = 'tax'; busqTxt = ''; document.getElementById('busqueda').value = ''; actualizarFiltrosUI(); renderAlbum(); }
 function irAlbumFamilia(fam, soloFaltan) {
   if(aOtra('album','irAlbumFamilia',[fam, soloFaltan])) return;
   famFiltro = fam; lugFiltro = ''; busqTxt = ''; document.getElementById('busqueda').value = '';
