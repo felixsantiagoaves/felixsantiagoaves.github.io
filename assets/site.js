@@ -80,6 +80,7 @@ function campoGo(idx){
   });
 })();
 
+function focoPos(f){ return (typeof FOCO !== 'undefined' && FOCO[f] != null) ? FOCO[f] : 50; }
 function irAlbum(filtroVal){
   if(aOtra('album','irAlbum',[filtroVal])) return;
   const bts=document.querySelectorAll('.fb');
@@ -512,7 +513,7 @@ function buildRecientes(){
   if(!lista.length){ box.style.display = 'none'; return; }
   tr.innerHTML = lista.map(a =>
     `<button class="rec-item" data-id="${a.id}" title="${escHtml(a.comun)} · ${fmtFecha(avist[a.id].fecha)}">
-       <div class="rec-circulo"><img src="${avist[a.id].foto}" alt="${escHtml(a.comun)}" loading="lazy"></div>
+       <div class="rec-circulo"><img src="${avist[a.id].foto}" style="object-position:${focoPos(avist[a.id].foto)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>
        <div class="rec-nom">${escHtml(a.comun)}</div>
      </button>`).join('') +
     `<button class="rec-item rec-mas" data-mas="1"><div class="rec-circulo">→</div><div class="rec-nom">Ver todas</div></button>`;
@@ -906,7 +907,7 @@ function buildAveDia() {
   if(!a) { card.style.display = 'none'; return; }
   const av = avist[a.id];
   card.querySelector('.dia-fila').innerHTML =
-    `<div class="rec-circulo"><img src="${av.foto}" alt="${escHtml(a.comun)}" loading="lazy"></div>
+    `<div class="rec-circulo"><img src="${av.foto}" style="object-position:${focoPos(av.foto)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>
      <div><div class="nov-val">${escHtml(a.comun)}</div><div class="nov-sub">${escHtml(a.nombre)}</div></div>`;
   card.onclick = () => abrirDesdePortada(a.id, [a]);
 }

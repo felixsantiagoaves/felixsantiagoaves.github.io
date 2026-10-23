@@ -1084,3 +1084,16 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .reg-sticky{margin:0;flex:0 0 auto;}
 .reg-sticky .reg-b{padding:.4rem .85rem;}
 @media(max-width:768px){.reg-sticky{order:-1;}.reg-sticky .reg-b{padding:.3rem .7rem;font-size:.62rem;letter-spacing:.6px;}}
+
+/* Portada: "últimas especies" y "ave del día" como mini figuritas verticales */
+.rec-circulo{width:58px;height:72px;border-radius:2px;border:3px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.4),2px 3px 0 rgba(15,12,5,.45);}
+.rec-item:nth-child(odd) .rec-circulo{transform:rotate(-2.5deg);}
+.rec-item:nth-child(even) .rec-circulo{transform:rotate(2deg);}
+.rec-item:hover .rec-circulo{transform:rotate(0) scale(1.08);border-color:#fff;}
+.rec-mas .rec-circulo{background:transparent;border:2px dashed var(--ar);box-shadow:none;transform:none;}
+.dia-fila .rec-circulo{flex:0 0 46px;width:46px;height:58px;transform:rotate(-2deg);}
+@media(max-width:768px){
+  #page-sobre-mi .rec-circulo{width:44px;height:56px;border-width:2px;}
+  #page-sobre-mi .rec-mas .rec-circulo{border-width:2px;}
+  #page-sobre-mi .dia-fila .rec-circulo{flex:0 0 34px;width:34px;height:44px;}
+}
