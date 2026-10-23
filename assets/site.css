@@ -1017,3 +1017,17 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 @media(max-width:768px){#alb-nav{right:8px;bottom:52px;}#alb-nav button{width:36px;height:36px;}#alb-nav-lbl{display:none;}}
 [data-theme=dark] #alb-nav button{background:#ede0d4;color:#2a1f14;border-color:#ede0d4;}
 [data-theme=dark] #alb-nav-lbl{background:#232919;color:#e8dccb;border-color:#4a553b;}
+
+/* Álbum en celu: 3 columnas, figuritas más chicas */
+@media(max-width:768px){
+  .stickers .album-grid.stk{grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem .45rem;padding:.3rem .15rem 0 .3rem;}
+  .stickers .fig{padding:3px 3px 0;}
+  .stickers .fig-num{top:3px;left:3px;font-size:.5rem;min-width:0;padding:.08rem .22rem;}
+  .stickers .fig-info{min-height:0;padding:.3rem .1rem .35rem;}
+  .stickers .fig-co{font-size:.5rem;letter-spacing:.2px;line-height:1.15;}
+  .stickers .fig-ci{font-size:.5rem;line-height:1.15;}
+  .stickers .fig-fecha{font-size:.62rem;line-height:1.1;}
+  .alb-pag{margin-bottom:1.3rem;padding:0 .5rem 1rem;}
+  .alb-pag-hd{margin:0 -.5rem .8rem;padding:.5rem .6rem .5rem 1.1rem;gap:.5rem;}
+  .alb-pag-hd h3{font-size:.8rem;min-width:0;}
+}
