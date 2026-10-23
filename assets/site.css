@@ -1188,3 +1188,8 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 }
 @media(max-width:699px){.mk-lista{max-height:min(36vh,260px);}.mk-sp{font-size:.72rem;}}
 [data-theme=dark] .mk-th{background:#d9cfbc;}
+
+/* mapa: miniaturas horizontales (menos altura por fila) */
+.mk-sp{padding:3px .6rem 3px 3px;}
+.mk-th{width:50px;height:36px;}
+.mk-th img{object-position:50% 40% !important;}
