@@ -1,0 +1,50 @@
+/* PROTOTIPO: portada con estética "figurita" (solo /prototipo-inicio/) */
+#page-sobre-mi.fig-home .hero-nombre{font-family:'Lato',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:3px;font-size:clamp(1.25rem,2.7vw,2.1rem);}
+#page-sobre-mi.fig-home .hero-nombre em{font-style:normal;color:#c4a882;}
+#page-sobre-mi.fig-home .hero-ubi{display:inline-block;background:#c4a882;color:#2a2a1c;padding:.28rem .7rem;border-radius:2px;font-size:.68rem;letter-spacing:1.6px;}
+/* estadísticas: hoja pegada */
+#page-sobre-mi.fig-home .stats-franja{background:#f6efdf;border:0;border-radius:3px;overflow:visible;box-shadow:0 0 0 1px rgba(0,0,0,.4),4px 6px 0 rgba(15,12,5,.45);transform:rotate(-.5deg);}
+#page-sobre-mi.fig-home .stats-titulo{background:#2d3322;color:#c4a882;font-family:'Lato',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;border:0;border-radius:3px 3px 0 0;padding:.45rem 1rem;}
+#page-sobre-mi.fig-home .stat-item{border-right:1px dashed rgba(65,72,51,.3);}
+#page-sobre-mi.fig-home .stat-num{color:#2d3322;}
+#page-sobre-mi.fig-home .stat-label{color:#7f5539;}
+/* últimas especies: mini figuritas */
+#page-sobre-mi.fig-home .rec-circulo{border-radius:2px;border:3px solid #fff;width:58px;height:72px;box-shadow:0 0 0 1px rgba(0,0,0,.4),2px 3px 0 rgba(15,12,5,.45);}
+#page-sobre-mi.fig-home .rec-item:nth-child(odd) .rec-circulo{transform:rotate(-2.5deg);}
+#page-sobre-mi.fig-home .rec-item:nth-child(even) .rec-circulo{transform:rotate(2deg);}
+#page-sobre-mi.fig-home .rec-item:hover .rec-circulo{transform:rotate(0) scale(1.08);border-color:#fff;}
+#page-sobre-mi.fig-home .dia-fila .rec-circulo{flex:0 0 46px;width:46px;height:58px;}
+#page-sobre-mi.fig-home .rec-titulo{letter-spacing:2.5px;}
+/* botones */
+#page-sobre-mi.fig-home .album-cta{background:#c4a882;color:#2a2a1c;border:2px solid #2a2a1c;border-radius:2px;box-shadow:3px 4px 0 rgba(15,12,5,.5);}
+#page-sobre-mi.fig-home .album-cta:hover{background:#d3b98f;box-shadow:4px 7px 0 rgba(15,12,5,.5);}
+#page-sobre-mi.fig-home .share-btn-hero{border:2px solid rgba(196,168,130,.5);border-radius:2px;}
+/* cuerpo */
+#page-sobre-mi.fig-home .hero-body>p:first-child{font-family:'Lato',sans-serif !important;font-weight:900 !important;font-size:.72rem !important;letter-spacing:3px !important;color:#656d4a !important;}
+#page-sobre-mi.fig-home .carrusel-wrap{border:7px solid #fff;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.3),5px 8px 0 rgba(30,25,12,.3);transform:rotate(-.5deg);margin:.6rem 0 1.8rem;}
+#page-sobre-mi.fig-home .carrusel-btn{background:#414833;border:2px solid #ede0d4;border-radius:2px;backdrop-filter:none;}
+#page-sobre-mi.fig-home .hero-bio{font-family:'Caveat',cursive;font-size:1.2rem;font-weight:400;line-height:1.45;color:#4a3a2a;}
+#page-sobre-mi.fig-home .bio-mas{font-family:'Lato',sans-serif;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:.7rem;color:#656d4a;}
+/* tarjetas = figuritas */
+#page-sobre-mi.fig-home .nov-card{border:0;border-top:6px solid #414833;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.3),3px 5px 0 rgba(30,25,12,.28);}
+#page-sobre-mi.fig-home .novedades .nov-card:nth-child(odd){transform:rotate(-.6deg);}
+#page-sobre-mi.fig-home .novedades .nov-card:nth-child(even){transform:rotate(.5deg);}
+#page-sobre-mi.fig-home .nov-card:hover{transform:rotate(0) translateY(-4px);box-shadow:0 0 0 1px rgba(0,0,0,.35),5px 9px 0 rgba(30,25,12,.28);}
+#page-sobre-mi.fig-home .nov-label{color:#414833;font-weight:900;letter-spacing:1.6px;border-bottom:2px solid #414833;padding-bottom:.35rem;margin-bottom:.7rem;}
+#page-sobre-mi.fig-home .nov-label::before{border-radius:0;background:#414833;}
+#page-sobre-mi.fig-home .nov-val{font-style:normal;font-family:'Lato',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.5px;font-size:1rem;color:#2d3322;}
+#page-sobre-mi.fig-home .nov-sub{color:#7f5539;}
+#page-sobre-mi.fig-home .hito-bar{border-radius:0;background:#e6dcc5;}
+#page-sobre-mi.fig-home .hito-bar i{border-radius:0;background:#414833;}
+@media(max-width:768px){
+  #page-sobre-mi.fig-home .stats-franja,#page-sobre-mi.fig-home .carrusel-wrap{transform:none;}
+  #page-sobre-mi.fig-home .nov-val{font-size:.78rem;}
+  #page-sobre-mi.fig-home .hero-bio{font-size:1.05rem;}
+  #page-sobre-mi.fig-home .rec-circulo{width:46px;height:58px;border-width:2px;}
+}
+[data-theme=dark] #page-sobre-mi.fig-home .nov-card{border-top-color:#8a9468;}
+[data-theme=dark] #page-sobre-mi.fig-home .nov-label{color:#a9b385;border-bottom-color:#8a9468;}
+[data-theme=dark] #page-sobre-mi.fig-home .nov-label::before{background:#a9b385;}
+[data-theme=dark] #page-sobre-mi.fig-home .nov-val{color:#e6d9c3;}
+[data-theme=dark] #page-sobre-mi.fig-home .hero-bio{color:#d8c9b2;}
+@media (prefers-reduced-motion:reduce){#page-sobre-mi.fig-home *{transition:none !important;}}

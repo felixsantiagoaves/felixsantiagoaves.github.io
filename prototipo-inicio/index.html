@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Página generada con _build/build.py: para cambiarla, editar _build/fragmentos/sobre-mi.html (o assets/) y volver a correr el script. Guía completa: _build/LEEME-CLAUDE.md -->
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5B10D1495"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X5B10D1495');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prueba portada estilo figurita</title>
+<meta name="description" content="Diario de campo visual de Félix Santiago Allendes: álbum de aves de Córdoba y Argentina, mapa interactivo de salidas y galería de fotos de aves. Desde Río Cuarto, Córdoba.">
+<meta name="theme-color" content="#3f4733">
+<script>try{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<script>(function(){var h=location.hash.slice(1),m={album:'/album/',mapa:'/mapa/',galeria:'/galeria/',datos:'/estadisticas/',redes:'/contacto/'};if(m[h])location.replace(m[h]);else if(h.indexOf('ave-')===0)location.replace('/album/#'+h);})();</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","@id":"https://felixsantiago.com.ar/#web","url":"https://felixsantiago.com.ar/","name":"Félix Santiago Aves","alternateName":"Félix Santiago Allendes","inLanguage":"es-AR","description":"Diario de campo visual de Félix Santiago Allendes: álbum de aves de Córdoba y Argentina, mapa interactivo de salidas y galería de fotos de aves. Desde Río Cuarto, Córdoba.","publisher":{"@id":"https://felixsantiago.com.ar/#felix"}},
+{"@type":"Person","@id":"https://felixsantiago.com.ar/#felix","name":"Félix Santiago Allendes","alternateName":["Félix Santiago Aves","Felix Santiago Aves","felix_santiago_aves","Félix Santiago"],"jobTitle":"Fotógrafo y observador de aves","url":"https://felixsantiago.com.ar/","image":"https://felixsantiago.com.ar/icon-192.png","homeLocation":{"@type":"Place","name":"Río Cuarto, Córdoba, Argentina"},"sameAs":["https://www.instagram.com/felix_santiago_aves","https://www.tiktok.com/@felix_santiago_aves","https://www.youtube.com/@FelixSantiagoAves","https://www.facebook.com/profile.php?id=61586101313880","https://ebird.org/profile/ODUwOTI1MA/world"]},
+{"@type":"ImageGallery","name":"Galería de aves de Félix Santiago","url":"https://felixsantiago.com.ar/","copyrightHolder":{"@id":"https://felixsantiago.com.ar/#felix"},"copyrightNotice":"© Félix Santiago Allendes. Uso solo con permiso previo y por escrito.","license":"https://felixsantiago.com.ar/contacto/","acquireLicensePage":"https://felixsantiago.com.ar/contacto/","author":{"@id":"https://felixsantiago.com.ar/#felix"}}
+]}
+</script>
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Félix Santiago Aves">
+<meta property="og:title" content="Félix Santiago Aves · Aves de Córdoba y Argentina">
+<meta property="og:description" content="Diario de campo visual de Félix Santiago Allendes: álbum de aves de Córdoba y Argentina, mapa interactivo de salidas y galería de fotos de aves. Desde Río Cuarto, Córdoba.">
+<meta property="og:url" content="https://felixsantiago.com.ar/">
+<meta property="og:image" content="https://felixsantiago.com.ar/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Félix Santiago Aves: diario de campo visual de aves de Argentina">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Félix Santiago Aves · Aves de Córdoba y Argentina">
+<meta name="twitter:description" content="Diario de campo visual de Félix Santiago Allendes: álbum de aves de Córdoba y Argentina, mapa interactivo de salidas y galería de fotos de aves. Desde Río Cuarto, Córdoba.">
+<meta name="twitter:image" content="https://felixsantiago.com.ar/preview.jpg">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=a2d2c791">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/inicio-fig.css?p=1">
+</head>
+<body>
+<button class="tema-btn" id="tema-btn" onclick="toggleTema()" aria-label="Cambiar entre modo claro y modo oscuro" title="Modo oscuro">☾</button>
+<nav>
+  <div class="nav-i">
+    <div class="nav-logo"><a href="/"><img src="/logo-nav.png" alt="Felix Santiago Aves" style="height:38px;display:block;"></a></div>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Sobre mí</a></li>
+      <li><a href="/album/" id="nav-album">Álbum<span class="nav-badge" id="nav-album-badge"></span></a></li>
+      <li><a href="/aves/">Especies</a></li>
+      <li><a href="/mapa/">Mapa</a></li>
+      <li><a href="/galeria/">Galería</a></li>
+      <li class="nav-stats"><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="page-sobre-mi" class="page active fig-home">
+
+  <!-- HERO OSCURO -->
+  <div class="hero-top">
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-logo alt="Felix Santiago Aves" class="logo-hero">
+    <h1 class="hero-nombre">Félix <em>Santiago</em> Aves</h1>
+    <p class="hero-ubi">Río Cuarto · Córdoba · Argentina</p>
+    <div class="stats-franja">
+      <div class="stats-titulo">Estadísticas</div>
+      <div class="stats-kpis">
+        <div class="stat-item" onclick="irAlbum('enc')" style="cursor:pointer"><span class="stat-num" id="s-vistas">0</span><span class="stat-label">Especies vistas</span></div>
+        <div class="stat-item" onclick="irAlbumRegion('cba')" style="cursor:pointer"><span class="stat-num" id="s-cba">0%</span><span class="stat-label" id="s-cba-l">En Córdoba</span></div>
+        <div class="stat-item" onclick="irAlbumRegion('arg')" style="cursor:pointer"><span class="stat-num" id="s-arg">0%</span><span class="stat-label" id="s-arg-l">En Argentina</span></div>
+      </div>
+    </div>
+    <a class="ver-stats" href="/estadisticas/">Ver todas las estadísticas →</a>
+    <div class="prog-dual">
+      <div class="prog-fila"><span class="prog-fl">Córdoba</span><div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill" style="width:0%"></div></div><span class="prog-fv" id="prog-fv-cba"></span></div>
+      <div class="prog-fila"><span class="prog-fl">Argentina</span><div class="prog-hero"><div class="prog-hero-fill" id="prog-hero-fill2" style="width:0%"></div></div><span class="prog-fv" id="prog-fv-arg"></span></div>
+    </div>
+    <div class="recientes" id="recientes" style="display:none">
+      <div class="rec-titulo">Últimas especies sumadas</div>
+      <div class="rec-track" id="rec-track"></div>
+    </div>
+    <button class="album-cta" onclick="irAlbum('enc')"><span>Explorar el álbum <b>→</b></span><small id="cta-album-count">416 especies por descubrir</small></button>
+  <button class="share-btn-hero" onclick="shareSitio()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    Compartir álbum
+  </button>
+</div>
+
+  <!-- CUERPO CLARO -->
+  <div class="hero-body">
+    <p style="font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;">— En el campo —</p>
+    <div class="carrusel-wrap" id="campo-carrusel">
+    <div class="carrusel-track" id="campo-track"></div>
+    <button class="carrusel-btn carrusel-prev" onclick="campoNav(-1)">‹</button>
+    <button class="carrusel-btn carrusel-next" onclick="campoNav(1)">›</button>
+    <div class="carrusel-dots" id="campo-dots"></div>
+  </div>
+  <p class="hero-bio corta">Soy Félix Santiago Allendes, fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
+  <button class="bio-mas" onclick="toggleBio(this)">Leer más</button>
+    <div class="novedades">
+      <div class="nov-card">
+        <div class="nov-label" data-hint="Ver ficha →">Última ave registrada</div>
+        <div class="nov-val" id="nov-ave">—</div>
+        <div class="nov-sub" id="nov-ave-fecha">Sin registros aún</div>
+      </div>
+      <div class="nov-card">
+        <div class="nov-label" data-hint="Ver en el mapa →">Última localización</div>
+        <div class="nov-val" id="nov-lugar">—</div>
+        <div class="nov-sub" id="nov-lugar-fecha">Sin registros aún</div>
+      </div>
+    </div>
+    <div class="novedades nov2">
+      <div class="nov-card hito-card clickable" id="hito-card">
+        <div class="nov-label" data-hint="Ver mis números →">Próximo hito</div>
+        <div class="hito-val">—</div>
+        <div class="hito-bar"><i></i></div>
+        <div class="nov-sub"></div>
+      </div>
+      <div class="nov-card dia-card clickable" id="dia-card">
+        <div class="nov-label" data-hint="Ver ficha →">Ave del día</div>
+        <div class="dia-fila"></div>
+      </div>
+    </div>
+    <button class="share-movil" onclick="shareSitio()">Compartir álbum</button>
+  </div>
+</div>
+
+<!-- LIGHTBOX GALERÍA -->
+<div class="lightbox" id="lightbox" onclick="lbClickOut(event)">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <button class="lb-arrow lb-prev" id="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="lb-img" id="lb-img" src="" alt="" draggable="false">
+  <div class="lb-caption" id="lb-caption"></div>
+  <div class="lb-sub" id="lb-sub"></div>
+  <button class="lb-ficha" id="lb-ficha" onclick="lbVerFicha()" style="display:none">Ver ficha de la especie →</button>
+  <div class="lb-copy">© Félix Santiago Allendes · Uso solo con permiso</div>
+  <div class="lb-hint">Doble toque o pellizco para ampliar · deslizá para cambiar</div>
+  <button class="lb-arrow lb-next" id="lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<!-- MODAL -->
+<div class="fmo" id="modal-ov" onclick="closeMO(event)">
+  <button class="m-float-arrow m-float-prev" id="m-prev-btn" onclick="modalNav(-1);event.stopPropagation()" aria-label="Anterior">‹</button>
+  <button class="m-float-arrow m-float-next" id="m-next-btn" onclick="modalNav(1);event.stopPropagation()" aria-label="Siguiente">›</button>
+  <div class="fm" id="fm" role="dialog" aria-modal="true">
+    <div class="fm-photo" id="m-prev">
+      <span class="m-num" id="m-num"></span>
+      <button class="modal-close" onclick="closeM()" aria-label="Cerrar">✕</button>
+      <div class="prev-ph" id="m-ph"></div>
+      <img id="m-img" style="display:none" alt="">
+    </div>
+    <div class="fm-info">
+      <p class="fm-co" id="m-comun"></p>
+      <h3 class="fm-ci" id="m-nombre"></h3>
+      <div id="m-ficha" class="ficha-section" style="display:none"></div>
+      <div id="m-enc-info" style="display:none">
+        <span class="found-badge">✓ Encontrada</span>
+        <div class="avist-info" id="m-avist"></div>
+        <button class="share-btn" onclick="shareAve()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Compartir
+        </button>
+      </div>
+      <div id="m-pending-info" style="display:none">
+        <span class="pending-badge">○ Aún no encontrada</span>
+        <div class="pending-info" id="m-pending-detail"></div>
+      </div>
+      <div class="m-pagina" id="m-pagina" style="display:none"></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast">
+</div>
+
+<footer id="site-footer-global"></footer>
+<script src="/assets/datos.js?v=a2d2c791"></script>
+<script src="/assets/foco.js?v=a2d2c791"></script>
+<script src="/assets/site.js?v=a2d2c791"></script>
+</body>
+</html>
