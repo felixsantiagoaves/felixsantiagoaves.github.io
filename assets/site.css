@@ -1032,33 +1032,50 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
   .alb-pag-hd h3{font-size:.8rem;min-width:0;}
 }
 
-/* ===== Modal de ficha con estilo figurita ===== */
-.modal{background:#f6efdf;border:2px solid #414833;border-radius:3px;box-shadow:6px 8px 0 rgba(20,15,5,.5);position:relative;}
-.modal::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:repeating-linear-gradient(180deg,rgba(65,72,51,.28) 0 14px,transparent 14px 28px);z-index:1;pointer-events:none;}
-.modal-hd{background:#414833;padding:.8rem 1.2rem .8rem 1.5rem;gap:.8rem;justify-content:flex-start;}
-.modal-hd>div{display:flex;flex-direction:column;flex:1;min-width:0;}
-.modal-hd p{order:-1;font-family:'Lato',sans-serif;font-weight:900;font-size:1rem;color:#ede0d4;text-transform:uppercase;letter-spacing:1.3px;line-height:1.25;}
-.modal-hd h3{font-size:.95rem;color:#c4a882;margin-top:.15rem;}
-.m-num{flex:0 0 auto;background:#c4a882;color:#2a2a1c;font:700 .72rem 'Lato',sans-serif;letter-spacing:1px;padding:.28rem .55rem;border-radius:2px;}
-.m-num:empty{display:none;}
-.modal-close{flex:0 0 auto;width:32px;height:32px;border:2px solid #c4a882;border-radius:2px;color:#ede0d4;font-size:1rem;line-height:1;background:none;}
-.modal-close:hover{background:#c4a882;color:#2a2a1c;}
-.modal-bd{padding-left:1.6rem;}
-#m-img{border:6px solid #fff;box-sizing:border-box;box-shadow:0 0 0 1px rgba(0,0,0,.25),3px 5px 0 rgba(30,25,12,.3);}
-@media(min-width:769px){.modal-prev{transform:rotate(-.8deg);}}
-.ficha-section{background:rgba(65,72,51,.06);border:2px solid rgba(65,72,51,.35);border-radius:2px;}
-.ficha-label{font-family:'Lato',sans-serif;color:#656d4a;}
-.ficha-cientifico{color:#7f5539;}
-.ficha-col{border-top:1px dashed rgba(65,72,51,.4);}
-.avist-info{border-left:0;border:1px solid rgba(0,0,0,.3);box-shadow:2px 3px 0 rgba(30,25,12,.25);border-radius:2px;}
-.found-badge{background:#414833;border-radius:2px;}
-.pill-link{border-radius:2px;box-shadow:2px 3px 0 rgba(30,25,12,.3);}
+/* ===== Ficha: la figurita "ampliada" sobre el álbum ===== */
+.fmo{display:none;position:fixed;inset:0;z-index:1000;background:rgba(40,32,18,.38);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+  align-items:center;justify-content:center;padding:1.2rem 1rem;overflow-y:auto;overscroll-behavior:contain;}
+.fmo.open{display:flex;}
+.fm{position:relative;margin:auto;width:min(440px,100%);background:#fff;border-radius:4px;padding:10px 10px 0;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35),6px 9px 0 rgba(30,25,12,.4),0 24px 60px rgba(0,0,0,.35);}
+.fm-in{animation:fmIn .38s cubic-bezier(.3,1.25,.5,1) both;}
+@keyframes fmIn{from{opacity:.2;transform:translate(var(--dx,0),var(--dy,30px)) scale(var(--sc,.6)) rotate(3deg);}to{opacity:1;transform:none;}}
+.fm-photo{position:relative;background:#e9e4d4;border-radius:2px;overflow:hidden;min-height:200px;}
+.fm-photo img{display:block;width:100%;height:auto;max-height:58vh;object-fit:contain;position:static;}
+.fm .m-num{position:absolute;top:8px;left:8px;z-index:2;background:#414833;color:#ede0d4;font:700 .72rem 'Lato',sans-serif;letter-spacing:.8px;padding:.22rem .45rem;border-radius:2px;}
+.fm .m-num:empty{display:none;}
+.fm .modal-close{position:absolute;top:8px;right:8px;z-index:3;width:30px;height:30px;border:0;border-radius:2px;background:#414833;color:#ede0d4;font-size:.95rem;line-height:1;cursor:pointer;}
+.fm .modal-close:hover{background:#5a6444;}
+.fm-info{padding:.9rem .5rem 1.1rem;}
+.fm-co{font:900 1.05rem/1.2 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.7px;color:#2d3322;margin:0;}
+.fm-co small{display:block;font:700 .62rem 'Lato',sans-serif;letter-spacing:1.2px;color:#8a8f74;margin-top:.2rem;}
+.fm-ci{font:italic 400 .95rem 'Playfair Display',serif;color:#7f5539;margin:.15rem 0 .8rem;}
+.fm .ficha-section{background:none;border:0;padding:0;margin:0 0 .8rem;}
+.fm .ficha-row:nth-child(-n+3){display:none;}
+.fm .ficha-col{margin:0 0 .5rem;padding:0;border:0;}
+.fm .ficha-label{color:#8a8f74;}
+.fm .ficha-val{font-size:.84rem;line-height:1.45;color:#3a3a2a;}
+.fm .found-badge{background:#414833;border-radius:2px;margin-bottom:.6rem;}
+.fm .avist-info{background:#f6efdf;border:0;border-radius:2px;box-shadow:none;padding:.6rem .8rem;margin-bottom:.7rem;}
+.fm .avist-info p{font-size:.84rem;margin-bottom:.2rem;color:#3a3a2a;}
+.fm .pill-link{border-radius:2px;box-shadow:none;margin-top:.2rem;}
+.fm .m-pagina p{font-size:.76rem;margin:.45rem 0 0;}
+.fm .pending-info{background:rgba(65,72,51,.07);}
 .m-float-arrow{background:#414833;border:2px solid #ede0d4;border-radius:2px;backdrop-filter:none;box-shadow:2px 3px 0 rgba(0,0,0,.4);}
 .m-float-arrow:hover{background:#5a6444;}
-[data-theme=dark] .modal{background:#1d2216;border-color:#4a553b;}
-[data-theme=dark] .ficha-section{background:rgba(255,255,255,.04);border-color:#4a553b;}
-[data-theme=dark] .ficha-label{color:#a9b385;}
-[data-theme=dark] .ficha-cientifico{color:#c4a882;}
-[data-theme=dark] .avist-info{background:#e9dfcf;}
-[data-theme=dark] .avist-info p{color:#2d3322;}
+@media(min-width:769px){.m-float-prev{left:calc(50% - 220px - 74px);}.m-float-next{right:calc(50% - 220px - 74px);}}
+@media(max-width:640px){
+  .fmo{align-items:flex-start;padding:.8rem .7rem 5.5rem;}
+  .fm-photo img{max-height:46vh;}
+  .m-float-arrow{border-radius:50%;box-shadow:none;}
+}
+[data-theme=dark] .fmo{background:rgba(10,12,6,.5);}
+[data-theme=dark] .fm{background:#e9dfcf;}
+[data-theme=dark] .fm-photo{background:#d9cfbc;}
+[data-theme=dark] .fm .avist-info{background:#f6efdf;}
+[data-theme=dark] .fm .ficha-val,[data-theme=dark] .fm .avist-info p{color:#3a3a2a;}
+[data-theme=dark] .fm .ficha-label{color:#8a8f74;}
+[data-theme=dark] .fm .pending-info{color:#3a3a2a;}
+[data-theme=dark] .fm .m-pagina p{color:#7f5539;}
+
 #m-enc-info[style*="display: none"]{display:none !important;}

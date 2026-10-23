@@ -41,7 +41,7 @@
 <meta name="twitter:image" content="https://felixsantiago.com.ar/preview.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=c43a4309">
+<link rel="stylesheet" href="/assets/site.css?v=1306f202">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -149,39 +149,33 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal-ov" id="modal-ov" onclick="closeMO(event)">
-  <button class="m-float-arrow m-float-prev" id="m-prev-btn" onclick="modalNav(-1);event.stopPropagation()">‹</button>
-  <button class="m-float-arrow m-float-next" id="m-next-btn" onclick="modalNav(1);event.stopPropagation()">›</button>
-  <div class="modal">
-    <div class="modal-hd">
+<div class="fmo" id="modal-ov" onclick="closeMO(event)">
+  <button class="m-float-arrow m-float-prev" id="m-prev-btn" onclick="modalNav(-1);event.stopPropagation()" aria-label="Anterior">‹</button>
+  <button class="m-float-arrow m-float-next" id="m-next-btn" onclick="modalNav(1);event.stopPropagation()" aria-label="Siguiente">›</button>
+  <div class="fm" id="fm" role="dialog" aria-modal="true">
+    <div class="fm-photo" id="m-prev">
       <span class="m-num" id="m-num"></span>
-      <div><h3 id="m-nombre"></h3><p id="m-comun"></p></div>
-      <button class="modal-close" onclick="closeM()">✕</button>
+      <button class="modal-close" onclick="closeM()" aria-label="Cerrar">✕</button>
+      <div class="prev-ph" id="m-ph"></div>
+      <img id="m-img" style="display:none" alt="">
     </div>
-    <div class="modal-bd">
-      <div class="m-left">
-      <div class="modal-prev" id="m-prev">
-        <div class="prev-ph" id="m-ph"></div>
-        <img id="m-img" style="display:none" alt="">
+    <div class="fm-info">
+      <p class="fm-co" id="m-comun"></p>
+      <h3 class="fm-ci" id="m-nombre"></h3>
+      <div id="m-ficha" class="ficha-section" style="display:none"></div>
+      <div id="m-enc-info" style="display:none">
+        <span class="found-badge">✓ Encontrada</span>
+        <div class="avist-info" id="m-avist"></div>
+        <button class="share-btn" onclick="shareAve()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Compartir
+        </button>
       </div>
+      <div id="m-pending-info" style="display:none">
+        <span class="pending-badge">○ Aún no encontrada</span>
+        <div class="pending-info" id="m-pending-detail"></div>
       </div>
-      <div class="modal-right-col">
-        <div id="m-ficha" class="ficha-section" style="display:none"></div>
-        <div id="m-enc-info" style="display:none">
-          <span class="found-badge">✓ Encontrada</span>
-          <div class="avist-info" id="m-avist"></div>
-          <button class="share-btn" onclick="shareAve()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            Compartir
-          </button>
-        </div>
-        <div id="m-pending-info" style="display:none">
-          <span class="pending-badge">○ Aún no encontrada</span>
-          <div class="pending-info" id="m-pending-detail"></div>
-        </div>
-        <div class="m-pagina" id="m-pagina" style="display:none"></div>
-      </div>
-
+      <div class="m-pagina" id="m-pagina" style="display:none"></div>
     </div>
   </div>
 </div>
@@ -189,8 +183,8 @@
 </div>
 
 <footer id="site-footer-global"></footer>
-<script src="/assets/datos.js?v=c43a4309"></script>
-<script src="/assets/foco.js?v=c43a4309"></script>
-<script src="/assets/site.js?v=c43a4309"></script>
+<script src="/assets/datos.js?v=1306f202"></script>
+<script src="/assets/foco.js?v=1306f202"></script>
+<script src="/assets/site.js?v=1306f202"></script>
 </body>
 </html>

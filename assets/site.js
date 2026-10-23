@@ -647,7 +647,7 @@ function openM(id) {
   mComun.classList.remove('modal-slide-right','modal-slide-left');
   void mNombre.offsetWidth; // reflow para reiniciar animación
   mNombre.textContent=ave.nombre; mNombre.classList.add(slideClass);
-  mComun.textContent=ave.comun+' · '+ave.familiaEsp; mComun.classList.add(slideClass);
+  mComun.innerHTML=ave.comun+'<small>'+ave.familiaEsp+'</small>'; mComun.classList.add(slideClass);
 
   // Ficha
   const ficha=FICHAS[ave.nombre];
@@ -701,7 +701,17 @@ function openM(id) {
   if(av && pendReset) pendReset.style.display='none';
 
   pintarLink(ave);
-  document.getElementById('modal-ov').classList.add('open');
+  const ov = document.getElementById('modal-ov'), card = document.getElementById('fm');
+  if(!ov.classList.contains('open')) {   // zoom desde la figurita del álbum (si está en pantalla)
+    const f = document.querySelector('#album-container .fig[data-id="' + id + '"]');
+    let dx = 0, dy = 40, sc = .6;
+    ov.classList.add('open');
+    if(f) { const r = f.getBoundingClientRect(), c = card.getBoundingClientRect();
+      dx = (r.left + r.width / 2) - (c.left + c.width / 2); dy = (r.top + r.height / 2) - (c.top + c.height / 2); sc = Math.max(.15, Math.min(.6, r.width / c.width)); }
+    card.style.setProperty('--dx', dx + 'px'); card.style.setProperty('--dy', dy + 'px'); card.style.setProperty('--sc', sc);
+    card.classList.remove('fm-in'); void card.offsetWidth; card.classList.add('fm-in');
+  }
+  ov.scrollTop = 0;
   updateModalArrows();
 }
 
@@ -1284,7 +1294,7 @@ document.addEventListener("DOMContentLoaded", buildFooter);
 document.addEventListener("DOMContentLoaded", iniMail);
 
 // Protección básica de las fotos: sin menú contextual ni arrastre sobre imágenes
-document.addEventListener('contextmenu', e => { if(e.target.closest && e.target.closest('img,.foto-item,.modal-prev,.lightbox,.fig')) e.preventDefault(); });
+document.addEventListener('contextmenu', e => { if(e.target.closest && e.target.closest('img,.foto-item,.fm-photo,.lightbox,.fig')) e.preventDefault(); });
 document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
 
 // La leyenda © del modal del álbum se ubica en la esquina de la foto real (la foto puede quedar centrada con bordes a los lados)
