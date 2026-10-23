@@ -1198,3 +1198,4 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .mk-sp{padding:.28rem .6rem;}
 .mk-lista{max-height:min(46vh,340px);}
 @media(min-width:700px){.mk-lista{max-height:min(46vh,340px);}}
+@media(max-width:699px){.mk-head{padding:.5rem 1.8rem .45rem .7rem;}.mk-tit{font-size:.72rem;letter-spacing:1px;}.mk-cont{padding:.55rem .7rem .6rem;}.mk-sp{padding:.22rem .55rem;}}

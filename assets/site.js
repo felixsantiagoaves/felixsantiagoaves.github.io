@@ -199,6 +199,8 @@ function mapaPopup(i) {
   el.innerHTML = `<div class="mk-head"><div class="mk-tit">${escHtml(l.nombre)}</div><div class="mk-sub">${lista.length} especie${lista.length === 1 ? '' : 's'}${l.prov && PROV[l.prov] ? ' · ' + escHtml(PROV[l.prov]) : ''}</div></div>
     <div class="mk-cont"><div class="mk-lista">${lista.map(a => `<button class="mk-sp" data-id="${a.id}"><span class="mk-sn">${escHtml(a.comun)}</span></button>`).join('')}</div>
     <button class="mk-alb">Ver las especies →</button></div>`;
+  // la lista se achica para que el popup entre entero en el alto del mapa (celulares)
+  { const cap = Math.max(100, (mapa ? mapa.getSize().y : 600) - 235); el.querySelector('.mk-lista').style.maxHeight = 'min(' + cap + 'px, 46vh, 340px)'; }
   el.addEventListener('click', e => {
     const b = e.target.closest('.mk-sp');
     if(b) { mapaAvesOrdenadas = lista.slice(); openM(+b.dataset.id); }
