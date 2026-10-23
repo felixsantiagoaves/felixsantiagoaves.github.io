@@ -171,3 +171,6 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .cr-w::after,.galeria a::after{content:"© Félix Santiago Allendes";position:absolute;left:.5rem;bottom:.4rem;z-index:3;font:600 .62rem/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.75);pointer-events:none;}
 @media(max-width:600px){.cr-w::after,.galeria a::after{left:.4rem;bottom:.3rem;font-size:.55rem;}}
 .galeria a{position:relative;}
+.lugar-f{margin:.2rem 0 .6rem;padding:.45rem .7rem;background:#f4ede2;border-left:3px solid #414833;font-size:.85rem;color:#414833}
+.lugar-f a{color:#414833;font-weight:700}
+[data-theme=dark] .lugar-f{background:#2a3120;color:#d8cbb4;border-color:#c4a882}[data-theme=dark] .lugar-f a{color:#c4a882}

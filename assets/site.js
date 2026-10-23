@@ -197,12 +197,12 @@ function mapaPopup(i) {
   const lista = l.ids.filter(id => avist[id]).map(id => AVES.find(a => a.id === id)).filter(Boolean).sort((a, b) => a.comun.localeCompare(b.comun, 'es'));
   const el = document.createElement('div'); el.className = 'mk-body';
   el.innerHTML = `<div class="mk-head"><div class="mk-tit">${escHtml(l.nombre)}</div><div class="mk-sub">${lista.length} especie${lista.length === 1 ? '' : 's'}${l.prov && PROV[l.prov] ? ' · ' + escHtml(PROV[l.prov]) : ''}</div></div>
-    <div class="mk-cont"><div class="mk-lista">${lista.map(a => { const f = avist[a.id] && avist[a.id].foto; return `<button class="mk-sp" data-id="${a.id}"><span class="mk-th">${f ? `<img src="/${f.replace(/^\//, '')}" style="object-position:${focoPos(f)}% 40%" loading="lazy" decoding="async" alt="">` : getSilueta(a.familiaEsp)}</span><span class="mk-sn">${escHtml(a.comun)}</span></button>`; }).join('')}</div>
-    <button class="mk-alb">Ver en el álbum →</button></div>`;
+    <div class="mk-cont"><div class="mk-lista">${lista.map(a => `<button class="mk-sp" data-id="${a.id}"><span class="mk-sn">${escHtml(a.comun)}</span></button>`).join('')}</div>
+    <button class="mk-alb">Ver las especies →</button></div>`;
   el.addEventListener('click', e => {
     const b = e.target.closest('.mk-sp');
     if(b) { mapaAvesOrdenadas = lista.slice(); openM(+b.dataset.id); }
-    else if(e.target.closest('.mk-alb')) mapaAlbum(i);
+    else if(e.target.closest('.mk-alb')) location.href = '/aves/?lugar=' + i;
   });
   return el;
 }

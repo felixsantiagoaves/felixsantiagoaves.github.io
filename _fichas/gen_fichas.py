@@ -276,6 +276,7 @@ ipage = f'''<!DOCTYPE html>
     <input type="search" id="q" placeholder="Buscar por nombre común o científico" aria-label="Buscar especie" autocomplete="off">
     <select id="g" aria-label="Filtrar por grupo"><option value="">Todos los grupos</option>{opts}</select>
   </div>
+  <p class="lugar-f" id="lugar-f" hidden></p>
   <p class="cuenta" id="cuenta" aria-live="polite">{len(ESP)} especies</p>
   <ul class="grid" id="lista">{cards}</ul>
   <p class="vacio" id="vacio" hidden>No encontré ninguna especie con ese nombre.</p>
@@ -287,10 +288,15 @@ ipage = f'''<!DOCTYPE html>
 (function(){{
   var q=document.getElementById('q'), g=document.getElementById('g'), c=document.getElementById('cuenta'), v=document.getElementById('vacio'), li=[].slice.call(document.querySelectorAll('#lista li')), t=li.length;
   function fold(s){{ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }}
+  var ls=null;
   function f(){{ var k=fold(q.value.trim()), gr=g.value, n=0;
-    li.forEach(function(e){{ var ok=(!k||e.getAttribute('data-q').indexOf(k)>-1)&&(!gr||e.getAttribute('data-g')===gr); e.hidden=!ok; if(ok) n++; }});
+    li.forEach(function(e){{ var ok=(!k||e.getAttribute('data-q').indexOf(k)>-1)&&(!gr||e.getAttribute('data-g')===gr)&&(!ls||ls[e.querySelector('a').getAttribute('href').split('/')[2]]); e.hidden=!ok; if(ok) n++; }});
     c.textContent=(n===t?t+' especies':n+(n===1?' especie':' especies')+' de '+t); v.hidden=n>0; }}
   q.addEventListener('input',f); g.addEventListener('change',f);
+  var lg=new URLSearchParams(location.search).get('lugar');
+  if(lg!==null){{ Promise.all([fetch('/avistamientos.json').then(function(r){{return r.json();}}), fetch('/aves/indice.json').then(function(r){{return r.json();}})]).then(function(r){{
+    var L=(r[0].lugares||[])[+lg]; if(!L) return; ls={{}}; L.ids.forEach(function(i){{ if(r[1][i]) ls[r[1][i]]=1; }});
+    var b=document.getElementById('lugar-f'); b.hidden=false; b.innerHTML='Especies vistas en <strong></strong> · <a href="/aves/">ver todas</a>'; b.querySelector('strong').textContent=L.nombre; f(); }}).catch(function(){{}}); }}
 }})();
 </script>
 </body>

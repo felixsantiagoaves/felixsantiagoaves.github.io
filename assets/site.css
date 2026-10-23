@@ -1193,3 +1193,8 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .mk-sp{padding:3px .6rem 3px 3px;}
 .mk-th{width:50px;height:36px;}
 .mk-th img{object-position:50% 40% !important;}
+
+/* mapa: lista de nombres sin fotos */
+.mk-sp{padding:.28rem .6rem;}
+.mk-lista{max-height:min(46vh,340px);}
+@media(min-width:700px){.mk-lista{max-height:min(46vh,340px);}}
