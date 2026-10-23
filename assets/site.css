@@ -1152,3 +1152,23 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 [data-theme=dark] #page-redes .red-card{background:#e9dfcf;}
 [data-theme=dark] #page-redes .red-name{color:#2d3322;}
 [data-theme=dark] #page-redes .red-handle{color:#7f5539;}
+
+/* Mapa: el popup de cada lugar como figurita */
+.mk-pop .leaflet-popup-content-wrapper{border-radius:3px;background:#fff;padding:0;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35),4px 6px 0 rgba(30,25,12,.4);}
+.mk-pop .leaflet-popup-tip{background:#fff;box-shadow:none;}
+.mk-pop a.leaflet-popup-close-button{top:7px;right:7px;width:22px;height:22px;padding:0;line-height:20px;text-align:center;font-size:16px;color:#ede0d4 !important;background:rgba(0,0,0,.2);border-radius:2px;}
+.mk-pop a.leaflet-popup-close-button:hover{background:rgba(0,0,0,.35);color:#fff;}
+.mk-body{padding:0;min-width:230px;max-width:300px;}
+.mk-head{background:#414833;padding:.65rem 2rem .55rem .85rem;}
+.mk-tit{font-family:'Lato',sans-serif;font-weight:900;font-size:.82rem;letter-spacing:1.2px;text-transform:uppercase;color:#ede0d4;padding-right:0;line-height:1.25;}
+.mk-sub{display:inline-block;margin:.4rem 0 0;padding:.12rem .45rem;background:#c4a882;color:#2a2a1c;border-radius:2px;font-size:.6rem;letter-spacing:1px;}
+.mk-cont{padding:.7rem .8rem .75rem;}
+.mk-lista{gap:.3rem;}
+.mk-sp{background:#fff;border:1px solid rgba(65,72,51,.45);border-radius:2px;padding:.2rem .5rem;color:#414833;font-weight:700;}
+.mk-sp:hover{background:#414833;border-color:#414833;color:#ede0d4;}
+.mk-alb{display:block;margin:.75rem 0 0 auto;padding:.3rem .7rem;background:#414833;color:#ede0d4;border-radius:2px;font-family:'Lato',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;}
+.mk-alb:hover{background:#5a6444;}
+[data-theme=dark] .mk-pop .leaflet-popup-content-wrapper,[data-theme=dark] .mk-pop .leaflet-popup-tip{background:#e9dfcf;color:#3a3a2a;}
+[data-theme=dark] .mk-sp{background:#e9dfcf;color:#414833;}[data-theme=dark] .mk-sp:hover{background:#414833;color:#ede0d4;}
+[data-theme=dark] .mk-alb{color:#ede0d4;}
