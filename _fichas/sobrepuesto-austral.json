@@ -1,0 +1,53 @@
+{
+ "comun": "Sobrepuesto Austral",
+ "resumen": "Sobrepuesto Austral (Lessonia rufa): cómo distinguir al macho negro de la hembra parda, cuándo llega a Córdoba desde la Patagonia y dónde se lo ve, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12,5 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Cría en la Patagonia y en invierno llega a las tierras bajas del norte"
+  ],
+  [
+   "Ambientes",
+   "Pastos y terrenos pelados, casi siempre cerca de agua dulce o salada"
+  ],
+  [
+   "Altitud",
+   "Por debajo de los 1000 m y, en algunos lugares, hasta 2000 m"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El macho es todo negro, con la parte central del dorso castaña. En vuelo se ven las plumas del ala negras. La hembra tiene la corona y el dorso color galleta, un poco más cálidos en el manto, y la garganta blanca, que contrasta con las partes de abajo pardo claras."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Según la guía, cría en la Patagonia y pasa el invierno en todas las tierras bajas del norte. Cría desde el centro de la Argentina (Mendoza y La Pampa) y de Chile hacia el sur, hasta Tierra del Fuego, y en la temporada no reproductiva migra hacia el norte de Chile, la Argentina, el sur de Bolivia, el sur de Brasil, Paraguay y Uruguay. Vive en áreas con pastos o terrenos pelados, generalmente cerca del agua: lagos, lagunas, pantanos y playas, dulces o salados. Es vistoso y común en sus lugares de cría."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "La guía dice que el vuelo de exhibición no está descrito. Las llamadas son notas cortas y agudas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo llama sobrepuesto, negrito o sobrepuesto común. Lessonia honra al naturalista francés René Primevère Lesson; rufa viene del latín y alude al color rojizo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Lessonia rufa (negrito austral)",
+   "u": "https://es.wikipedia.org/wiki/Lessonia_rufa"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 372
+}

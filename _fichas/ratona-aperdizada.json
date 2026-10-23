@@ -1,0 +1,61 @@
+{
+ "comun": "Ratona Aperdizada",
+ "resumen": "Ratona Aperdizada (Cistothorus platensis): cómo reconocerla entre el pasto alto, por qué es difícil de ver y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Casi todo el país, de la costa a los pastizales de la Puna"
+  ],
+  [
+   "Ambientes",
+   "Pajonales, juncales y pastizales altos, secos o húmedos"
+  ],
+  [
+   "Puesta",
+   "4 a 6 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es discreta si no canta, entre el pasto de marisma, los juncos y las cortaderas. Mantiene la cola levantada. El adulto tiene el dorso negro rayado de blanco, y las alas y la cola barradas de negro. Tiene la corona negra con rayas blancas, una ceja blanquecina y las partes de abajo blanquecinas. La guía aclara que puede tratarse de varias especies parecidas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Según la guía, está muy extendida en casi todo el país, desde las costas hasta los pastizales de la Puna. Vive en sabanas de poca altura y en pastizales andinos, donde llega hasta los 4000 m."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se mueve casi como un ratón por el suelo o a poca altura, entre pastos altos y secos o húmedos, lo que la hace difícil de observar. En la época de cría el macho canta posado en perchas expuestas, y así se delata."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto suele ser largo y está hecho de frases repetidas bien separadas, a veces con una introducción corta y suave, con chasquidos, rasposidades y silbidos, algo como ch-ch-ch-ch krr-krr-krr-krr wee-wee-wee-wee. La llamada es una serie de notas cortas y ásperas, jep, como un reto."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es una esfera grande de pasto seco con la entrada a un costado, apoyada en el suelo o sujeta a tallos de pastos densos cerca del suelo. Pone entre cuatro y seis huevos blancos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Cistothorus viene del griego y quiere decir «matorral» y «que salta o corre»; platensis alude al Río de la Plata, porque la especie se describió en 1790 con un ejemplar de Buenos Aires. En otros países la llaman chercán de las vegas o cucarachero sabanero."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Cistothorus platensis (cucarachero sabanero)",
+   "u": "https://es.wikipedia.org/wiki/Cistothorus_platensis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 280
+}

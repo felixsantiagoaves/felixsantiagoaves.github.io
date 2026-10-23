@@ -1,0 +1,61 @@
+{
+ "comun": "Ratona",
+ "resumen": "Ratona (Troglodytes musculus): cómo reconocerla, dónde vive y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Todo el país"
+  ],
+  [
+   "Ambientes",
+   "Pastizales, juncales y jardines de casas"
+  ],
+  [
+   "Alimentación",
+   "Insectos y arañas"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es un pajarito pardo, chico y rechoncho, de cola angosta; todas las formas tienen barras negras en las alas y la cola. La forma de la selva paranaense es la más vistosa, con un lavado rojizo en el pecho; la de gran parte del país es más bien parda y lisa, con la rabadilla, los flancos y las coberteras inferiores de la cola rojizas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía la da en todo el país. Se la ve en pastizales, juncales y jardines de casas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es inquieta y de movimientos rápidos, y suele verse trepando. Come insectos y arañas que captura en las plantas o en el suelo. No vuela grandes distancias, ni siquiera cuando está en peligro."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una cadena rápida y agradable de gorjeos y trinos que termina de golpe. La llamada común es un chasquido nasal."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Hace el nido con pastos y plumas, en huecos de árboles secos, tejados, caños y otros sitios parecidos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Las guías de campo la tratan como Troglodytes aedon (en inglés, House Wren), y esta página usa el nombre musculus que le dan otras clasificaciones. En otros países la llaman chercán, cucarachero común o corruíra, y en Uruguay, ratonera."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Troglodytes aedon (ratona)",
+   "u": "https://es.wikipedia.org/wiki/Troglodytes_aedon"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 279
+}

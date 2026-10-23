@@ -1,0 +1,57 @@
+{
+ "comun": "Pitotoy Grande",
+ "resumen": "Pitotoy Grande (Tringa melanoleuca): cómo reconocerlo por las patas amarillas y el pico largo, cuándo llega desde Norteamérica y cómo se diferencia del pitotoy chico, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "34 cm según la guía"
+  ],
+  [
+   "Presencia",
+   "En todo el país, de septiembre a abril"
+  ],
+  [
+   "Ambientes",
+   "Orillas de lagos y marismas; vadea en aguas poco profundas"
+  ],
+  [
+   "Alimentación",
+   "Invertebrados que busca en el barro y el agua somera"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Se distingue del pitotoy chico por tener el pico más largo que la cabeza, con una leve curva hacia arriba y la base grisácea; ojo, porque los de pico más corto se confunden con más facilidad. El adulto en plumaje reproductivo tiene las patas largas, amarillas o amarillo anaranjadas, el dorso negruzco con blanco, rayas negras anchas en el cuello y el pecho y marcas negras en forma de V en los costados del pecho y los flancos. En vuelo no tiene franja en el ala, se ve la rabadilla blanca y las patas amarillas sobresalen de la cola. Fuera de la época reproductiva es más liso, con manchas blanquecinas en el manto. El juvenil es parecido, pero más pardo, con más manchas blancas en el manto y más rayas en el pecho."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "Según la guía, está en todo el país de septiembre a abril. Es migratorio: cría en Canadá y Alaska, en pantanos y marismas de los bosques boreales, y pasa el invierno boreal en América del Sur, en orillas de lagos y marismas costeras."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Vadea en aguas poco profundas y sondea el barro y el agua somera en busca de invertebrados."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Al levantar vuelo da tres notas fuertes y claras, rara vez cuatro, algo como tew tew tew."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se lo llama chorlo mayor de patas amarillas o playero mayor patas amarillas. En inglés se lo conoce como Greater Yellowlegs."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Tringa melanoleuca (chorlo mayor de patas amarillas)",
+   "u": "https://es.wikipedia.org/wiki/Tringa_melanoleuca"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 265
+}

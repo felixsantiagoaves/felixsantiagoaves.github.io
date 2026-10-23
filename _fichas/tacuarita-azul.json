@@ -1,0 +1,65 @@
+{
+ "comun": "Tacuarita Azul",
+ "resumen": "Tacuarita Azul (Polioptila dumicola): cómo distinguir al macho del antifaz negro de la hembra, dónde vive y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "12 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas del norte; llega al centro del país, incluida Córdoba"
+  ],
+  [
+   "Ambientes",
+   "Ambientes semiabiertos, chaco seco y húmedo, monte y pampas; por debajo de los 1000 m"
+  ],
+  [
+   "Alimentación",
+   "Insectos, larvas y arañas"
+  ],
+  [
+   "Puesta",
+   "Hasta 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "El macho tiene un antifaz negro que cruza el ojo y sigue por la frente, bordeado abajo por una línea plateada, el dorso gris azulado, la garganta y el pecho grises y el resto de abajo blanco. La hembra no tiene antifaz: tiene la zona delante del ojo y el anillo ocular blancos, con una ceja oscura atrás, y las cubiertas auriculares grises; el resto del plumaje es como el del macho."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía la da como muy extendida en las tierras bajas del norte. Llega al centro de la Argentina, con registros en San Luis, Córdoba, Entre Ríos, Santa Fe y el norte de Buenos Aires. Vive en ambientes semiabiertos, en el chaco seco y húmedo, en el monte y en las pampas, sobre todo por debajo de los 1000 m."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se queda siempre en arbustos y árboles bajos, y se mueve entre las ramas con saltitos y vuelos cortos. Come insectos, larvas y arañas que busca en los árboles o en el suelo."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Tiene un repertorio enorme, con muchas imitaciones fieles. Entre los cantos hay silbidos puros y rápidos, gorjeos, rasposidades y trinos como chasquidos. La llamada es un nyaaah nasal, que a veces recuerda a la de la ratona y a la del chivi."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es una taza hecha con raíces, telarañas y plumas, con cortezas por fuera. La hembra pone hasta cuatro huevos celestes con pequeñas manchas rojizas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "En la Argentina, Bolivia y Paraguay se la llama tacuarita azul; en Uruguay, perlita azul, azulito o piojito azulado. Polioptila viene del griego y quiere decir «plumaje gris»; dumicola, del latín, «habitante de la maleza»."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Polioptila dumicola",
+   "u": "https://es.wikipedia.org/wiki/Polioptila_dumicola"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 281
+}

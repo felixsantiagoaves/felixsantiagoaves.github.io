@@ -1,0 +1,61 @@
+{
+ "comun": "Sirirí Pampa",
+ "resumen": "Sirirí Pampa (Dendrocygna viduata): cómo reconocerlo por la cara blanca, cómo se alimenta y por qué se dice que su canto anuncia lluvia, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "45 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas y pie de sierras del norte; llega al centro-norte del país"
+  ],
+  [
+   "Ambientes",
+   "Lagunas, ciénagas, campos inundados, ríos y estuarios; hasta unos 1000 m"
+  ],
+  [
+   "Alimentación",
+   "Plantas, semillas, invertebrados, moluscos y crustáceos"
+  ],
+  [
+   "Puesta",
+   "6 a 12 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El adulto tiene la frente y la cara blancas, que contrastan con la parte de atrás de la corona y la nuca negras, y el cuello anterior castaño. En vuelo se ven las alas pardo negruzcas y la rabadilla, la cola y el vientre negros y parejos. El juvenil tiene la cara grisácea o ante, también con contraste con la nuca negruzca, y el cuello castaño más opaco. Macho y hembra son parecidos."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da como muy extendido en las tierras bajas y el pie de sierras del norte. Llega al centro-norte de la Argentina y también está en el resto de América del Sur, en América Central y en África. Vive en lagunas, ciénagas, campos inundados, ríos y estuarios, desde el nivel del mar hasta unos 1000 m; prefiere pastos altos y orillas de poca profundidad. Es sedentario, aunque se mueve según la comida y las lluvias."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es gregario: forma grupos grandes, con otros sirirís y con otros patos. No se posa en árboles; se lo ve caminando o nadando. Es más activo al atardecer y de noche, cuando vuela cantando. Come plantas, semillas, pequeños invertebrados, moluscos, insectos y crustáceos, que filtra del agua de pocos centímetros de profundidad metiendo el pico en el fango con movimientos rápidos, y también se zambulle con facilidad. Según una creencia popular, su canto anuncia lluvia, porque vuela más bajo cuando baja la presión."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "La llamada es un silbido agudo y rápido, algo como SWee Ri-Ree, que da en vuelo, sobre todo de noche. De ahí el nombre «sirirí»."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es un cuenco de hierbas en el suelo, entre pastos altos, o en ramas bajas de árboles; también se lo ha visto en huecos de árboles. Pone entre 6 y 12 huevos. Los dos padres los incuban durante 26 a 30 días. Los pichones nacen con plumón oliva oscuro con manchas amarillas, y los padres siguen juntos unos dos meses."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Dendrocygna viduata (sirirí de la pampa)",
+   "u": "https://es.wikipedia.org/wiki/Dendrocygna_viduata"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 248
+}

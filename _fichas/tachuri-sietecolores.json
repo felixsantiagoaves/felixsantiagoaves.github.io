@@ -1,0 +1,65 @@
+{
+ "comun": "Tachurí Sietecolores",
+ "resumen": "Tachurí Sietecolores (Tachuris rubrigastra): cómo reconocer a este pajarito multicolor de los totorales, cómo se mueve y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "11,5 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Casi todo el país"
+  ],
+  [
+   "Ambientes",
+   "Zonas húmedas e inundables, asociado a los totorales; hasta unos 4100 m"
+  ],
+  [
+   "Alimentación",
+   "Insectos y pequeños invertebrados"
+  ],
+  [
+   "Puesta",
+   "2 a 3 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un tirano diminuto, inquieto, de los juncales, con el pico delicado. El adulto de la forma más extendida es verde oliva y amarillo, con una ceja amarilla, las cubiertas auriculares azules, un mechón rojo en la corona casi siempre oculto, una banda negra incompleta en el pecho, una barra y un parche blancos en el ala y las plumas externas de la cola blancas. El juvenil es una versión desteñida del adulto, con la ceja blanca y sin banda en el pecho."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da como muy extendido. Vive en zonas húmedas e inundables cerca de ríos y lagos, asociado a las totoras, desde el nivel del mar hasta unos 4100 m en los Andes."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Se mueve todo el tiempo entre juncales y totoras, y por eso es difícil de ver. Caza insectos y pequeños invertebrados saltando de totora en totora, con vuelos cortos, y a veces sale al borde del agua. Temprano a la mañana se posa en perchas más expuestas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Canta posado en lo alto de totoras o pastos verticales. El canto es una serie rica y resonante que termina en un traqueteo, algo como K'IUP PEERH K'IUP K'IUP-CHRddd."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Cría entre septiembre y diciembre. El nido es una taza tejida con tiras de juncos secos, terminada en punta en la base y sujeta a una rama de totora a unos 50 a 100 cm del agua. Pone entre dos y tres huevos amarillentos, con el extremo romo algo más oscuro."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Tachuris viene del guaraní tachurí o tarichú, un nombre que se da a varias aves insectívoras chicas; rubrigastra quiere decir «vientre rojo». También se lo llama sietecolores de la laguna, o siete colores en Chile."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Tachuris rubrigastra",
+   "u": "https://es.wikipedia.org/wiki/Tachuris_rubrigastra"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  },
+  {
+   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+  }
+ ],
+ "id": 379
+}
