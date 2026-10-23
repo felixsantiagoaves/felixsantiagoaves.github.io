@@ -1,14 +1,26 @@
 [
   {
-    "archivo": "campo-1.jpg",
+    "archivo": "campo-1a.jpg",
     "caption": "Félix en el campo"
   },
   {
-    "archivo": "campo-2.jpg",
+    "archivo": "campo-1b.jpg",
     "caption": "Félix en el campo"
   },
   {
-    "archivo": "campo-3.jpg",
+    "archivo": "campo-2a.jpg",
+    "caption": "Félix en el campo"
+  },
+  {
+    "archivo": "campo-2b.jpg",
+    "caption": "Félix en el campo"
+  },
+  {
+    "archivo": "campo-3a.jpg",
+    "caption": "Félix en el campo"
+  },
+  {
+    "archivo": "campo-3b.jpg",
     "caption": "Félix en el campo"
   }
 ]

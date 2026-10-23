@@ -367,23 +367,11 @@ function loadCarrusel() {
         caption: f.caption || 'Félix en el campo'
       }));
 
-      // Renderizar slides
-      const track = document.getElementById('campo-track');
-      track.innerHTML = fotos.map((f, i) => 
-        `<div class="carrusel-slide" style="cursor:zoom-in" onclick="openCampoLB(${i})">
-          <img src="/campo/${f.archivo}" alt="${f.caption || 'Félix en el campo'}">
-        </div>`
+      // Cuadrícula de figuritas (3 columnas)
+      const g = document.getElementById('campo-grid');
+      if(g) g.innerHTML = fotos.map((f, i) =>
+        `<button class="campo-fig" onclick="openCampoLB(${i})" aria-label="Ver foto ${i + 1}"><img src="/campo/${f.archivo}" alt="${f.caption || 'Félix en el campo'}" loading="lazy"></button>`
       ).join('');
-
-      // Renderizar dots
-      const dots = document.getElementById('campo-dots');
-      dots.innerHTML = fotos.map((f, i) => 
-        `<div class="carrusel-dot${i===0?' active':''}" onclick="campoGo(${i})"></div>`
-      ).join('');
-
-      // Reiniciar carrusel
-      campoIdx = 0;
-      campoGo(0);
     })
     .catch(() => {}); // silencioso si no hay fotos
 }
@@ -452,7 +440,7 @@ function updStats() {
   });
   updAlbumHead();
   const badge=document.getElementById('nav-album-badge'); if(badge) badge.textContent=v;
-  const ctaN=document.getElementById('cta-album-count'); if(ctaN) ctaN.textContent=vc+' de '+nc+' en Córdoba';
+  const ctaN=document.getElementById('cta-album-count'); if(ctaN) ctaN.textContent=vc+' de '+nc+' especies en Córdoba';
   buildRecientes();
   buildHito();  buildAveDia();
   // novedades

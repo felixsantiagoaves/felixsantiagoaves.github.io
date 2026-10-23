@@ -22,7 +22,7 @@
       <div class="rec-titulo">Últimas especies sumadas</div>
       <div class="rec-track" id="rec-track"></div>
     </div>
-    <button class="album-cta" onclick="irAlbum('enc')"><span>Explorar el álbum <b>→</b></span><small id="cta-album-count">416 especies por descubrir</small></button>
+    <button class="album-cta" onclick="irAlbum('todas')"><span>Explorar el álbum <b>→</b></span><small id="cta-album-count">416 especies por descubrir</small></button>
   <button class="share-btn-hero" onclick="shareSitio()">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
     Compartir álbum
@@ -32,12 +32,7 @@
   <!-- CUERPO CLARO -->
   <div class="hero-body">
     <p style="font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;">— En el campo —</p>
-    <div class="carrusel-wrap" id="campo-carrusel">
-    <div class="carrusel-track" id="campo-track"></div>
-    <button class="carrusel-btn carrusel-prev" onclick="campoNav(-1)">‹</button>
-    <button class="carrusel-btn carrusel-next" onclick="campoNav(1)">›</button>
-    <div class="carrusel-dots" id="campo-dots"></div>
-  </div>
+    <div class="campo-grid" id="campo-grid"></div>
   <p class="hero-bio corta">Soy Félix Santiago Allendes, fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
   <button class="bio-mas" onclick="toggleBio(this)">Leer más</button>
     <div class="novedades">
