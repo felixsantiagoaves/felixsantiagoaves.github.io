@@ -3935,6 +3935,431 @@
      "d": "2026-05-31"
     }
    ]
+  },
+  "396": {
+   "especie": "Molothrus bonariensis",
+   "fotos": [
+    {
+     "f": "mas/molothrus_bonariensis/02012026-DSC_0249.jpg",
+     "d": "2026-01-02"
+    },
+    {
+     "f": "mas/molothrus_bonariensis/24122025-DSC_0258.jpg",
+     "d": "2025-12-24"
+    },
+    {
+     "f": "mas/molothrus_bonariensis/24122025-DSC_0260.jpg",
+     "d": "2025-12-24"
+    },
+    {
+     "f": "mas/molothrus_bonariensis/26122025-DSC_0642.jpg",
+     "d": "2025-12-26"
+    },
+    {
+     "f": "mas/molothrus_bonariensis/26122025-DSC_0703.jpg",
+     "d": "2025-12-26"
+    },
+    {
+     "f": "mas/molothrus_bonariensis/30122025-DSC_0171.jpg",
+     "d": "2025-12-30"
+    }
+   ]
+  },
+  "227": {
+   "especie": "Columbina picui",
+   "fotos": [
+    {
+     "f": "mas/columbina_picui/02052026-DSC_0208.jpg",
+     "d": "2026-05-02"
+    },
+    {
+     "f": "mas/columbina_picui/04072026-DSC_0105.jpg",
+     "d": "2026-07-04"
+    },
+    {
+     "f": "mas/columbina_picui/10062026-DSC_0199.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/columbina_picui/25042026-DSC_0343.jpg",
+     "d": "2026-04-25"
+    },
+    {
+     "f": "mas/columbina_picui/25042026-DSC_0350.jpg",
+     "d": "2026-04-25"
+    },
+    {
+     "f": "mas/columbina_picui/25042026-DSC_0361.jpg",
+     "d": "2026-04-25"
+    }
+   ]
+  },
+  "395": {
+   "especie": "Molothrus rufoaxillaris",
+   "fotos": [
+    {
+     "f": "mas/molothrus_rufoaxillaris/03012026-DSC_0095.jpg",
+     "d": "2026-01-03"
+    },
+    {
+     "f": "mas/molothrus_rufoaxillaris/04072026-DSC_0111.jpg",
+     "d": "2026-07-04"
+    },
+    {
+     "f": "mas/molothrus_rufoaxillaris/23052026-DSC_0176.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/molothrus_rufoaxillaris/23052026-DSC_0300.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/molothrus_rufoaxillaris/23052026-DSC_0359.jpg",
+     "d": "2026-05-23"
+    }
+   ]
+  },
+  "394": {
+   "especie": "Agelaioides badius",
+   "fotos": [
+    {
+     "f": "mas/agelaioides_badius/03042026-DSC_0123.jpg",
+     "d": "2026-04-03"
+    },
+    {
+     "f": "mas/agelaioides_badius/03042026-DSC_0150.jpg",
+     "d": "2026-04-03"
+    },
+    {
+     "f": "mas/agelaioides_badius/04072026-DSC_0022.jpg",
+     "d": "2026-07-04"
+    },
+    {
+     "f": "mas/agelaioides_badius/07032026-DSC_0187.jpg",
+     "d": "2026-03-07"
+    },
+    {
+     "f": "mas/agelaioides_badius/07032026-DSC_0190.jpg",
+     "d": "2026-03-07"
+    },
+    {
+     "f": "mas/agelaioides_badius/25042026-DSC_0046.jpg",
+     "d": "2026-04-25"
+    },
+    {
+     "f": "mas/agelaioides_badius/27122025-DSC_0823.jpg",
+     "d": "2025-12-27"
+    },
+    {
+     "f": "mas/agelaioides_badius/27122025-DSC_1085.jpg",
+     "d": "2025-12-27"
+    },
+    {
+     "f": "mas/agelaioides_badius/31072026-DSC_0067.jpg",
+     "d": "2026-07-31"
+    }
+   ]
+  },
+  "380": {
+   "especie": "Tyrannus savana",
+   "fotos": [
+    {
+     "f": "mas/tyrannus_savana/03102026-DSC_0021.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/tyrannus_savana/03102026-DSC_0025.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/tyrannus_savana/03102026-DSC_0191.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/tyrannus_savana/03102026-DSC_0210.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/tyrannus_savana/17012026-DSC_0021.jpg",
+     "d": "2026-01-17"
+    },
+    {
+     "f": "mas/tyrannus_savana/18012026-DSC_0729.jpg",
+     "d": "2026-01-18"
+    },
+    {
+     "f": "mas/tyrannus_savana/18012026-DSC_0731.jpg",
+     "d": "2026-01-18"
+    }
+   ]
+  },
+  "397": {
+   "especie": "Agelasticus thilius",
+   "fotos": [
+    {
+     "f": "mas/agelasticus_thilius/03102026-DSC_0174.jpg",
+     "d": "2026-10-03"
+    },
+    {
+     "f": "mas/agelasticus_thilius/08082026-DSC_0213.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/agelasticus_thilius/08082026-DSC_0259.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/agelasticus_thilius/09072026-DSC_0394.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/agelasticus_thilius/27062026-DSC_0442.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/agelasticus_thilius/31052026-DSC_0189.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/agelasticus_thilius/31052026-DSC_0192.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/agelasticus_thilius/31052026-DSC_0202.jpg",
+     "d": "2026-05-31"
+    }
+   ]
+  },
+  "90": {
+   "especie": "Vanellus chilensis",
+   "fotos": [
+    {
+     "f": "mas/vanellus_chilensis/06012026-DSC_0027.jpg",
+     "d": "2026-01-06"
+    },
+    {
+     "f": "mas/vanellus_chilensis/08082026-DSC_0218.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/vanellus_chilensis/10062026-DSC_0262.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/vanellus_chilensis/10062026-DSC_0266.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/vanellus_chilensis/17022026-DSC_0065.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/vanellus_chilensis/20092026-DSC_0121.jpg",
+     "d": "2026-09-20"
+    },
+    {
+     "f": "mas/vanellus_chilensis/23052026-DSC_0580.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/vanellus_chilensis/25042026-DSC_0140.jpg",
+     "d": "2026-04-25"
+    },
+    {
+     "f": "mas/vanellus_chilensis/27122025-DSC_0768.jpg",
+     "d": "2025-12-27"
+    },
+    {
+     "f": "mas/vanellus_chilensis/27122025-DSC_0972.jpg",
+     "d": "2025-12-27"
+    },
+    {
+     "f": "mas/vanellus_chilensis/31072026-DSC_0202.jpg",
+     "d": "2026-07-31"
+    },
+    {
+     "f": "mas/vanellus_chilensis/31072026-DSC_0206.jpg",
+     "d": "2026-07-31"
+    }
+   ]
+  },
+  "322": {
+   "especie": "Himantopus mexicanus",
+   "fotos": [
+    {
+     "f": "mas/himantopus_mexicanus/08082026-DSC_0335.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/08082026-DSC_0342.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/08082026-DSC_0352.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/08082026-DSC_0460.jpg",
+     "d": "2026-08-08"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/31052026-DSC_0281.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/31052026-DSC_0349.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/31052026-DSC_0527.jpg",
+     "d": "2026-05-31"
+    },
+    {
+     "f": "mas/himantopus_mexicanus/31052026-DSC_0531.jpg",
+     "d": "2026-05-31"
+    }
+   ]
+  },
+  "410": {
+   "especie": "Turdus rufiventris",
+   "fotos": [
+    {
+     "f": "mas/turdus_rufiventris/09042026-DSC_0311.jpg",
+     "d": "2026-04-09"
+    },
+    {
+     "f": "mas/turdus_rufiventris/09062026-DSC_0014.jpg",
+     "d": "2026-06-09"
+    },
+    {
+     "f": "mas/turdus_rufiventris/09062026-DSC_0021.jpg",
+     "d": "2026-06-09"
+    },
+    {
+     "f": "mas/turdus_rufiventris/09062026-DSC_0057.jpg",
+     "d": "2026-06-09"
+    },
+    {
+     "f": "mas/turdus_rufiventris/10062026-DSC_0134.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/turdus_rufiventris/11062026-DSC_0011.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/turdus_rufiventris/16082026-DSC_0087.jpg",
+     "d": "2026-08-16"
+    },
+    {
+     "f": "mas/turdus_rufiventris/17082026-DSC_0484.jpg",
+     "d": "2026-08-17"
+    }
+   ]
+  },
+  "315": {
+   "especie": "Embernagra platensis",
+   "fotos": [
+    {
+     "f": "mas/embernagra_platensis/09072026-DSC_0285.jpg",
+     "d": "2026-07-09"
+    },
+    {
+     "f": "mas/embernagra_platensis/12062026-DSC_0449.jpg",
+     "d": "2026-06-12"
+    },
+    {
+     "f": "mas/embernagra_platensis/17022026-DSC_0441.jpg",
+     "d": "2026-02-17"
+    },
+    {
+     "f": "mas/embernagra_platensis/19072026-DSC_0159.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/embernagra_platensis/23052026-DSC_0327.jpg",
+     "d": "2026-05-23"
+    },
+    {
+     "f": "mas/embernagra_platensis/27062026-DSC_0066.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/embernagra_platensis/27062026-DSC_0076.jpg",
+     "d": "2026-06-27"
+    },
+    {
+     "f": "mas/embernagra_platensis/30082026-DSC_0178.jpg",
+     "d": "2026-08-30"
+    }
+   ]
+  },
+  "408": {
+   "especie": "Turdus amaurochalinus",
+   "fotos": [
+    {
+     "f": "mas/turdus_amaurochalinus/10062026-DSC_0070.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/turdus_amaurochalinus/10062026-DSC_0227.jpg",
+     "d": "2026-06-10"
+    },
+    {
+     "f": "mas/turdus_amaurochalinus/11062026-DSC_0032.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/turdus_amaurochalinus/11062026-DSC_0040.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/turdus_amaurochalinus/11062026-DSC_0043.jpg",
+     "d": "2026-06-11"
+    },
+    {
+     "f": "mas/turdus_amaurochalinus/16082026-DSC_0309.jpg",
+     "d": "2026-08-16"
+    },
+    {
+     "f": "mas/turdus_amaurochalinus/16082026-DSC_0397.jpg",
+     "d": "2026-08-16"
+    }
+   ]
+  },
+  "403": {
+   "especie": "Streptoprocne zonaris",
+   "fotos": [
+    {
+     "f": "mas/streptoprocne_zonaris/10102026-DSC_0145.jpg",
+     "d": "2026-10-10"
+    },
+    {
+     "f": "mas/streptoprocne_zonaris/10102026-DSC_0146.jpg",
+     "d": "2026-10-10"
+    },
+    {
+     "f": "mas/streptoprocne_zonaris/10102026-DSC_0148.jpg",
+     "d": "2026-10-10"
+    }
+   ]
+  },
+  "398": {
+   "especie": "Chrysomus ruficapillus",
+   "fotos": [
+    {
+     "f": "mas/chrysomus_ruficapillus/19072026-DSC_0173.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/chrysomus_ruficapillus/19072026-DSC_0177.jpg",
+     "d": "2026-07-19"
+    },
+    {
+     "f": "mas/chrysomus_ruficapillus/19072026-DSC_0180.jpg",
+     "d": "2026-07-19"
+    }
+   ]
   }
  },
  "generado": "2026-10-23"

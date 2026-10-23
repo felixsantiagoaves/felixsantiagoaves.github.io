@@ -1,0 +1,62 @@
+{
+ "comun": "Zorzal Chalchalero",
+ "resumen": "Zorzal Chalchalero (Turdus amaurochalinus): cómo reconocerlo por el pico amarillo y la garganta rayada, cuándo se lo ve en Córdoba y cómo suena, con mis fotos y el mapa de mis avistamientos.",
+ "datos": [
+  [
+   "Largo",
+   "23,5 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Patrones migratorios complejos; muchos quedan en las tierras bajas del norte, las sierras del centro y las laderas andinas hasta 1300 m"
+  ],
+  [
+   "Ambientes",
+   "Bosques, montes abiertos, jardines y parques"
+  ],
+  [
+   "Alimentación",
+   "Frutos e invertebrados"
+  ],
+  [
+   "Puesta",
+   "3 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El adulto tiene el pico amarillo, a menudo con la punta oscura, y es pardo por arriba con la cola más oscura. Se destacan las lorales negruzcas y la garganta blanca con gruesas rayas pardo oscuro, a veces con una pequeña gola blanca en el centro de la parte baja. Por abajo es blanquecino con un lavado pardo pálido en el pecho, y en vuelo se ven las cubiertas inferiores del ala canela. Se superpone con casi todos los otros zorzales."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía indica que tiene patrones migratorios complejos, pero que muchos permanecen en las tierras bajas del norte, las sierras del centro y las laderas de los Andes hasta unos 1300 m. Según Wikipedia, es común en bosques, praderas arboladas, montes abiertos y ambientes humanos como jardines y parques urbanos."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es omnívoro y come sobre todo frutos e invertebrados. Se traga enteros los frutos chicos y picotea los grandes para comer la pulpa, y suele dispersar las semillas de las plantas que consume. Según Wikipedia, se parece al zorzal colorado, aunque es algo menos terrestre, y mueve la cola de una forma característica."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una serie lenta de silbidos ricos, gorjeos o chirridos, bien espaciados y a menudo ligados o duplicados, que le dan un patrón temporal con interrupciones, a diferencia del zorzal colorado. Los llamados incluyen un puk hueco, un uip líquido y una serie rápida de silbidos roncos ascendentes."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Según Wikipedia, el nido está bastante alto, apoyado en ramas, y es una taza de ramitas finas, raíces y algo de barro, forrada con fibras vegetales. La hembra pone tres huevos celeste verdoso con manchas grisáceas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "La guía lo llama Zorzal Blanco; en la Argentina se lo conoce como zorzal chalchalero. En otros países se lo llama sabiá común (Uruguay), zorzal mandioca (Paraguay) o zorzal de vientre cremoso (Perú)."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Turdus amaurochalinus",
+   "u": "https://es.wikipedia.org/wiki/Turdus_amaurochalinus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 408
+}

@@ -1,0 +1,54 @@
+{
+ "comun": "Tijereta",
+ "resumen": "Tijereta (Tyrannus savana): cómo reconocerla por la cola larguísima y la capucha negra, cuándo llega a Córdoba y cómo caza, con mis fotos y el mapa de mis avistamientos.",
+ "datos": [
+  [
+   "Largo",
+   "34 cm según la guía; 37 a 41 cm los machos y 28 a 30 cm las hembras según Wikipedia"
+  ],
+  [
+   "Distribución",
+   "Muy extendida; migradora austral"
+  ],
+  [
+   "Ambientes",
+   "Ambientes abiertos: bordes de bosque, pastizales, jardines y zonas residenciales"
+  ],
+  [
+   "Alimentación",
+   "Insectos que caza en vuelo; los migrantes también comen frutos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerla",
+   "p": "Es un tirano grande de ambientes abiertos, con la cola larguísima y bifurcada y una mancha amarilla en la corona, semioculta. El adulto tiene la capucha negra y brillante, el dorso gris, la cola larga y negra y las partes inferiores blancas puras. En vuelo suele abrir la cola. El juvenil tiene la corona y las auriculares pardas, los bordes canela en las cubiertas del ala y la cola parda, mucho más corta y menos escalonada que la del adulto."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía la define como una migradora austral muy extendida. Según Wikipedia, va desde el sur de México hasta el norte de la Patagonia argentina, y las poblaciones del sur se desplazan hacia la Amazonia y más al norte durante el invierno austral. Prefiere ambientes abiertos, como bordes de bosque, sabanas, pastizales, jardines y zonas residenciales."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Caza insectos en vuelo desde una percha, en ramas abiertas, cables o postes, y después de cada vuelo suele volver a la misma. Los migrantes que no crían también comen frutos. En migración es muy gregaria y puede formar bandadas enormes."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es un trino variable, como un gorjeo, que se acelera hasta un traqueteo corto, como de grillo, y baja de tono. También da una serie ronca de notas monótonas y aburridas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Tyrannus es el epíteto latino de Lanius tyrannus y significa «tirano»; savana es una palabra francesa que quiere decir «sabana», por su ambiente. Se la llama tijereta en la Argentina, Uruguay y Paraguay."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Tyrannus savana (tijereta sabanera)",
+   "u": "https://es.wikipedia.org/wiki/Tyrannus_savana"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 380
+}

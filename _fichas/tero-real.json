@@ -1,0 +1,62 @@
+{
+ "comun": "Tero-real",
+ "resumen": "Tero-real (Himantopus mexicanus): cómo reconocer a esta ave blanca y negra de patas larguísimas, dónde vive y cómo nidifica, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "37 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Muy extendido, excepto en Tierra del Fuego"
+  ],
+  [
+   "Ambientes",
+   "Aguas someras, dulces o saladas: orillas y marismas"
+  ],
+  [
+   "Alimentación",
+   "Insectos acuáticos y otros invertebrados pequeños"
+  ],
+  [
+   "Puesta",
+   "3 a 6 huevos, generalmente 4"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un chorlo esbelto, de cuello largo, blanco y negro, con patas larguísimas de color rosado y un pico fino como una aguja. El adulto tiene la nuca, la parte de atrás del cuello y los costados del pecho negros, una banda blanca en la parte alta del dorso y el manto y las alas negros. En vuelo, las alas largas y puntiagudas contrastan con la cola blanca y la rabadilla blanca en forma de V. La hembra tiene el manto y las alas más pardos. El juvenil tiene la corona y la nuca pardo grisáceas, con la frente blanca que contrasta."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da como muy extendido, salvo en Tierra del Fuego. Según Wikipedia, necesita aguas someras, dulces o saladas, y por eso se lo ve en las orillas y las marismas; como esos lugares se secan pronto, a veces se desplaza de forma nómada en busca de sitios nuevos."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es ruidoso, incluso de noche, y forma grupos que a veces se mezclan con bandadas de otras aves limícolas. Se alimenta de insectos acuáticos y otros invertebrados pequeños, que consigue vadeando, picoteando la superficie, moviendo el pico de lado a lado o sondeando el barro."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "Los llamados, en reposo y en vuelo, son una serie rápida de ladridos agudos. El llamado al despegar es muy parecido al del Pitotoy Grande, tew tew tew!"
+  },
+  {
+   "t": "Nidificación",
+   "p": "Según Wikipedia, anida solo o en colonias de hasta 100 parejas, generalmente en el suelo entre pastos y juncos, y a veces en un nido flotante hecho con plantas acuáticas. Pone de 3 a 6 huevos, generalmente 4, de color ante oliváceo con muchas manchas negras que los camuflan. Los dos padres los incuban de 22 a 26 días, y las crías tienen plumaje de vuelo entre los 28 y 32 días después de nacer."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "En la Argentina y Uruguay se lo llama tero real, por su parecido con los teros; en otros países se lo conoce como cigüeñuela de cuello negro, perrito (Chile) o pernilongo (Brasil)."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Himantopus mexicanus (cigüeñuela de cuello negro)",
+   "u": "https://es.wikipedia.org/wiki/Himantopus_mexicanus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 322
+}

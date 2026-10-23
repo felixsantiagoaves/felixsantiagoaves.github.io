@@ -1,0 +1,54 @@
+{
+ "comun": "Varillero Congo",
+ "resumen": "Varillero Congo (Chrysomus ruficapillus): cómo reconocer al macho negro de capucha castaña y a la hembra parda, dónde vive y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "19 cm el macho y 17,5 cm la hembra, según la guía"
+  ],
+  [
+   "Distribución",
+   "Tierras bajas y laderas del norte y del centro"
+  ],
+  [
+   "Ambientes",
+   "Bañados, lagunas con vegetación densa en la orilla y arrozales"
+  ],
+  [
+   "Alimentación",
+   "Insectos y frutos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El macho adulto tiene la corona y un babero grande de color castaño oscuro, que muchas veces cuesta ver, y es negro en el resto del cuerpo. La hembra adulta es pardo oliva apagado por arriba, con un veteado borroso en el dorso, y verde oliva apagado por abajo, con la garganta ante amarillenta. El juvenil se parece a la hembra, pero tiene un veteado borroso por abajo. El inmaduro es intermedio entre el macho y la hembra, con el dorso veteado y una cantidad variable de manchas negras por abajo, casi siempre con la garganta castaña poco definida."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da en las tierras bajas y las laderas del norte y del centro. Según Wikipedia, vive en bañados y llanuras, y en lagunas con vegetación densa en las orillas, y en los arrozales forma bandadas muy grandes que se alejan del agua para alimentarse. Se asocia con el varillero ala amarilla y el varillero negro, según la guía."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es gregario. Según Wikipedia, come insectos y frutos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es complejo, pero suele incluir uno o dos silbidos planos y agudos seguidos de un largo ronquido nasal y silbidos cortos y rápidos, algo como feee feee laaaaaaay títítítítí; la primera parte puede recordar al varillero ala amarilla. El llamado en vuelo es un pwik líquido."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "También se lo llama trile de cabeza canela o garibaldino."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Chrysomus ruficapillus",
+   "u": "https://es.wikipedia.org/wiki/Chrysomus_ruficapillus"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 398
+}

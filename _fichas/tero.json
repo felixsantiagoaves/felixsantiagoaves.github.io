@@ -1,0 +1,62 @@
+{
+ "comun": "Tero",
+ "resumen": "Tero (Vanellus chilensis): cómo reconocerlo por la cresta, el antifaz negro y los espolones rojos, cómo defiende el nido y qué dice su grito, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "34 cm la forma del norte y del centro; 39 cm la patagónica, según la guía"
+  ],
+  [
+   "Distribución",
+   "Muy extendido en el país"
+  ],
+  [
+   "Ambientes",
+   "Terreno abierto, incluidas zonas urbanas; sobre todo cerca de arroyos y lagunas"
+  ],
+  [
+   "Alimentación",
+   "Sobre todo insectos; también lagartijas, semillas y carne"
+  ],
+  [
+   "Puesta",
+   "Huevos gris verdosos con pintas oscuras; incubación de unos 26 días"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "En las tierras bajas del norte y de los Andes hasta unos 2000 m vive la forma lampronotus, de 34 cm, más chica y estilizada que la patagónica, con la cabeza pardo grisácea pálida y una cresta bien visible, menos negro en el cuello y el pecho, y los tarsos relativamente más largos. La forma de la Patagonia (39 cm) tiene la cabeza gris con una cresta apenas insinuada, la cara negra y una gran mancha negra en el pecho. En vuelo se ve la franja blanca del ala y la rabadilla blanca, que contrastan con las plumas de vuelo negras y la cola negra con una ancha banda subterminal. Según Wikipedia, el pico es corto y rojizo con la punta negra, las patas largas y rojas, y tiene espolones rojos en las alas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da como muy extendido. Según Wikipedia, ocupa terrenos abiertos, incluidas zonas urbanas, aunque es más común cerca de arroyos y lagunas, y es el ave nacional de Uruguay."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Come sobre todo insectos, y también lagartijas pequeñas, semillas y carne cruda. Caza corriendo dos o tres pasos, frenando y picoteando hacia adelante, y también golpea el suelo con las patas para hacer salir lombrices. Cuando alguien se acerca al nido, uno de los adultos queda en el suelo mientras el otro vuela contra el intruso y lo golpea con los espolones de las alas hasta que se va; puede fingir una herida para alejarlo del nido y ataca incluso a aves de presa y gatos."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El llamado es un «Teú» metálico y fuerte, y un TE-RU, TE-RU más agudo, más fuerte y ronco, que se repite una y otra vez. Las aves patagónicas tienen un grito muy distinto, más agudo y áspero, como de loro, KE-RREU, KE-RREU."
+  },
+  {
+   "t": "Nidificación",
+   "p": "El nido es una pequeña depresión en el suelo abierto, apenas marcada con ramitas y pastos, y muy difícil de ver. Según Wikipedia, pone los huevos a fines del invierno, y una pareja puede tener varias nidadas en el año. Los huevos son gris verdosos con pintas oscuras y se incuban unos 26 días; los dos padres cuidan a los pichones, que aprenden a volar al mes de edad más o menos."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Se lo conoce como tero en la Argentina y también como tero-tero, tetéu, quero quero, queltehue o pellar, según el lugar."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Vanellus chilensis",
+   "u": "https://es.wikipedia.org/wiki/Vanellus_chilensis"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 90
+}

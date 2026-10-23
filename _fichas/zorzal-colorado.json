@@ -1,0 +1,62 @@
+{
+ "comun": "Zorzal Colorado",
+ "resumen": "Zorzal Colorado (Turdus rufiventris): cómo reconocerlo por el vientre naranja rojizo, cómo suena su canto antes del amanecer y cómo hace el nido de barro, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "23,5 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Yungas hasta unos 1700 m y tierras bajas del norte, hacia el sur hasta el norte de la Patagonia"
+  ],
+  [
+   "Ambientes",
+   "Bosques y montes; en ciudades, jardines y parques con árboles y césped"
+  ],
+  [
+   "Alimentación",
+   "Frutos e invertebrados; sus presas preferidas son las lombrices"
+  ],
+  [
+   "Puesta",
+   "3 o 4 huevos"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "Es un zorzal grande, conspicuo y residente. El adulto es pardo oliváceo en general, con un vientre naranja rojizo muy llamativo, y en vuelo se ven las cubiertas inferiores del ala y las axilas del mismo color. El juvenil se parece al adulto, pero tiene el pecho con manchas pardas y las cubiertas del ala con la punta naranja. Según Wikipedia, tiene el pico casi recto, amarillo en el macho, el párpado amarillo y la garganta blanquecina con finas rayas pardas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da en las yungas hasta unos 1700 m y en las tierras bajas del norte, hacia el sur hasta el norte de la Patagonia. Según Wikipedia, vive en bosques y montes, y en las ciudades es común en jardines y parques con césped y árboles, donde prefiere los lugares con sombra. En la provincia y la ciudad de Buenos Aires se expandió en la segunda mitad del siglo XX y hoy es abundante en zonas urbanas."
+  },
+  {
+   "t": "Comportamiento y alimentación",
+   "p": "Es omnívoro y come sobre todo frutos e invertebrados. Se traga enteros los frutos chicos y picotea los grandes, y se lo considera un buen dispersor de semillas. En el suelo revuelve la hojarasca en busca de lombrices, su presa preferida. Suele andar solo o en pareja, y se mueve con saltos y carreras cortas."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto es una serie pausada de silbidos suaves y ondulantes, con unas pocas notas ligadas, que forma un patrón continuo; el nombre guaraní, Corochiré, imita el canto. Entre los llamados hay un chuu-wip líquido y alargado al anochecer, un whá y una serie rápida de silbidos puros ascendentes. Según Wikipedia, desde fines del invierno canta antes del amanecer, con un canto fuerte, armonioso y repetitivo."
+  },
+  {
+   "t": "Nidificación",
+   "p": "Según Wikipedia, el nido es una taza abierta de bordes anchos, de unos 13 a 15 cm de diámetro y 6 a 7,5 cm de alto, hecha con barro y fibras vegetales y forrada con ramitas finas, musgo y pastos blandos. La hembra pone tres o cuatro huevos blancos o celestes con manchas pardas."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "Es el ave nacional del Brasil, donde se llama sabiá-laranjeira. En Uruguay también se lo llama zorzal común; el nombre científico rufiventris quiere decir «vientre rojizo»."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Turdus rufiventris",
+   "u": "https://es.wikipedia.org/wiki/Turdus_rufiventris"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 410
+}

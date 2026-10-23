@@ -1,0 +1,46 @@
+{
+ "comun": "Varillero Ala Amarilla",
+ "resumen": "Varillero Ala Amarilla (Agelasticus thilius): cómo reconocer al macho negro con hombreras amarillas y a la hembra rayada, dónde vive y cómo suena, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+ "datos": [
+  [
+   "Largo",
+   "17,5 cm según la guía"
+  ],
+  [
+   "Distribución",
+   "Muy extendido en el país"
+  ],
+  [
+   "Ambientes",
+   "Pantanos, bañados y pastizales"
+  ]
+ ],
+ "secciones": [
+  {
+   "t": "Cómo reconocerlo",
+   "p": "El macho adulto es todo negro, con hombreras amarillas que muchas veces quedan ocultas en reposo; en vuelo se ven las hombreras y las axilas amarillas, muy llamativas. El macho recién mudado tiene la cabeza negruzca con una ceja ante ancha, el dorso con bordes pardos o castaños y las partes inferiores con bordes ante, lo que da un aspecto moteado. La hembra es mucho más pálida, con plumaje ante y un rayado negro más marcado, sobre todo por abajo, con la malar negruzca y casi siempre una raya pálida en la corona; las hombreras amarillas también suelen quedar ocultas."
+  },
+  {
+   "t": "Dónde vive",
+   "p": "La guía lo da como muy extendido en el país. Según Wikipedia, vive en pantanos, bañados y pastizales de la Argentina, Bolivia, Brasil, Chile, Paraguay, Perú y Uruguay."
+  },
+  {
+   "t": "Cómo suena",
+   "p": "El canto tiene notas agudas y metálicas, algunas largas, y termina en una nota larga y característica que recuerda a una sierra cortando una tabla grande, Twoo-laaaaaaay, con mucha variación. El llamado es un simple check."
+  },
+  {
+   "t": "Una nota sobre el nombre",
+   "p": "En Chile se lo llama trile, y varios autores de los siglos XVIII y XIX propusieron que el nombre «Chile» vendría del canto de esta ave, como onomatopeya mapuche; otros autores rechazaron esa idea. En la Argentina también se lo conoce como junquero ala amarilla o varillero aliamarillo."
+  }
+ ],
+ "fuentes": [
+  {
+   "t": "Wikipedia: Agelasticus thilius (varillero ala amarilla)",
+   "u": "https://es.wikipedia.org/wiki/Agelasticus_thilius"
+  },
+  {
+   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+  }
+ ],
+ "id": 397
+}
