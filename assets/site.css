@@ -1108,7 +1108,7 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .campo-fig:nth-child(even){transform:rotate(1.2deg);}
 .campo-fig:hover{transform:rotate(0) translateY(-4px) scale(1.03);box-shadow:0 0 0 1px rgba(0,0,0,.3),4px 9px 0 rgba(30,25,12,.25);}
 .campo-fig img{display:block;height:var(--ch,170px);width:calc(var(--ch,170px)*.8);object-fit:cover;object-position:center 30%;pointer-events:none;}
-.campo-wrap{--ch:clamp(110px,calc(100vh - 640px),200px);}
+.campo-wrap{--ch:clamp(110px,calc(100vh - 640px),320px);}
 .campo-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:30px;height:38px;border:2px solid #ede0d4;border-radius:2px;background:#414833;color:#ede0d4;font-size:1.2rem;line-height:1;cursor:pointer;box-shadow:2px 3px 0 rgba(0,0,0,.3);padding:0;}
 .campo-arr:hover{background:#5a6444;}
 .campo-prev{left:-6px;}.campo-next{right:-6px;}
