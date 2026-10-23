@@ -32,7 +32,11 @@
   <!-- CUERPO CLARO -->
   <div class="hero-body">
     <p style="font-family:'Playfair Display',serif;font-size:.9rem;color:var(--ti);text-align:center;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;">— En el campo —</p>
-    <div class="campo-grid" id="campo-grid"></div>
+    <div class="campo-wrap">
+      <button class="campo-arr campo-prev" id="campo-prev" onclick="campoScroll(-1)" aria-label="Fotos anteriores">‹</button>
+      <div class="campo-grid" id="campo-grid" onscroll="campoArrows()"></div>
+      <button class="campo-arr campo-next" id="campo-next" onclick="campoScroll(1)" aria-label="Más fotos">›</button>
+    </div>
   <p class="hero-bio corta">Soy Félix Santiago Allendes, fotógrafo de aves desde Río Cuarto, Córdoba. Registro cada encuentro con la naturaleza — desde las especies más comunes hasta las más esquivas. Este es mi diario de campo visual.</p>
   <button class="bio-mas" onclick="toggleBio(this)">Leer más</button>
     <div class="novedades">

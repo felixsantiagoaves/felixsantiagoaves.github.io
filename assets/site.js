@@ -80,6 +80,12 @@ function campoGo(idx){
   });
 })();
 
+function campoScroll(d){ const g = document.getElementById('campo-grid'); if(g) g.scrollBy({left: d * g.clientWidth * .8, behavior: 'smooth'}); }
+function campoArrows(){
+  const g = document.getElementById('campo-grid'), p = document.getElementById('campo-prev'), n = document.getElementById('campo-next');
+  if(!g || !p) return;
+  p.disabled = g.scrollLeft < 4; n.disabled = g.scrollLeft + g.clientWidth >= g.scrollWidth - 4;
+}
 function focoPos(f){ return (typeof FOCO !== 'undefined' && FOCO[f] != null) ? FOCO[f] : 50; }
 function irAlbum(filtroVal){
   if(aOtra('album','irAlbum',[filtroVal])) return;
@@ -372,6 +378,7 @@ function loadCarrusel() {
       if(g) g.innerHTML = fotos.map((f, i) =>
         `<button class="campo-fig" onclick="openCampoLB(${i})" aria-label="Ver foto ${i + 1}"><img src="/campo/${f.archivo}" alt="${f.caption || 'Félix en el campo'}" loading="lazy"></button>`
       ).join('');
+      campoArrows();
     })
     .catch(() => {}); // silencioso si no hay fotos
 }
