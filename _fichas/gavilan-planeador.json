@@ -17,15 +17,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es muy común solo en los esteros del noreste. Tiene las alas notoriamente más largas que el Gavilán Ceniciento y las sostiene en una V más profunda. En la forma clara el adulto tiene la cabeza blanca y negra con un collar negro y las partes inferiores blancas; es negro arriba con las alas grises y hasta 5 anchas bandas negras en la cola. La hembra se parece pero con el negro reemplazado por pardo y las partes inferiores lavadas de ante o con finas estrías pardas. La forma oscura es hollín abajo con el vientre castaño, y desde lejos parece negra. A diferencia del Gavilán Ceniciento, el adulto claro tiene la cabeza oscura."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 20 de junio de 2026, en el Bañado Arroyo Chico, en Santa Catalina."
+  },
+  {
+   "t": "Alas largas, en V",
+   "p": "Tiene las alas notoriamente más largas que el Gavilán Ceniciento y las sostiene en una V más profunda. En la forma clara el adulto tiene la cabeza blanca y negra con un collar negro y las partes inferiores blancas; es negro arriba con las alas grises y hasta 5 anchas bandas negras en la cola. La hembra se parece pero con el negro reemplazado por pardo. La forma oscura es hollín abajo con el vientre castaño. Mide entre 50 y 52 cm."
+  },
+  {
+   "t": "¿Ceniciento?",
+   "p": "A diferencia del Gavilán Ceniciento, el adulto claro tiene la cabeza oscura."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es ampliamente distribuido, pero Pearman y Areta anotan que solo es común en los bañados del noreste. Narosky lo describe a menudo palustre, de vuelo bajo y planeado, en humedales y áreas rurales. Según Wikipedia es una especie sudamericana, desde Colombia hasta las Malvinas y desde Chile hasta Trinidad."
+   "p": "Está ampliamente distribuido en el país, pero Pearman y Areta anotan que solo es común en los bañados y esteros del noreste. Narosky lo describe a menudo palustre, de vuelo bajo y planeado, en humedales y áreas rurales. Según Wikipedia es una especie sudamericana, de Colombia a las Malvinas."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Aguilucho de Azara",
    "p": "No se le conocen subespecies. Además de gavilán planeador, se lo llama aguilucho grande, aguilucho de Azara, gavilán alilargo, aguilucho negro y vari huevetero, y Wikipedia lo titula aguilucho de Azara."
   }
  ],
@@ -41,5 +49,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Gavilán Planeador"
+ "comun": "Gavilán Planeador",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-06-20",
+  "lugar": "Bañado Arroyo Chico"
+ }
 }

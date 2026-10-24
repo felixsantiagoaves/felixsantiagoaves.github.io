@@ -25,27 +25,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Cría en la Patagonia y llega en invierno hasta las tierras bajas del centro. La forma de la estepa se parece a la del Coludito Copetón pero tiene la corona estriada de ante, el manto más frío y gris y las partes inferiores más pálidas. Se diferencia del Coludito Copetón por los bordes blancos de la cola y la cresta más chica. La forma del bosque del noroeste patagónico es más oscura."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 27 de julio de 2026, en el Bañado Arroyo Chico, en Santa Catalina."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina cría en la Patagonia y llega al centro del país en invierno (Pearman y Areta). Narosky lo ubica en matorrales, barrancas y a veces en el suelo, en estepas altoandinas y patagónicas. En conjunto es nativo del centro-oeste y sur de Sudamérica, desde el sur de Perú y el oeste de Bolivia hasta gran parte de la Argentina y Chile. Habita estepas arbustivas, matorrales de altura, valles, sierras y litorales marítimos, principalmente por debajo de los 2500 m (llega a unos 4000 m en Bolivia y el norte de Chile)."
+   "t": "¿Coludito Copetón?",
+   "p": "La forma de la estepa se parece a la del Coludito Copetón, pero tiene la corona estriada de ante, el manto más frío y gris y las partes inferiores más pálidas. Se diferencia por los bordes blancos de la cola y la cresta más chica. La forma del bosque del noroeste patagónico es más oscura. Mide 16 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta de pequeños artrópodos que encuentra entre las ramas y hojas de arbustos y árboles. Se desplaza en parejas o en pequeños grupos, sobre arbustos y árboles pequeños, y ocasionalmente baja a los pastos o al suelo; usa la cola rígida como apoyo al trepar. El llamado habitual es muy débil, y cuando se asusta emite un chillido fuerte y sostenido que ayuda a ubicarlo. En Argentina, su canto es una serie irregular de notas y trinos agudos."
+   "t": "Viene del sur",
+   "p": "Cría en la Patagonia y llega en invierno hasta las tierras bajas del centro (Pearman y Areta). Narosky lo ubica en matorrales, barrancas y a veces en el suelo, en estepas altoandinas y patagónicas. En conjunto es nativo del centro-oeste y sur de Sudamérica, del sur de Perú y el oeste de Bolivia a gran parte de Argentina y Chile."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es un parloteo largo, fluctuante, de tono medio, con notas chillonas, que dura 4 segundos o más. El llamado más común es una serie muy rápida y corta de notas zumbantes, metálicas y agudas, en menos de un segundo. También da trinos suaves."
+   "t": "Cola rígida",
+   "p": "Se alimenta de pequeños artrópodos que encuentra entre las ramas y hojas de arbustos y árboles. Anda en parejas o en grupos chicos, y usa la cola rígida como apoyo al trepar. El llamado habitual es muy débil, y cuando se asusta da un chillido fuerte y sostenido que ayuda a ubicarlo. El canto es un parloteo largo, de tono medio, con notas chillonas."
   },
   {
-   "t": "Nidificación",
-   "p": "Construye el nido en huecos de árboles o cactus, o en cavidades de techos, corrales o muros, con palitos, ramitas y fibras vegetales, y lo forra con abundantes plumas. También puede reutilizar nidos de otras especies, como los de los canasteros (Asthenes). Pone de 2 a 4 huevos blancos, en septiembre-octubre."
+   "t": "El nido",
+   "p": "Lo construye en huecos de árboles o cactus, o en cavidades de techos, corrales o muros, con palitos, ramitas y fibras vegetales, y lo forra con abundantes plumas. También puede reutilizar nidos de canasteros. Pone de 2 a 4 huevos blancos, en septiembre y octubre."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "Además de coludito cola negra se lo llama coludito común, tijeral o coludito tijeral. Algunas clasificaciones (HBW y BirdLife) separan dos de sus subespecies como especies distintas, el tijeral colinegro serrano y el sureño, pero otras no lo aceptan."
   }
  ],
@@ -61,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Coludito Cola Negra"
+ "comun": "Coludito Cola Negra",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-07-27",
+  "lugar": "Bañado Arroyo Chico"
+ }
 }

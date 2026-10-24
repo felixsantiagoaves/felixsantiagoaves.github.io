@@ -17,15 +17,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es un ave de marisma, acuática y terrestre, con un escudete grande en la frente y dedos largos y finos. El adulto de las tierras bajas (unos 35 cm) tiene el escudete y el pico rojos con la punta amarilla, las patas amarillentas, la cabeza negruzca, el cuerpo gris plomizo con una franja blanca bien visible en el flanco y las alas pardas. En las lagunas de la Puna vive una forma más grande (40 cm) con el dorso negro, del mismo tono que las alas. El juvenil tiene el pico amarillo opaco, el escudete reducido, el plumaje desvaído y la garganta blanquecina."
+   "t": "La primera vez",
+   "p": "La primera vez que la anoté fue el 19 de julio de 2026, en la Laguna Rivero, en Alcira Gigena."
+  },
+  {
+   "t": "Escudete rojo",
+   "p": "Es un ave de marisma, acuática y terrestre, con un escudete grande en la frente y dedos largos y finos. El adulto de las tierras bajas, de unos 35 cm, tiene el escudete y el pico rojos con la punta amarilla, las patas amarillentas, la cabeza negruzca, el cuerpo gris plomizo con una franja blanca bien visible en el flanco y las alas pardas. El juvenil tiene el pico amarillo opaco, el escudete reducido, el plumaje desvaído y la garganta blanquecina."
+  },
+  {
+   "t": "La de la Puna",
+   "p": "En las lagunas de la Puna vive una forma más grande, de 40 cm, con el dorso negro del mismo tono que las alas."
   },
   {
    "t": "Dónde vive",
-   "p": "Según la guía, está muy extendida en las tierras bajas y el pie de sierras, y también en lagunas de la Puna. En el continente va desde el este de los Estados Unidos y Canadá hasta el norte de Chile y de la Argentina. Vive en humedales, en la vegetación de las orillas de los ríos y en cañaverales."
+   "p": "Según la guía, está muy extendida en las tierras bajas y el pie de sierras. En el continente va desde el este de los Estados Unidos y Canadá hasta el norte de Chile y de la Argentina. Vive en humedales, en la vegetación de las orillas de los ríos y en cañaverales."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Parientes lejanos",
    "p": "Se la conoce también como polla negra, gallineta de agua o gallareta pico rojo. Antes se la consideraba la misma especie que la gallineta común de Europa (Gallinula chloropus), pero hoy se las separa."
   }
  ],
@@ -41,5 +49,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 121
+ "id": 121,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-07-19",
+  "lugar": "Laguna Rivero"
+ }
 }

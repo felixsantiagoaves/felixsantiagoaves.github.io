@@ -25,24 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es el caracara más chico: de alas angostas y rectangulares, con una mancha clara en la base de las primarias y la rabadilla clara; a menudo es gregario y busca carroña en el suelo. El adulto típico (37 cm) tiene el pico y los tarsos amarillos y la cera durazno o anaranjada (algunos individuos la tienen más opaca y rosada); es pardo uniforme con una lista oscura detrás del ojo. En vuelo se ve el destello blanquecino de las primarias y una rabadilla grande color crema. La forma del bosque patagónico (41 cm) es más grande y bastante más oscura, sin esa lista. El juvenil se parece al adulto pero tiene la cera gris opaca, el manto y las escapulares bordeados de ante, y no tiene la banda oscura de la cola."
+   "t": "La primera vez",
+   "p": "Lo anoté por primera vez el 8 de diciembre de 2025, en Río Cuarto."
+  },
+  {
+   "t": "El más chico de los caracaras",
+   "p": "Es de alas angostas y rectangulares, con una mancha clara en la base de las primarias y la rabadilla clara. El adulto típico (37 cm) tiene el pico y los tarsos amarillos y la cera durazno o anaranjada, y es pardo uniforme con una lista oscura detrás del ojo. En vuelo se ve el destello blanquecino de las primarias y una rabadilla grande color crema. La forma del bosque patagónico (41 cm) es más grande y más oscura. El juvenil tiene la cera gris opaca y el manto bordeado de ante."
+  },
+  {
+   "t": "Come de todo",
+   "p": "Caza presas chicas como insectos, babosas, gusanos, larvas, crías de aves, roedores, peces chicos, camarones y anfibios, y es buen carroñero. Es gregario, social y territorial, y puede ser agresivo con intrusos."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina está en todo el país y es muy común, en ambientes diversos; Narosky destaca que a menudo se lo ve en las rutas comiendo carroña. Ocupa terrenos con vegetación baja, desde la costa hasta las llanuras, y bosques abiertos, desde el nivel del mar hasta unos 1500 m. Es sedentario. En conjunto vive en el Cono Sur de Sudamérica: Chile, Argentina, Uruguay, Bolivia, Paraguay y el extremo sur de Brasil."
+   "p": "Está en todo el país y es muy común. Ocupa terrenos con vegetación baja, desde la costa hasta las llanuras, y bosques abiertos, desde el nivel del mar hasta unos 1500 m. Es sedentario. En conjunto vive en el Cono Sur: Chile, Argentina, Uruguay, Bolivia, Paraguay y el extremo sur de Brasil."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Caza presas pequeñas como insectos, babosas, gusanos, larvas, crías de aves, roedores, peces pequeños, camarones y anfibios, y también es un buen carroñero. Es gregario, social y territorial, y puede ser agresivo con intrusos. Se adapta muy bien a distintos ambientes."
+   "t": "El nido",
+   "p": "Lo construye sobre vegetación que lo proteja del sol y la lluvia, solo o en colonias. Pone de 2 a 3 huevos con manchas rojas, aunque pueden ser hasta 5. Cría de septiembre a diciembre, con octubre como el mes de mayor actividad. Incuba de 26 a 32 días, los pichones dejan el nido a las cinco semanas y ambos padres participan en todas las tareas."
   },
   {
-   "t": "Nidificación",
-   "p": "Construye el nido sobre vegetación que lo proteja del sol y la lluvia, solo o en colonias. Suele poner de 2 a 3 huevos con manchas rojas, aunque pueden ser hasta 5. Cría de septiembre a diciembre, con octubre como el mes de mayor actividad. La incubación dura de 26 a 32 días, los pichones dejan el nido a las cinco semanas y ambos padres participan en todas las tareas."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo conoce como chimango o tiuque, y también como caracara chimango. Fue descrito originalmente en el género Polyborus y durante mucho tiempo se incluyó en Milvago. Los estudios genéticos mostraron que está más emparentado con los miembros del antiguo género Phalcoboenus, y por eso hoy se lo ubica en Daptrius; otras autoridades lo ubican en Chimango o en Phalcoboenus."
+   "t": "¿Chimango o Daptrius?",
+   "p": "También se lo conoce como tiuque o caracara chimango. Se lo describió en Polyborus y durante mucho tiempo se incluyó en Milvago, pero los estudios genéticos mostraron que está más emparentado con el antiguo género Phalcoboenus, y por eso hoy se lo ubica en Daptrius; otras autoridades lo ubican en Chimango o en Phalcoboenus."
   }
  ],
  "fuentes": [
@@ -57,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Chimango"
+ "comun": "Chimango",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-08",
+  "lugar": "Río Cuarto"
+ }
 }

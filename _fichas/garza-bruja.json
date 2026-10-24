@@ -25,28 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una garza robusta, crepuscular y nocturna, de pico fuerte y puntiagudo y plumas nupciales blancas largas y muy finas. El adulto de las tierras bajas del norte tiene una pequeña frente y una línea superciliar blancas, la gorra y el dorso negros y las alas grises; la cara y las partes inferiores son blancas, con un tinte gris o pardo en el pecho. La forma patagónica se distingue por las cobertoras auriculares y las partes inferiores pardas. El juvenil tiene el iris naranja, la cabeza y el cuello estriados de pardo y ante, y el dorso y las alas pardos con manchas blancas en forma de gota."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que la anoté fue el 10 de octubre de 2026, en la Reserva Hídrica Achiras. La primera había sido el 17 de enero, en la Reserva Aguada de los Pájaros, en Villa Rumipal."
+  },
+  {
+   "t": "Robusta y de ojo rojo",
+   "p": "Es una garza robusta, crepuscular y nocturna, de pico fuerte y puntiagudo y plumas nupciales blancas, largas y muy finas. El adulto de las tierras bajas del norte tiene una frente y una línea superciliar blancas, la gorra y el dorso negros y las alas grises; la cara y las partes inferiores son blancas. El juvenil tiene el iris naranja, la cabeza y el cuello estriados de pardo y ante, y el dorso y las alas pardos con manchas blancas en forma de gota. Mide 63 cm."
+  },
+  {
+   "t": "De noche",
+   "p": "Es de costumbres crepusculares y nocturnas, aunque durante la cría puede verse activa de día. Come peces, anfibios, pequeños reptiles e insectos y, excepcionalmente, algún ratón. El llamado característico es un \"kwok\" hueco, que da en vuelo al atardecer y al amanecer."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es ampliamente distribuida y se ve en todo el país, en humedales y costas marinas. Narosky la describe gregaria, arborícola y crepuscular. Está ampliamente distribuida por Eurasia, África y América (cuatro subespecies); las poblaciones del hemisferio sur son sedentarias."
+   "p": "Está ampliamente distribuida y se ve en todo el país, en humedales y costas marinas. Narosky la describe gregaria, arborícola y crepuscular. Está por Eurasia, África y América (cuatro subespecies); las poblaciones del hemisferio sur son sedentarias."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es de costumbres crepusculares y nocturnas, aunque durante la cría puede verse activa de día. Come peces, anfibios, pequeños reptiles e insectos y, excepcionalmente, algún ratón."
+   "t": "El nido",
+   "p": "De palos y ramas, a unos 4 o 5 m de altura en un árbol o matorral alto. Pone 3 o 4 huevos verde azulado pálido, que se incuban de 20 a 21 días, y los pichones se quedan de 3 a 4 semanas en el nido."
   },
   {
-   "t": "Cómo suena",
-   "p": "El llamado característico es un \"kwok\" hueco, que da en vuelo al atardecer y al amanecer."
-  },
-  {
-   "t": "Nidificación",
-   "p": "El nido, de palos y ramas, se construye a unos 4 o 5 m de altura en un árbol o matorral alto. La puesta es de 3 o 4 huevos verde azulado pálido; la incubación dura de 20 a 21 días y es compartida, y los pichones permanecen en el nido de 3 a 4 semanas."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Wikipedia la titula martinete común; garza bruja y zorro de agua figuran entre sus nombres. El nombre científico deriva del griego nyktos (noche) y korax (cuervo), por sus hábitos nocturnos y sus graznidos parecidos a los del cuervo."
+   "t": "Martinete, zorro de agua",
+   "p": "Wikipedia la titula martinete común; garza bruja y zorro de agua figuran entre sus nombres. Nycticorax deriva del griego nyktos (noche) y korax (cuervo), por sus hábitos nocturnos y sus graznidos parecidos a los del cuervo."
   }
  ],
  "fuentes": [
@@ -61,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Garza Bruja"
+ "comun": "Garza Bruja",
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-10-10",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

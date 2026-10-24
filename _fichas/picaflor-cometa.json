@@ -29,28 +29,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un picaflor espectacular, de cola larga, graduada y ahorquillada, y pico corto y casi recto. El macho tiene la parte central del dorso y la grupa de color rosa violáceo, y la cola de un naranja ardiente y brillante con las puntas de las plumas negras. La hembra tiene el dorso verde, la grupa rosa violácea y la cola más corta y sin puntas negras; la garganta y el pecho están moteados de verde."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que lo anoté fue el 16 de agosto de 2026, en el Sendero La Piedra Encajada, en Los Hornillos. La primera había sido el 12 de junio, en el Dique La Viña."
   },
   {
-   "t": "Dónde vive",
-   "p": "Según la guía, habita los Andes del norte y las sierras centrales. Se extiende por los valles intermontanos y la ladera oriental de los Andes, desde el noroeste de Bolivia hasta Mendoza y el norte de Neuquén, con poblaciones en sierras aisladas de Catamarca, San Luis y Córdoba. Vive en matorrales áridos de montaña, laderas secas con pocos árboles, quebradas con arbustos densos y bosques serranos, y se adapta a zonas agrícolas y urbanas. Se lo encuentra sobre todo entre los 2000 y los 4200 m de altitud."
+   "t": "Cola de fuego",
+   "p": "Es un picaflor espectacular, de cola larga, graduada y ahorquillada, y pico corto y casi recto. El macho tiene la parte central del dorso y la grupa de color rosa violáceo, y la cola de un naranja ardiente y brillante con las puntas de las plumas negras. La hembra tiene el dorso verde, la grupa rosa violácea y la cola más corta y sin puntas negras. Mide 17,4 cm el macho y 12,2 la hembra, según la guía."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta del néctar de distintas flores y captura pequeños insectos en vuelo o sobre las hojas. Posado se mantiene erguido y mueve la cola; en vuelo la abre con frecuencia."
-  },
-  {
-   "t": "Cómo suena",
+   "t": "Máquina de escribir",
    "p": "El canto es un breve parloteo metálico, como el tecleo de una máquina de escribir. Durante las persecuciones emite una serie de notas agudas seguidas de un trino descendente."
   },
   {
-   "t": "Nidificación",
-   "p": "Se reproduce de septiembre a febrero. El nido es una taza o un cono invertido, elaborado y expuesto, hecho de musgos, fibras vegetales, líquenes y lana unidos con telarañas; cuelga de ramas, helechos o raíces, o se apoya en barrancas, salientes rocosas, grietas, alambrados y otros sitios. Pone dos huevos blancos y elípticos. La incubación dura de 19 a 20 días y los pichones permanecen en el nido de 31 a 32 días."
+   "t": "Néctar e insectos",
+   "p": "Se alimenta del néctar de distintas flores y captura pequeños insectos en vuelo o sobre las hojas. Posado se mantiene erguido y mueve la cola; en vuelo la abre con frecuencia."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "La especie fue descrita en 1812 y el género se llama Sappho por la poetisa griega de Lesbos. El epíteto sparganurus viene del griego y significa algo así como «cola de pañal». En la zona andina se lo conoce en quechua como Q'ori Kenti, «colibrí de oro»."
+   "t": "Dónde vive",
+   "p": "Según la guía, habita los Andes del norte y las sierras centrales. Se extiende por los valles intermontanos y la ladera oriental de los Andes, desde el noroeste de Bolivia hasta Mendoza y el norte de Neuquén, con poblaciones en sierras aisladas de Catamarca, San Luis y Córdoba. Vive en matorrales áridos de montaña, laderas secas, quebradas con arbustos densos y bosques serranos, y se adapta a zonas agrícolas y urbanas, sobre todo entre los 2000 y los 4200 m."
+  },
+  {
+   "t": "El nido",
+   "p": "Se reproduce de septiembre a febrero. El nido es una taza o un cono invertido, elaborado y expuesto, de musgos, fibras vegetales, líquenes y lana unidos con telarañas; cuelga de ramas, helechos o raíces, o se apoya en barrancas, salientes rocosas, alambrados y otros sitios. Pone dos huevos blancos y elípticos, que se incuban de 19 a 20 días."
+  },
+  {
+   "t": "Sappho, la poetisa",
+   "p": "La especie se describió en 1812 y el género se llama Sappho por la poetisa griega de Lesbos. Sparganurus viene del griego y significa algo así como «cola de pañal». En la zona andina se lo conoce en quechua como Q'ori Kenti, «colibrí de oro»."
   }
  ],
  "fuentes": [
@@ -65,5 +69,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 252
+ "id": 252,
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-08-16",
+  "lugar": "Sendero la piedra encajada"
+ }
 }

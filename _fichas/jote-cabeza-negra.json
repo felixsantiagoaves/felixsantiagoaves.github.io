@@ -26,32 +26,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un buitre robusto y de cola muy corta. El adulto es negro, con un leve brillo verdoso en las alas, y tiene la cabeza y la garganta peladas, arrugadas y grises, el pico delgado y gris con la punta amarillenta y las patas blancuzcas. En vuelo se ven las alas anchas, con las secundarias abultadas, y una gran mancha blanco plateada en la cara inferior de las primarias. Planea con las alas planas, horizontales, y aletea con golpes rápidos, profundos y fuertes, alternados con planeos."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 8 de febrero de 2026, en el Paseo de la Costanera."
   },
   {
-   "t": "Dónde vive",
-   "p": "Es común y se ve en casi todo el país; es raro en el sur de la Patagonia."
+   "t": "Cola corta, mancha plateada",
+   "p": "Es un buitre robusto y de cola muy corta. El adulto es negro, con un leve brillo verdoso en las alas, y tiene la cabeza y la garganta peladas, arrugadas y grises, y el pico delgado y gris con la punta amarillenta. En vuelo se ven las alas anchas y una gran mancha blanco plateada en la cara inferior de las primarias. Planea con las alas planas y aletea con golpes rápidos y fuertes. Mide entre 53 y 60 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es más confiado y más gregario que el jote de cabeza colorada: se ve en grupos, volando o posados en árboles y ramas secas. Es carroñero y también revuelve basurales, come huevos y materia vegetal en descomposición. Carece del olfato fino de los Cathartes: encuentra la carroña con la vista y siguiendo a los jotes de cabeza colorada, que sí huelen la carne. Es agresivo al comer y puede desplazar a un jote de cabeza colorada del cadáver. Rara vez cae sobre animales vivos, pero puede matar a terneros recién nacidos o debilitados. Cuando se lo molesta, regurgita."
+   "t": "Se guía por los demás",
+   "p": "Es más confiado y más gregario que el jote de cabeza colorada: se ve en grupos, volando o posados en árboles y ramas secas. Es carroñero y también revuelve basurales, come huevos y materia vegetal en descomposición. No tiene el olfato fino de los Cathartes: encuentra la carroña con la vista y siguiendo a los jotes de cabeza colorada. Es agresivo al comer y puede desplazar a uno del cadáver. Cuando se lo molesta, regurgita."
   },
   {
-   "t": "Cómo suena",
-   "p": "Casi no emite sonidos, porque no tiene siringe; sólo gruñidos o siseos bajos."
+   "t": "Sin voz",
+   "p": "Casi no emite sonidos, porque no tiene siringe; solo gruñidos o siseos bajos."
   },
   {
-   "t": "Nidificación",
-   "p": "No hace nido: pone los huevos directamente en el suelo, en un hueco de árbol u otra cavidad, rara vez a más de tres metros de altura, y a veces decora el sitio con plástico brillante, vidrio o tapas de metal. La nidada suele ser de dos huevos (de uno a tres). Ambos padres incuban entre 28 y 41 días y los pichones permanecen unos dos meses en el nido."
+   "t": "Dónde vive y cómo nidifica",
+   "p": "Es común y se ve en casi todo el país; es raro en el sur de la Patagonia. No hace nido: pone los huevos en el suelo o en un hueco, y a veces decora el sitio con plástico brillante, vidrio o tapas de metal. La nidada suele ser de dos huevos, y los pichones permanecen unos dos meses en el nido."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "\"Buitre\" viene del latín vultur, \"destrozador\"; atratus significa \"vestido de negro\" y Coragyps combina las palabras griegas para cuervo y buitre. En México lo llaman zopilote, del náhuatl tzopilotl."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo considera de Preocupación menor y su población parece estable."
+   "t": "Buitre, zopilote",
+   "p": "\"Buitre\" viene del latín vultur, \"destrozador\"; atratus significa \"vestido de negro\" y Coragyps combina las palabras griegas para cuervo y buitre. En México lo llaman zopilote, del náhuatl tzopilotl. La UICN lo considera de Preocupación menor."
   }
  ],
  "fuentes": [
@@ -65,5 +61,10 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-02-08",
+  "lugar": "Paseo de la Costanera"
+ }
 }

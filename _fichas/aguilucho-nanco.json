@@ -25,24 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es una rapaz muy variable, y las formas de altura son más grandes. La más común es la forma clara: gris por arriba y blanca abajo, con nuca y dorso rufos, gorra y alas grises y mejillas blancas. También hay una forma oscura, de cabeza, alas y partes inferiores gris hollín con la cola blanca y una banda negra subterminal, y una forma de vientre rufo. En las formas oscura y de vientre rufo las primarias llegan a la punta de la cola o apenas la pasan; en la forma barrada de los Andes del noroeste, por encima de los 3000 m, las primarias la superan. El juvenil de la forma clara es pardo oscuro arriba, con una gran mancha facial castaña y un bigote negruzco ancho, y es ante abajo con estrías pardo oscuras en el pecho."
+   "t": "La primera vez",
+   "p": "Lo anoté por primera vez el 12 de junio de 2026, en el Dique La Viña."
+  },
+  {
+   "t": "Mucho plumaje distinto",
+   "p": "Es una rapaz muy variable, y las formas de altura son más grandes. La más común es la clara: gris arriba y blanca abajo, con nuca y dorso rufos, gorra y alas grises y mejillas blancas. También hay una forma oscura, gris hollín con la cola blanca y una banda negra subterminal, y una de vientre rufo. El juvenil de la forma clara es pardo oscuro arriba, con una gran mancha facial castaña y un bigote negruzco ancho. Mide entre 47 y 55 cm."
+  },
+  {
+   "t": "Cómo caza",
+   "p": "Es un buen cazador: vuela en círculos sobre la presa y se lanza en diagonal para golpearla con las garras. Come pequeños mamíferos, reptiles, aves chicas, invertebrados y anfibios, y también carroña cuando se da. En vuelo despliega las alas en toda su longitud. Es monógamo."
   },
   {
    "t": "Dónde vive",
-   "p": "Está presente en gran parte de la Argentina, con más frecuencia en ambientes andinos, patagónicos y serranos. Según Pearman y Areta, los morfos oscuro, de vientre rojizo y claro se ven en casi todo el país salvo Mesopotamia, y el claro es el más común; en el noroeste, sobre los 3000 m, dominan el barrado y el oscuro. Prefiere ambientes no selváticos: bosques abiertos, arbustales y estepas. Fuera del país va desde Colombia y Ecuador hasta el extremo sur del continente, e incluye las Malvinas."
+   "p": "Está en gran parte del país, con más frecuencia en ambientes andinos, patagónicos y serranos. Según Pearman y Areta, las formas oscura, de vientre rojizo y clara se ven en casi todo el país salvo Mesopotamia, y la clara es la más común. Prefiere ambientes no selváticos: bosques abiertos, arbustales y estepas. Fuera del país va de Colombia y Ecuador al extremo sur, con las Malvinas incluidas."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es un buen cazador: vuela en círculos sobre la presa y se lanza en diagonal para golpearla con las garras. Come pequeños mamíferos, reptiles, aves pequeñas, invertebrados y anfibios, y también carroña de manera oportunista. En vuelo despliega las alas en toda su longitud. Es monógamo."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Suele anidar en riscos y pone de uno a tres huevos."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Narosky y Yzurieta lo llaman Aguilucho Común, y Pearman y Areta, Aguilucho Ñanco. Es una especie con mucha variación de plumaje (varias formas de color), por eso conviene mirar el tamaño y la silueta además del color."
+   "t": "Nombres y nido",
+   "p": "Narosky y Yzurieta lo llaman Aguilucho Común, y Pearman y Areta, Aguilucho Ñanco. Suele anidar en riscos y pone de uno a tres huevos."
   }
  ],
  "fuentes": [
@@ -61,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Aguilucho Ñanco"
+ "comun": "Aguilucho Ñanco",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-06-12",
+  "lugar": "Dique La Viña"
+ }
 }

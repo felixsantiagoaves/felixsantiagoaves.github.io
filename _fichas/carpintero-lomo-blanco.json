@@ -25,24 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Tiene el manto crema. En vuelo se ve un gran parche canela en la base de las primarias y otro más chico en el carpo. El macho tiene la cabeza escarlata y un copete puntiagudo, con una mancha ovalada blanca y negra en la mejilla. La hembra tiene una ancha lista blanca en la mejilla bordeada de negro, y la frente negra que se extiende hasta la punta del copete. Coincide con el Carpintero Negro, el Carpintero Garganta Estriada y el Carpintero Garganta Negra."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 16 de agosto de 2026, a las 8:00, en La Casona de Los Hornillos."
+  },
+  {
+   "t": "Manto crema, cabeza escarlata",
+   "p": "El macho tiene la cabeza escarlata y un copete puntiagudo, con una mancha ovalada blanca y negra en la mejilla. La hembra tiene una ancha lista blanca en la mejilla, bordeada de negro, y la frente negra hasta la punta del copete. En vuelo se ve un gran parche canela en la base de las primarias y otro más chico en el carpo. Mide 33 cm."
+  },
+  {
+   "t": "A martillazos",
+   "p": "Busca larvas y escarabajos en árboles altos, a menudo aislados, y en troncos caídos, y los deja al descubierto a martillazos. Como otros Campephilus golpea con fuerza, en un ritmo de dos golpes. Su voz es un fuerte \"ptsiú\". Anda solo, salvo en la época de cría."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte y en las Yungas hasta unos 1600 m: bosques y sabanas de tipo chaqueño, pastizales con grupos de árboles y palmares. Es residente todo el año. Fuera del país está en Brasil, Paraguay, Bolivia y Uruguay."
+   "p": "Tierras bajas del norte y Yungas hasta unos 1600 m: bosques y sabanas de tipo chaqueño, pastizales con grupos de árboles y palmares. Es residente todo el año. Fuera del país está en Brasil, Paraguay, Bolivia y Uruguay. Se confunde con el Carpintero Negro y con los de garganta estriada y garganta negra."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come principalmente larvas y escarabajos, que busca en árboles altos, a menudo aislados, y en troncos caídos. Suele dejarlos al descubierto a martillazos. Forrajea solo, salvo en la época de cría. Como otros Campephilus, golpea los árboles con fuerza y en un ritmo de dos golpes. Su voz es un fuerte \"ptsiú\"."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Excava su propio nido en un árbol o palmera; los pocos nidos conocidos estaban a 6 a 8 m de altura. La cría empieza en septiembre, sobre todo en octubre y noviembre, y ambos padres alimentan a los pichones. Los huevos son blancos y brillantes; el tamaño de la puesta no está bien documentado."
+   "t": "El nido",
+   "p": "Excava el nido en un árbol o palmera, a unos 6 a 8 m de altura. La cría empieza en septiembre, sobre todo en octubre y noviembre, y ambos padres alimentan a los pichones."
   },
   {
    "t": "Conservación",
-   "p": "La UICN lo considera de Preocupación menor: tiene un área grande y su población es estable, sin amenazas inmediatas identificadas."
+   "p": "La UICN lo considera de Preocupación menor: tiene un área grande y su población es estable."
   }
  ],
  "fuentes": [
@@ -61,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Carpintero Lomo Blanco"
+ "comun": "Carpintero Lomo Blanco",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-08-16",
+  "lugar": "La Casona"
+ }
 }

@@ -21,20 +21,20 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto es pardo claro con las alas castañas. En comparación con el juvenil del tordo pico corto, tiene el pico más fino y más largo, las lorales más negras, las primarias que sobresalen muy poco y, en vuelo, las cubiertas inferiores del ala grises."
+   "t": "Pardo y de alas castañas",
+   "p": "El adulto es pardo claro con las alas castañas. En comparación con el juvenil del tordo pico corto, tiene el pico más fino y más largo, las lorales más negras, las primarias que sobresalen muy poco y, en vuelo, las cubiertas inferiores del ala grises. Mide 18,5 cm."
+  },
+  {
+   "t": "Una orquesta afinando",
+   "p": "El canto es una serie constante de silbidos bastante planos y trinos metálicos que suben y bajan la escala por semitonos, como una orquesta afinando los instrumentos, y de ahí su nombre. El llamado común es un chac-ziii que varía según la región."
+  },
+  {
+   "t": "Nido prestado",
+   "p": "Según la guía, nidifica en nidos abandonados o activos de otras aves, sobre todo de furnáridos, y es parasitado por el tordo pico corto, con el que suele andar. A diferencia de los tordos del género Molothrus, no parasita nidos. Wikipedia señala que antes se lo ubicaba en ese género."
   },
   {
    "t": "Dónde vive",
    "p": "La guía lo da en las tierras bajas del norte y del centro y en los Andes. Según Wikipedia, ocupa una amplia variedad de ambientes semiabiertos, como matorrales y bosques, y es un ave social que suele juntarse en pequeños grupos."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es una serie constante de silbidos bastante planos y trinos metálicos que suben y bajan la escala por semitonos, como una orquesta afinando los instrumentos, y de ahí su nombre. El llamado común es un chac-ziii que varía según la región."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Según la guía, nidifica en nidos abandonados o activos de otras aves, sobre todo de furnáridos, y es parasitado por el tordo pico corto, con el que suele andar. A diferencia de los tordos del género Molothrus, no parasita nidos. Wikipedia señala que antes se lo ubicaba en ese género."
   }
  ],
  "fuentes": [
@@ -46,5 +46,8 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 394
+ "id": 394,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

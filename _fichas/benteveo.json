@@ -29,28 +29,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un mosquero grande, vistoso y confiado, de pico robusto y una corona dorada oculta. En el adulto de la forma más extendida la cabeza es negra con una ceja blanca que se une en la frente y la garganta blanca; es pardo por arriba y amarillo por abajo. Abre la cresta cuando exhibe."
+   "t": "Bien-te-veo",
+   "p": "Es un mosquero grande, vistoso y confiado, de pico robusto y una corona dorada oculta. En el adulto de la forma más extendida la cabeza es negra con una ceja blanca que se une en la frente y la garganta blanca; es pardo arriba y amarillo abajo. Abre la cresta cuando exhibe. Mide 24 cm."
+  },
+  {
+   "t": "Serio, pero pacífico",
+   "p": "Aunque parece serio, es pacífico y solo se vuelve agresivo para defender el nido. Come sobre todo invertebrados (larvas, lombrices, insectos que caza en vuelo), frutas, pequeños roedores, reptiles y peces, que mata golpeándolos contra una rama. A veces saquea nidos de aves chicas."
+  },
+  {
+   "t": "Muy gritón",
+   "p": "El nombre mismo, y \"kiskadee\" en inglés, imitan el canto diurno, que suele cantar en dúo. Tiene un repertorio variado, con un fuerte \"WAAAAH\", notas quejosas y trinos."
+  },
+  {
+   "t": "Un nido con lo que haya",
+   "p": "Macho y hembra arman juntos un nido voluminoso y esférico, de aspecto desordenado, con fibras vegetales secas y cubierto por fuera con pajas largas, trapos e incluso bolsas de plástico. La puesta es de 2 a 5 huevos y se reproduce de primavera a verano."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es muy común y está en casi todo el territorio, desde el norte hasta el norte de la Patagonia: en las sierras centrales y el pie de los Andes hasta unos 1600 m, y en el noroeste andino (hasta unos 2950 m) con una subespecie parecida. Vive en ambientes diversos, abiertos y semiabiertos, rurales y urbanos, a menudo húmedos y cerca del agua; en zonas boscosas se queda en las orillas de lagos y ríos. En conjunto, la especie va desde el sur de Texas hasta el norte de la Patagonia."
-  },
-  {
-   "t": "Comportamiento y alimentación",
-   "p": "Aunque parece serio, es pacífico y solo se vuelve agresivo para defender el nido. Come sobre todo invertebrados (larvas, lombrices, insectos que caza en vuelo), además de frutas, pequeños roedores, reptiles y peces, que mata golpeándolos contra una rama. A veces saquea nidos de aves pequeñas."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Es muy vocal: el nombre mismo, y \"kiskadee\" en inglés, imitan el canto diurno, que suele cantar en dúo. El repertorio es variado, con un fuerte \"WAAAAH\", notas quejosas y trinos."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Se reproduce de primavera a verano. Macho y hembra construyen juntos un nido voluminoso y esférico, de aspecto desordenado, con fibras vegetales secas y cubierto por fuera con pajas largas, trapos e incluso bolsas de plástico. La puesta es de 2 a 5 huevos."
-  },
-  {
-   "t": "Conservación",
-   "p": "Está catalogado como Preocupación Menor."
+   "p": "Es muy común y está en casi todo el país, del norte al norte de la Patagonia. Vive en ambientes abiertos y semiabiertos, rurales y urbanos, a menudo húmedos y cerca del agua. En conjunto, la especie va del sur de Texas al norte de la Patagonia. La UICN lo considera de Preocupación Menor."
   }
  ],
  "fuentes": [
@@ -69,5 +65,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Benteveo"
+ "comun": "Benteveo",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

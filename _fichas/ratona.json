@@ -21,27 +21,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es un pajarito pardo, chico y rechoncho, de cola angosta; todas las formas tienen barras negras en las alas y la cola. La forma de la selva paranaense es la más vistosa, con un lavado rojizo en el pecho; la de gran parte del país es más bien parda y lisa, con la rabadilla, los flancos y las coberteras inferiores de la cola rojizas."
+   "t": "La de siempre",
+   "p": "Es un pajarito pardo, chico y rechoncho, de cola angosta; todas las formas tienen barras negras en las alas y la cola. La de gran parte del país es más bien parda y lisa, con la rabadilla, los flancos y las coberteras inferiores de la cola rojizas. La forma de la selva paranaense es la más vistosa, con un lavado rojizo en el pecho. Mide 12 cm."
+  },
+  {
+   "t": "Inquieta",
+   "p": "Es inquieta y de movimientos rápidos, y suele verse trepando. Come insectos y arañas que captura en las plantas o en el suelo. No vuela grandes distancias, ni siquiera cuando está en peligro."
+  },
+  {
+   "t": "Canta y corta de golpe",
+   "p": "El canto es una cadena rápida y agradable de gorjeos y trinos que termina de golpe. La llamada común es un chasquido nasal."
+  },
+  {
+   "t": "En cualquier hueco",
+   "p": "Hace el nido con pastos y plumas, en huecos de árboles secos, tejados, caños y otros sitios parecidos."
   },
   {
    "t": "Dónde vive",
    "p": "La guía la da en todo el país. Se la ve en pastizales, juncales y jardines de casas."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es inquieta y de movimientos rápidos, y suele verse trepando. Come insectos y arañas que captura en las plantas o en el suelo. No vuela grandes distancias, ni siquiera cuando está en peligro."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es una cadena rápida y agradable de gorjeos y trinos que termina de golpe. La llamada común es un chasquido nasal."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Hace el nido con pastos y plumas, en huecos de árboles secos, tejados, caños y otros sitios parecidos."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "Las guías de campo la tratan como Troglodytes aedon (en inglés, House Wren), y esta página usa el nombre musculus que le dan otras clasificaciones. En otros países la llaman chercán, cucarachero común o corruíra, y en Uruguay, ratonera."
   }
  ],
@@ -57,5 +57,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 279
+ "id": 279,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

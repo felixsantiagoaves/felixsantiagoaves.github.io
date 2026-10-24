@@ -21,28 +21,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es un fringílido robusto, de pico corto y cónico, muy extendido y a menudo gregario; en invierno migra hacia el norte. El adulto es esencialmente gris arriba, con la corona levantada, y tiene grandes manchas blancas en la cola. Es blanco abajo, con una ancha banda pectoral gris y un pequeño parche rojizo en los flancos. El juvenil es más pardo arriba, con la banda pectoral poco definida y el vientre ante."
+   "t": "Las tres veces, en el bañado",
+   "p": "Las tres veces que la anoté, el 9 y el 27 de julio y el 8 de agosto de 2026, fue en el Bañado Arroyo Chico, en Santa Catalina."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina cría en el centro y en la Patagonia, con una forma parecida pero más oscura en los Andes del sur y otra forma en el noroeste andino (hasta unos 3600 m). Narosky la ubica en la prepuna, áreas rurales y estepas altoandinas, patagónicas y arbustivas, y marca que la población austral migra al norte en invierno. En conjunto es nativa del Cono Sur: cría desde el noroeste argentino y el norte de Chile hasta el sur de la Argentina y el estrecho de Magallanes. En invierno algunas aves migran al este de la Argentina, el oeste de Uruguay y el suroeste de Brasil. Vive en zonas abiertas, arbustales, jardines, cultivos, estepas y praderas, sobre todo por debajo de los 2000 m."
+   "t": "Gris, con manchas blancas en la cola",
+   "p": "Es un fringílido robusto, de pico corto y cónico, muy extendido y a menudo gregario. El adulto es gris arriba, con la corona levantada, y tiene grandes manchas blancas en la cola. Es blanco abajo, con una ancha banda pectoral gris y un pequeño parche rojizo en los flancos. El juvenil es más pardo arriba, con la banda pectoral poco definida y el vientre ante. Mide 15,5 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come principalmente semillas; en la época de cría suma artrópodos y, a veces, frutos. Pasa la mayor parte del tiempo picoteando el suelo, aunque también se posa en arbustos y árboles bajos. En invierno forma pequeños grupos familiares. Canta sobre todo por las mañanas, con un canto melodioso, continuo y lento. No es muy territorial, pero durante la cría puede ser muy agresiva si algo se acerca al nido."
+   "t": "Canta a la mañana",
+   "p": "Canta sobre todo por las mañanas, con un canto suave, melodioso y mesurado, con frases como \"SCHup-CHI…\"; se parece bastante al del Cardenal Amarillo. Come sobre todo semillas, y en la cría suma artrópodos y a veces frutos. Pasa mucho tiempo picoteando el suelo."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto, sobre todo al amanecer, es suave y mesurado, y se repite, con frases como \"SCHup-CHI…\"; se parece bastante al del Cardenal Amarillo. Los llamados incluyen notas \"schup\", \"kwip\" y \"chip\"."
+   "t": "Sube en invierno",
+   "p": "Cría en el centro del país y en la Patagonia, y la población austral migra al norte en invierno. En invierno algunas aves llegan al este de la Argentina, el oeste de Uruguay y el sudoeste de Brasil. Vive en zonas abiertas, arbustales, jardines, cultivos, estepas y praderas."
   },
   {
-   "t": "Nidificación",
-   "p": "Cría desde fines de agosto hasta diciembre. El nido, de pastos y fibras, está en arbustos, árboles pequeños o matorrales, nunca en el suelo. Pone de 2 a 4 huevos azul verdoso pálido con muchas manchas café verdosas u oliváceas."
+   "t": "El nido",
+   "p": "Cría desde fines de agosto hasta diciembre. El nido, de pastos y fibras, está en arbustos, árboles chicos o matorrales, nunca en el suelo. Pone de 2 a 4 huevos azul verdoso pálido con muchas manchas café verdosas u oliváceas."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "El nombre proviene de la palabra araucana \"diuca\" o \"siuca\". Fue descrita por Juan Ignacio Molina en 1782 y pertenece a la familia Thraupidae."
+   "t": "Diuca",
+   "p": "El nombre viene de la palabra araucana \"diuca\" o \"siuca\". La describió Juan Ignacio Molina en 1782 y pertenece a la familia Thraupidae."
   }
  ],
  "fuentes": [
@@ -57,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Diuca"
+ "comun": "Diuca",
+ "apertura": {
+  "tipo": "mismo_lugar",
+  "n": 3,
+  "lugar": "Bañado Arroyo Chico"
+ }
 }

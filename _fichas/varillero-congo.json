@@ -21,23 +21,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El macho adulto tiene la corona y un babero grande de color castaño oscuro, que muchas veces cuesta ver, y es negro en el resto del cuerpo. La hembra adulta es pardo oliva apagado por arriba, con un veteado borroso en el dorso, y verde oliva apagado por abajo, con la garganta ante amarillenta. El juvenil se parece a la hembra, pero tiene un veteado borroso por abajo. El inmaduro es intermedio entre el macho y la hembra, con el dorso veteado y una cantidad variable de manchas negras por abajo, casi siempre con la garganta castaña poco definida."
+   "t": "Una sola vez, por ahora",
+   "p": "Hasta ahora lo anoté una sola vez, el 19 de julio de 2026, en la Laguna Rivero, en Alcira Gigena, y ese día lo fotografié."
   },
   {
-   "t": "Dónde vive",
-   "p": "La guía lo da en las tierras bajas y las laderas del norte y del centro. Según Wikipedia, vive en bañados y llanuras, y en lagunas con vegetación densa en las orillas, y en los arrozales forma bandadas muy grandes que se alejan del agua para alimentarse. Se asocia con el varillero ala amarilla y el varillero negro, según la guía."
+   "t": "Gorro y babero castaños",
+   "p": "El macho adulto tiene la corona y un babero grande de color castaño oscuro, que muchas veces cuesta ver, y es negro en el resto del cuerpo. La hembra adulta es pardo oliva apagado por arriba, con un veteado borroso en el dorso, y verde oliva apagado por abajo, con la garganta ante amarillenta. El juvenil se parece a la hembra, pero tiene un veteado borroso por abajo. El inmaduro es intermedio entre el macho y la hembra. Mide 19 cm el macho y 17,5 la hembra."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es gregario. Según Wikipedia, come insectos y frutos."
+   "t": "Gregario",
+   "p": "Es gregario. Según Wikipedia, come insectos y frutos, y en los arrozales forma bandadas muy grandes que se alejan del agua para alimentarse."
   },
   {
-   "t": "Cómo suena",
+   "t": "Silbidos y ronquido",
    "p": "El canto es complejo, pero suele incluir uno o dos silbidos planos y agudos seguidos de un largo ronquido nasal y silbidos cortos y rápidos, algo como feee feee laaaaaaay títítítítí; la primera parte puede recordar al varillero ala amarilla. El llamado en vuelo es un pwik líquido."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Dónde vive",
+   "p": "La guía lo da en las tierras bajas y las laderas del norte y del centro. Según Wikipedia, vive en bañados y llanuras, y en lagunas con vegetación densa en las orillas. Según la guía, se asocia con el varillero ala amarilla y el varillero negro."
+  },
+  {
+   "t": "Nombres",
    "p": "También se lo llama trile de cabeza canela o garibaldino."
   }
  ],
@@ -50,5 +54,10 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 398
+ "id": 398,
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-07-19",
+  "lugar": "Laguna Rivero"
+ }
 }

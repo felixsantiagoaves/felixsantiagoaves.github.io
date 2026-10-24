@@ -21,19 +21,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un picaflor pequeño, de pico recto. El macho de la forma que se ve al este del río Paraná y hacia el sur es verde brillante por completo, con la cola azul oscura y ahorquillada; el pico es rojo con la punta negra. La hembra tiene el pico más oscuro en la punta y a menudo con la mandíbula superior oscura, un antifaz oscuro con una mancha o línea blanca detrás del ojo, las puntas de la cola blancas y las partes de abajo grisáceas. Al oeste del Paraná vive otra forma, que se distingue por unos discos dorados en el vientre."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 24 de diciembre de 2025, en Río Cuarto."
   },
   {
-   "t": "Dónde vive",
-   "p": "La guía lo describe como muy extendido en las tierras bajas del norte y del centro y en las yungas. Es muy común en amplias zonas de Sudamérica: está en todo Uruguay y Paraguay, en casi toda Bolivia (salvo las cumbres andinas), en el este de Brasil y en todo el centro y norte de la Argentina, salvo las zonas cordilleranas."
+   "t": "Verde de punta a punta",
+   "p": "Es un picaflor pequeño, de pico recto. El macho de la forma que se ve al este del Paraná y hacia el sur es verde brillante por completo, con la cola azul oscura y ahorquillada; el pico es rojo con la punta negra. La hembra tiene el pico más oscuro en la punta, un antifaz oscuro con una mancha o línea blanca detrás del ojo, las puntas de la cola blancas y las partes de abajo grisáceas. Al oeste del Paraná vive otra forma, que se distingue por unos discos dorados en el vientre. Mide 9 cm."
   },
   {
-   "t": "Cómo suena",
+   "t": "Trinos de grillo",
    "p": "Emite una serie de trinos secos y monótonos, parecidos a los de un grillo, y también charlas breves y más suaves."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Dónde vive",
+   "p": "La guía lo describe como muy extendido en las tierras bajas del norte y del centro y en las yungas. Es muy común en amplias zonas de Sudamérica: está en todo Uruguay y Paraguay, en casi toda Bolivia (salvo las cumbres andinas), en el este de Brasil y en todo el centro y norte de Argentina, salvo las zonas cordilleranas."
+  },
+  {
+   "t": "Nombres",
    "p": "Se lo conoce también como picaflor común, colibrí verde y esmeralda pico rojo."
   }
  ],
@@ -49,5 +53,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 255
+ "id": 255,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-24",
+  "lugar": "Río Cuarto"
+ }
 }

@@ -25,24 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Tiene la corona y la nuca negras, la cara blanca y los costados del cuello y el pecho amarillo anaranjado, que contrastan, y la rabadilla blanca. En la forma campestroides la garganta es blanca y una malar rojo opaco indica que es macho. En el extremo norte de Misiones hay aves que son cruza de las dos formas, con garganta moteada o casi toda negra; ahí la malar negra indica hembra."
+   "t": "La primera vez",
+   "p": "Lo anoté por primera vez el 27 de diciembre de 2025, en la UNRC."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina es muy común en sabanas, pastizales y áreas rurales, y Pearman y Areta lo dan como ampliamente distribuido. Se ha beneficiado de la deforestación: el pasto corto del ganado le facilita caminar, y las forestaciones de sombra y ornamentales le dan refugio y sitios para anidar. También se lo ve en bosques abiertos y parques urbanos."
+   "t": "Cara blanca, cuello amarillo",
+   "p": "Tiene la corona y la nuca negras, la cara blanca y los costados del cuello y el pecho amarillo anaranjado, que contrastan, y la rabadilla blanca. En la forma campestroides la garganta es blanca y una malar rojo opaco indica que es macho. Mide 32 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Carpintero de piso",
    "p": "A diferencia de la mayoría de los carpinteros, se alimenta sobre todo en el suelo y mucho menos sobre troncos. Usa los árboles para descansar, pasar la noche y refugiarse del peligro."
   },
   {
-   "t": "Nidificación",
+   "t": "Le sirvió la deforestación",
+   "p": "Es muy común en sabanas, pastizales y áreas rurales y está ampliamente distribuido. Se benefició de la deforestación: el pasto corto del ganado le facilita caminar, y las forestaciones de sombra y ornamentales le dan refugio y sitios para anidar. También se lo ve en bosques abiertos y parques urbanos."
+  },
+  {
+   "t": "El nido",
    "p": "Perfora su propio nido, generalmente en árboles; si faltan o son chicos, anida en barrancas. Los huevos son blancos y los pichones nacen desnudos y ciegos."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo conoce como carpintero campestre, carpintero de campo o carpintero de las pampas. Durante décadas se lo trató como subespecie de Colaptes campestris, pero en 2014 se reconoció nuevamente a Colaptes campestroides como especie propia. La diferencia que se usa para separarlas es la garganta: blanca en campestroides y negra en campestris. Colaptes campestris, en sentido estricto, vive más al norte (Brasil, Bolivia, Paraguay y nordeste argentino), y campestroides ocupa el nordeste y centro-este de Argentina."
+   "t": "¿Una o dos especies?",
+   "p": "Se lo conoce como carpintero de campo o carpintero de las pampas. Durante décadas se lo trató como subespecie de Colaptes campestris, pero en 2014 se reconoció de nuevo a Colaptes campestroides como especie propia. La diferencia es la garganta: blanca en campestroides y negra en campestris. Colaptes campestris, en sentido estricto, vive más al norte (Brasil, Bolivia, Paraguay y nordeste argentino), y campestroides ocupa el nordeste y centro-este de Argentina."
   },
   {
    "t": "Conservación",
@@ -65,5 +69,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Carpintero Campestre"
+ "comun": "Carpintero Campestre",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-27",
+  "lugar": "UNRC"
+ }
 }

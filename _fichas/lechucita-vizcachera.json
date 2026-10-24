@@ -26,27 +26,31 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una lechucita erguida y de patas largas, sin penachos en la cabeza. Tiene el dorso pardo con pecas blancas, las alas muy manchadas de blanco, la cola barrada y una ceja y una garganta blancas bien marcadas, con un borde blanco en la cara. Abajo es blancuzca, más o menos manchada de oscuro."
+   "t": "El 3 de octubre, en el bañado",
+   "p": "El 3 de octubre de 2026 la anoté en el Bañado Arroyo Chico, en Santa Catalina."
+  },
+  {
+   "t": "Erguida y de patas largas",
+   "p": "Es una lechucita erguida y de patas largas, sin penachos en la cabeza. Tiene el dorso pardo con pecas blancas, las alas muy manchadas de blanco, la cola barrada y una ceja y una garganta blancas bien marcadas, con un borde blanco en la cara. Mide entre 21 y 26 cm."
+  },
+  {
+   "t": "Sale de día",
+   "p": "A diferencia de la mayoría de las lechuzas es diurna: suele estar activa de día, aunque evita el calor del mediodía, y caza sobre todo entre el atardecer y el amanecer. Come insectos y reptiles chicos. Es confiada, se cierne en el aire y, si se la alarma, \"saluda\" con la cabeza, haciendo reverencias."
+  },
+  {
+   "t": "¿Pyie, kekeke?",
+   "p": "Cuando se alarma da un llamado de reproche (pyie..kekeke...) y un parloteo rápido y seco. De noche canta un hWooo como de pregunta."
+  },
+  {
+   "t": "En la cueva",
+   "p": "Anida y descansa en cuevas: usa las excavadas por vizcachas y otros animales, y también puede cavar la suya, de hasta unos 2 metros. En la descripción general de la especie, la nidada es de 5 a 8 huevos blancos y redondos (dato de Wikipedia, que no distingue regiones)."
   },
   {
    "t": "Dónde vive",
    "p": "Está en todo el país, en praderas, estepas, sabanas y áreas rurales abiertas. Es terrícola y se la ve parada en postes, al lado de su cueva o cerca de las cuevas de las vizcachas."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "A diferencia de la mayoría de las lechuzas es diurna: suele estar activa de día, aunque evita el calor del mediodía, y caza sobre todo entre el atardecer y el amanecer. Come insectos y reptiles pequeños. Es confiada, se cierne en el aire (\"halconea\") y, si se la alarma, \"saluda\" con la cabeza, haciendo reverencias."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Cuando se alarma da un llamado de reproche (pyie..kekeke...) y un parloteo rápido y seco. De noche canta un hWooo como de pregunta."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Anida y descansa en cuevas: usa las excavadas por vizcachas y otros animales, y también puede cavar la suya, de hasta unos 2 metros. En la descripción general de la especie, la nidada es de 5 a 8 huevos blancos y redondos (dato de Wikipedia, que no distingue regiones)."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "Lechucita vizcachera es el nombre argentino; en otros países le dicen mochuelo de madriguera (España), tecolote llanero (México) o pequén (Chile). Su nombre científico cambió varias veces: se la conoció como Speotyto cunicularia y como Strix cunicularia."
   }
  ],
@@ -61,5 +65,10 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-10-03",
+  "lugar": "Bañado Arroyo Chico"
+ }
 }

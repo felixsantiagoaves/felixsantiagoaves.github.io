@@ -25,28 +25,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El macho adulto tiene la frente y las partes inferiores de un rufo bastante brillante, es gris arriba con una ancha barra blanca en las cobertoras medianas y la punta de la cola blanca. La hembra es pardo grisácea arriba, densamente estriada de pardo oscuro, con la rabadilla grisácea lisa y finas barras alares blancas; es ante abajo, estriada de pardo oscuro. El juvenil tiene el iris oscuro o naranja, es pardo arriba con estrías oscuras y canela opaco abajo, con estrías difusas a los lados del pecho."
+   "t": "Una mañana en el Chocancharava",
+   "p": "El 20 de septiembre de 2026 lo anoté en la Reserva Provincial Chocancharava."
+  },
+  {
+   "t": "Rufo el macho, estriada la hembra",
+   "p": "El macho adulto tiene la frente y las partes inferiores de un rufo bastante brillante, es gris arriba con una ancha barra blanca en las cobertoras medianas y la punta de la cola blanca. La hembra es pardo grisácea arriba, densamente estriada de pardo oscuro, con finas barras alares blancas, y ante abajo, estriada. Mide 18,5 cm."
+  },
+  {
+   "t": "La puerta que chirría",
+   "p": "El canto es un sonido extraño, arrastrado, como una puerta que chirría, con 2 a 6 frases (WRREEEH wreeeh wreeeh…). Se lo compara con una bisagra oxidada. Los llamados incluyen una nota seca y arrastrada \"reek\"."
+  },
+  {
+   "t": "Corta hojas y brotes",
+   "p": "Come principalmente frutos, hojas y flores, además de semillas y algunos insectos. Se deja ver entre los matorrales, solo o en pareja."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas y en los Andes (hasta unos 3500 m), y llega por el sur al nordeste de Chubut. Narosky lo ubica en sabanas, bosques, arboledas, estepas arbustivas y prepuna. Habita formaciones arbóreas o arbustivas semiáridas a áridas, sobre todo de baja altitud, y es localmente bastante común. En conjunto vive en el centro-sur de Sudamérica, desde el oeste de Bolivia hasta el sudoeste de Brasil y Uruguay."
+   "p": "En las tierras bajas y en los Andes (hasta unos 3500 m), y llega por el sur al nordeste de Chubut. Narosky lo ubica en sabanas, bosques, arboledas, estepas arbustivas y prepuna. Vive en formaciones arbóreas o arbustivas semiáridas a áridas, sobre todo de baja altitud, y es localmente bastante común."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come principalmente frutos, hojas y flores, además de semillas y algunos insectos. Se deja ver entre los matorrales, solo o en pareja. Su canto es muy característico: una nota larga y áspera, comparada con el sonido de una bisagra oxidada."
+   "t": "El nido",
+   "p": "Cría entre septiembre y febrero. El nido es semiesférico, de palitos con y sin espinas, y se sostiene en ramas de arbustos, árboles o enredaderas. Pone tres huevos, rara vez cuatro, ocres o verdes con pintas pardas oscuras y grises. La hembra incuba de 14 a 15 días."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es un sonido extraño, arrastrado, como una puerta que chirría, con 2 a 6 frases (WRREEEH wreeeh wreeeh…). Los llamados incluyen una nota seca y arrastrada \"reek\" y raspidos más largos."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Cría entre septiembre y febrero. El nido es semiesférico, de palitos con y sin espinas, y se sostiene en ramas de arbustos, árboles o enredaderas. Pone tres huevos, rara vez cuatro, ocres o verdes con pintas pardas oscuras y grises. La hembra incuba de 14 a 15 días y los pichones se quedan en el nido entre 15 y 17 días."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "También se llama cortaplantas de pecho rojo, y dentudo en Paraguay. El género Phytotoma combina raíces griegas que significan \"planta\" y \"cortar\"; el epíteto rutila viene del latín y alude a \"dorado\" o \"rojo\"."
+   "t": "Nombres",
+   "p": "También se llama cortaplantas de pecho rojo, y dentudo en Paraguay. Phytotoma combina raíces griegas que significan \"planta\" y \"cortar\"; rutila viene del latín y alude a \"dorado\" o \"rojo\"."
   }
  ],
  "fuentes": [
@@ -61,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cortarramas"
+ "comun": "Cortarramas",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-09-20",
+  "lugar": "Reserva Provincial Chocancharava"
+ }
 }

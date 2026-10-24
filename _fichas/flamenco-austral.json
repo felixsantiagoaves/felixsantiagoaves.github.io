@@ -21,19 +21,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto en cría tiene las patas grises con las \"rodillas\" y los pies rosados, y el pecho rosado. Las cobertoras alares y las escapulares inferiores son rojizas. El pico es largo, con la parte distal negra y curvada, y la base blanquecina; el iris es pálido. En vuelo las cobertoras alares son todas rojas, arriba y abajo. Fuera de la cría se parece al Parina Grande, salvo que las remeras quedan completamente ocultas. El juvenil es claramente más pardo que sus parientes, y se nota la forma del pico."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 31 de mayo de 2026, en un camino rural."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina se lo ve en todo el país (Pearman y Areta), en lagunas y estuarios (Narosky), y anida en múltiples colonias. Es migrador no reproductivo en el sur de Brasil y visitante ocasional en Ecuador, Paraguay y las Malvinas. Anida además en Bolivia, Chile, Perú y Uruguay. Vive en aguas poco profundas como lagunas, salares, estuarios y desembocaduras de ríos."
+   "t": "Rodillas rosadas, pico curvado",
+   "p": "El adulto en cría tiene las patas grises con las \"rodillas\" y los pies rosados, y el pecho rosado. Las cobertoras alares y las escapulares inferiores son rojizas. El pico es largo, con la parte de la punta negra y curvada y la base blanquecina; el iris es pálido. En vuelo las cobertoras alares son todas rojas, arriba y abajo. Mide 100 cm. El juvenil es claramente más pardo que sus parientes."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Cómo come",
    "p": "Remueve el sedimento con las patas y filtra los organismos en suspensión con las láminas del pico. Come invertebrados, camarones y moluscos. Al girar 360° deja anillos de alimentación en la superficie del sedimento."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Dónde vive",
+   "p": "Se lo ve en todo el país (Pearman y Areta), en lagunas y estuarios (Narosky), y anida en múltiples colonias. Vive en aguas poco profundas como lagunas, salares, estuarios y desembocaduras de ríos. Anida además en Bolivia, Chile, Perú y Uruguay, es migrador no reproductivo en el sur de Brasil y visitante ocasional en Ecuador, Paraguay y las Malvinas."
+  },
+  {
+   "t": "Flamenco chileno o austral",
    "p": "Se lo llama flamenco chileno o flamenco austral (este último en Argentina, Bolivia y Uruguay). En kunza se lo llamaba solor o tokoko."
   },
   {
@@ -53,5 +57,9 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Flamenco Austral"
+ "comun": "Flamenco Austral",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-05-31"
+ }
 }

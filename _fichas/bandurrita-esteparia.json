@@ -21,24 +21,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Tiene el pico largo y curvado hacia abajo, y el pecho marcadamente escamado de negro. Las esquinas de la cola son canela. La forma típica cría en la estepa patagónica y llega en invierno hasta el norte del país; la forma residente del noroeste es más cálida por arriba. El juvenil tiene más escamado en las partes inferiores y estrías claras en la nuca y el manto superior."
+   "t": "Siempre en el mismo bañado",
+   "p": "Las cuatro veces que la anoté, entre el 20 de junio y el 8 de agosto de 2026, fue en el Bañado Arroyo Chico, en Santa Catalina."
+  },
+  {
+   "t": "Pico de bandurria",
+   "p": "Tiene el pico largo y curvado hacia abajo y el pecho marcadamente escamado de negro. Las esquinas de la cola son canela. El juvenil tiene más escamado abajo y estrías claras en la nuca. Mide unos 21,5 cm."
+  },
+  {
+   "t": "¿Por qué está en Córdoba?",
+   "p": "La población austral es migratoria: cría en la estepa patagónica y en invierno sube al centro de la Argentina y al sur de Uruguay. Por eso se la ve acá en esa época. La forma residente del noroeste es más cálida por arriba."
+  },
+  {
+   "t": "Pli-pli-pli",
+   "p": "El canto es una serie continua de notas parecidas, como campanitas, que suben y bajan y cambian de velocidad. El llamado es un \"keep\" agudo."
   },
   {
    "t": "Dónde vive",
-   "p": "Es una especie de estepas y arbustales: Narosky la ubica en estepas altoandinas, arbustivas y patagónicas, en zonas altoserranas y en áreas abiertas del Bosque Araucano. Se extiende por los Andes desde el sur de Perú, pasando por Bolivia y la Argentina, hasta el centro de Chile y Tierra del Fuego, y por toda la Patagonia; es menos numerosa en los matorrales andinos del norte, hasta unos 3.900 m. La población austral es migratoria: en invierno sube hacia el centro de la Argentina y el sur de Uruguay, y por eso se la ve en Córdoba."
+   "p": "Estepas altoandinas, arbustivas y patagónicas, zonas altoserranas y áreas abiertas del Bosque Araucano (Narosky). Va por los Andes desde el sur de Perú hasta el centro de Chile y Tierra del Fuego, y por toda la Patagonia; en el norte es menos numerosa, hasta unos 3.900 m."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es una serie continua de notas parecidas, como campanitas, que suben y bajan y cambian de velocidad (pli-pli-pli…). El llamado es un \"keep\" agudo."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "El nombre del género combina Upupa y Certhia, por la forma del pico, y el epíteto dumetaria alude a los arbustos. Fue descrita en 1832 con localidad tipo en las orillas del Río Negro, en la Patagonia. Antes se la consideraba la misma especie que Upucerthia saturatior, y se reconoció como especie aparte en 2009. Se reconocen tres subespecies. Narosky y Yzurieta la llaman Bandurrita Común."
-  },
-  {
-   "t": "Conservación",
-   "p": "Se la describe como bastante común en sus hábitats naturales."
+   "t": "El nombre",
+   "p": "El género combina Upupa y Certhia, por la forma del pico, y dumetaria alude a los arbustos. Se la describió en 1832 y desde 2009 se la reconoce como especie aparte de Upucerthia saturatior. Narosky y Yzurieta la llaman Bandurrita Común."
   }
  ],
  "fuentes": [
@@ -53,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Bandurrita Esteparia"
+ "comun": "Bandurrita Esteparia",
+ "apertura": {
+  "tipo": "mismo_lugar",
+  "n": 4,
+  "lugar": "Bañado Arroyo Chico"
+ }
 }

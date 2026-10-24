@@ -18,19 +18,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una monterita chica, confiada y recorredora, gris y blanca, con la cabeza negra, el dorso plomizo, el vientre blanco y el iris rojo. La cola tiene grandes manchas blancas. El juvenil es más pardo, con una máscara negruzca en lugar de la gorra, y por abajo teñido de ante, sobre todo en los flancos."
+   "t": "Un día en El Rincón del Molle",
+   "p": "El 11 de junio de 2026 la anoté en El Rincón del Molle, en Villa de las Rosas, y ese día la fotografié."
+  },
+  {
+   "t": "Gris, blanca y de cabeza negra",
+   "p": "Es una monterita chica, confiada y recorredora, gris y blanca, con la cabeza negra, el dorso plomizo, el vientre blanco y el iris rojo. La cola tiene grandes manchas blancas. El juvenil es más pardo, con una máscara negruzca en lugar de la gorra, y por abajo teñido de ante, sobre todo en los flancos. Mide entre 12 y 13 cm."
+  },
+  {
+   "t": "Tew-chewí-tiú",
+   "p": "Canta al amanecer un gorjeo musical, fino y repetitivo, de tres o cuatro notas. Entre los llamados hay un enredo rápido y chirriante que da en dúo, de hasta unos 7 segundos, y un SPIT metálico seco. Se la reconoce también por su tsp repetido y sonoro."
   },
   {
    "t": "Dónde vive",
-   "p": "Vive en las tierras bajas y el piedemonte del norte, y en el centro del país, salvo en Misiones: en bosques bajos, matorrales, sabanas y cercanías de selvas. Es común."
+   "p": "En las tierras bajas y el piedemonte del norte, y en el centro del país, salvo Misiones: en bosques bajos, matorrales, sabanas y cercanías de selvas. Es común."
   },
   {
-   "t": "Cómo suena",
-   "p": "Canta al amanecer un gorjeo musical, fino y repetitivo, de tres o cuatro notas (como tew-chewí-tiú). Entre los llamados hay un enredo rápido y chirriante que da en dúo, de hasta unos 7 segundos, y un SPIT metálico seco. Se la reconoce también por su tsp repetido y sonoro."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Cambió de género",
    "p": "Se la llama monterita cabeza negra o cabecinegra. Antes figuraba en el género Poospiza (Poospiza melanoleuca, como en la guía de Narosky); estudios genéticos llevaron a Burns y colaboradores (2016) a rescatar el género Microspingus, y así se la clasifica ahora. Microspingus combina las raíces griegas de \"pequeño\" y \"pinzón\", y melanoleucus, las de \"negro\" y \"blanco\"."
   }
  ],
@@ -45,5 +49,11 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-06-11",
+  "lugar": "El Rincón del Molle",
+  "foto_fecha": "2026-06-11"
+ }
 }

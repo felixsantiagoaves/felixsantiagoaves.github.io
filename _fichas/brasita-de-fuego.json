@@ -29,24 +29,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un fringílido de sotobosque con un copete que levanta, un anillo ocular blanco y un pico cónico y grueso, blanquecino. En la forma de la Mesopotamia el macho es pardo oscuro arriba y rojo intenso abajo, con el copete carmesí bordeado por dos bandas negras. En la forma del Chaco y las Yungas (hasta 1700 m) el macho es sobre todo pardo arriba y rojo rosado abajo. La hembra es color galleta arriba, con la rabadilla castaña, la cola pardo oscura, las loras blanquecinas, la garganta ante y las partes inferiores pardo rosadas."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 18 de enero de 2026, en Villa Rumipal."
+  },
+  {
+   "t": "Copete, anillo blanco y pico grueso",
+   "p": "Es un fringílido de sotobosque con un copete que levanta, un anillo ocular blanco y un pico cónico y grueso, blanquecino. En la forma de Mesopotamia el macho es pardo oscuro arriba y rojo intenso abajo, con el copete carmesí bordeado por dos bandas negras. En la del Chaco y las Yungas el macho es sobre todo pardo arriba y rojo rosado abajo. La hembra es color galleta arriba, con la rabadilla castaña, y pardo rosada abajo. Mide 13,5 cm."
+  },
+  {
+   "t": "Nervioso y asustadizo",
+   "p": "Se lo encuentra solo o en grupos. Come semillas e insectos, que captura en vuelo o en el suelo. En la época de cría no es muy territorial y varias parejas pueden agruparse."
+  },
+  {
+   "t": "Wher cho, wher cho",
+   "p": "El canto es una frase de tono medio que repite, algo como \"wher cho wher cho\", a veces con notas de más, y puede parecerse al de algunas tangaras. El llamado es un \"tsi\" o \"pip\" muy agudo."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es una especie del norte: la forma rubescens vive en bosques y arbustales de Mesopotamia, y la forma fargoi en el Chaco y las Yungas, hasta unos 1.700 m. Narosky lo describe terrícola y de arbustos, en selvas, capueras, bosques y sabanas, y es común en la región chaqueña. Fuera del país su área tiene dos zonas: una en el norte de Sudamérica y otra amplia que va del sudeste de Brasil y el oeste de Bolivia, por Paraguay, hasta el centro y oeste de la Argentina y Uruguay. Vive sobre todo por debajo de los 1.500 m."
+   "p": "Es una especie del norte: la forma rubescens vive en Mesopotamia y la forma fargoi en el Chaco y las Yungas, hasta unos 1.700 m. Narosky lo describe terrícola y de arbustos, y común en la región chaqueña. Fuera del país tiene dos zonas: una en el norte de Sudamérica y otra que va del sudeste de Brasil y el oeste de Bolivia hasta el centro y oeste de Argentina y Uruguay."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se lo encuentra solo o en grupos; es nervioso, inquieto y asustadizo. Come semillas e insectos, que captura en vuelo o en el suelo. En la época de cría no es muy territorial y varias parejas pueden agruparse."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es una frase de tono medio que repite, algo como \"wher cho wher cho\" o \"wher chido wher chido\", a veces con notas de más; puede parecerse al de algunas tangaras. El llamado es un \"tsi\" o \"pip\" muy agudo."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Se reproduce entre septiembre y febrero. Ambos padres construyen un nido en forma de taza, con material vegetal, líquenes y tela de araña, en árboles o arbustos. Pone huevos blancos, de tres a cinco por puesta, y ambos padres alimentan a los pichones."
+   "t": "El nido",
+   "p": "Se reproduce entre septiembre y febrero. Ambos padres construyen un nido en forma de taza, con material vegetal, líquenes y tela de araña, y alimentan a los pichones. Pone de tres a cinco huevos blancos."
   }
  ],
  "fuentes": [
@@ -65,5 +69,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Brasita de Fuego"
+ "comun": "Brasita de Fuego",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-01-18",
+  "lugar": "Villa Rumipal"
+ }
 }

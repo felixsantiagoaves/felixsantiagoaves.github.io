@@ -25,27 +25,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El macho adulto tiene la corona y las mejillas grises, bordeadas por una nuca parda, y un babero y pecho superior negros llamativos. Es pardo arriba, estriado de negro, y grisáceo abajo, con una corta barra alar blanca. La hembra es poco llamativa: corona parda opaca y una fina lista ocular, que bordea una ceja posterior ante bien visible, con la cara y las partes inferiores grisáceas. Es común en pueblos de todo el país, y también en caldenales y a veces en espinal."
+   "t": "Pegado a la gente",
+   "p": "Es muy abundante y vive junto al ser humano, en áreas rurales y poblados de todo el país. Pearman y Areta anotan que también ocupa algunos bosques de caldén y, a veces, de espinal. Es una especie introducida, originaria de Eurasia y el norte de África. Es confiado en las ciudades grandes y más cauteloso en los pueblos chicos."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina es muy abundante y vive junto al ser humano, en áreas rurales y poblados de todo el país; Pearman y Areta anotan que también ocupa algunos bosques de caldén y, a veces, de espinal. Es una especie introducida: es originaria de Eurasia y el norte de África. Vive en ambientes habitados, como calles, parques, jardines, huertas y granjas."
+   "t": "Macho de babero negro",
+   "p": "El macho adulto tiene la corona y las mejillas grises, bordeadas por una nuca parda, y un babero y pecho superior negros llamativos. Es pardo arriba, estriado de negro, y grisáceo abajo, con una corta barra alar blanca. La hembra es poco llamativa: corona parda opaca, una fina lista ocular y una ceja posterior ante bien visible. Mide 15 cm y pesa alrededor de 30 g."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come semillas silvestres y cultivadas y desperdicios humanos; en la temporada cálida suma insectos, sobre todo langostas y saltamontes, con los que alimenta a los pichones. Es sedentario y gregario: se alimenta en el suelo dando brincos y forma bandadas que se juntan a dormir. Es confiado en las ciudades grandes y más cauteloso en los pueblos chicos."
+   "t": "Qué come",
+   "p": "Come semillas silvestres y cultivadas y desperdicios humanos; en la temporada cálida suma insectos, sobre todo langostas y saltamontes, con los que alimenta a los pichones. Es sedentario y gregario: se alimenta en el suelo dando brincos y forma bandadas que se juntan a dormir. Es ruidoso, con series de pío poco musicales y estridentes, o breves gorjeos metálicos."
   },
   {
-   "t": "Cómo suena",
-   "p": "Es ruidoso: da series de pío poco musicales y estridentes, o breves gorjeos metálicos."
+   "t": "El nido",
+   "p": "Cría en primavera, con puestas posibles hasta el principio del otoño. El nido se hace con hojas secas, plumas y restos de papel, y prefiere los edificios: huecos entre piedras, bajo tejas o entre vigas. Si no hay edificios, hace nidos globulares con entrada lateral en la vegetación. Pone de cuatro a cinco huevos por puesta, hasta cuatro puestas, y la hembra incuba casi todo el tiempo."
   },
   {
-   "t": "Nidificación",
-   "p": "Cría en primavera, con puestas posibles hasta el principio del otoño. El nido se hace con hojas secas, plumas y restos de papel, y prefiere los edificios: huecos entre piedras, bajo tejas o entre vigas. Si no hay edificios, hace nidos globulares con entrada lateral en la vegetación. Pone de cuatro a cinco huevos por puesta, hasta cuatro puestas; la hembra incuba casi todo el tiempo."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Gorrión común, pardal, chilero",
    "p": "Wikipedia lo titula gorrión común; también se lo llama pardal y chilero, y en Estados Unidos gorrión inglés."
   }
  ],
@@ -61,5 +57,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Gorrión"
+ "comun": "Gorrión",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

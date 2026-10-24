@@ -25,24 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "El macho adulto tiene el pico amarillento, es gris arriba con las loras negruzcas, y un babero y una banda pectoral negros. La hembra es pardo oliváceo arriba y ante abajo, a veces con un leve lavado oliva en el pecho."
+   "t": "La primera vez",
+   "p": "La primera vez que la anoté fue el 17 de enero de 2026, en la Reserva Aguada de los Pájaros, en Villa Rumipal."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas y el pie de monte del norte y del centro, hasta unos 1500 m y localmente más arriba, de octubre a mayo; llega hasta el norte de la Patagonia (Neuquén y Río Negro). Narosky la describe en sabanas, estepas arbustivas, áreas rurales y poblados, y señala que se la tiene en jaula. En el invierno austral, las poblaciones del sur migran hacia el norte. Fuera del país cría en el norte de Bolivia, el centro y este de Brasil, Paraguay y Uruguay, y es generalmente común."
+   "t": "Gris, con babero y corbata negros",
+   "p": "El macho adulto tiene el pico amarillento, es gris arriba con las loras negruzcas, y un babero y una banda pectoral negros. La hembra es pardo oliváceo arriba y ante abajo, a veces con un leve lavado oliva en el pecho. Mide 11 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta de semillas. El canto del macho es corto y repetitivo, muy fácil de reconocer."
+   "t": "Canto corto y repetitivo",
+   "p": "Se alimenta de semillas. El canto del macho es una serie muy rápida de silbidos cortos y agudos y notas raspantes, de 1,5 a 2 segundos; suele descender en tono y terminar en notas enfáticas, pero es muy variable. Los llamados son notas nasales cortas y agudas."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es una serie muy rápida de silbidos cortos y agudos y notas raspantes, de 1,5 a 2 segundos; suele descender en tono y terminar en notas enfáticas, pero es muy variable. Los llamados son notas nasales cortas y agudas."
+   "t": "De octubre a mayo",
+   "p": "Vive en las tierras bajas y el pie de monte del norte y del centro, hasta unos 1500 m, de octubre a mayo, y llega hasta el norte de la Patagonia. En el invierno austral las poblaciones del sur migran hacia el norte. Narosky la describe en sabanas, estepas arbustivas, áreas rurales y poblados, y señala que se la tiene en jaula."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Se la llama corbatita o corbatita común en Argentina, Paraguay y Bolivia; gargantillo común en Uruguay; y corbatita de doble collar en Chile. Sporophila viene del griego (\"semilla\" y \"amante\") y caerulescens del latín (\"de color azul oscuro\")."
+   "t": "Corbatita, gargantillo",
+   "p": "Se la llama corbatita o corbatita común en Argentina, Paraguay y Bolivia; gargantillo común en Uruguay; y corbatita de doble collar en Chile. Sporophila viene del griego (\"semilla\" y \"amante\") y caerulescens del latín, \"de color azul oscuro\"."
   }
  ],
  "fuentes": [
@@ -57,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Corbatita"
+ "comun": "Corbatita",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-01-17",
+  "lugar": "Reserva Aguada de los Pájaros"
+ }
 }

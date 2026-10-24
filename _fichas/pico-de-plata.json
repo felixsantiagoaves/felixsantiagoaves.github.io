@@ -29,27 +29,31 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El macho es negro, con el pico, el iris y la carúncula alrededor del ojo amarillos, y las primarias blancas que se ven con el ala plegada y, más aún, en vuelo. La hembra es parda por arriba y blanquecina o ante por abajo, con rayas pardas en el pecho; tiene la corona parda, una ceja ancha y clara, barras alares canela y primarias castañas que se ven con el ala plegada. En vuelo, sus alas son casi todas castañas. El ojo desnudo de la hembra es más pequeño y el pico, más pálido. El juvenil se parece a la hembra pero tiene el ojo oscuro y por lo general no tiene la carúncula."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 17 de febrero de 2026, en la Laguna Rivero, en Alcira Gigena."
   },
   {
-   "t": "Dónde vive",
-   "p": "La guía lo da como muy extendido. Vive en matorrales y pastizales húmedos cerca del agua, aunque también aparece en lugares secos, hasta unos 2000 m. Algunas poblaciones migran: las del sur de la Argentina se desplazan hacia el norte después de criar, y la forma andina, que cría en Chile central y el sur argentino, baja en invierno a las tierras bajas."
+   "t": "Anteojos amarillos",
+   "p": "El macho es negro, con el pico, el iris y la carúncula alrededor del ojo amarillos, y las primarias blancas que se ven con el ala plegada y, más aún, en vuelo. La hembra es parda por arriba y blanquecina o ante por abajo, con rayas pardas en el pecho, una ceja ancha y clara, barras alares canela y primarias castañas. El juvenil se parece a la hembra pero tiene el ojo oscuro y por lo general no tiene la carúncula. Mide 16,5 cm según la guía."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Se posa a la vista",
    "p": "Es un ave más bien solitaria que se posa bajo y a la vista. Caza insectos desde una percha, en el barro o en el pasto, y también corretea por el suelo. Al pasar de una percha a otra produce un sonoro rufar de alas. En la época de cría los machos hacen vuelos espectaculares sobre los espacios abiertos; fuera de ella son más gregarios."
   },
   {
-   "t": "Cómo suena",
-   "p": "Durante el vuelo de exhibición, en el vuelo de exhibición en alto, el macho produce un zumbido mecánico grave que se interrumpe en lo más alto con un chasquido metálico agudo."
+   "t": "Zumbido y chasquido",
+   "p": "En el vuelo de exhibición en alto, el macho produce un zumbido mecánico grave que se interrumpe en lo más alto con un chasquido metálico agudo."
   },
   {
-   "t": "Nidificación",
+   "t": "Dónde vive",
+   "p": "La guía lo da como muy extendido. Vive en matorrales y pastizales húmedos cerca del agua, aunque también aparece en lugares secos, hasta unos 2000 m. Algunas poblaciones migran: las del sur de Argentina se desplazan hacia el norte después de criar, y la forma andina, que cría en Chile central y el sur argentino, baja en invierno a las tierras bajas."
+  },
+  {
+   "t": "El nido",
    "p": "Anida entre totorales o cardos que bordean bañados y pantanos, en octubre o a principios de noviembre. El nido es amplio, profundo y en forma de tazón, de pastos secos y juncos, forrado con lana o plumas y muy bien oculto. Pone por lo general tres huevos, raramente dos, de color blanco cremoso con manchitas de rufo a café oscuro."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Con anteojos",
    "p": "Hymenops viene del griego y alude a la «membrana» alrededor del «ojo». Perspicillatus quiere decir «con anteojos». También se lo llama viudita pico de plata, y en Chile, run-run."
   }
  ],
@@ -65,5 +69,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 366
+ "id": 366,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-02-17",
+  "lugar": "Laguna Rivero"
+ }
 }

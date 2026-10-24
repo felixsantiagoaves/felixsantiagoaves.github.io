@@ -17,23 +17,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un loro de cola larga y puntiaguda y pico de dos colores, que anda en bandadas chicas o grandes. El adulto tiene la corona y la cara azuladas, la mandíbula superior y las patas rosadas, y en vuelo se ve la cola rojiza por debajo."
+   "t": "Un día en La Casona",
+   "p": "El 16 de agosto de 2026 lo anoté en La Casona, en Los Hornillos."
+  },
+  {
+   "t": "Cabeza azulada y cola larga",
+   "p": "Es un loro de cola larga y puntiaguda y pico de dos colores, que anda en bandadas chicas o grandes. El adulto tiene la corona y la cara azuladas, la mandíbula superior y las patas rosadas, y en vuelo se le ve la cola rojiza por debajo. Mide 33 cm y pesa de 140 a 190 g."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es una especie del norte y centro: bosques, sabanas y arboledas, hasta La Pampa (Narosky cita Cuchillo-có). Narosky lo describe más confiado que el Calancate Cara Roja, y Pearman y Areta anotan que se mueve en bandadas pequeñas o grandes. A escala continental su distribución es discontinua, desde el Caribe hasta el norte de la Patagonia argentina."
+   "p": "Es una especie del norte y centro del país, en bosques, sabanas y arboledas, hasta La Pampa (Narosky cita Cuchillo-có). Narosky lo describe más confiado que el Calancate Cara Roja. A escala continental su distribución es discontinua, del Caribe al norte de la Patagonia argentina."
   },
   {
-   "t": "Cómo suena",
-   "p": "Su voz es más áspera que la del Calancate Ala Roja y la del Calancante Cara Roja, aunque muy parecida."
+   "t": "Áspero",
+   "p": "Su voz es más áspera que la del Calancate Ala Roja y la del Cara Roja, aunque muy parecida."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Hasta 2013 se lo incluía en el género Aratinga. Hoy es la única especie del género Thectocercus. Narosky y Yzurieta lo llaman Calancate Común, y Pearman y Areta, Calancate Cabeza Azul (nombre que usa la lista de eBird); Wikipedia lo titula Calancate Común."
+   "t": "Aratinga, ya no",
+   "p": "Hasta 2013 se lo incluía en el género Aratinga; hoy es la única especie del género Thectocercus. Narosky y Yzurieta lo llaman Calancate Común, y Pearman y Areta, Calancate Cabeza Azul (el nombre de la lista de eBird)."
   },
   {
-   "t": "Conservación",
+   "t": "Lo que le pasa",
    "p": "Wikipedia señala que se calcula que cada año se extrae el 80 % de los pichones para venderlos como mascotas, y que los métodos de captura matan a varios de ellos."
   }
  ],
@@ -49,5 +53,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Calancate Cabeza Azul"
+ "comun": "Calancate Cabeza Azul",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-08-16",
+  "lugar": "La Casona"
+ }
 }

@@ -21,20 +21,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un aguilucho de campo abierto; algunos se mueven al norte en invierno. El macho adulto tiene la cabeza, el pecho superior y las partes superiores gris ceniza, con el vientre barrado en rufo y blanco que contrasta. La hembra tiene la cabeza y el manto pardos, una ceja blanquecina, rayas en la nuca y la cola gris con finas bandas negruzcas y una banda subterminal más ancha. El juvenil tiene las cobertoras alares bordeadas de canela, a diferencia del Gavilán Planeador, y las partes inferiores ante con estrías pardas difusas y densas. En vuelo sostiene las alas en una V poco profunda, y el macho es gris pálido arriba, con las primarias distales y el borde posterior de las secundarias negros."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 31 de mayo de 2026, a las 9:03, en un camino rural."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina es ampliamente distribuido, desde Tierra del Fuego hasta el norte del país, y algunas aves se desplazan hacia el norte en invierno (Pearman y Areta). Narosky lo describe más terrícola que el Gavilán Planeador, con ambientes parecidos pero más común en la Patagonia. En conjunto habita en Sudamérica, desde el norte de Chile hasta el sur de Brasil y desde la Patagonia hasta Colombia. En la Argentina aparece entre Tierra del Fuego y el norte, y entre Mendoza y la costa bonaerense, aunque con densidades distintas."
+   "t": "Gris con la panza rayada",
+   "p": "El macho adulto tiene la cabeza, el pecho superior y el dorso gris ceniza, con el vientre barrado en rufo y blanco que contrasta. La hembra es parda, con una ceja blanquecina, rayas en la nuca y la cola gris con finas bandas negruzcas. En vuelo sostiene las alas en una V poco profunda. Mide entre 42 y 48 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "En su dieta hay insectos, aves, mamíferos y arácnidos. Por número de presas predominan los insectos, pero por biomasa son las aves y los mamíferos los que más aportan."
+   "t": "¿Gavilán Planeador?",
+   "p": "Se parece a ese, pero el juvenil del Ceniciento tiene las cobertoras alares bordeadas de canela. Narosky lo describe más terrícola, con ambientes parecidos y más común en la Patagonia."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Es un ave de la familia Accipitridae y no se le reconocen subespecies. Wikipedia lo llama vari, y también figura como vari ceniciento, aguilucho vari y aguilucho ceniciento."
+   "t": "De campo abierto",
+   "p": "Está en toda la Argentina, de Tierra del Fuego al norte, y algunos se desplazan al norte en invierno (Pearman y Areta). En conjunto vive en Sudamérica, de la Patagonia a Colombia."
+  },
+  {
+   "t": "Qué come",
+   "p": "Insectos, aves, mamíferos y arácnidos. Por número de presas predominan los insectos, pero por biomasa son las aves y los mamíferos los que más aportan."
+  },
+  {
+   "t": "Muchos nombres",
+   "p": "Wikipedia lo llama vari, y también figura como vari ceniciento, aguilucho vari y aguilucho ceniciento. Es de la familia Accipitridae y no se le reconocen subespecies."
   }
  ],
  "fuentes": [
@@ -49,5 +57,9 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Gavilán Ceniciento"
+ "comun": "Gavilán Ceniciento",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-05-31"
+ }
 }

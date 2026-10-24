@@ -21,20 +21,20 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es el único pepitero con las cubiertas auriculares negras, un collar negro en el pecho y una larga ceja que se curva desde el ojo hacia el costado del cuello. El macho tiene el pico anaranjado; en la hembra la mandíbula inferior es negruzca. Las formas varían con la región: en el desierto del Monte es gris por arriba con ceja blanca o crema, y en el norte y el pie de monte del noroeste es gris oliváceo a pardo oliváceo por arriba. El juvenil tiene el pico negro o pardo, las cubiertas auriculares pardas y no tiene el collar."
+   "t": "El del collar negro",
+   "p": "Es el único pepitero con las cubiertas auriculares negras, un collar negro en el pecho y una larga ceja que se curva desde el ojo hacia el costado del cuello. El macho tiene el pico anaranjado; en la hembra la mandíbula inferior es negruzca. Las formas varían con la región: en el desierto del Monte es gris por arriba con ceja blanca o crema, y en el norte y el pie de monte del noroeste es gris oliváceo a pardo oliváceo. El juvenil tiene el pico negro o pardo y no tiene el collar. Mide 20 cm."
+  },
+  {
+   "t": "Pi-tsiú-SWEEP",
+   "p": "El canto es una serie estridente de tres a cinco silbidos metálicos y bastante agudos, que terminan en una nota enfática hacia arriba; varía mucho, pero el patrón general es muy constante. Entre las llamadas hay un gorjeo metálico y un tsip agudo."
   },
   {
    "t": "Dónde vive",
    "p": "La guía lo da como muy extendido. Habita desde el norte de Perú hasta el norte de la Patagonia, en bosques y matorrales de montaña, en el chaco y en los claros vecinos; en los Andes se encuentra entre 1500 y 3800 m y hacia el este baja hasta el nivel del mar. Suele ser común y fácil de ver."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es una serie estridente de tres a cinco silbidos metálicos y bastante agudos, que terminan en una nota enfática hacia arriba, algo como pi-tsiú-SWEEP; varía mucho, pero el patrón general es muy constante. Entre las llamadas hay un gorjeo metálico y un tsip agudo."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "En la Argentina y en Paraguay se lo llama pepitero de collar; en Uruguay, rey del bosque; en Chile, pepitero, y en Perú, saltador de pico dorado. Saltator viene del latín y significa «bailarín», y aurantiirostris quiere decir «de pico anaranjado»."
+   "t": "Rey del bosque",
+   "p": "En Argentina y Paraguay se lo llama pepitero de collar; en Uruguay, rey del bosque; en Chile, pepitero, y en Perú, saltador de pico dorado. Saltator viene del latín y significa «bailarín», y aurantiirostris quiere decir «de pico anaranjado»."
   }
  ],
  "fuentes": [
@@ -49,5 +49,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 307
+ "id": 307,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

@@ -21,28 +21,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
+   "t": "Una tarde en la Laguna Rivero",
+   "p": "El 19 de julio de 2026 lo anoté en la Laguna Rivero, en Alcira Gigena, y ese día lo fotografié."
+  },
+  {
+   "t": "Cola levantada",
    "p": "Eleva la cola, como el zambullidor grande, pero es menor. En época reproductiva el macho tiene todo el cuello negro y un pico azul, más angosto en el ápice que el del zambullidor grande. La hembra y el macho fuera de la época reproductiva tienen el pico gris y la cabeza parda, con una faja subocular y la garganta blancuzcas. Mide unos 31 cm según Narosky y 38 cm según Pearman."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en esteros, lagunas y bañados de las tierras bajas."
+   "t": "Muy acuático",
+   "p": "Es muy acuático y se zambulle con frecuencia en búsqueda de su alimento. Vive en esteros, lagunas y bañados de las tierras bajas."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es muy acuático y se zambulle con frecuencia en búsqueda de su alimento; la dieta no está detallada en las fuentes que usé."
-  },
-  {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Los nidos son pequeños y aplanados, a ras del agua. La puesta es de tres a cinco huevos, ásperos y bastante grandes (unos 65 × 47 mm), y pueden aparecer nidos con hasta doce cuando más de una hembra puso en ellos. Solo la hembra incuba, y cuando se aleja tapa los huevos con plantas acuáticas para que no los vean los depredadores aéreos."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "También se lo conoce como pato tripoca o pato pimpillo."
-  },
-  {
-   "t": "Conservación",
-   "p": "Desde 2016 figura en la Lista Roja de la UICN como de Preocupación menor, con una población estable."
+   "t": "Nombres",
+   "p": "También se lo conoce como pato tripoca o pato pimpillo. Desde 2016 figura en la Lista Roja de la UICN como de Preocupación menor, con una población estable."
   }
  ],
  "fuentes": [
@@ -57,5 +53,11 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 245
+ "id": 245,
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-07-19",
+  "lugar": "Laguna Rivero",
+  "foto_fecha": "2026-07-19"
+ }
 }

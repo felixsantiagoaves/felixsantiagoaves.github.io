@@ -25,23 +25,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "En las tierras bajas del norte y las sierras centrales es el único cabecitanegra con capucha. El macho de la forma de las tierras bajas mide unos 13 cm, tiene el pico más grueso, la capucha más extendida y la rabadilla más brillante; la forma andina (11,5 cm) tiene el pico delicado y la capucha limitada a la cara y la garganta, y es de cola notablemente corta. La hembra se parece al macho pero sin capucha. En vuelo se nota la franja alar amarilla y una banda negra en la cola."
+   "t": "Un día en El Rincón del Molle",
+   "p": "El 11 de junio de 2026 lo anoté en El Rincón del Molle, en Villa de las Rosas."
+  },
+  {
+   "t": "La capucha",
+   "p": "En las tierras bajas del norte y las sierras centrales es el único cabecitanegra con capucha. El macho de la forma de tierras bajas mide unos 13 cm, con el pico más grueso y la rabadilla más brillante. La hembra se parece al macho pero sin capucha. En vuelo se nota la franja alar amarilla y una banda negra en la cola."
+  },
+  {
+   "t": "En bandadas",
+   "p": "Fuera de la época de cría forma grandes bandadas que mantienen el contacto con silbidos constantes. Entre octubre y marzo las parejas se separan para buscar territorio: el macho persigue a la hembra cantando y mostrando la garganta negra. Come todo tipo de granos y, en la cría, insectos chicos como pulgones para las crías."
+  },
+  {
+   "t": "Un nido tejido",
+   "p": "La hembra lo construye sola en 7 a 9 días, con fibras vegetales, tallos y palitos, forrado con lana y pelos, en el extremo de una rama a 3 o 4 m. Pone normalmente 3 o 4 huevos blanco azulados con manchitas marrones y negras."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina hay dos formas: en las tierras bajas del norte y centro y en las Sierras Centrales vive la forma magellanicus, la única cabecitanegra con capucha en esas sierras; en los Andes del norte y centro, por encima de unos 800 m y rara vez en las llanuras, vive la forma tucumanus, más chica. Narosky la ubica en ambientes diversos, áreas rurales, arboledas y poblados, y es común en jardines y parques urbanos; prefiere zonas serranas con bosques y matorrales. En conjunto es propia de Sudamérica y se adapta a muchos ambientes."
+   "p": "En las tierras bajas del norte y centro y en las Sierras Centrales vive la forma magellanicus. En los Andes del norte y centro, sobre unos 800 m, la forma tucumanus, más chica. Narosky la ubica en ambientes diversos y dice que es común en jardines y parques urbanos."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Fuera de la época de cría forma grandes bandadas que mantienen el contacto con silbidos constantes. Entre octubre y marzo las parejas se separan para buscar territorio: el macho persigue a la hembra cantando y mostrando la garganta negra. Come todo tipo de granos y, en época de cría, busca insectos pequeños como pulgones para alimentar a las crías."
-  },
-  {
-   "t": "Nidificación",
-   "p": "La hembra construye sola el nido en 7 a 9 días, con fibras vegetales, tallos y palitos, y lo forra con lana y pelos. Lo ubica en el extremo de una rama, a 3 o 4 m de altura. Pone normalmente 3 o 4 huevos blanco azulados con manchitas marrones y negras. La hembra incuba y cuida al principio a las crías, y el macho colabora después de unos días."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Jilguero Encapuchado",
    "p": "Antes se la ubicaba en los géneros Carduelis o Sporagra, y hoy eBird la lista como Spinus magellanicus. También se la conoce como Jilguero Encapuchado."
   }
  ],
@@ -57,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cabecitanegra"
+ "comun": "Cabecitanegra",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-06-11",
+  "lugar": "El Rincón del Molle"
+ }
 }

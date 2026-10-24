@@ -17,20 +17,20 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "El adulto es pardo grisáceo o pardo por arriba y gris ante por abajo. En vuelo se ve una banda canela en el ala y las esquinas de la cola de color ante a blanquecino. En invierno, cuando llega al centro y norte del país, se puede confundir con otras remolineras; la guía aconseja compararla con las especies parecidas."
+   "t": "Parda y con banda canela",
+   "p": "El adulto es pardo grisáceo o pardo por arriba y gris ante por abajo. En vuelo se ve una banda canela en el ala y las esquinas de la cola de color ante a blanquecino. En invierno, cuando llega al centro y norte del país, se puede confundir con otras remolineras; la guía aconseja compararla con las especies parecidas. Mide 18 cm."
   },
   {
-   "t": "Dónde vive",
+   "t": "Viene del sur",
    "p": "La guía indica que está en la Patagonia y que en invierno llega a las tierras bajas del norte. Cría en el centro y sur de Chile y en el centro y sur de la Argentina, desde Mendoza hasta Tierra del Fuego, y migra hacia el sur de Brasil, el sureste de Paraguay, Uruguay y el norte de la Argentina. Vive en pastizales abiertos y áreas rocosas de los Andes y la Patagonia, desde el nivel del mar hasta unos 5000 m."
   },
   {
-   "t": "Cómo suena",
+   "t": "Tartamudeo elástico",
    "p": "El canto alterna series de notas muy agudas, como chasquidos, con trinos rápidos, parejos y secos, a veces con notas zumbadas. El canto corto es un tartamudeo elástico, ch ch ch ch chdritit-chdritit-chdritit, que se repite a intervalos cortos."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Cinclodes viene de Cinclus, un ave de orillas de agua, y quiere decir «parecido a un Cinclus»; fuscus es latín y significa «pardo» u «oscuro». También se la llama churrete acanelado, meneacola o remolinera común."
+   "t": "Meneacola",
+   "p": "También se la llama churrete acanelado, meneacola o remolinera común. Cinclodes viene de Cinclus, un ave de orillas de agua, y quiere decir «parecido a un Cinclus»; fuscus es latín para «pardo» u «oscuro»."
   }
  ],
  "fuentes": [
@@ -45,5 +45,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 201
+ "id": 201,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

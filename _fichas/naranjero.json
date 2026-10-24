@@ -26,27 +26,31 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un tangará robusto, arborícola y de coloración llamativa. El macho tiene un capuchón celeste violáceo, el lorum y el dorso negros, las alas y la cola con filetes celestes, y la rabadilla y el pecho naranjas, con el vientre amarillo. La hembra es más discreta: dorso oliváceo y ventral ocráceo, con el pico de dos colores. El juvenil tiene plumajes intermedios. La forma del noroeste (schulzei) es más pálida y cremosa por abajo."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 23 de mayo de 2026, en la Reserva Provincial Chocancharava."
   },
   {
-   "t": "Dónde vive",
-   "p": "Se lo ve en bosques, sabanas, áreas rurales y poblados, entre el estrato medio y la copa de los árboles, sobre todo en bosques claros. Está en el noreste, al sur hasta el noreste de Buenos Aires, y una forma parecida vive en el noroeste (hasta 3450 m), al sur hasta el norte de la Patagonia."
+   "t": "El macho, de colores",
+   "p": "Es un tangará robusto, arborícola y de coloración llamativa. El macho tiene un capuchón celeste violáceo, el lorum y el dorso negros, las alas y la cola con filetes celestes, y la rabadilla y el pecho naranjas, con el vientre amarillo. La hembra es más discreta: dorso oliváceo y ventral ocráceo, con el pico de dos colores. El juvenil tiene plumajes intermedios. Mide 17 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Entre las ramas",
    "p": "Va solo, en pareja o en grupos y se desplaza con rapidez, buscando alimento entre las ramas y el follaje, en general entre 3 y 9 m de altura. Come frutos y semillas (traga enteros los de tala, y tritura los de ligustro, naranjillo y mora), y también insectos que caza en vuelo."
   },
   {
-   "t": "Cómo suena",
-   "p": "Canta una serie lenta, larga y repetitiva de notas ricas, generalmente en pares (ziu-sweet, ziu-sweet), que recuerda a la de una monterita; en el sur del área es más fuerte y enfática. Los llamados son notas nasales sueltas, de dos sílabas."
+   "t": "Ziu-sweet, ziu-sweet",
+   "p": "Canta una serie lenta, larga y repetitiva de notas ricas, generalmente en pares, que recuerda a la de una monterita; en el sur del área es más fuerte y enfática. Los llamados son notas nasales sueltas, de dos sílabas."
   },
   {
-   "t": "Nidificación",
-   "p": "Se reproduce de octubre a febrero. Hace un nido en forma de taza con fibras vegetales entrelazadas, a dos o tres metros del suelo, en unos 12 o 13 días. La puesta es de tres huevos pálidos con pintas y rayas pardas y grises; la incubación dura unos 14 días y los pichones se quedan otros 14 en el nido."
+   "t": "Dónde vive",
+   "p": "En bosques, sabanas, áreas rurales y poblados, entre el estrato medio y la copa de los árboles, sobre todo en bosques claros. Está en el noreste, al sur hasta el noreste de Buenos Aires, y una forma parecida (schulzei, más pálida y cremosa por abajo) vive en el noroeste, hasta 3450 m, al sur hasta el norte de la Patagonia."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "El nido",
+   "p": "Se reproduce de octubre a febrero. Hace un nido en forma de taza con fibras vegetales entrelazadas, a dos o tres metros del suelo, en unos 12 o 13 días. Pone tres huevos pálidos con pintas y rayas pardas y grises; la incubación dura unos 14 días y los pichones se quedan otros 14 en el nido."
+  },
+  {
+   "t": "Rauenia o Thraupis",
    "p": "Tiene el nombre científico Rauenia bonariensis en la guía de Pearman y en el listado actual; Narosky lo llama Thraupis bonariensis. El epíteto alude a Bonaria, el nombre en latín moderno de Buenos Aires. En otros países es la tangara azul y amarilla."
   }
  ],
@@ -61,5 +65,10 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-05-23",
+  "lugar": "Reserva Provincial Chocancharava"
+ }
 }

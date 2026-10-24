@@ -25,32 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es negra, con el dorso y las cubiertas de las alas rufos. Los dedos, de unos 13 cm, son larguísimos: le permiten caminar sobre la vegetación flotante sin hundirse. Las remeras son amarillas y se ven al volar o al mantener las alas levantadas. La hembra es más grande que el macho. El juvenil tiene el dorso pardo y la ceja y el vientre blancos."
+   "t": "Hasta ahora, una sola vez",
+   "p": "La anoté una sola vez: el 17 de enero de 2026, en la Reserva Aguada de los Pájaros, en Villa Rumipal."
+  },
+  {
+   "t": "Dedos larguísimos",
+   "p": "Es negra, con el dorso y las cubiertas de las alas rufos. Los dedos, de unos 13 cm, son larguísimos: le permiten caminar sobre la vegetación flotante sin hundirse. Las remeras son amarillas y se ven al volar o al mantener las alas levantadas. La hembra es más grande que el macho. Mide entre 22 y 24 cm."
+  },
+  {
+   "t": "Centinela",
+   "p": "Es confiada y se comporta como centinela: camina de a poco sobre la vegetación flotante. Come insectos (escarabajos, langostas, grillos), otros invertebrados, pececitos y semillas que toma de las plantas flotantes o de la superficie del agua. Tiene espolones óseos amarillos en el borde del ala, que usa para defenderse y para defender a las crías."
+  },
+  {
+   "t": "La hembra manda",
+   "p": "Es poliándrica: la hembra forma harenes de hasta cuatro o cinco machos y defiende los nidos de todos ellos. Cada macho incuba y sostiene los huevos entre el ala y el pecho. Pone cuatro huevos pardos con marcas negras en un nido flotante."
   },
   {
    "t": "Dónde vive",
-   "p": "Vive en humedales de las tierras bajas y el piedemonte del norte del país, y en gran parte de Sudamérica y Panamá. La encontrás en lagunas y bañados con camalotes y otras plantas flotantes."
+   "p": "En humedales de las tierras bajas y el piedemonte del norte, y en gran parte de Sudamérica y Panamá, en lagunas y bañados con camalotes y otras plantas flotantes. Tiene una variedad de llamados ruidosos, como traqueteos."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es confiada y se comporta como centinela: camina de a poco sobre la vegetación flotante. Se alimenta de insectos (escarabajos, langostas, grillos), otros invertebrados, pececitos y semillas que toma de las plantas flotantes o de la superficie del agua. Tiene espolones óseos amarillos en el borde del ala, que usa para defenderse y para defender a las crías."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Tiene una variedad de llamados ruidosos, como traqueteos."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Es poliándrica: la hembra forma harenes de hasta cuatro o cinco machos y defiende los nidos de todos ellos. Cada macho incuba, y sostiene los huevos entre el ala y el pecho. Pone cuatro huevos pardos con marcas negras en un nido flotante."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "También se la conoce como tuqui tuqui, gallareta o jacana suramericana. Se reconocen seis subespecies."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN la considera de Preocupación menor."
+   "t": "Nombres",
+   "p": "También se la conoce como tuqui tuqui, gallareta o jacana suramericana. Se reconocen seis subespecies. La UICN la considera de Preocupación menor."
   }
  ],
  "fuentes": [
@@ -69,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 203
+ "id": 203,
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-01-17",
+  "lugar": "Reserva Aguada de los Pájaros"
+ }
 }

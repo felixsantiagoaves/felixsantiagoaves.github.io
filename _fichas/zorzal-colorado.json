@@ -25,28 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un zorzal grande, conspicuo y residente. El adulto es pardo oliváceo en general, con un vientre naranja rojizo muy llamativo, y en vuelo se ven las cubiertas inferiores del ala y las axilas del mismo color. El juvenil se parece al adulto, pero tiene el pecho con manchas pardas y las cubiertas del ala con la punta naranja. Según Wikipedia, tiene el pico casi recto, amarillo en el macho, el párpado amarillo y la garganta blanquecina con finas rayas pardas."
+   "t": "El del Parque Sarmiento",
+   "p": "La primera vez que lo anoté fue el 31 de marzo de 2026, en el Parque Sarmiento."
   },
   {
-   "t": "Dónde vive",
-   "p": "La guía lo da en las yungas hasta unos 1700 m y en las tierras bajas del norte, hacia el sur hasta el norte de la Patagonia. Según Wikipedia, vive en bosques y montes, y en las ciudades es común en jardines y parques con césped y árboles, donde prefiere los lugares con sombra. En la provincia y la ciudad de Buenos Aires se expandió en la segunda mitad del siglo XX y hoy es abundante en zonas urbanas."
+   "t": "El vientre naranja",
+   "p": "Es un zorzal grande, conspicuo y residente. El adulto es pardo oliváceo, con el vientre naranja rojizo muy llamativo, y en vuelo se ven las cubiertas inferiores del ala y las axilas del mismo color. El juvenil tiene manchas pardas en el pecho y las cubiertas del ala con la punta naranja. Según Wikipedia, tiene el pico casi recto, amarillo en el macho, y la garganta blanquecina con finas rayas pardas. Mide 23,5 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es omnívoro y come sobre todo frutos e invertebrados. Se traga enteros los frutos chicos y picotea los grandes, y se lo considera un buen dispersor de semillas. En el suelo revuelve la hojarasca en busca de lombrices, su presa preferida. Suele andar solo o en pareja, y se mueve con saltos y carreras cortas."
+   "t": "Buscando lombrices",
+   "p": "Anda solo o en pareja, con saltos y carreras cortas. En el suelo revuelve la hojarasca buscando lombrices, su presa preferida. También come frutos: los chicos se los traga enteros y los grandes los picotea, por eso se lo considera un buen dispersor de semillas."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es una serie pausada de silbidos suaves y ondulantes, con unas pocas notas ligadas, que forma un patrón continuo; el nombre guaraní, Corochiré, imita el canto. Entre los llamados hay un chuu-wip líquido y alargado al anochecer, un whá y una serie rápida de silbidos puros ascendentes. Según Wikipedia, desde fines del invierno canta antes del amanecer, con un canto fuerte, armonioso y repetitivo."
+   "t": "Canta antes del amanecer",
+   "p": "El canto es una serie pausada de silbidos suaves y ondulantes. Desde fines del invierno canta antes del amanecer, fuerte y repetitivo (Wikipedia). Entre los llamados hay un chuu-wip líquido y alargado al anochecer. El nombre guaraní, Corochiré, imita el canto."
   },
   {
-   "t": "Nidificación",
-   "p": "Según Wikipedia, el nido es una taza abierta de bordes anchos, de unos 13 a 15 cm de diámetro y 6 a 7,5 cm de alto, hecha con barro y fibras vegetales y forrada con ramitas finas, musgo y pastos blandos. La hembra pone tres o cuatro huevos blancos o celestes con manchas pardas."
+   "t": "Un nido de barro",
+   "p": "Es una taza abierta de bordes anchos, de unos 13 a 15 cm de diámetro, hecha con barro y fibras vegetales y forrada con ramitas finas, musgo y pastos blandos. La hembra pone tres o cuatro huevos blancos o celestes con manchas pardas."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Es el ave nacional del Brasil, donde se llama sabiá-laranjeira. En Uruguay también se lo llama zorzal común; el nombre científico rufiventris quiere decir «vientre rojizo»."
+   "t": "Ave nacional de Brasil",
+   "p": "En Brasil se llama sabiá-laranjeira y es el ave nacional. En Uruguay también se lo llama zorzal común. Rufiventris quiere decir \"vientre rojizo\". Vive en las yungas hasta unos 1700 m y en las tierras bajas del norte, hacia el sur hasta el norte de la Patagonia, y en las ciudades es común en jardines y parques con árboles y césped."
   }
  ],
  "fuentes": [
@@ -58,5 +58,10 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 410
+ "id": 410,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-03-31",
+  "lugar": "Parque Sarmiento"
+ }
 }

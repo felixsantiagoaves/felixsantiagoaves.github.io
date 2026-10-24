@@ -25,27 +25,31 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un cuco claro, de pico anaranjado o amarillo, con una cresta anaranjada y despeinada que suele llevar levantada y un anillo ocular amarillo. Tiene rayas blancas anchas en el dorso, la rabadilla blanca y la cola negra con la base blanca y la punta ancha y blanca. Macho y hembra son muy parecidos, y la hembra es un poco más grande."
+   "t": "El despeinado",
+   "p": "Es un cuco claro, de pico anaranjado o amarillo, con una cresta anaranjada y despeinada que suele llevar levantada y un anillo ocular amarillo. Tiene rayas blancas anchas en el dorso, la rabadilla blanca y la cola negra con la base blanca y la punta ancha y blanca. Macho y hembra son muy parecidos, y la hembra es un poco más grande. Mide 40 cm."
+  },
+  {
+   "t": "Escandaloso y mal volador",
+   "p": "Es sociable y bastante escandaloso. Es sobre todo arborícola, pero seguido busca comida en el suelo, solo o en bandadas de hasta 18. No vuela bien: hace vuelos cortos, planea o salta de un apoyo a otro."
+  },
+  {
+   "t": "¿Qué no come?",
+   "p": "Es un depredador oportunista: come gusanos, insectos y otros artrópodos, renacuajos, ranas, huevos, pichones de aves pequeñas y pequeños mamíferos, y a veces lagartijas."
+  },
+  {
+   "t": "Silbidos que bajan",
+   "p": "Canta una serie de silbidos ascendentes, cada uno un poco más grave y más largo que el anterior, que termina en trinos gorgoteados, algo como ooeee… ooeee… wurrr… wurrrrrrr. También tiene un trino largo, más agudo, que oscila."
+  },
+  {
+   "t": "Nido comunitario",
+   "p": "El nido está en la horqueta de un árbol, a 2 a 5 m del suelo, y puede ser de una pareja o comunitario. Pone entre 5 y 7 huevos verde oscuro cubiertos de una capa calcárea; en los nidos comunitarios puede haber hasta 20 huevos a la vez. Mueren muchas crías por la competencia entre hermanos, y por eso se ven tantas cáscaras cerca del nido. A diferencia de muchos cucos, no deja sus huevos en nidos ajenos."
   },
   {
    "t": "Dónde vive",
-   "p": "La guía lo da como muy extendido en las tierras bajas y el pie de los Andes, hacia el sur hasta el norte de la Patagonia. Vive en áreas abiertas: matorrales, campos agrícolas, pastizales y bordes de zonas urbanas."
+   "p": "La guía lo da como muy extendido en las tierras bajas y el pie de los Andes, hasta el norte de la Patagonia. Vive en áreas abiertas: matorrales, campos agrícolas, pastizales y bordes de ciudades."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es sociable y bastante escandaloso. Es sobre todo arborícola, pero con frecuencia busca comida en el suelo, solo o en bandadas de hasta 18 individuos. No vuela bien: hace vuelos cortos, planea o salta de un apoyo a otro. Es un depredador oportunista: come gusanos, insectos y otros artrópodos, renacuajos, ranas, huevos, pichones de aves pequeñas y pequeños mamíferos, y a veces lagartijas. A diferencia de muchos cucos, no deja sus huevos en nidos ajenos."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Canta una serie de silbidos ascendentes, cada uno un poco más grave y más largo que el anterior, que termina en una serie de trinos gorgoteados, algo como ooeee… ooeee… wurrr… wurrrrrrr. También tiene un trino largo, más agudo, que oscila."
-  },
-  {
-   "t": "Nidificación",
-   "p": "El nido está en la horqueta de un árbol, a 2 a 5 m del suelo, y puede ser de una pareja o comunitario. Pone entre 5 y 7 huevos de color verde oscuro cubiertos de una capa calcárea; en los nidos comunitarios puede haber hasta 20 huevos a la vez. Mueren muchas crías por la competencia entre hermanos, y por eso se ven tantas cáscaras cerca del nido."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "Güira es una palabra guaraní que significa «pájaro». En la Argentina y Uruguay se lo llama pirincho; en Paraguay, piririta."
   }
  ],
@@ -61,5 +65,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 103
+ "id": 103,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

@@ -26,28 +26,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es el más grande de los macás: esbelto, de cuello larguísimo, nuca con copete y un pico largo y agudo, como una daga, de color variable. En plumaje nupcial tiene la corona y una línea en la nuca negras, la cara y la garganta grises y el cuello rufo (castaño); el dorso es negruzco y el vientre blanco. Fuera de la cría se parece a un adulto desteñido, con la cara y la garganta blancas. El juvenil se distingue por la cara listada y los flancos ante. Las dos guías no coinciden en el tamaño: Narosky da 44 cm y Pearman 62 cm."
+   "t": "El 12 de junio, en el Dique La Viña",
+   "p": "Ese día lo anoté en el Dique La Viña."
   },
   {
-   "t": "Dónde vive",
-   "p": "Es residente y se distribuye ampliamente por el país, en humedales de agua dulce y en costas de mar. Es menos ribereño que otros macaes y descansa con la cabeza escondida entre las plumas del dorso."
+   "t": "El de cuello larguísimo",
+   "p": "Es el más grande de los macás: esbelto, de cuello larguísimo, nuca con copete y un pico largo y agudo, como una daga. En plumaje nupcial tiene la corona y una línea en la nuca negras, la cara y la garganta grises y el cuello rufo; fuera de la cría la cara y la garganta son blancas. Las dos guías no coinciden en el tamaño: Narosky da 44 cm y Pearman 62 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es principalmente un cazador de peces: come peces chicos, alevines, y también plantas e insectos acuáticos. Antes de formar pareja, el macho y la hembra hacen danzas, y las parejas son muy fieles. En otoño migra en bandadas, sobre todo de noche."
+   "t": "Cazador de peces",
+   "p": "Come sobre todo peces chicos y alevines, y también plantas e insectos acuáticos. Antes de formar pareja el macho y la hembra hacen danzas, y las parejas son muy fieles. En otoño migra en bandadas, sobre todo de noche."
   },
   {
-   "t": "Cómo suena",
-   "p": "El grito es melancólico y sonoro, un silbido que se oye de lejos (waaaa...) y se apaga hacia el final."
+   "t": "Waaaa",
+   "p": "El grito es melancólico y sonoro, un silbido que se oye de lejos y se apaga hacia el final."
   },
   {
-   "t": "Nidificación",
-   "p": "El nido es una plataforma de restos vegetales, por lo general flotante y amarrada a plantas acuáticas, o asentada en microislas o en juncales y totorales densos. Pone de cuatro a seis huevos blanco azulados."
+   "t": "Dónde vive y cómo nidifica",
+   "p": "Es residente y está en todo el país, en humedales de agua dulce y en costas de mar. Descansa con la cabeza escondida entre las plumas del dorso. El nido es una plataforma de restos vegetales, por lo general flotante y amarrada a plantas acuáticas, con 4 a 6 huevos blanco azulados."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "En Chile se lo llama huala, del mapudungun wala, \"pato zambullidor\"; en la Argentina, Uruguay y Paraguay se usa sobre todo macá grande. Pearman lo ubica en un género aparte, Podicephorus major, mientras que Narosky lo llama Podiceps major; el nombre científico de esta ficha sigue la lista que uso en el sitio. El nombre Podiceps viene de podicis (ano) y pes (pie), por tener las patas muy atrás en el cuerpo."
+   "t": "Huala",
+   "p": "En Chile se lo llama huala, del mapudungun wala, \"pato zambullidor\". Pearman lo ubica en un género aparte (Podicephorus), mientras que Narosky lo llama Podiceps major; el nombre de esta ficha sigue la lista que uso en el sitio. Podiceps viene de podicis (ano) y pes (pie), porque tiene las patas muy atrás en el cuerpo."
   }
  ],
  "fuentes": [
@@ -61,5 +61,10 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-06-12",
+  "lugar": "Dique La Viña"
+ }
 }

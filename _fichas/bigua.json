@@ -29,24 +29,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un cormorán grande, casi todo negro, con el cuello marcadamente quebrado en vuelo. En época de cría el adulto tiene una línea blanca que rodea el buche gular y pequeñas plumas blancas a los lados de la cabeza. Fuera de la cría es más pardo, con tonos oliva en el dorso y las alas, y sin marcas blancas en la cabeza. El juvenil es pardo muy pálido en la garganta y el pecho. A menudo se posa con las alas abiertas para secarlas."
+   "t": "La primera vez",
+   "p": "Lo anoté por primera vez el 29 de diciembre de 2025, en el Parque Sarmiento."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina es muy común y se lo ve en todo el país: en lagunas, ríos y bañados, en la costa marina e incluso en áreas pobladas, desde las tierras bajas y el pie de los Andes hasta Tierra del Fuego. Es residente, aunque algunas poblaciones se desplazan hacia el norte en el invierno austral. Siempre está sobre el agua o cerca de ella, a menudo posado en postes y alambrados de lagunas poco profundas. En conjunto, la especie ocupa los trópicos y subtrópicos de América, desde el Golfo de México hasta el sur del continente."
+   "t": "Negro y de cuello quebrado",
+   "p": "Es un cormorán grande, casi todo negro, con el cuello marcadamente quebrado en vuelo. En época de cría tiene una línea blanca que rodea el buche gular y pequeñas plumas blancas a los lados de la cabeza. Fuera de la cría es más pardo, con tonos oliva, y sin marcas blancas en la cabeza. Mide 72 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta principalmente de peces pequeños y también de renacuajos, ranas e insectos acuáticos. Pesca zambulléndose y propulsándose bajo el agua con las patas, y suele hacerlo en grupos."
+   "t": "Alas abiertas al sol",
+   "p": "A menudo se posa con las alas abiertas para secarlas. Pesca zambulléndose y propulsándose bajo el agua con las patas, y suele hacerlo en grupos. Come sobre todo peces chicos, y también renacuajos, ranas e insectos acuáticos."
   },
   {
-   "t": "Nidificación",
-   "p": "Es monógamo y cría en colonias. El nido es una plataforma de ramitas con una depresión central, ubicada en árboles. Pone hasta cinco huevos, que incuban ambos padres durante unos 25 a 30 días, y los dos alimentan a las crías."
+   "t": "Siempre cerca del agua",
+   "p": "Es muy común y está en todo el país: lagunas, ríos y bañados, la costa marina e incluso áreas pobladas. Suele posarse en postes y alambrados de lagunas poco profundas. Es residente, aunque algunas poblaciones se desplazan al norte en invierno."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Hay dos criterios en uso. Wikipedia lo trata como Phalacrocorax brasilianus; acá sigo la lista de eBird, que lo ubica en el género Nannopterum (un estudio filogenético de 2014 propuso separar ese grupo). Además, las poblaciones del norte se consideran a veces una especie aparte, Phalacrocorax olivaceus."
+   "t": "Cría en colonias",
+   "p": "Es monógamo y cría en colonias. El nido es una plataforma de ramitas con una depresión central, en árboles, con hasta cinco huevos que incuban ambos padres entre 25 y 30 días."
+  },
+  {
+   "t": "¿Phalacrocorax o Nannopterum?",
+   "p": "Wikipedia lo trata como Phalacrocorax brasilianus; acá sigo la lista de eBird, que lo ubica en el género Nannopterum (un estudio de 2014 propuso separar ese grupo). Además, las poblaciones del norte se consideran a veces una especie aparte, Phalacrocorax olivaceus."
   }
  ],
  "fuentes": [
@@ -61,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Biguá"
+ "comun": "Biguá",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-29",
+  "lugar": "Parque Sarmiento"
+ }
 }

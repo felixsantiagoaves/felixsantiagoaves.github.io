@@ -25,24 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un carpintero grande, blanco y negro, de anillo ocular amarillo llamativo, muy gregario. Es sobre todo blanco, con la lista del ojo, el manto, las alas y la cola negruzcos, y un parche amarillento variable en el vientre. El macho tiene un parche amarillo variable en la nuca; la hembra no lo tiene."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 11 de junio de 2026, en El Rincón del Molle, en Villa de las Rosas."
+  },
+  {
+   "t": "Blanco, con anillo amarillo",
+   "p": "Es un carpintero grande, blanco y negro, de anillo ocular amarillo llamativo, muy gregario. Es sobre todo blanco, con la lista del ojo, el manto, las alas y la cola negruzcos, y un parche amarillento variable en el vientre. El macho tiene un parche amarillo en la nuca; la hembra no. Mide 28,5 cm."
+  },
+  {
+   "t": "En grupo",
+   "p": "Se desplaza en grupos y suele volar a gran altura en áreas abiertas. Come frutos, semillas, insectos y miel, caza insectos en el aire y abre panales de avispas o abejas para comer las larvas, lo que ayuda a los productores de cítricos. Da un grito fuerte y áspero, parecido al de un gaviotín, que se oye desde muy lejos."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte, sobre todo en el noreste: bosques, sabanas, palmares y arboledas (Narosky cita el PN El Palmar, en Entre Ríos). Prefiere pastizales con palmares y aparece en parques y plantaciones. Es endémico de Sudamérica (Bolivia, Brasil, Paraguay, Uruguay y otros países del norte)."
+   "p": "Vive en las tierras bajas del norte, sobre todo en el noreste: bosques, sabanas, palmares y arboledas (Narosky cita el PN El Palmar, en Entre Ríos). Prefiere pastizales con palmares y aparece en parques y plantaciones. Es endémico de Sudamérica."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se desplaza en grupos y suele volar a gran altura en áreas abiertas. Come frutos, semillas, insectos y miel, caza insectos en el aire y abre panales de avispas o abejas para comer las larvas, lo que ayuda a los productores de cítricos. Forrajea en grupos familiares ruidosos y hace desplazamientos cortos."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Da un grito fuerte, áspero, parecido al de un gaviotín, que se oye desde muy lejos, tanto posado como en vuelo."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Excava cavidades en troncos, y también se lo vio usar huecos naturales en rocas. Pone de tres a cuatro huevos y los pichones dejan el nido a los 35 días aproximadamente. Cría entre septiembre y noviembre y puede hacerlo de forma comunitaria, aunque se sabe poco de su reproducción."
+   "t": "El nido",
+   "p": "Excava cavidades en troncos, y también se lo vio usar huecos naturales en rocas. Pone de tres a cuatro huevos y los pichones dejan el nido a los 35 días. Cría entre septiembre y noviembre y puede hacerlo de forma comunitaria, aunque se sabe poco de su reproducción."
   },
   {
    "t": "Conservación",
@@ -65,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Carpintero Blanco"
+ "comun": "Carpintero Blanco",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-06-11",
+  "lugar": "El Rincón del Molle"
+ }
 }

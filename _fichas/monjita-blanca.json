@@ -18,24 +18,20 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es un tiránido chico, y el adulto es blanco: se nota hasta de lejos. Sólo tiene negras las primarias y la punta de la cola, de modo que en vuelo se ven las alas casi blancas, con la punta negra, y una cola corta y apenas escotada."
+   "t": "Blanca, se ve de lejos",
+   "p": "Es un tiránido chico, y el adulto es blanco: se nota hasta de lejos. Solo tiene negras las primarias y la punta de la cola, de modo que en vuelo se ven las alas casi blancas, con la punta negra, y una cola corta y apenas escotada. Mide entre 17 y 18,5 cm."
   },
   {
-   "t": "Dónde vive",
-   "p": "Es muy común en todo el país, en sabanas, bosques y áreas rurales, y suele posarse en sitios bien visibles, como postes y alambrados."
+   "t": "En el alambrado",
+   "p": "Es muy común en todo el país, en sabanas, bosques y áreas rurales, y suele posarse en sitios bien visibles, como postes y alambrados. Se cierne en el aire (\"halconea\"), un comportamiento que comparte con otras aves de su familia."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se cierne en el aire (\"halconea\"), un comportamiento que comparte con otras aves de su familia."
-  },
-  {
-   "t": "Cómo suena",
+   "t": "Dos notas",
    "p": "El canto es un silbido humano, suave, fui... o fwee..., de dos notas bien separadas, una más aguda y otra más grave, con entonación ascendente. Los llamados son silbidos cortos."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "El nombre de la especie, irupero, viene del guaraní iruperó, \"pájaro problemático\"; lo usó Félix de Azara para esta especie. En Uruguay se la llama viudita blanca común. El origen del nombre del género, Xolmis, es incierto."
+   "t": "Pájaro problemático",
+   "p": "irupero viene del guaraní iruperó, \"pájaro problemático\"; lo usó Félix de Azara para esta especie. En Uruguay se la llama viudita blanca común. El origen del nombre del género, Xolmis, es incierto."
   }
  ],
  "fuentes": [
@@ -49,5 +45,8 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

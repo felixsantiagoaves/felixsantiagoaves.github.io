@@ -25,20 +25,20 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Vive en arbustos de los pantanos de la Pampa. El adulto tiene el iris ámbar o amarillo opaco, la corona rufa con una pequeña zona parda en la frente, una ceja blanquecina opaca y las plumas externas de la cola rufo opaco. El pecho está lavado de rufo, con pequeñas estrías blancas. Se solapa con el Espinero Frente Rojiza y con el Espinero Grande."
+   "t": "El 3 de octubre, en el bañado",
+   "p": "El 3 de octubre de 2026 lo anoté en el Bañado Arroyo Chico, en Santa Catalina."
+  },
+  {
+   "t": "Rufo, con el pecho rayado",
+   "p": "Vive en arbustos de los pantanos de la Pampa. El adulto tiene el iris ámbar o amarillo opaco, la corona rufa con una pequeña zona parda en la frente, una ceja blanquecina opaca y las plumas externas de la cola rufo opaco. El pecho está lavado de rufo, con pequeñas estrías blancas. Mide 17,5 cm. Se solapa con el Espinero Frente Rojiza y con el Espinero Grande."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina las guías lo ubican en la región pampeana: Pearman y Areta, en arbustos de bañados pampeanos, y Narosky, en bosques, pastizales y a veces juncales, y cita Magdalena, en Buenos Aires. Es nativo del sudeste de Sudamérica (noreste de la Argentina, sudeste de Brasil, Uruguay y Paraguay) y habita bordes arbustivos de bosques en galería y del monte, y enmarañados de terrenos pantanosos abiertos, casi siempre cerca del agua y hasta unos 700 m de altitud. Se lo describe como poco común."
+   "p": "Las guías lo ubican en la región pampeana: Pearman y Areta, en arbustos de bañados pampeanos, y Narosky, en bosques, pastizales y a veces juncales. Es nativo del sudeste de Sudamérica y vive en bordes arbustivos de bosques en galería y del monte, y en enmarañados de terrenos pantanosos abiertos, casi siempre cerca del agua y hasta unos 700 m. Se lo describe como poco común."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "El género Phacellodomus alude al \"amontonado de palitos\" que caracteriza el nido de estas especies. En otras fuentes se lo llama espinero pechirrayado, y en Uruguay tío-tío. Se diferencia de su pariente Phacellodomus maculipectus, sobre todo en el plumaje y en la voz."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo considera una especie de Preocupación menor."
+   "t": "Un amontonado de palitos",
+   "p": "Phacellodomus alude al \"amontonado de palitos\" que caracteriza el nido de estas especies. En otras fuentes se lo llama espinero pechirrayado, y en Uruguay tío-tío. Se diferencia de su pariente Phacellodomus maculipectus sobre todo en el plumaje y en la voz. La UICN lo considera de Preocupación menor."
   }
  ],
  "fuentes": [
@@ -53,5 +53,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Espinero Pecho Manchado"
+ "comun": "Espinero Pecho Manchado",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-10-03",
+  "lugar": "Bañado Arroyo Chico"
+ }
 }

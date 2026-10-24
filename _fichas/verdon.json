@@ -21,27 +21,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un pinzón grande y conspicuo de los bañados, con un pico muy robusto de color naranja y una cola larga y ancha. La forma del noreste, que llega hasta el sur de Buenos Aires, tiene el pico naranja con el culmen negro más recto, la cara gris con las lorales negruzcas, el dorso oliváceo con un fuerte veteado negruzco, la garganta y el pecho grises que se vuelven más blancos hacia abajo, y un tinte canela pálido en los flancos y la zona de la cola. La forma del oeste es más opaca, de un pardo oliváceo sin veteado en el dorso, con las auriculares más grisáceas y los flancos teñidos de canela. El juvenil es ante oliváceo por arriba con un fuerte veteado negruzco, con la ceja y la garganta amarillentas pálidas y el pecho y los flancos rayados."
+   "t": "Pico naranja y cola larga",
+   "p": "Es un pinzón grande y conspicuo de los bañados, con un pico muy robusto de color naranja y una cola larga y ancha. La forma del noreste, que llega hasta el sur de Buenos Aires, tiene el pico naranja con el culmen negro más recto, la cara gris con las lorales negruzcas, el dorso oliváceo con un fuerte veteado negruzco, la garganta y el pecho grises que se vuelven más blancos hacia abajo, y un tinte canela pálido en los flancos y la zona de la cola. La forma del oeste es más opaca, de un pardo oliváceo sin veteado en el dorso. El juvenil es ante oliváceo por arriba con un fuerte veteado negruzco, con la ceja y la garganta amarillentas pálidas y el pecho y los flancos rayados. Mide 21 cm."
+  },
+  {
+   "t": "Cola que sacude",
+   "p": "Suele andar en pareja. Se posa en malezas grandes, pastos altos o arbustos, y se esconde en el pastizal. Vuela distancias cortas y se zambulle entre la vegetación, y en vuelo parece sacudir la cola. Busca comida en el suelo y entre los pastos."
+  },
+  {
+   "t": "Gorjeo agudo",
+   "p": "El canto es un gorjeo rápido, fino, corto y agudo, a veces con zumbidos metálicos, como swi-zilip-zit-TZÍU o chu-zí-si-whizz, con mucha variación geográfica. Los llamados son notas agudas variadas y pares de notas metálicas y líquidas."
   },
   {
    "t": "Dónde vive",
    "p": "La guía lo da como muy extendido. Según Wikipedia, vive en bañados con pastos altos y arbustos aislados y en campos húmedos que se inundan estacionalmente, casi siempre por debajo de los 2500 m, y es localmente común."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Suele andar en pareja. Se posa en malezas grandes, pastos altos o arbustos, y se esconde en el pastizal. Vuela distancias cortas y se zambulle entre la vegetación, y en vuelo parece sacudir la cola. Busca comida en el suelo y entre los pastos."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es un gorjeo rápido, fino, corto y agudo, a veces con zumbidos metálicos, como swi-zilip-zit-TZÍU o chu-zí-si-whizz, con mucha variación geográfica. Los llamados son notas agudas variadas y pares de notas metálicas y líquidas."
-  },
-  {
-   "t": "Nidificación",
+   "t": "Dos veces por año",
    "p": "Según Wikipedia, anida entre pajas o pastos altos, muy cerca del suelo. El nido es una taza bien escondida de fibras vegetales, tallos y hojas, forrada con fibras finas y sostenida por pastos, arbustos o malezas. La hembra pone tres huevos blancos con manchas pardas, dos veces al año."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "Embernagra une Emberiza, el nombre de los escribanos del Viejo Mundo, con el antiguo Tanagra, de los tangaras; platensis alude al Río de la Plata, de donde viene el ejemplar con el que se describió la especie en 1789. En la Argentina se lo llama verdón, y en el Uruguay, cotorra de bañado."
   }
  ],
@@ -54,5 +54,8 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 315
+ "id": 315,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

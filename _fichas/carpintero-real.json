@@ -29,23 +29,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Tiene la corona negra y la nuca escarlata, la cara blanquecina y las partes inferiores manchadas. El manto es de un verde vivo, barrado de pardo. El macho tiene la malar rojo oscuro y la hembra la tiene negra."
+   "t": "La primera vez",
+   "p": "Lo anoté por primera vez el 17 de enero de 2026, en la Reserva Aguada de los Pájaros, en Villa Rumipal."
+  },
+  {
+   "t": "Verde, con nuca escarlata",
+   "p": "Tiene la corona negra y la nuca escarlata, la cara blanquecina y las partes inferiores manchadas. El manto es de un verde vivo, barrado de pardo. El macho tiene la malar rojo oscuro y la hembra la tiene negra. Mide 29 cm."
+  },
+  {
+   "t": "Trepador especializado",
+   "p": "Come insectos, larvas y hormigas. Perfora troncos con el pico para sacar larvas e insectos, se apoya en la cola rígida y tiene uñas en forma de gancho. Para beber llena el pico de agua y echa la cabeza hacia atrás."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en el norte y el litoral (Pearman y Areta lo ubican en el bosque paranaense), y en partes de Neuquén y Río Negro según Wikipedia. Narosky lo describe más arborícola que el Carpintero Campestre y lo cita en bosques, sabanas, arboledas y áreas rurales, con alta probabilidad de verlo. Vive en bosques secos y húmedos de tierras bajas, y también se adapta a parques urbanos. En conjunto, su área abarca el centro y centro-sur de Sudamérica."
+   "p": "En el norte y el litoral (Pearman y Areta lo ubican en el bosque paranaense), y en partes de Neuquén y Río Negro según Wikipedia. Narosky lo describe más arborícola que el Carpintero Campestre y con alta probabilidad de verlo. Vive en bosques secos y húmedos de tierras bajas y también en parques urbanos."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come insectos, larvas y hormigas. Es un trepador muy especializado: perfora troncos con el pico para sacar larvas e insectos, se apoya en la cola rígida y tiene uñas en forma de gancho. Para beber, llena el pico de agua y echa la cabeza hacia atrás."
-  },
-  {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Anida en árboles que perfora ella misma. Los huevos son blancos y muy frágiles, y los pichones nacen ciegos y desplumados."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "El nombre",
    "p": "El nombre científico combina palabras griegas que aluden a sus colores principales, negro y verde pálido. El carpintero de pecho dorado se incluye a veces como grupo subespecífico del sur y otras veces se considera una especie separada, Colaptes melanolaimus."
   }
  ],
@@ -61,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Carpintero Real"
+ "comun": "Carpintero Real",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-01-17",
+  "lugar": "Reserva Aguada de los Pájaros"
+ }
 }

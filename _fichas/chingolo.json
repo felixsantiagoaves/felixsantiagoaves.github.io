@@ -25,27 +25,31 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es el gorrión omnipresente, de cresta permanente, y se junta en bandadas, sobre todo en invierno. En el adulto de las tierras bajas del centro-norte la corona es gris con bandas negras a los costados, una lista ocular negra y otra que bordea las cobertoras auriculares; la nuca y los costados del pecho son rufos y contrastan, con una mancha negra. Hay muchas subespecies parecidas. La forma austral (16,5 cm; cría en el sur de la Patagonia y migra al norte) es más grande y no tiene las bandas negras de la cabeza. El juvenil no tiene el rufo de la nuca ni del pecho, es apenas crestado y es blanco abajo, con un tinte ante en el pecho y fino moteado negro."
+   "t": "El gorrión que no es gorrión",
+   "p": "Es el gorrión omnipresente, de cresta permanente, y se junta en bandadas, sobre todo en invierno. En el adulto de las tierras bajas del centro-norte la corona es gris con bandas negras a los costados, la lista ocular negra, y la nuca y los costados del pecho son rufos y contrastan, con una mancha negra. Mide entre 15,5 y 16,5 cm. La forma austral (16,5 cm; cría en el sur de la Patagonia y migra al norte) es más grande y no tiene las bandas negras de la cabeza."
+  },
+  {
+   "t": "El juvenil",
+   "p": "No tiene el rufo de la nuca ni del pecho, es apenas crestado y es blanco abajo, con un tinte ante en el pecho y fino moteado negro."
+  },
+  {
+   "t": "Cada población con su dialecto",
+   "p": "El canto es exclusivo del macho: un tema de tres tiempos seguido de un trino, y ese trino es característico de cada población, porque los pichones lo aprenden de los adultos de su grupo. El más común tiene 2 o 3 silbidos y un trino. En el Monte el trino suele ser reemplazado por un raspido corto, y el de la forma austral no tiene trino. De noche puede dar cantos complejos e impredecibles."
+  },
+  {
+   "t": "Qué hace",
+   "p": "Come sobre todo semillas, y también gusanos que recoge en el suelo. Es solitario y forma parejas en la época reproductiva. Pasa mucho tiempo en árboles y arbustos y sigue activo hasta el anochecer."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es muy abundante y vive en casi todos los ambientes del país, incluidos pueblos y ciudades, de norte a sur. Pearman y Areta lo marcan como muy extendido, con ocho subespecies. A escala continental está en toda Sudamérica, incluida Tierra del Fuego, y en Centroamérica; falta en los bosques densos de la Amazonia. Vive en cultivos, jardines, parques, pastizales y arbustales."
+   "p": "Es muy abundante y está en casi todos los ambientes del país, incluidos pueblos y ciudades, de norte a sur; Pearman y Areta lo marcan con ocho subespecies. A escala continental está en toda Sudamérica y en Centroamérica; falta en los bosques densos de la Amazonia."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come sobre todo semillas, y también gusanos que recoge en el suelo. Es solitario y forma parejas en la época reproductiva; rara vez se junta en bandadas. Pasa mucho tiempo en árboles y arbustos y sigue activo hasta el anochecer. La subespecie australis es migratoria. El canto es exclusivo del macho: un tema de tres tiempos seguido de un trino, y ese trino es característico de cada población, porque los pichones lo aprenden de los adultos de su grupo."
+   "t": "El nido y el tordo",
+   "p": "El nido es semiesférico, de hasta 13 cm, con paja por fuera y cerdas, pelos y plumón por dentro, y suele estar en el suelo, en pastizales cerrados. Pone de 2 a 5 huevos verde pálido o celestes con manchas castañas, grises o lilas. Incuba de 11 a 13 días y los pichones se quedan 10 a 11 días en el nido. El Tordo Renegrido le pone huevos."
   },
   {
-   "t": "Cómo suena",
-   "p": "Varía según la zona. El canto más común tiene 2 o 3 silbidos musicales y un trino. En el Monte el trino suele ser reemplazado por un raspido corto. El de la forma austral no tiene trino, solo silbidos. De noche puede dar cantos complejos, aislados e impredecibles."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Las parejas se forman entre la primavera y comienzos del verano. El nido es semiesférico, de hasta 13 cm de diámetro, con paja por fuera y cerdas, pelos y plumón por dentro, y suele estar en el suelo, en pastizales cerrados; más raramente en arbustos o ramas bajas. La hembra pone de 2 a 5 huevos verde pálido o celestes con manchas castañas, grises o lilas. Incuba de 11 a 13 días y los pichones se quedan en el nido de 10 a 11 días. Es parasitado por el Tordo Renegrido, que pone sus huevos en el nido del chingolo."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Chingolo, cachilo, chincol, copetón",
    "p": "En Argentina y Uruguay se lo llama chingolo o cachilo; en Chile, chincol; y en Colombia, copetón."
   }
  ],
@@ -61,5 +65,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Chingolo"
+ "comun": "Chingolo",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

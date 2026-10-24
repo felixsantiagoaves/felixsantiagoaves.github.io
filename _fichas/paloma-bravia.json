@@ -25,28 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es gris azulada, con brillos verdes y violáceos en el cuello y dos bandas negras sobre el ala plegada. El plumaje es muy variable: hay ejemplares con distintas cantidades de blanco, albinos y negruzcos. Mide unos 32 a 35 cm según la guía."
-  },
-  {
-   "t": "Dónde vive",
+   "t": "La de la plaza",
    "p": "Es muy conocida y vive junto a la gente: plazas de grandes ciudades, poblados y áreas rurales. A veces se asilvestra en barrancas. En la Argentina es una especie introducida desde Eurasia."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es muy gregaria. En la naturaleza come sobre todo semillas de cereales, leguminosas y otras hierbas, y también brotes, frutos, insectos, gusanos y caracoles. En las ciudades aprovecha los restos de comida que encuentra o que le da la gente. Para beber traga de forma continua con la cabeza baja, algo que no hacen otras aves."
+   "t": "Gris azulada, con dos bandas",
+   "p": "Es gris azulada, con brillos verdes y violáceos en el cuello y dos bandas negras sobre el ala plegada. El plumaje es muy variable: hay ejemplares con distintas cantidades de blanco, albinos y negruzcos. Mide unos 32 a 35 cm según la guía."
   },
   {
-   "t": "Cómo suena",
-   "p": "Su voz es un arrullo grave, con sonidos como gorgoteos."
+   "t": "Gregaria",
+   "p": "Es muy gregaria. En la naturaleza come sobre todo semillas de cereales, leguminosas y otras hierbas, y también brotes, frutos, insectos, gusanos y caracoles. En las ciudades aprovecha los restos de comida que encuentra o que le da la gente. Para beber traga de forma continua con la cabeza baja, algo que no hacen otras aves. Su voz es un arrullo grave, con sonidos como gorgoteos."
   },
   {
-   "t": "Nidificación",
-   "p": "Cría en cualquier época del año, con un máximo en primavera y verano. Anida en salientes de acantilados, en superficies parecidas de edificios y en grietas o huecos. El nido es una estructura frágil de hierba y ramitas, casi siempre a cubierto, y suele tener dos huevos blancos. Los dos padres incuban durante 17 a 21 días. Los pichones salen cubiertos de plumón amarillento claro y se alimentan de la «leche de paloma», que producen los adultos en el buche; dejan el nido a los 30 días más o menos."
+   "t": "El nido",
+   "p": "Cría en cualquier época del año, con un máximo en primavera y verano. Anida en salientes de acantilados, en superficies parecidas de edificios y en grietas o huecos, con una estructura frágil de hierba y ramitas, casi siempre a cubierto, y suele tener dos huevos blancos. Los dos padres incuban de 17 a 21 días. Los pichones se alimentan de la «leche de paloma», que producen los adultos en el buche, y dejan el nido a los 30 días más o menos."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Las dos guías de campo la llaman paloma doméstica (en inglés, rock pigeon o feral pigeon), mientras que en esta página figura como paloma bravía, el nombre de la forma silvestre. Es la misma especie: la paloma bravía fue domesticada hace miles de años y de ahí salió la doméstica, que varía mucho de colores y formas; algunas se asilvestraron y forman poblaciones semisalvajes en las ciudades. Ambas se cruzan entre sí. El nombre científico viene del latín: columba es «paloma» y livia alude al color azulado."
+   "t": "¿Bravía o doméstica?",
+   "p": "Las dos guías la llaman paloma doméstica (en inglés, rock pigeon o feral pigeon), mientras que acá figura como paloma bravía, el nombre de la forma silvestre. Es la misma especie: la bravía se domesticó hace miles de años y de ahí salió la doméstica, que varía mucho de colores y formas; algunas se asilvestraron y forman poblaciones semisalvajes en las ciudades, y ambas se cruzan. Columba es «paloma» en latín y livia alude al color azulado."
   }
  ],
  "fuentes": [
@@ -61,5 +57,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 223
+ "id": 223,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

@@ -25,28 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Construye nidos comunales enormes y espinosos, muy visibles. El adulto tiene la frente gris azulada y la corona posterior y la nuca verde brillante. La garganta, las mejillas y el pecho son grises, con un escamado ante blanquecino variable a través del pecho. En vuelo conviene compararla con la Catita Serrana Grande, en las sierras centrales y el noroeste andino, y con la forma luchsi de la Cotorra, en el norte de Salta."
+   "t": "El loro que hace nidos",
+   "p": "Construye nidos comunales enormes y espinosos, muy visibles. Es la única especie de loro que arma sus propios nidos: ramas espinosas entretejidas que pueden alojar varias parejas. Ponen de 5 a 8 huevos, con una incubación de unos 26 días. Anida en árboles y también en torres de comunicación y tendidos eléctricos."
+  },
+  {
+   "t": "Verde, con el pecho gris",
+   "p": "El adulto tiene la frente gris azulada y la corona posterior y la nuca verde brillante. La garganta, las mejillas y el pecho son grises, con un escamado ante blanquecino variable. Mide 28,5 cm y pesa de 120 a 140 g."
+  },
+  {
+   "t": "Ruidosa",
+   "p": "Es muy gregaria y vuela en bandadas ruidosas y rápidas, con aleteo constante. Come sobre todo semillas, tanto silvestres (como el cardo) como cultivadas (sorgo, maíz, arroz), y también frutos, flores e insectos. Tiene una gran variedad de chillidos y graznidos, y puede imitar palabras."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es muy abundante en bosques, arboledas, sabanas, áreas rurales y pueblos, y llega hasta el norte de la Patagonia. Originalmente llegaba hasta el sur de Córdoba, y hoy hay colonias en el sur de Buenos Aires. Anida en árboles y también en estructuras artificiales como torres de comunicación y tendidos eléctricos. Es nativa del centro y sur de Sudamérica (Bolivia, Brasil, Paraguay y Uruguay) y se estableció como especie introducida en otros países."
+   "p": "Es muy abundante en bosques, arboledas, sabanas, áreas rurales y pueblos, y llega hasta el norte de la Patagonia. Originalmente llegaba hasta el sur de Córdoba, y hoy hay colonias en el sur de Buenos Aires. Es nativa del centro y sur de Sudamérica y se estableció como introducida en otros países."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es muy gregaria y socialmente compleja, y vuela en bandadas ruidosas y rápidas, con aleteo constante. Come sobre todo semillas, tanto silvestres (como el cardo) como cultivadas (sorgo, maíz, arroz), y también frutos, flores e insectos. Tiene una gran variedad de chillidos y graznidos, y puede imitar palabras."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Es la única especie de loro que construye sus propios nidos. Son comunales, de ramas espinosas entretejidas, y pueden alojar varias parejas. Ponen de 5 a 8 huevos, con una incubación de unos 26 días."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "También se la llama cotorra argentina, perico monje, cata o catita."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN la clasifica como de Preocupación menor. En España, en cambio, figura en el Catálogo de Especies Exóticas Invasoras."
+   "t": "Cotorra argentina, perico monje",
+   "p": "También se la llama cotorra argentina, perico monje, cata o catita. La UICN la clasifica como de Preocupación menor; en España, en cambio, figura en el Catálogo de Especies Exóticas Invasoras."
   }
  ],
  "fuentes": [
@@ -61,5 +57,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cotorra"
+ "comun": "Cotorra",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

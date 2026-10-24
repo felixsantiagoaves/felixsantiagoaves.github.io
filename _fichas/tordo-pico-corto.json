@@ -21,20 +21,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto es negro, con poco o ningún brillo, y tiene el pico robusto, más corto y cónico que el del tordo renegrido. El iris castaño y las axilas castaño oscuro son difíciles de ver. Las bandadas se distinguen de las del tordo renegrido por la falta de hembras pardas. El juvenil es pardo claro con las alas castañas, muy parecido al tordo músico adulto, pero tiene el pico con la forma del adulto, las primarias más largas, las lorales negruzcas poco definidas y, en vuelo, las cubiertas inferiores del ala negras. Durante la muda se ve con manchas y salpicaduras negras irregulares."
+   "t": "Negro mate",
+   "p": "El adulto es negro, con poco o ningún brillo, y tiene el pico robusto, más corto y cónico que el del tordo renegrido. El iris castaño y las axilas castaño oscuro son difíciles de ver. Las bandadas se distinguen de las del tordo renegrido por la falta de hembras pardas. Mide 20 cm."
+  },
+  {
+   "t": "El juvenil, un doble",
+   "p": "El juvenil es pardo claro con las alas castañas, muy parecido al tordo músico adulto, pero tiene el pico con la forma del adulto, las primarias más largas, las lorales negruzcas poco definidas y, en vuelo, las cubiertas inferiores del ala negras. Durante la muda se ve con manchas y salpicaduras negras irregulares."
+  },
+  {
+   "t": "Parásito de cría",
+   "p": "La guía indica que parasita casi exclusivamente al tordo músico, con el que suele andar, y Wikipedia confirma que sus huevos se ponen en nidos del tordo músico."
+  },
+  {
+   "t": "ZU-KLEE",
+   "p": "El canto es un silbido metálico de dos sílabas, ZU-KLEE. El llamado es un chirrido metálico agudo y ascendente, SCHRRREE."
   },
   {
    "t": "Dónde vive",
    "p": "La guía lo ubica en las tierras bajas del norte y del centro y en los Andes, y aclara que se lo encuentra a menudo con el tordo músico. Según Wikipedia, vive en herbazales y pastizales de la Argentina, Bolivia, Brasil, Paraguay y Uruguay."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es un silbido metálico de dos sílabas, ZU-KLEE. El llamado es un chirrido metálico agudo y ascendente, SCHRRREE."
-  },
-  {
-   "t": "Cría",
-   "p": "Es un parásito de cría. La guía indica que parasita casi exclusivamente al tordo músico, con el que suele andar, y Wikipedia confirma que sus huevos se ponen en nidos del tordo músico."
   }
  ],
  "fuentes": [
@@ -46,5 +50,8 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 395
+ "id": 395,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

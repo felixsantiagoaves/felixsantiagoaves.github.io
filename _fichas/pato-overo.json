@@ -25,23 +25,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 30 de agosto de 2026, en la Reserva Hídrica Achiras."
+  },
+  {
+   "t": "Frente blanca, flancos canela",
    "p": "Tiene una amplia frente y mejillas blancas, y el resto de la cabeza y el cuello negros con brillo verde. El dorso es negro, marginado de blanco, y el pecho es barrado. Los flancos son color canela y el vientre es blanco. En vuelo se ven una gran mancha alar y la rabadilla blancas, muy notables. La hembra y el juvenil son más pálidos. Mide unos 37 cm según Narosky y 48 cm según Pearman."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en humedales de las tierras bajas. La población austral migra hacia el norte en invierno."
+   "t": "El silbo",
+   "p": "Tiene un silbo largo y trinado; Pearman lo describe como un weee-poorr nasal."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Tiene un vuelo errático y suele andar en grupos. Se alimenta de vegetación acuática y semillas."
+   "t": "Vuelo errático",
+   "p": "Tiene un vuelo errático y suele andar en grupos. Se alimenta de vegetación acuática y semillas. Vive en humedales de las tierras bajas, y la población austral migra al norte en invierno."
   },
   {
-   "t": "Cómo suena",
-   "p": "Tiene un silbo largo y trinado; la guía de Pearman lo describe como un weee-poorr nasal."
-  },
-  {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Elige sitios secos, algo alejados de la orilla, y esconde el nido entre matas de pasto o cardos, forrado con plumillas. Pone de cinco a ocho huevos. La hembra incuba durante 26 días y después el padre acompaña a la familia y la defiende junto con la madre."
   }
  ],
@@ -57,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 243
+ "id": 243,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-08-30",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

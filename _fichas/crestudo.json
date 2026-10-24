@@ -29,20 +29,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un hornero gregario, terrestre y arbóreo, con un copete negruzco que mantiene erguido. El adulto tiene una media luna blanca debajo del ojo y las cobertoras auriculares castañas, y las bases de la cola rufas."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 3 de abril de 2026, en la UNRC."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte y del centro. Narosky lo ubica en bosques, áreas rurales y poblados, y lo describe bastante terrícola, en grupitos. Habita bosques abiertos y matorrales del chaco con pastos cortos o terreno desnudo, principalmente por debajo de los 500 m. Se lo considera bastante común y visible. Se distribuye desde el sureste de Bolivia y el oeste de Paraguay hasta el centro sur de la Argentina, y hacia el este hasta el extremo suroeste de Brasil y el noroeste de Uruguay. Se reconocen dos subespecies: campicola y alaudina."
+   "t": "Copete erguido",
+   "p": "Es un hornero gregario, terrestre y arbóreo, con un copete negruzco que mantiene erguido. El adulto tiene una media luna blanca debajo del ojo y las cobertoras auriculares castañas, y las bases de la cola rufas. Mide 16,5 cm."
   },
   {
-   "t": "Cómo suena",
+   "t": "Zhheerrrr",
    "p": "Su voz común es un \"zhheerrrrr\" débil, apagado pero metálico, a veces seguido de un trino rápido y metálico. Los grupos excitados sueltan una mezcla de raspidos, parloteos y silbidos suaves."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "El nombre del género, Coryphistera, viene del griego y significa \"copete en la corona de la cabeza\". El epíteto alaudina viene del latín y significa \"parecida a una alondra\". En Uruguay también se lo llama copetón."
+   "t": "Dónde vive",
+   "p": "En las tierras bajas del norte y del centro. Narosky lo ubica en bosques, áreas rurales y poblados, bastante terrícola, en grupitos. Vive en bosques abiertos y matorrales del chaco con pastos cortos o terreno desnudo, sobre todo por debajo de los 500 m, y se lo considera bastante común y visible. Se reconocen dos subespecies: campicola y alaudina."
+  },
+  {
+   "t": "Copete en la corona",
+   "p": "Coryphistera viene del griego y significa \"copete en la corona de la cabeza\"; alaudina, del latín, \"parecida a una alondra\". En Uruguay también se lo llama copetón."
   }
  ],
  "fuentes": [
@@ -57,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Crestudo"
+ "comun": "Crestudo",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-04-03",
+  "lugar": "UNRC"
+ }
 }

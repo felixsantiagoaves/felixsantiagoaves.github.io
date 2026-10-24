@@ -25,32 +25,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto tiene la cara, la garganta y el copete erguido carmesí, el dorso gris y las partes inferiores blancas, con el blanco subiendo por los costados del cuello. El juvenil es pardo arriba, con la cara, la garganta y un copete incipiente castaño cálido o pardo. A veces se junta con el Cardenal Amarillo y la Cardenilla."
+   "t": "Un día en la ruta",
+   "p": "El 31 de mayo de 2026 la anoté sobre la Ruta Provincial S292."
+  },
+  {
+   "t": "Copete, cara y garganta carmesí",
+   "p": "El adulto tiene la cara, la garganta y el copete erguido carmesí, el dorso gris y las partes inferiores blancas, con el blanco subiendo por los costados del cuello. El juvenil es pardo arriba, con un copete incipiente castaño cálido o pardo. A veces se junta con el Cardenal Amarillo y la Cardenilla. Mide unos 18,5 cm."
+  },
+  {
+   "t": "En parejas o en bandadas",
+   "p": "Anda en parejas, grupos o bandadas de hasta 50 aves. Es bastante terrícola, aunque se posa en ramas. Come sobre todo semillas y frutos, y también insectos como hormigas y termitas aladas. El canto es una serie lenta de gorjeos melodiosos y el llamado un \"chwik\" nasal."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en bosques ralos y sabanas de las tierras bajas del norte y del centro. Anda en parejas o grupos, a veces en caminos, y se ve más en arbustos; habita el norte y centro del Cono Sur: desde el noreste de Bolivia hacia el sur por Paraguay, el extremo sureste de Brasil, Uruguay y el centro de la Argentina, hasta La Pampa y Buenos Aires. Es especialmente abundante en partes del Chaco."
+   "p": "Bosques ralos y sabanas de las tierras bajas del norte y del centro, desde el noreste de Bolivia hasta La Pampa y Buenos Aires. Es especialmente abundante en partes del Chaco."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Anda en parejas, grupos o bandadas, a veces de hasta 50 aves. Es bastante terrícola, aunque se posa en ramas, y busca alimento desde el suelo hasta unos 6 m de altura. Come sobre todo semillas y frutos, y también insectos como hormigas y termitas aladas. Su canto es una serie rítmica de notas melodiosas."
+   "t": "El nido",
+   "p": "Nidifica entre septiembre y febrero. Arma un nido expuesto en forma de taza, con fibras vegetales, y pone generalmente tres huevos verdosos con manchas ocres o pardas. El Tordo Renegrido le parasita el nido."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto es una serie lenta y rica de gorjeos melodiosos, y también suelta un revoltijo lento de chillidos y silbidos. El llamado es un \"chwik\" nasal y lleno."
+   "t": "Cardenal, nomás",
+   "p": "Se la llama cardenal común, cardenal copete rojo o simplemente cardenal. Coronata viene del latín y significa \"coronado\". Se describió en 1776."
   },
   {
-   "t": "Nidificación",
-   "p": "Nidifica entre septiembre y febrero. El nido es expuesto, en forma de taza o semiesfera, hecho con fibras vegetales y forrado con raicillas o cerdas, y puede reutilizarse en la misma temporada; lleva de 6 a 8 días construirlo. La puesta suele ser de tres huevos, a veces cuatro, verdosos con manchas ocres o pardas. La incubación dura 14 a 15 días y los pichones permanecen en el nido otros 14 a 15 días. Sufre parasitismo de cría por el Tordo Renegrido."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "En Argentina se la llama cardenal común, cardenal copete rojo o simplemente cardenal. \"Copete rojo\" alude a su cresta; el epíteto coronata viene del latín y significa \"coronado\". Fue descrita en 1776 por John Frederick Miller."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN la clasifica como de Preocupación menor, pero la pérdida de hábitat, la caza ilegal y el comercio ilegal la afectan: es una de las aves más buscadas como mascota en Argentina. Fue introducida en Chile, Hawái, Puerto Rico, Ecuador, Perú y Japón."
+   "t": "La más buscada como mascota",
+   "p": "La UICN la clasifica como de Preocupación menor, pero la pérdida de hábitat, la caza ilegal y el comercio ilegal la afectan: es de las aves más buscadas como mascota en Argentina. Se la introdujo en Chile, Hawái, Puerto Rico, Ecuador, Perú y Japón."
   }
  ],
  "fuentes": [
@@ -65,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cardenal Copete Rojo"
+ "comun": "Cardenal Copete Rojo",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-05-31",
+  "lugar": "Ruta Provincial S292"
+ }
 }

@@ -25,23 +25,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto es mayormente pardo, con el dorso y la rabadilla más negros y un collar blanco completo, que en las aves posadas puede verse interrumpido. La cola tiene la punta escotada. Según Wikipedia, los jóvenes son más apagados y tienen el collar reducido o ausente."
+   "t": "Una sola vez, por ahora",
+   "p": "Hasta ahora lo anoté una sola vez, el 10 de octubre de 2026, en la Reserva Hídrica Achiras, y ese día lo fotografié."
+  },
+  {
+   "t": "El collar",
+   "p": "El adulto es mayormente pardo, con el dorso y la rabadilla más negros y un collar blanco completo, que en las aves posadas puede verse interrumpido. La cola tiene la punta escotada. Según Wikipedia, los jóvenes son más apagados y tienen el collar reducido o ausente. Mide 21,5 cm."
+  },
+  {
+   "t": "Bandadas en altura",
+   "p": "Es muy sociable y forma bandadas de 100 aves o más, a menudo con otras especies. Tiene un vuelo potente, rápido y directo, y sube en las térmicas hasta gran altura. Caza insectos voladores en vuelo, como escarabajos, abejas y hormigas voladoras."
+  },
+  {
+   "t": "Detrás de la cascada",
+   "p": "Según Wikipedia, construye un nido de barro, musgo y quitina sobre una repisa dentro de una cueva, generalmente detrás de una cascada, y pone dos huevos blancos entre marzo y julio. Cría en montañas y colinas."
   },
   {
    "t": "Dónde vive",
    "p": "La guía indica que está de septiembre a abril en los Andes del noroeste (hasta unos 3000 m), en las sierras del centro y en la selva paranaense. Según Wikipedia, vive en bosque tropical y subtropical, zonas rocosas y bosque muy degradado, y se extiende desde los Estados Unidos hasta la Argentina y el sureste de Brasil."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es muy sociable y forma bandadas de 100 aves o más, a menudo con otras especies. Tiene un vuelo potente, rápido y directo, y sube en las térmicas hasta gran altura. Caza insectos voladores en vuelo, como escarabajos, abejas y hormigas voladoras."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Según Wikipedia, construye un nido de barro, musgo y quitina sobre una repisa dentro de una cueva, generalmente detrás de una cascada, y pone dos huevos blancos entre marzo y julio. Cría en montañas y colinas."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "También se lo llama vencejo acollarado, vencejo de collar blanco o vencejo de cuello blanco."
   }
  ],
@@ -54,5 +58,10 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 403
+ "id": 403,
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-10-10",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

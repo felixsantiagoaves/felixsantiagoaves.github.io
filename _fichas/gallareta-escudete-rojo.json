@@ -21,23 +21,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Nada con la cola erguida y es más esquiva que las otras gallaretas de tierras bajas: vive en juncales y rara vez en aguas abiertas. El adulto tiene un escudete frontal empinado y puntiagudo, rojo oscuro, y el pico amarillo. En vuelo se notan los grandes costados blancos de la zona anal. El juvenil tiene la frente notablemente empinada y la garganta blanquecina."
+   "t": "Esquiva y con la cola erguida",
+   "p": "Nada con la cola erguida y es más esquiva que las otras gallaretas de tierras bajas: vive en juncales y rara vez en aguas abiertas. Narosky la describe más desconfiada y oculta que la Ligas Rojas y la Chica."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina es ampliamente distribuida, pero suele estar en juncales y rara vez en aguas abiertas (Pearman y Areta); Narosky la describe más desconfiada y oculta que la Ligas Rojas y la Chica, en humedales con juncos. En conjunto habita en Brasil, Paraguay, Chile, Uruguay, Argentina y Perú."
+   "t": "El escudete rojo",
+   "p": "El adulto tiene un escudete frontal empinado y puntiagudo, rojo oscuro, y el pico amarillo. En vuelo se notan los grandes costados blancos de la zona anal. El juvenil tiene la frente notablemente empinada y la garganta blanquecina. Mide 39 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Vive en bandadas de su propia especie o junto a otras gallaretas, como la Ligas Rojas o la Chica."
+   "t": "En grupo",
+   "p": "Vive en bandadas de su especie o junto a otras gallaretas, como la Ligas Rojas o la Chica. Está ampliamente distribuida en el país y también en Brasil, Paraguay, Chile, Uruguay y Perú."
   },
   {
-   "t": "Nidificación",
-   "p": "El nido es similar al de la Gallareta Ligas Rojas, y los huevos son algo más pequeños y de color grisáceo claro. Tanto esta especie como la Ligas Rojas son parasitadas por el Pato Cabeza Negra, que pone sus huevos en el nido para que ellas los incuben."
+   "t": "Nido parasitado",
+   "p": "El nido es parecido al de la Gallareta Ligas Rojas, y los huevos son algo más chicos y de color grisáceo claro. Tanto esta especie como la Ligas Rojas son parasitadas por el Pato Cabeza Negra, que pone sus huevos en el nido para que ellas los incuben."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Rufi-frons",
    "p": "El nombre científico viene del latín rufi (\"rojo\") y frons (\"frente\"). También se la llama gallareta frente roja, gallareta frentirroja, focha de frente roja y tagua de frente roja."
   }
  ],
@@ -53,5 +53,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Gallareta Escudete Rojo"
+ "comun": "Gallareta Escudete Rojo",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

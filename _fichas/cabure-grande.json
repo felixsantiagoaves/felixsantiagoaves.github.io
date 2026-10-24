@@ -25,32 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un mochuelo del bosque patagónico y, en forma dispersa, de la estepa. La forma parda es mucho más numerosa que la rojiza. Tiene la corona casi siempre estriada, con manchas blancas o ante a los lados del pecho y los flancos, más marcadas que en el Caburé Chico, y la cola rufa con 9 a 11 barras negras. El juvenil tiene la corona poco marcada, la ceja reducida y sin manchas en el pecho."
+   "t": "Hasta ahora, una sola vez",
+   "p": "Lo anoté una sola vez: el 30 de agosto de 2026, en la Reserva Hídrica Achiras."
   },
   {
-   "t": "Cómo distinguirlo del Caburé Chico",
-   "p": "Es muy parecido al Caburé Chico (Glaucidium brasilianum), un poco menor, y la voz y las barras de la cola son los criterios principales. La cola del Caburé Grande tiene entre 6 y 11 barras pálidas, y varía con el morfo: unas 8 a 11 barras rojizas en el morfo pardo y 6 a 8 blanquecinas en el gris. El Caburé Chico tiene unas 5 o 6 barras angostas blancas en la cola. Ojo: el morfo gris del Caburé Grande puede tener tantas barras como el Chico, así que las barras solas no siempre alcanzan. Además, el Caburé Chico no está presente en la Patagonia."
+   "t": "Un mochuelo patagónico",
+   "p": "Es un mochuelo del bosque patagónico y, de forma dispersa, de la estepa. La forma parda es mucho más numerosa que la rojiza. Tiene la corona casi siempre estriada, con manchas blancas o ante a los lados del pecho y los flancos, más marcadas que en el Caburé Chico, y la cola rufa con 9 a 11 barras negras. El juvenil tiene la corona poco marcada, la ceja reducida y sin manchas en el pecho. Mide 18 cm."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en la Argentina y Chile. Pearman y Areta lo ubican en el bosque patagónico y, de forma dispersa, en la estepa patagónica; Narosky, en el Bosque Araucano, y lo marca como especie migratoria. Según una de las fuentes de Wikipedia, en otoño e invierno se desplaza hacia el nordeste y se cree que llega al centro y norte del país, por eso puede aparecer en Córdoba en esa época. Llega hasta unos 1.500 m de altitud."
+   "t": "¿Caburé Grande o Chico?",
+   "p": "Es muy parecido al Caburé Chico (Glaucidium brasilianum), un poco menor, y la voz y las barras de la cola son los criterios principales. La cola del Grande tiene entre 6 y 11 barras pálidas, según el morfo; la del Chico, unas 5 o 6 angostas y blancas. Ojo: el morfo gris del Grande puede tener tantas barras como el Chico, así que las barras solas no siempre alcanzan. El Chico no está en la Patagonia."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Tiene costumbres relativamente diurnas. Por su tamaño pequeño, su vuelo silencioso y porque se queda inmóvil en la rama, pasa fácilmente inadvertido. Es agresivo con sus presas y caza animales incluso más grandes que él, a los que mata rápido con las garras."
+   "t": "¿Qué hace en Córdoba?",
+   "p": "Vive en Argentina y Chile. Pearman y Areta lo ubican en el bosque patagónico y, de forma dispersa, en la estepa; Narosky, en el Bosque Araucano, y lo marca como migratorio. Según una de las fuentes de Wikipedia, en otoño e invierno se desplaza al nordeste y se cree que llega al centro y norte del país, por eso puede aparecer en Córdoba en esa época. Llega hasta unos 1.500 m."
   },
   {
-   "t": "Cómo suena",
-   "p": "Canta una serie larga de notas \"tut\" (18 a 20 en 5 segundos), más agudas, rápidas y menos resonantes que las del Caburé Chico."
+   "t": "Pequeño pero agresivo",
+   "p": "Tiene costumbres relativamente diurnas. Se queda inmóvil en la rama y casi no se lo ve. Es agresivo con sus presas y caza animales incluso más grandes que él, a los que mata rápido con las garras. Canta una serie larga de notas \"tut\" (18 a 20 en 5 segundos), más agudas y rápidas que las del Caburé Chico."
   },
   {
-   "t": "Nidificación",
-   "p": "Anida entre septiembre y noviembre en huecos de árboles y pone de 3 a 5 huevos blancos, opacos y bastante redondeados, de unos 30 × 25 mm."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo conoce como Caburé Grande, Chuncho o Mochuelo Patagónico, y a veces se escribe Glaucidium nanum."
+   "t": "Nido y nombres",
+   "p": "Anida entre septiembre y noviembre en huecos de árboles y pone de 3 a 5 huevos blancos. También se lo conoce como Chuncho o Mochuelo Patagónico, y a veces se escribe Glaucidium nanum."
   }
  ],
  "fuentes": [
@@ -73,5 +69,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Caburé Grande"
+ "comun": "Caburé Grande",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-08-30",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

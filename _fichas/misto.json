@@ -26,27 +26,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un jilguero chico, amarillo, de dorso ocráceo muy estriado de pardo. El macho tiene la corona y el dorso estriados, la rabadilla oliva, una zona amarilla bien contrastada delante del ojo, anteojos blancos, y un lavado oliva en el pecho; el párpado y el vientre son amarillos. La hembra es más pálida, con el pecho y los flancos ocráceos y un lavado pardo en el pecho. Narosky lo describe como más terrícola que el jilguero dorado."
+   "t": "Amarillo y estriado",
+   "p": "Es un jilguero chico, amarillo, de dorso ocráceo muy estriado de pardo. El macho tiene la corona y el dorso estriados, la rabadilla oliva, una zona amarilla bien contrastada delante del ojo y anteojos blancos; el párpado y el vientre son amarillos. La hembra es más pálida, con el pecho y los flancos ocráceos. Mide entre 12 y 12,5 cm. Narosky lo describe más terrícola que el Jilguero Dorado."
   },
   {
-   "t": "Dónde vive",
-   "p": "Es común en las tierras bajas y el piedemonte (hasta unos 1350 m), en sabanas, pastizales y áreas rurales. Forma bandadas a veces enormes, que se parecen a un enjambre, y se lo ve a menudo en jaula. Parece nómada."
+   "t": "Bandadas como enjambres",
+   "p": "Es común en las tierras bajas y el piedemonte, hasta unos 1350 m, en sabanas, pastizales y áreas rurales. Forma bandadas a veces enormes, que se parecen a un enjambre, y se lo ve a menudo en jaula. Parece nómada."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Vuelo de cortejo",
    "p": "Recorre el suelo y se posa en arbustos y cercas. Come sobre todo semillas e insectos, y también frutos. Duerme en grupo, por ejemplo en tacuarales. En el vuelo nupcial se eleva en vertical y después cae en un planeo lento, mientras canta."
   },
   {
-   "t": "Cómo suena",
-   "p": "Posado canta una serie rápida de trinos cortos, penetrantes, metálicos y zumbadores, que suelen alargarse hacia el final. El canto de vuelo es más largo y termina en ronroneos o zumbidos mientras desciende. Su llamado habitual es un P-TZÍU agudo, de dos sílabas."
+   "t": "Trinos metálicos",
+   "p": "Posado canta una serie rápida de trinos cortos, penetrantes, metálicos y zumbadores, que suelen alargarse hacia el final. El canto de vuelo es más largo y termina en ronroneos mientras desciende. Su llamado habitual es un P-TZÍU agudo, de dos sílabas."
   },
   {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Se reproduce entre septiembre y marzo. El nido está en el suelo, escondido entre plantas como cactus o zarzamoras, hecho con pasto y forrado con crines. La nidada es de tres a cinco huevos de fondo azulado con pintas rojizas."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Misto, chirigüe sabanero",
    "p": "Misto es el nombre argentino. También se lo llama chirigüe sabanero o chigüi. Sicalis viene de un nombre griego para un pajarito no identificado, y luteola, del latín, significa amarillento."
   }
  ],
@@ -61,5 +61,8 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

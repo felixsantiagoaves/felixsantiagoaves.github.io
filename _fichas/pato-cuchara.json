@@ -25,23 +25,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es castaño acanelado, con la cabeza y el cuello claros y pecas negras en el dorso, el pecho y los flancos. El rasgo clave es el pico: largo, alto y ensanchado (unos 6 cm), negro y en forma de espátula. En vuelo se ven las cubiertas de las alas celestes con una faja blanca. El subcaudal es negro con una mancha blanca. El iris es blanco. Mide unos 36 cm según Narosky y 47 cm según Pearman."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que lo anoté fue el 19 de julio de 2026, en la Laguna Rivero, en Alcira Gigena. La primera había sido el 31 de mayo, en un camino rural."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en humedales y está extendido en las tierras bajas; en el noroeste es raro, al pie de las sierras."
+   "t": "El pico lo dice todo",
+   "p": "Es castaño acanelado, con la cabeza y el cuello claros y pecas negras en el dorso, el pecho y los flancos. El rasgo clave es el pico: largo, alto y ensanchado (unos 6 cm), negro y en forma de espátula. En vuelo se ven las cubiertas de las alas celestes con una faja blanca. El iris es blanco. Mide unos 36 cm según Narosky y 47 cm según Pearman."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Filtra",
    "p": "Lleva el pico casi rozando el agua. Es un gran filtrador en zonas con vegetación acuática, donde captura microorganismos."
   },
   {
-   "t": "Nidificación",
-   "p": "Construye el nido en el suelo, cubierto por vegetación. Pone entre cinco y diez huevos de color cremoso y los incuba durante 25 días."
+   "t": "Dónde vive",
+   "p": "En humedales, extendido en las tierras bajas; en el noroeste es raro, al pie de las sierras."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "El nido",
+   "p": "Lo construye en el suelo, cubierto por vegetación. Pone entre cinco y diez huevos de color cremoso y los incuba durante 25 días."
+  },
+  {
+   "t": "Pato espátula",
    "p": "También se lo conoce como pato cuchara rojo o pato espátula. Antes se lo clasificaba como Anas platalea."
   }
  ],
@@ -57,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 238
+ "id": 238,
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-07-19",
+  "lugar": "Laguna Rivero"
+ }
 }

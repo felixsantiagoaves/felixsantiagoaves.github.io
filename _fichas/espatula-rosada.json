@@ -21,23 +21,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Tiene el pico largo y aplanado, con la punta en forma de espátula. A menudo anda en grupos o con garzas. El adulto en cría tiene el pico de amarillento a negro, las loras anaranjadas, la corona desnuda color azufre y las patas largas y rojizas. Tiene un mechón pectoral rosado, y el dorso inferior, las alas y el vientre rosados, con las escapulares, la rabadilla y la zona anal magenta. El inmaduro no tiene magenta en el plumaje y la cabeza es toda blanca. Se notan las pequeñas puntas negras de las primarias."
+   "t": "Hasta ahora, una sola vez",
+   "p": "La anoté una sola vez: el 17 de febrero de 2026, en la Laguna Rivero, en Alcira Gigena."
+  },
+  {
+   "t": "El pico de cuchara",
+   "p": "Tiene el pico largo y aplanado, con la punta en forma de espátula. El adulto en cría tiene el pico de amarillento a negro, las loras anaranjadas, la corona desnuda color azufre y las patas largas y rojizas, con un mechón pectoral rosado, y el dorso inferior, las alas y el vientre rosados, con las escapulares, la rabadilla y la zona anal magenta. El inmaduro no tiene magenta y la cabeza es toda blanca. Mide 80 cm."
+  },
+  {
+   "t": "Revuelve el lodo",
+   "p": "Se alimenta moviendo el pico de un lado a otro en el lodo y en aguas poco profundas. Come crustáceos, insectos y larvas, moluscos, anfibios, peces, plantas acuáticas y semillas. Vive sola o en grupos chicos, a veces junto a corocoras, garzas y garzones."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte y se desplaza hacia el norte en invierno (Pearman y Areta); Narosky la ubica en humedales y cercanías, y dice que también se posa en árboles. En conjunto se distribuye desde el sur de Estados Unidos hasta Sudamérica, en llanos, manglares, bosques pantanosos, ciénagas, pantanos y charcos en sabanas y áreas abiertas."
+   "p": "En las tierras bajas del norte, y se desplaza al norte en invierno (Pearman y Areta). Narosky la ubica en humedales y cercanías, y dice que también se posa en árboles. En conjunto va desde el sur de Estados Unidos hasta Sudamérica."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come crustáceos, insectos y larvas, moluscos, anfibios, peces, plantas acuáticas y semillas. Se alimenta moviendo el pico de un lado a otro en el lodo y en aguas poco profundas. Vive sola o en grupos pequeños, a veces junto a corocoras, garzas y garzones."
+   "t": "El nido",
+   "p": "Pone de 1 a 4 huevos blancos y manchados, que se incuban de 22 a 24 días. Ambos padres alimentan a los pichones por regurgitación; los jóvenes dejan el nido a las 4 o 5 semanas, pero siguen dependiendo de los padres más allá de las 8."
   },
   {
-   "t": "Nidificación",
-   "p": "Pone de 1 a 4 huevos blancos y manchados, con una incubación de 22 a 24 días. Ambos padres alimentan a los pichones por regurgitación; los jóvenes dejan el nido a las 4 o 5 semanas, pero siguen dependiendo de los padres más allá de las 8 semanas."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Sibiya",
    "p": "Wikipedia la nombra como Ajaia ajaja y Platalea ajaja, y también la llama sibiya."
   }
  ],
@@ -53,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Espátula Rosada"
+ "comun": "Espátula Rosada",
+ "apertura": {
+  "tipo": "unica",
+  "fecha": "2026-02-17",
+  "lugar": "Laguna Rivero"
+ }
 }

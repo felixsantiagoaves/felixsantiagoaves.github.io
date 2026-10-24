@@ -21,19 +21,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto de las tierras bajas del norte y del centro tiene el iris blanco y la cabeza y la garganta pardo negruzcas, como una capucha. Es pardo oscuro por arriba, con la cola rojiza cruzada por 4 bandas negras, y tiene rayas pardo cálido en el pecho superior y barras del mismo tono en el resto de abajo. En vuelo se ve una mancha grande, redonda y rojiza en la base de las primarias, y por abajo las alas son cremosas con barras grises poco marcadas. El juvenil tiene la corona y la nuca pardas con rayas ante, una ceja ante bien visible, el pecho muy rayado de pardo, el vientre barrado y la cola canela con 6 o 7 bandas finas."
+   "t": "Ojo blanco y capucha oscura",
+   "p": "El adulto de las tierras bajas del norte y del centro tiene el iris blanco y la cabeza y la garganta pardo negruzcas, como una capucha. Es pardo oscuro por arriba, con la cola rojiza cruzada por 4 bandas negras, y tiene rayas pardo cálido en el pecho superior y barras del mismo tono en el resto de abajo. Mide entre 38 y 42 cm, y la envergadura es de 81 cm."
+  },
+  {
+   "t": "En vuelo",
+   "p": "En vuelo se ve una mancha grande, redonda y rojiza en la base de las primarias, y por abajo las alas son cremosas con barras grises poco marcadas."
+  },
+  {
+   "t": "El juvenil",
+   "p": "Tiene la corona y la nuca pardas con rayas ante, una ceja ante bien visible, el pecho muy rayado de pardo, el vientre barrado y la cola canela con 6 o 7 bandas finas."
+  },
+  {
+   "t": "Qué come",
+   "p": "Se alimenta de insectos, pequeños mamíferos y pequeños reptiles."
   },
   {
    "t": "Dónde vive",
    "p": "Según la guía, está muy extendido en las tierras bajas del norte y del centro, las yungas y la selva paranaense. En el continente se extiende desde el sur de México hasta Uruguay, y vive en sabanas, montes y bosques."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta de insectos, pequeños mamíferos y pequeños reptiles."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "En la Argentina se lo llama taguató; en otros lugares, gavilán pollero, gavilán caminero o aguilucho de ala rojiza. La guía lo llama Roadside Hawk, y algunas fuentes lo ubican en el género Buteo en lugar de Rupornis."
   }
  ],
@@ -49,5 +57,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 19
+ "id": 19,
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

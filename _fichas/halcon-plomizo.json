@@ -25,28 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un halcón esbelto, de alas finas y cola larga y negra con barras blancas. El adulto tiene el dorso plomizo, una vincha ocrácea blancuzca que une las cejas por la nuca, un bigote y una faja auricular negros, y la garganta y las mejillas blancuzcas. El pecho es blancuzco con poco estriado y lleva un chaleco negruzco, mientras que el vientre y las piernas son canelas. Las alas plegadas llegan a la mitad de la cola. En vuelo se ven las cubiertas negras de las alas, con pecas blancas. El juvenil tiene el dorso pardo con bordes ocráceos y el pecho más estriado."
+   "t": "Una tarde en Laguna Seca",
+   "p": "El 27 de julio de 2026 lo anoté en Laguna Seca, en Suco, y ese día lo fotografié."
+  },
+  {
+   "t": "Esbelto, de cola larga",
+   "p": "Es un halcón esbelto, de alas finas y cola larga y negra con barras blancas. El adulto tiene el dorso plomizo, una vincha ocrácea blancuzca que une las cejas por la nuca, un bigote y una faja auricular negros, y la garganta y las mejillas blancuzcas. El pecho es blancuzco con un chaleco negruzco, y el vientre y las piernas son canelas. Mide entre 36 y 41 cm. El juvenil tiene el dorso pardo con bordes ocráceos y el pecho más estriado."
+  },
+  {
+   "t": "Caza en picada",
+   "p": "Caza en vuelo, con picadas rápidas. Come sobre todo aves chicas, también insectos y otros animales chicos; sus presas suelen pesar entre un quinto y la mitad de su propio peso. A veces planea al atardecer cazando insectos, y se lo vio cazando en campos que se queman, donde muchas aves huyen. En Brasil se lo observó siguiendo al aguará guazú y capturando las aves que este espanta. Las parejas pueden cazar en cooperación."
   },
   {
    "t": "Dónde vive",
-   "p": "Se lo encuentra por buena parte del país, sobre todo en áreas rurales, pastizales abiertos y sabanas. A escala continental ha desaparecido de muchas zonas, por ejemplo en el norte y el centro de México."
+   "p": "Por buena parte del país, sobre todo en áreas rurales, pastizales abiertos y sabanas. A escala continental ha desaparecido de muchas zonas, por ejemplo en el norte y el centro de México."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Caza en vuelo, con picadas rápidas. Come sobre todo aves pequeñas, también insectos y otros animales chicos; sus presas suelen pesar entre un quinto y la mitad de su propio peso. A veces planea al atardecer cazando insectos, y se ha visto cazando en campos que se queman, donde muchas aves huyen. En Brasil se lo observó siguiendo al aguará guazú y capturando las aves que este espanta. Las parejas pueden cazar en cooperación."
-  },
-  {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Hace una plataforma de palitos en un arbusto o árbol, a cualquier altura, y pone dos o tres huevos."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Plomizo y aplomado hacen referencia al color plomo del plumaje, el gris azulado de la espalda y las alas. También se lo llama halcón aplomado, perdiguero, fajado o aleto. Antes se lo conocía en inglés como orange-breasted hobby porque su forma se parece a la de los alcotanes."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo considera de Preocupación menor a nivel global, aunque ha desaparecido de muchas partes de su distribución."
+   "t": "Plomizo, aplomado",
+   "p": "Plomizo y aplomado hacen referencia al color plomo del plumaje. También se lo llama halcón aplomado, perdiguero, fajado o aleto. En inglés se lo conocía como orange-breasted hobby porque su forma se parece a la de los alcotanes. La UICN lo considera de Preocupación menor a nivel global, aunque desapareció de muchas partes de su distribución."
   }
  ],
  "fuentes": [
@@ -65,5 +65,11 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 168
+ "id": 168,
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-07-27",
+  "lugar": "Laguna Seca",
+  "foto_fecha": "2026-07-27"
+ }
 }

@@ -25,28 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es de las tierras bajas, y en invierno convive con el Cuervillo Cara Pelada y con el Yanavico. En época de cría el adulto tiene el pico gris o rosado con la base y las loras rojas, anteojos blancos finos, los tarsos rojizos, y la cabeza, el cuello y las partes inferiores castaño cobrizo, con las alas negras brillantes de verde. Fuera de la cría tiene la cabeza y el cuello oscuros con finas estrías blancas, sin anteojos ni brillo castaño, y las patas grises. En vuelo tiene alas bastante puntiagudas y delgadas con las cobertoras menores castañas, y las patas sobresalen mucho de la cola; las bandadas van en V."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 17 de enero de 2026, en la Reserva Aguada de los Pájaros, en Villa Rumipal."
+  },
+  {
+   "t": "Castaño cobrizo y alas verdosas",
+   "p": "En época de cría el adulto tiene el pico gris o rosado con la base y las loras rojas, anteojos blancos finos, los tarsos rojizos, y la cabeza, el cuello y las partes inferiores castaño cobrizo, con las alas negras brillantes de verde. Fuera de la cría la cabeza y el cuello son oscuros con finas estrías blancas, sin anteojos, y las patas grises. En vuelo tiene las alas bastante puntiagudas y las patas sobresalen mucho de la cola. Mide 49 cm."
+  },
+  {
+   "t": "En V",
+   "p": "Vuela con el cuello y las patas extendidos, en formación en V. Es social, gregario y nómada: se desplaza cuando la zona de alimentación se seca. Se alimenta sondeando el suelo y el fango con el pico, en aguas de menos de 20 cm, a veces en bandadas de varios cientos. Es principalmente carnívoro: insectos, crustáceos, arañas, caracoles, sanguijuelas y anfibios."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es ampliamente distribuido en las tierras bajas (Pearman y Areta lo dan también para el noroeste andino hasta unos 2000 m); Narosky lo describe en humedales y áreas rurales, en grandes bandadas que vuelan en V y siguen el arado. En invierno comparte ambientes con el Cuervillo Cara Pelada y con el Cuervillo Puneño. La población sudamericana va desde el sur de Brasil y el sureste de Bolivia hasta el centro de la Argentina y el sur de Chile, y no migra. Vive en pantanos de agua dulce y salada con juncos, y alrededor de estanques, ríos, praderas inundadas y campos agrícolas, siempre que haya aguas poco profundas para alimentarse."
+   "p": "Es ampliamente distribuido en las tierras bajas (Pearman y Areta lo dan también para el noroeste andino hasta unos 2000 m). Narosky lo describe en humedales y áreas rurales, en grandes bandadas que vuelan en V y siguen el arado. En invierno comparte ambientes con el Cuervillo Cara Pelada y con el Cuervillo Puneño. No migra."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es principalmente carnívoro: come insectos, crustáceos, arañas, caracoles, sanguijuelas y anfibios, y los caracoles y babosas pueden ser entre el 55 y el 90 % de la dieta. Se alimenta sondeando el suelo y el fango con el pico, en aguas de menos de 20 cm, a veces en bandadas de varios cientos. Es social, gregario y nómada: se desplaza cuando la zona de alimentación se seca. Vuela con el cuello y las patas extendidos, en formación en V."
+   "t": "El nido",
+   "p": "En Sudamérica nidifica en noviembre y diciembre. Ambos sexos construyen el nido, normalmente entre el follaje denso de arbustos o juncos, o en árboles no muy altos sobre el agua. Hace una puesta al año, de 3 a 4 huevos que eclosionan tras unos 20 días. Las crías dejan el nido a las cinco semanas y son independientes a las ocho."
   },
   {
-   "t": "Nidificación",
-   "p": "En Sudamérica nidifica en noviembre y diciembre. Ambos sexos construyen el nido, normalmente entre el follaje denso de arbustos o juncos, o en árboles no muy altos sobre el agua. Hace una puesta al año, de 3 a 4 huevos en promedio, que eclosionan tras unos 20 días de incubación. Las crías dejan el nido a las cinco semanas y son independientes a las ocho."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Wikipedia lo llama morito cariblanco; también figura como ibis de cara blanca y cuervo de pantano."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo clasifica como de Preocupación menor, por su amplia distribución y sus poblaciones estables o en aumento. Entre las amenazas se citan el cambio climático, la contaminación que degrada los hábitats, la caza y los pesticidas agrícolas."
+   "t": "Morito cariblanco",
+   "p": "Wikipedia lo llama morito cariblanco; también figura como ibis de cara blanca y cuervo de pantano. La UICN lo clasifica como de Preocupación menor. Entre las amenazas se citan el cambio climático, la contaminación, la caza y los pesticidas agrícolas."
   }
  ],
  "fuentes": [
@@ -61,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cuervillo de Cañada"
+ "comun": "Cuervillo de Cañada",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-01-17",
+  "lugar": "Reserva Aguada de los Pájaros"
+ }
 }

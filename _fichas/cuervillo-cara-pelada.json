@@ -21,28 +21,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un ibis de pantano, de patas cortas, con piel desnuda en la cara y la base del pico gruesa. Convive con el Cuervillo de Cañada y rara vez con el Yanavico. En época de cría el adulto tiene la cara roja y el pico y las patas rosados, y es sobre todo negro con brillo verde. Fuera de la cría el pico es amarillento y el plumaje más pardo y con menos brillo. En vuelo tiene las alas bastante anchas y redondeadas, las patas no pasan la cola, y las bandadas van en formación suelta."
+   "t": "Un día en la Laguna Rivero",
+   "p": "El 19 de julio de 2026 lo anoté en la Laguna Rivero, en Alcira Gigena."
+  },
+  {
+   "t": "Ibis de cara pelada",
+   "p": "Es un ibis de pantano, de patas cortas, con piel desnuda en la cara y la base del pico gruesa. En época de cría el adulto tiene la cara roja y el pico y las patas rosados, y es sobre todo negro con brillo verde. Fuera de la cría el pico es amarillento y el plumaje más pardo y con menos brillo. Mide 54 cm. Convive con el Cuervillo de Cañada y rara vez con el Yanavico."
+  },
+  {
+   "t": "Escarba con el pico",
+   "p": "Come lombrices, peces chicos, crustáceos, insectos acuáticos, moluscos, granos y hojas. Escarba en la tierra húmeda y en el agua con el pico curvo y lo cierra al detectar una presa. Suele formar bandadas, con su especie o con otros ibis, y puede juntarse en grupos de varios cientos. En vuelo tiene las alas anchas y redondeadas y las patas no pasan la cola."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte, en humedales y aguas someras, en grupos o bandadas no muy grandes (Narosky). Se distribuye desde Colombia y Venezuela hasta el norte de la Argentina y Uruguay, y por gran parte de Brasil, con Paraguay y el noreste de Bolivia. Vive en pantanos abiertos, sabanas, marismas, humedales, prados, campos inundados y arrozales."
+   "p": "En las tierras bajas del norte, en humedales y aguas someras, en grupos o bandadas no muy grandes (Narosky). Se distribuye de Colombia y Venezuela al norte de Argentina y Uruguay, y por gran parte de Brasil. Vive en pantanos abiertos, sabanas, marismas, prados, campos inundados y arrozales."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come lombrices, peces pequeños, crustáceos, insectos acuáticos, moluscos, granos y hojas. Escarba en la tierra húmeda y en el agua con el pico curvo y lo cierra al detectar una presa. Suele formar grandes bandadas, con su especie o con otros ibis; se alimenta en grupos pequeños, pero puede juntarse en grupos de varios cientos. Es poco territorial y poco agresivo, salvo que haya competencia por el alimento."
+   "t": "El nido",
+   "p": "Anida en colonias, a menudo mezcladas con otras aves acuáticas, en árboles y arbustos sobre pantanos y a orillas de ríos, en octubre y noviembre en buena parte de Sudamérica. El nido es una plataforma pequeña de hierbas acuáticas y ramitas, que suele reutilizar año tras año. Pone de uno a seis huevos azul verdoso, que ambos padres incuban de 21 a 23 días."
   },
   {
-   "t": "Nidificación",
-   "p": "Anida en colonias, a menudo mezcladas con otras aves acuáticas, en árboles y arbustos sobre pantanos y a orillas de ríos. La época se asocia a la temporada de lluvias: octubre a noviembre en buena parte de Sudamérica. El nido es una plataforma pequeña de hierbas acuáticas y ramitas, de unos 35 cm, que suele reutilizar año tras año. Pone de uno a seis huevos azul verdoso, que ambos padres incuban de 21 a 23 días; los pichones salen del nido a las tres semanas."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Wikipedia lo llama ibis afeitado; también figura como coquito, ibis de cara roja y cuervo de pantano de cara pelada."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo clasifica como de Preocupación menor, por ser bastante común y tener un área de distribución amplia. Las principales amenazas son el cambio climático y la contaminación, que reducen y degradan los humedales donde vive."
+   "t": "Ibis afeitado",
+   "p": "Wikipedia lo llama ibis afeitado; también figura como coquito, ibis de cara roja y cuervo de pantano de cara pelada. La UICN lo clasifica como de Preocupación menor, y las principales amenazas son el cambio climático y la contaminación, que degradan los humedales."
   }
  ],
  "fuentes": [
@@ -57,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cuervillo Cara Pelada"
+ "comun": "Cuervillo Cara Pelada",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-07-19",
+  "lugar": "Laguna Rivero"
+ }
 }

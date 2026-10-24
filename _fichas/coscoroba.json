@@ -25,32 +25,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es un \"cisne\" poco común, blanco, de patas largas y pico parecido al de un pato. El adulto es todo blanco con el pico rojo brillante, de aspecto ceroso. En vuelo se ve blanco con las puntas de las primarias negras. El juvenil tiene el pico gris, la gorra negruzca y un lavado pardo grisáceo en el dorso."
+   "t": "Una tarde en la Laguna Rivero",
+   "p": "El 17 de febrero de 2026 la anoté en la Laguna Rivero, en Alcira Gigena, y ese día la fotografié."
+  },
+  {
+   "t": "Blanca y de pico rojo",
+   "p": "Es un \"cisne\" poco común, blanco, de patas largas y pico parecido al de un pato. El adulto es todo blanco con el pico rojo brillante, de aspecto ceroso, y en vuelo se ven las puntas de las primarias negras. El juvenil tiene el pico gris, la gorra negruzca y un lavado pardo grisáceo en el dorso. Mide 98 cm."
+  },
+  {
+   "t": "Cos-co-roba",
+   "p": "El grito, que se oye de lejos, recuerda a un clarín y suena como su nombre."
+  },
+  {
+   "t": "Sociable",
+   "p": "Es sociable con su especie y con otras. Vive en parejas o en grupos chicos, de hasta unos 100. Durante la migración vuela con flamencos."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina cría desde la Patagonia hasta los humedales del centro del país; Pearman y Areta la dan para las tierras bajas, los Andes hasta unos 2000 m y las Malvinas, y Narosky, en humedales. En invierno parte de la población migra al norte, hasta el norte argentino, el sur de Bolivia, Paraguay y el centro de Brasil. Es endémica del cono sur de Sudamérica. Vive en lagos y lagunas con vegetación alta, preferentemente de agua dulce, aunque también usa aguas salobres."
+   "p": "Cría desde la Patagonia hasta los humedales del centro del país, y en invierno parte de la población migra al norte, hasta el norte argentino, el sur de Bolivia, Paraguay y el centro de Brasil. Es endémica del cono sur. Vive en lagos y lagunas con vegetación alta, sobre todo de agua dulce, aunque también usa aguas salobres."
   },
   {
-   "t": "Comportamiento",
-   "p": "Es sociable con su propia especie y con otras. Vive en parejas o en grupos pequeños, de hasta unos 100 individuos. Durante la migración vuela con flamencos."
+   "t": "El nido",
+   "p": "Es grande, en el suelo, entre vegetación alta y cerca del agua. Pone de 4 a 9 huevos y solo la hembra incuba, durante unos 35 días, mientras el macho se queda cerca. Los pichones nacen con manchas gris oscuro y vuelan a los 3 o 4 meses."
   },
   {
-   "t": "Cómo suena",
-   "p": "Su grito, que se oye de lejos, recuerda a un clarín y suena como su nombre: \"Cos-co-roba\"."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Hace un nido grande en el suelo, entre vegetación alta y cerca del agua. Pone de 4 a 9 huevos y solo la hembra incuba, durante unos 35 días, mientras el macho permanece cerca. Los huevos miden 89 × 61 mm y pesan en promedio 170 g. Los pichones nacen con manchas gris oscuro y vuelan a los 3 o 4 meses."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Se la llama cisne coscoroba o simplemente coscoroba. Su primer nombre científico fue Anas coscoroba."
-  },
-  {
-   "t": "Conservación",
-   "p": "Según la UICN es de Preocupación menor, y se la describe como una especie bastante común."
+   "t": "Cisne coscoroba",
+   "p": "Se la llama cisne coscoroba o simplemente coscoroba. Su primer nombre científico fue Anas coscoroba. La UICN la considera de Preocupación menor."
   }
  ],
  "fuentes": [
@@ -65,5 +65,11 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Coscoroba"
+ "comun": "Coscoroba",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-02-17",
+  "lugar": "Laguna Rivero",
+  "foto_fecha": "2026-02-17"
+ }
 }

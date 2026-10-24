@@ -25,24 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es negro con los hombros castaños, que a veces cuesta ver. El forro de las alas es blanco plateado y se ve a menudo en vuelo. En el extremo norte de Misiones, raramente, hay una forma con hombreras amarillo dorado, y se registraron aves con hombreras pardo anaranjadas."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que lo anoté fue el 30 de agosto de 2026, en la Reserva Hídrica Achiras. La primera había sido el 12 de junio, en el ingreso sur del Dique La Viña."
+  },
+  {
+   "t": "Negro con los hombros castaños",
+   "p": "Es negro con los hombros castaños, que a veces cuesta ver. El forro de las alas es blanco plateado y se ve a menudo en vuelo. Mide 19,5 cm. En el extremo norte de Misiones, raramente, hay una forma con hombreras amarillo dorado."
+  },
+  {
+   "t": "Imita a otros",
+   "p": "El canto es una serie compleja de silbidos melodiosos, risitas, trinos y raspidos, y a menudo imita a rapaces y carpinteros. Se alimenta en las copas de los árboles o en el borde del bosque: invertebrados, frutos, flores y néctar."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en el norte, en bosques y vegetación secundaria de las tierras bajas, bordes de selva, sabanas y también poblados; Narosky lo describe arborícola, inquieto y acrobático. Es nativo de Sudamérica (Bolivia, Brasil, Paraguay y Uruguay, con un registro en Chile) y se lo vio hasta unos 1.700 m de altitud. Aprovecha bordes de bosque, claros, plantaciones, parques y jardines urbanos."
+   "p": "En el norte del país, en bosques y vegetación secundaria de las tierras bajas, bordes de selva, sabanas y poblados. Narosky lo describe arborícola, inquieto y acrobático. Se lo vio hasta unos 1.700 m. Es nativo de Sudamérica: Bolivia, Brasil, Paraguay y Uruguay, con un registro en Chile."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta en las copas de los árboles o en el borde del bosque. Come invertebrados, frutos, flores y néctar."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es una serie compleja de silbidos melodiosos, risitas, trinos y raspidos. Los llamados incluyen notas sibilantes y raspidos, y a menudo imita a rapaces y carpinteros."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Construye un nido en forma de bolsa. La hembra pone tres huevos."
+   "t": "El nido",
+   "p": "Construye un nido en forma de bolsa y la hembra pone tres huevos."
   }
  ],
  "fuentes": [
@@ -61,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Boyerito"
+ "comun": "Boyerito",
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-08-30",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

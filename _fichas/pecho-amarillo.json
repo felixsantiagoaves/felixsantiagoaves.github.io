@@ -25,27 +25,31 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un ictérido robusto, con el pico grueso y cónico. Macho y hembra son iguales: cabeza, garganta, pecho y dorso pardos, vientre amarillo y flancos pardos extensos. En vuelo se ven las charreteras y la parte inferior de las alas amarillas. El juvenil es pardo claro y amarillo, con estrías pardas en el pecho y una línea parda en el costado de la cara. A veces anda junto al pecho amarillo grande (Pseudoleistes guirahuro), que es más grande y tiene también la rabadilla amarilla, y con el tordo amarillo."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que lo anoté fue el 27 de junio de 2026, en la Laguna Los Medanitos, en Paso del Durazno. La primera había sido el 31 de mayo, en un camino rural."
+  },
+  {
+   "t": "Pardo, con el vientre amarillo",
+   "p": "Es un ictérido robusto, con el pico grueso y cónico. Macho y hembra son iguales: cabeza, garganta, pecho y dorso pardos, vientre amarillo y flancos pardos extensos. En vuelo se ven las charreteras y la parte inferior de las alas amarillas. Mide 24,5 cm según la guía. A veces anda junto al Pecho Amarillo Grande, que es más grande y tiene también la rabadilla amarilla, y con el Tordo Amarillo."
+  },
+  {
+   "t": "En bandadas",
+   "p": "Vive en bandadas medianas o grandes, a veces mezcladas con el renegrido. Come insectos, crustáceos, lombrices, larvas y semillas; mientras el grupo busca comida cerca de lagunas o bañados, uno vigila desde la vegetación acuática o una rama. Vuela bajo, con aleteos repetidos y planeos cortos, y al atardecer las bandadas se refugian en montes o pastizales."
+  },
+  {
+   "t": "Charlas y silbidos",
+   "p": "Las voces que se oyen desde lejos en vuelo son charlas ásperas y roncas y silbidos puros. Cuando algo los alarma, suben el tono de los silbidos para avisar al grupo."
   },
   {
    "t": "Dónde vive",
-   "p": "La guía lo da como muy extendido en el noreste. Su área abarca el sudeste de Sudamérica: en la Argentina está en Córdoba, San Luis, Chaco, Corrientes, Entre Ríos, Santa Fe y Buenos Aires, y de manera ocasional en Jujuy, Santiago del Estero y Tucumán; también vive en Uruguay y en el sur de Brasil. Se queda en pastizales, juncales y matorrales, por lo general cerca de lagunas y bañados."
+   "p": "La guía lo da como muy extendido en el noreste. Su área abarca el sudeste de Sudamérica: en Argentina está en Córdoba, San Luis, Chaco, Corrientes, Entre Ríos, Santa Fe y Buenos Aires, y de manera ocasional en Jujuy, Santiago del Estero y Tucumán; también vive en Uruguay y el sur de Brasil. Se queda en pastizales, juncales y matorrales, por lo general cerca de lagunas y bañados."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Vive en bandadas medianas o grandes, a veces mezcladas con el renegrido (Molothrus bonariensis). Come insectos, crustáceos, lombrices, larvas y semillas; mientras el grupo busca comida cerca de lagunas o bañados, uno vigila desde la vegetación acuática o una rama. Vuela bajo, con aleteos repetidos y planeos cortos, y al atardecer las bandadas se refugian en montes o pastizales."
+   "t": "El nido",
+   "p": "Las parejas se forman en septiembre u octubre y la cría termina en noviembre o diciembre. El nido es una taza de ramas y tallos, revocada con barro o excremento, apoyada sobre arbustos. La hembra pone de cuatro a seis huevos blancos con manchas pardo rojizas. A veces el renegrido parasita los nidos, que pueden terminar abandonados."
   },
   {
-   "t": "Cómo suena",
-   "p": "Las voces que se oyen desde lejos en vuelo son charlas ásperas y roncas y silbidos puros, algo como tarrrrrreee tarrrreeeee o chrr-dwee…chrr-dwee…. Cuando algo los alarma, suben el tono de los silbidos para avisar al grupo."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Las parejas se forman en septiembre u octubre y la cría termina en noviembre o diciembre. El nido es una taza de ramas y tallos, revocada con barro o excremento, y se apoya sobre arbustos. La hembra pone de cuatro a seis huevos blancos con manchas pardo rojizas. A veces el renegrido parasita los nidos, que pueden terminar abandonados."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Cuarentitrés",
    "p": "Se lo llama pecho amarillo chico para distinguirlo del pecho amarillo grande, y también tordo pechiamarillo o cuarentitrés. La guía lo llama Brown-and-yellow Marshbird."
   }
  ],
@@ -61,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 392
+ "id": 392,
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-06-27",
+  "lugar": "Laguna Los Medanitos"
+ }
 }

@@ -26,23 +26,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un macá chico, compacto y muy gregario, de pico corto, fino y como cincel, e iris rojo. Es blanco, con la cabeza y el dorso plomizos (grises en el noroeste) y una línea negra en la nuca. En plumaje nupcial luce penachos auriculares dorados, que son blancuzcos en la población del noroeste; la forma de las tierras bajas tiene la garganta gris y los penachos de un dorado más brillante, mientras que la andina tiene la garganta blanca. Fuera de la cría no tiene penachos, ni los adultos ni los juveniles."
+   "t": "Una mañana en Los Medanitos",
+   "p": "El 27 de junio de 2026 lo anoté en la Laguna Los Medanitos, en Paso del Durazno, y ese día lo fotografié."
+  },
+  {
+   "t": "Penachos dorados",
+   "p": "Es un macá chico, compacto y muy gregario, de pico corto, fino y como cincel, e iris rojo. Es blanco, con la cabeza y el dorso plomizos y una línea negra en la nuca. En plumaje nupcial luce penachos auriculares dorados. Fuera de la cría no tiene penachos, ni los adultos ni los juveniles. Mide entre 25 y 31 cm."
+  },
+  {
+   "t": "Bucea",
+   "p": "Es un buceador muy hábil y se alimenta bajo el agua: come plantas, peces chicos y sus huevos, y crustáceos. Da llamados agudos (chit y witchuwit), que suelen emitir varias aves a la vez."
   },
   {
    "t": "Dónde vive",
-   "p": "Se lo encuentra desde el nivel del mar hasta más de 4000 m: en lagunas andinas y en humedales pampeanos y patagónicos. A menudo se ven grupos numerosos. Las poblaciones de las llanuras del centro y el sur pasan el invierno más al norte."
+   "p": "Desde el nivel del mar hasta más de 4000 m: en lagunas andinas y en humedales pampeanos y patagónicos. A menudo se ven grupos numerosos. Las poblaciones de las llanuras del centro y el sur pasan el invierno más al norte."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es un buceador muy hábil y se alimenta bajo el agua: come plantas, peces pequeños y sus huevos, y crustáceos."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Da llamados agudos (chit y witchuwit), que suelen emitir varias aves a la vez."
-  },
-  {
-   "t": "Nidificación",
+   "t": "Nado desde el primer día",
    "p": "Construye un nido flotante con totoras, anclado a totoras vivas. La hembra pone de cuatro a seis huevos blanco azulados. La época de cría varía: de septiembre a octubre en las llanuras y de diciembre a enero en el altiplano. Los pichones nadan desde el primer día, y si se cansan suben al dorso de sus padres."
   },
   {
@@ -61,5 +61,11 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-06-27",
+  "lugar": "Laguna Los Medanitos",
+  "foto_fecha": "2026-06-27"
+ }
 }

@@ -25,20 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una cotorrita gregaria de terreno abierto y montañoso, de cola puntiaguda y vuelo alto y algo ondulado. El adulto tiene la gorra parda y a veces una máscara oscura, y la garganta y el pecho gris pálido que contrastan, con un lavado amarillo a los lados. En vuelo puede recordar a la Cotorra y a la forma luchsi de la Cotorra, pero es mucho más chica y rápida; se ven las partes centrales de abajo blanquecinas."
+   "t": "Un día en el Dique La Viña",
+   "p": "El 16 de agosto de 2026 la anoté en el Dique La Viña."
+  },
+  {
+   "t": "Chica y rápida",
+   "p": "Es una cotorrita gregaria de terreno abierto y montañoso, de cola puntiaguda y vuelo alto y algo ondulado. El adulto tiene la gorra parda y a veces una máscara oscura, y la garganta y el pecho gris pálido que contrastan, con un lavado amarillo a los lados. En vuelo puede recordar a la Cotorra, pero es mucho más chica y rápida. Mide 20 cm y pesa unos 65 g."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en el noroeste y en las Sierras Centrales: Narosky la ubica en quebradas, estepas altoandinas, prepuna y serranías, y la describe gregaria, de vuelo esbelto y con un gorjeo que recuerda al de un pájaro. Pearman y Areta la dan para los Andes del norte y centro y las Sierras Centrales. En conjunto se la encuentra en la Argentina y Bolivia, en matorral de gran altitud."
+   "p": "En el noroeste y las Sierras Centrales. Narosky la ubica en quebradas, estepas altoandinas, prepuna y serranías, y la describe gregaria, de vuelo esbelto y con un gorjeo que recuerda al de un pájaro. En conjunto está en Argentina y Bolivia, en matorral de gran altitud."
   },
   {
-   "t": "Cómo suena",
+   "t": "Secos y entrecortados",
    "p": "Sus llamados son secos y entrecortados."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "También se la llama catita aimará. Fue descrita originalmente como Bolborhynchus aymara por Alcide d'Orbigny en 1839, y es una de las dos especies de su género."
+   "t": "Catita aimará",
+   "p": "También se la llama catita aimará. Alcide d'Orbigny la describió en 1839 como Bolborhynchus aymara, y es una de las dos especies de su género."
   }
  ],
  "fuentes": [
@@ -53,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Catita Serrana Grande"
+ "comun": "Catita Serrana Grande",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-08-16",
+  "lugar": "Dique La Viña"
+ }
 }

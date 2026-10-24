@@ -21,19 +21,19 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es chico y llamativo. La cabeza y el cuello son blancuzcos, con una faja negra en la coronilla y el cuello dorsal. Las escapulares son rufas y el pecho es rosáceo con pecas negras. En las alas tiene una mancha circular blanca, notable en vuelo. Los flancos tienen un fino barrado. La hembra es más parda, con la ceja y manchas en la cabeza y el cuello blancas. Mide unos 28 cm según Narosky y 36 cm según Pearman."
+   "t": "El 8 de agosto, en el bañado",
+   "p": "El 8 de agosto de 2026 lo anoté en el Bañado Arroyo Chico, en Santa Catalina, y ese día lo fotografié."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en esteros, sabanas inundadas y lagunas de las tierras bajas del norte."
+   "t": "Chico y llamativo",
+   "p": "La cabeza y el cuello son blancuzcos, con una faja negra en la coronilla y el cuello dorsal. Las escapulares son rufas y el pecho es rosáceo con pecas negras. En las alas tiene una mancha circular blanca, notable en vuelo. Los flancos tienen un fino barrado. La hembra es más parda, con la ceja y manchas en la cabeza y el cuello blancas. Mide unos 28 cm según Narosky y 36 cm según Pearman."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se posa en árboles. La dieta no está detallada en las fuentes que usé."
+   "t": "Se posa en árboles",
+   "p": "Se posa en árboles. Vive en esteros, sabanas inundadas y lagunas de las tierras bajas del norte."
   },
   {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Anida en huecos de árboles y, con poca frecuencia, en nidos de cotorra. Pone de seis a doce huevos blancos, que solo la hembra incuba durante 26 a 28 días."
   }
  ],
@@ -49,5 +49,11 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 246
+ "id": 246,
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-08-08",
+  "lugar": "Bañado Arroyo Chico",
+  "foto_fecha": "2026-08-08"
+ }
 }

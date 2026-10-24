@@ -29,24 +29,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una rapaz robusta, de pico fuerte, cola corta y tarsos cortos; ambos sexos son iguales. El adulto de la forma austral (Andes y Patagonia) tiene la cabeza gris, que se vuelve negruzca en el manto y el pecho, cobertoras alares gris claro que contrastan, y el vientre blanco o blanco grisáceo con fino vermiculado negro. El joven tiene el pecho leonado o ante con manchas pardo oscuras gruesas y un \"chaleco\" negro que contrasta; a diferencia del adulto, sus primarias no llegan a la punta de la cola. Al tercer año es casi todo negro, con motas blancas en la nuca y muslos barrados de castaño."
+   "t": "Una tarde en Laguna Seca",
+   "p": "El 27 de julio de 2026 la anoté en Laguna Seca, en Suco, y ese día la fotografié."
+  },
+  {
+   "t": "Robusta, de cola corta",
+   "p": "Es una rapaz robusta, de pico fuerte, cola y tarsos cortos; macho y hembra son iguales. El adulto de la forma austral (Andes y Patagonia) tiene la cabeza gris, que se vuelve negruzca en el manto y el pecho, las cobertoras alares gris claro que contrastan y el vientre blanco o blanco grisáceo con fino vermiculado negro. Mide entre 61 y 75 cm y tiene entre 149 y 184 cm de envergadura."
+  },
+  {
+   "t": "¿Y el joven?",
+   "p": "El joven tiene el pecho leonado o ante con manchas pardo oscuras gruesas y un \"chaleco\" negro que contrasta. Sus primarias no llegan a la punta de la cola, a diferencia del adulto. Al tercer año es casi todo negro, con motas blancas en la nuca y muslos barrados de castaño."
+  },
+  {
+   "t": "Cómo caza",
+   "p": "Caza sobre todo mamíferos medianos, como roedores y liebres, y también aves, reptiles e invertebrados. A veces come carroña. Está sola o en pareja, caza desde un vuelo bajo o desde una percha elevada, y se la ve planeando a media mañana y media tarde, cuando se forman las corrientes de aire caliente. Se documentaron parejas que cazan palomas en cooperación: una ave dispersa la bandada y la otra se lanza desde arriba sobre las que quedan separadas."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es una de las rapaces más fáciles de ver en ambientes abiertos y serranos: está en la cordillera, en la Patagonia y en las sierras del centro, y también, de forma más localizada, en el noreste. Frecuenta montañas, estepas arbustivas, pastizales, matorrales y laderas rocosas, y suele posarse en postes o planear alto sobre áreas abiertas. En el resto de su área sigue los Andes desde el norte de Sudamérica hasta Tierra del Fuego."
+   "p": "Es de las rapaces más fáciles de ver en ambientes abiertos y serranos: cordillera, Patagonia y sierras del centro, y más localizada en el noreste. Le gustan las montañas, las estepas arbustivas, los pastizales y las laderas rocosas, y suele posarse en postes. Sigue los Andes desde el norte de Sudamérica hasta Tierra del Fuego."
   },
   {
-   "t": "Qué come y cómo caza",
-   "p": "Caza sobre todo mamíferos medianos, como roedores y liebres, y también aves, reptiles e invertebrados; ocasionalmente come carroña. Suele estar sola o en pareja, caza desde un vuelo bajo o desde una percha elevada, y se la ve planeando a media mañana y media tarde, cuando se forman las corrientes de aire caliente. Se documentaron parejas que cazan palomas en cooperación: una ave dispersa la bandada y la otra se lanza desde arriba sobre las que quedan separadas."
-  },
-  {
-   "t": "Reproducción",
-   "p": "Anida en grietas de peñascos, en repisas o en la copa de árboles altos, en nidos grandes que reutiliza durante años. Pone de uno a tres huevos, generalmente dos, que ambos adultos incuban durante unos 30 días. La cría ocurre sobre todo en primavera."
+   "t": "El nido",
+   "p": "Anida en grietas de peñascos, en repisas o en la copa de árboles altos, en nidos grandes que reutiliza durante años. Pone de uno a tres huevos, generalmente dos, que ambos adultos incuban unos 30 días."
   },
   {
    "t": "Conservación",
-   "p": "Está catalogada como Preocupación Menor y sus poblaciones son relativamente estables. Las amenazas locales son la persecución humana, la disminución de sus presas y los cambios en el hábitat."
+   "p": "Preocupación Menor, con poblaciones relativamente estables. Las amenazas locales son la persecución humana, la disminución de sus presas y los cambios en el hábitat."
   }
  ],
  "fuentes": [
@@ -65,5 +73,11 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Águila Mora"
+ "comun": "Águila Mora",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-07-27",
+  "lugar": "Laguna Seca",
+  "foto_fecha": "2026-07-27"
+ }
 }

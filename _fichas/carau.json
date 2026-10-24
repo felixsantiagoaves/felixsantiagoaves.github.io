@@ -25,32 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un ave grande de pantano, de pico largo y recto, cuello notablemente largo y delgado y tarsos finos. Anda sola o en pareja, pero se vuelve muy gregaria en invierno. El adulto tiene el pico amarillento con la punta oscura y el plumaje pardo oscuro, estriado de blanco en la nuca y el dorso superior. En vuelo da aleteos altos y rígidos, con las patas largas colgando hacia abajo."
+   "t": "Las tres veces, en Achiras",
+   "p": "Las tres veces que lo anoté, el 27 de julio, el 30 de agosto y el 10 de octubre de 2026, fue en la Reserva Hídrica Achiras."
+  },
+  {
+   "t": "Ave de pantano",
+   "p": "Es un ave grande de pantano, de pico largo y recto, cuello notablemente largo y delgado y tarsos finos. Anda solo o en pareja, pero se vuelve muy gregario en invierno. El adulto tiene el pico amarillento con la punta oscura y el plumaje pardo oscuro, estriado de blanco en la nuca y el dorso superior. En vuelo da aleteos altos y rígidos, con las patas largas colgando. Mide 68 cm."
+  },
+  {
+   "t": "Krau-krau-krau",
+   "p": "Su voz es un lamento fuerte, más frecuente al amanecer, al atardecer y de noche. Camina con un andar levemente ondulante, como si rengueara. Se alimenta de pequeña fauna acuática, sobre todo caracoles (en otras fuentes, del género Pomacea), en aguas poco profundas y sobre vegetación flotante."
+  },
+  {
+   "t": "La leyenda de Karãu",
+   "p": "Se lo llama carau, carao, carrao o guariao, y en guaraní karãu. Una leyenda guaraní cuenta de Karãu, un joven que descuidó a su madre moribunda por ir a bailar; como castigo, Tupã lo convirtió en un ave negra condenada a llorar a orillas de los arroyos. Es la única especie de la familia Aramidae, emparentada con las grullas."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte, en bañados y humedales con árboles, y llega al pie de las sierras hasta unos 1400 m. Tras la reproducción forma bandadas dispersas. En conjunto se distribuye desde Florida, el Caribe y México hasta el norte de la Argentina. La subespecie sudamericana es Aramus guarauna guarauna."
-  },
-  {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta de pequeña fauna acuática, principalmente caracoles; en otras fuentes se detalla que son sobre todo caracoles del género Pomacea. Busca en aguas poco profundas y sobre vegetación flotante. Es una voz inconfundible: un lamento fuerte, algo como \"krau-krau-krau\", más frecuente al amanecer, al atardecer y de noche. Camina con un andar levemente ondulante, que da la impresión de que rengueara."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Es muy vocal: un \"krrraaawww\" fuerte y gruñidos, que se oyen con frecuencia también de noche."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Oculta el nido en vegetación densa de los bañados. La puesta es de unos seis huevos."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo llama carau, carao, carrao o guariao, y en guaraní karãu. Una leyenda ligada al mundo guaraní cuenta de Karãu, un joven que descuidó a su madre moribunda por ir a bailar; como castigo, Tupã lo convirtió en un ave negra condenada a llorar a orillas de los arroyos. Es la única especie de la familia Aramidae, emparentada con las grullas."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo considera de Preocupación menor."
+   "p": "En la Argentina vive en las tierras bajas del norte, en bañados y humedales con árboles, y llega al pie de las sierras hasta unos 1400 m. Oculta el nido en vegetación densa de los bañados, con unos seis huevos. La UICN lo considera de Preocupación menor."
   }
  ],
  "fuentes": [
@@ -69,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Carau"
+ "comun": "Carau",
+ "apertura": {
+  "tipo": "mismo_lugar",
+  "n": 3,
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

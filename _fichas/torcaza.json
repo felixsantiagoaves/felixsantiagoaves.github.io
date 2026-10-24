@@ -25,27 +25,35 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una paloma mediana, parda y sin grandes adornos, gregaria y de vuelo rápido. El macho adulto tiene la frente y la cara rosadas o pardas, con una línea negra notable en el borde superior e inferior de las cubiertas auriculares, el resto de la corona gris azulado y el cuello con un brillo dorado iridiscente a los costados. Tiene manchas negras en las terciarias y las partes inferiores vinosas. La hembra tiene la corona y las partes inferiores más pardas y casi nada de brillo en el cuello. En vuelo se ve la parte inferior del ala grisácea y las puntas blancas de la cola."
+   "t": "La primera vez",
+   "p": "La primera vez que la anoté fue el 8 de diciembre de 2025, en Río Cuarto."
+  },
+  {
+   "t": "Sin grandes adornos",
+   "p": "Es una paloma mediana, parda y sin grandes adornos, gregaria y de vuelo rápido. El macho adulto tiene la frente y la cara rosadas o pardas, con una línea negra notable en el borde superior e inferior de las cubiertas auriculares, el resto de la corona gris azulado y el cuello con un brillo dorado iridiscente a los costados. Tiene manchas negras en las terciarias y las partes inferiores vinosas. La hembra tiene la corona y las partes inferiores más pardas y casi nada de brillo en el cuello. Mide 25,5 cm."
+  },
+  {
+   "t": "En vuelo",
+   "p": "Se ve la parte inferior del ala grisácea y las puntas blancas de la cola."
+  },
+  {
+   "t": "Arrullo y cortejo",
+   "p": "El arrullo es grave, lastimero y gutural, algo como huuuh… huuuuh… huuh… Según Wikipedia, macho y hembra cantan, el macho con más fuerza, y en el cortejo el macho se yergue, infla el buche y se inclina repitiendo el movimiento mientras arrulla; ante una alarma suele quedarse inmóvil, mirando hacia el origen del peligro."
+  },
+  {
+   "t": "Semillas",
+   "p": "Se alimenta sobre todo de semillas."
   },
   {
    "t": "Dónde vive",
    "p": "La guía la da como muy extendida en el país. Según Wikipedia, habita lugares abiertos y arboledas, y se adaptó muy bien a las zonas urbanas."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta sobre todo de semillas. Según Wikipedia, macho y hembra cantan, el macho con más fuerza, y en el cortejo el macho se yergue, infla el buche y se inclina repitiendo el movimiento mientras arrulla; ante una alarma suele quedarse inmóvil, mirando hacia el origen del peligro."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El arrullo es grave, lastimero y gutural, algo como huuuh… huuuuh… huuh…"
-  },
-  {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Según Wikipedia, puede anidar en el suelo, en arbustos o en árboles. Pone dos huevos blancos, que eclosionan a los 12 a 14 días."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Nombres",
    "p": "También se la conoce como zenaida, tórtola torcaza, torcaza común, paloma sabanera o palomita montera, según el lugar."
   }
  ],
@@ -58,5 +66,10 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 228
+ "id": 228,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-08",
+  "lugar": "Río Cuarto"
+ }
 }

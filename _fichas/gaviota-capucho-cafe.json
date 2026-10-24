@@ -25,23 +25,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Cría por toda la costa, el norte y el sur andino, y en invierno se mueve al norte. El adulto en época de cría tiene el pico y los tarsos rojizos y la capucha parda, cortada en ángulo recto desde la nuca; a veces tiene un lavado rosado en el pecho. Fuera de la cría tiene una media luna negra en las cobertoras auriculares. En vuelo se ve una cuña blanca en las primarias distales y el forro alar más blanco que sus parientes. En su primer invierno tiene el pico rojo con la punta negra y una barra negra en las cobertoras alares."
+   "t": "La primera vez",
+   "p": "La primera vez que la anoté fue el 23 de mayo de 2026, en la Reserva Provincial Chocancharava."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina está en casi todo el país: toda la costa atlántica, las tierras bajas del norte y los Andes del sur, y se desplaza hacia el norte en invierno (Pearman y Areta). Ocupa pantanos, lagos de agua dulce, aguas marinas costeras, pasturas y manglares. Va desde el sur de Brasil y Uruguay, por el centro y sur de Chile, hasta las islas australes, Tierra del Fuego y las Malvinas, donde hay una población residente. En invierno las poblaciones australes migran hacia el norte (sureste de Brasil, Paraguay, norte de Chile)."
+   "t": "Capucha parda",
+   "p": "El adulto en época de cría tiene el pico y los tarsos rojizos y la capucha parda, cortada en ángulo recto desde la nuca; a veces tiene un lavado rosado en el pecho. Fuera de la cría tiene una media luna negra en las cobertoras auriculares. En vuelo se ve una cuña blanca en las primarias distales. Mide 38 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Sigue al arado",
    "p": "Come lombrices y larvas en campos recién arados, desperdicios de mataderos y frigoríficos, insectos, crustáceos, carroña y peces; durante la cría prefiere los peces. Vuela hacia prados y potreros del interior."
   },
   {
-   "t": "Nidificación",
-   "p": "Forma colonias entre noviembre y enero, en juncales o pajonales al borde de lagunas o en islas de lagunas y ríos. Construye nidos flotantes y voluminosos de juncos y plantas acuáticas. Pone de 2 a 4 huevos, de color entre café con leche y amarillo oliváceo, con manchas oscuras gruesas. El Pato Cabeza Negra deposita sus huevos en sus nidos para que los incube."
+   "t": "Sube en invierno",
+   "p": "Cría por toda la costa, el norte y el sur andino, y en invierno se mueve al norte. Está en casi todo el país, en pantanos, lagos de agua dulce, aguas marinas costeras y pasturas. En las Malvinas hay una población residente."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "El nido",
+   "p": "Forma colonias entre noviembre y enero, en juncales o pajonales al borde de lagunas o en islas. Construye nidos flotantes y voluminosos de juncos y plantas acuáticas, con 2 a 4 huevos de color entre café con leche y amarillo oliváceo, con manchas oscuras gruesas. El Pato Cabeza Negra pone huevos en sus nidos."
+  },
+  {
+   "t": "Capucho café, capuchina",
    "p": "En Argentina, Uruguay y Paraguay se la llama gaviota capucho café; en parte de la Argentina también gaviota capuchina, y en Chile gaviota cáhuil, caulle o chelle."
   }
  ],
@@ -57,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Gaviota Capucho Café"
+ "comun": "Gaviota Capucho Café",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-05-23",
+  "lugar": "Reserva Provincial Chocancharava"
+ }
 }

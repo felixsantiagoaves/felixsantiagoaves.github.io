@@ -25,27 +25,23 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El adulto tiene el pico rosado con la punta negra, la piel de la cara celeste, la gorra oscura y el cuello ante. El dorso y las alas son gris azulado, con las cobertoras canela estriadas de negro. En vuelo se ve sobre todo gris arriba y crema ante abajo, con la rabadilla y la cola blancas, y los aleteos son poco profundos y arqueados. El juvenil es gris pálido arriba, con ante en el dorso superior y cobertoras canela finamente estriadas de negro."
+   "t": "La garza que silba",
+   "p": "Silba de dos a cuatro veces, con notas de flauta que se oyen de lejos. Narosky destaca ese silbo aflautado. Antes de aparearse danza y vuela emitiendo un grito."
+  },
+  {
+   "t": "Pico rosado, cara celeste",
+   "p": "El adulto tiene el pico rosado con la punta negra, la piel de la cara celeste, la gorra oscura y el cuello ante. El dorso y las alas son gris azulado, con las cobertoras canela estriadas de negro. En vuelo se ve gris arriba y crema ante abajo, con la rabadilla y la cola blancas, y aletea poco profundo y arqueado. Mide 57 cm."
+  },
+  {
+   "t": "Dónde caza",
+   "p": "Come insectos y lombrices. Vive en grupos o en parejas, sobre todo en humedales, pero también en campos y árboles. Narosky la ubica en humedales, áreas rurales y arboledas."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte y en el noroeste andino hasta unos 2000 m. Narosky la ubica en humedales, áreas rurales y arboledas, y destaca su silbo aflautado. La subespecie sibilatrix se encuentra además en Brasil, Uruguay y Paraguay, con registros en Chile; otra subespecie, fostersmithi, vive en Colombia y Venezuela. Aparece sobre todo en humedales, pero también en campos y árboles."
+   "p": "En las tierras bajas del norte y en el noroeste andino hasta unos 2000 m. La subespecie sibilatrix está también en Brasil, Uruguay y Paraguay, con registros en Chile; otra, fostersmithi, vive en Colombia y Venezuela. Pone de 2 a 4 huevos."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta de insectos y lombrices. Vive en grupos o en parejas. Antes del apareamiento, danza y vuela emitiendo un grito."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Silba de dos a cuatro veces, con notas de flauta que se oyen de lejos."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Pone de 2 a 4 huevos."
-  },
-  {
-   "t": "Una nota sobre el nombre",
+   "t": "Garza chiflona",
    "p": "Se la llama garza chiflona, garza silbadora o garza amarilla, además de chiflón."
   }
  ],
@@ -61,5 +57,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Chiflón"
+ "comun": "Chiflón",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

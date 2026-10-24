@@ -156,3 +156,12 @@ Si una especie NO existe en AVES (caso raro): agregarla al final con id = total 
     (file://) el navegador bloquea fetch() y no cargan ni avistamientos ni galería.
 
 =======================================================================
+
+## Fichas en la voz de Felix: chequeo con cada CSV
+
+Los textos de las fichas (`_fichas/<slug>.json`, `secciones`) y los minis de `assets/datos.js` (`estado`, `curiosidad`) están escritos en el tono de Felix (casual, argentino, títulos de sección variados). Reglas:
+
+- Nada de arrancar con cantidad de visitas o lugares. Cada ficha declara su apertura en la clave `apertura` del JSON (`primera`, `ultima`, `cualquiera`, `unica`, `mismo_lugar` o `ninguna`). El "primer registro" y la lista de encuentros de la página son dinámicos (salen de registros.json), esos no se desactualizan.
+- Solo datos verificables (eBird/registros.json, fotos.json, guía Pearman & Areta, Wikipedia). Nada de anécdotas inventadas ni "cantidad máxima de ejemplares" (eBird no lo da).
+- **Después de cada CSV/actualización de registros.json correr:** `python3 -I _fichas/verificar_aperturas.py .` Si marca fichas desactualizadas (por ejemplo una apertura `ultima` o `unica` que ya no es cierta porque se la vio de nuevo), reescribir esa apertura en el JSON (cambiar el tipo o la fecha) y volver a correr `gen_fichas.py`.
+- Los minis de especies sin ficha son reformulaciones de textos sin verificar; si se hace la ficha, se reescriben con sus datos.

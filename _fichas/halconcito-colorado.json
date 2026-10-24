@@ -25,32 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un halcón chico y esbelto, de alas y cola finas. Macho y hembra son bien distintos. El macho tiene la corona y las alas azul grisáceo (las cubiertas con pecas negras), y el dorso y la cola rufos, esta última con una banda negra cerca de la punta. La cara es blanca con bigote, patilla y una mancha en la nuca negros, y abajo es blancuzco con el pecho teñido de canela y algo moteado. La hembra es rufa por arriba, con todo el dorso barrado de negro, la corona gris, y el vientre estriado de pardo. El juvenil es parecido al adulto, pero con el dorso más barrado y el pecho más estriado."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 27 de diciembre de 2025, en la UNRC."
+  },
+  {
+   "t": "El macho y la hembra",
+   "p": "Es un halcón chico y esbelto, de alas y cola finas. Macho y hembra son bien distintos. El macho tiene la corona y las alas azul grisáceo, y el dorso y la cola rufos, esta última con una banda negra cerca de la punta; la cara es blanca con bigote, patilla y una mancha en la nuca negros. La hembra es rufa arriba, con todo el dorso barrado de negro y la corona gris. Mide entre 25 y 28 cm."
+  },
+  {
+   "t": "Quieto en el aire",
+   "p": "Caza desde una percha (un poste, un cable, una rama) y también cerniéndose: se queda suspendido en el aire, batiendo las alas, mirando el suelo. Come insectos, roedores, otras aves, anfibios y reptiles chicos. Su llamado es un tititití fino y continuo, que repite con insistencia cuando está inquieto."
   },
   {
    "t": "Dónde vive",
-   "p": "Es muy común y está muy extendido en la Argentina. Ocupa espacios abiertos, campos, bosques, arboledas y poblados, y se lo ve a menudo sobre postes y cables al costado de caminos y rutas."
+   "p": "Es muy común y está en todo el país. Ocupa espacios abiertos, campos, bosques, arboledas y poblados, y se lo ve a menudo sobre postes y cables al costado de caminos y rutas."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Caza desde una percha (un poste, un cable, una rama) y también cerniéndose: se queda suspendido en el aire, batiendo las alas, mirando el suelo. Su dieta incluye insectos, roedores, otras aves, anfibios y reptiles pequeños, sobre todo en zonas áridas."
+   "t": "Un nido ajeno",
+   "p": "No construye nido: usa huecos de árboles, a menudo cavidades excavadas por carpinteros, y también cardones, termiteros, nidos abandonados de otras aves y cajas nido. La hembra pone de uno a cinco huevos moteados. El macho le lleva comida a la hembra y, después de la eclosión, a los pichones."
   },
   {
-   "t": "Cómo suena",
-   "p": "Su llamado es un tititití fino y continuo, que repite con insistencia cuando está inquieto."
-  },
-  {
-   "t": "Nidificación",
-   "p": "No construye nido: usa huecos de árboles, a menudo cavidades excavadas por carpinteros, y también cardones, termiteros, nidos abandonados de otras aves y cajas nido. La hembra pone de uno a cinco huevos moteados. El macho le lleva comida a la hembra y, después de la eclosión, a los pichones; cuando crecen, la hembra también caza para el nido."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Además de halconcito colorado, se lo llama cuyaya, falcón común o quilico. En español suele llamarse cernícalo, por la forma de cazar cerniéndose en el aire."
-  },
-  {
-   "t": "Conservación",
-   "p": "La UICN lo considera de Preocupación menor."
+   "t": "Cernícalo",
+   "p": "Además de halconcito colorado, se lo llama cuyaya, falcón común o quilico. En español suele llamarse cernícalo, por la forma de cazar cerniéndose en el aire. La UICN lo considera de Preocupación menor."
   }
  ],
  "fuentes": [
@@ -65,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 165
+ "id": 165,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-27",
+  "lugar": "UNRC"
+ }
 }

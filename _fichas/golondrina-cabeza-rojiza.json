@@ -21,20 +21,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es una golondrina chica, compacta y parda, con la cola ligeramente escotada, que está en las tierras bajas y las laderas del norte entre fines de agosto y abril. El adulto tiene la corona parda y las loras oscuras; la ceja, las cobertoras auriculares, un fino collar en la nuca, la garganta y el pecho superior son canela, y es blanca abajo. En vuelo se ve uniforme arriba, con el collar, la garganta y el pecho canela, y una silueta cuadrada."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que la anoté fue el 10 de octubre de 2026, en la Reserva Hídrica Achiras. La primera había sido el 20 de septiembre, en la Reserva Provincial Chocancharava."
+  },
+  {
+   "t": "Chica, parda y canela",
+   "p": "Es una golondrina chica, compacta y parda, con la cola ligeramente escotada. El adulto tiene la corona parda y las loras oscuras; la ceja, las cobertoras auriculares, un fino collar en la nuca, la garganta y el pecho superior son canela, y es blanca abajo. En vuelo se ve uniforme arriba, con silueta cuadrada. Mide 12 cm."
+  },
+  {
+   "t": "Visitante de verano",
+   "p": "Está en las tierras bajas y las laderas del norte entre fines de agosto y abril (Pearman y Areta). Narosky la ubica en sabanas, áreas rurales y humedales. Después de la reproducción migra hacia el norte del subcontinente."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es visitante estival de las tierras bajas y el pie de monte del norte (fines de agosto a abril, según Pearman y Areta); Narosky la ubica en sabanas, áreas rurales y humedales. Después de la reproducción migra hacia el norte del subcontinente. Habita el centro de Sudamérica, desde el sureste de Perú y de Bolivia hasta Brasil, Uruguay y el norte y centro de la Argentina; es ocasional en las Malvinas y en Chile. Ocupa áreas abiertas o de tipo parque, siempre a baja altitud."
+   "p": "En el centro de Sudamérica, del sureste de Perú y de Bolivia a Brasil, Uruguay y el norte y centro de Argentina; es ocasional en las Malvinas y en Chile. Ocupa áreas abiertas o de tipo parque, siempre a baja altitud. El canto son notas ásperas seguidas de un gorjeo corto y rico, repetido."
   },
   {
-   "t": "Cómo suena",
-   "p": "El canto son notas ásperas seguidas de un gorjeo corto y rico, repetido."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Es la única especie del género Alopochelidon, de la familia Hirundinidae, aunque tradicionalmente se la incluía en Stelgidopteryx. Temminck la describió en 1822 como Hirundo fucata, con localidad tipo \"Brasil\". Se diferencia de Stelgidopteryx porque sus primarias no tienen el borde exterior dentado. También se la conoce como golondrina cabecicastaña, cabeza castaña y cara rojiza."
+   "t": "Única de su género",
+   "p": "Es la única especie del género Alopochelidon, aunque tradicionalmente se la incluía en Stelgidopteryx. La describió Temminck en 1822 como Hirundo fucata, con localidad tipo \"Brasil\". Se diferencia de Stelgidopteryx porque sus primarias no tienen el borde exterior dentado. También se la conoce como golondrina cabecicastaña y cara rojiza."
   }
  ],
  "fuentes": [
@@ -49,5 +53,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Golondrina Cabeza Rojiza"
+ "comun": "Golondrina Cabeza Rojiza",
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-10-10",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

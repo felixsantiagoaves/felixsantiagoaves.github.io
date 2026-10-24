@@ -21,24 +21,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "El macho adulto es negro con un brillo azul violáceo bien marcado cuando le da bien la luz, y tiene el pico bastante largo, con el culmen casi recto. La hembra adulta es parda uniforme por arriba y gris pardusca por abajo, con la garganta más pálida. El juvenil es de un pardo claro, color galleta, con un veteado poco marcado por debajo."
+   "t": "El vago del barrio",
+   "p": "No construye nido: pone sus huevos en nidos de muchas otras especies y deja que los hospedadores críen a los pichones. Su incubación dura 11 a 12 días, menos que la de la mayoría de los hospedadores, según Wikipedia."
   },
   {
-   "t": "Dónde vive",
-   "p": "La guía lo da como muy extendido en la Argentina. Según Wikipedia, se extiende por casi toda América del Sur, aunque evita las selvas tupidas y las montañas, y es una especie abundante y gregaria."
+   "t": "Negro con brillo violáceo",
+   "p": "El macho adulto es negro, con un brillo azul violáceo bien marcado cuando le da la luz, y el pico bastante largo. La hembra es parda uniforme arriba y gris pardusca abajo, con la garganta más pálida. El juvenil es color galleta, con un veteado poco marcado abajo. Mide unos 20,5 cm el macho y 18,5 la hembra."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come sobre todo insectos y semillas, y busca la comida en el suelo o posado sobre el ganado."
+   "t": "Gregario y abundante",
+   "p": "La primera vez que lo anoté fue el 8 de diciembre de 2025, en Río Cuarto, y desde entonces lo anoté en más de 50 fechas distintas. Está en casi toda Sudamérica, menos en selvas tupidas y montañas. Busca la comida en el suelo o posado sobre el ganado: insectos y semillas."
   },
   {
-   "t": "Cómo suena",
-   "p": "Durante el despliegue con el cuello erizado, el macho canta un gorgoteo grave seguido de notas líquidas muy agudas. Posado o en vuelo canta una serie musical, como de canario, de notas y trinos rápidos y agudos. La hembra emite una risotada lenta y característica."
+   "t": "Canta bien",
+   "p": "En el despliegue, con el cuello erizado, el macho canta un gorgoteo grave seguido de notas líquidas muy agudas. Posado o en vuelo suelta una serie musical, como de canario. La hembra emite una risotada lenta y característica."
   },
   {
-   "t": "Cría",
-   "p": "Como otros tordos del género, no construye nido: pone sus huevos en nidos de muchas otras especies, y los hospedadores crían a los pichones. Según Wikipedia, su incubación dura de 11 a 12 días, menos que la de la mayoría de los hospedadores, y los huevos pueden ser blanquecinos sin manchas, o azul pálido o verdosos con puntos oscuros."
+   "t": "Los huevos",
+   "p": "Pueden ser blanquecinos sin manchas, o azul pálido o verdosos con puntos oscuros."
   }
  ],
  "fuentes": [
@@ -50,5 +50,11 @@
    "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
   }
  ],
- "id": 396
+ "id": 396,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-08",
+  "lugar": "Río Cuarto",
+  "min_fechas": 50
+ }
 }

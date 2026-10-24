@@ -25,28 +25,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "En las tierras bajas del norte y de los Andes hasta unos 2000 m vive la forma lampronotus, de 34 cm, más chica y estilizada que la patagónica, con la cabeza pardo grisácea pálida y una cresta bien visible, menos negro en el cuello y el pecho, y los tarsos relativamente más largos. La forma de la Patagonia (39 cm) tiene la cabeza gris con una cresta apenas insinuada, la cara negra y una gran mancha negra en el pecho. En vuelo se ve la franja blanca del ala y la rabadilla blanca, que contrastan con las plumas de vuelo negras y la cola negra con una ancha banda subterminal. Según Wikipedia, el pico es corto y rojizo con la punta negra, las patas largas y rojas, y tiene espolones rojos en las alas."
+   "t": "La primera vez",
+   "p": "El primero que anoté fue el 16 de diciembre de 2025, en Río Cuarto. Al nido lo fotografié el 20 de septiembre de 2026, en la Reserva Provincial Chocancharava."
   },
   {
-   "t": "Dónde vive",
-   "p": "La guía lo da como muy extendido. Según Wikipedia, ocupa terrenos abiertos, incluidas zonas urbanas, aunque es más común cerca de arroyos y lagunas, y es el ave nacional de Uruguay."
+   "t": "Inconfundible",
+   "p": "Acá, en el centro y el norte, vive la forma lampronotus, de 34 cm: más chica y estilizada que la patagónica, con la cabeza pardo grisácea pálida, una cresta bien visible y menos negro en cuello y pecho. La de la Patagonia mide 39 cm, tiene la cara negra y una gran mancha negra en el pecho. En vuelo se ven la franja blanca del ala y la rabadilla blanca."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come sobre todo insectos, y también lagartijas pequeñas, semillas y carne cruda. Caza corriendo dos o tres pasos, frenando y picoteando hacia adelante, y también golpea el suelo con las patas para hacer salir lombrices. Cuando alguien se acerca al nido, uno de los adultos queda en el suelo mientras el otro vuela contra el intruso y lo golpea con los espolones de las alas hasta que se va; puede fingir una herida para alejarlo del nido y ataca incluso a aves de presa y gatos."
+   "t": "¿Se hace el herido?",
+   "p": "Sí. Cuando alguien se acerca al nido, uno de los adultos queda en el suelo, a veces fingiendo una herida para alejar al intruso, y el otro le vuela encima y lo golpea con los espolones de las alas hasta que se va. Ataca hasta a aves de presa y gatos."
   },
   {
-   "t": "Cómo suena",
-   "p": "El llamado es un «Teú» metálico y fuerte, y un TE-RU, TE-RU más agudo, más fuerte y ronco, que se repite una y otra vez. Las aves patagónicas tienen un grito muy distinto, más agudo y áspero, como de loro, KE-RREU, KE-RREU."
+   "t": "Cómo caza",
+   "p": "Come sobre todo insectos, y también lagartijas chicas, semillas y carne cruda. Corre dos o tres pasos, frena y picotea hacia adelante, y también golpea el suelo con las patas para hacer salir lombrices."
   },
   {
-   "t": "Nidificación",
-   "p": "El nido es una pequeña depresión en el suelo abierto, apenas marcada con ramitas y pastos, y muy difícil de ver. Según Wikipedia, pone los huevos a fines del invierno, y una pareja puede tener varias nidadas en el año. Los huevos son gris verdosos con pintas oscuras y se incuban unos 26 días; los dos padres cuidan a los pichones, que aprenden a volar al mes de edad más o menos."
+   "t": "Teú, teú",
+   "p": "Un \"teú\" metálico y fuerte y un TE-RU, TE-RU más agudo y ronco, que repite una y otra vez. Las aves patagónicas tienen un grito muy distinto, más agudo y áspero, como de loro: KE-RREU."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo conoce como tero en la Argentina y también como tero-tero, tetéu, quero quero, queltehue o pellar, según el lugar."
+   "t": "Un nido en el suelo",
+   "p": "Es una pequeña depresión en el suelo abierto, apenas marcada con ramitas y pastos, y muy difícil de ver. Pone los huevos a fines del invierno y una pareja puede tener varias nidadas en el año (Wikipedia). Los huevos son gris verdosos con pintas oscuras, se incuban unos 26 días y los dos padres cuidan a los pichones, que aprenden a volar al mes más o menos."
+  },
+  {
+   "t": "Tero, tero-tero, queltehue",
+   "p": "En Argentina es tero. Según el lugar también se lo conoce como tero-tero, tetéu, quero quero, queltehue o pellar. Es el ave nacional de Uruguay. Ocupa terrenos abiertos, incluso zonas urbanas, sobre todo cerca de arroyos y lagunas."
   }
  ],
  "fuentes": [
@@ -59,5 +63,11 @@
   }
  ],
  "id": 90,
- "portada": "mas/vanellus_chilensis/25042026-DSC_0140.jpg"
+ "portada": "mas/vanellus_chilensis/25042026-DSC_0140.jpg",
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-16",
+  "lugar": "Río Cuarto",
+  "foto_fecha": "2026-09-20"
+ }
 }

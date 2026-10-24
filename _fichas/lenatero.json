@@ -26,28 +26,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un hornero esbelto, más bien arborícola, de dorso estriado y garganta blanca bordeada de puntitos negros. Tiene la frente castaña (poco marcada) y la cola negra con una faja blanca en la punta, que se ve mejor en vuelo; la cola es escalonada y puntiaguda."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 2 de mayo de 2026, en la Reserva Provincial Chocancharava."
+  },
+  {
+   "t": "Más famoso por el nido",
+   "p": "Es un hornero esbelto, más bien arborícola, de dorso estriado y garganta blanca bordeada de puntitos negros. Tiene la frente castaña (poco marcada) y la cola negra con una faja blanca en la punta, que se ve mejor en vuelo; la cola es escalonada y puntiaguda. Mide entre 18 y 19,5 cm."
+  },
+  {
+   "t": "El nido gigante",
+   "p": "Es un enorme nido globular de palitos, expuesto y alargado en vertical, que apoya en ramas de arbustos y árboles, en postes o molinos. En la entrada pone plumas, hilos y trozos de plástico o tela. La entrada está arriba y sigue un túnel curvo, en espiral, hasta la cámara interior, que acolcha con vegetales blandos y plumas; a veces tiene dos bocas. Es excepcionalmente grande y cada año puede agregarle una cámara."
+  },
+  {
+   "t": "Huevos y pichones",
+   "p": "Nidifica entre agosto y febrero: pone cuatro huevos blancos, a veces más, en días alternos; la incubación dura entre 16 y 17 días y los pichones se quedan en el nido unos 19 a 21 días, alimentados por ambos padres."
+  },
+  {
+   "t": "Qué hace",
+   "p": "Come insectos (escarabajos, chinches, larvas de moscas) y semillas, y busca el alimento sobre todo en el suelo o bajo la vegetación, de manera discreta. Canta casi siempre en dúo con la pareja: una serie de sílabas agudas y repiqueteos que acelera y termina en un trino seco. Sus depredadores incluyen el Halconcito Colorado y el Halcón Plomizo, y las culebras comen los pichones."
   },
   {
    "t": "Dónde vive",
    "p": "Se lo ve en sabanas, áreas rurales y poblados, expuesto en postes, ramas y alambrados. Es común y se distribuye por el norte del país, hacia el sur hasta el norte de la Patagonia."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Come insectos (escarabajos, chinches, larvas de moscas) y semillas, y busca el alimento sobre todo en el suelo o bajo la vegetación, de manera discreta. Cerca del nido suele quedarse largo rato en una percha. Sus depredadores incluyen el halconcito colorado y el halcón plomizo, y las culebras comen los pichones."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Canta casi siempre en dúo con la pareja: una serie de sílabas agudas y repiqueteos (tí..tí..tí..trrt) que acelera y termina en un trino seco."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Es más conocido por su nido que por el ave: un enorme nido globular de palitos, expuesto y alargado en vertical, que apoya en ramas de arbustos y árboles, en postes o molinos. En la entrada pone plumas, hilos y trozos de plástico o tela. La entrada está arriba y sigue un túnel curvo, en espiral, hasta la cámara interior, que acolcha con vegetales blandos y plumas; a veces tiene dos bocas. Es excepcionalmente grande y cada año puede agregarle una cámara. Nidifica entre agosto y febrero: pone cuatro huevos blancos, a veces más, en días alternos; la incubación dura entre 16 y 17 días y los pichones se quedan en el nido unos 19 a 21 días, alimentados por ambos padres."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo llama también espinero común y añumbí. El nombre del género y de la especie, Anumbius annumbi, viene del nombre guaraní \"güirá añumbí\" que registró Félix de Azara a principios del siglo XIX; \"leñatero\" alude a los palitos con que arma el nido."
+   "t": "Güirá añumbí",
+   "p": "Se lo llama también espinero común y añumbí. Anumbius annumbi viene del nombre guaraní \"güirá añumbí\" que registró Félix de Azara a principios del siglo XIX; \"leñatero\" alude a los palitos con que arma el nido."
   }
  ],
  "fuentes": [
@@ -61,5 +65,10 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-05-02",
+  "lugar": "Reserva Provincial Chocancharava"
+ }
 }

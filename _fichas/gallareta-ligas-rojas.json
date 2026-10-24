@@ -21,24 +21,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "El adulto tiene el escudete frontal puntiagudo, amarillento o blanco, con una línea roja transversal en la base, y el pico blanco o amarillento. En vuelo muestra menos blanco a los costados de la zona anal que las otras gallaretas. Hay que fijarse en la posición de las \"ligas\" rojas. El juvenil es la más pálida de las gallaretas de tierras bajas."
+   "t": "Un día en la Laguna Rivero",
+   "p": "El 19 de julio de 2026 la anoté en la Laguna Rivero, en Alcira Gigena. Según Narosky es muy común en los humedales, a menudo junto a la Gallareta Chica y la Escudete Rojo."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina es ampliamente distribuida y muy común en humedales (Narosky: a menudo con la Gallareta Chica y la Escudete Rojo). Vive en Brasil, Paraguay, Uruguay, Argentina y Chile hasta Tierra del Fuego, y también en las islas Malvinas, Georgias del Sur y Sandwich del Sur. Ocupa lagos y lagunas."
+   "t": "Fijate en las ligas",
+   "p": "Hay tres gallaretas parecidas. En esta el escudete de la frente es puntiagudo, amarillento o blanco, con una línea roja transversal en la base, y el pico es blanco o amarillento. Hay que fijarse en la posición de las \"ligas\" rojas. En vuelo muestra menos blanco a los costados de la zona anal que las otras. El juvenil es la más pálida de las gallaretas de tierras bajas. Mide 42 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se alimenta de vegetación acuática. Vive en grupos, incluso junto a otras especies como la Gallareta Chica. Nada y bucea bien y, ante una alarma, se refugia en la vegetación. Su nido es parasitado por el Pato Rinconero, que pone allí sus huevos."
+   "t": "Nada, bucea y se esconde",
+   "p": "Come vegetación acuática y vive en grupos, incluso junto a otras especies. Nada y bucea bien y, ante una alarma, se refugia en la vegetación. El Pato Rinconero deja sus huevos en su nido."
   },
   {
-   "t": "Nidificación",
-   "p": "Nidifica en las orillas de lagunas y lagos, entre la vegetación. Construye un nido grande de juncos y pone de 4 a 7 huevos castaño claro, salpicados de pintas rojizas y negruzcas."
+   "t": "El nido",
+   "p": "Lo arma en las orillas de lagunas y lagos, entre la vegetación: un nido grande de juncos con 4 a 7 huevos castaño claro, salpicados de pintas rojizas y negruzcas."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "También se la llama focha de pico rojo, focha de ligas, gallareta grande, tagua y tagua común."
+   "t": "Muchos nombres",
+   "p": "También se la llama focha de pico rojo, focha de ligas, gallareta grande, tagua y tagua común. Vive en Brasil, Paraguay, Uruguay, Argentina y Chile hasta Tierra del Fuego, y también en las Malvinas, Georgias del Sur y Sandwich del Sur."
   }
  ],
  "fuentes": [
@@ -53,5 +53,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Gallareta Ligas Rojas"
+ "comun": "Gallareta Ligas Rojas",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-07-19",
+  "lugar": "Laguna Rivero"
+ }
 }

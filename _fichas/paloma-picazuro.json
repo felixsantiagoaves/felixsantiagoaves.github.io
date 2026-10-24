@@ -21,27 +21,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es de color vinoso, con la cabeza y el pecho vinosos y el dorso más pardo. Tiene el cuello dorsal con filetes celestes apretados y brillantes, y el cuello más largo que el de la manchada. En vuelo se ve una media luna blanca en las cubiertas. El resto del cuerpo es plomizo, con iris castaño (anaranjado según Pearman). Mide unos 34 a 38 cm según la guía."
+   "t": "La primera vez",
+   "p": "La primera vez que la anoté fue el 8 de diciembre de 2025, en Río Cuarto."
+  },
+  {
+   "t": "Vinosa, de nuca escamada",
+   "p": "Es de color vinoso, con la cabeza y el pecho vinosos y el dorso más pardo. Tiene el cuello dorsal con filetes celestes apretados y brillantes, y el cuello más largo que el de la Manchada. En vuelo se ve una media luna blanca en las cubiertas. El iris es castaño (anaranjado según Pearman). Mide unos 34 a 38 cm según la guía."
+  },
+  {
+   "t": "Arisca",
+   "p": "Es arisca. Su arrullo es limpio y de tono medio, algo como wooaa… woo-wo woou…, repetido."
   },
   {
    "t": "Dónde vive",
    "p": "Ocupa diversos ambientes, desde áreas rurales hasta poblados, y está en expansión. La guía de Pearman la da como especie extendida; Wikipedia agrega que en la Argentina su área se está ampliando."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Es arisca."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "Su arrullo es limpio y de tono medio, algo como wooaa… woo-wo woou… woo-wo woou…, repetido."
-  },
-  {
-   "t": "Nidificación",
+   "t": "El nido",
    "p": "Anida en árboles, donde arma una plataforma de ramas. Por lo general pone un solo huevo, blanco y elíptico (de unos 44 x 30 mm), y hace varias puestas por temporada."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Paloma amarga",
    "p": "Según Félix de Azara, los guaraníes la llamaban «picazuró», que significa «paloma amarga». En la guía de Narosky el nombre lleva acento final."
   }
  ],
@@ -57,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 225
+ "id": 225,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2025-12-08",
+  "lugar": "Río Cuarto"
+ }
 }

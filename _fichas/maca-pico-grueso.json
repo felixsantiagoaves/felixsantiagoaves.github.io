@@ -22,23 +22,27 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un macá robusto y rechoncho, sin penacho en las orejas ni copete, de pico grueso y claro, y iris oscuro. En plumaje nupcial el pico es blanco tiza con un anillo negro, la cabeza gris hollín con anillo ocular blanco y la garganta negra, el dorso pardusco y el vientre gris plateado, moteado. Fuera de la cría el pico es amarillo opaco, a veces con una banda poco visible; el plumaje es pardo oscuro, con la garganta blanquecina y el cuello pardo cálido. El juvenil es pardo hollín arriba, con la cara blanca cruzada por dos rayas negras finas, y abajo blanco con una banda pectoral parda."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 10 de junio de 2026, en el Balneario de Villa Cura Brochero."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en las tierras bajas y el piedemonte, en humedales, pantanos y aguas dulces de corriente quieta; es raro en el sur. Es poco común en aguas saladas. Es el primer zambullidor en llegar al interior del norte en la primavera y el último en irse en el otoño."
+   "t": "Robusto y rechoncho",
+   "p": "Es un macá robusto y rechoncho, sin penacho en las orejas ni copete, de pico grueso y claro, e iris oscuro. En plumaje nupcial el pico es blanco tiza con un anillo negro, la cabeza gris hollín con anillo ocular blanco y la garganta negra, y el vientre gris plateado, moteado. Fuera de la cría el pico es amarillo opaco, a veces con una banda poco visible. El juvenil tiene la cara blanca cruzada por dos rayas negras finas. Mide entre 28 y 32 cm."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Se zambulle antes de volar",
    "p": "Come peces (carpas, bagres, anguilas), insectos como libélulas, hormigas y escarabajos, y anfibios como ranas y renacuajos. Rara vez vuela: ante el peligro prefiere zambullirse."
   },
   {
-   "t": "Cómo suena",
-   "p": "Suele ser silencioso, salvo en la época de apareamiento, cuando el macho da un llamado sonoro, que se oye de lejos: una serie larga que arranca lenta y gana volumen y velocidad, formada sobre todo por frases de dos sílabas (algo como cuck, cuck, cuck)."
+   "t": "Cuck, cuck, cuck",
+   "p": "Suele ser silencioso, salvo en la época de apareamiento, cuando el macho da un llamado sonoro, que se oye de lejos: una serie larga que arranca lenta y gana volumen y velocidad, formada sobre todo por frases de dos sílabas."
   },
   {
-   "t": "Una nota sobre el nombre",
+   "t": "Dónde vive",
+   "p": "En las tierras bajas y el piedemonte, en humedales, pantanos y aguas dulces de corriente quieta; es raro en el sur. Es poco común en aguas saladas. Es el primer zambullidor en llegar al interior del norte en la primavera y el último en irse en el otoño."
+  },
+  {
+   "t": "Según el país",
    "p": "El \"pico grueso\" del nombre se relaciona con el pico ancho y, en época reproductiva, con su banda negra. Según el país recibe otros nombres: zambullidor pico anillado (México), picurio (Chile), zaramagullón grande (Cuba) o patico buzo (Venezuela)."
   }
  ],
@@ -53,5 +57,10 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-06-10",
+  "lugar": "Balneario Villa Cura Brochero"
+ }
 }

@@ -25,28 +25,32 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es terrestre y arbóreo, con un pico larguísimo y curvado hacia abajo. El adulto tiene la corona despeinada, una ceja blanca marcada y un bigote blanco, las partes inferiores densamente estriadas de blanco y la cola rufa."
+   "t": "El 10 de octubre, en Achiras",
+   "p": "El 10 de octubre de 2026 lo anoté en la Reserva Hídrica Achiras."
   },
   {
-   "t": "Dónde vive",
-   "p": "En la Argentina vive en las tierras bajas del norte y del centro: Narosky lo ubica en bosques de tipo chaqueño y arboledas, y lo describe bastante terrícola. Es nativo del centro sur de Sudamérica (sureste de Bolivia, oeste de Paraguay, Uruguay y sur de Brasil). Vive en bosques, matorrales y sabanas secos del Chaco y del Monte, hasta unos 600 m de altitud, y prefiere las formaciones de caranday y espinillo."
+   "t": "El pico más largo",
+   "p": "Es terrestre y arbóreo, con un pico larguísimo y curvado hacia abajo. El adulto tiene la corona despeinada, una ceja blanca marcada y un bigote blanco, las partes inferiores densamente estriadas de blanco y la cola rufa. Mide 31 cm y pesa entre 76 y 110 g."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Forrajea solo o en pareja, a veces junto a otros furnáridos. Busca alimento en troncos y ramas grandes y también en el suelo, donde escarba la tierra suelta con la cola abierta; puede cavar hasta 5 o 6 cm para sacar larvas. Come insectos de muchos órdenes, además de pequeños anfibios, reptiles, huevos de reptiles y aves, y pichones de aves menores. En el suelo se desplaza con torpeza, aunque puede correr distancias cortas. Su canto es una serie rápida de notas agudas y chillonas que descienden y terminan en una secuencia enredada."
-  },
-  {
-   "t": "Cómo suena",
+   "t": "Una risa metálica",
    "p": "El canto es una risa larga, potente, elástica y metálica, que se acelera hacia el final y termina con una carraspera rápida; a menudo se abrevia a las primeras notas. El llamado es un \"CHITIK\" seco de dos sílabas."
   },
   {
-   "t": "Nidificación",
-   "p": "Nidifica de septiembre a diciembre. El nido es rudimentario, a altura baja o media, en huecos de árboles o en nidos abandonados de carpinteros del género Colaptes, con la base acolchada con hojas y corteza. Pone tres huevos blancos, la incubación dura de 14 a 16 días y los pichones se quedan de 16 a 21 días en el nido, alimentados por la pareja."
+   "t": "Escarba con la cola abierta",
+   "p": "Forrajea solo o en pareja, a veces junto a otros furnáridos. Busca en troncos y ramas grandes y también en el suelo, donde escarba la tierra suelta con la cola abierta; puede cavar hasta 5 o 6 cm para sacar larvas. Come insectos de muchos órdenes, además de pequeños anfibios, reptiles, huevos de reptiles y aves, y pichones de aves menores. En el suelo se mueve con torpeza."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Se lo llama chinchero grande en Argentina y Paraguay, y arañero grande o trepador grande en Uruguay. De su canto salen nombres onomatopéyicos como bil-bil, gil-gil o ruiz. Fue descrito en 1849 por Thomas Campbell Eyton, y el epíteto bridgesii honra al naturalista y colector británico Thomas Charles Bridges."
+   "t": "Dónde vive",
+   "p": "En las tierras bajas del norte y del centro. Narosky lo ubica en bosques de tipo chaqueño y arboledas, y lo describe bastante terrícola. Vive en bosques, matorrales y sabanas secos del Chaco y del Monte, hasta unos 600 m, y prefiere las formaciones de caranday y espinillo."
+  },
+  {
+   "t": "El nido",
+   "p": "Nidifica de septiembre a diciembre. El nido es rudimentario, en huecos de árboles o en nidos abandonados de carpinteros del género Colaptes, con la base acolchada con hojas y corteza. Pone tres huevos blancos, que se incuban de 14 a 16 días, y los pichones se quedan de 16 a 21 días en el nido."
+  },
+  {
+   "t": "Bil-bil, gil-gil",
+   "p": "Se lo llama chinchero grande en Argentina y Paraguay, y arañero grande o trepador grande en Uruguay. De su canto salen nombres onomatopéyicos como bil-bil, gil-gil o ruiz. Lo describió en 1849 Thomas Campbell Eyton, y bridgesii honra al naturalista Thomas Charles Bridges."
   }
  ],
  "fuentes": [
@@ -61,5 +65,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Chinchero Grande"
+ "comun": "Chinchero Grande",
+ "apertura": {
+  "tipo": "cualquiera",
+  "fecha": "2026-10-10",
+  "lugar": "Reserva Hídrica Achiras"
+ }
 }

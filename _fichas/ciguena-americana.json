@@ -25,28 +25,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerla",
-   "p": "Es una cigüeña grande, de pico recto y grueso en la base. El adulto tiene las patas y la piel entre el pico y el ojo rojas, y es casi todo blanco con las remeras negras expuestas. En vuelo se distingue del Tuyuyú por el forro alar blanco muy ancho, casi hasta el borde de salida, y porque desde abajo solo se ven los bordes negros de la cola. El juvenil tiene el pico oscuro y es casi todo negro, con la cara blanca."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que la anoté fue el 27 de junio de 2026, en la Laguna Los Medanitos, en Paso del Durazno. La primera había sido el 17 de febrero, en la Laguna Rivero."
+  },
+  {
+   "t": "Blanca, con las patas rojas",
+   "p": "Es una cigüeña grande, de pico recto y grueso en la base. El adulto tiene las patas y la piel entre el pico y el ojo rojas, y es casi todo blanco con las remeras negras expuestas. En vuelo se distingue del Tuyuyú por el forro alar blanco muy ancho, casi hasta el borde de salida, y porque desde abajo solo se ven los bordes negros de la cola. El juvenil tiene el pico oscuro y es casi todo negro, con la cara blanca. Mide 119 cm."
+  },
+  {
+   "t": "En bandadas",
+   "p": "Es gregaria y forma bandadas generalmente poco numerosas, aunque en épocas de sequía pueden reunir cientos. Vuela a gran altura y aprovecha las corrientes térmicas para describir círculos. Los padres alimentan a los pichones con pececillos y otras presas chicas."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es residente en las tierras bajas del norte y del centro, en humedales y áreas rurales. Se encuentra en Sudamérica: Argentina, Bolivia, Brasil, Colombia, Guyana, Guayana francesa, Paraguay, Surinam, Uruguay y Venezuela. Es visitante no reproductivo en Perú y vagante en Chile, Trinidad y las Islas Malvinas. Vive en regiones de lagunas o marjales."
+   "p": "Es residente en las tierras bajas del norte y del centro, en humedales y áreas rurales. Está en Argentina, Bolivia, Brasil, Colombia, Guyana, Guayana francesa, Paraguay, Surinam, Uruguay y Venezuela; es visitante no reproductivo en Perú y vagante en Chile, Trinidad y las Malvinas."
   },
   {
-   "t": "Comportamiento",
-   "p": "Es gregaria y forma bandadas generalmente poco numerosas, aunque en épocas de sequía pueden reunir cientos de individuos. Vuela a gran altura y aprovecha las corrientes térmicas para describir círculos. Los padres alimentan a los pichones con pececillos y otras presas pequeñas."
+   "t": "El nido",
+   "p": "Es una plataforma de 1,20 a 1,30 m de diámetro, con tallos de ciperáceas y otros juncos, al borde del agua o en zonas semianegadas. Pone hasta tres huevos blancos, en días alternos, y los pichones se quedan algunas semanas en el nido."
   },
   {
-   "t": "Nidificación",
-   "p": "Construye una plataforma de 1,20 a 1,30 m de diámetro externo con tallos de ciperáceas y otros juncos, al borde del agua o en zonas semianegadas, como esteros y bañados. Pone hasta tres huevos blancos, en días alternos. Los pichones nacen poco desarrollados y permanecen en el nido durante algunas semanas."
-  },
-  {
-   "t": "Una nota sobre el nombre",
-   "p": "Además de cigüeña americana se la llama tuyango, tabuyayá, pillo o gabán peonío."
-  },
-  {
-   "t": "Conservación",
-   "p": "Su población se estima entre 50 y 100 mil ejemplares. La única amenaza identificada es la destrucción de humedales, aunque no parece estar en riesgo inmediato."
+   "t": "Nombres y conservación",
+   "p": "Además de cigüeña americana se la llama tuyango, tabuyayá, pillo o gabán peonío. Su población se estima entre 50 y 100 mil ejemplares y la única amenaza identificada es la destrucción de humedales."
   }
  ],
  "fuentes": [
@@ -61,5 +61,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cigüeña Americana"
+ "comun": "Cigüeña Americana",
+ "apertura": {
+  "tipo": "ultima",
+  "fecha": "2026-06-27",
+  "lugar": "Laguna Los Medanitos"
+ }
 }

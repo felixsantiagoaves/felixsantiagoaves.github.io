@@ -21,24 +21,20 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es el hornero y pariente más grande y más escandaloso: terrestre y arbóreo, hace nidos enormes de palitos. El adulto tiene el iris amarillo, una cresta visible y la garganta, la nuca y la cola castaño rufo que contrastan."
+   "t": "El más escandaloso",
+   "p": "Es el hornero y pariente más grande y más escandaloso: terrestre y arbóreo, hace nidos enormes de palitos. El adulto tiene el iris amarillo, una cresta visible y la garganta, la nuca y la cola castaño rufo que contrastan. Mide 27 cm."
+  },
+  {
+   "t": "Un dúo inconfundible",
+   "p": "Camina por el suelo en pequeños grupos familiares y busca comida revolviendo hojas secas, ramas y estiércol seco. El canto es una cacofonía inconfundible de notas muy fuertes y ásperas que se vuelven más rápidas, cortas y graves hacia el final, y dura de 12 a 16 segundos. A menudo otro ave hace dúo con notas más silbadas. Es más áspero que el del Cacholote Pardo, al que se parece. El llamado es un cloqueo fuerte, a veces en serie."
+  },
+  {
+   "t": "El nido",
+   "p": "Construye un nido alargado con ramas secas y otros materiales, como estiércol, pieles de víbora y plumas de aves grandes."
   },
   {
    "t": "Dónde vive",
-   "p": "En la Argentina es una especie bastante extendida del norte y centro: bosques y matorrales chaqueños, montes de espinillo, sabanas, áreas rurales y arboledas, hasta unos 900 m de altitud. Fuera del país habita el sur de Bolivia y el oeste de Paraguay, y llega al extremo sudoeste de Brasil y a Uruguay. Se la describe como bastante común."
-  },
-  {
-   "t": "Comportamiento",
-   "p": "Camina por el suelo en pequeños grupos familiares y busca su alimento revolviendo hojas secas, ramas y estiércol seco. Su canto es estridente, normalmente en dúo, y más áspero que el del Cacholote Pardo (Pseudoseisura unirufa), al que se parece en general."
-  },
-  {
-   "t": "Cómo suena",
-   "p": "El canto es una cacofonía inconfundible de notas muy fuertes y ásperas que se vuelven más rápidas, cortas y graves hacia el final; a menudo otro ave hace dúo con notas más silbadas o raspantes, y dura de 12 a 16 segundos. El llamado es un cloqueo fuerte, a veces en serie."
-  },
-  {
-   "t": "Nidificación",
-   "p": "Construye un nido alargado con ramas secas y otros materiales, como estiércol, pieles de víbora y plumas de aves grandes."
+   "p": "Es bastante común en el norte y centro del país: bosques y matorrales chaqueños, montes de espinillo, sabanas, áreas rurales y arboledas, hasta unos 900 m. Fuera del país está en el sur de Bolivia, el oeste de Paraguay, el extremo sudoeste de Brasil y Uruguay."
   }
  ],
  "fuentes": [
@@ -53,5 +49,8 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "comun": "Cacholote Castaño"
+ "comun": "Cacholote Castaño",
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

@@ -26,24 +26,28 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un martín pescador chico y con copete, de dorso verde, con motas blancas en todas las cubiertas alares y la cola barrada. Es una miniatura del martín pescador mediano, pero con motas en todas las cubiertas y flancos manchados. El macho tiene la garganta y el vientre blancos, con un collar pectoral rufo contrastante; la hembra tiene la garganta acanelada, un collar pectoral verde y un semicollar ventral también verde."
+   "t": "Una miniatura",
+   "p": "Es un martín pescador chico y con copete, de dorso verde, con motas blancas en todas las cubiertas alares y la cola barrada. Es una miniatura del Martín Pescador Mediano, pero con motas en todas las cubiertas y flancos manchados. Mide entre 17 y 21 cm."
+  },
+  {
+   "t": "Macho rufo, hembra verde",
+   "p": "El macho tiene la garganta y el vientre blancos, con un collar pectoral rufo contrastante. La hembra tiene la garganta acanelada, un collar pectoral verde y un semicollar ventral también verde."
+  },
+  {
+   "t": "Pesca desde una rama baja",
+   "p": "Se posa en una rama baja y sombreada cerca del agua y desde ahí se lanza a pescar. Según una descripción de la especie, come sobre todo insectos acuáticos."
   },
   {
    "t": "Dónde vive",
    "p": "Es un habitante de humedales, arroyos y ríos de las tierras bajas y el piedemonte del norte del país."
   },
   {
-   "t": "Comportamiento y alimentación",
-   "p": "Se posa en una rama baja y sombreada cerca del agua y desde ahí se lanza a pescar. Según una descripción de la especie, come sobre todo insectos acuáticos."
-  },
-  {
-   "t": "Nidificación",
+   "t": "El túnel",
    "p": "Cría en arroyos o ríos: excava en la barranca un túnel horizontal de alrededor de un metro. La hembra pone tres huevos, a veces cuatro."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "En la Argentina es martín pescador chico; en otras regiones se lo conoce como martín pescador verde (Green Kingfisher en inglés)."
+   "t": "Martín pescador verde",
+   "p": "En Argentina es martín pescador chico; en otras regiones se lo conoce como martín pescador verde (Green Kingfisher en inglés)."
   }
  ],
  "fuentes": [
@@ -57,5 +61,8 @@
   {
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
- ]
+ ],
+ "apertura": {
+  "tipo": "ninguna"
+ }
 }

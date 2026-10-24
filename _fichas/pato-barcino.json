@@ -25,24 +25,24 @@
  ],
  "secciones": [
   {
-   "t": "Cómo reconocerlo",
-   "p": "Es un pato compacto, de cabeza redondeada y cola corta y algo puntiaguda. El pico es corto y amarillo, con el culmen negro. La cabeza es oscura y el cuello también, y el pecho está manchado de negro. El vientre es blancuzco y los flancos son lisos. En vuelo muestra un espejo negro entre fajas ocres y blancuzcas, y la parte de abajo de las alas es blanca. Mide unos 33 a 41 cm según la guía."
+   "t": "La primera vez",
+   "p": "La primera vez que lo anoté fue el 2 de mayo de 2026, en la Reserva Provincial Chocancharava."
   },
   {
-   "t": "Dónde vive",
-   "p": "Vive en humedales y está muy extendido por el país. La guía de Pearman agrega que llega localmente hasta los 2000 m en el noroeste."
+   "t": "Compacto, de pico amarillo",
+   "p": "Es un pato compacto, de cabeza redondeada y cola corta y algo puntiaguda. El pico es corto y amarillo, con el culmen negro. La cabeza y el cuello son oscuros y el pecho está manchado de negro. El vientre es blancuzco y los flancos son lisos. En vuelo muestra un espejo negro entre fajas ocres y blancuzcas, y la parte de abajo de las alas es blanca. Mide unos 33 a 41 cm según la guía."
   },
   {
-   "t": "Comportamiento y alimentación",
+   "t": "Vuela bajo",
    "p": "Vuela bajo. Se alimenta de vegetales y pequeños invertebrados."
   },
   {
-   "t": "Nidificación",
-   "p": "Anida en árboles. Pone entre cinco y ocho huevos y la incubación dura veinticuatro días."
+   "t": "Dónde vive",
+   "p": "Vive en humedales y está muy extendido por el país. La guía de Pearman agrega que llega localmente hasta los 2000 m en el noroeste. Narosky distingue una raza del noroeste, más grande (37 cm, contra 33 cm)."
   },
   {
-   "t": "Una nota sobre el nombre",
-   "p": "Narosky distingue una raza del noroeste, más grande (37 cm, contra 33 cm). También se lo llama pato paramuno, pato jergón chico o cerceta barcina."
+   "t": "Nido y nombres",
+   "p": "Anida en árboles. Pone entre cinco y ocho huevos y la incubación dura veinticuatro días. También se lo llama pato paramuno, pato jergón chico o cerceta barcina."
   }
  ],
  "fuentes": [
@@ -57,5 +57,10 @@
    "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
   }
  ],
- "id": 233
+ "id": 233,
+ "apertura": {
+  "tipo": "primera",
+  "fecha": "2026-05-02",
+  "lugar": "Reserva Provincial Chocancharava"
+ }
 }
