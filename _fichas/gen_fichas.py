@@ -64,8 +64,20 @@ def otras(e):
     i = POS[e['id']]; mismo = [x for x in ESP[i+1:] + ESP[:i] if x['grupo'] == e['grupo']][:3]
     if len(mismo) < 3: mismo += [x for x in ESP[i+1:] + ESP[:i] if x not in mismo][:3 - len(mismo)]
     return mismo
-def tarjeta(x, cls='card'):
+def miniatura(thumb):
+    """Miniatura de 400 px de la portada (fotos/th/...) para el índice; se crea si falta o si la portada cambió."""
+    src = os.path.join(RAIZ, thumb.lstrip('/')); dst = os.path.join(RAIZ, 'fotos', 'th', os.path.basename(src))
+    if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        with Image.open(src) as im:
+            im = im.convert('RGB'); im.thumbnail((400, 400), Image.LANCZOS); im.save(dst, 'JPEG', quality=78, optimize=True, progressive=True)
+    with Image.open(dst) as im: w, h = im.size
+    return '/fotos/th/' + os.path.basename(src), w, h
+
+def tarjeta(x, cls='card', th=False):
     ins = ''
+    if th:
+        t, w, h = miniatura(x['thumb']); x = dict(x, thumb=t, w=w, h=h)
     return (f'<a class="{cls}" href="/aves/{x["slug"]}/">{ins}<img src="{x["thumb"]}" width="{x["w"]}" height="{x["h"]}" loading="lazy" decoding="async" alt="{esc(x["comun"])} ({esc(x["sci"])}), fotografiada por Félix Santiago">'
             f'<span class="n">{esc(x["comun"])}</span><span class="c">{esc(x["sci"])}</span></a>')
 
@@ -140,7 +152,7 @@ for E in ESP:
                for i, p in enumerate(fotos[:10])]
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'WebPage', '@id': url, 'url': url, 'name': title, 'description': S['resumen'], 'inLanguage': 'es-AR', 'isPartOf': {'@id': BASE + '#web'}, 'author': {'@id': BASE + '#felix'},
-         'about': {'@type': 'Taxon', 'name': sci, 'alternateName': comun, 'taxonRank': 'Species'}, **({'primaryImageOfPage': {'@id': f'{url}#foto-1'}} if imgs_ld else {})},
+         'about': {'@type': 'Taxon', 'name': sci, 'alternateName': comun, 'taxonRank': 'Species', **({'sameAs': [f['u'] for f in S.get('fuentes', []) if 'wikipedia.org' in f.get('u', '')][:1]} if any('wikipedia.org' in f.get('u', '') for f in S.get('fuentes', [])) else {})}, **({'primaryImageOfPage': {'@id': f'{url}#foto-1'}} if imgs_ld else {})},
         {'@type': 'BreadcrumbList', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': BASE},
             {'@type': 'ListItem', 'position': 2, 'name': 'Especies', 'item': BASE + 'aves/'},
@@ -228,7 +240,7 @@ json.dump({k: v['slug'] for k, v in paginas.items()}, open(os.path.join(RAIZ, 'a
 
 # Índice de especies /aves/
 grupos = sorted({e['grupo'] for e in ESP}, key=fold)
-cards = ''.join(f'<li data-q="{esc(fold(e["comun"] + " " + e["sci"]))}" data-g="{esc(e["grupo"])}">{tarjeta(e)}</li>' for e in ESP)
+cards = ''.join(f'<li data-q="{esc(fold(e["comun"] + " " + e["sci"]))}" data-g="{esc(e["grupo"])}">{tarjeta(e, th=True)}</li>' for e in ESP)
 opts = ''.join(f'<option value="{esc(g)}">{esc(g)}</option>' for g in grupos)
 IURL = BASE + 'aves/'
 ititle = 'Especies de aves que fotografié · Félix Santiago Aves'

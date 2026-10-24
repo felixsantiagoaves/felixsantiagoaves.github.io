@@ -51,7 +51,7 @@ def nav(activo):
 def ld(pid, carpeta, titulo, desc, url):
     if pid == 'sobre-mi': return HOME_LD
     g = [x for x in LD_GRAPH if x['@type'] in ('WebSite', 'Person')]
-    g.append({'@type': 'WebPage', '@id': url, 'url': url, 'name': titulo, 'description': desc, 'inLanguage': 'es-AR', 'isPartOf': {'@id': B + '#web'}, 'author': {'@id': B + '#felix'}})
+    g.append({'@type': 'ContactPage' if pid == 'redes' else 'WebPage', '@id': url, 'url': url, 'name': titulo, 'description': desc, 'inLanguage': 'es-AR', 'isPartOf': {'@id': B + '#web'}, 'author': {'@id': B + '#felix'}})
     g.append({'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': B}, {'@type': 'ListItem', 'position': 2, 'name': titulo.split(' · ')[0], 'item': url}]})
     if pid == 'galeria':
         g += [dict(x, url=url) for x in LD_GRAPH if x['@type'] == 'ImageGallery']

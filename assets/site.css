@@ -211,7 +211,7 @@ input[type=file]{display:none;}
 .carrusel-dot.active{background:white;}
 
 /* MAPA (Leaflet) */
-.mapa-titulo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ti);text-align:center;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;}
+.mapa-titulo{margin-top:0;font-family:'Playfair Display',serif;font-size:1rem;color:var(--ti);text-align:center;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:2px;font-weight:400;}
 .mapa-titulo::before{content:'— ';}
 .mapa-titulo::after{content:' —';}
 

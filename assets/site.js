@@ -784,7 +784,7 @@ function renderLB() {
   lbReset();
   const img = document.getElementById('lb-img');
   img.classList.remove('ok');
-  img.src = f.src;
+  img.src = f.src; img.alt = f.nombre || f.caption || '';
   if(img.complete && img.naturalWidth) img.classList.add('ok');
   document.getElementById('lb-caption').textContent = f.nombre || f.caption || '';
   document.getElementById('lb-sub').textContent = f.lugar || '';
