@@ -26,7 +26,7 @@
  "secciones": [
   {
    "t": "Hasta ahora, la última",
-   "p": "La última vez que lo anoté fue el 19 de julio de 2026, en la Laguna Rivero, en Alcira Gigena. La primera había sido el 31 de mayo, en un camino rural."
+   "p": "La última vez que lo anoté fue el 25 de octubre de 2026, en la Laguna Rivero, en Alcira Gigena. La primera había sido el 31 de mayo, en un camino rural."
   },
   {
    "t": "El pico lo dice todo",
@@ -64,7 +64,7 @@
  "id": 238,
  "apertura": {
   "tipo": "ultima",
-  "fecha": "2026-07-19",
+  "fecha": "2026-10-25",
   "lugar": "Laguna Rivero"
  }
 }

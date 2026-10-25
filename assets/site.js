@@ -506,11 +506,17 @@ function irMapaLugar(idx){
 function buildRecientes(){
   const box = document.getElementById('recientes'), tr = document.getElementById('rec-track');
   if(!box || !tr) return;
-  const lista = recientes(8, true);
+  const lista = recientes(8, false);   // también las que todavía no tienen foto (se muestran con la silueta de su familia)
   if(!lista.length){ box.style.display = 'none'; return; }
+  const circulo = a => {
+    const f = avist[a.id].foto;
+    if(f) return `<div class="rec-circulo"><img src="${f}" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
+    const k = SILUETAS[FAM_SILUETA[a.familiaEsp]] ? FAM_SILUETA[a.familiaEsp] : 'pajarito';
+    return `<div class="rec-circulo rec-sin-foto"><span class="sil-i sil-${k}" role="img" aria-label="silueta"></span></div>`;
+  };
   tr.innerHTML = lista.map(a =>
     `<button class="rec-item" data-id="${a.id}" title="${escHtml(a.comun)} · ${fmtFecha(avist[a.id].fecha)}">
-       <div class="rec-circulo"><img src="${avist[a.id].foto}" style="object-position:${focoPos(avist[a.id].foto)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>
+       ${circulo(a)}
        <div class="rec-nom">${escHtml(a.comun)}</div>
      </button>`).join('') +
     `<button class="rec-item rec-mas" data-mas="1"><div class="rec-circulo">→</div><div class="rec-nom">Ver todas</div></button>`;

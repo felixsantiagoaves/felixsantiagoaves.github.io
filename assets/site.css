@@ -328,6 +328,8 @@ body{padding-bottom:48px;}
 .rec-item{flex:0 0 78px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;background:none;border:none;padding:0;cursor:pointer;text-align:center;scroll-snap-align:start;font:inherit;color:inherit;}
 .rec-circulo{width:64px;height:64px;border-radius:50%;margin:0 auto;border:2px solid var(--ar);overflow:hidden;background:var(--v2);transition:transform .2s,border-color .2s;}
 .rec-circulo img{width:100%;height:100%;object-fit:cover;display:block;}
+.rec-sin-foto{display:flex;align-items:center;justify-content:center;border-style:dashed;}
+.rec-sin-foto .sil-i{display:block;width:68%;height:68%;background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.55;filter:invert(1) brightness(1.5);}
 .rec-item:hover .rec-circulo{transform:scale(1.08);border-color:var(--cr);}
 .rec-nom{font-family:'Caveat',cursive;font-size:1rem;line-height:1.05;color:var(--cr);margin-top:.35rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .rec-mas .rec-circulo{display:flex;align-items:center;justify-content:center;background:transparent;border-style:dashed;color:var(--ar);font-size:1.5rem;}

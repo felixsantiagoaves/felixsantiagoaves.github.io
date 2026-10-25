@@ -96,8 +96,9 @@ Si una especie NO existe en AVES (caso raro): agregarla al final con id = total 
 
   - Botón "Explorar el álbum" (.album-cta) en el panel izquierdo: abre el álbum con irAlbum('enc').
   - Tira "Últimas especies sumadas" (#recientes, buildRecientes): las 8 especies más recientes
-    QUE TIENEN FOTO (orden fecha+hora del primer registro en eBird). Al tocar una se abre su ficha
-    y las flechas del modal recorren la tira. Una especie nueva entra sola cuando su "foto" deja de ser null.
+    (orden fecha+hora del primer registro en eBird), CON O SIN FOTO. Las que aún no tienen foto
+    se ven con la silueta de su familia (.rec-sin-foto, borde punteado). Al tocar una se abre su ficha
+    y las flechas del modal recorren la tira. Cuando se sube la foto, la silueta se reemplaza sola.
   - Tarjetas "Última ave registrada" y "Última localización": son clickeables (ficha / mapa en ese lugar).
   - El menú "Álbum" muestra el contador de especies (#nav-album-badge). irAlbum() ubica la pestaña por id (#nav-album),
     no por su texto.
