@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-25",
+ "generado": "2026-10-26",
  "fuente": "MyEBirdData.csv",
  "avistamientos": {
   "2": {
@@ -1729,7 +1729,7 @@
    "prov": [
     "X"
    ],
-   "foto": null,
+   "foto": "fotos/empidonomus_aurantioatrocristatus.jpg",
    "notas": ""
   },
   "387": {
