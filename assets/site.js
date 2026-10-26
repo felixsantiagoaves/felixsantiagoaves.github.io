@@ -86,7 +86,7 @@ function campoArrows(){
   if(!g || !p) return;
   p.disabled = g.scrollLeft < 4; n.disabled = g.scrollLeft + g.clientWidth >= g.scrollWidth - 4;
 }
-function focoPos(f){ return (typeof FOCO !== 'undefined' && FOCO[f] != null) ? FOCO[f] : 50; }
+function focoPos(f){ const k = String(f||'').replace(/^\//, ''); return (typeof FOCO !== 'undefined' && FOCO[k] != null) ? FOCO[k] : 50; }
 function irAlbum(filtroVal){
   if(aOtra('album','irAlbum',[filtroVal])) return;
   const bts=document.querySelectorAll('.fb');
@@ -555,7 +555,7 @@ function renderAlbum() {
   const numMap = {}; todas.forEach((a, i) => numMap[a.id] = i + 1);
   const fig = (ave, i) => {
     const enc = visto(ave), av = enc ? avist[ave.id] : null;
-    const foco = (typeof FOCO !== 'undefined' && av && av.foto && FOCO[av.foto] != null) ? FOCO[av.foto] : 50;
+    const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
       ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
       : getSilueta(ave.familiaEsp);
