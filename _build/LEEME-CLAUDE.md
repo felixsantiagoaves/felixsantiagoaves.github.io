@@ -78,6 +78,7 @@ E) El mapa (Leaflet + OpenStreetMap, se carga solo al abrir la pestaña Mapa) di
 
   1. eBird > My eBird > Download My Data (llega por mail) => MyEBirdData.csv
   2. Desde la raíz del repo:  python sync/sync_ebird.py MyEBirdData.csv
+       (Se ignoran los registros con cantidad 0: eBird no los cuenta como especie vista.)
   3. El script imprime un resumen. Hay que resolver:
        - "FALTA FICHA": agregar la entrada en FICHAS (estado + curiosidad).
        - "Sin foto todavía": el usuario sube fotos/nombre_cientifico_en_minusculas.jpg

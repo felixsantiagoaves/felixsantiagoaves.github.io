@@ -85,6 +85,9 @@ def main(ruta_csv):
     prov_de_sp = defaultdict(set)     # id especie -> {codigos de provincia}
 
     for r in filas:
+        if (r.get("Count") or "").strip() == "0":   # eBird no cuenta registros con cantidad 0
+            omitidos["(cantidad 0) " + r["Scientific Name"]] += 1
+            continue
         sci = normalizar(r["Scientific Name"])
         if sci is None or sci not in aves:
             omitidos[r["Scientific Name"]] += 1

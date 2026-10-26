@@ -1,66 +1,66 @@
 {
- "comun": "Pato Gargantilla",
- "resumen": "Pato Gargantilla (Anas bahamensis): cómo reconocerlo por la cara y garganta blancas y la base roja del pico, con mis fotos y el mapa de mis avistamientos en Córdoba.",
- "datos": [
-  [
-   "Largo",
-   "35 a 49 cm según la guía"
+  "comun": "Pato Gargantilla",
+  "resumen": "Pato Gargantilla (Anas bahamensis): cómo reconocerlo por la cara y garganta blancas y la base roja del pico, con mis fotos y el mapa de mis avistamientos en Córdoba.",
+  "datos": [
+    [
+      "Largo",
+      "35 a 49 cm según la guía"
+    ],
+    [
+      "Distribución",
+      "Sobre todo en el norte"
+    ],
+    [
+      "Hábitat",
+      "Humedales, a menudo salobres"
+    ],
+    [
+      "Alimentación",
+      "Semillas, plantas acuáticas y algas"
+    ],
+    [
+      "Puesta",
+      "6 a 10 huevos"
+    ]
   ],
-  [
-   "Distribución",
-   "Sobre todo en el norte"
+  "secciones": [
+    {
+      "t": "La primera vez",
+      "p": "La primera vez que lo anoté fue el 31 de mayo de 2026, sobre la Ruta Nacional 35."
+    },
+    {
+      "t": "La cara blanca",
+      "p": "Se parece al Pato Maicero, pero tiene la cara y la garganta blancas, muy notables. El dorso es manchado y el vientre tiene pecas negras. El espejo alar es verde entre fajas acanaladas. La cola es aguda y crema. El pico es plomizo con la base roja. Mide unos 35 cm según Narosky y 49 cm según Pearman."
+    },
+    {
+      "t": "Qué come",
+      "p": "Se alimenta de semillas y plantas acuáticas, y también consume algas."
+    },
+    {
+      "t": "Dónde vive",
+      "p": "Habita en humedales, a menudo salobres, sobre todo en el norte del país. Anida en los manglares o en la costa de lagunas, con entre seis y diez huevos; la incubación dura veinticinco días."
+    },
+    {
+      "t": "Pato cariblanco",
+      "p": "En Chile se lo conoce como pato cariblanco o pato gargantillo y en Perú como ánade gargantillo."
+    }
   ],
-  [
-   "Hábitat",
-   "Humedales, a menudo salobres"
+  "fuentes": [
+    {
+      "t": "Wikipedia: Anas bahamensis",
+      "u": "https://es.wikipedia.org/wiki/Anas_bahamensis"
+    },
+    {
+      "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
+    },
+    {
+      "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
+    }
   ],
-  [
-   "Alimentación",
-   "Semillas, plantas acuáticas y algas"
-  ],
-  [
-   "Puesta",
-   "6 a 10 huevos"
-  ]
- ],
- "secciones": [
-  {
-   "t": "La primera vez",
-   "p": "La primera vez que lo anoté fue el 17 de febrero de 2026, en la Laguna Rivero, en Alcira Gigena."
-  },
-  {
-   "t": "La cara blanca",
-   "p": "Se parece al Pato Maicero, pero tiene la cara y la garganta blancas, muy notables. El dorso es manchado y el vientre tiene pecas negras. El espejo alar es verde entre fajas acanaladas. La cola es aguda y crema. El pico es plomizo con la base roja. Mide unos 35 cm según Narosky y 49 cm según Pearman."
-  },
-  {
-   "t": "Qué come",
-   "p": "Se alimenta de semillas y plantas acuáticas, y también consume algas."
-  },
-  {
-   "t": "Dónde vive",
-   "p": "Habita en humedales, a menudo salobres, sobre todo en el norte del país. Anida en los manglares o en la costa de lagunas, con entre seis y diez huevos; la incubación dura veinticinco días."
-  },
-  {
-   "t": "Pato cariblanco",
-   "p": "En Chile se lo conoce como pato cariblanco o pato gargantillo y en Perú como ánade gargantillo."
+  "id": 241,
+  "apertura": {
+    "tipo": "primera",
+    "fecha": "2026-05-31",
+    "lugar": "Ruta Nacional 35"
   }
- ],
- "fuentes": [
-  {
-   "t": "Wikipedia: Anas bahamensis",
-   "u": "https://es.wikipedia.org/wiki/Anas_bahamensis"
-  },
-  {
-   "t": "Pearman, M. y Areta, J. I. (2020). Field Guide to the Birds of Argentina and the Southwest Atlantic. Helm (guía de campo en papel)."
-  },
-  {
-   "t": "Narosky, T. y Yzurieta, D. Guía de identificación Aves de Argentina y Uruguay / Birds of Argentina & Uruguay (16.ª edición, bilingüe). Vázquez Mazzini Editores (guía de campo en papel)."
-  }
- ],
- "id": 241,
- "apertura": {
-  "tipo": "primera",
-  "fecha": "2026-02-17",
-  "lugar": "Laguna Rivero"
- }
 }

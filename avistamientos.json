@@ -672,16 +672,6 @@
    "foto": "fotos/hirundo_rustica.jpg",
    "notas": ""
   },
-  "161": {
-   "fecha": "2026-01-06",
-   "hora": "07:00",
-   "lugar": "Río Cuarto",
-   "prov": [
-    "X"
-   ],
-   "foto": null,
-   "notas": ""
-  },
   "162": {
    "fecha": "2025-12-08",
    "hora": "16:00",
@@ -863,9 +853,9 @@
    "notas": ""
   },
   "194": {
-   "fecha": "2026-02-17",
-   "hora": "07:59",
-   "lugar": "Laguna Rivero, Alcira Gigena",
+   "fecha": "2026-06-27",
+   "hora": "09:00",
+   "lugar": "Laguna Los Medanitos, Paso del Durazno",
    "prov": [
     "X"
    ],
@@ -1163,9 +1153,9 @@
    "notas": ""
   },
   "241": {
-   "fecha": "2026-02-17",
-   "hora": "07:59",
-   "lugar": "Laguna Rivero, Alcira Gigena",
+   "fecha": "2026-05-31",
+   "hora": "08:18",
+   "lugar": "Ruta Nacional 35 (-33.727, -64.428)",
    "prov": [
     "X"
    ],
@@ -2279,7 +2269,7 @@
    "lat": -33.1232,
    "lon": -64.3493,
    "prov": "X",
-   "count": 45,
+   "count": 44,
    "ids": [
     19,
     48,
@@ -2294,7 +2284,6 @@
     136,
     155,
     156,
-    161,
     162,
     163,
     164,
