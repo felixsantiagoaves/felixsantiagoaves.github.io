@@ -1,0 +1,51 @@
+<svg id="mascotsvg" role="img" aria-label="Carpintero lomo blanco volando" viewBox="-170 -90 600 560" width="600" height="560" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+  <style>
+#m-root{transform-box:view-box;transform-origin:150px 200px;animation:fl .5s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(-66deg)}50%{transform:translateY(-12px) rotate(-66deg)}}
+#m-head{transform-box:view-box;transform-origin:112px 128px;transform:rotate(58deg)}
+#m-fwing{transform-box:view-box;transform-origin:140px 192px;animation:fw .5s ease-in-out infinite}
+#m-fwing2{transform-box:view-box;transform-origin:140px 192px;animation:fw2 .5s ease-in-out infinite}
+@keyframes fw{0%,100%{transform:rotate(118deg) scale(1.05)}50%{transform:rotate(-30deg) scale(1.05)}}
+@keyframes fw2{0%,100%{transform:rotate(90deg)}50%{transform:rotate(-32deg)}}
+#m-legF,#m-legB{transform-box:view-box;transform-origin:98px 250px;transform:rotate(-10deg)}
+#m-lid{animation:bl 4.4s infinite}@keyframes bl{0%,92%,100%{transform:scaleY(0)}95%{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+  <g id="m-root">
+    <g id="m-tail">
+      <path d="M100 286 L152 292 L100 398 L62 386 Z" fill="#1b1816" stroke="#0f0b08" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M106 304 L86 384 M130 300 L98 392" stroke="#3b3430" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g id="m-legB"><path d="M98 270 L62 274" stroke="#6b6258" stroke-width="10" stroke-linecap="round"/><path d="M62 274 L44 260 M62 274 L44 290 M62 274 L48 276" stroke="#6b6258" stroke-width="7" stroke-linecap="round"/></g>
+    <g id="m-legF"><path d="M98 236 L62 240" stroke="#7a7066" stroke-width="10" stroke-linecap="round"/><path d="M62 240 L44 226 M62 240 L44 256 M62 240 L48 242" stroke="#7a7066" stroke-width="7" stroke-linecap="round"/></g>
+    <g id="m-fwing2" style="opacity:1"><path d="M142 184 C 192 160, 264 150, 336 170 L 356 174 L 330 186 L 356 196 L 326 206 L 348 218 L 312 222 L 330 238 L 284 236 C 234 252, 182 240, 142 214 Z" fill="#2b2420" stroke="#0f0b08" stroke-width="3" stroke-linejoin="round"/><path d="M178 192 C 220 182, 262 184, 292 192 L 290 224 C 258 232, 214 228, 180 214 Z" fill="#c79a62"/></g>
+    <path id="m-body" d="M92 130 C 84 190, 92 262, 112 304 L 170 298 C 214 252, 222 184, 190 132 C 168 106, 118 106, 92 130 Z" fill="#1d1a1a" stroke="#0f0b08" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M92 130 C 84 190, 92 262, 112 304 C 128 262, 126 190, 132 126 Z" fill="#cdb48a"/>
+    <path d="M86 160 L128 156 M84 180 L128 178 M85 200 L129 200 M86 220 L129 222 M90 240 L128 244 M96 260 L128 266 M104 280 L124 286" stroke="#3a2c20" stroke-width="3.5" stroke-linecap="round"/>
+    <path id="m-lomo" d="M150 126 C 178 128, 198 150, 192 184 C 188 206, 160 212, 148 192 C 138 172, 138 146, 150 126 Z" fill="#f4e8c8" stroke="#2a1f14" stroke-width="2.5"/>
+    <g id="m-wing" style="opacity:0">
+      <path d="M150 196 C 204 188, 230 240, 208 300 C 180 304, 152 274, 146 234 Z" fill="#2a2422" stroke="#0f0b08" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M158 232 q 28 10 44 -6 M 156 256 q 28 12 44 -4" stroke="#c79a62" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="m-fwing" style="opacity:1"><path d="M142 184 C 192 160, 264 150, 336 170 L 356 174 L 330 186 L 356 196 L 326 206 L 348 218 L 312 222 L 330 238 L 284 236 C 234 252, 182 240, 142 214 Z" fill="#1d1a1a" stroke="#0f0b08" stroke-width="3" stroke-linejoin="round"/><path d="M178 192 C 220 182, 262 184, 292 192 L 290 224 C 258 232, 214 228, 180 214 Z" fill="#c79a62"/></g>
+    <g id="m-head">
+      <path d="M70 96 C 66 122, 84 142, 114 150 L 152 128 C 132 104, 112 94, 98 100 Z" fill="#d1141f" stroke="#2a1f14" stroke-width="3" stroke-linejoin="round"/>
+      <path id="m-crest" d="M92 50 C 108 28, 138 20, 176 24 C 156 34, 144 44, 140 62 C 128 54, 110 50, 92 50 Z" fill="#d1141f" stroke="#2a1f14" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M62 76 C 60 48, 96 38, 124 52 C 138 62, 136 88, 118 104 C 100 114, 68 106, 62 76 Z" fill="#d1141f" stroke="#2a1f14" stroke-width="3" stroke-linejoin="round"/>
+      <g id="m-fem" style="opacity:1">
+        <path d="M64 72 C 62 50, 96 40, 124 54 C 130 60, 132 66, 128 72 C 108 64, 84 68, 64 76 Z" fill="#1b1816"/>
+        <path d="M92 50 C 108 28, 138 20, 176 24 C 156 34, 144 44, 140 62 C 128 54, 110 50, 92 50 Z" fill="#1b1816" stroke="#0f0b08" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M74 90 C 90 100, 104 102, 118 112" stroke="#f6efdf" stroke-width="7" fill="none" stroke-linecap="round"/>
+      </g>
+      <g id="m-cheek" style="opacity:0"><ellipse cx="100" cy="90" rx="10" ry="5.5" fill="#1b1816"/><path d="M94 90 L106 90" stroke="#f6efdf" stroke-width="2.5" stroke-linecap="round"/></g>
+      <path d="M76 74 L 42 91 L 46 96 L 80 86 Z" fill="#efe3c8" stroke="#2a1f14" stroke-width="2.5" stroke-linejoin="round"/>
+      <g id="m-jaw"><path d="M80 86 L 49 97 L 53 100 L 84 94 Z" fill="#dcd0b2" stroke="#2a1f14" stroke-width="2.5" stroke-linejoin="round"/></g>
+      <g id="m-food" transform="translate(36 98) scale(0)">
+        <g id="f-l"><path d="M-16 4 C -14 -10, 6 -12, 12 -2 C 16 8, 4 14, -4 8 C -8 4, -2 -2, 2 2" fill="none" stroke="#2a1f14" stroke-width="12" stroke-linecap="round"/><path d="M-16 4 C -14 -10, 6 -12, 12 -2 C 16 8, 4 14, -4 8 C -8 4, -2 -2, 2 2" fill="none" stroke="#f1e6c4" stroke-width="8" stroke-linecap="round"/><circle cx="-16" cy="4" r="5" fill="#8a5a2b"/></g>
+        <g id="f-e"><ellipse cx="0" cy="0" rx="15" ry="10" fill="#2e4a2a" stroke="#2a1f14" stroke-width="2.5"/><path d="M-8 -8 L-14 -18 M0 -10 L0 -20 M8 -8 L14 -18 M-8 8 L-14 18 M0 10 L0 20 M8 8 L14 18" stroke="#2a1f14" stroke-width="2.5" stroke-linecap="round"/><path d="M-12 -4 L12 -4" stroke="#7ab36a" stroke-width="2.5"/></g>
+      </g>
+      <circle cx="98" cy="70" r="11" fill="#f3df5a" stroke="#2a1f14" stroke-width="2.5"/>
+      <g id="m-pupil"><circle cx="98" cy="70" r="5.6" fill="#1a110b"/><circle cx="96" cy="68" r="1.8" fill="#fff"/></g>
+      <ellipse id="m-lid" cx="98" cy="70" rx="11.5" ry="11.5" fill="#d1141f" style="transform-box:fill-box;transform-origin:50% 0%;transform:scaleY(0)"/>
+    </g>
+  </g>
+</svg>

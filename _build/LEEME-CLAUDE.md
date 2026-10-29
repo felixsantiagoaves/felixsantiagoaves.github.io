@@ -167,3 +167,9 @@ Los textos de las fichas (`_fichas/<slug>.json`, `secciones`) y los minis de `as
 - Solo datos verificables (eBird/registros.json, fotos.json, guía Pearman & Areta, Wikipedia). Nada de anécdotas inventadas ni "cantidad máxima de ejemplares" (eBird no lo da).
 - **Después de cada CSV/actualización de registros.json correr:** `python3 -I _fichas/verificar_aperturas.py .` Si marca fichas desactualizadas (por ejemplo una apertura `ultima` o `unica` que ya no es cierta porque se la vio de nuevo), reescribir esa apertura en el JSON (cambiar el tipo o la fecha) y volver a correr `gen_fichas.py`.
 - Los minis de especies sin ficha son reformulaciones de textos sin verificar; si se hace la ficha, se reescriben con sus datos.
+
+
+## Mascotas animadas (fichas de especie)
+- assets/mascotas/*.svg + mascotas.js: personajes originales de Felix (carancho, carpintero lomo blanco macho/hembra, gallineta pico pintado) que pasan por el borde de la pantalla en SU ficha.
+- _fichas/gen_fichas.py: dict MASCOTAS (slug -> personaje). Solo esas fichas incluyen <div id="mascota"> y el script.
+- Sin movimiento si la persona tiene "reducir movimiento". Los originales (con .png y demo.html) quedan solo en la carpeta local WEB/assets/mascotas.

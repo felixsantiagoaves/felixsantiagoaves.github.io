@@ -9,6 +9,8 @@ from PIL import Image
 
 RAIZ, SRC = sys.argv[1], sys.argv[2]
 import hashlib
+MASCOTAS = {'carancho': 'carancho', 'gallineta-pico-pintado': 'gallineta', 'carpintero-lomo-blanco': 'carpintero'}   # slug -> personaje (assets/mascotas/)
+MVER = hashlib.md5(open(os.path.join(RAIZ, 'assets', 'mascotas', 'mascotas.js'), 'rb').read()).hexdigest()[:8]
 VER = hashlib.md5(open(os.path.join(RAIZ, 'aves', 'ficha.css'), 'rb').read() + open(os.path.join(RAIZ, 'aves', 'ficha.js'), 'rb').read()).hexdigest()[:8]
 BASE = 'https://felixsantiago.com.ar/'
 MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
@@ -105,6 +107,7 @@ for E in ESP:
         w, h = Image.open(os.path.join(RAIZ, principal)).size; hero = {'src': '/' + principal, 'abs': BASE + principal, 'd': '', 'lug': '', 'w': w, 'h': h, 'f': principal}
     else: hero = None
     alt = f'{comun} ({sci}), fotografiada por Félix Santiago en Argentina'
+    mascota_html = (f'<div id="mascota" data-m="{MASCOTAS[slug]}" hidden></div>\n<script src="/assets/mascotas/mascotas.js?v={MVER}" defer></script>\n') if slug in MASCOTAS else ''
     # encuentros
     fechas = sorted(reg.keys(), reverse=True)
     n_foto = lambda d: sum(1 for p in fotos if p['d'] == d)
@@ -227,7 +230,7 @@ for E in ESP:
 <button class="tema-btn" id="tema-btn" type="button" aria-label="Cambiar entre modo claro y modo oscuro">☾</button>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="x" aria-label="Cerrar">✕</button><button class="pv" aria-label="Anterior">‹</button><button class="nx" aria-label="Siguiente">›</button><img src="" alt=""><p><span class="cap"></span><small>© Félix Santiago Allendes · Uso solo con permiso</small></p></div>
 <script src="/aves/ficha.js?v={VER}" defer></script>
-</body>
+{mascota_html}</body>
 </html>
 '''
     os.makedirs(os.path.join(RAIZ, 'aves', slug), exist_ok=True)
