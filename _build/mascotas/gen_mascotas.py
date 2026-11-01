@@ -339,6 +339,14 @@ def main(out):
     for slug, p in ESPECIES.items():
         txt = MANO[slug]() if slug in MANO else build(p)       # los dibujados a mano pisan al esqueleto común
         open(os.path.join(out, f'{slug}-animado.svg'), 'w', encoding='utf8').write(txt)
+    # versión para que el navegador no use mascotas viejas guardadas en caché (la leen assets/pistas.js y el álbum)
+    import hashlib, glob, re as _re
+    h = hashlib.md5(b''.join(open(f, 'rb').read() for f in sorted(glob.glob(os.path.join(out, '*-animado.svg'))))).hexdigest()[:8]
+    pj = os.path.join(os.path.dirname(out.rstrip('/')), 'pistas.js')
+    if os.path.exists(pj):
+        t = open(pj, encoding='utf8').read()
+        t = _re.sub(r"\nconst MASC_V='[0-9a-f]*';", '', t) + f"\nconst MASC_V='{h}';\n"
+        open(pj, 'w', encoding='utf8').write(t)
     print(len(ESPECIES), 'mascotas en', out, f'({len(MANO)} dibujadas a mano)')
 
 

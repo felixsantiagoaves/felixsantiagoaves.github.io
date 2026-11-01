@@ -560,7 +560,7 @@ function renderAlbum() {
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
       ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
-      : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
+      : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
       <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
@@ -695,7 +695,7 @@ function openM(id) {
   if(sv){
     const sinFoto = !!(av && !av.foto);
     sv.style.display = sinFoto ? 'flex' : 'none';
-    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.innerHTML='<img class="m-masc" src="/assets/mascotas/'+MASC[id]+'-animado.svg" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto</span>'; }
+    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.innerHTML='<img class="m-masc" src="/assets/mascotas/'+MASC[id]+'-animado.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto</span>'; }
     else if(sinFoto){ const k=SILUETAS[FAM_SILUETA[ave.familiaEsp]]?FAM_SILUETA[ave.familiaEsp]:'pajarito'; sv.innerHTML='<span class="sil-vivo sil-i sil-'+k+'" role="img" aria-label="silueta"></span><span class="m-sil-tag">Vista, sin foto</span>'; }
   }
   // Info avistamiento
