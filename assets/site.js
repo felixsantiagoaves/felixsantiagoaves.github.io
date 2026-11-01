@@ -1329,13 +1329,15 @@ function buildUltimoVideo(){
   fetch('/assets/ultimo-video.json').then(r => r.ok ? r.json() : null).then(v => {
     if(!v || !/^[\w-]{11}$/.test(v.id)) return;
     const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-    box.innerHTML = '<div class="uv-titulo">Último video</div>' +
+    box.innerHTML =
       '<button type="button" class="uv-play" aria-label="Reproducir: ' + esc(v.titulo) + '">' +
-      '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy"><span class="uv-btn">▶</span></button>' +
+      '<img src="https://i.ytimg.com/vi/' + v.id + '/mqdefault.jpg" alt="" loading="lazy"><span class="uv-btn">▶</span></button>' +
+      '<div class="uv-info"><div class="uv-titulo">Mi último video en YouTube</div>' +
       '<div class="uv-nombre">' + esc(v.titulo) + '</div>' +
-      '<a class="uv-canal" href="https://www.youtube.com/@FelixSantiagoAves" target="_blank" rel="noopener">Ver el canal →</a>';
+      '<a class="uv-canal" href="https://www.youtube.com/@FelixSantiagoAves" target="_blank" rel="noopener">Ver el canal →</a></div>';
     box.style.display = '';
     box.querySelector('.uv-play').addEventListener('click', e => {
+      box.classList.add('uv-abierto');
       e.currentTarget.outerHTML = '<iframe class="uv-frame" src="https://www.youtube-nocookie.com/embed/' + v.id + '?autoplay=1&rel=0" title="' + esc(v.titulo) + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
     });
   }).catch(() => {});
