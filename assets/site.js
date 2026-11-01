@@ -514,6 +514,7 @@ function buildRecientes(){
   const circulo = a => {
     const f = avist[a.id].foto;
     if(f) return `<div class="rec-circulo"><img src="${f}" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
+    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c"><img class="rec-masc" src="/assets/mascotas/${MASC[a.id]}-animado.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
     const k = SILUETAS[FAM_SILUETA[a.familiaEsp]] ? FAM_SILUETA[a.familiaEsp] : 'pajarito';
     return `<div class="rec-circulo rec-sin-foto"><span class="sil-i sil-${k}" role="img" aria-label="silueta"></span></div>`;
   };

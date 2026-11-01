@@ -1237,3 +1237,7 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 
 .fig-silueta .fig-masc{width:92%;height:100%;object-fit:contain;display:block;margin:auto;opacity:1;filter:none;}
 .m-sil .m-masc{width:78%;max-height:240px;object-fit:contain;display:block;margin:12px auto 34px;}
+
+.rec-masc-c{border-style:solid;background:linear-gradient(160deg,var(--v1),#2b3320);}
+.rec-masc-c{position:relative;}
+.rec-masc-c .rec-masc{position:absolute;left:50%;top:50%;transform:translate(-52%,-50%);width:160%;height:auto;max-width:none;display:block;}
