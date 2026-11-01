@@ -198,11 +198,11 @@ def aguatero():
     tl = cola('M240 190 C262 188 274 196 278 206 C262 214 246 210 238 204 Z', '#4a3a2e')
     cd = 'M104 196 C98 160 150 146 202 156 C248 164 264 198 244 222 C220 246 150 250 118 234 C106 226 104 212 104 196 Z'
     cu = cuerpo(cd, '#4a3a2e',
-                '<path d="M96 206 C130 238 200 246 262 214 L262 270 L96 270 Z" fill="#f4efe2"/>'
+                '<path d="M92 200 C126 232 200 238 264 206 L264 270 L92 270 Z" fill="#f4efe2"/>'
                 '<path d="M128 160 Q168 140 214 164" stroke="#dba52e" stroke-width="7" fill="none" stroke-linecap="round"/>'
                 '<path d="M126 176 Q168 156 220 180" stroke="#dba52e" stroke-width="5" fill="none" stroke-linecap="round"/>'
                 + ''.join(f'<circle cx="{x}" cy="{y}" r="3.6" fill="#f4efe2"/>' for x, y in [(160, 184), (182, 190), (204, 194), (170, 202), (196, 208), (146, 196)]) +
-                '<path d="M100 178 C108 214 120 226 134 230 L134 196 Z" fill="#f4efe2"/>')
+                '<path d="M100 176 C106 206 118 220 140 226 C140 206 130 186 110 176 Z" fill="#f4efe2"/>')
     hd = cabeza(96, 148, 29, '#6e2f26',
                 '<path d="M64 114 Q96 100 132 122 L132 130 Q96 112 64 128 Z" fill="#ecd8a4"/>'
                 '<path d="M64 140 Q92 132 128 142" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>',
@@ -248,16 +248,16 @@ def chiricote():
 # ───────────────────────── Golondrina Ceja Blanca ─────────────────────────
 def golondrina():
     legs = patas([((142, 222), 140), ((164, 224), 164)], '#5a4a40', 4.2, toes=(-14, -9, 7))
-    tl = cola('M210 214 C236 226 262 250 286 280 L266 258 L282 292 C250 276 226 252 204 232 Z', '#1f5f84')
+    tl = cola('M208 214 C232 224 254 244 268 266 L262 250 L282 262 L272 280 C246 270 226 252 204 232 Z', '#1f5f84')
     cd = 'M100 128 C86 152 96 202 130 228 C160 248 202 240 216 220 C222 198 202 162 174 138 C152 120 114 116 100 128 Z'
     cu = cuerpo(cd, '#fbfaf6',
                 '<path d="M70 110 C110 128 160 118 226 150 L226 170 C170 156 124 170 78 144 Z" fill="#2b7ea0"/>'
                 '<path d="M120 126 C160 128 214 168 232 240 L196 244 C190 200 150 160 112 150 Z" fill="#2b7ea0"/>')
-    wg = ala('M122 136 C164 138 214 176 270 266 C226 262 176 226 140 176 Z', '#1d5a78',
+    wg = ala('M122 136 C164 138 210 172 252 246 C216 246 172 220 140 176 Z', '#1d5a78',
              '<path d="M150 154 C186 170 220 200 250 250" stroke="#2b7ea0" stroke-width="3.4" fill="none" stroke-linecap="round" opacity=".7"/>')
-    hd = cabeza(96, 108, 22, '#2b7ea0', '<path d="M64 124 C84 130 104 126 116 116 L116 140 L64 140 Z" fill="#fbfaf6"/>',
-                pico_cono(76, 110, 14, 7), '#1c1c1c', ojo(86, 104, 3.8, lid='#2b7ea0'),
-                post='<circle cx="80" cy="96" r="3.4" fill="#fff"/>')
+    hd = cabeza(98, 110, 27, '#2b7ea0', '<path d="M64 124 C84 130 104 126 116 116 L116 140 L64 140 Z" fill="#fbfaf6"/>',
+                pico_cono(72, 112, 16, 8), '#1c1c1c', ojo(86, 106, 4.4, lid='#2b7ea0'),
+                post='<circle cx="78" cy="94" r="4" fill="#fff"/>')
     return svg('Golondrina Ceja Blanca', css((120, 128), (210, 218), hb=.8, tf=1.2), f'{legs}{tl}{cu}{wg}{hd}')
 
 
@@ -313,7 +313,7 @@ def pepitero_gris():
                 '<path d="M62 124 C82 128 104 136 118 150 L62 150 Z" fill="#fff"/>'
                 '<path d="M66 112 C88 114 108 126 120 140" stroke="#1d1a19" stroke-width="4.4" fill="none" stroke-linecap="round"/>'
                 '<path d="M66 84 Q88 76 112 86" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>',
-                'M74 94 C58 92 44 100 38 112 C54 112 66 112 76 114 Z', '#2b2a2a', ojo(86, 98, 4.8, lid='#6f7780'))
+                'M74 86 C60 84 42 92 34 108 C36 118 56 124 78 120 Z', '#3a3838', ojo(86, 98, 4.8, lid='#6f7780'))
     return svg('Pepitero Gris', css((124, 132), (200, 216), tf=1.1), f'{legs}{tl}{cu}{wg}{hd}')
 
 
@@ -420,7 +420,7 @@ def juan_chiviro():
                 '<path d="M60 76 C80 66 108 66 130 84 L130 70 L60 70 Z" fill="#9aa0a4"/>'
                 '<path d="M62 92 Q92 80 130 96" stroke="#b5683a" stroke-width="6" fill="none" stroke-linecap="round"/>'
                 '<path d="M62 126 C86 130 104 138 118 152 L62 152 Z" fill="#e8c43a"/>',
-                'M72 96 C56 94 40 98 32 110 C36 120 50 124 66 118 C58 116 52 112 54 108 C62 108 70 108 76 110 Z', '#a09290', ojo(86, 98, 5.2, col='#e8742a', ring=None, lid='#8b9296'))
+                'M74 88 C58 84 40 92 32 112 C34 120 44 122 48 116 C46 112 52 110 60 112 C68 114 74 114 78 112 Z', '#b0a09c', ojo(86, 98, 5.2, col='#e8742a', ring=None, lid='#8b9296'))
     return svg('Juan Chiviro', css((124, 134), (200, 218), tf=1.1), f'{legs}{tl}{cu}{wg}{hd}')
 
 

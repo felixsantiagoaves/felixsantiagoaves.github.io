@@ -5,4 +5,5 @@ const PROB={"1":0.041,"3":0.087,"5":0.022,"6":0.351,"7":0.013,"8":0.246,"9":0.13
 /* Mascotas animadas (assets/mascotas/<slug>-animado.svg) de especies vistas sin foto. Se generan con _build/mascotas/gen_mascotas.py */
 const MASC={"2":"aguatero","27":"pitiayumi","30":"atajacaminos-tijera","112":"chiricote","153":"golondrina-ceja-blanca","198":"pijui-frente-gris","302":"monterita-de-collar","305":"pepitero-chico","306":"pepitero-gris","323":"colorada","325":"inambu-montaraz","327":"inambu-silbon","338":"calandrita","393":"pecho-colorado","405":"chivi-comun","406":"juan-chiviro"};
 
-const MASC_V='4265dc69';
+
+const MASC_V='5c5f92ee';
