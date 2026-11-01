@@ -1214,3 +1214,17 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .ult-video.uv-abierto{flex-direction:column;align-items:stretch;}
 .ult-video.uv-abierto .uv-frame{flex:none;width:100%;}
 @media(max-width:420px){.uv-play,.uv-frame{flex-basis:120px;width:120px;}}
+
+/* Vista, sin foto: silueta con vida */
+@keyframes sv-resp{0%,100%{transform:scale(1) rotate(0)}30%{transform:scale(1.035) rotate(-1.5deg)}60%{transform:scale(1.02) rotate(1.5deg)}}
+@keyframes sv-espia{0%,78%,100%{transform:translateX(0) rotate(0)}84%{transform:translateX(7%) rotate(4deg)}92%{transform:translateX(7%) rotate(4deg)}96%{transform:translateX(0) rotate(0)}}
+.sil-vivo{transform-origin:50% 90%;animation:sv-resp 4.2s ease-in-out infinite,sv-espia 9s ease-in-out infinite;animation-delay:calc(var(--r,0deg) * -1),calc(var(--r,0deg) * -3);}
+.stickers .fig.sinfoto .sil-i,.fig.sinfoto .sil-i{opacity:.8;filter:brightness(0) invert(.82) sepia(.45);}
+.stickers .fig.sinfoto .fig-silueta{background:linear-gradient(160deg,var(--v1),#2b3320);}
+.fig-sinfoto{position:absolute;right:4px;bottom:4px;z-index:2;font-size:.55rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;background:var(--ar);color:var(--v1);padding:2px 6px;border-radius:99px;}
+.stickers .fig.sinfoto{border:2px solid var(--ar);}
+.m-sil{display:flex;align-items:center;justify-content:center;position:relative;min-height:260px;background:linear-gradient(160deg,var(--v1),#2b3320);}
+.m-sil .sil-i{display:block;width:62%;height:230px;background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.85;filter:brightness(0) invert(.82) sepia(.45);}
+.m-sil-tag{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;background:var(--ar);color:var(--v1);padding:3px 10px;border-radius:99px;white-space:nowrap;}
+.m-sinfoto{font-style:italic;color:var(--ti);}
+@media (prefers-reduced-motion:reduce){.sil-vivo{animation:none}}

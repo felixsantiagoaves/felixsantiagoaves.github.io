@@ -559,9 +559,9 @@ function renderAlbum() {
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
       ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
-      : getSilueta(ave.familiaEsp);
+      : (enc ? getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i') + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
-    return `<div class="fig ${enc ? 'enc' : 'no'}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
+    return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
       <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
       <div class="fig-img"><div class="fig-svg-wrap">${foto}</div></div>
       <div class="fig-info">
@@ -677,6 +677,9 @@ function openM(id) {
     img.src=av.foto; img.alt=ave.comun+' ('+ave.nombre+') - '+ave.familiaEsp+' - Argentina'; img.style.display='block'; ph.style.display='none';
     mPrev.style.backgroundImage='none';
     mPrev.style.filter='none';
+  } else if(av) {   // vista, pero sin foto: silueta animada
+    img.style.display='none'; ph.style.display='none';
+    mPrev.style.backgroundImage='none'; mPrev.style.filter='none';
   } else {
     img.style.display='none'; ph.style.display='none';
     const sil=SILUETAS[FAM_SILUETA[ave.familiaEsp]||'pajarito']||SILUETAS['pajarito'];
@@ -687,13 +690,19 @@ function openM(id) {
     mPrev.style.filter='brightness(0.5)';
   }
 
+  const sv=document.getElementById('m-sil');
+  if(sv){
+    const sinFoto = !!(av && !av.foto);
+    sv.style.display = sinFoto ? 'flex' : 'none';
+    if(sinFoto){ const k=SILUETAS[FAM_SILUETA[ave.familiaEsp]]?FAM_SILUETA[ave.familiaEsp]:'pajarito'; sv.innerHTML='<span class="sil-vivo sil-i sil-'+k+'" role="img" aria-label="silueta"></span><span class="m-sil-tag">Vista, sin foto</span>'; }
+  }
   // Info avistamiento
   const encInfo=document.getElementById('m-enc-info');
   const avistEl=document.getElementById('m-avist');
   if(encInfo){
     if(av){
       encInfo.style.display='block';
-      if(avistEl) avistEl.innerHTML=`<p>📅 <strong>Primer registro:</strong> ${fmtFecha(av.fecha)}</p>${av.lugar?`<p>📍 <strong>Lugar:</strong> ${av.lugar}${av.prov&&av.prov.length?' · '+av.prov.map(p=>PROV[p]||p).join(', '):''}</p>`:''} ${av.notas?`<p>📝 <strong>Notas:</strong> ${av.notas}</p>`:''}`;
+      if(avistEl) avistEl.innerHTML=`<p>📅 <strong>Primer registro:</strong> ${fmtFecha(av.fecha)}</p>${av.lugar?`<p>📍 <strong>Lugar:</strong> ${av.lugar}${av.prov&&av.prov.length?' · '+av.prov.map(p=>PROV[p]||p).join(', '):''}</p>`:''} ${av.notas?`<p>📝 <strong>Notas:</strong> ${av.notas}</p>`:''}${av.foto?'':`<p class="m-sinfoto">📷 <strong>Vista, sin foto.</strong> La vi el ${fmtFecha(av.fecha)}${av.lugar?' en '+av.lugar:''} y se me escapó la foto. Sigo detrás de ella.</p>`}`;
     } else {
       encInfo.style.display='none';
       const pendEl=document.getElementById('m-pending-info');
