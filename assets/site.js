@@ -714,9 +714,10 @@ function openM(id) {
       if(pendEl) pendEl.style.display='block';
       const prob = probDe(id);
       const pista = (typeof PISTAS !== 'undefined') ? PISTAS[id] : null;
+      const prov = (typeof PROV_PROB !== 'undefined') ? PROV_PROB[id] : null;
       if(pendDetail) pendDetail.innerHTML=`<span style="font-style:italic;color:var(--ti)">Todavía no la encontré — la tengo en la mira y la sigo buscando.</span>` +
         (prob != null ? `<div class="pista"><span class="pista-t">Probabilidad de encontrarla</span><p><b>${probTxt(prob)}</b> · aparece en el ${prob.toLocaleString('es-AR',{maximumFractionDigits:2})} % de las listas completas de eBird en ${REGION === 'cba' ? 'Córdoba' : 'Argentina'}.</p><small>Basado en ${REGION === 'cba' ? '85.181' : '617.923'} listas completas de eBird.</small></div>` : '') +
-        (pista ? `<div class="pista"><span class="pista-t">Dónde buscarla</span><p>${escHtml(pista)}</p><small>Según Pearman y Areta, <i>Aves de Argentina y el Atlántico Sudoccidental</i> (2020).</small></div>` : '');
+        (prov ? `<div class="pista"><span class="pista-t">Dónde buscarla</span><p>Más probable en: ${prov.slice(0,4).map(x=>`<b>${escHtml(x[0])}</b> ${x[1].toLocaleString('es-AR',{maximumFractionDigits:1})} %`).join(' · ')}.</p><small>Porcentaje de listas completas de eBird de cada provincia que la registran.</small></div>` : pista ? `<div class="pista"><span class="pista-t">Dónde buscarla</span><p>${escHtml(pista)}</p><small>Según Pearman y Areta, <i>Aves de Argentina y el Atlántico Sudoccidental</i> (2020).</small></div>` : '');
     }
   }
   const pendReset=document.getElementById('m-pending-info');
