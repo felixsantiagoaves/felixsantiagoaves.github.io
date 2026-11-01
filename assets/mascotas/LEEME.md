@@ -55,13 +55,15 @@ Los personajes miran a la izquierda: para que avancen hacia la derecha, espejalo
 - Las versiones de la web no llevan los metadatos de procedencia que traían los archivos originales (pesan la mitad).
 
 
-## Mascotas de especies "vistas, sin foto" (generadas)
+## Mascotas de especies "vistas, sin foto" (dibujadas a mano)
 `<especie>-animado.svg` para Aguatero, Pitiayumí, Atajacaminos Tijera, Chiricote, Golondrina Ceja Blanca, Pijuí Frente Gris,
 Monterita de Collar, Pepitero Chico, Pepitero Gris, Colorada, Inambú Montaraz, Inambú Silbón, Calandrita, Pecho Colorado,
-Chiví Común y Juan Chiviro. Idle en el lugar: respira, mueve la cabeza, parpadea y sacude la cola. Miran a la izquierda.
+Chiví Común y Juan Chiviro. Idle en el lugar: respira, mueve la cabeza (los inambúes y la Colorada picotean), parpadea y sacude la cola. Miran a la izquierda.
 
-No se editan a mano: salen de `_build/mascotas/gen_mascotas.py` (un diccionario por especie con medidas y colores sobre un
-esqueleto común). Para sumar una especie: agregar su diccionario en `ESPECIES`, correr
-`python3 -I _build/mascotas/gen_mascotas.py assets/mascotas` y sumar la especie a `MASC` en `assets/pistas.js`
+Salen de `_build/mascotas/gen_mascotas.py`. Cada especie tiene un dibujo propio en `_build/mascotas/dibujadas.py` (formas, colores y
+marcas tomados de las láminas de Pearman y Areta como referencia; los trazos son originales). Si una especie no tiene dibujo propio,
+el generador usa un esqueleto común (diccionario en `ESPECIES`).
+Para sumar una especie: escribir su función en `dibujadas.py` y agregarla a `MANO`, correr
+`python3 -I _build/mascotas/gen_mascotas.py assets/mascotas` y sumarla a `MASC` en `assets/pistas.js`
 (id de la especie → nombre del archivo) para que el álbum la muestre cuando esté "vista, sin foto".
-Las 3 mascotas hechas a mano (carancho, gallineta, carpintero) no pasan por el generador.
+Las 3 mascotas del principio (carancho, gallineta y carpintero) no pasan por el generador.
