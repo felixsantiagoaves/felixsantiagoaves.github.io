@@ -1228,3 +1228,9 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .m-sil-tag{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;background:var(--ar);color:var(--v1);padding:3px 10px;border-radius:99px;white-space:nowrap;}
 .m-sinfoto{font-style:italic;color:var(--ti);}
 @media (prefers-reduced-motion:reduce){.sil-vivo{animation:none}}
+
+.pista{margin-top:.8rem;padding:.7rem .8rem;border-left:3px solid var(--ar);background:rgba(166,138,100,.12);border-radius:0 6px 6px 0;text-align:left;}
+.pista-t{display:block;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--ti);margin-bottom:.25rem;}
+.pista p{margin:0 0 .3rem;font-size:.9rem;line-height:1.4;font-style:normal;color:var(--tx);}
+.pista small{font-size:.68rem;color:var(--ti);opacity:.85;}
+[data-theme=dark] .pista p{color:#e8e0d2;}

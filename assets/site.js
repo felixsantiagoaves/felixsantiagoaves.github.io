@@ -118,6 +118,7 @@ async function cargarDatos() {
     console.error('No se pudo cargar avistamientos.json', e);
   }
 }
+function probTxt(p){ return p >= 3 ? 'De las más probables' : p >= 1 ? 'Posible' : p >= 0.1 ? 'Difícil' : 'Rareza'; }
 function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 // ── MAPA (Leaflet + OpenStreetMap; se carga solo al abrir la pestaña Mapa) ──
 let mapa = null, mapaP = null, _lfP = null, mapaMarkers = [], mapaGrupo = null;
@@ -567,7 +568,7 @@ function renderAlbum() {
       <div class="fig-info">
         <div class="fig-co">${ave.comun}</div>
         <div class="fig-ci">${ave.nombre}</div>
-        <div class="fig-fecha">${av ? fmtFecha(av.fecha) : 'Por encontrar'}</div>
+        <div class="fig-fecha">${av ? fmtFecha(av.fecha) : 'Por encontrar' + ((typeof PROB !== 'undefined' && PROB[ave.id] != null) ? ' · ' + PROB[ave.id].toLocaleString('es-AR',{maximumFractionDigits:1}) + ' %' : '')}</div>
       </div></div>`;
   };
   const lista = avesFiltradas();
@@ -708,7 +709,11 @@ function openM(id) {
       const pendEl=document.getElementById('m-pending-info');
       const pendDetail=document.getElementById('m-pending-detail');
       if(pendEl) pendEl.style.display='block';
-      if(pendDetail) pendDetail.innerHTML=`<span style="font-style:italic;color:var(--ti)">Todavía no la encontré — la tengo en la mira y la sigo buscando.</span>`;
+      const prob = (typeof PROB !== 'undefined') ? PROB[id] : null;
+      const pista = (typeof PISTAS !== 'undefined') ? PISTAS[id] : null;
+      if(pendDetail) pendDetail.innerHTML=`<span style="font-style:italic;color:var(--ti)">Todavía no la encontré — la tengo en la mira y la sigo buscando.</span>` +
+        (prob != null ? `<div class="pista"><span class="pista-t">Probabilidad de encontrarla</span><p><b>${probTxt(prob)}</b> · aparece en el ${prob.toLocaleString('es-AR',{maximumFractionDigits:2})} % de las listas completas de eBird en Córdoba.</p><small>Basado en 85.181 listas completas de eBird.</small></div>` : '') +
+        (pista ? `<div class="pista"><span class="pista-t">Dónde buscarla</span><p>${escHtml(pista)}</p><small>Según Pearman y Areta, <i>Aves de Argentina y el Atlántico Sudoccidental</i> (2020).</small></div>` : '');
     }
   }
   const pendReset=document.getElementById('m-pending-info');
