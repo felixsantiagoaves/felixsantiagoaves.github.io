@@ -1,0 +1,29 @@
+name: Último video de YouTube
+on:
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer el feed del canal
+        run: |
+          curl -fsSL "https://www.youtube.com/feeds/videos.xml?channel_id=UC4PPFEZBxfZk8om4TvhbCkQ" -o feed.xml
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET, json
+          ns={'a':'http://www.w3.org/2005/Atom','y':'http://www.youtube.com/xml/schemas/2015'}
+          e=ET.parse('feed.xml').getroot().find('a:entry',ns)
+          d={'id':e.find('y:videoId',ns).text,'titulo':e.find('a:title',ns).text,'fecha':e.find('a:published',ns).text[:10]}
+          open('assets/ultimo-video.json','w',encoding='utf8').write(json.dumps(d,ensure_ascii=False,indent=1)+'\n')
+          PY
+          rm feed.xml
+      - name: Guardar si cambió
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/ultimo-video.json
+          git diff --staged --quiet || (git commit -m "Último video de YouTube" && git push)
