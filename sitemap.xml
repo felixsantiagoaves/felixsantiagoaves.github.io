@@ -48,6 +48,12 @@
 <image:license>https://felixsantiago.com.ar/contacto/</image:license>
 </image:image>
 <image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/geothlypis_velata.jpg</image:loc>
+<image:title>Arañero Cara Negra (Geothlypis velata)</image:title>
+<image:caption>Arañero Cara Negra, Geothlypis velata. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/contacto/</image:license>
+</image:image>
+<image:image>
 <image:loc>https://felixsantiago.com.ar/fotos/myioborus_brunniceps.jpg</image:loc>
 <image:title>Arañero Corona Rojiza (Myioborus brunniceps)</image:title>
 <image:caption>Arañero Corona Rojiza, Myioborus brunniceps. Fotografiada por Félix Santiago en Argentina.</image:caption>
@@ -231,6 +237,12 @@
 <image:loc>https://felixsantiago.com.ar/fotos/phytotoma_rutila.jpg</image:loc>
 <image:title>Cortarramas (Phytotoma rutila)</image:title>
 <image:caption>Cortarramas, Phytotoma rutila. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/contacto/</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/coccycua_cinerea.jpg</image:loc>
+<image:title>Cuclillo Chico (Coccycua cinerea)</image:title>
+<image:caption>Cuclillo Chico, Coccycua cinerea. Fotografiada por Félix Santiago en Argentina.</image:caption>
 <image:license>https://felixsantiago.com.ar/contacto/</image:license>
 </image:image>
 <image:image>
@@ -495,6 +507,12 @@
 <image:loc>https://felixsantiago.com.ar/fotos/anumbius_annumbi.jpg</image:loc>
 <image:title>Leñatero (Anumbius annumbi)</image:title>
 <image:caption>Leñatero, Anumbius annumbi. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/contacto/</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/synallaxis_albescens.jpg</image:loc>
+<image:title>Pijuí Cola Parda (Synallaxis albescens)</image:title>
+<image:caption>Pijuí Cola Parda, Synallaxis albescens. Fotografiada por Félix Santiago en Argentina.</image:caption>
 <image:license>https://felixsantiago.com.ar/contacto/</image:license>
 </image:image>
 <image:image>
@@ -852,9 +870,21 @@
 <image:license>https://felixsantiago.com.ar/contacto/</image:license>
 </image:image>
 <image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/myiarchus_swainsoni.jpg</image:loc>
+<image:title>Burlisto Pico Canela (Myiarchus swainsoni)</image:title>
+<image:caption>Burlisto Pico Canela, Myiarchus swainsoni. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/contacto/</image:license>
+</image:image>
+<image:image>
 <image:loc>https://felixsantiago.com.ar/fotos/pyrocephalus_rubinus.jpg</image:loc>
 <image:title>Churrinche (Pyrocephalus rubinus)</image:title>
 <image:caption>Churrinche, Pyrocephalus rubinus. Fotografiada por Félix Santiago en Argentina.</image:caption>
+<image:license>https://felixsantiago.com.ar/contacto/</image:license>
+</image:image>
+<image:image>
+<image:loc>https://felixsantiago.com.ar/fotos/pseudocolopteryx_citreola.jpg</image:loc>
+<image:title>Doradito Limón (Pseudocolopteryx citreola)</image:title>
+<image:caption>Doradito Limón, Pseudocolopteryx citreola. Fotografiada por Félix Santiago en Argentina.</image:caption>
 <image:license>https://felixsantiago.com.ar/contacto/</image:license>
 </image:image>
 <image:image>
