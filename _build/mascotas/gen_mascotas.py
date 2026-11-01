@@ -334,9 +334,12 @@ ESPECIES['juan-chiviro'] = _p
 
 def main(out):
     os.makedirs(out, exist_ok=True)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from dibujadas import MANO
     for slug, p in ESPECIES.items():
-        open(os.path.join(out, f'{slug}-animado.svg'), 'w', encoding='utf8').write(build(p))
-    print(len(ESPECIES), 'mascotas en', out)
+        txt = MANO[slug]() if slug in MANO else build(p)       # los dibujados a mano pisan al esqueleto común
+        open(os.path.join(out, f'{slug}-animado.svg'), 'w', encoding='utf8').write(txt)
+    print(len(ESPECIES), 'mascotas en', out, f'({len(MANO)} dibujadas a mano)')
 
 
 if __name__ == '__main__':
