@@ -53,3 +53,15 @@ Los personajes miran a la izquierda: para que avancen hacia la derecha, espejalo
 - Para sumar otra especie: agregar sus SVG acá, sus medidas en `VB` y una rutina en `mascotas.js`, y el slug en `MASCOTAS` de `_fichas/gen_fichas.py`.
 - `carpintero-tronco.svg` es solo el tronco (sin pájaro) para pegarlo al borde de la pantalla.
 - Las versiones de la web no llevan los metadatos de procedencia que traían los archivos originales (pesan la mitad).
+
+
+## Mascotas de especies "vistas, sin foto" (generadas)
+`<especie>-animado.svg` para Aguatero, Pitiayumí, Atajacaminos Tijera, Chiricote, Golondrina Ceja Blanca, Pijuí Frente Gris,
+Monterita de Collar, Pepitero Chico, Pepitero Gris, Colorada, Inambú Montaraz, Inambú Silbón, Calandrita, Pecho Colorado,
+Chiví Común y Juan Chiviro. Idle en el lugar: respira, mueve la cabeza, parpadea y sacude la cola. Miran a la izquierda.
+
+No se editan a mano: salen de `_build/mascotas/gen_mascotas.py` (un diccionario por especie con medidas y colores sobre un
+esqueleto común). Para sumar una especie: agregar su diccionario en `ESPECIES`, correr
+`python3 -I _build/mascotas/gen_mascotas.py assets/mascotas` y sumar la especie a `MASC` en `assets/pistas.js`
+(id de la especie → nombre del archivo) para que el álbum la muestre cuando esté "vista, sin foto".
+Las 3 mascotas hechas a mano (carancho, gallineta, carpintero) no pasan por el generador.
