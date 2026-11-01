@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-26",
+ "generado": "2026-11-01",
  "fuente": "MyEBirdData.csv",
  "avistamientos": {
   "2": {
@@ -80,6 +80,16 @@
     "X"
    ],
    "foto": "fotos/rupornis_magnirostris.jpg",
+   "notas": ""
+  },
+  "25": {
+   "fecha": "2026-10-31",
+   "hora": "06:45",
+   "lugar": "Laguna Rivero, Alcira Gigena",
+   "prov": [
+    "X"
+   ],
+   "foto": null,
    "notas": ""
   },
   "26": {
@@ -410,6 +420,16 @@
     "X"
    ],
    "foto": "fotos/phytotoma_rutila.jpg",
+   "notas": ""
+  },
+  "101": {
+   "fecha": "2026-10-31",
+   "hora": "06:45",
+   "lugar": "Laguna Rivero, Alcira Gigena",
+   "prov": [
+    "X"
+   ],
+   "foto": null,
    "notas": ""
   },
   "103": {
@@ -870,6 +890,16 @@
     "X"
    ],
    "foto": "fotos/anumbius_annumbi.jpg",
+   "notas": ""
+  },
+  "197": {
+   "fecha": "2026-10-31",
+   "hora": "06:45",
+   "lugar": "Laguna Rivero, Alcira Gigena",
+   "prov": [
+    "X"
+   ],
+   "foto": null,
    "notas": ""
   },
   "198": {
@@ -1532,6 +1562,16 @@
    "foto": "fotos/hirundinea_ferruginea.jpg",
    "notas": ""
   },
+  "335": {
+   "fecha": "2026-10-31",
+   "hora": "06:45",
+   "lugar": "Laguna Rivero, Alcira Gigena",
+   "prov": [
+    "X"
+   ],
+   "foto": null,
+   "notas": ""
+  },
   "338": {
    "fecha": "2026-08-30",
    "hora": "08:54",
@@ -1550,6 +1590,16 @@
     "X"
    ],
    "foto": "fotos/pyrocephalus_rubinus.jpg",
+   "notas": ""
+  },
+  "341": {
+   "fecha": "2026-10-31",
+   "hora": "06:45",
+   "lugar": "Laguna Rivero, Alcira Gigena",
+   "prov": [
+    "X"
+   ],
+   "foto": null,
    "notas": ""
   },
   "351": {
@@ -1812,6 +1862,16 @@
    "foto": "fotos/streptoprocne_zonaris.jpg",
    "notas": ""
   },
+  "405": {
+   "fecha": "2026-10-31",
+   "hora": "06:45",
+   "lugar": "Laguna Rivero, Alcira Gigena",
+   "prov": [
+    "X"
+   ],
+   "foto": null,
+   "notas": ""
+  },
   "406": {
    "fecha": "2026-08-17",
    "hora": "08:00",
@@ -1985,21 +2045,29 @@
    "lat": -32.78007,
    "lon": -64.33772,
    "prov": "X",
-   "count": 90,
+   "count": 111,
    "ids": [
     2,
     15,
+    25,
+    35,
     37,
     38,
     39,
+    40,
     43,
+    48,
+    53,
     64,
     66,
     77,
     82,
     90,
     93,
+    101,
     103,
+    105,
+    106,
     114,
     115,
     116,
@@ -2021,9 +2089,11 @@
     164,
     165,
     171,
+    178,
     191,
     193,
     194,
+    197,
     201,
     204,
     209,
@@ -2053,30 +2123,41 @@
     264,
     279,
     280,
+    284,
     290,
     296,
     298,
     307,
+    312,
     315,
     322,
     324,
     325,
+    327,
     331,
+    335,
     339,
+    341,
     351,
     352,
     357,
     362,
     366,
     367,
+    371,
     379,
     380,
     381,
+    387,
+    393,
     394,
     395,
     396,
     397,
-    398
+    398,
+    405,
+    408,
+    410
    ]
   },
   {

@@ -21,8 +21,8 @@
  ],
  "secciones": [
   {
-   "t": "Dos veces, el mismo lugar",
-   "p": "Lo anoté dos veces, las dos en la Laguna Rivero, en Alcira Gigena: el 19 de julio y el 25 de octubre de 2026. Las fotos son del 19 de julio."
+   "t": "Tres veces, el mismo lugar",
+   "p": "Lo anoté tres veces, las tres en la Laguna Rivero, en Alcira Gigena: el 19 de julio, el 25 y el 31 de octubre de 2026. Las fotos son del 19 de julio."
   },
   {
    "t": "Gorro y babero castaños",
@@ -57,7 +57,7 @@
  "id": 398,
  "apertura": {
   "tipo": "mismo_lugar",
-  "n": 2,
+  "n": 3,
   "lugar": "Laguna Rivero",
   "foto_fecha": "2026-07-19"
  }

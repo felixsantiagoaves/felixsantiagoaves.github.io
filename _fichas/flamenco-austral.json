@@ -21,8 +21,8 @@
  ],
  "secciones": [
   {
-   "t": "Hasta ahora, una sola vez",
-   "p": "Lo anoté una sola vez: el 31 de mayo de 2026, en un camino rural."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que lo anoté fue el 31 de octubre de 2026, en la Laguna Rivero, en Alcira Gigena. La primera había sido el 31 de mayo, en un camino rural."
   },
   {
    "t": "Rodillas rosadas, pico curvado",
@@ -59,7 +59,8 @@
  ],
  "comun": "Flamenco Austral",
  "apertura": {
-  "tipo": "unica",
-  "fecha": "2026-05-31"
+  "tipo": "ultima",
+  "fecha": "2026-10-31",
+  "lugar": "Laguna Rivero"
  }
 }

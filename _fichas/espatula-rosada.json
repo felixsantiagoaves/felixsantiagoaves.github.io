@@ -21,8 +21,8 @@
  ],
  "secciones": [
   {
-   "t": "Hasta ahora, una sola vez",
-   "p": "La anoté una sola vez: el 17 de febrero de 2026, en la Laguna Rivero, en Alcira Gigena."
+   "t": "Dos veces, el mismo lugar",
+   "p": "Lo anoté dos veces, las dos en la Laguna Rivero, en Alcira Gigena: el 17 de febrero y el 31 de octubre de 2026."
   },
   {
    "t": "El pico de cuchara",
@@ -59,8 +59,8 @@
  ],
  "comun": "Espátula Rosada",
  "apertura": {
-  "tipo": "unica",
-  "fecha": "2026-02-17",
+  "tipo": "mismo_lugar",
+  "n": 2,
   "lugar": "Laguna Rivero"
  }
 }
