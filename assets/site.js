@@ -782,7 +782,8 @@ function openM(id) {
   if(cantoEl){
     if(ct){
       cantoEl.dataset.xc=ct.xc;
-      cantoEl.innerHTML=`<button class="canto-btn" onclick="cantoPlay(event)">🔊 Escuchar su ${ct.tipo.startsWith('grab')?'grabación':ct.tipo}</button><div class="canto-cr">Mejor grabación de Argentina · ${ct.autor} · ${ct.lugar} · <a href="https://xeno-canto.org/${ct.xc}" target="_blank" rel="noopener">XC${ct.xc}</a> · <a href="https://creativecommons.org/licenses/${ct.lic}" target="_blank" rel="noopener">CC ${ct.lic.split('/')[0].toUpperCase()}</a> · xeno-canto</div>`;
+      const licU=ct.lic==='cc0'?'publicdomain/zero/1.0':'licenses/'+ct.lic, licT=ct.lic==='cc0'?'CC0':'CC '+ct.lic.split('/')[0].toUpperCase();
+      cantoEl.innerHTML=`<button class="canto-btn" onclick="cantoPlay(event)">🔊 Escuchar su ${ct.tipo.startsWith('grab')?'grabación':ct.tipo}</button><div class="canto-cr">${ct.pais?'Grabación de '+ct.pais:'Mejor grabación de Argentina'} · ${ct.autor} · ${ct.lugar} · <a href="https://xeno-canto.org/${ct.xc}" target="_blank" rel="noopener">XC${ct.xc}</a> · <a href="https://creativecommons.org/${licU}" target="_blank" rel="noopener">${licT}</a> · xeno-canto</div>`;
       cantoEl.style.display='block';
     } else { cantoEl.style.display='none'; cantoEl.innerHTML=''; }
   }
