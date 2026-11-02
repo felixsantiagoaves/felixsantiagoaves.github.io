@@ -1251,3 +1251,4 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .pm-leg i{width:70px;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(101,109,74,.2),var(--v2))}
 [data-theme=dark] .pm-p{stroke:#2a1f14}
 .pm-p[data-c]{stroke:var(--v1);stroke-width:.35}
+.pm-d .pm-p{stroke-width:.03}
