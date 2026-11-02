@@ -1254,3 +1254,6 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .pm-d .pm-p{stroke-width:.03}
 .fm-photo.fm-photo-min{min-height:46px;height:46px;background:transparent}
 [data-theme=dark] .fm-photo.fm-photo-min{background:transparent}
+.mcap-bar{margin-left:.5rem}
+.lg-grad{display:inline-block;width:56px;height:8px;border-radius:4px;margin-right:.4rem;vertical-align:0;background:linear-gradient(90deg,rgba(101,109,74,.22),#656d4a)}
+@media(max-width:700px){.mcap-bar{margin:.4rem 0 0}}

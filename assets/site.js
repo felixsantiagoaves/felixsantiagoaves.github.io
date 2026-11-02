@@ -196,11 +196,84 @@ function construirMapa() {
   mapa.addLayer(mapaGrupo);
   mapaVer('todos');
 }
+
+// ── Mapa de calor: especies vistas por provincia (Argentina) o por departamento (Córdoba) ──
+let mapaModoCapa = 'puntos', mapaCalorGrupo = null, mapaZona = 'todos';
+function pathLL(d, tipo) {
+  const M = tipo === 'dep' ? DEPT_MAP : PROV_MAP;
+  const k = Math.cos((tipo === 'dep' ? 31.7 : 38) * Math.PI / 180);
+  const conv = tipo === 'dep' ? (x, y) => [-29.3 - y, x / k - 65.8] : (x, y) => [-21.5 - y, x / k - 74];
+  return d.split('M').filter(Boolean).map(r => r.replace('Z', '').split('L').map(p => { const [x, y] = p.split(' ').map(Number); return conv(x, y); }));
+}
+function pipLL(lat, lon, ring) {
+  let c = false;
+  for(let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [yi, xi] = ring[i], [yj, xj] = ring[j];
+    if((xi > lon) !== (xj > lon) && lat < (yj - yi) * (lon - xi) / (xj - xi) + yi) c = !c;
+  }
+  return c;
+}
+function deptoDe(l) {
+  if(typeof DEPT_MAP === 'undefined') return null;
+  let mejor = null, md = 1e9;
+  for(const c of Object.keys(DEPT_MAP.d)) {
+    const rs = pathLL(DEPT_MAP.d[c], 'dep');
+    if(rs.some(r => pipLL(l.lat, l.lon, r))) return c;
+    for(const r of rs) for(const [a, b] of r) { const dd = (a - l.lat) ** 2 + (b - l.lon) ** 2; if(dd < md) { md = dd; mejor = c; } }
+  }
+  return md < 0.02 ? mejor : null;
+}
+function calorColor(v, mx) { return v ? `rgba(101,109,74,${(.22 + .78 * Math.sqrt(v / mx)).toFixed(2)})` : 'rgba(127,110,90,.14)'; }
+function construirCalor(tipo) {
+  const M = tipo === 'dep' ? DEPT_MAP : PROV_MAP;
+  const sp = {};
+  LUGARES_MAP.forEach(l => {
+    const c = tipo === 'dep' ? (l.prov === 'X' || !l.prov ? deptoDe(l) : null) : l.prov;
+    if(!c) return;
+    (sp[c] = sp[c] || new Set());
+    l.ids.filter(id => avist[id]).forEach(id => sp[c].add(id));
+  });
+  const mx = Math.max(1, ...Object.values(sp).map(s => s.size));
+  const g = L.layerGroup();
+  Object.keys(M.d).forEach(c => {
+    const n = sp[c] ? sp[c].size : 0, nombre = M.n[c] || c;
+    const poly = L.polygon(pathLL(M.d[c], tipo), {color: '#414833', weight: tipo === 'dep' ? .6 : .8, fillColor: n ? '#656d4a' : '#7f6e5a', fillOpacity: n ? .22 + .78 * Math.sqrt(n / mx) : .14});
+    poly.bindTooltip(`<b>${escHtml(nombre)}</b><br>${n ? n + ' especie' + (n === 1 ? '' : 's') : 'sin registros todavía'}`, {sticky: true});
+    if(n) poly.bindPopup(() => {
+      const lista = [...sp[c]].map(id => AVES.find(a => a.id === id)).filter(Boolean).sort((a, b) => a.comun.localeCompare(b.comun, 'es'));
+      const el = document.createElement('div'); el.className = 'mk-body';
+      el.innerHTML = `<div class="mk-head"><div class="mk-tit">${escHtml(nombre)}</div><div class="mk-sub">${n} especie${n === 1 ? '' : 's'} vista${n === 1 ? '' : 's'}</div></div><div class="mk-cont"><div class="mk-lista" style="max-height:min(260px,40vh)">${lista.map(a => `<button class="mk-sp" data-id="${a.id}"><span class="mk-sn">${escHtml(a.comun)}</span></button>`).join('')}</div></div>`;
+      el.addEventListener('click', e => { const b = e.target.closest('.mk-sp'); if(b) { mapaAvesOrdenadas = lista.slice(); openM(+b.dataset.id); } });
+      return el;
+    }, {className: 'mk-pop', maxWidth: window.innerWidth < 700 ? 300 : 420});
+    g.addLayer(poly);
+  });
+  const ley = document.getElementById('mapa-ley-c');
+  if(ley) ley.innerHTML = `<i class="lg-grad"></i>0 → ${mx} especies vistas por ${tipo === 'dep' ? 'departamento' : 'provincia'} · tocá una zona para ver cuáles. Contornos: ${tipo === 'dep' ? 'geoBoundaries (CC BY 4.0)' : 'amCharts'}.`;
+  return g;
+}
+function mapaCapa(c) {
+  mapaModoCapa = c;
+  if(mapaZona === 'todos') mapaVer('todos');
+  document.querySelectorAll('.mcap-b').forEach(b => b.classList.toggle('on', b.dataset.c === c));
+  mapaRedibujar();
+}
+function mapaRedibujar() {
+  if(!mapa) return;
+  if(mapaCalorGrupo) { mapa.removeLayer(mapaCalorGrupo); mapaCalorGrupo = null; }
+  const calor = mapaModoCapa === 'calor';
+  if(calor) { mapa.removeLayer(mapaGrupo); mapaCalorGrupo = construirCalor(mapaZona === 'cba' ? 'dep' : 'prov'); mapa.addLayer(mapaCalorGrupo); }
+  else if(!mapa.hasLayer(mapaGrupo)) mapa.addLayer(mapaGrupo);
+  const lp = document.getElementById('mapa-ley-p'), lc = document.getElementById('mapa-ley-c');
+  if(lp) lp.style.display = calor ? 'none' : ''; if(lc) lc.style.display = calor ? '' : 'none';
+}
 function mapaVer(modo) {
   document.querySelectorAll('.mreg-b').forEach(b => b.classList.toggle('on', b.dataset.v === modo));
+  mapaZona = modo;
   if(!mapa) return;
   mapa.invalidateSize();
-  if(modo === 'arg') mapa.fitBounds(MAPA_ARG);
+  if(mapaModoCapa === 'calor') mapaRedibujar();
+  if(modo === 'arg' || (modo === 'todos' && mapaModoCapa === 'calor')) mapa.fitBounds(MAPA_ARG);
   else if(modo === 'cba') mapa.fitBounds(MAPA_CBA);
   else if(LUGARES_MAP.length) mapa.fitBounds(L.latLngBounds(LUGARES_MAP.map(l => [l.lat, l.lon])), {padding: [40, 40], maxZoom: 12});
   else mapa.fitBounds(MAPA_ARG);

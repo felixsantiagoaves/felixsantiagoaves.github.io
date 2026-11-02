@@ -3,7 +3,9 @@
       <div class="mapa-titulo-wrap">
         <h1 class="mapa-titulo">Mis salidas de campo</h1>
         <div class="mapa-barra" role="group" aria-label="Zona del mapa"><button class="mreg-b on" data-v="todos" onclick="mapaVer('todos')">Mis lugares</button><button class="mreg-b" data-v="cba" onclick="mapaVer('cba')">Córdoba</button><button class="mreg-b" data-v="arg" onclick="mapaVer('arg')">Argentina</button></div>
-        <p class="mapa-leyenda"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (n.º de especies distintas; tocalo para abrirlo)</p>
+        <div class="mapa-barra mcap-bar" role="group" aria-label="Tipo de mapa"><button class="mreg-b mcap-b on" data-c="puntos" onclick="mapaCapa('puntos')">Puntos</button><button class="mreg-b mcap-b" data-c="calor" onclick="mapaCapa('calor')">Calor</button></div>
+        <p class="mapa-leyenda" id="mapa-ley-p"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (n.º de especies distintas; tocalo para abrirlo)</p>
+        <p class="mapa-leyenda" id="mapa-ley-c" style="display:none"></p>
       </div>
       <div class="mapa-wrap"><div id="mapa-leaflet" aria-label="Mapa de mis lugares de observación"></div></div>
     </div>

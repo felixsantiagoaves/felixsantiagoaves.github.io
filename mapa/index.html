@@ -36,7 +36,7 @@
 <meta name="twitter:image" content="https://felixsantiago.com.ar/preview.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=758107f7">
+<link rel="stylesheet" href="/assets/site.css?v=9e1ceaaf">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -64,7 +64,9 @@
       <div class="mapa-titulo-wrap">
         <h1 class="mapa-titulo">Mis salidas de campo</h1>
         <div class="mapa-barra" role="group" aria-label="Zona del mapa"><button class="mreg-b on" data-v="todos" onclick="mapaVer('todos')">Mis lugares</button><button class="mreg-b" data-v="cba" onclick="mapaVer('cba')">Córdoba</button><button class="mreg-b" data-v="arg" onclick="mapaVer('arg')">Argentina</button></div>
-        <p class="mapa-leyenda"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (n.º de especies distintas; tocalo para abrirlo)</p>
+        <div class="mapa-barra mcap-bar" role="group" aria-label="Tipo de mapa"><button class="mreg-b mcap-b on" data-c="puntos" onclick="mapaCapa('puntos')">Puntos</button><button class="mreg-b mcap-b" data-c="calor" onclick="mapaCapa('calor')">Calor</button></div>
+        <p class="mapa-leyenda" id="mapa-ley-p"><i class="lg lg-1"></i>un lugar (n.º de especies) <i class="lg lg-2"></i>grupo de lugares (n.º de especies distintas; tocalo para abrirlo)</p>
+        <p class="mapa-leyenda" id="mapa-ley-c" style="display:none"></p>
       </div>
       <div class="mapa-wrap"><div id="mapa-leaflet" aria-label="Mapa de mis lugares de observación"></div></div>
     </div>
@@ -120,9 +122,9 @@
 </div>
 
 <footer id="site-footer-global"></footer>
-<script src="/assets/datos.js?v=758107f7"></script>
-<script src="/assets/foco.js?v=758107f7"></script>
-<script src="/assets/pistas.js?v=758107f7"></script>
-<script src="/assets/site.js?v=758107f7"></script>
+<script src="/assets/datos.js?v=9e1ceaaf"></script>
+<script src="/assets/foco.js?v=9e1ceaaf"></script>
+<script src="/assets/pistas.js?v=9e1ceaaf"></script>
+<script src="/assets/site.js?v=9e1ceaaf"></script>
 </body>
 </html>
