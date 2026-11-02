@@ -1076,7 +1076,7 @@ function cargarRegistros() {
 function irDatos(tab) { if(aOtra('datos','irDatos',[tab])) return; datTab(tab || 'num'); window.scrollTo({top: 0}); }
 function datTab(t, btn) {
   document.querySelectorAll('.dat-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
-  ['num', 'tl', 'falt'].forEach(k => { document.getElementById('dat-' + k).style.display = k === t ? 'block' : 'none'; });
+  ['num', 'tl', 'ter', 'falt'].forEach(k => { document.getElementById('dat-' + k).style.display = k === t ? 'block' : 'none'; });
   iniReveal();
 }
 const ymLabel = ym => MESES[+ym.slice(5) - 1] + " '" + ym.slice(2, 4);
@@ -1283,7 +1283,61 @@ function buildDatos() {
         <div class="fam-cuerpo">${aves.map(a => `<button class="fam-chip${visto(a) ? ' vista' : ''}" onclick="abrirDesdePortada(${a.id}, famLista(${a.id}))">${visto(a) ? '✓ ' : ''}${escHtml(a.comun)}</button>`).join('')}
         <button class="fam-ir" onclick="irAlbumFamilia('${esc}',${f.m > 0})">${f.m > 0 ? 'Ver solo las que me faltan en el álbum →' : 'Ver el grupo en el álbum →'}</button></div></details>`;
     }).join('')}</div>`;
+  if(typeof pintarTerritorio === 'function') pintarTerritorio();
   iniReveal();
+}
+
+// ── Territorio: dónde vi aves y dónde conviene salir (provincias de Argentina / departamentos de Córdoba) ──
+let TER = {reg: 'cba', modo: 'visto'};
+function terDatos() {
+  const dep = TER.reg === 'cba', M = dep ? DEPT_MAP : PROV_MAP;
+  const vistas = {};
+  LUGARES_MAP.forEach(l => {
+    const c = dep ? ((l.prov === 'X' || !l.prov) ? deptoDe(l) : null) : (l.prov || 'X');
+    if(!c) return;
+    (vistas[c] = vistas[c] || new Set());
+    l.ids.filter(id => avist[id]).forEach(id => vistas[c].add(id));
+  });
+  // potencial: especies que aún no vi × frecuencia en eBird de esa zona = especies nuevas esperables por lista completa
+  const T = dep ? DEPT_PROB : PROV_PROB, pot = {}, nPend = {};
+  AVES.forEach(a => {
+    if(avist[a.id] || (dep && !CBA.has(a.id))) return;
+    const z = T[a.id]; if(!z) return;
+    Object.keys(z).forEach(c => { pot[c] = (pot[c] || 0) + z[c] / 100; if(z[c] >= 0.5) nPend[c] = (nPend[c] || 0) + 1; });
+  });
+  return {M, dep, vistas, pot, nPend};
+}
+function terMapa(d, vals, mx, fmt) {
+  const ps = Object.keys(d.M.d).map(c => {
+    const v = vals[c] || 0, o = v ? (.2 + .8 * Math.sqrt(v / mx)).toFixed(2) : 0;
+    return `<path d="${d.M.d[c]}" class="pm-p${d.dep ? ' pm-dd' : ''}" ${v ? `style="fill-opacity:${o}"` : ''}><title>${escHtml(d.M.n[c] || c)}: ${v ? fmt(v) : 'sin datos'}</title></path>`;
+  }).join('');
+  return `<svg class="pm ter-svg${d.dep ? ' pm-d' : ''}" viewBox="0 0 ${d.M.w} ${d.M.h}" role="img" aria-label="Mapa de calor">${ps}</svg>`;
+}
+function terSet(k, v) { TER[k] = v; pintarTerritorio(); }
+function pintarTerritorio() {
+  const el = document.getElementById('dat-ter'); if(!el || typeof DEPT_MAP === 'undefined' || !LUGARES_MAP.length) return;
+  const d = terDatos(), n = c => d.vistas[c] ? d.vistas[c].size : 0;
+  const zonas = Object.keys(d.M.d), con = zonas.filter(c => n(c) > 0);
+  const unidad = d.dep ? 'departamento' : 'provincia', unidades = d.dep ? 'departamentos' : 'provincias';
+  const potModo = TER.modo === 'pot';
+  const vals = potModo ? d.pot : Object.fromEntries(zonas.map(c => [c, n(c)]));
+  const mx = Math.max(0.0001, ...zonas.map(c => vals[c] || 0));
+  const fmt = potModo ? v => '+' + v.toLocaleString('es-AR', {maximumFractionDigits: 2}) + ' especies nuevas por lista' : v => v + ' especie' + (v === 1 ? '' : 's');
+  const orden = zonas.slice().sort((a, b) => (vals[b] || 0) - (vals[a] || 0) || (d.M.n[a] || a).localeCompare(d.M.n[b] || b, 'es'));
+  const top = orden.filter(c => vals[c] > 0).slice(0, 8);
+  const filas = top.map(c => `<div class="hb"><span class="hb-n" title="${escHtml(d.M.n[c] || c)}">${escHtml(d.M.n[c] || c)}</span><span class="hb-bar"><i class="hb-fill" style="--w:${Math.round(vals[c] / mx * 100)}%"></i></span><span class="hb-v">${potModo ? '+' + vals[c].toLocaleString('es-AR', {maximumFractionDigits: 1}) : vals[c]}</span></div>`).join('') || '<div class="dat-vacio">Sin datos todavía</div>';
+  const sin = zonas.filter(c => !n(c)).map(c => d.M.n[c] || c).sort((a, b) => a.localeCompare(b, 'es'));
+  const btn = (k, v, t) => `<button class="reg-b${TER[k] === v ? ' on' : ''}" onclick="terSet('${k}','${v}')">${t}</button>`;
+  el.innerHTML = `<div class="dat-grid">
+    <div class="dat-card rv"><div class="ter-ctl"><div class="reg-sel">${btn('reg', 'cba', 'Córdoba')}${btn('reg', 'arg', 'Argentina')}</div><div class="reg-sel">${btn('modo', 'visto', 'Lo que ya vi')}${btn('modo', 'pot', 'Dónde conviene salir')}</div></div>
+      <div class="dat-s">${potModo ? `Especies que todavía no viste que sumarías, en promedio, en una lista completa de eBird en cada ${unidad}. Sale de las listas "Especies en la mira" de eBird.` : `Especies distintas que registraste en cada ${unidad}.`}</div>
+      <div class="ter-wrap">${terMapa(d, vals, mx, fmt)}
+        <div class="ter-lado"><div class="ter-kpi"><b>${con.length}</b><span>de ${zonas.length} ${unidades} con registros</span></div>
+          <div class="ter-lista">${filas}</div></div></div>
+      ${sin.length ? `<details class="ter-sin"><summary>${potModo ? '' : 'Sin registros todavía'}${potModo ? (d.dep ? 'Ver todos los departamentos' : 'Ver todas las provincias') : ' (' + sin.length + ')'}</summary><p>${potModo ? orden.map(c => escHtml(d.M.n[c] || c) + ' +' + ((vals[c] || 0).toLocaleString('es-AR', {maximumFractionDigits: 2}))).join(' · ') : sin.map(escHtml).join(' · ')}</p></details>` : ''}
+      <small class="ter-cr">Contornos: ${d.dep ? 'geoBoundaries (CC BY 4.0)' : 'amCharts'}.</small>
+    </div></div>`;
 }
 function famLista(id) { const a = AVES.find(x => x.id === id); return avesReg().filter(x => x.familiaEsp === a.familiaEsp).sort((p, q) => p.tx - q.tx); }
 

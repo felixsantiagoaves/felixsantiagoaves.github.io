@@ -1261,3 +1261,18 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 /* Portada: "Últimas especies sumadas" arriba (mismas figuritas), seguido de avance y video */
 #page-sobre-mi .recientes{margin:-.9rem auto 1.1rem;max-width:520px;}
 #page-sobre-mi .recientes .rec-titulo{display:block;margin-bottom:.35rem;}
+
+.ter-ctl{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.7rem}
+.ter-wrap{display:flex;gap:1.2rem;align-items:flex-start;margin-top:.8rem}
+.ter-svg{width:min(250px,42%);flex:none;height:auto}
+.ter-svg.pm-d{width:min(230px,42%)}
+.ter-lado{flex:1;min-width:0}
+.ter-kpi b{font-family:'Playfair Display',serif;font-size:2rem;color:var(--v1);margin-right:.4rem}
+.ter-kpi span{font-size:.8rem;color:var(--ti)}
+.ter-lista{margin-top:.6rem}
+.ter-sin{margin-top:.9rem;font-size:.8rem;color:var(--ti)}
+.ter-sin summary{cursor:pointer;font-weight:700}
+.ter-sin p{margin-top:.4rem;line-height:1.5}
+.ter-cr{display:block;margin-top:.7rem;font-size:.65rem;color:var(--ti);opacity:.8}
+[data-theme=dark] .ter-kpi b{color:#e8dccb}
+@media(max-width:640px){.ter-wrap{flex-direction:column;align-items:center}.ter-svg,.ter-svg.pm-d{width:min(260px,80%)}.ter-lado{width:100%}}
