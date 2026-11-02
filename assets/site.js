@@ -1459,14 +1459,30 @@ function lbVerFicha() {
       const [a, b] = [...ptrs.values()]; lbZ.s = clampS(s0 * Math.hypot(a.x - b.x, a.y - b.y) / (d0 || 1));
       if(lbZ.s === 1) { lbZ.x = 0; lbZ.y = 0; } lbApply();
     } else if(lbZ.s > 1) { lbZ.x += e.clientX - p.x; lbZ.y += e.clientY - p.y; p.x = e.clientX; p.y = e.clientY; lbApply(); }
-    else { p.x = e.clientX; p.y = e.clientY; }
+    else {
+      p.x = e.clientX; p.y = e.clientY;
+      if(sw) { const dx = e.clientX - sw.x, dy = e.clientY - sw.y;
+        if(Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.3) {
+          const dir = dx < 0 ? 1 : -1, k = (lbIdx + dir >= 0 && lbIdx + dir < lbLista.length) ? 1 : .25;
+          img.classList.remove('lb-entra-d', 'lb-entra-i'); img.style.transition = 'none';
+          img.style.transform = 'translateX(' + (dx * k) + 'px)'; img.style.opacity = String(1 - Math.min(Math.abs(dx) * k / 420, .5));
+        } }
+    }
   });
   const fin = e => {
     if(!ptrs.has(e.pointerId)) return;
     ptrs.delete(e.pointerId);
     if(sw && ptrs.size === 0 && e.type === 'pointerup') {
       const dx = e.clientX - sw.x, dy = e.clientY - sw.y;
-      if(lbZ.s === 1 && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) lbNav(dx < 0 ? 1 : -1);
+      const dir = dx < 0 ? 1 : -1;
+      if(lbZ.s === 1 && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && lbIdx + dir >= 0 && lbIdx + dir < lbLista.length) {
+        img.style.transition = 'transform .16s ease-in, opacity .16s'; img.style.transform = 'translateX(' + (-dir * 110) + 'vw)'; img.style.opacity = '0';
+        setTimeout(() => {
+          img.style.transition = 'none'; img.style.transform = ''; img.style.opacity = '';
+          lbNav(dir); img.classList.remove('lb-entra-d', 'lb-entra-i'); void img.offsetWidth; img.classList.add(dir > 0 ? 'lb-entra-d' : 'lb-entra-i');
+        }, 165);
+      }
+      else if(Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) { img.style.transition = 'transform .22s cubic-bezier(.3,1.4,.5,1), opacity .2s'; img.style.transform = ''; img.style.opacity = ''; }
       else if(Math.hypot(dx, dy) < 10) {
         const now = Date.now();
         if(now - lastTap < 320) {
@@ -1478,12 +1494,13 @@ function lbVerFicha() {
     }
     sw = null;
   };
-  img.addEventListener('pointerup', fin); img.addEventListener('pointercancel', fin);
+  img.addEventListener('pointerup', fin); img.addEventListener('pointercancel', e => { img.style.transition = 'transform .2s'; img.style.transform = ''; img.style.opacity = ''; fin(e); });
   img.addEventListener('wheel', e => {
     e.preventDefault();
     lbZ.s = clampS(lbZ.s * (e.deltaY < 0 ? 1.15 : 1 / 1.15));
     if(lbZ.s === 1) { lbZ.x = 0; lbZ.y = 0; } lbApply();
   }, {passive: false});
+  img.addEventListener('animationend', () => img.classList.remove('lb-entra-d', 'lb-entra-i'));
   img.addEventListener('load', () => img.classList.add('ok'));
   img.addEventListener('error', () => img.classList.add('ok'));
 })();
