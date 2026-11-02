@@ -393,7 +393,7 @@ body{padding-bottom:48px;}
 .album-filtros.open{display:flex;}
 .album-filtros label{display:flex;flex-direction:column;gap:.2rem;font-size:.62rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:var(--ti);}
 .album-filtros select,.gal-controles select,.gal-controles input{padding:.4rem .6rem;border:1.5px solid var(--co);border-radius:2px;background:white;color:var(--tx);font-family:'Lato',sans-serif;font-size:.85rem;min-width:150px;max-width:260px;}
-.album-controls.fopen{position:static;}
+.album-controls.fopen{max-height:calc(100svh - 70px);overflow-y:auto;overscroll-behavior:contain;}
 .album-count{font-family:'Caveat',cursive;font-size:1.05rem;color:var(--ti);margin:0 0 .8rem;}
 /* Portada: hito + ave del día */
 .nov2{margin-top:1rem;}

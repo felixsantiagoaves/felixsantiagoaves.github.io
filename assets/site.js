@@ -943,28 +943,47 @@ function modalHayVecina(dir) {
   return i >= 0 && n >= 0 && n < lista.length;
 }
 (function(){
-  let sx=0, sy=0, st=0, ok=false, drag=false, card=null;
+  let sx=0, sy=0, st=0, ok=false, drag=false, mode=null, card=null, top0=0;
   const ov = () => document.getElementById('modal-ov');
   const reset = (anim) => { if(!card) return; card.style.transition = anim || 'none'; card.style.transform = ''; card.style.opacity = ''; };
+  const fondo = v => { const o = ov(); if(o) o.style.background = v == null ? '' : 'rgba(20,15,10,' + v + ')'; };
   document.addEventListener('touchstart', e => {
     const o = ov(); card = document.getElementById('fm');
     ok = !!(o && o.classList.contains('open') && e.touches.length === 1 && e.target.closest('.fm') && card);
-    drag = false; if(!ok) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
+    drag = false; mode = null; if(!ok) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now(); top0 = o.scrollTop;
   }, {passive: true});
   document.addEventListener('touchmove', e => {
     if(!ok) return;
     const dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
-    if(!drag && Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.3) { drag = true; card.classList.remove('fm-in','fm-entra-d','fm-entra-i'); }
+    if(!drag) {
+      if(Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.3) { drag = true; mode = 'h'; }
+      else if(dy > 12 && dy > Math.abs(dx) * 1.3 && top0 <= 0 && ov().scrollTop <= 0) { drag = true; mode = 'v'; }
+      if(drag) card.classList.remove('fm-in', 'fm-entra-d', 'fm-entra-i');
+    }
     if(!drag) return;
-    const dir = dx < 0 ? 1 : -1, k = modalHayVecina(dir) ? 1 : .25;   // en los extremos "se resiste"
     card.style.transition = 'none';
+    if(mode === 'v') {
+      if(e.cancelable) e.preventDefault();
+      const y = Math.max(0, dy);
+      card.style.transform = 'translateY(' + y * .9 + 'px) scale(' + (1 - Math.min(y / 1800, .12)) + ')';
+      card.style.opacity = String(1 - Math.min(y / 700, .4)); fondo(.85 * (1 - Math.min(y / 500, .75)));
+      return;
+    }
+    const dir = dx < 0 ? 1 : -1, k = modalHayVecina(dir) ? 1 : .25;   // en los extremos "se resiste"
     card.style.transform = 'translateX(' + (dx * k) + 'px) rotate(' + (dx * k / 45) + 'deg)';
     card.style.opacity = String(1 - Math.min(Math.abs(dx) * k / 420, .45));
-  }, {passive: true});
+  }, {passive: false});
   document.addEventListener('touchend', e => {
     if(!ok) return; ok = false;
     const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
     if(!drag) return; drag = false;
+    if(mode === 'v') {
+      if(dy > 110 || (dy > 60 && Date.now() - st < 250)) {
+        card.style.transition = 'transform .2s ease-in, opacity .2s'; card.style.transform = 'translateY(100vh) scale(.9)'; card.style.opacity = '0';
+        setTimeout(() => { closeM(); reset(); fondo(null); }, 200);
+      } else { reset('transform .22s cubic-bezier(.3,1.4,.5,1), opacity .2s'); fondo(null); }
+      return;
+    }
     const dir = dx < 0 ? 1 : -1;
     const va = Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6 && modalHayVecina(dir);
     if(!va) { reset('transform .22s cubic-bezier(.3,1.4,.5,1), opacity .2s'); return; }
@@ -976,6 +995,7 @@ function modalHayVecina(dir) {
       card.classList.add(dir > 0 ? 'fm-entra-d' : 'fm-entra-i');
     }, 165);
   }, {passive: true});
+  document.addEventListener('touchcancel', () => { if(drag) { drag = false; ok = false; reset('transform .2s'); fondo(null); } }, {passive: true});
 })();
 
 // Navegación con teclado
