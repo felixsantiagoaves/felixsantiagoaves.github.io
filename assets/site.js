@@ -119,12 +119,13 @@ async function cargarDatos() {
   }
 }
 function probDe(id){ const T = (REGION === 'cba') ? (typeof PROB !== 'undefined' ? PROB : null) : (typeof PROB_AR !== 'undefined' ? PROB_AR : null); return T && T[id] != null ? T[id] : null; }
-function mapaProv(pv){
-  if(typeof PROV_MAP==='undefined') return '';
-  const M=PROV_MAP, mx=Math.max(...Object.values(pv));
+function mapaProv(pv,dep){
+  const M=dep?(typeof DEPT_MAP!=='undefined'?DEPT_MAP:null):(typeof PROV_MAP!=='undefined'?PROV_MAP:null);
+  if(!M) return '';
+  const M0=M, mx=Math.max(...Object.values(pv));
   const top=Object.entries(pv).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([c,v])=>`<b>${escHtml(M.n[c]||c)}</b> ${v.toLocaleString('es-AR',{maximumFractionDigits:1})} %`).join(' · ');
-  const ps=Object.keys(M.d).map(c=>{const v=pv[c]; const o=v!=null?(.18+.82*Math.sqrt(v/mx)).toFixed(2):0; return `<path d="${M.d[c]}" class="pm-p" ${v!=null?`style="fill-opacity:${o}"`:''}><title>${escHtml(M.n[c]||c)}${v!=null?': '+v.toLocaleString('es-AR',{maximumFractionDigits:1})+' %':': sin datos'}</title></path>`;}).join('');
-  return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por provincia">${ps}</svg><div class="pm-txt"><p>Más probable en: ${top}.</p><div class="pm-leg"><i></i><span>más probable</span></div></div></div><small>Porcentaje de listas completas de eBird de cada provincia que la registran.</small></div>`;
+  const ps=Object.keys(M.d).map(c=>{const v=pv[c]; const o=v!=null?(.18+.82*Math.sqrt(v/mx)).toFixed(2):0; return `<path d="${M.d[c]}" class="pm-p"${c==='C'&&!dep?' data-c':''} ${v!=null?`style="fill-opacity:${o}"`:''}><title>${escHtml(M.n[c]||c)}${v!=null?': '+v.toLocaleString('es-AR',{maximumFractionDigits:1})+' %':': sin datos'}</title></path>`;}).join('');
+  return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>Más probable en: ${top}.</p><div class="pm-leg"><i></i><span>más probable</span></div></div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
 }
 function probTxt(p){ return p >= 3 ? 'De las más probables' : p >= 1 ? 'Posible' : p >= 0.1 ? 'Difícil' : 'Rareza'; }
 function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -724,7 +725,7 @@ function openM(id) {
       const prov = (typeof PROV_PROB !== 'undefined') ? PROV_PROB[id] : null;
       if(pendDetail) pendDetail.innerHTML=`<span style="font-style:italic;color:var(--ti)">Todavía no la encontré — la tengo en la mira y la sigo buscando.</span>` +
         (prob != null ? `<div class="pista"><span class="pista-t">Probabilidad de encontrarla</span><p><b>${probTxt(prob)}</b> · aparece en el ${prob.toLocaleString('es-AR',{maximumFractionDigits:2})} % de las listas completas de eBird en ${REGION === 'cba' ? 'Córdoba' : 'Argentina'}.</p><small>Basado en ${REGION === 'cba' ? '85.181' : '617.923'} listas completas de eBird.</small></div>` : '') +
-        (REGION !== 'cba' && prov ? mapaProv(prov) : '');
+        (REGION === 'cba' ? ((typeof DEPT_PROB !== 'undefined' && DEPT_PROB[id]) ? mapaProv(DEPT_PROB[id],true) : '') : (prov ? mapaProv(prov) : ''));
     }
   }
   const pendReset=document.getElementById('m-pending-info');

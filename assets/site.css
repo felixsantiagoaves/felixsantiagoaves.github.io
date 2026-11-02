@@ -1250,3 +1250,4 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .pm-leg{display:flex;align-items:center;gap:.4rem;font-size:.65rem;color:var(--ti);margin-top:.2rem}
 .pm-leg i{width:70px;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(101,109,74,.2),var(--v2))}
 [data-theme=dark] .pm-p{stroke:#2a1f14}
+.pm-p[data-c]{stroke:var(--v1);stroke-width:.35}
