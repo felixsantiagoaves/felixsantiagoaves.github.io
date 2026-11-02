@@ -1346,3 +1346,9 @@ nav{view-transition-name:site-nav}
 /* "Nueva": más chico y en la esquina de abajo, para no tapar al ave */
 .fig-nueva{top:auto;bottom:4px;right:3px;font-size:.5rem;letter-spacing:1px;padding:0 4px;border-width:1.5px}
 @media(min-width:700px){.fig-nueva{font-size:.58rem;padding:1px 6px}}
+
+.canto-box{margin:0 0 1rem}
+.canto-btn{font:inherit;font-weight:700;font-size:.85rem;background:var(--cr);border:1px solid var(--co);color:inherit;padding:.55rem .9rem;cursor:pointer;width:100%;text-align:left}
+.canto-fr{width:100%;height:140px;border:1px solid var(--co);display:block}
+.canto-cr{font-size:.68rem;opacity:.7;margin-top:.35rem;line-height:1.35}
+.canto-cr a{color:inherit}

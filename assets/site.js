@@ -569,6 +569,11 @@ function updStats() {
 // ── Portada: últimas especies, novedades clickeables, contador ──────────────
 function fechaHoraKey(r){ return (r.fecha||'') + ' ' + (r.hora||'00:00'); }
 function compararRecientes(a,b){ return fechaHoraKey(b[1]).localeCompare(fechaHoraKey(a[1])) || (parseInt(b[0]) - parseInt(a[0])); }
+function cantoPlay(ev){
+  ev.stopPropagation();
+  const box=document.getElementById('m-canto'), btn=box.querySelector('.canto-btn');
+  btn.outerHTML=`<iframe class="canto-fr" src="https://xeno-canto.org/${box.dataset.xc}/embed?simple=1" loading="lazy" scrolling="no" title="Grabación en xeno-canto"></iframe>`;
+}
 function recientes(n, soloConFoto){
   return Object.entries(avist)
     .filter(([,r]) => r.fecha && (!soloConFoto || r.foto))
@@ -758,6 +763,16 @@ function openM(id) {
         ${ficha.curiosidad?`<div class="ficha-row ficha-col"><span class="ficha-label">Dato curioso</span><span class="ficha-val ficha-dato">${ficha.curiosidad}</span></div>`:''}`;
       fichaEl.style.display='block';
     } else { fichaEl.style.display='none'; }
+  }
+
+  // Canto (xeno-canto, mejor grabación argentina; el audio carga recién al tocar)
+  const cantoEl=document.getElementById('m-canto'), ct=(typeof CANTOS!=='undefined')&&CANTOS[ave.nombre];
+  if(cantoEl){
+    if(ct){
+      cantoEl.dataset.xc=ct.xc;
+      cantoEl.innerHTML=`<button class="canto-btn" onclick="cantoPlay(event)">🔊 Escuchar su ${ct.tipo.startsWith('grab')?'grabación':ct.tipo}</button><div class="canto-cr">Mejor grabación de Argentina · ${ct.autor} · ${ct.lugar} · <a href="https://xeno-canto.org/${ct.xc}" target="_blank" rel="noopener">XC${ct.xc}</a> · <a href="https://creativecommons.org/licenses/${ct.lic}" target="_blank" rel="noopener">CC ${ct.lic.split('/')[0].toUpperCase()}</a> · xeno-canto</div>`;
+      cantoEl.style.display='block';
+    } else { cantoEl.style.display='none'; cantoEl.innerHTML=''; }
   }
 
   // Foto
