@@ -936,6 +936,21 @@ function updateModalArrows() {
 }
 
 
+// Deslizar con el dedo entre fichas (celular): izquierda = siguiente, derecha = anterior
+(function(){
+  let sx=0, sy=0, st=0, ok=false;
+  const ov = () => document.getElementById('modal-ov');
+  document.addEventListener('touchstart', e => {
+    const o = ov(); ok = !!(o && o.classList.contains('open') && e.touches.length === 1 && e.target.closest('.fm'));
+    if(!ok) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
+  }, {passive: true});
+  document.addEventListener('touchend', e => {
+    if(!ok) return; ok = false;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6 && Date.now() - st < 700) modalNav(dx < 0 ? 1 : -1);
+  }, {passive: true});
+})();
+
 // Navegación con teclado
 document.addEventListener('keydown', e => {
   if(document.getElementById('lightbox').classList.contains('open')) {
