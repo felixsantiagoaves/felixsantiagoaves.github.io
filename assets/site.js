@@ -651,8 +651,8 @@ function renderAlbum() {
       : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
-      <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>${enc && nuevasIds.has(ave.id) ? '<span class="fig-nueva">Nueva</span>' : ''}
-      <div class="fig-img"><div class="fig-svg-wrap">${foto}</div></div>
+      <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
+      <div class="fig-img">${enc && nuevasIds.has(ave.id) ? '<span class="fig-nueva">Nueva</span>' : ''}<div class="fig-svg-wrap">${foto}</div></div>
       <div class="fig-info">
         <div class="fig-co">${ave.comun}</div>
         <div class="fig-ci">${ave.nombre}</div>

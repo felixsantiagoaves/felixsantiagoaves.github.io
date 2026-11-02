@@ -1343,3 +1343,6 @@ nav{view-transition-name:site-nav}
 @keyframes mHop{0%{transform:none}22%{transform:translateY(-26px) scale(.97,1.04)}48%{transform:translateY(0) scale(1.05,.93)}68%{transform:translateY(-9px)}100%{transform:none}}
 @keyframes mTilt{0%{transform:none}25%{transform:rotate(-7deg)}55%{transform:rotate(5deg)}80%{transform:rotate(-2deg)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.fm.fm-out,.m-masc.masc-hop,.m-masc.masc-tilt{animation:none}}
+/* "Nueva": más chico y en la esquina de abajo, para no tapar al ave */
+.fig-nueva{top:auto;bottom:4px;right:3px;font-size:.5rem;letter-spacing:1px;padding:0 4px;border-width:1.5px}
+@media(min-width:700px){.fig-nueva{font-size:.58rem;padding:1px 6px}}
