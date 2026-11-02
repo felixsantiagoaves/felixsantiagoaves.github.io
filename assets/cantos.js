@@ -49,4 +49,6 @@ const CANTOS={
   "tipo": "grabación (calidad B)",
   "lugar": "La Capital, Santa Fe"
  }
+,
+ "Empidonomus aurantioatrocristatus": {"xc":506233,"autor":"Niels Krabbe","lic":"by-nc-sa/4.0","tipo":"canto","lugar":"RP 25, La Rioja"}
 };

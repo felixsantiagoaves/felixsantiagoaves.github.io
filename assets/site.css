@@ -1349,6 +1349,12 @@ nav{view-transition-name:site-nav}
 
 .canto-box{margin:0 0 1rem}
 .canto-btn{font:inherit;font-weight:700;font-size:.85rem;background:var(--cr);border:1px solid var(--co);color:inherit;padding:.55rem .9rem;cursor:pointer;width:100%;text-align:left}
+.canto-pl{display:flex;align-items:center;gap:.7rem;background:var(--cr);border:1px solid var(--co);padding:.5rem .8rem}
+.canto-pp{flex:none;width:34px;height:34px;border-radius:50%;border:0;background:var(--v2);color:#fff;font-size:.8rem;cursor:pointer;line-height:1}
+.canto-bar{flex:1;height:8px;background:var(--co);border-radius:4px;cursor:pointer;overflow:hidden}
+.canto-bar i{display:block;height:100%;width:0;background:var(--v2)}
+.canto-t{font-size:.7rem;color:var(--ti);min-width:5.2em;text-align:right;font-variant-numeric:tabular-nums}
+[data-theme=dark] .canto-pl{background:#1d2216;border-color:#38422d}[data-theme=dark] .canto-bar{background:#38422d}[data-theme=dark] .canto-t{color:#c4a882}
 .canto-fr{width:100%;height:140px;border:1px solid var(--co);display:block}
 .canto-cr{font-size:.68rem;opacity:.7;margin-top:.35rem;line-height:1.35}
 .canto-cr a{color:inherit}

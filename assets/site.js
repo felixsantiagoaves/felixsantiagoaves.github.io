@@ -569,10 +569,21 @@ function updStats() {
 // ── Portada: últimas especies, novedades clickeables, contador ──────────────
 function fechaHoraKey(r){ return (r.fecha||'') + ' ' + (r.hora||'00:00'); }
 function compararRecientes(a,b){ return fechaHoraKey(b[1]).localeCompare(fechaHoraKey(a[1])) || (parseInt(b[0]) - parseInt(a[0])); }
+let _cantoAudio=null;
+function cantoStop(){ if(_cantoAudio){ try{_cantoAudio.pause();}catch(e){} _cantoAudio=null; } }
+function cantoFmt(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
 function cantoPlay(ev){
-  ev.stopPropagation();
-  const box=document.getElementById('m-canto'), btn=box.querySelector('.canto-btn');
-  btn.outerHTML=`<iframe class="canto-fr" src="https://xeno-canto.org/${box.dataset.xc}/embed?simple=1" loading="lazy" scrolling="no" title="Grabación en xeno-canto"></iframe>`;
+  ev.stopPropagation(); cantoStop();
+  const box=document.getElementById('m-canto'), btn=box.querySelector('.canto-btn'), xc=box.dataset.xc;
+  const au=new Audio(); au.preload='auto'; _cantoAudio=au;
+  btn.outerHTML=`<div class="canto-pl"><button class="canto-pp" aria-label="Pausar">❚❚</button><div class="canto-bar"><i></i></div><span class="canto-t">0:00</span></div>`;
+  const pl=box.querySelector('.canto-pl'), pp=pl.querySelector('.canto-pp'), bar=pl.querySelector('.canto-bar'), fill=bar.firstElementChild, tm=pl.querySelector('.canto-t');
+  au.addEventListener('timeupdate',()=>{ if(au.duration){ fill.style.width=(au.currentTime/au.duration*100)+'%'; tm.textContent=cantoFmt(au.currentTime)+' / '+cantoFmt(au.duration);} });
+  au.addEventListener('ended',()=>{ pp.textContent='▶'; fill.style.width='0'; });
+  au.addEventListener('error',()=>{ if(_cantoAudio===au){ _cantoAudio=null; pl.outerHTML=`<iframe class="canto-fr" src="https://xeno-canto.org/${xc}/embed?simple=1" scrolling="no" title="Grabación en xeno-canto"></iframe>`; } });
+  pp.onclick=e=>{ e.stopPropagation(); if(au.paused){ au.play(); pp.textContent='❚❚'; } else { au.pause(); pp.textContent='▶'; } };
+  bar.onclick=e=>{ e.stopPropagation(); if(au.duration){ const r=bar.getBoundingClientRect(); au.currentTime=au.duration*Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)); } };
+  au.src='https://xeno-canto.org/'+xc+'/download'; au.play().catch(()=>{});
 }
 function recientes(n, soloConFoto){
   return Object.entries(avist)
@@ -766,6 +777,7 @@ function openM(id) {
   }
 
   // Canto (xeno-canto, mejor grabación argentina; el audio carga recién al tocar)
+  cantoStop();
   const cantoEl=document.getElementById('m-canto'), ct=(typeof CANTOS!=='undefined')&&CANTOS[ave.nombre];
   if(cantoEl){
     if(ct){
@@ -905,6 +917,7 @@ function shareAve() {
 
 let _closeT = 0;
 function closeM(fast){
+  cantoStop();
   const ov = document.getElementById('modal-ov'), card = document.getElementById('fm');
   const fin = () => {
     _closeT = 0; ov.classList.remove('open', 'cerrando'); card.classList.remove('fm-out');
