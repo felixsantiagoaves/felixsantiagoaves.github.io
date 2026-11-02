@@ -936,18 +936,45 @@ function updateModalArrows() {
 }
 
 
-// Deslizar con el dedo entre fichas (celular): izquierda = siguiente, derecha = anterior
+// Deslizar con el dedo entre fichas (celular): la ficha acompaña al dedo; izquierda = siguiente, derecha = anterior
+function modalHayVecina(dir) {
+  const lista = mapaAvesOrdenadas.length ? mapaAvesOrdenadas : avesFiltradas();
+  const i = lista.findIndex(a => a.id === curId), n = i + dir;
+  return i >= 0 && n >= 0 && n < lista.length;
+}
 (function(){
-  let sx=0, sy=0, st=0, ok=false;
+  let sx=0, sy=0, st=0, ok=false, drag=false, card=null;
   const ov = () => document.getElementById('modal-ov');
+  const reset = (anim) => { if(!card) return; card.style.transition = anim || 'none'; card.style.transform = ''; card.style.opacity = ''; };
   document.addEventListener('touchstart', e => {
-    const o = ov(); ok = !!(o && o.classList.contains('open') && e.touches.length === 1 && e.target.closest('.fm'));
-    if(!ok) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
+    const o = ov(); card = document.getElementById('fm');
+    ok = !!(o && o.classList.contains('open') && e.touches.length === 1 && e.target.closest('.fm') && card);
+    drag = false; if(!ok) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
+  }, {passive: true});
+  document.addEventListener('touchmove', e => {
+    if(!ok) return;
+    const dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+    if(!drag && Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.3) { drag = true; card.classList.remove('fm-in','fm-entra-d','fm-entra-i'); }
+    if(!drag) return;
+    const dir = dx < 0 ? 1 : -1, k = modalHayVecina(dir) ? 1 : .25;   // en los extremos "se resiste"
+    card.style.transition = 'none';
+    card.style.transform = 'translateX(' + (dx * k) + 'px) rotate(' + (dx * k / 45) + 'deg)';
+    card.style.opacity = String(1 - Math.min(Math.abs(dx) * k / 420, .45));
   }, {passive: true});
   document.addEventListener('touchend', e => {
     if(!ok) return; ok = false;
     const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-    if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6 && Date.now() - st < 700) modalNav(dx < 0 ? 1 : -1);
+    if(!drag) return; drag = false;
+    const dir = dx < 0 ? 1 : -1;
+    const va = Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6 && modalHayVecina(dir);
+    if(!va) { reset('transform .22s cubic-bezier(.3,1.4,.5,1), opacity .2s'); return; }
+    card.style.transition = 'transform .16s ease-in, opacity .16s';
+    card.style.transform = 'translateX(' + (-dir * 110) + '%) rotate(' + (-dir * 8) + 'deg)'; card.style.opacity = '0';
+    setTimeout(() => {
+      reset(); modalNav(dir);
+      card.classList.remove('fm-entra-d', 'fm-entra-i'); void card.offsetWidth;
+      card.classList.add(dir > 0 ? 'fm-entra-d' : 'fm-entra-i');
+    }, 165);
   }, {passive: true});
 })();
 

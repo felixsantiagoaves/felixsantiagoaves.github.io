@@ -1285,3 +1285,10 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .hab-pastizal{background:url(/assets/mascotas/fondos/pastizal.svg) center bottom/cover no-repeat !important;}
 .hab-sierras{background:url(/assets/mascotas/fondos/sierras.svg) center bottom/cover no-repeat !important;}
 .hab-cielo{background:url(/assets/mascotas/fondos/cielo.svg) center bottom/cover no-repeat !important;}
+
+.fm{touch-action:pan-y}
+.fm.fm-entra-d{animation:fmEntraD .24s cubic-bezier(.2,.9,.3,1) both}
+.fm.fm-entra-i{animation:fmEntraI .24s cubic-bezier(.2,.9,.3,1) both}
+@keyframes fmEntraD{from{opacity:0;transform:translateX(70%) rotate(5deg)}to{opacity:1;transform:none}}
+@keyframes fmEntraI{from{opacity:0;transform:translateX(-70%) rotate(-5deg)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fm.fm-entra-d,.fm.fm-entra-i{animation:none}}
