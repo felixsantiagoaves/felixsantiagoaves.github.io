@@ -578,11 +578,12 @@ function cantoPlay(ev){
   const au=new Audio(); au.preload='auto'; _cantoAudio=au;
   btn.outerHTML=`<div class="canto-pl"><button class="canto-pp" aria-label="Pausar">❚❚</button><div class="canto-bar"><i></i></div><span class="canto-t">0:00</span></div>`;
   const pl=box.querySelector('.canto-pl'), pp=pl.querySelector('.canto-pp'), bar=pl.querySelector('.canto-bar'), fill=bar.firstElementChild, tm=pl.querySelector('.canto-t');
-  au.addEventListener('timeupdate',()=>{ if(au.duration){ fill.style.width=(au.currentTime/au.duration*100)+'%'; tm.textContent=cantoFmt(au.currentTime)+' / '+cantoFmt(au.duration);} });
+  const dOk=()=>isFinite(au.duration)&&au.duration>0;
+  au.addEventListener('timeupdate',()=>{ if(dOk()){ fill.style.width=Math.min(100,au.currentTime/au.duration*100)+'%'; tm.textContent=cantoFmt(au.currentTime)+' / '+cantoFmt(au.duration);} else { tm.textContent=cantoFmt(au.currentTime); fill.style.width='0'; } });
   au.addEventListener('ended',()=>{ pp.textContent='▶'; fill.style.width='0'; });
   au.addEventListener('error',()=>{ if(_cantoAudio===au){ _cantoAudio=null; pl.outerHTML=`<iframe class="canto-fr" src="https://xeno-canto.org/${xc}/embed?simple=1" scrolling="no" title="Grabación en xeno-canto"></iframe>`; } });
   pp.onclick=e=>{ e.stopPropagation(); if(au.paused){ au.play(); pp.textContent='❚❚'; } else { au.pause(); pp.textContent='▶'; } };
-  bar.onclick=e=>{ e.stopPropagation(); if(au.duration){ const r=bar.getBoundingClientRect(); au.currentTime=au.duration*Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)); } };
+  bar.onclick=e=>{ e.stopPropagation(); if(dOk()){ const r=bar.getBoundingClientRect(); au.currentTime=au.duration*Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)); } };
   au.src='https://xeno-canto.org/'+xc+'/download'; au.play().catch(()=>{});
 }
 function recientes(n, soloConFoto){
