@@ -1252,3 +1252,5 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 [data-theme=dark] .pm-p{stroke:#2a1f14}
 .pm-p[data-c]{stroke:var(--v1);stroke-width:.35}
 .pm-d .pm-p{stroke-width:.03}
+.fm-photo.fm-photo-min{min-height:46px;height:46px;background:transparent}
+[data-theme=dark] .fm-photo.fm-photo-min{background:transparent}

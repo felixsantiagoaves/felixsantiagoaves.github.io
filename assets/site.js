@@ -684,6 +684,7 @@ function openM(id) {
   // Foto
   const img=document.getElementById('m-img'), ph=document.getElementById('m-ph');
   const mPrev=document.getElementById('m-prev');
+  mPrev.classList.toggle('fm-photo-min', !av);
   if(av&&av.foto){
     img.src=av.foto; img.alt=ave.comun+' ('+ave.nombre+') - '+ave.familiaEsp+' - Argentina'; img.style.display='block'; ph.style.display='none';
     mPrev.style.backgroundImage='none';
@@ -693,12 +694,7 @@ function openM(id) {
     mPrev.style.backgroundImage='none'; mPrev.style.filter='none';
   } else {
     img.style.display='none'; ph.style.display='none';
-    const sil=SILUETAS[FAM_SILUETA[ave.familiaEsp]||'pajarito']||SILUETAS['pajarito'];
-    mPrev.style.backgroundImage=`url("${sil}")`;
-    mPrev.style.backgroundSize='contain';
-    mPrev.style.backgroundRepeat='no-repeat';
-    mPrev.style.backgroundPosition='center center';
-    mPrev.style.filter='brightness(0.5)';
+    mPrev.style.backgroundImage='none'; mPrev.style.filter='none';
   }
 
   const sv=document.getElementById('m-sil');
