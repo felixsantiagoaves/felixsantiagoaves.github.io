@@ -1297,3 +1297,4 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 @keyframes lbEntraD{from{opacity:0;transform:translateX(40vw)}to{opacity:1;transform:none}}
 @keyframes lbEntraI{from{opacity:0;transform:translateX(-40vw)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.lb-img.lb-entra-d,.lb-img.lb-entra-i{animation:none}}
+body.scroll-lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}

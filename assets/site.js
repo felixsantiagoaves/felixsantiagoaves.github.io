@@ -809,7 +809,7 @@ function openM(id) {
   if(!ov.classList.contains('open')) {   // zoom desde la figurita del álbum (si está en pantalla)
     const f = document.querySelector('#album-container .fig[data-id="' + id + '"]');
     let dx = 0, dy = 40, sc = .6;
-    ov.classList.add('open');
+    ov.classList.add('open'); bloqueoScroll(true);
     if(f) { const r = f.getBoundingClientRect(), c = card.getBoundingClientRect();
       dx = (r.left + r.width / 2) - (c.left + c.width / 2); dy = (r.top + r.height / 2) - (c.top + c.height / 2); sc = Math.max(.15, Math.min(.6, r.width / c.width)); }
     card.style.setProperty('--dx', dx + 'px'); card.style.setProperty('--dy', dy + 'px'); card.style.setProperty('--sc', sc);
@@ -838,6 +838,16 @@ function pintarLink(ave) {
   });
 }
 
+// Bloquea el scroll de la página de atrás mientras hay una ficha o un visor abierto
+function bloqueoScroll(on) {
+  const b = document.body;
+  if(on) { if(b.classList.contains('scroll-lock')) return; b.dataset.sy = window.scrollY; b.style.top = -window.scrollY + 'px'; b.classList.add('scroll-lock'); }
+  else {
+    if(!b.classList.contains('scroll-lock')) return;
+    const y = +b.dataset.sy || 0; b.classList.remove('scroll-lock'); b.style.top = '';
+    window.scrollTo({top: y, left: 0, behavior: 'instant'});
+  }
+}
 function closeMO(e){if(e.target===document.getElementById('modal-ov'))closeM();}
 
 
@@ -864,7 +874,7 @@ function shareAve() {
   }
 }
 
-function closeM(){document.getElementById('modal-ov').classList.remove('open');avesOrdenadas=[];mapaAvesOrdenadas=[];
+function closeM(){document.getElementById('modal-ov').classList.remove('open'); if(!document.getElementById('lightbox').classList.contains('open')) bloqueoScroll(false);avesOrdenadas=[];mapaAvesOrdenadas=[];
   try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
   document.title=document.documentElement.dataset.titulo||document.title;}
 
@@ -882,7 +892,7 @@ function openLB(idx, lista) {
   lbIdx = idx;
   renderLB();
   document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden'; bloqueoScroll(true);
 }
 
 function renderLB() {
@@ -908,7 +918,7 @@ function lbNav(dir) {
 
 function closeLB() {
   document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow = ''; if(!document.getElementById('modal-ov').classList.contains('open')) bloqueoScroll(false);
 }
 
 function lbClickOut(e) {
