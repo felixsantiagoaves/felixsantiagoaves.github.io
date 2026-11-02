@@ -1276,3 +1276,12 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .ter-cr{display:block;margin-top:.7rem;font-size:.65rem;color:var(--ti);opacity:.8}
 [data-theme=dark] .ter-kpi b{color:#e8dccb}
 @media(max-width:640px){.ter-wrap{flex-direction:column;align-items:center}.ter-svg,.ter-svg.pm-d{width:min(260px,80%)}.ter-lado{width:100%}}
+
+/* Fondos de ambiente para las mascotas animadas (especies vistas sin foto) */
+.hab-humedal{background:url(/assets/mascotas/fondos/humedal.svg) center bottom/cover no-repeat !important;}
+.hab-bosque{background:url(/assets/mascotas/fondos/bosque.svg) center bottom/cover no-repeat !important;}
+.hab-arbustal{background:url(/assets/mascotas/fondos/arbustal.svg) center bottom/cover no-repeat !important;}
+.hab-ocaso{background:url(/assets/mascotas/fondos/ocaso.svg) center bottom/cover no-repeat !important;}
+.hab-pastizal{background:url(/assets/mascotas/fondos/pastizal.svg) center bottom/cover no-repeat !important;}
+.hab-sierras{background:url(/assets/mascotas/fondos/sierras.svg) center bottom/cover no-repeat !important;}
+.hab-cielo{background:url(/assets/mascotas/fondos/cielo.svg) center bottom/cover no-repeat !important;}

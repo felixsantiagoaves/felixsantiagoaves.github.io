@@ -67,3 +67,6 @@ Para sumar una especie: escribir su función en `dibujadas.py` y agregarla a `MA
 `python3 -I _build/mascotas/gen_mascotas.py assets/mascotas` y sumarla a `MASC` en `assets/pistas.js`
 (id de la especie → nombre del archivo) para que el álbum la muestre cuando esté "vista, sin foto".
 Las 3 mascotas del principio (carancho, gallineta y carpintero) no pasan por el generador.
+
+## Fondos de ambiente
+Las mascotas sin foto llevan un fondo según su ambiente (assets/mascotas/fondos/*.svg, generados por _build/mascotas/gen_fondos.py). Para una mascota nueva, sumar su id en MASC_HAB (assets/pistas.js): humedal, bosque, arbustal, ocaso, pastizal, sierras o cielo.

@@ -130,6 +130,7 @@ function mapaProv(pv,dep,pre){
   const ps=Object.keys(M.d).map(c=>{const v=pv[c]; const o=v!=null?(.18+.82*Math.sqrt(v/mx)).toFixed(2):0; return `<path d="${M.d[c]}" class="pm-p"${c==='C'&&!dep?' data-c':''} ${v!=null?`style="fill-opacity:${o}"`:''}><title>${escHtml(M.n[c]||c)}${v!=null?': '+fmtPct(v)+' %':': sin registros'}</title></path>`;}).join('');
   return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm${dep?' pm-d':''}" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>${top?`${pre||'Más probable en: '}${top}.`:'Registros muy escasos: casi no hay avistamientos en eBird, sin una zona clara.'}</p>${top?'<div class="pm-leg"><i></i><span>más probable</span></div>':''}</div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
 }
+function habCls(id){ return (typeof MASC_HAB !== 'undefined' && MASC_HAB[id]) ? ' hab-' + MASC_HAB[id] : ''; }
 function probTxt(p){ return p >= 3 ? 'De las más probables' : p >= 1 ? 'Posible' : p >= 0.1 ? 'Difícil' : 'Rareza'; }
 function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 // ── MAPA (Leaflet + OpenStreetMap; se carga solo al abrir la pestaña Mapa) ──
@@ -598,7 +599,7 @@ function buildRecientes(){
   const circulo = a => {
     const f = avist[a.id].foto;
     if(f) return `<div class="rec-circulo"><img src="${f}" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
-    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c"><img class="rec-masc" src="/assets/mascotas/${MASC[a.id]}-animado.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
+    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c${habCls(a.id)}"><img class="rec-masc" src="/assets/mascotas/${MASC[a.id]}-animado.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
     const k = SILUETAS[FAM_SILUETA[a.familiaEsp]] ? FAM_SILUETA[a.familiaEsp] : 'pajarito';
     return `<div class="rec-circulo rec-sin-foto"><span class="sil-i sil-${k}" role="img" aria-label="silueta"></span></div>`;
   };
@@ -646,7 +647,7 @@ function renderAlbum() {
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
       ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
-      : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
+      : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
       <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
@@ -777,7 +778,7 @@ function openM(id) {
   if(sv){
     const sinFoto = !!(av && !av.foto);
     sv.style.display = sinFoto ? 'flex' : 'none';
-    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.innerHTML='<img class="m-masc" src="/assets/mascotas/'+MASC[id]+'-animado.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto</span>'; }
+    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.className='m-sil'+habCls(id); sv.innerHTML='<img class="m-masc" src="/assets/mascotas/'+MASC[id]+'-animado.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto</span>'; }
     else if(sinFoto){ const k=SILUETAS[FAM_SILUETA[ave.familiaEsp]]?FAM_SILUETA[ave.familiaEsp]:'pajarito'; sv.innerHTML='<span class="sil-vivo sil-i sil-'+k+'" role="img" aria-label="silueta"></span><span class="m-sil-tag">Vista, sin foto</span>'; }
   }
   // Info avistamiento
