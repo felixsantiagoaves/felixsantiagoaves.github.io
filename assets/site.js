@@ -642,6 +642,7 @@ function renderAlbum() {
   // Numeración fija: orden taxonómico dentro de la región (como eBird)
   const todas = avesReg().slice().sort((a, b) => a.tx - b.tx);
   const numMap = {}; todas.forEach((a, i) => numMap[a.id] = i + 1);
+  const nuevasIds = new Set(recientes(8, false).map(a => a.id));
   const fig = (ave, i) => {
     const enc = visto(ave), av = enc ? avist[ave.id] : null;
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
@@ -650,7 +651,7 @@ function renderAlbum() {
       : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
-      <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
+      <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>${enc && nuevasIds.has(ave.id) ? '<span class="fig-nueva">Nueva</span>' : ''}
       <div class="fig-img"><div class="fig-svg-wrap">${foto}</div></div>
       <div class="fig-info">
         <div class="fig-co">${ave.comun}</div>
@@ -733,6 +734,7 @@ function openM(id) {
   if(av) { try{ history.replaceState(null,'',location.pathname+location.search+'#'+slugAve(ave.comun)); }catch(e){} document.title = ave.comun+' · Félix Santiago Aves'; }
   const mNum = document.getElementById('m-num');
   if(mNum) { const l = avesReg().slice().sort((a, b) => a.tx - b.tx), k = l.findIndex(a => a.id === id); mNum.textContent = k >= 0 ? 'N.º ' + String(k + 1).padStart(3, '0') : ''; }
+  const mNueva = document.getElementById('m-nueva'); if(mNueva) mNueva.style.display = (av && recientes(8, false).some(a => a.id === id)) ? '' : 'none';
   const mNombre = document.getElementById('m-nombre');
   const mComun = document.getElementById('m-comun');
   const slideClass = modalNavDir >= 0 ? 'modal-slide-right' : 'modal-slide-left';
@@ -778,7 +780,7 @@ function openM(id) {
   if(sv){
     const sinFoto = !!(av && !av.foto);
     sv.style.display = sinFoto ? 'flex' : 'none';
-    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.className='m-sil'+habCls(id); sv.innerHTML='<img class="m-masc" src="/assets/mascotas/'+MASC[id]+'-animado.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto</span>'; }
+    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.className='m-sil'+habCls(id); sv.innerHTML='<img class="m-masc" src="/assets/mascotas/'+MASC[id]+'-animado.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto</span>'; setTimeout(() => mascReaccion('masc-hop'), 380); mascIdle(); }
     else if(sinFoto){ const k=SILUETAS[FAM_SILUETA[ave.familiaEsp]]?FAM_SILUETA[ave.familiaEsp]:'pajarito'; sv.innerHTML='<span class="sil-vivo sil-i sil-'+k+'" role="img" aria-label="silueta"></span><span class="m-sil-tag">Vista, sin foto</span>'; }
   }
   // Info avistamiento
@@ -806,6 +808,7 @@ function openM(id) {
 
   pintarLink(ave);
   const ov = document.getElementById('modal-ov'), card = document.getElementById('fm');
+  if(_closeT) { clearTimeout(_closeT); _closeT = 0; ov.classList.remove('open', 'cerrando'); card.classList.remove('fm-out'); }
   if(!ov.classList.contains('open')) {   // zoom desde la figurita del álbum (si está en pantalla)
     const f = document.querySelector('#album-container .fig[data-id="' + id + '"]');
     let dx = 0, dy = 40, sc = .6;
@@ -848,6 +851,17 @@ function bloqueoScroll(on) {
     window.scrollTo({top: y, left: 0, behavior: 'instant'});
   }
 }
+// Las mascotas animadas reaccionan: saltito al abrir, al tocarlas y de vez en cuando solas
+let _mascT = 0;
+function mascReaccion(tipo) {
+  const m = document.querySelector('#m-sil .m-masc'); if(!m || window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  m.classList.remove('masc-hop', 'masc-tilt'); void m.offsetWidth; m.classList.add(tipo || (Math.random() < .55 ? 'masc-hop' : 'masc-tilt'));
+}
+function mascIdle() {
+  clearTimeout(_mascT);
+  _mascT = setTimeout(() => { if(document.getElementById('modal-ov').classList.contains('open') && document.querySelector('#m-sil .m-masc')) { mascReaccion(); mascIdle(); } }, 7000 + Math.random() * 6000);
+}
+document.addEventListener('click', e => { if(e.target.closest && e.target.closest('#m-sil .m-masc')) { mascReaccion(); mascIdle(); } });
 function closeMO(e){if(e.target===document.getElementById('modal-ov'))closeM();}
 
 
@@ -874,7 +888,23 @@ function shareAve() {
   }
 }
 
-function closeM(){document.getElementById('modal-ov').classList.remove('open'); if(!document.getElementById('lightbox').classList.contains('open')) bloqueoScroll(false);avesOrdenadas=[];mapaAvesOrdenadas=[];
+let _closeT = 0;
+function closeM(fast){
+  const ov = document.getElementById('modal-ov'), card = document.getElementById('fm');
+  const fin = () => {
+    _closeT = 0; ov.classList.remove('open', 'cerrando'); card.classList.remove('fm-out');
+    if(!document.getElementById('lightbox').classList.contains('open')) bloqueoScroll(false);
+  };
+  const f = (fast !== true && ov.classList.contains('open')) ? document.querySelector('#album-container .fig[data-id="' + curId + '"]') : null;
+  if(f && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {   // vuelve a la figurita de la que salió
+    card.classList.remove('fm-in', 'fm-entra-d', 'fm-entra-i'); card.style.transition = ''; card.style.transform = ''; card.style.opacity = '';
+    const r = f.getBoundingClientRect(), c = card.getBoundingClientRect();
+    card.style.setProperty('--dx', ((r.left + r.width / 2) - (c.left + c.width / 2)) + 'px'); card.style.setProperty('--dy', ((r.top + r.height / 2) - (c.top + c.height / 2)) + 'px');
+    card.style.setProperty('--sc', Math.max(.15, Math.min(.6, r.width / c.width)));
+    ov.classList.add('cerrando'); void card.offsetWidth; card.classList.add('fm-out');
+    clearTimeout(_closeT); _closeT = setTimeout(fin, 230);
+  } else { clearTimeout(_closeT); fin(); }
+  avesOrdenadas=[];mapaAvesOrdenadas=[];
   try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
   document.title=document.documentElement.dataset.titulo||document.title;}
 
@@ -990,7 +1020,7 @@ function modalHayVecina(dir) {
     if(mode === 'v') {
       if(dy > 110 || (dy > 60 && Date.now() - st < 250)) {
         card.style.transition = 'transform .2s ease-in, opacity .2s'; card.style.transform = 'translateY(100vh) scale(.9)'; card.style.opacity = '0';
-        setTimeout(() => { closeM(); reset(); fondo(null); }, 200);
+        setTimeout(() => { closeM(true); reset(); fondo(null); }, 200);
       } else { reset('transform .22s cubic-bezier(.3,1.4,.5,1), opacity .2s'); fondo(null); }
       return;
     }
@@ -1147,11 +1177,31 @@ function cargarRegistros() {
   return _regP;
 }
 function irDatos(tab) { if(aOtra('datos','irDatos',[tab])) return; datTab(tab || 'num'); window.scrollTo({top: 0}); }
+const DAT_TABS = ['num', 'tl', 'ter', 'falt'];
 function datTab(t, btn) {
+  const prev = (document.querySelector('.dat-tab.active') || {dataset: {}}).dataset.tab;
   document.querySelectorAll('.dat-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
-  ['num', 'tl', 'ter', 'falt'].forEach(k => { document.getElementById('dat-' + k).style.display = k === t ? 'block' : 'none'; });
+  DAT_TABS.forEach(k => { document.getElementById('dat-' + k).style.display = k === t ? 'block' : 'none'; });
+  const pane = document.getElementById('dat-' + t);
+  if(prev && prev !== t) { const d = DAT_TABS.indexOf(t) > DAT_TABS.indexOf(prev); pane.classList.remove('dat-entra-d', 'dat-entra-i'); void pane.offsetWidth; pane.classList.add(d ? 'dat-entra-d' : 'dat-entra-i'); }
   iniReveal();
 }
+// Deslizar entre pestañas de Estadísticas
+(function() {
+  let sx = 0, sy = 0, ok = false;
+  document.addEventListener('touchstart', e => {
+    const pg = document.getElementById('page-datos');
+    ok = !!(pg && e.touches.length === 1 && e.target.closest('#page-datos .page-body-wide') && !document.getElementById('modal-ov').classList.contains('open') && !e.target.closest('.hb-bar,details,select'));
+    if(ok) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }
+  }, {passive: true});
+  document.addEventListener('touchend', e => {
+    if(!ok) return; ok = false;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if(Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.6) return;
+    const cur = DAT_TABS.indexOf((document.querySelector('.dat-tab.active') || {dataset: {}}).dataset.tab), n = cur + (dx < 0 ? 1 : -1);
+    if(cur >= 0 && n >= 0 && n < DAT_TABS.length) { datTab(DAT_TABS[n]); const b = document.querySelector('.dat-tab.active'); if(b && b.scrollIntoView) b.scrollIntoView({inline: 'center', block: 'nearest', behavior: 'smooth'}); }
+  }, {passive: true});
+})();
 const ymLabel = ym => MESES[+ym.slice(5) - 1] + " '" + ym.slice(2, 4);
 function mesesEntre(a, b) {
   const out = []; let y = +a.slice(0, 4), m = +a.slice(5); const y2 = +b.slice(0, 4), m2 = +b.slice(5);
@@ -1270,7 +1320,7 @@ function pintarNumeros() {
   const rows = dFilas(null), sids = new Set(), lugs = new Set(), fotos = new Set(), dias = {}, meses = {};
   rows.forEach(x => { sids.add(x.id); x.pl.forEach(p => lugs.add(p)); if(x.foto) fotos.add(x.id); (dias[x.f] = dias[x.f] || new Set()).add(x.id); (meses[x.ym] = meses[x.ym] || new Set()).add(x.id); });
   const mejor = o => Object.keys(o).sort((a, b) => o[b].size - o[a].size || b.localeCompare(a))[0];
-  const set = (id, t) => { $(id).textContent = t; };
+  const set = (id, t) => { const el = $(id); if(/^\d+$/.test(String(t)) && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) { if(el.dataset.v !== String(t)) { el.dataset.v = String(t); el.dataset.suffix = ''; animCount(el, +t, 700); } } else { el.textContent = t; el.dataset.v = ''; } };
   set('k-esp', sids.size); set('k-lug', lugs.size); set('k-foto', fotos.size);
   set('k-fotos-s', sids.size ? Math.round(fotos.size / sids.size * 100) + '% de las especies' : '');
   set('k-dias', Object.keys(dias).length);
@@ -1306,15 +1356,15 @@ function buildDatos() {
       <div class="dat-s">${nx ? v + ' de ' + nx + ' · faltan ' + (nx - v) : '¡Las viste todas!'}</div>
       <div class="hito-bar"><i style="width:${Math.round(v / (nx || v) * 100)}%"></i></div>
       <div class="hito-chips">${chips}</div></div>
-    <div class="dat-filtro" id="dat-filtro"><span class="dfl-hint">Cargando…</span></div>
+    <div class="dat-filtro" id="dat-filtro"><span class="dfl-hint sk-t">Cargando…</span></div>
     <div class="dat-kpi rv"><b id="k-esp">${v}</b><span>Especies vistas</span></div>
     <div class="dat-kpi rv" style="--d:.06s"><b id="k-lug">${LUGARES_MAP.length}</b><span>Lugares</span></div>
     <div class="dat-kpi rv" style="--d:.12s"><b id="k-foto">${nFoto}</b><span>Con foto</span><small id="k-fotos-s">${Math.round(nFoto / Math.max(1, v) * 100)}% de las especies</small></div>
     <div class="dat-kpi rv"><b id="k-dias">…</b><span>Días de registro</span></div>
     <div class="dat-kpi rv" style="--d:.06s"><b id="k-mejor">…</b><span>Mejor día</span><small id="k-mejor-s"></small></div>
     <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mejor mes</span><small id="k-mes-s"></small></div>
-    <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum. Tocá un mes para filtrar.</div><div id="ch-acum"><div class="dat-vacio">Cargando…</div></div></div>
-    <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Aves distintas registradas cada mes, y cuántas fueron nuevas</div><div id="ch-mensual"><div class="dat-vacio">Cargando…</div></div></div>
+    <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum. Tocá un mes para filtrar.</div><div id="ch-acum"><div class="sk sk-ch"></div></div></div>
+    <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Aves distintas registradas cada mes, y cuántas fueron nuevas</div><div id="ch-mensual"><div class="sk sk-ch"></div></div></div>
     <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-lugares"></div></div>
     <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-grupos"></div></div>
   </div>`;
@@ -1361,7 +1411,7 @@ function buildDatos() {
 }
 
 // ── Territorio: dónde vi aves y dónde conviene salir (provincias de Argentina / departamentos de Córdoba) ──
-let TER = {reg: 'cba', modo: 'visto'};
+let TER = {reg: 'cba', modo: 'visto', sel: null};
 function terDatos() {
   const dep = TER.reg === 'cba', M = dep ? DEPT_MAP : PROV_MAP;
   const vistas = {};
@@ -1383,11 +1433,29 @@ function terDatos() {
 function terMapa(d, vals, mx, fmt) {
   const ps = Object.keys(d.M.d).map(c => {
     const v = vals[c] || 0, o = v ? (.2 + .8 * Math.sqrt(v / mx)).toFixed(2) : 0;
-    return `<path d="${d.M.d[c]}" class="pm-p${d.dep ? ' pm-dd' : ''}" ${v ? `style="fill-opacity:${o}"` : ''}><title>${escHtml(d.M.n[c] || c)}: ${v ? fmt(v) : 'sin datos'}</title></path>`;
+    return `<path d="${d.M.d[c]}" data-c="${c}" onclick="terZona('${c}')" class="pm-p ter-z${TER.sel === c ? ' ter-sel' : ''}${d.dep ? ' pm-dd' : ''}" ${v ? `style="fill-opacity:${o}"` : ''}><title>${escHtml(d.M.n[c] || c)}: ${v ? fmt(v) : 'sin datos'}</title></path>`;
   }).join('');
   return `<svg class="pm ter-svg${d.dep ? ' pm-d' : ''}" viewBox="0 0 ${d.M.w} ${d.M.h}" role="img" aria-label="Mapa de calor">${ps}</svg>`;
 }
-function terSet(k, v) { TER[k] = v; pintarTerritorio(); }
+function terDetalle(d, c, potModo) {
+  const nombre = d.M.n[c] || c;
+  let lista, extra;
+  if(potModo) {
+    const T = d.dep ? DEPT_PROB : PROV_PROB;
+    lista = AVES.filter(a => !avist[a.id] && (!d.dep || CBA.has(a.id)) && T[a.id] && T[a.id][c] >= 0.05).sort((a, b) => T[b.id][c] - T[a.id][c]).slice(0, 14);
+    extra = a => ' <i>' + T[a.id][c].toLocaleString('es-AR', {maximumFractionDigits: 1}) + ' %</i>';
+    TER._lista = lista;
+    return `<div class="ter-det"><b>${escHtml(nombre)}</b><span> · las que más podrías sumar (frecuencia en eBird)</span><div class="ter-chips">${lista.map(a => `<button class="fam-chip" onclick="terVerEsp(${a.id})">${escHtml(a.comun)}${extra(a)}</button>`).join('') || '<em>Sin datos</em>'}</div></div>`;
+  }
+  const ids = new Set();
+  LUGARES_MAP.forEach(l => { const z = d.dep ? ((l.prov === 'X' || !l.prov) ? deptoDe(l) : null) : (l.prov || 'X'); if(z === c) l.ids.filter(id => avist[id]).forEach(id => ids.add(id)); });
+  lista = [...ids].map(id => AVES.find(a => a.id === id)).filter(Boolean).sort((a, b) => a.comun.localeCompare(b.comun, 'es'));
+  TER._lista = lista;
+  return `<div class="ter-det"><b>${escHtml(nombre)}</b><span> · ${lista.length} especie${lista.length === 1 ? '' : 's'} vista${lista.length === 1 ? '' : 's'}</span><div class="ter-chips">${lista.map(a => `<button class="fam-chip vista" onclick="terVerEsp(${a.id})">${escHtml(a.comun)}</button>`).join('') || '<em>Todavía sin registros acá</em>'}</div></div>`;
+}
+function terSet(k, v) { TER[k] = v; if(k !== 'modo') TER.sel = null; pintarTerritorio(); }
+function terZona(c) { TER.sel = TER.sel === c ? null : c; pintarTerritorio(); }
+function terVerEsp(id) { const l = TER._lista || []; abrirDesdePortada(id, l); }
 function pintarTerritorio() {
   const el = document.getElementById('dat-ter'); if(!el || typeof DEPT_MAP === 'undefined' || !LUGARES_MAP.length) return;
   const d = terDatos(), n = c => d.vistas[c] ? d.vistas[c].size : 0;
@@ -1408,6 +1476,7 @@ function pintarTerritorio() {
       <div class="ter-wrap">${terMapa(d, vals, mx, fmt)}
         <div class="ter-lado"><div class="ter-kpi"><b>${con.length}</b><span>de ${zonas.length} ${unidades} con registros</span></div>
           <div class="ter-lista">${filas}</div></div></div>
+      ${TER.sel && d.M.d[TER.sel] ? terDetalle(d, TER.sel, potModo) : ''}
       ${sin.length ? `<details class="ter-sin"><summary>${potModo ? '' : 'Sin registros todavía'}${potModo ? (d.dep ? 'Ver todos los departamentos' : 'Ver todas las provincias') : ' (' + sin.length + ')'}</summary><p>${potModo ? orden.map(c => escHtml(d.M.n[c] || c) + ' +' + ((vals[c] || 0).toLocaleString('es-AR', {maximumFractionDigits: 2}))).join(' · ') : sin.map(escHtml).join(' · ')}</p></details>` : ''}
       <small class="ter-cr">Contornos: ${d.dep ? 'geoBoundaries (CC BY 4.0)' : 'amCharts'}.</small>
     </div></div>`;

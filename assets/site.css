@@ -1298,3 +1298,48 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 @keyframes lbEntraI{from{opacity:0;transform:translateX(-40vw)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.lb-img.lb-entra-d,.lb-img.lb-entra-i{animation:none}}
 body.scroll-lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+
+/* Sello "Nueva" en las últimas especies sumadas */
+.fig-nueva,.m-nueva{position:absolute;z-index:3;font:800 .6rem 'Lato',sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#b3412b;border:2px solid #b3412b;border-radius:3px;padding:1px 6px;background:rgba(255,250,240,.88);transform:rotate(-9deg);box-shadow:0 1px 0 rgba(0,0,0,.15);animation:sello .5s cubic-bezier(.3,1.6,.5,1) both;animation-delay:.25s}
+.fig-nueva{top:6px;right:6px}
+.m-nueva{top:12px;left:60px;font-size:.7rem}
+@keyframes sello{from{opacity:0;transform:rotate(-9deg) scale(2.2)}to{opacity:1;transform:rotate(-9deg) scale(1)}}
+/* Esqueletos de carga */
+.sk{border-radius:6px;background:linear-gradient(100deg,rgba(166,138,100,.12) 30%,rgba(166,138,100,.28) 50%,rgba(166,138,100,.12) 70%);background-size:200% 100%;animation:skm 1.3s linear infinite}
+.sk-ch{height:150px}
+@keyframes skm{from{background-position:200% 0}to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.sk,.fig-nueva,.m-nueva{animation:none}}
+/* Transiciones suaves entre páginas (Chrome / Safari recientes) */
+@view-transition{navigation:auto}
+nav{view-transition-name:site-nav}
+::view-transition-old(root){animation:vtOut .18s ease both}
+::view-transition-new(root){animation:vtIn .26s ease both}
+@keyframes vtOut{to{opacity:0;transform:translateY(-6px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+
+.dat-pane.dat-entra-d{animation:datD .26s cubic-bezier(.2,.9,.3,1) both}
+.dat-pane.dat-entra-i{animation:datI .26s cubic-bezier(.2,.9,.3,1) both}
+@keyframes datD{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:none}}
+@keyframes datI{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}
+.ter-z{cursor:pointer;transition:stroke-width .15s}
+.ter-z:hover{stroke:var(--v1);stroke-width:.25}
+.ter-svg.pm-d .ter-z:hover{stroke-width:.06}
+.ter-sel{stroke:#b3412b !important;stroke-width:.35 !important}
+.ter-svg.pm-d .ter-sel{stroke-width:.09 !important}
+.ter-det{margin-top:1rem;padding:.8rem 1rem;background:rgba(166,138,100,.12);border-left:3px solid var(--ar);animation:datD .25s ease both}
+.ter-det b{font-family:'Playfair Display',serif;color:var(--v1)}
+.ter-det span{font-size:.8rem;color:var(--ti)}
+.ter-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.ter-chips .fam-chip i{opacity:.7;font-size:.85em}
+@media (prefers-reduced-motion:reduce){.dat-pane.dat-entra-d,.dat-pane.dat-entra-i,.ter-det{animation:none}}
+
+.fm.fm-out{animation:fmOut .22s cubic-bezier(.5,0,.8,.4) both}
+@keyframes fmOut{to{opacity:0;transform:translate(var(--dx,0),var(--dy,30px)) scale(var(--sc,.4)) rotate(3deg)}}
+.modal-ov.cerrando{background:rgba(20,15,10,0) !important;transition:background .22s}
+.m-sil .m-masc{cursor:pointer;transform-origin:50% 100%}
+.m-masc.masc-hop{animation:mHop .62s cubic-bezier(.3,.7,.4,1)}
+.m-masc.masc-tilt{animation:mTilt .7s ease-in-out}
+@keyframes mHop{0%{transform:none}22%{transform:translateY(-26px) scale(.97,1.04)}48%{transform:translateY(0) scale(1.05,.93)}68%{transform:translateY(-9px)}100%{transform:none}}
+@keyframes mTilt{0%{transform:none}25%{transform:rotate(-7deg)}55%{transform:rotate(5deg)}80%{transform:rotate(-2deg)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.fm.fm-out,.m-masc.masc-hop,.m-masc.masc-tilt{animation:none}}
