@@ -120,14 +120,14 @@ async function cargarDatos() {
 }
 function probDe(id){ const T = (REGION === 'cba') ? (typeof PROB !== 'undefined' ? PROB : null) : (typeof PROB_AR !== 'undefined' ? PROB_AR : null); return T && T[id] != null ? T[id] : null; }
 function fmtPct(v){ return v<0.01 ? '<0,01' : v.toLocaleString('es-AR',{maximumFractionDigits: v<1?2:1}); }
-function mapaProv(pv,dep){
+function mapaProv(pv,dep,pre){
   const M=dep?(typeof DEPT_MAP!=='undefined'?DEPT_MAP:null):(typeof PROV_MAP!=='undefined'?PROV_MAP:null);
   if(!M) return '';
   const mx=Math.max(...Object.values(pv),0.05);
   const ord=Object.entries(pv).filter(([c,v])=>v>=0.01).sort((a,b)=>b[1]-a[1]).slice(0,3);
   const top=ord.length?ord.map(([c,v])=>`<b>${escHtml(M.n[c]||c)}</b> ${fmtPct(v)} %`).join(' · '):null;
   const ps=Object.keys(M.d).map(c=>{const v=pv[c]; const o=v!=null?(.18+.82*Math.sqrt(v/mx)).toFixed(2):0; return `<path d="${M.d[c]}" class="pm-p"${c==='C'&&!dep?' data-c':''} ${v!=null?`style="fill-opacity:${o}"`:''}><title>${escHtml(M.n[c]||c)}${v!=null?': '+fmtPct(v)+' %':': sin registros'}</title></path>`;}).join('');
-  return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm${dep?' pm-d':''}" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>${top?`Más probable en: ${top}.`:'Registros muy escasos: casi no hay avistamientos en eBird, sin una zona clara.'}</p>${top?'<div class="pm-leg"><i></i><span>más probable</span></div>':''}</div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
+  return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm${dep?' pm-d':''}" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>${top?`${pre||'Más probable en: '}${top}.`:'Registros muy escasos: casi no hay avistamientos en eBird, sin una zona clara.'}</p>${top?'<div class="pm-leg"><i></i><span>más probable</span></div>':''}</div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
 }
 function probTxt(p){ return p >= 3 ? 'De las más probables' : p >= 1 ? 'Posible' : p >= 0.1 ? 'Difícil' : 'Rareza'; }
 function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -722,8 +722,8 @@ function openM(id) {
       const pista = (typeof PISTAS !== 'undefined') ? PISTAS[id] : null;
       const prov = (typeof PROV_PROB !== 'undefined') ? PROV_PROB[id] : null;
       if(pendDetail) pendDetail.innerHTML=`<span style="font-style:italic;color:var(--ti)">Todavía no la encontré — la tengo en la mira y la sigo buscando.</span>` +
-        (prob != null ? `<div class="pista"><span class="pista-t">Probabilidad de encontrarla</span><p><b>${probTxt(prob)}</b> · ${prob<0.01?'aparece en menos del 0,01':'aparece en el '+prob.toLocaleString('es-AR',{maximumFractionDigits:2})} % de las listas completas de eBird en ${REGION === 'cba' ? 'Córdoba' : 'Argentina'}.</p><small>Basado en ${REGION === 'cba' ? '85.181' : '617.923'} listas completas de eBird.</small></div>` : '') +
-        (REGION === 'cba' ? ((typeof DEPT_PROB !== 'undefined' && DEPT_PROB[id]) ? mapaProv(DEPT_PROB[id],true) : '') : (prov ? mapaProv(prov) : ''));
+        (prob != null ? `<div class="pista"><span class="pista-t">Probabilidad de encontrarla</span><p><b>${probTxt(prob)}</b> · ${prob<0.01?'aparece en menos del 0,01':'aparece en el '+prob.toLocaleString('es-AR',{maximumFractionDigits:2})} % de las listas completas de eBird en ${REGION === 'cba' ? 'Córdoba' : 'Argentina'}.</p><small>Basado en ${REGION === 'cba' ? '85.181' : '617.923'} listas completas de eBird.</small></div>` : `<div class="pista"><span class="pista-t">Probabilidad de encontrarla</span><p><b>Rareza</b> · sin registros en las listas completas de eBird en ${REGION === 'cba' ? 'Córdoba' : 'Argentina'}.</p></div>`) +
+        (REGION === 'cba' ? ((typeof DEPT_PROB !== 'undefined' && DEPT_PROB[id]) ? mapaProv(DEPT_PROB[id],true) : (prov ? mapaProv(prov,false,'Sin registros en eBird dentro de Córdoba. Se la ve más que nada en: ') : '')) : (prov ? mapaProv(prov) : ''));
     }
   }
   const pendReset=document.getElementById('m-pending-info');
