@@ -1258,16 +1258,6 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .lg-grad{display:inline-block;width:56px;height:8px;border-radius:4px;margin-right:.4rem;vertical-align:0;background:linear-gradient(90deg,rgba(101,109,74,.22),#656d4a)}
 @media(max-width:700px){.mcap-bar{margin:.4rem 0 0}}
 
-/* Portada: "Últimas especies sumadas" arriba, como historias de Instagram (aro degradé + círculo) */
+/* Portada: "Últimas especies sumadas" arriba (mismas figuritas), seguido de avance y video */
 #page-sobre-mi .recientes{margin:-.9rem auto 1.1rem;max-width:520px;}
 #page-sobre-mi .recientes .rec-titulo{display:block;margin-bottom:.35rem;}
-#page-sobre-mi .recientes .rec-track{justify-content:flex-start;gap:.7rem;padding:.25rem .3rem .4rem;}
-#page-sobre-mi .recientes .rec-item{flex:0 0 68px;}
-#page-sobre-mi .recientes .rec-item .rec-circulo{width:60px;height:60px;border-radius:50%;border:3px solid transparent;box-shadow:none;transform:none;overflow:hidden;
-  background:linear-gradient(var(--v1),var(--v1)) padding-box,conic-gradient(from 200deg,#f4e2b8,#c4a882,#a0663a,#e9cf9c,#f4e2b8) border-box;}
-#page-sobre-mi .recientes .rec-item:hover .rec-circulo{transform:scale(1.07);}
-#page-sobre-mi .recientes .rec-circulo img{border-radius:50%;border:2px solid var(--v1);box-sizing:border-box;}
-#page-sobre-mi .recientes .rec-masc-c{background:linear-gradient(160deg,#414833,#2b3320) padding-box,conic-gradient(from 200deg,#f4e2b8,#c4a882,#a0663a,#e9cf9c,#f4e2b8) border-box;}
-#page-sobre-mi .recientes .rec-sin-foto{border-style:solid;}
-#page-sobre-mi .recientes .rec-mas .rec-circulo{background:transparent;border:2px dashed var(--ar);}
-#page-sobre-mi .recientes .rec-nom{font-size:.9rem;margin-top:.25rem;}
