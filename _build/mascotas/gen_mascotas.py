@@ -331,6 +331,9 @@ _p['extras_head'] = ('<path d="M70 104 Q98 94 134 106" stroke="#b5683a" stroke-w
 _p['extras_body'] = '<path d="M92 150 Q124 176 160 150 L160 166 Q124 192 92 168 Z" fill="#e8c43a"/>'
 ESPECIES['juan-chiviro'] = _p
 
+ESPECIES['crespin'] = dict(BASE, name='Crespín')
+ESPECIES['barullero'] = dict(BASE, name='Barullero')
+
 
 def main(out):
     os.makedirs(out, exist_ok=True)

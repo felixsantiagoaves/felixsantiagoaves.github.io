@@ -424,7 +424,53 @@ def juan_chiviro():
     return svg('Juan Chiviro', css((124, 134), (200, 218), tf=1.1), f'{legs}{tl}{cu}{wg}{hd}')
 
 
-MANO = {'colorada': colorada, 'pepitero-chico': pepitero_chico, 'atajacaminos-tijera': atajacaminos,
+# ───────────────────────── Crespín (Tapera naevia) ─────────────────────────
+# Pearman y Areta: 28 cm, copete rufo eréctil, dorso estriado de negro; Narosky: ocráceo, cola larga parda, ceja blanca, faja malar negra, pico amarillento con culmen negro.
+def crespin():
+    legs = patas([((142, 208), 138), ((166, 208), 162)], '#7a7a74', 4.8)
+    tl = cola('M204 172 C250 176 302 198 346 232 C304 238 252 214 204 192 Z', '#6d5238',
+              extra='<path d="M240 186 q18 6 34 18 M262 190 q18 8 36 24" stroke="#d9c9a0" stroke-width="3" fill="none" stroke-linecap="round"/>')
+    cd = 'M98 154 C92 128 150 120 196 134 C230 146 230 186 202 202 C170 216 120 212 104 190 Z'
+    cu = cuerpo(cd, '#c9a46a',
+                '<path d="M84 176 C106 192 150 202 226 190 L226 232 L84 232 Z" fill="#e8d6a4"/>'
+                + ''.join(f'<path d="M{128 + i * 16} {132 + (i % 2) * 3} l5 22" stroke="#4a3a28" stroke-width="3.6" stroke-linecap="round"/>' for i in range(6)))
+    wg = ala('M126 146 C160 134 214 148 230 184 C198 202 150 196 128 172 Z', '#8a6a44',
+             '<path d="M148 156 q24 10 38 30 M170 152 q24 10 38 30" stroke="#d9b87c" stroke-width="3.4" fill="none" stroke-linecap="round"/>')
+    cresta = ('<path d="M78 120 L66 92 L86 108 L88 82 L102 106 L120 88 L118 124 Z" fill="#b5602e" stroke="#2a1f14" stroke-width="3" stroke-linejoin="round"/>'
+              '<path d="M88 104 L90 90 M102 104 L112 94" stroke="#4a2a14" stroke-width="2.4" stroke-linecap="round"/>')
+    hd = cabeza(92, 138, 25, '#c9a46a',
+                '<path d="M62 120 L124 118 L124 132 Q92 124 62 134 Z" fill="#b5602e"/>'
+                '<path d="M62 132 Q92 124 124 136" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>'
+                '<path d="M66 150 C84 152 100 158 112 168 L66 168 Z" fill="#ecdcae"/>',
+                'M70 138 C58 134 44 136 34 142 C48 148 62 150 72 148 Z', '#d8c466',
+                ojo(84, 138, 4.4, col='#3a1e0e', lid='#c9a46a'),
+                pre=cresta,
+                post='<path d="M70 137 C58 133 44 135 34 141" stroke="#2a1f14" stroke-width="3" fill="none" stroke-linecap="round"/>'
+                     '<path d="M72 148 L96 156" stroke="#1d1a19" stroke-width="3.4" stroke-linecap="round"/>')
+    return svg('Crespín', css((120, 156), (204, 176), tf=1.1), f'{legs}{tl}{cu}{wg}{hd}')
+
+
+# ───────────────────────── Barullero (Euscarthmus meloryphus) ─────────────────────────
+# Pearman y Areta: 11 cm, pardo oliváceo arriba, lores y anillo ocular ocráceos, mancha canela anaranjada oculta en la corona, garganta y pecho blanco grisáceo con tinte amarillo, barras alares canela.
+def barullero():
+    legs = patas([((142, 200), 138), ((164, 200), 160)], '#5a5048', 4.2, toes=(-16, -11, 8))
+    tl = cola('M198 172 C222 176 246 188 264 206 C240 208 214 198 196 188 Z', '#7a6a44')
+    cd = 'M104 160 C100 140 146 134 188 144 C216 152 214 184 192 196 C166 208 124 204 110 186 Z'
+    cu = cuerpo(cd, '#8a7d54',
+                '<path d="M90 172 C112 186 150 196 214 186 L214 224 L90 224 Z" fill="#efe8d0"/>'
+                '<path d="M92 176 C112 190 150 198 214 188 L214 204 C150 212 110 202 92 188 Z" fill="#f2e08c"/>')
+    wg = ala('M128 148 C158 138 204 150 214 180 C186 196 148 190 130 172 Z', '#6f6440',
+             '<path d="M148 156 q22 8 34 24 M168 152 q22 8 34 24" stroke="#d9a35c" stroke-width="3.4" fill="none" stroke-linecap="round"/>')
+    hd = cabeza(94, 140, 22, '#8a7d54',
+                '<path d="M64 134 C78 128 92 130 100 140 L64 148 Z" fill="#e3cf9c"/>'
+                '<path d="M66 150 C84 154 102 160 114 172 L66 172 Z" fill="#ece8dc"/>',
+                'M74 140 C64 137 54 138 46 142 C56 147 66 148 76 147 Z', '#2f2a26',
+                ojo(86, 138, 4.4, col='#2a1b10', ring='#efe4c0', rr=2.6, lid='#8a7d54'),
+                pre='<path d="M80 122 L90 106 L98 120 L108 108 L110 124 Z" fill="#e8872a" stroke="#2a1f14" stroke-width="2.6" stroke-linejoin="round"/>')
+    return svg('Barullero', css((120, 154), (198, 176), tf=1.4), f'{legs}{tl}{cu}{wg}{hd}')
+
+
+MANO = {'crespin': crespin, 'barullero': barullero, 'colorada': colorada, 'pepitero-chico': pepitero_chico, 'atajacaminos-tijera': atajacaminos,
         'aguatero': aguatero, 'pitiayumi': pitiayumi, 'chiricote': chiricote, 'golondrina-ceja-blanca': golondrina,
         'pijui-frente-gris': pijui, 'monterita-de-collar': monterita, 'pepitero-gris': pepitero_gris,
         'inambu-montaraz': inambu_montaraz, 'inambu-silbon': inambu_silbon, 'calandrita': calandrita,

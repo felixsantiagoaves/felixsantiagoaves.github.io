@@ -28,7 +28,7 @@
   var tries = 0, t = setInterval(function(){ if(dots() || ++tries > 40) clearInterval(t); }, 250);
 
   /* Mascota de la portada: una al azar entre las dibujadas; cambia sola cada tanto o al tocarla */
-  var MAS = ['aguatero','atajacaminos-tijera','calandrita','carancho','carpintero-hembra','carpintero-macho','chiricote','chivi-comun','colorada','gallineta','golondrina-ceja-blanca','inambu-montaraz','inambu-silbon','juan-chiviro','monterita-de-collar','pecho-colorado','pepitero-chico','pepitero-gris','pijui-frente-gris','pitiayumi'];
+  var MAS = ['aguatero','atajacaminos-tijera','calandrita','carancho','carpintero-hembra','carpintero-macho','chiricote','chivi-comun','crespin','barullero','colorada','gallineta','golondrina-ceja-blanca','inambu-montaraz','inambu-silbon','juan-chiviro','monterita-de-collar','pecho-colorado','pepitero-chico','pepitero-gris','pijui-frente-gris','pitiayumi'];
   function mascota(){
     var im = document.querySelector('.fgh-dc'); if(!im) return;
     var actual = -1, ver = (typeof MASC_V !== 'undefined') ? '?v=' + MASC_V : '';
