@@ -8,7 +8,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B = 'https://felixsantiago.com.ar/'
 esc = lambda t: html.escape(t, quote=True)
 rd = lambda p: open(os.path.join(R, p), encoding='utf-8').read()
-VER = hashlib.md5(b''.join(open(os.path.join(R, 'assets', f), 'rb').read() for f in ('site.css', 'site.js', 'datos.js', 'foco.js', 'pistas.js', 'cantos.js'))).hexdigest()[:8]
+VER = hashlib.md5(b''.join(open(os.path.join(R, 'assets', f), 'rb').read() for f in ('site.css', 'figurita.css', 'site.js', 'figurita.js', 'datos.js', 'foco.js', 'pistas.js', 'cantos.js'))).hexdigest()[:8]
 
 PAGINAS = [
  # id, carpeta, fragmento, título, descripción, ruta nav
@@ -45,7 +45,7 @@ def nav(activo):
         idattr = ' id="nav-album"' if pid == 'album' else ''
         lic = ' class="nav-stats"' if pid == 'datos' else ''
         li.append(f'      <li{lic}><a href="{url}"{idattr}{cls}>{lab}</a></li>')
-    return ('<nav>\n  <div class="nav-i">\n    <div class="nav-logo"><a href="/"><img src="/logo-nav.png" alt="Felix Santiago Aves" style="height:38px;display:block;"></a></div>\n'
+    return ('<nav>\n  <div class="nav-i">\n    <div class="nav-logo"><a href="/"><img src="/logo-nav.png" alt="Felix Santiago Aves" style="height:38px;display:block;"><span class="nav-wm"><b>Félix Santiago</b><small>Aves · Río Cuarto</small></span></a></div>\n'
             '    <ul class="nav-links">\n' + '\n'.join(li) + '\n    </ul>\n  </div>\n</nav>')
 
 def ld(pid, carpeta, titulo, desc, url):
@@ -99,8 +99,9 @@ for pid, carpeta, frag, titulo, desc in PAGINAS:
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{B}preview.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v={VER}">
+<link rel="stylesheet" href="/assets/figurita.css?v={VER}">
 {ICONOS}
 </head>
 <body>
@@ -114,6 +115,7 @@ for pid, carpeta, frag, titulo, desc in PAGINAS:
 <script src="/assets/foco.js?v={VER}"></script>
 <script src="/assets/pistas.js?v={VER}"></script>
 <script src="/assets/cantos.js?v={VER}"></script>
+<script src="/assets/figurita.js?v={VER}"></script>
 <script src="/assets/site.js?v={VER}"></script>
 </body>
 </html>

@@ -536,6 +536,7 @@ function updStats() {
   });
   updAlbumHead();
   const badge=document.getElementById('nav-album-badge'); if(badge) badge.textContent=v;
+  if(window.fgStats) fgStats(v,pc,pa);
   const ctaN=document.getElementById('cta-album-count'); if(ctaN) ctaN.textContent=vc+' de '+nc+' especies en Córdoba';
   buildRecientes();
   buildUltimoVideo();
@@ -623,6 +624,7 @@ function buildRecientes(){
   tr.innerHTML = lista.map(a =>
     `<button class="rec-item" data-id="${a.id}" title="${escHtml(a.comun)} · ${fmtFecha(avist[a.id].fecha)}">
        ${circulo(a)}
+       <em class="rec-num">N.º ${String(a.id).padStart(3,'0')}</em>
        <div class="rec-nom">${escHtml(a.comun)}</div>
      </button>`).join('') +
     `<button class="rec-item rec-mas" data-mas="1"><div class="rec-circulo">→</div><div class="rec-nom">Ver todas</div></button>`;
@@ -631,6 +633,7 @@ function buildRecientes(){
     if(b.dataset.mas) irAlbum('enc'); else abrirDesdePortada(parseInt(b.dataset.id), lista);
   };
   box.style.display = 'block';
+  if(window.fgUltima) fgUltima(lista[0], lista);
 }
 
 function fmtFecha(f) {
