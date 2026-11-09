@@ -427,9 +427,9 @@ def juan_chiviro():
 # ───────────────────────── Crespín (Tapera naevia) ─────────────────────────
 # Pearman y Areta: 28 cm, copete rufo eréctil, dorso estriado de negro; Narosky: ocráceo, cola larga parda, ceja blanca, faja malar negra, pico amarillento con culmen negro.
 def crespin():
-    legs = patas([((142, 208), 138), ((166, 208), 162)], '#7a7a74', 4.8)
-    tl = cola('M204 172 C250 176 302 198 346 232 C304 238 252 214 204 192 Z', '#6d5238',
-              extra='<path d="M240 186 q18 6 34 18 M262 190 q18 8 36 24" stroke="#d9c9a0" stroke-width="3" fill="none" stroke-linecap="round"/>')
+    legs = patas([((148, 222), 144), ((176, 222), 172)], '#7a7a74', 5.4)
+    tl = cola('M204 172 C246 176 286 192 318 216 C286 222 248 208 204 192 Z', '#6d5238',
+              extra='<path d="M236 184 q16 5 30 15 M254 188 q16 7 30 20" stroke="#d9c9a0" stroke-width="3" fill="none" stroke-linecap="round"/>')
     cd = 'M98 154 C92 128 150 120 196 134 C230 146 230 186 202 202 C170 216 120 212 104 190 Z'
     cu = cuerpo(cd, '#c9a46a',
                 '<path d="M84 176 C106 192 150 202 226 190 L226 232 L84 232 Z" fill="#e8d6a4"/>'
@@ -447,7 +447,7 @@ def crespin():
                 pre=cresta,
                 post='<path d="M70 137 C58 133 44 135 34 141" stroke="#2a1f14" stroke-width="3" fill="none" stroke-linecap="round"/>'
                      '<path d="M72 148 L96 156" stroke="#1d1a19" stroke-width="3.4" stroke-linecap="round"/>')
-    return svg('Crespín', css((120, 156), (204, 176), tf=1.1), f'{legs}{tl}{cu}{wg}{hd}')
+    return svg('Crespín', css((126, 162), (214, 182), tf=1.1), f'{legs}<g transform="translate(-18 -14) scale(1.12)">{tl}{cu}{wg}{hd}</g>')
 
 
 # ───────────────────────── Barullero (Euscarthmus meloryphus) ─────────────────────────

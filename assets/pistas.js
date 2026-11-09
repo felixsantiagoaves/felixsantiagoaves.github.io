@@ -16,4 +16,5 @@ const PROV_MAP={"w":16.2,"h":33.7,"d":{"T":"M6.96 6.41L6.89 6.41L6.82 6.36L6.69 
 const MASC_HAB={"99":"arbustal","330":"arbustal","2":"humedal","112":"humedal","27":"bosque","405":"bosque","406":"bosque","306":"bosque","198":"arbustal","338":"arbustal","305":"arbustal","30":"ocaso","302":"sierras","325":"sierras","327":"sierras","323":"pastizal","393":"pastizal","153":"cielo"};
 
 
-const MASC_V='8d1b002e';
+
+const MASC_V='ab9d0999';
