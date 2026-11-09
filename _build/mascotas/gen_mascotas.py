@@ -342,6 +342,8 @@ def main(out):
     for slug, p in ESPECIES.items():
         txt = MANO[slug]() if slug in MANO else build(p)       # los dibujados a mano pisan al esqueleto común
         open(os.path.join(out, f'{slug}-animado.svg'), 'w', encoding='utf8').write(txt)
+        # versión quieta (sin animación) para listas: tira de últimas especies y álbum, así la página no repinta todo el tiempo
+        open(os.path.join(out, f'{slug}-quieto.svg'), 'w', encoding='utf8').write(txt.replace('</style>', '.lid{display:none}*{animation:none!important}</style>', 1))
     # versión para que el navegador no use mascotas viejas guardadas en caché (la leen assets/pistas.js y el álbum)
     import hashlib, glob, re as _re
     h = hashlib.md5(b''.join(open(f, 'rb').read() for f in sorted(glob.glob(os.path.join(out, '*-animado.svg'))))).hexdigest()[:8]

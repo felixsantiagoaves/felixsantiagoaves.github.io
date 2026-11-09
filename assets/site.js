@@ -617,7 +617,7 @@ function buildRecientes(){
   const circulo = a => {
     const f = avist[a.id].foto;
     if(f) return `<div class="rec-circulo"><img src="${f}" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
-    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c${habCls(a.id)}"><img class="rec-masc" src="/assets/mascotas/${MASC[a.id]}-animado.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
+    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c${habCls(a.id)}"><img class="rec-masc" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
     const k = SILUETAS[FAM_SILUETA[a.familiaEsp]] ? FAM_SILUETA[a.familiaEsp] : 'pajarito';
     return `<div class="rec-circulo rec-sin-foto"><span class="sil-i sil-${k}" role="img" aria-label="silueta"></span></div>`;
   };
@@ -668,7 +668,7 @@ function renderAlbum() {
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
       ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
-      : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-animado.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
+      : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-quieto.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
       <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
