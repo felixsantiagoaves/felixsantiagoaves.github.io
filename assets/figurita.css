@@ -284,3 +284,22 @@ body{background:var(--fg-cr)}
 .recientes{max-width:100%;overflow:hidden}
 @media(max-width:760px){.fgh-grid{grid-template-columns:minmax(0,1fr)!important}.recientes{overflow:visible}.fgh .rec-track{max-width:100vw}}
 @media(max-width:760px){.fgh .rec-track{padding-top:20px!important}.fgh-grid{padding-top:10px}}
+
+/* últimas especies en celu: títulos, 6 por pantalla, "Ver todas" al final */
+@media(max-width:760px){
+  #page-sobre-mi.fgh .rec-titulo{display:block!important;margin:2px 0 0 12px}
+  .fgh .rec-track{gap:6px!important;padding:14px 10px 10px!important}
+  .fgh .rec-item{flex:0 0 calc((100vw - 20px - 30px)/6)!important;padding:3px 3px 0!important;border-radius:3px}
+  .fgh .rec-circulo,.fgh .rec-circulo img{height:62px!important}
+  .fgh .rec-num{font-size:.5rem;padding:2px 4px;top:-6px;left:-4px}
+  .fgh .rec-nom{font-size:.5rem!important;letter-spacing:.2px;padding:.3rem .05rem .35rem;min-height:2.4em}
+  .fgh .rec-mas .rec-circulo{font-size:1.2rem}
+  /* filtros del álbum siempre a mano: barra fija arriba con scroll lateral */
+  .album-controls{position:sticky!important;top:54px!important;z-index:40;padding:.5rem 10px!important}
+  .album-controls-inner{flex-wrap:nowrap!important;overflow-x:auto;gap:.5rem!important;scrollbar-width:none;padding-bottom:2px}
+  .album-controls-inner::-webkit-scrollbar{display:none}
+  .album-controls-inner>*{flex:0 0 auto!important}
+  .album-controls-inner #busqueda{width:150px!important;flex:0 0 150px!important}
+  .album-filtros.open{max-height:46vh;overflow-y:auto}
+}
+@media(max-width:760px){.fgh-grid{padding-top:26px!important}.fgh .rec-nom{min-height:3.4em;-webkit-line-clamp:unset!important}}

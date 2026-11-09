@@ -174,3 +174,65 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;}
 .lugar-f{margin:.2rem 0 .6rem;padding:.45rem .7rem;background:#f4ede2;border-left:3px solid #414833;font-size:.85rem;color:#414833}
 .lugar-f a{color:#414833;font-weight:700}
 [data-theme=dark] .lugar-f{background:#2a3120;color:#d8cbb4;border-color:#c4a882}[data-theme=dark] .lugar-f a{color:#c4a882}
+
+/* ══ Identidad "figurita" (igual que el resto del sitio) ══ */
+:root{--fg-v1:#414833;--fg-v2:#656d4a;--fg-ti:#7f5539;--fg-ar:#c4a882;--fg-cr:#ede0d4;--fg-tx:#2d3322}
+nav.gnav{box-shadow:0 3px 0 var(--fg-ar)!important}
+.gnav .nav-i{height:64px;padding:0 2.2rem!important}
+.gnav .nav-logo{padding:0!important;display:flex!important;align-items:center;gap:.75rem}
+.nav-wm b{display:block;font:900 1rem/1 'Lato',sans-serif;letter-spacing:1.8px;color:var(--fg-cr);text-transform:uppercase}
+.nav-wm small{display:block;font:700 .58rem/1 'Lato',sans-serif;letter-spacing:2.4px;color:var(--fg-ar);text-transform:uppercase;margin-top:5px}
+.gnav .nav-links{gap:.5rem!important;align-items:center}
+.gnav .nav-links a{font:900 .72rem 'Lato',sans-serif!important;letter-spacing:1.6px!important;padding:.6rem .9rem!important;border-radius:99px;border-bottom:none!important;color:var(--fg-cr)!important;background:none!important;transition:transform .2s,background .2s}
+.gnav .nav-links a:hover{background:rgba(237,224,212,.12)!important}
+.gnav .nav-links a.active{background:var(--fg-cr)!important;color:var(--fg-v1)!important;transform:translateY(5px) rotate(-1.8deg);box-shadow:0 4px 0 var(--fg-ar),0 0 0 3px #fff;padding:.75rem 1.1rem!important}
+.nav-mas,.fg-sheet{display:none}
+body{background:var(--fg-cr)}
+h1{font:900 2rem/1.1 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:var(--fg-tx)}
+.wrap>h1{display:inline-block;background:#fff;padding:.5rem 1.1rem;border-radius:3px;box-shadow:0 8px 20px rgba(42,31,20,.18);transform:rotate(-1.2deg);margin:.4rem 0 .8rem}
+.car{font-family:'Playfair Display',serif!important;font-style:italic;font-size:1.1rem!important}
+.intro{font-family:'Playfair Display',serif;font-style:italic;color:var(--fg-ti)}
+/* ficha: foto y datos como figurita */
+.hero-fig{background:#fff;padding:10px 10px 0;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 14px 36px rgba(42,31,20,.2);transform:rotate(-.5deg)}
+.hero-fig img{border-radius:2px}
+.hero-fig figcaption{background:#fff;padding:.6rem .2rem .7rem}
+.hero-txt{border:none;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 14px 36px rgba(42,31,20,.16)}
+.hero-txt h1{font-size:2rem}
+.grupo{background:var(--fg-v1);color:var(--fg-cr);display:inline-block;padding:3px 9px;border-radius:2px;letter-spacing:1.6px}
+.pill{border:2px solid var(--fg-ar);color:var(--fg-v1);font-weight:900;box-shadow:2px 3px 0 rgba(42,31,20,.14)}
+.pill.fill{background:var(--fg-v1);border-color:var(--fg-v1);color:var(--fg-cr)}
+.sec h2{font:900 1.1rem 'Lato',sans-serif;text-transform:uppercase;letter-spacing:1.4px;color:var(--fg-v1)}
+.galeria figure{background:#fff;border:none;padding:6px 6px 0;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 6px 14px rgba(42,31,20,.16)}
+.galeria figure:nth-child(odd){transform:rotate(-1deg)}.galeria figure:nth-child(even){transform:rotate(.9deg)}
+/* listado de especies: figuritas */
+.filtros input,.filtros select{border:2px solid var(--fg-ar);box-shadow:2px 3px 0 rgba(42,31,20,.12)}
+.cuenta{font-family:'Playfair Display',serif;font-style:italic;color:var(--fg-ti)}
+.grid{gap:1.1rem}
+.card{background:#fff;border:none;padding:7px 7px 0;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 7px 16px rgba(42,31,20,.18);transition:transform .2s}
+.grid li:nth-child(odd) .card{transform:rotate(-1.2deg)}.grid li:nth-child(even) .card{transform:rotate(1deg)}
+.card:hover{transform:rotate(0) translateY(-3px)!important}
+.card img{border-radius:2px}
+.card .n{font:900 .8rem/1.2 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:var(--fg-tx);padding:.6rem .15rem 0}
+.card .c{font-family:'Playfair Display',serif;padding:.05rem .15rem .7rem}
+/* celular: barra inferior */
+@media(max-width:760px){
+  body{padding-bottom:84px}
+  .gnav .nav-i{height:54px;padding:0 .9rem!important;justify-content:flex-start}
+  .nav-wm b{font-size:.92rem}.nav-wm small{font-size:.54rem;margin-top:3px}
+  .gnav .nav-logo img{height:34px!important}
+  .gnav .nav-links{position:fixed;left:0;right:0;bottom:0;z-index:300;background:#fff;box-shadow:0 -6px 18px rgba(42,31,20,.2);height:66px;padding:0 4px 6px;justify-content:space-around!important;gap:0!important}
+  .gnav .nav-links li{display:block}
+  .gnav .nav-links li.nav-stats,.gnav .nav-links li:has(a[href="/contacto/"]),.gnav .nav-links li:has(a[href="/aves/"]){display:none}
+  .nav-mas{display:block!important}
+  .gnav .nav-links a{display:flex!important;flex-direction:column;align-items:center;gap:3px;width:62px;padding:.4rem 0 .3rem!important;font-size:.56rem!important;letter-spacing:1.2px!important;color:var(--fg-ti)!important;border-radius:10px;transform:none}
+  .gnav .nav-links a::before{font-size:1.15rem;line-height:1;letter-spacing:0}
+  .gnav .nav-links a[href="/"]::before{content:"⌂"}.gnav .nav-links a[href="/album/"]::before{content:"▦"}.gnav .nav-links a[href="/mapa/"]::before{content:"⌖"}.gnav .nav-links a[href="/galeria/"]::before{content:"▣"}.gnav .nav-links .nav-mas a::before{content:"☰"}
+  .gnav .nav-links a[href="/"]{font-size:0!important}.gnav .nav-links a[href="/"]::after{content:"Inicio";font-size:.56rem;letter-spacing:1.2px}
+  .gnav .nav-links a.active{background:var(--fg-v1)!important;color:var(--fg-cr)!important;transform:translateY(-8px) rotate(-2deg);box-shadow:0 4px 0 var(--fg-ar),0 0 0 3px #fff;padding:.5rem 0 .4rem!important}
+  .fg-sheet{position:fixed;right:10px;bottom:76px;z-index:310;background:#fff;border-radius:6px;padding:8px;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 10px 30px rgba(42,31,20,.35);transform:rotate(-1deg)}
+  .fg-sheet:not([hidden]){display:block}
+  .fg-sheet a{display:block;font:900 .74rem 'Lato',sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--fg-v1);padding:.7rem 1.2rem;text-decoration:none;border-radius:4px}
+  .fg-sheet a+a{border-top:1px dashed var(--fg-ar)}
+  .grid{grid-template-columns:repeat(2,1fr)!important;gap:.9rem}
+}
+.gnav .nav-logo,.gnav .nav-logo:hover{text-decoration:none}

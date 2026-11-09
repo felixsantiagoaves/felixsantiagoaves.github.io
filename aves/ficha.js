@@ -81,3 +81,12 @@
 /* Protección básica de las fotos: sin menú contextual ni arrastre sobre imágenes */
 document.addEventListener('contextmenu',function(e){ if(e.target.closest && e.target.closest('img,.lb,.galeria,.hero-fig,.card')) e.preventDefault(); });
 document.addEventListener('dragstart',function(e){ if(e.target.tagName==='IMG') e.preventDefault(); });
+
+/* Menú inferior (celular): "Más" abre Especies, Estadísticas y Contacto */
+(function(){function menu(){var ul=document.querySelector('.nav-links');if(!ul||ul.querySelector('.nav-mas'))return;
+var li=document.createElement('li');li.className='nav-mas';li.innerHTML='<a href="#" role="button" aria-haspopup="true" aria-expanded="false">Más</a>';ul.appendChild(li);
+var sh=document.createElement('div');sh.className='fg-sheet';sh.hidden=true;sh.innerHTML='<a href="/aves/">Especies</a><a href="/estadisticas/">Estadísticas</a><a href="/contacto/">Contacto</a>';document.body.appendChild(sh);
+var a=li.firstChild;a.addEventListener('click',function(e){e.preventDefault();sh.hidden=!sh.hidden;a.setAttribute('aria-expanded',String(!sh.hidden));});
+document.addEventListener('click',function(e){if(!sh.hidden&&!e.target.closest('.nav-mas')&&!e.target.closest('.fg-sheet')){sh.hidden=true;}});
+if(ul.querySelector('a.active[href="/aves/"]'))a.classList.add('active');}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',menu);else menu();})();

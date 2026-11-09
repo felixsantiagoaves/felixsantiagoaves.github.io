@@ -182,13 +182,13 @@ for E in ESP:
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(S['resumen'])}">
 <link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>try{{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}}catch(e){{}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/aves/ficha.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
 <nav class="gnav"><div class="nav-i">
-  <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"></a>
+  <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"><span class="nav-wm"><b>Félix Santiago</b><small>Aves · Río Cuarto</small></span></a>
   <ul class="nav-links">
     <li><a href="/">Sobre mí</a></li>
     <li><a href="/album/">Álbum</a></li>
@@ -268,13 +268,13 @@ ipage = f'''<!DOCTYPE html>
 <meta property="og:image" content="{BASE}preview.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(ititle)}"><meta name="twitter:description" content="{esc(idesc)}"><meta name="twitter:image" content="{BASE}preview.jpg">
 <link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>try{{if(localStorage.getItem("tema")==="dark")document.documentElement.dataset.theme="dark"}}catch(e){{}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/aves/ficha.css?v={VER}">
 <script type="application/ld+json">{json.dumps(ild, ensure_ascii=False)}</script>
 </head>
 <body>
 <nav class="gnav"><div class="nav-i">
-  <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"></a>
+  <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"><span class="nav-wm"><b>Félix Santiago</b><small>Aves · Río Cuarto</small></span></a>
   <ul class="nav-links">
     <li><a href="/">Sobre mí</a></li>
     <li><a href="/album/">Álbum</a></li>
