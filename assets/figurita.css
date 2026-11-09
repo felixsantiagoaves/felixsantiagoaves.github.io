@@ -296,10 +296,18 @@ body{background:var(--fg-cr)}
   .fgh .rec-mas .rec-circulo{font-size:1.2rem}
   /* filtros del álbum siempre a mano: barra fija arriba con scroll lateral */
   .album-controls{position:sticky!important;top:54px!important;z-index:40;padding:.5rem 10px!important}
-  .album-controls-inner{flex-wrap:nowrap!important;overflow-x:auto;gap:.5rem!important;scrollbar-width:none;padding-bottom:2px}
-  .album-controls-inner::-webkit-scrollbar{display:none}
-  .album-controls-inner>*{flex:0 0 auto!important}
-  .album-controls-inner #busqueda{width:150px!important;flex:0 0 150px!important}
   .album-filtros.open{max-height:46vh;overflow-y:auto}
 }
 @media(max-width:760px){.fgh-grid{padding-top:26px!important}.fgh .rec-nom{min-height:3.4em;-webkit-line-clamp:unset!important}}
+
+/* tarjetas de la tira: el cuadro de la foto ocupa siempre todo el ancho (Safari ajustaba el botón al ancho del nombre) */
+.fgh .rec-item{display:flex!important;flex-direction:column;align-items:stretch}
+.fgh .rec-item>.rec-circulo,.fgh .rec-item>.rec-nom{width:100%!important;box-sizing:border-box}
+/* álbum en celu: barra fija corta (región + Filtros); búsqueda y estado van dentro del panel */
+.fgh-mfil{display:flex;flex-wrap:wrap;gap:.5rem;width:100%}
+.fgh-mfil #busqueda{flex:1 1 100%!important;width:100%!important}
+@media(max-width:760px){
+  .album-controls-inner{flex-wrap:nowrap!important;justify-content:space-between;gap:.5rem!important}
+  .album-controls-inner .reg-sel{flex:0 1 auto}
+  .album-controls-inner #btn-mas{flex:0 0 auto;margin-left:auto}
+}

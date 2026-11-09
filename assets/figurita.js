@@ -79,4 +79,29 @@
     if(act) a.classList.add('active');
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', menu); else menu();
+
+  /* Álbum en celu: la búsqueda y los botones Todas/Encontradas/Faltantes se mudan dentro del panel de Filtros,
+     así la barra fija es corta y no hay que deslizar hacia el costado */
+  function albumFiltros(){
+    var inner = document.querySelector('.album-controls-inner'), panel = document.getElementById('album-filtros');
+    var bus = document.getElementById('busqueda'); if(!inner || !panel || !bus) return;
+    var wrap = document.createElement('div'); wrap.className = 'fgh-mfil'; wrap.hidden = true;
+    var mql = window.matchMedia('(max-width:760px)');
+    var btn = document.getElementById('btn-mas');
+    var mover = function(){
+      var fbs = Array.prototype.slice.call(inner.querySelectorAll('.fb')).concat(Array.prototype.slice.call(wrap.querySelectorAll('.fb')));
+      if(mql.matches){
+        if(!wrap.parentNode) panel.insertBefore(wrap, panel.firstChild);
+        wrap.appendChild(bus); fbs.forEach(function(b){ wrap.appendChild(b); });
+        wrap.hidden = false;
+      } else {
+        wrap.hidden = true;
+        inner.insertBefore(bus, btn);
+        fbs.forEach(function(b){ inner.insertBefore(b, btn); });
+      }
+    };
+    mover();
+    if(mql.addEventListener) mql.addEventListener('change', mover); else mql.addListener(mover);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', albumFiltros); else albumFiltros();
 })();
