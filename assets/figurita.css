@@ -263,3 +263,7 @@ body{background:var(--fg-cr)}
   .fgh .rec-num{font-size:.6rem}
 }
 @media(min-width:900px){#page-redes .red-icon{height:128px!important;aspect-ratio:auto!important}#page-redes .trab::before{height:210px}}
+
+/* contacto: una foto mía en la tarjeta */
+.trab::before{background:url(/campo/campo-3a.jpg) 50% 28%/cover!important}
+.dat-kpi b{background-position:center 35%}

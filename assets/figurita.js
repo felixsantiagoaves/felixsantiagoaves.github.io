@@ -40,6 +40,29 @@
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mascota); else mascota();
 
+  /* Estadísticas: cada número lleva una foto de ave al azar (menos "Lugares", que lleva un paisaje) */
+  function statsFotos(){
+    var pane = document.getElementById('dat-num'); if(!pane) return;
+    var elegidas = null;
+    var poner = function(){
+      if(typeof avist === 'undefined') return;
+      var ks = pane.querySelectorAll('.dat-kpi'); if(!ks.length) return;
+      if(!elegidas){
+        var con = Object.keys(avist).filter(function(k){ return avist[k] && avist[k].foto; });
+        for(var i = con.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = con[i]; con[i] = con[j]; con[j] = t; }
+        elegidas = con.slice(0, ks.length).map(function(k){ return avist[k].foto; });
+      }
+      Array.prototype.forEach.call(ks, function(k, i){
+        if(k.dataset.fgf === '1') return; k.dataset.fgf = '1';
+        if(i === 1 || !elegidas[i]) return;   /* la 2.ª es "Lugares": se queda con el paisaje */
+        k.style.setProperty('--k', 'linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.32)),url(/' + String(elegidas[i]).replace(/^\//, '') + ')');
+      });
+    };
+    new MutationObserver(poner).observe(pane, {childList: true, subtree: true});
+    var n = 0, t = setInterval(function(){ poner(); if(++n > 40) clearInterval(t); }, 300);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', statsFotos); else statsFotos();
+
   /* Menú inferior (celular): "Más" abre Especies, Estadísticas y Contacto */
   function menu(){
     var ul = document.querySelector('.nav-links'); if(!ul || ul.querySelector('.nav-mas')) return;
