@@ -54,36 +54,18 @@
     </section>
   </div>
 
-  <!-- El resto de la portada -->
+  <!-- Ave del día (lo demás ya lo cuentan los stickers) -->
   <div class="fgh-extra">
-    <div class="novedades">
-      <div class="nov-card">
-        <div class="nov-label" data-hint="Ver ficha →">Última ave registrada</div>
-        <div class="nov-val" id="nov-ave">—</div>
-        <div class="nov-sub" id="nov-ave-fecha">Sin registros aún</div>
-      </div>
-      <div class="nov-card">
-        <div class="nov-label" data-hint="Ver en el mapa →">Última localización</div>
-        <div class="nov-val" id="nov-lugar">—</div>
-        <div class="nov-sub" id="nov-lugar-fecha">Sin registros aún</div>
-      </div>
-    </div>
-    <div class="novedades nov2">
-      <div class="nov-card hito-card clickable" id="hito-card">
-        <div class="nov-label" data-hint="Ver mis números →">Próximo hito</div>
-        <div class="hito-val">—</div>
-        <div class="hito-bar"><i></i></div>
-        <div class="nov-sub"></div>
-      </div>
-      <div class="nov-card dia-card clickable" id="dia-card">
-        <div class="nov-label" data-hint="Ver ficha →">Ave del día</div>
-        <div class="dia-fila"></div>
-      </div>
+    <div class="nov-card dia-card clickable" id="dia-card">
+      <div class="nov-label" data-hint="Ver ficha →">Ave del día</div>
+      <div class="dia-fila"></div>
     </div>
   </div>
 
   <!-- elementos que site.js todavía actualiza (ocultos en el diseño nuevo) -->
   <div class="fgh-hid" hidden>
+    <div class="novedades"><div class="nov-card"><div id="nov-ave"></div><div id="nov-ave-fecha"></div></div><div class="nov-card"><div id="nov-lugar"></div><div id="nov-lugar-fecha"></div></div></div>
+    <div class="nov-card hito-card" id="hito-card"><div class="nov-label"></div><div class="hito-val"></div><div class="hito-bar"><i></i></div><div class="nov-sub"></div></div>
     <span id="prog-fv-cba"></span><span id="prog-fv-arg"></span>
     <i id="prog-hero-fill"></i><i id="prog-hero-fill2"></i>
     <span id="cta-album-count"></span>
