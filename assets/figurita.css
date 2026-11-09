@@ -311,3 +311,13 @@ body{background:var(--fg-cr)}
   .album-controls-inner .reg-sel{flex:0 1 auto}
   .album-controls-inner #btn-mas{flex:0 0 auto;margin-left:auto}
 }
+
+/* ESCALA: cada dibujo se achica según el largo real del ave (--esc), apoyado en el piso del recuadro */
+.fgh{--rh:118px}
+@media(max-width:760px){.fgh{--rh:62px}}
+.fgh .rec-circulo.rec-masc-c img.rec-masc{--h:calc(var(--rh) * 1.34 * var(--esc,1));height:var(--h)!important;width:auto!important;top:calc(var(--rh) + 2px - 0.9 * var(--h))!important;left:50%;transform:translateX(-52%)!important}
+.fig-silueta{position:relative;align-items:flex-end!important}
+.fig-silueta .fig-masc{height:calc(100% * var(--esc,1));width:calc(92% * var(--esc,1));margin:auto auto 0}
+.fig-cm{position:absolute;right:3px;top:3px;z-index:2;font:700 .5rem 'Lato',sans-serif;letter-spacing:.4px;background:rgba(255,255,255,.85);color:var(--fg-v1);padding:1px 4px;border-radius:2px}
+.m-sil{align-items:flex-end!important}
+.m-sil .m-masc{width:calc(78% * var(--esc,1));max-height:calc(240px * var(--esc,1));margin:12px auto 34px}
