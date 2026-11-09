@@ -1,6 +1,6 @@
 /* ══ Rediseño "figurita" (rama rebrand-figurita) ══ */
 :root{--fg-v1:#414833;--fg-v2:#656d4a;--fg-ti:#7f5539;--fg-ar:#c4a882;--fg-cr:#ede0d4;--fg-tx:#2d3322;
-  --fg-laguna:url(/assets/mascotas/fondos/humedal.svg);--fg-sierras:url(/assets/mascotas/fondos/sierras.svg)}
+  --fg-laguna:url(/assets/paisajes/laguna.jpg);--fg-camino:url(/assets/paisajes/camino.jpg)}
 
 /* ── NAV (PC) ── */
 nav{box-shadow:0 3px 0 var(--fg-ar)!important}
@@ -68,7 +68,7 @@ body{background:var(--fg-cr)}
 
 /* panel "mi álbum hoy" */
 .fgh-hoy{grid-area:hoy;position:relative;background:#fff;border-radius:4px;padding:9px;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 14px 36px rgba(42,31,20,.22)}
-.fgh-stk{position:relative;min-height:330px;border-radius:2px;background:var(--fg-sierras) center bottom/cover;display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center;justify-content:center;padding:44px 24px 40px;overflow:hidden}
+.fgh-stk{position:relative;min-height:330px;border-radius:2px;background:linear-gradient(180deg,rgba(42,31,20,.05),rgba(42,31,20,.35)),var(--fg-camino) center 62%/cover;display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center;justify-content:center;padding:44px 24px 40px;overflow:hidden}
 .fgh-tag{position:absolute;top:16px;left:16px;z-index:6;background:var(--fg-v1);color:var(--fg-cr);font:700 .74rem 'Lato',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:2px}
 .fgh-stk>button{border:none;background:none;padding:0;cursor:pointer;font-family:'Lato',sans-serif;transition:transform .2s;position:relative}
 .fgh-stk>button:hover{transform:translateY(-4px) rotate(0deg)!important}
@@ -157,4 +157,78 @@ body{background:var(--fg-cr)}
   .fgh .rec-track{padding-top:18px;padding-bottom:2px}
   .nav-links a[href="/"]{font-size:0!important}
   .nav-links a[href="/"]::after{content:"Inicio";font-size:.56rem;letter-spacing:1.2px}
+}
+
+/* ══ resto de las páginas ══ */
+:root{--ph1:url(/assets/paisajes/sierra.jpg);--ph2:url(/assets/paisajes/bosque.jpg);--ph3:url(/assets/paisajes/camino.jpg);--ph4:url(/assets/paisajes/laguna.jpg);--ph5:url(/assets/paisajes/cerro.jpg);--ph6:url(/assets/paisajes/monte.jpg);--ph7:url(/assets/paisajes/piedras.jpg);--ph8:url(/assets/paisajes/arroyo.jpg);--ph9:url(/assets/paisajes/ocaso.jpg)}
+.page-header{text-align:left!important;max-width:1240px;margin:0 auto;padding:1.8rem 2.5rem .4rem!important}
+.page-title{display:inline-block;background:#fff;padding:.55rem 1.3rem;border-radius:4px;transform:rotate(-1deg);box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 8px 18px rgba(42,31,20,.2);font:900 1.5rem/1.1 'Lato',sans-serif!important;text-transform:uppercase;letter-spacing:.8px!important;color:var(--fg-tx)!important;margin:0 0 .5rem!important}
+.page-title::before,.page-title::after{content:none!important}
+.page-title em{font-style:normal;color:var(--fg-ti)!important}
+.page-sub{font:italic 1rem 'Playfair Display',serif!important;color:var(--fg-ti)!important;margin:.2rem 0 0 .3rem}
+/* pastillas */
+.reg-sel,.mapa-barra,.dat-grp{border:2px solid var(--fg-v1)!important;background:#fff;box-shadow:2px 3px 0 rgba(42,31,20,.18)}
+.reg-b,.gtab-b,.mreg-b,.dat-tab,.fb,.fb2{font:900 .7rem 'Lato',sans-serif!important;letter-spacing:1.5px!important;text-transform:uppercase}
+.fb,.fb2{background:#fff!important;border:2px solid var(--fg-v1)!important;color:var(--fg-v1)!important;border-radius:99px!important;box-shadow:2px 3px 0 rgba(42,31,20,.18)}
+.fb.active{background:var(--fg-v1)!important;color:var(--fg-cr)!important}
+.album-controls{background:transparent!important;border:none!important;box-shadow:none!important}
+#busqueda,.gal-controles input{border:2px solid var(--fg-ar)!important;box-shadow:2px 3px 0 rgba(42,31,20,.12)}
+/* álbum: cada página es una tarjeta con foto de paisaje */
+.alb-pag{background:#fff!important;border:none!important;border-radius:4px!important;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 14px 36px rgba(42,31,20,.16)!important;padding:10px 10px 1.4rem!important}
+.alb-pag::before{display:none!important}
+.alb-pag-hd{position:relative;border:none!important;margin:0 0 1.2rem!important;padding:0!important;height:112px;border-radius:2px;overflow:hidden;background:var(--ph) center/cover;align-items:flex-end!important}
+.alb-pag-hd::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(42,31,20,.35))}
+.alb-pag:nth-of-type(9n+1){--ph:var(--ph1)}.alb-pag:nth-of-type(9n+2){--ph:var(--ph2)}.alb-pag:nth-of-type(9n+3){--ph:var(--ph3)}.alb-pag:nth-of-type(9n+4){--ph:var(--ph4)}.alb-pag:nth-of-type(9n+5){--ph:var(--ph5)}.alb-pag:nth-of-type(9n+6){--ph:var(--ph6)}.alb-pag:nth-of-type(9n+7){--ph:var(--ph7)}.alb-pag:nth-of-type(9n+8){--ph:var(--ph8)}.alb-pag:nth-of-type(9n){--ph:var(--ph9)}
+.alb-pag-n{position:absolute;top:8px;left:8px;z-index:2;font:700 .78rem 'Lato',sans-serif!important;letter-spacing:.06em;background:var(--fg-v1);color:var(--fg-cr)!important;padding:3px 9px;border-radius:2px;text-transform:uppercase}
+.alb-pag-hd h3{position:absolute;z-index:2;left:8px;bottom:8px;font:900 1.15rem 'Lato',sans-serif!important;text-transform:uppercase;letter-spacing:.7px;color:var(--fg-tx)!important;background:#fff;padding:4px 12px;border-radius:2px;flex:none!important;min-width:0!important;margin:0!important}
+.alb-pag-c{position:absolute;z-index:2;right:8px;bottom:8px;font:700 .7rem 'Lato',sans-serif!important;letter-spacing:2px;text-transform:uppercase;background:var(--fg-ar)!important;color:var(--fg-v1)!important;border-radius:99px!important;padding:4px 12px!important}
+.fig.no{background:rgba(255,255,255,.55)!important;border:2px dashed var(--fg-ar)!important;box-shadow:none!important}
+.stickers .fig-co{font-family:'Lato',sans-serif!important;font-weight:900!important;text-transform:uppercase!important;letter-spacing:.4px}
+.stickers .fig-num{font-family:'Lato',sans-serif!important}
+/* galería: polaroids con cinta */
+.foto-item{background:#fff!important;padding:9px 9px 0!important;border-radius:3px!important;box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 8px 18px rgba(42,31,20,.22)!important;position:relative}
+.foto-item:nth-child(4n+1){transform:rotate(-1deg)}.foto-item:nth-child(4n+2){transform:rotate(.8deg)}.foto-item:nth-child(4n+3){transform:rotate(-.4deg)}.foto-item:nth-child(4n){transform:rotate(1.1deg)}
+.foto-item::before{content:'';position:absolute;top:-9px;left:50%;width:70px;height:20px;margin-left:-35px;background:rgba(196,168,130,.85);transform:rotate(-3deg);z-index:2}
+.foto-caption strong{font:900 .82rem 'Lato',sans-serif!important;text-transform:uppercase;letter-spacing:.5px;color:var(--fg-tx)!important;font-style:normal!important}
+.foto-caption span{font:italic .8rem 'Playfair Display',serif!important;color:var(--fg-ti)!important}
+/* estadísticas: números como stickers con foto */
+.dat-kpi{background:#fff!important;border-radius:14px!important;padding:8px 8px 10px!important;box-shadow:0 0 0 1px rgba(0,0,0,.07),0 8px 18px rgba(42,31,20,.25)!important;text-align:center;border:none!important}
+.dat-kpi b{display:flex!important;align-items:center;justify-content:center;height:118px;border-radius:8px;background:var(--k) center/cover;color:#fff!important;font:900 3rem/1 'Lato',sans-serif!important;text-shadow:0 2px 0 var(--fg-v1),0 0 12px rgba(0,0,0,.45);letter-spacing:-.03em}
+.dat-kpi span{display:block;font:900 .7rem 'Lato',sans-serif!important;letter-spacing:1.2px;text-transform:uppercase;color:var(--fg-tx)!important;padding:.55rem 0 .1rem}
+.dat-kpi small{font:italic .8rem 'Playfair Display',serif!important;color:var(--fg-ti)!important}
+.dat-kpi:nth-of-type(3){--k:var(--ph4)}.dat-kpi:nth-of-type(4){--k:var(--ph1)}.dat-kpi:nth-of-type(5){--k:var(--ph6)}.dat-kpi:nth-of-type(6){--k:var(--ph2)}.dat-kpi:nth-of-type(7){--k:var(--ph9)}.dat-kpi:nth-of-type(8){--k:var(--ph8)}.dat-kpi:nth-of-type(n+9){--k:var(--ph7)}
+.dat-kpi:nth-of-type(odd){transform:rotate(1.1deg)}.dat-kpi:nth-of-type(even){transform:rotate(-1.4deg)}
+.dat-card{background:#fff!important;border-radius:4px!important;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 12px 30px rgba(42,31,20,.16)!important}
+.dat-h{font:900 .78rem 'Lato',sans-serif!important;letter-spacing:2.2px;color:var(--fg-ti)!important;text-transform:uppercase}
+.hito-chip{border:2px solid var(--fg-v1)!important;border-radius:99px!important;font:900 .68rem 'Lato',sans-serif!important}
+.hito-chip.ok{background:var(--fg-v1)!important;color:var(--fg-cr)!important}
+/* mapa: el mapa va dentro de una polaroid */
+.mapa-titulo{display:inline-block;background:#fff;padding:.55rem 1.3rem;border-radius:4px;transform:rotate(-1deg);box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 8px 18px rgba(42,31,20,.2);font:900 1.5rem/1.1 'Lato',sans-serif!important;text-transform:uppercase;letter-spacing:.8px;color:var(--fg-tx)!important;margin-bottom:.8rem}
+.mapa-wrap{background:#fff;padding:10px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 10px 24px rgba(42,31,20,.22);transform:rotate(.3deg)}
+.mapa-leyenda{font:italic .85rem 'Playfair Display',serif!important;color:var(--fg-ti)!important}
+/* contacto */
+.trab{background:#fff!important;border:none!important;border-radius:4px!important;padding:10px 10px 1.4rem!important;box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 12px 28px rgba(42,31,20,.22)!important;transform:rotate(-.8deg);text-align:left!important}
+.trab::before{content:'';display:block;height:170px;background:var(--ph1) center/cover;border-radius:2px;margin-bottom:1rem}
+.trab>*:not(:first-child){margin-left:.7rem;margin-right:.7rem}
+.trab-h{font:900 1.6rem/1.1 'Lato',sans-serif!important;text-transform:uppercase;color:var(--fg-tx)!important}
+.trab-h em{font:italic 400 1.6rem 'Playfair Display',serif!important;text-transform:none;color:var(--fg-ti)!important}
+.trab-btn{border-radius:99px!important;font:900 .72rem 'Lato',sans-serif!important;letter-spacing:1.5px;text-transform:uppercase;box-shadow:2px 3px 0 rgba(42,31,20,.18)}
+.redes-tit{font:900 .78rem 'Lato',sans-serif!important;letter-spacing:2.2px;color:var(--fg-ti)!important;text-transform:uppercase}
+.red-card{background:#fff!important;border-radius:4px!important;padding:6px 6px .3rem!important;box-shadow:0 0 0 1px rgba(0,0,0,.06),2px 6px 14px rgba(42,31,20,.18)!important}
+.red-card:nth-child(odd){transform:rotate(-1.6deg)}.red-card:nth-child(even){transform:rotate(1.3deg)}
+.red-name{font:900 .8rem 'Lato',sans-serif!important;text-transform:uppercase;letter-spacing:.5px;color:var(--fg-tx)!important}
+.red-handle{font:italic .78rem 'Playfair Display',serif!important;color:var(--fg-ti)!important}
+
+.page-header .prog-wrap{margin:.9rem 0 0 .3rem!important;max-width:380px}.page-header .prog-txt{text-align:left!important;margin-left:.3rem}
+.mapa-titulo::before,.mapa-titulo::after{content:none!important}
+.mapa-wrap{max-width:1240px;margin-left:auto;margin-right:auto}
+@media(max-width:760px){
+  .page-header{padding:1rem 1rem .3rem!important}
+  .page-title{font-size:1.2rem!important;padding:.45rem 1rem}
+  .alb-pag-hd{height:84px}
+  .alb-pag-hd h3{font-size:.95rem!important}
+  .dat-kpi b{height:90px;font-size:2.4rem!important}
+  .trab::before{height:120px}
+  .mapa-wrap{padding:6px}
+  .page-header .prog-wrap{max-width:none}
 }

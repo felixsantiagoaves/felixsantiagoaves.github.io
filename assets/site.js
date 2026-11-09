@@ -446,7 +446,7 @@ function loadGaleria() {
     galTab('aves');
     galeriaCargada = true;
   }).catch(() => {
-    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">No se pudieron cargar las fotos.</p>';
+    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Playfair Display,serif;font-style:italic;font-size:1.1rem">No se pudieron cargar las fotos.</p>';
   }).finally(() => { galeriaCargando = false; });
 }
 
@@ -680,7 +680,7 @@ function renderAlbum() {
       </div></div>`;
   };
   const lista = avesFiltradas();
-  if (!lista.length) { container.innerHTML = `<div style="text-align:center;padding:3rem;font-family:'Caveat',cursive;font-size:1.2rem;color:var(--ti)">No se encontraron aves con ese criterio 🔍</div>`; albNavUpd(); return; }
+  if (!lista.length) { container.innerHTML = `<div style="text-align:center;padding:3rem;font-family:Playfair Display,serif;font-style:italic;font-size:1.2rem;color:var(--ti)">No se encontraron aves con ese criterio 🔍</div>`; albNavUpd(); return; }
   let html = '<div class="album-count">' + lista.length + ' especie' + (lista.length === 1 ? '' : 's') + '</div>';
   if (ordenAlbum === 'tax') {
     const famsAll = [...new Set(todas.map(a => a.familiaEsp))];   // ya en orden taxonómico
@@ -1544,9 +1544,9 @@ function renderGaleria() {
   const cnt = document.getElementById('gal-count');
   if(cnt) cnt.textContent = lista.length + ' foto' + (lista.length === 1 ? '' : 's');
   if(!GALERIA_ALL.length) {
-    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">'+(galTabActual === 'fauna' ? 'Todavía no hay fotos de otros animales.' : 'Todavía no hay fotos en la galería.')+'</p>';
+    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Playfair Display,serif;font-style:italic;font-size:1.1rem">'+(galTabActual === 'fauna' ? 'Todavía no hay fotos de otros animales.' : 'Todavía no hay fotos en la galería.')+'</p>';
   } else if(!lista.length) {
-    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Caveat,cursive;font-size:1.1rem">No hay fotos con ese criterio 🔍</p>';
+    grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Playfair Display,serif;font-style:italic;font-size:1.1rem">No hay fotos con ese criterio 🔍</p>';
   } else {
     grid.innerHTML = lista.map(f => `
       <div class="foto-item" data-src="${f.src}" onclick="openLBsrc(this)">
