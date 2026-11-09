@@ -646,7 +646,7 @@ function updAlbumHead() {
   const lista = avesReg(), n = lista.length, v = lista.filter(visto).length, pct = Math.round(v / n * 100);
   const sub = document.getElementById('album-sub'); if(sub) sub.textContent = (REGION === 'cba' ? 'Córdoba' : 'Argentina') + ' · ' + fmtN(n) + ' especies';
   const t = document.getElementById('prog-txt'); if(t) t.textContent = v + ' de ' + fmtN(n) + ' especies encontradas';
-  const pf = document.getElementById('prog-fill'); if(pf) { pf.style.transition = 'width 1.2s cubic-bezier(.4,0,.2,1)'; pf.style.width = pct + '%'; }
+  const pf = document.getElementById('prog-fill'); if(pf) { pf.style.width = '100%'; pf.style.transformOrigin = 'left center'; pf.style.willChange = 'transform'; pf.style.transition = 'transform 1.1s cubic-bezier(.4,0,.2,1)'; setTimeout(() => { pf.style.transform = 'scaleX(' + (pct / 100) + ')'; }, 120); }
   document.querySelectorAll('.reg-b').forEach(b => b.classList.toggle('on', b.dataset.reg === REGION));
 }
 function setRegion(r) {
