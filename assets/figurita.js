@@ -27,6 +27,19 @@
   }
   var tries = 0, t = setInterval(function(){ if(dots() || ++tries > 40) clearInterval(t); }, 250);
 
+  /* Mascota de la portada: una al azar entre las dibujadas; cambia sola cada tanto o al tocarla */
+  var MAS = ['aguatero','atajacaminos-tijera','calandrita','carancho','carpintero-hembra','carpintero-macho','chiricote','chivi-comun','colorada','gallineta','golondrina-ceja-blanca','inambu-montaraz','inambu-silbon','juan-chiviro','monterita-de-collar','pecho-colorado','pepitero-chico','pepitero-gris','pijui-frente-gris','pitiayumi'];
+  function mascota(){
+    var im = document.querySelector('.fgh-dc'); if(!im) return;
+    var actual = -1, ver = (typeof MASC_V !== 'undefined') ? '?v=' + MASC_V : '';
+    var otra = function(){ var i; do { i = Math.floor(Math.random() * MAS.length); } while(i === actual && MAS.length > 1); actual = i; return '/assets/mascotas/' + MAS[i] + '-animado.svg' + ver; };
+    var poner = function(){ im.style.opacity = 0; setTimeout(function(){ im.src = otra(); im.style.opacity = 1; }, 250); };
+    im.src = otra();
+    setInterval(function(){ if(!document.hidden) poner(); }, 9000);
+    im.addEventListener('click', poner);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mascota); else mascota();
+
   /* Menú inferior (celular): "Más" abre Especies, Estadísticas y Contacto */
   function menu(){
     var ul = document.querySelector('.nav-links'); if(!ul || ul.querySelector('.nav-mas')) return;
