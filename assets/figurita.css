@@ -321,3 +321,38 @@ body{background:var(--fg-cr)}
 .fig-cm{position:absolute;right:3px;top:3px;z-index:2;font:700 .5rem 'Lato',sans-serif;letter-spacing:.4px;background:rgba(255,255,255,.85);color:var(--fg-v1);padding:1px 4px;border-radius:2px}
 .m-sil{align-items:flex-end!important}
 .m-sil .m-masc{width:calc(78% * var(--esc,1));max-height:calc(240px * var(--esc,1));margin:12px auto 34px}
+
+/* ══ MODO OSCURO (identidad figurita) ══ */
+[data-theme=dark]{--fg-ink:#e8dccb;--fg-mut:#c4a882;--fg-sf:#1e2417;--fg-sf2:#262d1c;--fg-bg:#161a11}
+[data-theme=dark] body,[data-theme=dark] .fgh{background:var(--fg-bg)!important}
+[data-theme=dark] .fgh .rec-item,[data-theme=dark] .fgh-card,[data-theme=dark] .fgh-hoy,[data-theme=dark] .stk-circ,[data-theme=dark] .stk-sq,
+[data-theme=dark] .page-title,[data-theme=dark] .reg-sel,[data-theme=dark] .mapa-barra,[data-theme=dark] .dat-grp,[data-theme=dark] .fb,[data-theme=dark] .fb2,
+[data-theme=dark] .alb-pag,[data-theme=dark] .alb-pag-hd h3,[data-theme=dark] .foto-item,[data-theme=dark] .dat-kpi,[data-theme=dark] .dat-card,
+[data-theme=dark] .mapa-titulo,[data-theme=dark] .mapa-wrap,[data-theme=dark] .trab,[data-theme=dark] .red-card,[data-theme=dark] .fg-sheet,[data-theme=dark] .fgh-extra .dia-card{background:var(--fg-sf)!important}
+[data-theme=dark] .album-controls{background:var(--fg-bg)!important}
+[data-theme=dark] .fgh .rec-nom,[data-theme=dark] .fgh-name,[data-theme=dark] .stk-sq .lb,[data-theme=dark] .page-title,[data-theme=dark] .alb-pag-hd h3,
+[data-theme=dark] .foto-caption strong,[data-theme=dark] .dat-kpi span,[data-theme=dark] .mapa-titulo,[data-theme=dark] .trab-h,[data-theme=dark] .red-name{color:var(--fg-ink)!important}
+[data-theme=dark] .fgh .rec-titulo,[data-theme=dark] .fgh-sci,[data-theme=dark] .fgh-share,[data-theme=dark] .page-title em,[data-theme=dark] .page-sub,
+[data-theme=dark] .foto-caption span,[data-theme=dark] .dat-kpi small,[data-theme=dark] .dat-h,[data-theme=dark] .mapa-leyenda,[data-theme=dark] .trab-h em,
+[data-theme=dark] .redes-tit,[data-theme=dark] .red-handle,[data-theme=dark] .fgh .uv-canal{color:var(--fg-mut)!important}
+[data-theme=dark] .fb,[data-theme=dark] .fb2,[data-theme=dark] .fg-sheet a,[data-theme=dark] .reg-sel,[data-theme=dark] .dat-grp{color:#d8e0c4!important;border-color:#4a5538!important}
+[data-theme=dark] .fb.act,[data-theme=dark] .fb2.act,[data-theme=dark] .fb.on,[data-theme=dark] .reg-sel .act,[data-theme=dark] .dat-grp .act{background:#656d4a!important;color:#fff!important}
+[data-theme=dark] .fgh-dots i.on{background:var(--fg-ar)}
+[data-theme=dark] .fgh .rec-mas .rec-nom{color:var(--fg-ink)!important}
+[data-theme=dark] .fgh-card,[data-theme=dark] .fgh-hoy,[data-theme=dark] .alb-pag,[data-theme=dark] .foto-item,[data-theme=dark] .trab,[data-theme=dark] .red-card{box-shadow:0 0 0 1px rgba(255,255,255,.07),2px 8px 20px rgba(0,0,0,.45)!important}
+[data-theme=dark] .fgh-card .fgh-bio,[data-theme=dark] .fgh-card p{color:#cbbfae}
+[data-theme=dark] .fig-cm{background:rgba(22,26,17,.85);color:#d8e0c4}
+[data-theme=dark] .nav-links{background:var(--fg-sf)}
+@media(min-width:761px){[data-theme=dark] .nav-links{background:none}}
+[data-theme=dark] .nav-links a{color:var(--fg-mut)!important}
+[data-theme=dark] .nav-links a.active{color:#fff!important}
+@media(min-width:761px){[data-theme=dark] .nav-links a{color:var(--fg-cr)!important}[data-theme=dark] .nav-links a.active{color:var(--fg-v1)!important}}
+[data-theme=dark] .stk-circ b,[data-theme=dark] .stk-circ small{color:inherit}
+[data-theme=dark] .fgh-car,[data-theme=dark] .trab-p,[data-theme=dark] .trab-alt,[data-theme=dark] .mk-copy,[data-theme=dark] .dfl-hint,[data-theme=dark] .fgh-lab{color:#cbbfae!important}
+[data-theme=dark] .uv-canal,[data-theme=dark] .trab-alt a{color:#d8e0c4!important}
+[data-theme=dark] .red-icon{background:#e8dccb!important}
+[data-theme=dark] .stickers .fig.no,[data-theme=dark] .stickers .fig.no .fig-silueta,[data-theme=dark] .stickers .fig.no .fig-img{background:transparent!important}
+[data-theme=dark] .stickers .fig.no{border-color:#4a5538!important}
+[data-theme=dark] .fig.no .fig-ci,[data-theme=dark] .fig.no .fig-co,[data-theme=dark] .fig.no .fig-fecha,[data-theme=dark] .fig-num{color:#b9c394!important}
+[data-theme=dark] .fig.no .fig-num{background:#38422d;color:#e8dccb!important}
+[data-theme=dark] .fgh .rec-circulo.rec-sin-foto:not(.rec-masc-c){background:#262d1c}

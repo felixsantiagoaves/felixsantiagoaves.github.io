@@ -236,3 +236,18 @@ h1{font:900 2rem/1.1 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.
   .grid{grid-template-columns:repeat(2,1fr)!important;gap:.9rem}
 }
 .gnav .nav-logo,.gnav .nav-logo:hover{text-decoration:none}
+/* modo oscuro de las páginas de especies */
+[data-theme=dark] body{background:var(--bg)!important;color:var(--tx)}
+[data-theme=dark] .wrap>h1,[data-theme=dark] .hero-fig,[data-theme=dark] .hero-fig figcaption,[data-theme=dark] .card,[data-theme=dark] .galeria figure{background:#1e2417}
+[data-theme=dark] .wrap>h1,[data-theme=dark] .hero-txt h1,[data-theme=dark] .sec h2,[data-theme=dark] .card .n{color:#e8dccb}
+[data-theme=dark] .car,[data-theme=dark] .intro,[data-theme=dark] .cuenta,[data-theme=dark] .card .c{color:#c4a882}
+[data-theme=dark] .grupo{background:#656d4a;color:#fff}
+[data-theme=dark] .pill{color:#d8e0c4;border-color:#4a5538}
+[data-theme=dark] .pill.fill{background:#656d4a;color:#fff}
+[data-theme=dark] .hero-txt,[data-theme=dark] .hero-fig,[data-theme=dark] .card,[data-theme=dark] .galeria figure{box-shadow:0 0 0 1px rgba(255,255,255,.07),2px 8px 20px rgba(0,0,0,.45)}
+[data-theme=dark] .filtros input,[data-theme=dark] .filtros select{background:#161a11;color:#e8dccb;border-color:#4a5538}
+[data-theme=dark] .fg-sheet,[data-theme=dark] .gnav .nav-links{background:#1e2417}
+[data-theme=dark] .fg-sheet a{color:#d8e0c4}
+[data-theme=dark] .gnav .nav-links a{color:#c4a882!important}
+@media(min-width:761px){[data-theme=dark] .gnav .nav-links{background:none}[data-theme=dark] .gnav .nav-links a{color:#ede0d4!important}[data-theme=dark] .gnav .nav-links a.active{color:#414833!important}}
+@media(max-width:760px){[data-theme=dark] .gnav .nav-links a.active{color:#fff!important}}
