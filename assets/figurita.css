@@ -379,3 +379,4 @@ body{background:var(--fg-cr)}
 /* La foto viaja de la ficha rápida a la página de la especie */
 #m-img{view-transition-name:ave-foto}
 @media (prefers-reduced-motion:reduce){.stickers .fig.rara .fig-img::after{display:none}#m-img{view-transition-name:none}}
+#page-juegos .trab::before{display:none!important}#page-juegos .trab>img{margin-left:auto!important;margin-right:auto!important}
