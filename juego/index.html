@@ -211,6 +211,9 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .pop.mal{background:var(--rojo)}
 @keyframes pop{0%{opacity:0;transform:translate(-50%,16px) scale(.8)}12%{opacity:1;transform:translate(-50%,0) scale(1.05)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-36px)}}
 @media (prefers-reduced-motion:reduce){.vig svg *,.pop{animation:none!important}}
+.chips{display:flex;gap:6px;flex-wrap:wrap;font-family:var(--t);font-style:normal}
+.chips i{font-style:normal;font-weight:900;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:#dfe7cc;color:#414833}
+.chips i.ra{background:#f3e3a6;color:#6b4e0a}.chips i.dn{background:#ead2cc;color:#8a2f25}.chips i.rs{background:#dcdfe8;color:#3d4660}
 </style>
 </head>
 <body>
@@ -300,16 +303,15 @@ SP.forEach(x=>{const w=x[5].map(v=>Math.pow(v/100,1.6)),m=w.reduce((a,b)=>a+b,0)
 function prob(i,zi,m){const x=SP[i];let p=x[4]/100*x.q[zi]*K*ZM[ZK[zi]];if(x[6]===1)p*=verano(m)?1.9:.04;if(x[6]===2)p*=playeras(m)?1.7:.05;if(ZK[zi]==='A'&&m>=4&&m<=7)p*=.6;return .8*(1-Math.exp(-p/.8))}
 const f=(...a)=>a.map(FA);
 const EV=[
-{q:'Suena el despertador a las 5:30.',o:[{t:'Madrugar',s:'A primera hora canta todo.',c:'−1 energía',en:-1,ef:1.35},{t:'Dormir un rato más',s:'Llegás con el sol alto y menos movimiento.',c:'+1 energía',en:1,ef:.7}]},
+{q:'Suena el despertador a las 5:30.',o:[{t:'Madrugar',s:'A primera hora canta todo.',c:'−1 energía',en:-1,ef:1.35,ari:1.25},{t:'Dormir un rato más',s:'Llegás con el sol alto y menos movimiento.',c:'+1 energía',en:1,ef:.7}]},
 {q:'El pronóstico anuncia lluvia para la mañana.',o:[{t:'Ir igual',s:'Puede llover todo el día o abrir fresco y con mucha actividad.',c:'Riesgo',az:[.5,.4,1.3,'Llovió toda la mañana. Viste poco.','Abrió temprano y el monte estaba lleno de movimiento.']},{t:'Esperar a que pase',s:'Salís más tarde y más corto.',c:'Seguro',ef:.8}]},
 {q:'En el grupo de WhatsApp avisan de una rareza a dos horas de ruta.',o:[{t:'Ir a buscarla',s:'Puede estar o haberse ido.',c:'−2 nafta',na:-2,rara:.55},{t:'Seguir con tu plan',s:'Hoy no se corre detrás de nadie.',c:'Sin costo',ef:1}]},
-{q:'El club de observadores organiza una salida grupal al mismo lugar.',o:[{t:'Sumarte al grupo',s:'Más ojos, más especies comunes.',c:'Más cantidad',ef:1.25},{t:'Ir solo y en silencio',s:'Menos gente, más chances con las ariscas.',c:'Más raras',ef:.95,ari:1.6}]},
-{q:'Pinchaste una goma en el camino de tierra.',o:[{t:'Cambiarla y seguir',s:'Perdés la mejor hora, pero llegás.',c:'−1 energía',en:-1,ef:.75},{t:'Pajarear ahí mismo',s:'Lo que haya al costado del camino.',c:'Salida corta',ef:.35}]},
+{q:'El club de observadores organiza una salida grupal al mismo lugar.',o:[{t:'Sumarte al grupo',s:'Más ojos, más especies comunes.',c:'Más cantidad',ef:1.25,ari:.8},{t:'Ir solo y en silencio',s:'Menos gente, más chances con las ariscas.',c:'Más raras',ef:.95,ari:1.6}]},
 {q:'Un baqueano te ofrece entrar a su campo, donde nadie pajarea.',o:[{t:'Aceptar y caminar con él',s:'Terreno nuevo y un guía que conoce cada rincón.',c:'−1 energía',en:-1,ef:1.3,ari:1.3},{t:'Agradecer y seguir por el camino',s:'Lo de siempre.',c:'Sin costo',ef:1}]},
 {q:'Se hace la tarde. ¿Te quedás hasta el anochecer?',o:[{t:'Quedarte',s:'A última hora salen las que no ves de día.',c:'−1 energía',en:-1,ef:1.3,fam:[f('Lechuzas','Atajacaminos'),3]},{t:'Volver temprano',s:'Llegás descansado.',c:'+1 energía',en:1,ef:.95}]},
-{q:'Cae feriado largo.',o:[{t:'Dos días en el lugar',s:'El doble de tiempo en el campo.',c:'−1 nafta',na:-1,ef:1.6},{t:'Un día y volver',s:'Queda tiempo para la familia.',c:'+1 energía',en:1,ef:1}]},
+{q:'Cae feriado largo.',o:[{t:'Dos días en el lugar',s:'El doble de tiempo en el campo.',c:'−1 nafta',na:-1,ef:1.6,ari:1.2},{t:'Un día y volver',s:'Queda tiempo para la familia.',c:'+1 energía',en:1,ef:1}]},
 {q:'Viento fuerte desde temprano.',o:[{t:'Buscar el reparo del monte',s:'Menos variedad, pero algo se mueve.',c:'Seguro',ef:.85},{t:'Insistir en lo abierto',s:'Si afloja, es tu mañana.',c:'Riesgo',az:[.6,.45,1.35,'El viento no aflojó nunca.','Aflojó a media mañana y apareció de todo.']}]},
-{q:'Te prestan un telescopio para el fin de semana.',o:[{t:'Llevarlo',s:'Pesa, pero lo lejano deja de ser un punto.',c:'−1 energía',en:-1,ef:1.3},{t:'Ir liviano',s:'Binoculares y cámara, como siempre.',c:'Sin costo',ef:1}]},
+{q:'Te prestan un telescopio para el fin de semana.',o:[{t:'Llevarlo',s:'Pesa, pero lo lejano deja de ser un punto.',c:'−1 energía',en:-1,ef:1.3,ari:1.3},{t:'Ir liviano',s:'Binoculares y cámara, como siempre.',c:'Sin costo',ef:1}]},
 {z:'AC',q:'Neblina espesa en la sierra. No se ve a diez metros.',o:[{t:'Guiarte solo por el canto',s:'Escuchás todo, aunque ves poco.',c:'Seguro',ef:.8,ari:1.7},{t:'Esperar a que levante',s:'Perdés la mañana, pero después se destapa.',c:'+1 energía',en:1,ef:.7}]},
 {z:'RLH',q:'Crecida del arroyo: el camino quedó cortado por el agua.',o:[{t:'Cruzar caminando',s:'Más orilla, más aves; las botas se mojan.',c:'−1 energía',en:-1,ef:1.3,fam:[f('Martines Pescadores','Garzas, Bandurrias y afines'),2]},{t:'Rodear por el puente',s:'Un largo desvío por el costado.',c:'Sin costo',ef:.9}]},
 {z:'EC',q:'Una bandada de loros pasa gritando sobre el monte.',o:[{t:'Seguirlos',s:'Corrés entre ramas, pero te llevan a un árbol con fruta.',c:'−1 energía',en:-1,ef:1.1,fam:[f('Loros, Cotorras y afines','Fruteros, Jilgueros, Corbatitas y afines'),2.4]},{t:'Quedarte donde estabas',s:'Seguís con tu recorrido.',c:'Sin costo',ef:1}]},
@@ -411,6 +413,13 @@ const MI=[
 {id:'celu',q:'El celular se quedó sin batería. Sin la app para identificar los cantos.',o:[{t:'Cargarlo en el auto',s:'Perdés un rato al principio.',c:'−1 nafta',na:-1},{t:'Seguir con la libreta y de oído',s:'Como se hacía antes.',c:'Rendís menos este mes',mod:.85}]},
 {id:'corte',q:'Un camino cortado por obras te bloquea el acceso.',o:[{t:'Dar toda la vuelta',s:'Un buen desvío.',c:'−2 nafta',na:-2},{t:'Cruzar a pie por la banquina',s:'Cansa, pero se llega.',c:'−1 energía · rendís menos',en:-1,mod:.85}]}
 ];
+function chips(o){const c=[];
+ if(o.ef>=1.15)c.push(['up','Más aves']);else if(o.ef&&o.ef<=.9)c.push(['dn','Menos aves']);
+ if(o.ari>=1.15)c.push(['ra','Más chance de raras']);else if(o.ari&&o.ari<1)c.push(['dn','Menos raras']);
+ if(o.rara!=null)c.push(['ra','Chance de una rara']);
+ if(o.fam)c.push(['up','Más '+FAMS[o.fam[0][0]].split(',')[0].toLowerCase()]);
+ if(o.az)c.push(['rs','Puede salir mal o muy bien']);
+ return c.length?`<span class="chips">${c.map(x=>`<i class="${x[0]}">${x[1]}</i>`).join('')}</span>`:''}
 function pop(t,bad){if(window.SIMULA||!t)return;const d=document.createElement('div');d.className='pop'+(bad?' mal':'');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
 function deltas(o){const a=[];if(o.na)a.push((o.na>0?'+':'−')+Math.abs(o.na)+' nafta');if(o.en)a.push((o.en>0?'+':'−')+Math.abs(o.en)+' energía');return a.join(' · ')}
 function viaje2(){clearTimeout(G.tm);
@@ -422,7 +431,7 @@ function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
  if(o.mod){G.mod*=o.mod;t+=(t?' · ':'')+'rendís menos';bad=true}
  if(o.az){const mal=G.r()<o.az[0];G.mod*=mal?o.az[1]:o.az[2];if(mal){G.nafta=Math.max(0,G.nafta+(o.naMal||0));t=o.az[3];bad=true}else t=o.az[4]}
  if(o.na<0||o.en<0)bad=true;
- pop(t,bad);evento()}
+ pop(t,bad);G.ev={w:'day',o:[]};resolver({})}
 function elegirZona(i){G.mod=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
  $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
  clearTimeout(G.tm);G.tm=setTimeout(viaje2,1500)}
@@ -431,8 +440,9 @@ function evento(){clearTimeout(G.tm);
  let pool=G.evs.filter(j=>ok(EV[j]));if(!pool.length){G.evs=EV.map((_,j)=>j);pool=G.evs.filter(j=>ok(EV[j]))}
  const j=pool[Math.floor(G.r()*pool.length)];G.evs.splice(G.evs.indexOf(j),1);G.ev=EV[j];
  $(cab()+escena(G.zona,G.ev.w,nota(G.mes))+`<div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${G.ev.q}</h2></div>
- <div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span><small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
-function elegirEv(k){const o=G.ev.o[k];if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1),msg='';
+ <div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span>${chips(o)}<small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
+function elegirEv(k){resolver(G.ev.o[k])}
+function resolver(o){if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1),msg='';
  if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
  if(o.az){const mal=G.r()<o.az[0];ef=mal?o.az[1]:o.az[2];msg=mal?o.az[3]:o.az[4]}
  if(G.en===0){ef*=.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
