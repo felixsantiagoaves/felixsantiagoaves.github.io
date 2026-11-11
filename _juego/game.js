@@ -103,9 +103,9 @@ function revelar(ids){if(window.SIMULA||!ids.length)return;let k=0;
  sig()}
 let G;
 const PERF={
- guiado:{n:'Principiante',d:'6 salidas, una cada dos meses. Solo aves comunes, más nafta y energía, y consejos en el camino.',t:'Unos 5 minutos',cal:[0,2,4,6,8,10],nafta:14,en:4,mi:.12,su:.28,pistas:1,tip:1,fmin:1,K:2.2,amp:1,fin:'en 6 salidas',T:[45,65,85,105,125]},
- normal:{n:'Aficionado',d:'Un año completo, 12 salidas. Aves comunes y raras, con imprevistos y suerte en su medida.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:20,en:3,mi:.25,su:.2,pistas:1,fmin:0,K:2.2,amp:1,fin:'en un año',T:[60,90,125,155,180]},
- experto:{n:'Experto',d:'Un año completo con menos nafta, más imprevistos y sin etiquetas en las decisiones. Más variable: eventos, suertes e imprevistos extra, y techo mucho más alto.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:16,en:3,mi:.34,su:.24,pistas:0,exp:1,fmin:0,K:3.4,amp:3.5,fin:'en un año',T:[80,120,160,200,230]}
+ guiado:{n:'Principiante',d:'6 salidas, una cada dos meses. Solo aves comunes, más nafta y energía, y consejos en el camino.',t:'Unos 5 minutos',cal:[0,2,4,6,8,10],nafta:14,en:4,mi:.12,su:.28,pistas:1,tip:1,fmin:1,K:2.2,amp:0,fin:'en 6 salidas',T:[45,65,85,105,125]},
+ normal:{n:'Aficionado',d:'Un año completo, 12 salidas. Aves comunes y raras, con imprevistos y suerte en su medida.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:20,en:3,mi:.25,su:.2,pistas:1,fmin:0,K:2.2,amp:0,fin:'en un año',T:[60,90,125,155,180]},
+ experto:{n:'Experto',d:'Un año completo con menos nafta, más imprevistos y sin etiquetas en las decisiones. Más variable: eventos, suertes e imprevistos extra, y techo mucho más alto.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:16,en:3,mi:.34,su:.24,pistas:0,exp:1,fmin:0,K:2.2,amp:[3.6,3],fin:'en un año',T:[70,100,130,165,200]}
 };
 let NOMBRE='';try{NOMBRE=localStorage.getItem('pajarero_nombre')||''}catch(e){}
 const TIPS=['Los lugares lejanos gastan nafta, pero suelen rendir más especies. Los cercanos son gratis y se pueden repetir.','Fijate en la energía: las decisiones de esfuerzo la gastan, y con 0 rendís menos.','Algunas aves aparecen solo en ciertas épocas. En verano llegan golondrinas, vencejos y playeros del norte.','Las etiquetas de cada decisión te dicen si suben las aves en general o las raras.','Una rara aparece muy pocas veces. Cuando sale, es una figurita especial.','Un lugar lejano que ya visitaste no se repite en el año.'];
@@ -203,17 +203,22 @@ function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
 function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
  $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
  clearTimeout(G.tm);G.tm=setTimeout(viaje2,1500)}
+function gscore(fi,zi){let s=0;for(let i=0;i<N;i++){const x=SP[i];if(x[3]===fi&&!G.vistas.has(x[0]))s+=prob(i,zi,G.mes)*MK(G.lugar)}return s}
+function expertoEv(ev){const zi=ZK.indexOf(G.zona),sc=FAMS.map((n,fi)=>[fi,gscore(fi,zi),SP.filter(x=>x[3]===fi).length]).filter(a=>a[2]>=3).sort((a,b)=>b[1]-a[1]);
+ const top=sc.slice(0,3),mal=sc.slice(-8),buena=G.r()<.6,pk=buena?top[Math.floor(G.r()*top.length)]:mal[Math.floor(G.r()*mal.length)];
+ const o=[...ev.o,{t:'Especializarte en '+FAMS[pk[0]].toLowerCase(),s:'Dedicás la jornada a ese grupo.',c:'Sin costo',ef:.8,fam:[[pk[0]],3.5]},{t:'Buscar a las más esquivas',s:'Poco movimiento y mucha paciencia: las comunes pasan de largo.',c:'−1 energía',en:-1,ef:.7,ari:3.5}];if(G.k<=8&&(G.permM||1)<1.5&&G.r()<.6)o.push({t:'Estudiar el terreno y sus aves',s:'Hoy salís a medias, pero aprendés para el resto del año.',c:'−1 energía · hoy rendís menos',en:-1,ef:.55,perm:1.14});if(G.r()<.5)o.push({t:'Apostar por una rara',s:'Esperás una sola especie durante horas.',c:'−1 energía',en:-1,ef:.55,rara:.5});
+ for(let i=o.length-1;i>0;i--){const j=Math.floor(G.r()*(i+1));[o[i],o[j]]=[o[j],o[i]]}return Object.assign({},ev,{o})}
 function evento(){clearTimeout(G.tm);
  const ok=(e)=>(!e.z||e.z.includes(G.zona))&&(!e.x||G.P.exp);
  let pool=G.evs.filter(j=>ok(EV[j]));if(!pool.length){G.evs=EV.map((_,j)=>j);pool=G.evs.filter(j=>ok(EV[j]))}
- const j=pool[Math.floor(G.r()*pool.length)];G.evs.splice(G.evs.indexOf(j),1);G.ev=EV[j];
+ const j=pool[Math.floor(G.r()*pool.length)];G.evs.splice(G.evs.indexOf(j),1);G.ev=G.P.exp?expertoEv(EV[j]):EV[j];
  $(cab()+escena(G.zona,G.ev.w,nota(G.mes))+`<div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${G.ev.q}</h2></div>
- ${tip(TIPS[3])}<div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span>${chips(o)}<small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
+ ${tip(TIPS[3])}<div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" style="--r:${k%2?.5:-.5}deg" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span>${chips(o)}<small>${G.P.pistas||/energía|nafta/.test(o.c)?o.c:''}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
 function elegirEv(k){resolver(G.ev.o[k])}
-function resolver(o){if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1),msg='';
+function resolver(o){if(o.perm){G.permM=(G.permM||1)*o.perm;pop('Aprendiste del lugar: rendís más el resto del año')}if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1)*(G.permM||1),msg='';
  if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
  if(o.az){const mal=G.r()<o.az[0];ef=mal?o.az[1]:o.az[2];msg=mal?o.az[3]:o.az[4]}
- if(G.P.amp!==1)ef=Math.pow(ef,G.P.amp);if(G.en===0){ef*=.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
+ if(G.P.amp)ef=Math.pow(ef,ef<1?G.P.amp[0]:G.P.amp[1]);if(G.en===0){ef*=G.P.exp?.55:.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
  const zi=ZK.indexOf(G.zona),nuevas=[];let rep=0;
  for(let i=0;i<N;i++){const x=SP[i];if(x[4]<G.P.fmin)continue;let e=ef;if(o.ari&&x[4]<2)e*=o.ari;if(G.ari>1&&x[4]<2)e*=G.ari;if(o.fam&&o.fam[0].includes(x[3]))e*=o.fam[1];
   const p=1-Math.pow(1-Math.min(.8,prob(i,zi,G.mes)*MK(G.lugar)),e);if(G.r()<p){if(G.vistas.has(x[0]))rep++;else{G.vistas.add(x[0]);nuevas.push(i)}}}
