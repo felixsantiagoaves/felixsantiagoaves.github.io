@@ -201,11 +201,7 @@ function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
  if(o.az){const mal=G.r()<o.az[0];G.mod*=mal?o.az[1]:o.az[2];if(mal){G.nafta=Math.max(0,G.nafta+(o.naMal||0));t=o.az[3];bad=true}else t=o.az[4]}
  if(o.na<0||o.en<0)bad=true;
  pop(t,bad);G.ev={w:'day',o:[]};resolver({})}
-function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
- $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}${ruta(G.lugar.c===0)}<button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
- clearTimeout(G.tm);G.tm=setTimeout(viaje2,2900)}
-function ruta(a){if(a){let h='';for(let k=0;k<14;k++){const y=k%2?36:22,x=20+k*21.5;h+=`<g transform="translate(${x} ${y})"><g class="hu" style="animation-delay:${(k*.15).toFixed(2)}s"><ellipse cx="3.5" cy="0" rx="5" ry="3.3"/><ellipse cx="-4.5" cy="0" rx="3" ry="2.4"/></g></g>`}return `<div class="ruta"><svg viewBox="0 0 320 56" class="rs">${h}</svg></div>`}
- return `<div class="ruta"><svg viewBox="0 0 320 56" class="rs"><defs><mask id="mk"><path class="mk" pathLength="1" d="M14 42 C60 8 96 52 152 28 S248 8 290 30"/></mask></defs><path class="tr" mask="url(#mk)" d="M14 42 C60 8 96 52 152 28 S248 8 290 30"/><g class="pin"><path d="M290 30 c-7-9-8-12-8-16 a8 8 0 0 1 16 0 c0 4-1 7-8 16z" /><circle cx="290" cy="14" r="3" style="fill:#fff"/></g><circle class="o" cx="14" cy="42" r="4"/></svg></div>`}
+function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;viaje2()}
 function gscore(fi,zi){let s=0;for(let i=0;i<N;i++){const x=SP[i];if(x[3]===fi&&!G.vistas.has(x[0]))s+=prob(i,zi,G.mes)*MK(G.lugar)}return s}
 function expertoEv(ev){const zi=ZK.indexOf(G.zona),sc=FAMS.map((n,fi)=>[fi,gscore(fi,zi),SP.filter(x=>x[3]===fi).length]).filter(a=>a[2]>=3).sort((a,b)=>b[1]-a[1]);
  const top=sc.slice(0,3),mal=sc.slice(-8),buena=G.r()<.6,pk=buena?top[Math.floor(G.r()*top.length)]:mal[Math.floor(G.r()*mal.length)];
