@@ -22,11 +22,13 @@ PAGINAS = [
   'Mis mejores fotos de aves de Córdoba y Argentina, con la especie, la fecha y el lugar de cada encuentro.'),
  ('datos', 'estadisticas', 'datos', 'Estadísticas de mi lista de aves · Félix Santiago Aves',
   'Estadísticas de mi lista de aves: cuántas especies registré, cómo creció mi álbum mes a mes y cuáles me faltan por grupo.'),
+ ('juegos', 'juegos', 'juegos', 'Juegos de aves · Félix Santiago Aves',
+  'Juegos de aves de Félix Santiago: Mi año pajarero, un año de salidas por los hotspots de eBird de Córdoba contando especies.'),
  ('redes', 'contacto', 'redes', 'Contacto y licencias de fotos · Félix Santiago Aves',
   'Contacto de Félix Santiago Allendes: escribime para colaboraciones, notas, salidas de campo o para pedir permiso de uso de mis fotos de aves. Mis redes.'),
 ]
 NAV = [('sobre-mi', '/', 'Sobre mí'), ('album', '/album/', 'Álbum'), (None, '/aves/', 'Especies'), ('mapa', '/mapa/', 'Mapa'),
-       ('galeria', '/galeria/', 'Galería'), ('datos', '/estadisticas/', None), (None, '/juego/', 'Juego'), ('redes', '/contacto/', 'Contacto')]
+       ('galeria', '/galeria/', 'Galería'), ('datos', '/estadisticas/', None), ('juegos', '/juegos/', 'Juegos'), ('redes', '/contacto/', 'Contacto')]
 HOME_LD = rd('_build/jsonld_home.json').replace(B + '#redes', B + 'contacto/')
 LD_GRAPH = json.loads(HOME_LD)['@graph']
 COMUNES = rd('_build/comunes.html')
