@@ -95,10 +95,10 @@ function revelar(ids){if(window.SIMULA||!ids.length)return;let k=0;
  const sig=()=>{if(k>=ids.length)return;const i=ids[k++],mit=SP[i][4]<.05,ov=document.createElement('div');ov.className='ov'+(mit?' mit':'');document.body.appendChild(ov);
   ov.innerHTML=`<div class="rayos"></div><div class="ojo"></div><p class="susp">${mit?'Pará. No te muevas…':'Algo se mueve entre las ramas…'}</p>`;
   latido();const hb=setInterval(latido,mit?650:900);let hecho=false,tt;
-  const rev=()=>{if(hecho)return;hecho=true;clearInterval(hb);clearTimeout(tt);sonar(mit);
+  const rev=()=>{if(hecho)return;hecho=true;clearInterval(hb);clearTimeout(tt);sonar(mit);cantoReal(i);
    let ch='';for(let n=0;n<26;n++){const a=Math.random()*6.283,r=90+Math.random()*150;ch+=`<i class="chispa" style="--x:${Math.cos(a)*r}px;--y:${Math.sin(a)*r}px;--dl:${(.25+Math.random()*.3).toFixed(2)}s"></i>`}
-   ov.innerHTML=`<div class="rayos"></div>${ch}<p class="grito">${mit?'¡Increíble!':'¡Rara!'}</p>${figu(i,0)}<p class="dato2">${mit?'Casi nadie la ve: aparece':'Aparece'} en solo el <b>${pc(SP[i][4])}</b> de las listas de eBird en Córdoba.</p><button class="btn">${k<ids.length?'Seguir':'¡La anoto!'}</button>`;
-   ov.querySelector('button').onclick=()=>{ov.remove();sig()}};
+   ov.innerHTML=`<div class="rayos"></div>${ch}<p class="grito">${mit?'¡Increíble!':'¡Rara!'}</p>${figu(i,0)}<p class="dato2">${mit?'Casi nadie la ve: aparece':'Aparece'} en solo el <b>${pc(SP[i][4])}</b> de las listas de eBird en Córdoba.</p>${cantoCred(i)}<button class="btn">${k<ids.length?'Seguir':'¡La anoto!'}</button>`;
+   ov.querySelector('.btn:last-of-type').onclick=()=>{cantoStop();ov.remove();sig()}};
   tt=setTimeout(rev,mit?2300:1400);ov.onclick=()=>{if(!hecho)rev()}};
  sig()}
 let G;
@@ -111,10 +111,10 @@ let NOMBRE='';try{NOMBRE=localStorage.getItem('pajarero_nombre')||''}catch(e){}
 const TIPS=['Los lugares lejanos gastan nafta, pero suelen rendir más especies. Los cercanos son gratis y se pueden repetir.','Fijate en la energía: las decisiones de esfuerzo la gastan, y con 0 rendís menos.','Algunas aves aparecen solo en ciertas épocas. En verano llegan golondrinas, vencejos y playeros del norte.','Las etiquetas de cada decisión te dicen si suben las aves en general o las raras.','Una rara aparece muy pocas veces. Cuando sale, es una figurita especial.','Un lugar lejano que ya visitaste no se repite en el año.'];
 const tip=t=>(G&&G.P&&G.P.tip)?`<p class="tip"><b>Consejo</b> ${t}</p>`:'';
 function nuevo(seed,modo){modo=modo||'normal';const P=PERF[modo];G={modo,P,k:0,sus:new Set(),ari:1,mis:new Set(),mod:1,seed,r:rng(hash(seed)),mes:P.cal[0],nafta:P.nafta,en:P.en,vistas:new Set(),log:[],evs:[],zona:null,lugar:null,vis:new Set(),ev:null};pintarMes()}
-const $=(h)=>{document.getElementById('app').innerHTML=h;window.scrollTo(0,0)};
+const $=(h)=>{document.getElementById('app').innerHTML=h;window.scrollTo(0,0);try{const e=document.querySelector('.esc'),m=e&&e.className.match(/w-(\w+)/);if(MU.on)ambiente(m?m[1]:'day')}catch(x){}};
 const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';G.cal=G.P.cal;G.cal.forEach((m,i)=>{c+=`<i class="${i<G.k?'h':i===G.k?'a':verano(m)?'v':''}"></i>`});
-return `<div class="top"><button class="snd" onclick="reiniciar(this)">Reiniciar</button><button class="snd" onclick="SND=!SND;this.textContent=SND?'Sonido: sí':'Sonido: no'">Sonido: ${SND?'sí':'no'}</button></div><div class="camino" style="grid-template-columns:repeat(${G.cal.length},1fr)" aria-label="Salida ${G.k+1} de ${G.cal.length}">${c}</div>
+return `<div class="top"><button class="snd" onclick="reiniciar(this)">Reiniciar</button><button class="snd" onclick="sndToggle(this)">Sonido: ${SND?'sí':'no'}</button></div><div class="camino" style="grid-template-columns:repeat(${G.cal.length},1fr)" aria-label="Salida ${G.k+1} de ${G.cal.length}">${c}</div>
 <div class="barra"><div class="dato"><span class="lab">Especies</span><b>${G.vistas.size}</b></div><div class="dato"><span class="lab">Nafta</span><b>${G.nafta}</b></div><div class="dato"><span class="lab">Energía</span><span class="pts" aria-label="${G.en} de 4">${pts(G.en,4)}</span></div></div>`}
 function potencial(l){const zi=ZK.indexOf(l.z),m=MK(l);let s=0;for(let i=0;i<N;i++)if(!G.vistas.has(SP[i][0])&&SP[i][4]>=G.P.fmin)s+=Math.min(.8,prob(i,zi,G.mes)*m);return s}
 function tier(p){return p<12?'pocas novedades':p<18?'algunas novedades':p<24?'varias novedades':'muchas novedades'}
@@ -149,7 +149,7 @@ const SU=[
 ];
 function suerte(){const m=(()=>{let ps=SU.filter(s=>!s.x||G.P.exp),p=ps.filter(s=>!G.sus.has(s.id));if(!p.length){G.sus.clear();p=ps}const s=p[Math.floor(G.r()*p.length)];G.sus.add(s.id);return s})();G.su=m;
  $(cab()+`<div class="vig">${VIG[m.vig||m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><p class="nota">${m.msg}</p><span class="chips"><i class="up">${m.tag}</i></span><button class="btn" onclick="aplicarSu()">¡Qué suerte!</button>`)}
-function aplicarSu(){const s=G.su;if(s.mod)G.mod*=s.mod;if(s.ari)G.ari=s.ari;if(s.na)G.nafta+=s.na;pop('¡Suerte! '+s.tag);G.ev={w:'day',o:[]};resolver(s.rara?{rara:s.rara}:{})}
+function aplicarSu(){const s=G.su;if(s.mod)G.mod*=s.mod;if(s.ari)G.ari=s.ari;if(s.na)G.nafta+=s.na;pop('¡Suerte! '+s.tag,false,'suerte');G.ev={w:'day',o:[]};resolver(s.rara?{rara:s.rara}:{})}
 
 const MI=[
 {id:'bino',q:'Llegás al lugar, metés la mano en la mochila… y no están los binoculares. Quedaron sobre la mesa de casa.',o:[{t:'Volver a buscarlos',s:'Perdés tiempo y nafta, pero salís completo.',c:'−1 nafta · −1 energía',na:-1,en:-1},{t:'Seguir sin binoculares',s:'Solo vas a ver lo que tengas cerca.',c:'Rendís menos este mes',mod:.55}]},
@@ -187,7 +187,7 @@ EV.push(
 {x:1,q:'Se levanta un viento fresco al mediodía y baja la actividad.',o:[{t:'Hacer una pausa y almorzar',s:'Recuperás fuerzas.',c:'+1 energía',en:1,ef:.8},{t:'Seguir caminando sin parar',s:'Quizás las pocas que se mueven.',c:'−1 energía',en:-1,ef:1.1,ari:1.3}]},
 {x:1,q:'Aparece la chance de pajarear de noche con linterna.',o:[{t:'Salir de noche',s:'Lechuzas y atajacaminos.',c:'−2 energía',en:-2,ef:1.1,fam:[f('Lechuzas','Atajacaminos','Urutaúes'),4]},{t:'Dormir temprano',s:'Mañana será otro día.',c:'+1 energía',en:1,ef:1}]});
 EV.forEach(e=>{if(!e.w)e.w='day'});
-function pop(t,bad){if(window.SIMULA||!t)return;const d=document.createElement('div');d.className='pop'+(bad?' mal':'');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
+function pop(t,bad,s){if(window.SIMULA||!t)return;sfx(s||(bad?'mal':'bien'));const d=document.createElement('div');d.className='pop'+(bad?' mal':'');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
 function deltas(o){const a=[];if(o.na)a.push((o.na>0?'+':'−')+Math.abs(o.na)+' nafta');if(o.en)a.push((o.en>0?'+':'−')+Math.abs(o.en)+' energía');return a.join(' · ')}
 function viaje2(){clearTimeout(G.tm);
  const rr=G.r();G.kind='ev';if(G.k>0&&rr>=G.P.mi&&rr<G.P.mi+G.P.su){G.kind='su';return suerte()}
@@ -224,7 +224,7 @@ function resolver(o){if(o.perm){G.permM=(G.permM||1)*o.perm;pop('Aprendiste del 
   const p=1-Math.pow(1-Math.min(.8,prob(i,zi,G.mes)*MK(G.lugar)),e);if(G.r()<p){if(G.vistas.has(x[0]))rep++;else{G.vistas.add(x[0]);nuevas.push(i)}}}
  if(o.rara!=null){if(G.r()<o.rara){const cand=SP.map((x,i)=>i).filter(i=>!G.vistas.has(SP[i][0])&&SP[i][4]<Math.max(1.5,G.P.fmin*3)&&SP[i][4]>=Math.max(.02,G.P.fmin)),wt=i=>Math.sqrt(SP[i][4]);const tot=cand.reduce((a,i)=>a+wt(i),0);let u=G.r()*tot,pick=null;for(const i of cand){u-=wt(i);if(u<=0){pick=i;break}}if(pick!=null){G.vistas.add(SP[pick][0]);nuevas.unshift(pick);msg='Estaba. Dos horas de ruta y ahí la tenías: '+SP[pick][1]+'.'}}else msg='Llegaste y ya no estaba. Así es esto.'}
  if(G.mod<1)msg+=(msg?' ':'')+'Saliste en desventaja este mes.';
- nuevas.sort((a,b)=>SP[a][4]-SP[b][4]);
+ nuevas.sort((a,b)=>SP[a][4]-SP[b][4]);if(!window.SIMULA)nuevas.slice(0,5).forEach((_,k)=>setTimeout(()=>sfx('ave'),350+k*200));
  G.log.push({m:G.mes,z:G.lugar.n,n:nuevas.length,ids:nuevas});
  const fin=G.k===G.P.cal.length-1;
  $(cab()+escena(G.zona,G.ev.w,'')+`<div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${nuevas.length?'+'+nuevas.length+' especie'+(nuevas.length>1?'s':'')+' nueva'+(nuevas.length>1?'s':''):'Nada nuevo esta vez'}</h2><p class="sub">${rep} repetidas. Llevás ${G.vistas.size} en el año.</p></div>
@@ -241,22 +241,21 @@ function final(){const n=G.vistas.size,top=[...G.vistas].map(id=>IX[id]).sort((a
  const txt=`${NOMBRE?'El año pajarero de '+NOMBRE:'Mi año pajarero'} (${G.P.n})\n${n} especies de Córdoba ${G.P.fin} · ${titulo(n)}\nMejor mes: ${MESES[mejor.m]} en ${mejor.z} (+${mejor.n})\nFigurita más difícil: ${SP[top[0]][1]}\n¿Me ganás? ${SH.url}`;
  $(`<div><p class="lab">Fin del año</p><div class="grande">${n}<small> especies</small></div><h2>de Córdoba ${G.P.fin}</h2></div>
  <span class="sello">${titulo(n)}</span>
- <div class="comp"><p class="lab">Compartí tu año</p><p class="sub" style="margin:2px 0 10px">¿Dónde lo vas a publicar?</p>
- <div class="seg">${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')"><b>${FMT[k].n}</b><span>${FMT[k].s}</span></button>`).join('')}</div>
- <div class="acc"><button class="btn md" id="bsh" onclick="compartir()" disabled>Preparando imagen…</button><button class="btn sec md" id="bdl" onclick="descargar()" style="display:none">Descargar</button></div>
+ <div class="comp"><button class="btn big" id="bsh" onclick="compartir()" disabled>Preparando imagen…</button>
  <canvas id="cv" class="cv" aria-label="Imagen para compartir tu resultado"></canvas>
+ <div class="fmt"><span>Formato</span>${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')">${FMT[k].n}</button>`).join('')}<button class="lnk" id="bdl" onclick="descargar()" style="display:none">Descargar</button></div>
  </div>
  <p class="sub">Te sobraron ${G.nafta} de nafta.</p>
  <div><p class="lab" style="margin-bottom:8px">Tus figuritas más difíciles</p><div class="figus">${top.map((i,k)=>figu(i,k)).join('')}</div></div>
  <div><p class="lab" style="margin-bottom:6px">Tu camino</p><div class="recap">${G.log.map(l=>`<div><span>${MESES[l.m]} · ${l.z}</span><b>+${l.n}</b></div>`).join('')}</div></div>
  <div class="lnks"><button class="lnk" onclick="nuevo(String(Math.random()),G.modo)">Jugar otra vez</button><button class="lnk" onclick="perfil()">Cambiar de perfil</button><button class="lnk" id="cp" onclick="copiar()">Copiar texto</button></div><textarea id="txt" rows="4" readonly style="display:none">${txt}</textarea>
- <p class="pie"><a href="/">Volver a la web</a> · Frecuencias: eBird, 85.637 listas completas de Córdoba. El porcentaje de cada figurita es en cuántas listas aparece.</p>`);SH.d={n,top,titulo:titulo(n),nombre:NOMBRE,perfil:G.P.n,fin:G.P.fin,salidas:G.P.cal.length};SH.txt=txt;elegirFmt('historia')}
+ <p class="pie"><a href="/">Volver a la web</a> · Frecuencias: eBird, 85.637 listas completas de Córdoba. El porcentaje de cada figurita es en cuántas listas aparece.</p>`);SH.d={n,top,titulo:titulo(n),nombre:NOMBRE,perfil:G.P.n,fin:G.P.fin,salidas:G.P.cal.length};SH.txt=txt;elegirFmt('historia');sonar(1)}
 function copiar(){const t=document.getElementById('txt'),b=document.getElementById('cp');const ok=()=>{b.textContent='Copiado'};
  (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).then(ok).catch(()=>{t.style.display='block';t.focus();t.select();b.textContent='Seleccionado: copialo'})}
 function perfil(){document.getElementById('app').dataset.s='';$(`<div><p class="lab">Antes de salir</p><h2>¿Quién sale a pajarear?</h2></div>
  <input id="nom" class="nom" type="text" maxlength="16" placeholder="Tu nombre (opcional)" value="${NOMBRE.replace(/"/g,'')}" autocomplete="given-name">
  <div><p class="lab" style="margin-bottom:8px">Elegí tu perfil</p><div class="ops">${Object.keys(PERF).map((k,i)=>`<button class="op" style="--r:${[-.6,.5,-.3][i]}deg" onclick="empezar('${k}')"><b>${PERF[k].n}</b><span>${PERF[k].d}</span><small>${PERF[k].t}</small></button>`).join('')}</div></div>`)}
-function empezar(m){const v=(document.getElementById('nom')||{}).value||'';NOMBRE=v.trim().slice(0,16);try{localStorage.setItem('pajarero_nombre',NOMBRE)}catch(e){}nuevo(String(Math.random()),m)}
+function empezar(m){const v=(document.getElementById('nom')||{}).value||'';NOMBRE=v.trim().slice(0,16);try{localStorage.setItem('pajarero_nombre',NOMBRE)}catch(e){}if(SND)musica(true);cargarCantos();nuevo(String(Math.random()),m)}
 function slides(){const ks=['pastizal','humedal','sierras','bosque','arbustal','ocaso'];return `<div class="slides" id="sls">${ks.map((k,i)=>`<div class="sl${i?'':' on'}" style="background-image:url(data:image/svg+xml;base64,${IMG[k]})"></div>`).join('')}</div>`}
 function filaRand(){const P=[[],[],[]];SP.forEach((x,i)=>P[x[4]<.5?0:x[4]<5?1:2].push(i));const pk=(L,n)=>{const o=[];while(o.length<n){const i=L[Math.floor(Math.random()*L.length)];if(!o.includes(i))o.push(i)}return o};const f=[...pk(P[0],2),...pk(P[1],4),...pk(P[2],6)];for(let i=f.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[f[i],f[j]]=[f[j],f[i]]}const h=f.map(i=>figu(i,0)).join('');return h+h}
 function pasar(){const r=document.getElementById('sls');if(!r)return;if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let i=0;const t=setInterval(()=>{if(!document.body.contains(r)){clearInterval(t);return}const L=r.children,c=L[i],n=L[(i+1)%L.length];n.style.transition='none';n.className='sl';void n.offsetWidth;n.style.transition='';n.className='sl on';c.className='sl out';i=(i+1)%L.length},3200)}

@@ -46,10 +46,10 @@ async function dibujar(cv,fmt,d){const F=FMT[fmt],W=F.w,H=F.h,x=cv.getContext('2
   const cx=mid-gw/2+cw/2+c*(cw+L.gap),cy=L.gy+ch/2+r*(ch+L.gap*.8);await figuCanvas(x,top[k],cx,cy,cw,((SP[top[k]][0]*37)%7-3)*.7)}
  x.fillStyle=C.oliva;x.font='900 '+(40*L.fs)+'px '+FL;x.fillText('¿ME GANÁS?',mid,L.foot);
  x.fillStyle=C.tierra;x.font='700 '+(32*L.fs)+'px '+FL;x.fillText(SH.url,mid,L.foot+46*L.fs)}
-async function elegirFmt(f,b){SH.fmt=f;SH.file=null;document.querySelectorAll('.seg button').forEach(t=>t.classList.toggle('on',t.dataset.f===f));
+async function elegirFmt(f,b){SH.fmt=f;SH.file=null;document.querySelectorAll('.fmt button[data-f]').forEach(t=>t.classList.toggle('on',t.dataset.f===f));
  const cv=document.getElementById('cv'),bs=document.getElementById('bsh');if(bs)bs.disabled=true;
  await dibujar(cv,f,SH.d);
- cv.toBlob(bl=>{if(!bl)return;SH.file=new File([bl],'mi-anio-pajarero-'+f+'.png',{type:'image/png'});if(bs){bs.disabled=false;const cs=!!(navigator.canShare&&navigator.canShare({files:[SH.file]}));bs.textContent=cs?'Compartir':'Descargar imagen';const bd=document.getElementById('bdl');if(bd)bd.style.display=cs?'':'none'}},'image/png')}
+ cv.toBlob(bl=>{if(!bl)return;SH.file=new File([bl],'mi-anio-pajarero-'+f+'.png',{type:'image/png'});if(bs){bs.disabled=false;const cs=!!(navigator.canShare&&navigator.canShare({files:[SH.file]}));bs.textContent=cs?'Compartir mi año':'Descargar imagen';const bd=document.getElementById('bdl');if(bd)bd.style.display=cs?'':'none'}},'image/png')}
 async function compartir(){const f=SH.file;if(!f)return;
  if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:'Mi año pajarero',text:SH.txt});return}catch(e){if(e&&e.name==='AbortError')return}}
  descargar()}
