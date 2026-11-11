@@ -117,6 +117,18 @@ const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';G.cal=G.P.cal;G.cal.forEach((m,i)=>{c+=`<i class="${i<G.k?'h':i===G.k?'a':verano(m)?'v':''}"></i>`});
 return `<div class="top"><button class="snd" onclick="reiniciar(this)">Reiniciar</button><button class="snd" onclick="sndToggle(this)">Sonido: ${SND?'sí':'no'}</button></div><div class="camino" style="grid-template-columns:repeat(${G.cal.length},1fr)" aria-label="Salida ${G.k+1} de ${G.cal.length}">${c}</div>
 <div class="barra"><button class="dato dbtn" onclick="libreta()" aria-label="Ver mis especies"><span class="lab">Especies ▾</span><b>${G.vistas.size}</b></button><div class="dato"><span class="lab">Nafta</span><b>${G.nafta}</b></div><div class="dato"><span class="lab">Energía</span><span class="pts" aria-label="${G.en} de 4">${pts(G.en,4)}</span></div></div>`}
+const API='';/* poner 'https://api.felixsantiago.com.ar' cuando el Worker esté activo */
+function hist(){try{return JSON.parse(localStorage.getItem('ap_hist')||'[]')}catch(e){return[]}}
+function rkHTML(l,yo){return l.length?`<ol class="rk">${l.map((x,i)=>`<li class="${yo&&x.nombre===yo.nombre&&x.e===yo.e?'yo':''}"><span>${i+1}</span><b>${x.nombre.replace(/</g,'')}</b><i>${x.e}</i></li>`).join('')}</ol>`:'<p class="pie">Todavía no hay partidas en este perfil.</p>'}
+function guardarPartida(n){const reg={n:NOMBRE||'Anónimo',p:G.modo,e:n,t:titulo(n),d:Date.now()};try{const h=hist();h.unshift(reg);localStorage.setItem('ap_hist',JSON.stringify(h.slice(0,60)))}catch(e){}
+ const box=document.getElementById('rk');if(!box||!API)return;box.innerHTML='<p class="pie">Guardando en el ranking…</p>';
+ fetch(API+'/score',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:NOMBRE,perfil:G.modo,especies:n})}).then(r=>r.json()).then(d=>{if(!d.ok)throw 0;box.innerHTML=`<p class="lab" style="margin-bottom:6px">Ranking ${G.P.n} · quedaste #${d.puesto}</p>${rkHTML(d.top,{nombre:d.nombre,e:n})}<button class="lnk" onclick="verRanking('${G.modo}')">Ver ranking completo</button>`}).catch(()=>{box.innerHTML=''})}
+function modal(h){const o=document.createElement('div');o.className='lib';o.onclick=e=>{if(e.target===o||e.target.closest('.libx'))o.remove()};o.innerHTML=`<div class="libc">${h}</div>`;document.body.appendChild(o);return o}
+function verRanking(p){p=p||G.modo||'normal';const o=modal('<div class="libh"><b>Ranking</b><button class="libx">Cerrar</button></div><div class="tabs">'+['guiado','normal','experto'].map(k=>`<button data-k="${k}" class="${k===p?'on':''}">${PERF[k].n}</button>`).join('')+'</div><div id="rkb"><p class="pie">Cargando…</p></div>');
+ const cargar=k=>{o.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.k===k));const b=o.querySelector('#rkb');b.innerHTML='<p class="pie">Cargando…</p>';fetch(API+'/top?perfil='+k).then(r=>r.json()).then(d=>{b.innerHTML=rkHTML(d.top)}).catch(()=>{b.innerHTML='<p class="pie">No se pudo cargar el ranking. Probá de nuevo en un rato.</p>'})};
+ o.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>cargar(b.dataset.k));cargar(p)}
+function misPartidas(){const h=hist(),mej={};h.forEach(x=>{if(!mej[x.p]||x.e>mej[x.p])mej[x.p]=x.e});
+ modal('<div class="libh"><b>Mis partidas</b><button class="libx">Cerrar</button></div>'+(h.length?`<p class="pie" style="text-align:left">Mejor: ${Object.keys(mej).map(k=>`${PERF[k]?PERF[k].n:k} ${mej[k]}`).join(' · ')}</p><ol class="rk h">${h.map(x=>`<li><span>${new Date(x.d).toLocaleDateString('es-AR',{day:'numeric',month:'short'})}</span><b>${(x.n||'').replace(/</g,'')} · ${PERF[x.p]?PERF[x.p].n:x.p}<small> ${x.t||''}</small></b><i>${x.e}</i></li>`).join('')}</ol>`:'<p class="pie">Todavía no terminaste ninguna partida en este dispositivo.</p>'))}
 function libreta(){const g={},tot={};for(let i=0;i<N;i++){const x=SP[i];if(x[4]<G.P.fmin)continue;tot[x[3]]=(tot[x[3]]||0)+1;if(G.vistas.has(x[0]))(g[x[3]]=g[x[3]]||[]).push(x)}
  const vf=Object.keys(g).sort((a,b)=>g[b].length-g[a].length),sin=Object.keys(tot).filter(f=>!g[f]).sort((a,b)=>tot[b]-tot[a]);
  const o=document.createElement('div');o.className='lib';o.onclick=e=>{if(e.target===o||e.target.closest('.libx'))o.remove()};
@@ -248,11 +260,12 @@ function final(){const n=G.vistas.size,top=[...G.vistas].map(id=>IX[id]).sort((a
  <canvas id="cv" class="cv" aria-label="Imagen para compartir tu resultado"></canvas>
  <div class="fmt"><span>Formato</span>${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')">${FMT[k].n}</button>`).join('')}<button class="lnk" id="bdl" onclick="descargar()" style="display:none">Descargar</button></div>
  </div>
+ <div id="rk"></div>
  <p class="sub">Te sobraron ${G.nafta} de nafta.</p>
  <div><p class="lab" style="margin-bottom:8px">Tus figuritas más difíciles</p><div class="figus">${top.map((i,k)=>figu(i,k)).join('')}</div></div>
  <div><p class="lab" style="margin-bottom:6px">Tu camino</p><div class="recap">${G.log.map(l=>`<div><span>${MESES[l.m]} · ${l.z}</span><b>+${l.n}</b></div>`).join('')}</div></div>
  <div class="lnks"><button class="lnk" onclick="nuevo(String(Math.random()),G.modo)">Jugar otra vez</button><button class="lnk" onclick="perfil()">Cambiar de perfil</button><button class="lnk" id="cp" onclick="copiar()">Copiar texto</button></div><textarea id="txt" rows="4" readonly style="display:none">${txt}</textarea>
- <p class="pie"><a href="/">Volver a la web</a> · Frecuencias: eBird, 85.637 listas completas de Córdoba. El porcentaje de cada figurita es en cuántas listas aparece.</p>`);SH.d={n,top,titulo:titulo(n),nombre:NOMBRE,perfil:G.P.n,fin:G.P.fin,salidas:G.P.cal.length};SH.txt=txt;elegirFmt('historia');sonar(1)}
+ <p class="pie"><a href="/">Volver a la web</a> · Frecuencias: eBird, 85.637 listas completas de Córdoba. El porcentaje de cada figurita es en cuántas listas aparece.</p>`);SH.d={n,top,titulo:titulo(n),nombre:NOMBRE,perfil:G.P.n,fin:G.P.fin,salidas:G.P.cal.length};SH.txt=txt;elegirFmt('historia');sonar(1);guardarPartida(n)}
 function copiar(){const t=document.getElementById('txt'),b=document.getElementById('cp');const ok=()=>{b.textContent='Copiado'};
  (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).then(ok).catch(()=>{t.style.display='block';t.focus();t.select();b.textContent='Seleccionado: copialo'})}
 function perfil(){document.getElementById('app').dataset.s='';$(`<div><p class="lab">Antes de salir</p><h2>¿Quién sale a pajarear?</h2></div>
@@ -268,6 +281,6 @@ function inicio(){
  <p>Elegís a dónde salir y resolvés lo que te cruza el camino. Cada lugar tiene sus aves, y muchas cambian con las estaciones. Lo que encontrás se sortea con la frecuencia real de eBird: ningún año se repite.</p>
  <div class="marq"><div class="mt">${filaRand()}</div></div>
  <button class="btn" onclick="perfil()">Empezar</button>
- <button class="lnk" onclick="compJuego(this)" style="align-self:flex-start">Compartir el juego</button>`);pasar()}
+ <div class="lnks" style="justify-content:flex-start">${API?'<button class="lnk" onclick="verRanking()">Ranking</button>':''}<button class="lnk" onclick="misPartidas()">Mis partidas</button><button class="lnk" onclick="compJuego(this)">Compartir el juego</button></div>`);pasar()}
 function compJuego(b){const u='https://felixsantiago.com.ar/juego/',t='Mi año pajarero: ¿cuántas aves de Córdoba sumás en un año? Jugalo acá:';if(navigator.share){navigator.share({title:'Mi año pajarero',text:t,url:u}).catch(()=>{})}else{try{navigator.clipboard.writeText(t+' '+u).then(()=>{b.textContent='¡Link copiado!'})}catch(e){prompt('Copiá el link',u)}}}
 inicio();

@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS scores (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre TEXT NOT NULL,
+  perfil TEXT NOT NULL,
+  especies INTEGER NOT NULL,
+  ip TEXT NOT NULL,
+  ts INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_perfil ON scores (perfil, especies DESC);
+CREATE INDEX IF NOT EXISTS idx_ip ON scores (ip, ts);
