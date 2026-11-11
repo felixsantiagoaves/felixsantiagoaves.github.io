@@ -130,6 +130,7 @@ function mapaProv(pv,dep,pre){
   const ps=Object.keys(M.d).map(c=>{const v=pv[c]; const o=v!=null?(.18+.82*Math.sqrt(v/mx)).toFixed(2):0; return `<path d="${M.d[c]}" class="pm-p"${c==='C'&&!dep?' data-c':''} ${v!=null?`style="fill-opacity:${o}"`:''}><title>${escHtml(M.n[c]||c)}${v!=null?': '+fmtPct(v)+' %':': sin registros'}</title></path>`;}).join('');
   return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm${dep?' pm-d':''}" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>${top?`${pre||'Más probable en: '}${top}.`:'Registros muy escasos: casi no hay avistamientos en eBird, sin una zona clara.'}</p>${top?'<div class="pm-leg"><i></i><span>más probable</span></div>':''}</div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
 }
+const MENOS_MOV = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 function escMasc(id){ const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? Math.min(1, 0.38 + 0.62 * (L / 41)).toFixed(2) : '1'; }
 function cmMasc(id){ const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? String(L).replace('.', ',') + ' cm' : ''; }
 function habCls(id){ return (typeof MASC_HAB !== 'undefined' && MASC_HAB[id]) ? ' hab-' + MASC_HAB[id] : ''; }
@@ -597,6 +598,25 @@ function recientes(n, soloConFoto){
     .map(([id]) => AVES.find(a => a.id === parseInt(id)))
     .filter(Boolean);
 }
+// Cantos: cantos.js (116 KB) se baja recién al abrir la primera ficha
+let _cantoAve=null,_cantosPed=false;
+function pintarCanto(ave){
+  _cantoAve=ave;
+  if(typeof CANTOS==='undefined'){
+    const el=document.getElementById('m-canto'); if(el){ el.style.display='none'; el.innerHTML=''; }
+    if(!_cantosPed){ _cantosPed=true; const sc=document.createElement('script'); const me=document.querySelector('script[src*="/assets/site.js"]'); sc.src='/assets/cantos.js'+((me&&me.src.match(/\?v=\w+/))||[''])[0]; sc.onload=()=>{ if(_cantoAve) pintarCanto(_cantoAve); }; document.body.appendChild(sc); }
+    return;
+  }
+  const cantoEl=document.getElementById('m-canto'), ct=(typeof CANTOS!=='undefined')&&CANTOS[ave.nombre];
+  if(cantoEl){
+    if(ct){
+      cantoEl.dataset.xc=ct.xc;
+      const licU=ct.lic==='cc0'?'publicdomain/zero/1.0':'licenses/'+ct.lic, licT=ct.lic==='cc0'?'CC0':'CC '+ct.lic.split('/')[0].toUpperCase();
+      cantoEl.innerHTML=`<button class="canto-btn" onclick="cantoPlay(event)">🔊 Escuchar su ${ct.tipo.startsWith('grab')?'grabación':ct.tipo}</button><div class="canto-cr">${ct.pais?'Grabación de '+ct.pais:'Mejor grabación de Argentina'} · ${ct.autor} · ${ct.lugar?ct.lugar+' · ':''}<a href="https://xeno-canto.org/${ct.xc}" target="_blank" rel="noopener">XC${ct.xc}</a> · <a href="https://creativecommons.org/${licU}" target="_blank" rel="noopener">${licT}</a> · xeno-canto</div>`;
+      cantoEl.style.display='block';
+    } else { cantoEl.style.display='none'; cantoEl.innerHTML=''; }
+  }
+}
 function abrirDesdePortada(id, lista){
   mapaAvesOrdenadas = lista.slice();   // las flechas del modal recorren esta lista
   modalNavDir = 1;
@@ -784,15 +804,7 @@ function openM(id) {
 
   // Canto (xeno-canto, mejor grabación argentina; el audio carga recién al tocar)
   cantoStop();
-  const cantoEl=document.getElementById('m-canto'), ct=(typeof CANTOS!=='undefined')&&CANTOS[ave.nombre];
-  if(cantoEl){
-    if(ct){
-      cantoEl.dataset.xc=ct.xc;
-      const licU=ct.lic==='cc0'?'publicdomain/zero/1.0':'licenses/'+ct.lic, licT=ct.lic==='cc0'?'CC0':'CC '+ct.lic.split('/')[0].toUpperCase();
-      cantoEl.innerHTML=`<button class="canto-btn" onclick="cantoPlay(event)">🔊 Escuchar su ${ct.tipo.startsWith('grab')?'grabación':ct.tipo}</button><div class="canto-cr">${ct.pais?'Grabación de '+ct.pais:'Mejor grabación de Argentina'} · ${ct.autor} · ${ct.lugar?ct.lugar+' · ':''}<a href="https://xeno-canto.org/${ct.xc}" target="_blank" rel="noopener">XC${ct.xc}</a> · <a href="https://creativecommons.org/${licU}" target="_blank" rel="noopener">${licT}</a> · xeno-canto</div>`;
-      cantoEl.style.display='block';
-    } else { cantoEl.style.display='none'; cantoEl.innerHTML=''; }
-  }
+  pintarCanto(ave);
 
   // Foto
   const img=document.getElementById('m-img'), ph=document.getElementById('m-ph');
@@ -814,7 +826,7 @@ function openM(id) {
   if(sv){
     const sinFoto = !!(av && !av.foto);
     sv.style.display = sinFoto ? 'flex' : 'none';
-    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.className='m-sil'+habCls(id); sv.innerHTML='<img class="m-masc" style="--esc:'+escMasc(id)+'" src="/assets/mascotas/'+MASC[id]+'-animado.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto'+(cmMasc(id)?' · '+cmMasc(id):'')+'</span>'; setTimeout(() => mascReaccion('masc-hop'), 380); mascIdle(); }
+    if(sinFoto && typeof MASC !== 'undefined' && MASC[id]){ sv.className='m-sil'+habCls(id); sv.innerHTML='<img class="m-masc" style="--esc:'+escMasc(id)+'" src="/assets/mascotas/'+MASC[id]+'-'+(MENOS_MOV?'quieto':'animado')+'.svg?v='+MASC_V+'" alt="'+ave.comun+' (ilustración animada)"><span class="m-sil-tag">Vista, sin foto'+(cmMasc(id)?' · '+cmMasc(id):'')+'</span>'; setTimeout(() => mascReaccion('masc-hop'), 380); mascIdle(); }
     else if(sinFoto){ const k=SILUETAS[FAM_SILUETA[ave.familiaEsp]]?FAM_SILUETA[ave.familiaEsp]:'pajarito'; sv.innerHTML='<span class="sil-vivo sil-i sil-'+k+'" role="img" aria-label="silueta"></span><span class="m-sil-tag">Vista, sin foto</span>'; }
   }
   // Info avistamiento

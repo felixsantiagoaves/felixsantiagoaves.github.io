@@ -356,3 +356,14 @@ body{background:var(--fg-cr)}
 [data-theme=dark] .fig.no .fig-ci,[data-theme=dark] .fig.no .fig-co,[data-theme=dark] .fig.no .fig-fecha,[data-theme=dark] .fig-num{color:#b9c394!important}
 [data-theme=dark] .fig.no .fig-num{background:#38422d;color:#e8dccb!important}
 [data-theme=dark] .fgh .rec-circulo.rec-sin-foto:not(.rec-masc-c){background:#262d1c}
+
+/* ── Accesibilidad: foco de teclado, saltar al contenido, menos movimiento ── */
+:focus-visible{outline:3px solid var(--fg-ti);outline-offset:3px;border-radius:3px}
+[data-theme=dark] :focus-visible{outline-color:var(--fg-ar)}
+:focus:not(:focus-visible){outline:none}
+.saltar{position:fixed;left:12px;top:-80px;z-index:10000;background:var(--fg-v1);color:var(--fg-cr);font:900 .85rem 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:12px 18px;border-radius:4px;text-decoration:none;transition:top .15s}
+.saltar:focus{top:12px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}

@@ -32,7 +32,7 @@
   function mascota(){
     var im = document.querySelector('.fgh-dc'); if(!im) return;
     var actual = -1, ver = (typeof MASC_V !== 'undefined') ? '?v=' + MASC_V : '';
-    var otra = function(){ var i; do { i = Math.floor(Math.random() * MAS.length); } while(i === actual && MAS.length > 1); actual = i; return '/assets/mascotas/' + MAS[i] + '-animado.svg' + ver; };
+    var otra = function(){ var i; do { i = Math.floor(Math.random() * MAS.length); } while(i === actual && MAS.length > 1); actual = i; return '/assets/mascotas/' + MAS[i] + (window.matchMedia('(prefers-reduced-motion:reduce)').matches ? '-quieto.svg' : '-animado.svg') + ver; };
     var poner = function(){ im.style.opacity = 0; setTimeout(function(){ im.src = otra(); im.style.opacity = 1; }, 250); };
     im.src = otra();
     setInterval(function(){ if(!document.hidden) poner(); }, 9000);

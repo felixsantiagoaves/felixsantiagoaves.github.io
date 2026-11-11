@@ -187,6 +187,7 @@ for E in ESP:
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 <nav class="gnav"><div class="nav-i">
   <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"><span class="nav-wm"><b>Félix Santiago</b><small>Aves · Río Cuarto</small></span></a>
   <ul class="nav-links">
@@ -199,7 +200,7 @@ for E in ESP:
     <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
-<main class="wrap">
+<main class="wrap" id="contenido">
   <p class="crumbs"><a href="/">Inicio</a> › <a href="/aves/">Especies</a> › {esc(comun)}</p>
   <div class="hero">
     {hero_html}
@@ -273,6 +274,7 @@ ipage = f'''<!DOCTYPE html>
 <script type="application/ld+json">{json.dumps(ild, ensure_ascii=False)}</script>
 </head>
 <body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 <nav class="gnav"><div class="nav-i">
   <a class="nav-logo" href="/"><img src="/logo-nav.png" alt="Félix Santiago Aves" width="38" height="38"><span class="nav-wm"><b>Félix Santiago</b><small>Aves · Río Cuarto</small></span></a>
   <ul class="nav-links">
@@ -285,7 +287,7 @@ ipage = f'''<!DOCTYPE html>
     <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
-<main class="wrap">
+<main class="wrap" id="contenido">
   <p class="crumbs"><a href="/">Inicio</a> › Especies</p>
   <h1>Especies que fotografié</h1>
   <p class="intro">{len(ESP)} especies de aves que tengo bien fotografiadas, cada una con su ficha: mis fotos, el mapa de dónde la vi y datos de la especie. Se suman a medida que reúno más fotos de cada una.</p>

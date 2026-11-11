@@ -8,7 +8,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B = 'https://felixsantiago.com.ar/'
 esc = lambda t: html.escape(t, quote=True)
 rd = lambda p: open(os.path.join(R, p), encoding='utf-8').read()
-VER = hashlib.md5(b''.join(open(os.path.join(R, 'assets', f), 'rb').read() for f in ('site.css', 'figurita.css', 'site.js', 'figurita.js', 'datos.js', 'foco.js', 'pistas.js', 'cantos.js'))).hexdigest()[:8]
+VER = hashlib.md5(b''.join(open(os.path.join(R, 'assets', f), 'rb').read() for f in ('site.css', 'figurita.css', 'site.js', 'figurita.js', 'datos.js', 'foco.js', 'pistas.js', 'territorio.js', 'cantos.js'))).hexdigest()[:8]
 
 PAGINAS = [
  # id, carpeta, fragmento, título, descripción, ruta nav
@@ -57,6 +57,9 @@ def ld(pid, carpeta, titulo, desc, url):
         g += [dict(x, url=url) for x in LD_GRAPH if x['@type'] == 'ImageGallery']
     return json.dumps({'@context': 'https://schema.org', '@graph': g}, ensure_ascii=False)
 
+# territorio.js (140 KB) solo se carga de entrada donde se usa; en el resto, cuando la página ya quedó lista. cantos.js lo pide site.js al abrir una ficha.
+TER_SYNC = f'<script src="/assets/territorio.js?v={VER}"></script>'
+TER_LAZY = '<script>addEventListener("load",function(){(window.requestIdleCallback||setTimeout)(function(){var s=document.createElement("script");s.src="/assets/territorio.js?v=' + VER + '";document.body.appendChild(s)})})</script>'
 HOME_REDIR = '''<script>(function(){var h=location.hash.slice(1),m={album:'/album/',mapa:'/mapa/',galeria:'/galeria/',datos:'/estadisticas/',redes:'/contacto/'};if(m[h])location.replace(m[h]);else if(h.indexOf('ave-')===0)location.replace('/album/#'+h);})();</script>
 '''
 
@@ -99,12 +102,14 @@ for pid, carpeta, frag, titulo, desc in PAGINAS:
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{B}preview.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v={VER}">
 <link rel="stylesheet" href="/assets/figurita.css?v={VER}">
 {ICONOS}
 </head>
 <body>
+<a class="saltar" href="#page-{pid}">Saltar al contenido</a>
 <button class="tema-btn" id="tema-btn" onclick="toggleTema()" aria-label="Cambiar entre modo claro y modo oscuro" title="Modo oscuro">☾</button>
 {nav(pid)}
 
@@ -114,7 +119,7 @@ for pid, carpeta, frag, titulo, desc in PAGINAS:
 <script src="/assets/datos.js?v={VER}"></script>
 <script src="/assets/foco.js?v={VER}"></script>
 <script src="/assets/pistas.js?v={VER}"></script>
-<script src="/assets/cantos.js?v={VER}"></script>
+{TER_SYNC if pid in ('album', 'mapa', 'datos') else TER_LAZY}
 <script src="/assets/figurita.js?v={VER}"></script>
 <script src="/assets/site.js?v={VER}"></script>
 </body>
