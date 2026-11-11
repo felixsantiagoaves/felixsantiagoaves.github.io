@@ -367,3 +367,15 @@ body{background:var(--fg-cr)}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
+
+/* ── Efectos (baratos: una sola pasada, nada infinito) ── */
+/* Foto de borrosa a nítida al terminar de cargar */
+.stickers .fig-foto,.rec-circulo>img:not(.rec-masc){transition:opacity .45s ease,filter .45s ease}
+.stickers .fig-foto:not(.ok),.rec-circulo>img:not(.rec-masc):not(.ok){opacity:0;filter:blur(10px)}
+/* Brillo de figurita difícil (especies raras y las recién sumadas): pasa una vez al aparecer y al pasar el mouse */
+.stickers .fig.rara .fig-img{overflow:hidden}
+.stickers .fig.rara .fig-img::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.6) 44%,rgba(232,201,140,.45) 50%,rgba(255,255,255,.45) 56%,transparent 68%);background-size:260% 100%;background-position:130% 0;opacity:0;transition:background-position .95s ease,opacity .25s}
+.stickers .fig.rara.holo .fig-img::after,.stickers .fig.rara:hover .fig-img::after{background-position:-30% 0;opacity:1}
+/* La foto viaja de la ficha rápida a la página de la especie */
+#m-img{view-transition-name:ave-foto}
+@media (prefers-reduced-motion:reduce){.stickers .fig.rara .fig-img::after{display:none}#m-img{view-transition-name:none}}

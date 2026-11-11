@@ -105,3 +105,21 @@
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', albumFiltros); else albumFiltros();
 })();
+
+/* ── Efectos ── */
+(function(){
+  var menos = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  /* foto de borrosa a nítida: se marca .ok cuando la imagen terminó (o falló) */
+  var SEL = '.fig-foto,.rec-circulo>img';
+  var ok = function(e){ var t = e.target; if(t && t.tagName === 'IMG' && t.matches(SEL)) t.classList.add('ok'); };
+  document.addEventListener('load', ok, true); document.addEventListener('error', ok, true);
+  setInterval(function(){ var l = document.querySelectorAll('.fig-foto:not(.ok),.rec-circulo>img:not(.ok)'); for(var i = 0; i < l.length; i++) if(l[i].complete) l[i].classList.add('ok'); }, 2500);
+  if(menos) return;
+  /* brillo: una pasada cuando la figurita difícil entra en pantalla */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var t = e.target; io.unobserve(t); setTimeout(function(){ t.classList.add('holo'); setTimeout(function(){ t.classList.remove('holo'); }, 1300); }, 350); } }); }, {threshold: .6});
+    var mirar = function(){ var l = document.querySelectorAll('.fig.rara:not(.hz)'); for(var i = 0; i < l.length; i++){ l[i].classList.add('hz'); io.observe(l[i]); } };
+    var c = document.getElementById('album-container');
+    if(c){ new MutationObserver(mirar).observe(c, {childList: true}); mirar(); }
+  }
+})();

@@ -692,7 +692,7 @@ function renderAlbum() {
       ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
       : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" style="--esc:${escMasc(ave.id)}" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-quieto.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"><span class="fig-cm">${cmMasc(ave.id)}</span></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
-    return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
+    return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}${enc && av && av.foto && (nuevasIds.has(ave.id) || (probDe(ave.id) != null && probDe(ave.id) < 1)) ? ' rara' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
       <span class="fig-num">${String(numMap[ave.id]).padStart(3, '0')}</span>
       <div class="fig-img">${enc && nuevasIds.has(ave.id) ? '<span class="fig-nueva">Nueva</span>' : ''}<div class="fig-svg-wrap">${foto}</div></div>
       <div class="fig-info">
