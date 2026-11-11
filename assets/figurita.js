@@ -70,7 +70,7 @@
     li.innerHTML = '<a href="#" role="button" aria-haspopup="true" aria-expanded="false">Más</a>';
     ul.appendChild(li);
     var sh = document.createElement('div'); sh.className = 'fg-sheet'; sh.hidden = true;
-    sh.innerHTML = '<a href="/aves/">Especies</a><a href="/estadisticas/">Estadísticas</a><a href="/contacto/">Contacto</a>';
+    sh.innerHTML = '<a href="/aves/">Especies</a><a href="/estadisticas/">Estadísticas</a><a href="/juegos/">Juegos</a><a href="/contacto/">Contacto</a>';
     document.body.appendChild(sh);
     var a = li.firstChild, cerrar = function(){ sh.hidden = true; a.setAttribute('aria-expanded', 'false'); };
     a.addEventListener('click', function(e){ e.preventDefault(); sh.hidden = !sh.hidden; a.setAttribute('aria-expanded', String(!sh.hidden)); });
