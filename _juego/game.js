@@ -213,7 +213,7 @@ function evento(){clearTimeout(G.tm);
  let pool=G.evs.filter(j=>ok(EV[j]));if(!pool.length){G.evs=EV.map((_,j)=>j);pool=G.evs.filter(j=>ok(EV[j]))}
  const j=pool[Math.floor(G.r()*pool.length)];G.evs.splice(G.evs.indexOf(j),1);G.ev=G.P.exp?expertoEv(EV[j]):EV[j];
  $(cab()+escena(G.zona,G.ev.w,nota(G.mes))+`<div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${G.ev.q}</h2></div>
- ${tip(TIPS[3])}<div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" style="--r:${k%2?.5:-.5}deg" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span>${chips(o)}<small>${G.P.pistas||/energía|nafta/.test(o.c)?o.c:''}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
+ ${tip(TIPS[3])}<div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span>${chips(o)}<small>${G.P.pistas||/energía|nafta/.test(o.c)?o.c:''}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
 function elegirEv(k){resolver(G.ev.o[k])}
 function resolver(o){if(o.perm){G.permM=(G.permM||1)*o.perm;pop('Aprendiste del lugar: rendís más el resto del año')}if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1)*(G.permM||1),msg='';
  if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
@@ -241,12 +241,15 @@ function final(){const n=G.vistas.size,top=[...G.vistas].map(id=>IX[id]).sort((a
  const txt=`${NOMBRE?'El año pajarero de '+NOMBRE:'Mi año pajarero'} (${G.P.n})\n${n} especies de Córdoba ${G.P.fin} · ${titulo(n)}\nMejor mes: ${MESES[mejor.m]} en ${mejor.z} (+${mejor.n})\nFigurita más difícil: ${SP[top[0]][1]}\n¿Me ganás? ${SH.url}`;
  $(`<div><p class="lab">Fin del año</p><div class="grande">${n}<small> especies</small></div><h2>de Córdoba ${G.P.fin}</h2></div>
  <span class="sello">${titulo(n)}</span>
- <div class="comp"><p class="lab" style="margin-bottom:8px">Compartí tu año</p><div class="tabs">${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')">${FMT[k].n}</button>`).join('')}</div><div class="fila"><button class="btn" id="bsh" onclick="compartir()" disabled>Preparando imagen…</button><button class="btn sec" id="bdl" onclick="descargar()" style="display:none">Descargar</button><button class="btn sec" onclick="nuevo(String(Math.random()),G.modo)">Jugar otra vez</button><button class="btn sec" onclick="perfil()">Cambiar de perfil</button></div><canvas id="cv" class="cv" aria-label="Imagen para compartir tu resultado"></canvas>
+ <div class="comp"><p class="lab">Compartí tu año</p><p class="sub" style="margin:2px 0 10px">¿Dónde lo vas a publicar?</p>
+ <div class="seg">${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')"><b>${FMT[k].n}</b><span>${FMT[k].s}</span></button>`).join('')}</div>
+ <div class="acc"><button class="btn md" id="bsh" onclick="compartir()" disabled>Preparando imagen…</button><button class="btn sec md" id="bdl" onclick="descargar()" style="display:none">Descargar</button></div>
+ <canvas id="cv" class="cv" aria-label="Imagen para compartir tu resultado"></canvas>
  </div>
  <p class="sub">Te sobraron ${G.nafta} de nafta.</p>
  <div><p class="lab" style="margin-bottom:8px">Tus figuritas más difíciles</p><div class="figus">${top.map((i,k)=>figu(i,k)).join('')}</div></div>
  <div><p class="lab" style="margin-bottom:6px">Tu camino</p><div class="recap">${G.log.map(l=>`<div><span>${MESES[l.m]} · ${l.z}</span><b>+${l.n}</b></div>`).join('')}</div></div>
- <div class="fila"><button class="btn sec" id="cp" onclick="copiar()">Copiar texto</button></div><textarea id="txt" rows="4" readonly style="display:none">${txt}</textarea>
+ <div class="lnks"><button class="lnk" onclick="nuevo(String(Math.random()),G.modo)">Jugar otra vez</button><button class="lnk" onclick="perfil()">Cambiar de perfil</button><button class="lnk" id="cp" onclick="copiar()">Copiar texto</button></div><textarea id="txt" rows="4" readonly style="display:none">${txt}</textarea>
  <p class="pie"><a href="/">Volver a la web</a> · Frecuencias: eBird, 85.637 listas completas de Córdoba. El porcentaje de cada figurita es en cuántas listas aparece.</p>`);SH.d={n,top,titulo:titulo(n),nombre:NOMBRE,perfil:G.P.n,fin:G.P.fin,salidas:G.P.cal.length};SH.txt=txt;elegirFmt('historia')}
 function copiar(){const t=document.getElementById('txt'),b=document.getElementById('cp');const ok=()=>{b.textContent='Copiado'};
  (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).then(ok).catch(()=>{t.style.display='block';t.focus();t.select();b.textContent='Seleccionado: copialo'})}
@@ -255,12 +258,12 @@ function perfil(){document.getElementById('app').dataset.s='';$(`<div><p class="
  <div><p class="lab" style="margin-bottom:8px">Elegí tu perfil</p><div class="ops">${Object.keys(PERF).map((k,i)=>`<button class="op" style="--r:${[-.6,.5,-.3][i]}deg" onclick="empezar('${k}')"><b>${PERF[k].n}</b><span>${PERF[k].d}</span><small>${PERF[k].t}</small></button>`).join('')}</div></div>`)}
 function empezar(m){const v=(document.getElementById('nom')||{}).value||'';NOMBRE=v.trim().slice(0,16);try{localStorage.setItem('pajarero_nombre',NOMBRE)}catch(e){}nuevo(String(Math.random()),m)}
 function slides(){const ks=['pastizal','humedal','sierras','bosque','arbustal','ocaso'];return `<div class="slides" id="sls">${ks.map((k,i)=>`<div class="sl${i?'':' on'}" style="background-image:url(data:image/svg+xml;base64,${IMG[k]})"></div>`).join('')}</div>`}
-function filaRand(){const P=[[],[],[]];SP.forEach((x,i)=>P[x[4]<.5?0:x[4]<5?1:2].push(i));const pk=(L,n)=>{const o=[];while(o.length<n){const i=L[Math.floor(Math.random()*L.length)];if(!o.includes(i))o.push(i)}return o};const f=[...pk(P[0],1),...pk(P[1],2),...pk(P[2],2)];for(let i=f.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[f[i],f[j]]=[f[j],f[i]]}return f.map((i,k)=>figu(i,k)).join('')}
-function pasar(){const r=document.getElementById('sls'),fs=document.getElementById('fsl');if(!r)return;if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let i=0;const mover=(L,j,c)=>{const n=L[(j+1)%L.length],o=L[j];if(c)n.innerHTML=filaRand();n.style.transition='none';n.className=n.className.split(' ')[0]; void n.offsetWidth;n.style.transition='';n.className=n.className.split(' ')[0]+' on';o.className=o.className.split(' ')[0]+' out'};const t=setInterval(()=>{if(!document.body.contains(r)){clearInterval(t);return}mover(r.children,i,0);if(fs)mover(fs.children,i,1);i=(i+1)%r.children.length},3200)}
+function filaRand(){const P=[[],[],[]];SP.forEach((x,i)=>P[x[4]<.5?0:x[4]<5?1:2].push(i));const pk=(L,n)=>{const o=[];while(o.length<n){const i=L[Math.floor(Math.random()*L.length)];if(!o.includes(i))o.push(i)}return o};const f=[...pk(P[0],2),...pk(P[1],4),...pk(P[2],6)];for(let i=f.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[f[i],f[j]]=[f[j],f[i]]}const h=f.map(i=>figu(i,0)).join('');return h+h}
+function pasar(){const r=document.getElementById('sls');if(!r)return;if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let i=0;const t=setInterval(()=>{if(!document.body.contains(r)){clearInterval(t);return}const L=r.children,c=L[i],n=L[(i+1)%L.length];n.style.transition='none';n.className='sl';void n.offsetWidth;n.style.transition='';n.className='sl on';c.className='sl out';i=(i+1)%L.length},3200)}
 function inicio(){
  $(`<div><p class="lab"><a href="/" style="color:inherit;text-decoration:none">Félix Santiago Aves</a></p><h1>Mi año pajarero</h1><p class="sub">Salís a pajarear por Córdoba, tomás decisiones y armás tu libreta de especies. ¿Cuántas lográs sumar?</p></div>
  ${slides()}
  <p>Elegís a dónde salir y resolvés lo que te cruza el camino. Cada lugar tiene sus aves, y muchas cambian con las estaciones. Lo que encontrás se sortea con la frecuencia real de eBird: ningún año se repite.</p>
- <div class="figsl" id="fsl">${[0,1,2,3,4,5].map(k=>`<div class="fr${k?'':' on'}">${k?'':filaRand()}</div>`).join('')}</div>
+ <div class="marq"><div class="mt">${filaRand()}</div></div>
  <button class="btn" onclick="perfil()">Empezar</button>`);pasar()}
 inicio();
