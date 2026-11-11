@@ -221,6 +221,8 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .nom{font:inherit;font-size:1.1rem;font-weight:700;padding:12px 14px;border-radius:6px;border:2px solid var(--arena);background:var(--figu);color:var(--figu-ink);width:100%}
 .nom:focus{outline:3px solid var(--oliva2);outline-offset:1px}
 .tip{background:var(--panel);border-left:4px solid var(--oliva2);padding:9px 12px;border-radius:4px;font-size:.92rem}.tip b{font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;color:var(--tierra);margin-right:6px}
+.figsl{position:relative;height:158px;overflow:hidden}
+.fr{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px 6px;align-content:center;padding:6px 4px;transform:translateX(100%);transition:transform 1s ease}.fr.on{transform:none}.fr.out{transform:translateX(-100%)}
 </style>
 </head>
 <body>
@@ -307,7 +309,7 @@ function nota(m){return verano(m)?'Llegaron los migrantes de verano: golondrinas
 const K=2.2,ZC={U:'#c9d6a8',P:'#e4d5a0',L:'#b4d8da',E:'#e0cfa8',R:'#b4cde3',C:'#dcc7a2',A:'#cfd3da',H:'#e6c8d2',M:'#e8c9a4'};
 SP.forEach(x=>{const w=x[5].map(v=>Math.pow(v/100,1.6)),m=w.reduce((a,b)=>a+b,0)/w.length;x.q=w.map(v=>v/m);x.zb=ZK[w.indexOf(Math.max(...w))]});
 // f = % de las listas de eBird en Córdoba que registran la especie. q = cuánto se concentra en cada zona.
-function prob(i,zi,m){const x=SP[i];let p=x[4]/100*x.q[zi]*K*ZM[ZK[zi]];if(x[6]===1)p*=verano(m)?1.9:.04;if(x[6]===2)p*=playeras(m)?1.7:.05;if(ZK[zi]==='A'&&m>=4&&m<=7)p*=.6;return .8*(1-Math.exp(-p/.8))}
+function prob(i,zi,m){const x=SP[i];let p=x[4]/100*x.q[zi]*(G&&G.P?G.P.K:K)*ZM[ZK[zi]];if(x[6]===1)p*=verano(m)?1.9:.04;if(x[6]===2)p*=playeras(m)?1.7:.05;if(ZK[zi]==='A'&&m>=4&&m<=7)p*=.6;return .8*(1-Math.exp(-p/.8))}
 const f=(...a)=>a.map(FA);
 const EV=[
 {q:'Suena el despertador a las 5:30.',o:[{t:'Madrugar',s:'A primera hora canta todo.',c:'−1 energía',en:-1,ef:1.35,ari:1.25},{t:'Dormir un rato más',s:'Llegás con el sol alto y menos movimiento.',c:'+1 energía',en:1,ef:.7}]},
@@ -392,9 +394,9 @@ function revelar(ids){if(window.SIMULA||!ids.length)return;let k=0;
  sig()}
 let G;
 const PERF={
- guiado:{n:'Principiante',d:'6 salidas, una cada dos meses. Más nafta y energía, con consejos en el camino.',t:'Unos 5 minutos',cal:[0,2,4,6,8,10],nafta:14,en:4,mi:.12,su:.28,pistas:1,tip:1,fin:'en 6 salidas',T:[50,75,100,125,145]},
- normal:{n:'Aficionado',d:'Un año completo, 12 salidas. Imprevistos y suerte en su medida.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:20,en:3,mi:.25,su:.2,pistas:1,fin:'en un año',T:[60,90,125,155,180]},
- experto:{n:'Experto',d:'Un año completo con menos nafta, más imprevistos y sin etiquetas en las decisiones.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:16,en:3,mi:.32,su:.14,pistas:0,fin:'en un año',T:[55,85,115,145,170]}
+ guiado:{n:'Principiante',d:'6 salidas, una cada dos meses. Solo aves comunes, más nafta y energía, y consejos en el camino.',t:'Unos 5 minutos',cal:[0,2,4,6,8,10],nafta:14,en:4,mi:.12,su:.28,pistas:1,tip:1,fmin:1,K:2.2,amp:1,fin:'en 6 salidas',T:[45,65,85,105,125]},
+ normal:{n:'Aficionado',d:'Un año completo, 12 salidas. Aves comunes y raras, con imprevistos y suerte en su medida.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:20,en:3,mi:.25,su:.2,pistas:1,fmin:0,K:2.2,amp:1,fin:'en un año',T:[60,90,125,155,180]},
+ experto:{n:'Experto',d:'Un año completo con menos nafta, más imprevistos y sin etiquetas en las decisiones. Más variable: eventos, suertes e imprevistos extra, y techo mucho más alto.',t:'Unos 10 minutos',cal:[0,1,2,3,4,5,6,7,8,9,10,11],nafta:16,en:3,mi:.34,su:.24,pistas:0,exp:1,fmin:0,K:3.4,amp:3.5,fin:'en un año',T:[80,120,160,200,230]}
 };
 let NOMBRE='';try{NOMBRE=localStorage.getItem('pajarero_nombre')||''}catch(e){}
 const TIPS=['Los lugares lejanos gastan nafta, pero suelen rendir más especies. Los cercanos son gratis y se pueden repetir.','Fijate en la energía: las decisiones de esfuerzo la gastan, y con 0 rendís menos.','Algunas aves aparecen solo en ciertas épocas. En verano llegan golondrinas, vencejos y playeros del norte.','Las etiquetas de cada decisión te dicen si suben las aves en general o las raras.','Una rara aparece muy pocas veces. Cuando sale, es una figurita especial.','Un lugar lejano que ya visitaste no se repite en el año.'];
@@ -405,7 +407,7 @@ const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';G.cal=G.P.cal;G.cal.forEach((m,i)=>{c+=`<i class="${i<G.k?'h':i===G.k?'a':verano(m)?'v':''}"></i>`});
 return `<div class="top"><button class="snd" onclick="reiniciar(this)">Reiniciar</button><button class="snd" onclick="SND=!SND;this.textContent=SND?'Sonido: sí':'Sonido: no'">Sonido: ${SND?'sí':'no'}</button></div><div class="camino" style="grid-template-columns:repeat(${G.cal.length},1fr)" aria-label="Salida ${G.k+1} de ${G.cal.length}">${c}</div>
 <div class="barra"><div class="dato"><span class="lab">Especies</span><b>${G.vistas.size}</b></div><div class="dato"><span class="lab">Nafta</span><b>${G.nafta}</b></div><div class="dato"><span class="lab">Energía</span><span class="pts" aria-label="${G.en} de 4">${pts(G.en,4)}</span></div></div>`}
-function potencial(l){const zi=ZK.indexOf(l.z),m=MK(l);let s=0;for(let i=0;i<N;i++)if(!G.vistas.has(SP[i][0]))s+=Math.min(.8,prob(i,zi,G.mes)*m);return s}
+function potencial(l){const zi=ZK.indexOf(l.z),m=MK(l);let s=0;for(let i=0;i<N;i++)if(!G.vistas.has(SP[i][0])&&SP[i][4]>=G.P.fmin)s+=Math.min(.8,prob(i,zi,G.mes)*m);return s}
 function tier(p){return p<12?'pocas novedades':p<18?'algunas novedades':p<24?'varias novedades':'muchas novedades'}
 function pintarMes(){
  const lib=PL.filter(l=>!G.vis.has(l.n)),cer=PL.filter(l=>l.c===0),lej=lib.filter(l=>l.c>0),el=[];
@@ -436,8 +438,8 @@ const SU=[
 {id:'hide',q:'Descubrís un observatorio de aves nuevo, con torre y comedero.',msg:'Las aves vienen solas.',mod:1.2,ari:1.4,tag:'Más aves y más raras'},
 {id:'camioneta',q:'Te prestan una camioneta 4x4 y llegás a un rincón al que casi nadie va.',msg:'Terreno virgen y sin gente.',mod:1.2,ari:1.8,tag:'Más raras'}
 ];
-function suerte(){const m=(()=>{let p=SU.filter(s=>!G.sus.has(s.id));if(!p.length){G.sus.clear();p=SU}const s=p[Math.floor(G.r()*p.length)];G.sus.add(s.id);return s})();G.su=m;
- $(cab()+`<div class="vig">${VIG[m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><p class="nota">${m.msg}</p><span class="chips"><i class="up">${m.tag}</i></span><button class="btn" onclick="aplicarSu()">¡Qué suerte!</button>`)}
+function suerte(){const m=(()=>{let ps=SU.filter(s=>!s.x||G.P.exp),p=ps.filter(s=>!G.sus.has(s.id));if(!p.length){G.sus.clear();p=ps}const s=p[Math.floor(G.r()*p.length)];G.sus.add(s.id);return s})();G.su=m;
+ $(cab()+`<div class="vig">${VIG[m.vig||m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><p class="nota">${m.msg}</p><span class="chips"><i class="up">${m.tag}</i></span><button class="btn" onclick="aplicarSu()">¡Qué suerte!</button>`)}
 function aplicarSu(){const s=G.su;if(s.mod)G.mod*=s.mod;if(s.ari)G.ari=s.ari;if(s.na)G.nafta+=s.na;pop('¡Suerte! '+s.tag);G.ev={w:'day',o:[]};resolver(s.rara?{rara:s.rara}:{})}
 
 const MI=[
@@ -454,12 +456,34 @@ function chips(o){if(!G.P.pistas)return '';const c=[];
  if(o.fam)c.push(['up','Más '+FAMS[o.fam[0][0]].split(',')[0].toLowerCase()]);
  if(o.az)c.push(['rs','Puede salir mal o muy bien']);
  return c.length?`<span class="chips">${c.map(x=>`<i class="${x[0]}">${x[1]}</i>`).join('')}</span>`:''}
+
+SU.push(
+{id:'ornit',x:1,vig:'guia',q:'Un ornitólogo del lugar te lleva a su sitio de nidificación.',msg:'Un rincón que no figura en ningún mapa.',mod:1.5,ari:2,tag:'Muchas más aves y más raras'},
+{id:'ventana',x:1,vig:'dia',q:'Se abre una ventana perfecta: cielo estable y viento calmo toda la mañana.',msg:'Ideal para recorrer sin apuro.',mod:1.45,tag:'Muchas más aves'},
+{id:'alerta',x:1,vig:'dato',q:'Te llega una alerta de eBird: una rareza reportada hace una hora a pocos kilómetros.',msg:'Todavía puede estar ahí.',rara:.95,mod:1.1,tag:'Rara casi segura'},
+{id:'hide2',x:1,vig:'hide',q:'Te abren un observatorio privado en una laguna de muy poco acceso.',msg:'Aves tranquilas y a tiro de binocular.',mod:1.35,ari:1.8,tag:'Más aves y más raras'});
+MI.push(
+{id:'atasco',x:1,vig:'camioneta',q:'El auto se clava en un arenal y las ruedas patinan.',o:[{t:'Hacer pala y empujar',s:'Un buen rato de esfuerzo.',c:'−2 energía',en:-2},{t:'Pedir ayuda a un lugareño',s:'Tarda, pero no te cansás.',c:'−2 nafta · rendís menos',na:-2,mod:.8}]},
+{id:'gps',x:1,vig:'celu',q:'Sin señal y con el GPS caído, te perdés entre caminos de campo.',o:[{t:'Volver hasta la ruta',s:'Un buen desvío.',c:'−2 nafta',na:-2},{t:'Seguir a ojo',s:'Quizás aparece algo, quizás no.',c:'Riesgo',az:[.55,.55,1.1,'Anduviste en círculos y perdiste la mejor hora.','Tuviste suerte con la brújula y llegaste a un buen lugar.']}]},
+{id:'lente',x:1,vig:'bino',q:'Los binoculares se empañaron por la humedad y no se ve bien.',o:[{t:'Secarlos con paciencia',s:'Perdés un rato.',c:'−1 energía',en:-1,mod:.9},{t:'Seguir con la cámara de zoom',s:'Más pesada y más lenta.',c:'Rendís menos este mes',mod:.7}]},
+{id:'porton',x:1,vig:'corte',q:'El portón de la reserva está cerrado con candado.',o:[{t:'Rodear y entrar a pie',s:'Una caminata larga.',c:'−2 energía',en:-2},{t:'Pajarear desde afuera',s:'Solo el borde.',c:'Rendís mucho menos',mod:.5}]},
+{id:'tormenta',x:1,vig:'agua',q:'Una tormenta de tierra te obliga a refugiarte en el auto.',o:[{t:'Esperar a que pase',s:'Perdés la mejor hora.',c:'Rendís menos este mes',mod:.65},{t:'Arriesgarte a seguir',s:'Con los ojos llenos de polvo.',c:'Riesgo',az:[.5,.5,1.1,'No se veía nada y volviste con las manos vacías.','Pasó rápido y el cielo quedó limpio.']}]});
+EV.push(
+{x:1,q:'Un pajarero avisa por radio que hay un bando mixto en un monte cercano.',o:[{t:'Ir ya mismo',s:'Lo más probable es que siga ahí.',c:'−1 energía',en:-1,ef:1.5,ari:1.3},{t:'Terminar lo que estabas haciendo',s:'Llegás tarde, pero sin apuro.',c:'Sin costo',ef:1.05}]},
+{x:1,q:'Dos opciones para esta mañana: la costa de la laguna o el monte de atrás.',o:[{t:'La costa',s:'Agua baja y mucho movimiento.',c:'Sin costo',ef:1.1,fam:[f('Anátidos','Aves Playeras','Garzas, Bandurrias y afines','Rálidos, Gallinetas y afines'),2.6]},{t:'El monte',s:'Más cerrado, pero lleno de cantos.',c:'−1 energía',en:-1,ef:1.1,fam:[f('Furnaridos','Tiránidos: Benteveos, Burlistos y afines','Tiránidos: Fiofíos, Mosquetas, Piojitos y afines','Passerellidos'),2.2]}]},
+{x:1,q:'Hay dos alertas: una rareza lejana y segura, y otra cercana pero dudosa.',o:[{t:'La lejana',s:'Dos horas de ruta.',c:'−2 nafta',na:-2,rara:.8},{t:'La cercana',s:'Podés llegar en minutos.',c:'Sin costo',rara:.4,ef:1.1}]},
+{x:1,z:'LH',q:'Las lluvias dejaron la laguna llena de patos y playeros… pero también de barro.',o:[{t:'Meterte al borde con botas',s:'Te embarrás, pero los tenés cerca.',c:'−1 energía',en:-1,ef:1.45,fam:[f('Aves Playeras','Anátidos'),2.4]},{t:'Mirar desde el camino',s:'Más lejos y más limpio.',c:'Sin costo',ef:1}]},
+{x:1,q:'Te ofrecen sumarte a un conteo de aves de toda la jornada.',o:[{t:'Anotarte',s:'Todo el día, con un grupo grande.',c:'−2 energía',en:-2,ef:1.7},{t:'Ir a tu aire',s:'Un rato corto y a tu ritmo.',c:'Sin costo',ef:.95,ari:1.4}]},
+{x:1,q:'Te dejan pasar a un campo privado si te quedás poco tiempo.',o:[{t:'Aprovechar la hora que te dan',s:'Cortito, pero intenso.',c:'Rendís distinto',ef:1.3,ari:1.6},{t:'Quedarte en el camino público',s:'Lo de siempre.',c:'Sin costo',ef:1}]},
+{x:1,q:'Se levanta un viento fresco al mediodía y baja la actividad.',o:[{t:'Hacer una pausa y almorzar',s:'Recuperás fuerzas.',c:'+1 energía',en:1,ef:.8},{t:'Seguir caminando sin parar',s:'Quizás las pocas que se mueven.',c:'−1 energía',en:-1,ef:1.1,ari:1.3}]},
+{x:1,q:'Aparece la chance de pajarear de noche con linterna.',o:[{t:'Salir de noche',s:'Lechuzas y atajacaminos.',c:'−2 energía',en:-2,ef:1.1,fam:[f('Lechuzas','Atajacaminos','Urutaúes'),4]},{t:'Dormir temprano',s:'Mañana será otro día.',c:'+1 energía',en:1,ef:1}]});
+EV.forEach(e=>{if(!e.w)e.w='day'});
 function pop(t,bad){if(window.SIMULA||!t)return;const d=document.createElement('div');d.className='pop'+(bad?' mal':'');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
 function deltas(o){const a=[];if(o.na)a.push((o.na>0?'+':'−')+Math.abs(o.na)+' nafta');if(o.en)a.push((o.en>0?'+':'−')+Math.abs(o.en)+' energía');return a.join(' · ')}
 function viaje2(){clearTimeout(G.tm);
  const rr=G.r();G.kind='ev';if(G.k>0&&rr>=G.P.mi&&rr<G.P.mi+G.P.su){G.kind='su';return suerte()}
- if(G.k>0&&rr<G.P.mi){G.kind='mi';let pool=MI.filter(m=>!G.mis.has(m.id));if(!pool.length){G.mis.clear();pool=MI}const m=pool[Math.floor(G.r()*pool.length)];G.mis.add(m.id);G.mi=m;
-  return $(cab()+`<div class="vig">${VIG[m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><div class="ops">${m.o.map((o,k)=>{const bl=(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=m.o.every(x=>(x.en<0&&G.en+x.en<0)||(x.na<0&&G.nafta+x.na<0)),no=bl&&!(todos&&k===m.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirMi(${k})"><b>${o.t}</b><span>${o.s}</span><small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
+ if(G.k>0&&rr<G.P.mi){G.kind='mi';let pm=MI.filter(m=>!m.x||G.P.exp),pool=pm.filter(m=>!G.mis.has(m.id));if(!pool.length){G.mis.clear();pool=pm}const m=pool[Math.floor(G.r()*pool.length)];G.mis.add(m.id);G.mi=m;
+  return $(cab()+`<div class="vig">${VIG[m.vig||m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><div class="ops">${m.o.map((o,k)=>{const bl=(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=m.o.every(x=>(x.en<0&&G.en+x.en<0)||(x.na<0&&G.nafta+x.na<0)),no=bl&&!(todos&&k===m.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirMi(${k})"><b>${o.t}</b><span>${o.s}</span><small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
  evento()}
 function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
  if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
@@ -471,7 +495,7 @@ function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.a
  $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
  clearTimeout(G.tm);G.tm=setTimeout(viaje2,1500)}
 function evento(){clearTimeout(G.tm);
- const ok=(e)=>!e.z||e.z.includes(G.zona);
+ const ok=(e)=>(!e.z||e.z.includes(G.zona))&&(!e.x||G.P.exp);
  let pool=G.evs.filter(j=>ok(EV[j]));if(!pool.length){G.evs=EV.map((_,j)=>j);pool=G.evs.filter(j=>ok(EV[j]))}
  const j=pool[Math.floor(G.r()*pool.length)];G.evs.splice(G.evs.indexOf(j),1);G.ev=EV[j];
  $(cab()+escena(G.zona,G.ev.w,nota(G.mes))+`<div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${G.ev.q}</h2></div>
@@ -480,11 +504,11 @@ function elegirEv(k){resolver(G.ev.o[k])}
 function resolver(o){if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1),msg='';
  if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
  if(o.az){const mal=G.r()<o.az[0];ef=mal?o.az[1]:o.az[2];msg=mal?o.az[3]:o.az[4]}
- if(G.en===0){ef*=.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
+ if(G.P.amp!==1)ef=Math.pow(ef,G.P.amp);if(G.en===0){ef*=.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
  const zi=ZK.indexOf(G.zona),nuevas=[];let rep=0;
- for(let i=0;i<N;i++){const x=SP[i];let e=ef;if(o.ari&&x[4]<2)e*=o.ari;if(G.ari>1&&x[4]<2)e*=G.ari;if(o.fam&&o.fam[0].includes(x[3]))e*=o.fam[1];
+ for(let i=0;i<N;i++){const x=SP[i];if(x[4]<G.P.fmin)continue;let e=ef;if(o.ari&&x[4]<2)e*=o.ari;if(G.ari>1&&x[4]<2)e*=G.ari;if(o.fam&&o.fam[0].includes(x[3]))e*=o.fam[1];
   const p=1-Math.pow(1-Math.min(.8,prob(i,zi,G.mes)*MK(G.lugar)),e);if(G.r()<p){if(G.vistas.has(x[0]))rep++;else{G.vistas.add(x[0]);nuevas.push(i)}}}
- if(o.rara!=null){if(G.r()<o.rara){const cand=SP.map((x,i)=>i).filter(i=>!G.vistas.has(SP[i][0])&&SP[i][4]<1.5&&SP[i][4]>=.02),wt=i=>Math.sqrt(SP[i][4]);const tot=cand.reduce((a,i)=>a+wt(i),0);let u=G.r()*tot,pick=null;for(const i of cand){u-=wt(i);if(u<=0){pick=i;break}}if(pick!=null){G.vistas.add(SP[pick][0]);nuevas.unshift(pick);msg='Estaba. Dos horas de ruta y ahí la tenías: '+SP[pick][1]+'.'}}else msg='Llegaste y ya no estaba. Así es esto.'}
+ if(o.rara!=null){if(G.r()<o.rara){const cand=SP.map((x,i)=>i).filter(i=>!G.vistas.has(SP[i][0])&&SP[i][4]<Math.max(1.5,G.P.fmin*3)&&SP[i][4]>=Math.max(.02,G.P.fmin)),wt=i=>Math.sqrt(SP[i][4]);const tot=cand.reduce((a,i)=>a+wt(i),0);let u=G.r()*tot,pick=null;for(const i of cand){u-=wt(i);if(u<=0){pick=i;break}}if(pick!=null){G.vistas.add(SP[pick][0]);nuevas.unshift(pick);msg='Estaba. Dos horas de ruta y ahí la tenías: '+SP[pick][1]+'.'}}else msg='Llegaste y ya no estaba. Así es esto.'}
  if(G.mod<1)msg+=(msg?' ':'')+'Saliste en desventaja este mes.';
  nuevas.sort((a,b)=>SP[a][4]-SP[b][4]);
  G.log.push({m:G.mes,z:G.lugar.n,n:nuevas.length,ids:nuevas});
@@ -517,12 +541,13 @@ function perfil(){document.getElementById('app').dataset.s='';$(`<div><p class="
  <div><p class="lab" style="margin-bottom:8px">Elegí tu perfil</p><div class="ops">${Object.keys(PERF).map((k,i)=>`<button class="op" style="--r:${[-.6,.5,-.3][i]}deg" onclick="empezar('${k}')"><b>${PERF[k].n}</b><span>${PERF[k].d}</span><small>${PERF[k].t}</small></button>`).join('')}</div></div>`)}
 function empezar(m){const v=(document.getElementById('nom')||{}).value||'';NOMBRE=v.trim().slice(0,16);try{localStorage.setItem('pajarero_nombre',NOMBRE)}catch(e){}nuevo(String(Math.random()),m)}
 function slides(){const ks=['pastizal','humedal','sierras','bosque','arbustal','ocaso'];return `<div class="slides" id="sls">${ks.map((k,i)=>`<div class="sl${i?'':' on'}" style="background-image:url(data:image/svg+xml;base64,${IMG[k]})"></div>`).join('')}</div>`}
-function pasar(){const r=document.getElementById('sls');if(!r)return;if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let i=0;const t=setInterval(()=>{if(!document.body.contains(r)){clearInterval(t);return}const L=r.children,c=L[i],n=L[(i+1)%L.length];n.style.transition='none';n.className='sl';void n.offsetWidth;n.style.transition='';n.className='sl on';c.className='sl out';i=(i+1)%L.length},3200)}
-function inicio(){const dem=[7,4,112,153,323,99].map(id=>IX[id]).filter(i=>i!=null);
+function filaRand(){const P=[[],[],[]];SP.forEach((x,i)=>P[x[4]<.5?0:x[4]<5?1:2].push(i));const pk=(L,n)=>{const o=[];while(o.length<n){const i=L[Math.floor(Math.random()*L.length)];if(!o.includes(i))o.push(i)}return o};const f=[...pk(P[0],1),...pk(P[1],2),...pk(P[2],2)];for(let i=f.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[f[i],f[j]]=[f[j],f[i]]}return f.map((i,k)=>figu(i,k)).join('')}
+function pasar(){const r=document.getElementById('sls'),fs=document.getElementById('fsl');if(!r)return;if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let i=0;const mover=(L,j,c)=>{const n=L[(j+1)%L.length],o=L[j];if(c)n.innerHTML=filaRand();n.style.transition='none';n.className=n.className.split(' ')[0]; void n.offsetWidth;n.style.transition='';n.className=n.className.split(' ')[0]+' on';o.className=o.className.split(' ')[0]+' out'};const t=setInterval(()=>{if(!document.body.contains(r)){clearInterval(t);return}mover(r.children,i,0);if(fs)mover(fs.children,i,1);i=(i+1)%r.children.length},3200)}
+function inicio(){
  $(`<div><p class="lab"><a href="/" style="color:inherit;text-decoration:none">Félix Santiago Aves</a></p><h1>Mi año pajarero</h1><p class="sub">Salís a pajarear por Córdoba, tomás decisiones y armás tu libreta de especies. ¿Cuántas lográs sumar?</p></div>
  ${slides()}
  <p>Elegís a dónde salir y resolvés lo que te cruza el camino. Cada lugar tiene sus aves, y muchas cambian con las estaciones. Lo que encontrás se sortea con la frecuencia real de eBird: ningún año se repite.</p>
- <div class="figus">${dem.map((i,k)=>figu(i,k)).join('')}</div>
+ <div class="figsl" id="fsl">${[0,1,2,3,4,5].map(k=>`<div class="fr${k?'':' on'}">${k?'':filaRand()}</div>`).join('')}</div>
  <button class="btn" onclick="perfil()">Empezar</button>`);pasar()}
 inicio();
 </script>
