@@ -201,8 +201,9 @@ function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
  if(o.na<0||o.en<0)bad=true;
  pop(t,bad);G.ev={w:'day',o:[]};resolver({})}
 function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
- $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
- clearTimeout(G.tm);G.tm=setTimeout(viaje2,1500)}
+ $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}${ruta(G.lugar.c===0)}<button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
+ clearTimeout(G.tm);G.tm=setTimeout(viaje2,2400)}
+function ruta(a){return a?`<div class="ruta a pie"><div class="cam"></div><div class="mv"><svg viewBox="0 0 24 40" width="26" height="44"><circle cx="12" cy="7" r="5" fill="#3b3a2c"/><rect x="7" y="13" width="10" height="14" rx="4" fill="var(--tierra)"/><g class="pa"><rect x="8" y="26" width="3.5" height="13" rx="1.5" fill="#3b3a2c"/></g><g class="pb"><rect x="12.5" y="26" width="3.5" height="13" rx="1.5" fill="#3b3a2c"/></g></svg></div></div>`:`<div class="ruta"><div class="cam"></div><div class="mv"><svg viewBox="0 0 64 34" width="72" height="38"><path d="M4 24 L8 15 Q10 11 15 11 H40 Q45 11 49 16 L58 19 Q61 20 61 24 Z" fill="var(--tierra)"/><path d="M14 13 H26 V19 H11 Z M29 13 H40 Q43 13 46 17 H29 Z" fill="#dfe7df"/><g class="rr"><circle cx="17" cy="25" r="5.5" fill="#2b2a22"/><circle cx="17" cy="25" r="2" fill="#aaa"/></g><g class="rr"><circle cx="48" cy="25" r="5.5" fill="#2b2a22"/><circle cx="48" cy="25" r="2" fill="#aaa"/></g></svg></div></div>`}
 function gscore(fi,zi){let s=0;for(let i=0;i<N;i++){const x=SP[i];if(x[3]===fi&&!G.vistas.has(x[0]))s+=prob(i,zi,G.mes)*MK(G.lugar)}return s}
 function expertoEv(ev){const zi=ZK.indexOf(G.zona),sc=FAMS.map((n,fi)=>[fi,gscore(fi,zi),SP.filter(x=>x[3]===fi).length]).filter(a=>a[2]>=3).sort((a,b)=>b[1]-a[1]);
  const top=sc.slice(0,3),mal=sc.slice(-8),buena=G.r()<.6,pk=buena?top[Math.floor(G.r()*top.length)]:mal[Math.floor(G.r()*mal.length)];

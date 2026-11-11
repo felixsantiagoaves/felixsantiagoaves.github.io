@@ -26,7 +26,7 @@ PAGINAS = [
   'Contacto de Félix Santiago Allendes: escribime para colaboraciones, notas, salidas de campo o para pedir permiso de uso de mis fotos de aves. Mis redes.'),
 ]
 NAV = [('sobre-mi', '/', 'Sobre mí'), ('album', '/album/', 'Álbum'), (None, '/aves/', 'Especies'), ('mapa', '/mapa/', 'Mapa'),
-       ('galeria', '/galeria/', 'Galería'), ('datos', '/estadisticas/', None), ('redes', '/contacto/', 'Contacto')]
+       ('galeria', '/galeria/', 'Galería'), ('datos', '/estadisticas/', None), (None, '/juego/', 'Juego'), ('redes', '/contacto/', 'Contacto')]
 HOME_LD = rd('_build/jsonld_home.json').replace(B + '#redes', B + 'contacto/')
 LD_GRAPH = json.loads(HOME_LD)['@graph']
 COMUNES = rd('_build/comunes.html')

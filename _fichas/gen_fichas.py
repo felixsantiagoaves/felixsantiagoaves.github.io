@@ -197,6 +197,7 @@ for E in ESP:
     <li><a href="/mapa/">Mapa</a></li>
     <li><a href="/galeria/">Galería</a></li>
     <li class="nav-stats"><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li><a href="/juego/">Juego</a></li>
     <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
@@ -284,6 +285,7 @@ ipage = f'''<!DOCTYPE html>
     <li><a href="/mapa/">Mapa</a></li>
     <li><a href="/galeria/">Galería</a></li>
     <li class="nav-stats"><a href="/estadisticas/"><span class="nl-l">Estadísticas</span><span class="nl-c">Stats</span></a></li>
+    <li><a href="/juego/">Juego</a></li>
     <li><a href="/contacto/">Contacto</a></li>
   </ul>
 </div></nav>
@@ -337,7 +339,7 @@ for sid, r in sorted(AVIST['avistamientos'].items(), key=lambda kv: int(kv[0])):
     if r.get('foto') and int(sid) in AVES: home.append((BASE + quote(r['foto']), AVES[int(sid)]['comun'], AVES[int(sid)]['nombre']))
 out += url_entry(BASE, home, '1.0', 'weekly')
 out += url_entry(BASE + 'aves/', [], '0.9', 'weekly')
-for carp, prio in [('album', '0.9'), ('galeria', '0.8'), ('mapa', '0.7'), ('estadisticas', '0.6'), ('contacto', '0.5')]: out += url_entry(BASE + carp + '/', [], prio, 'weekly' if carp != 'contacto' else 'yearly')
+for carp, prio in [('album', '0.9'), ('galeria', '0.8'), ('mapa', '0.7'), ('estadisticas', '0.6'), ('juego', '0.7'), ('contacto', '0.5')]: out += url_entry(BASE + carp + '/', [], prio, 'weekly' if carp != 'contacto' else 'yearly')
 for sid, p in paginas.items(): out += url_entry(f'{BASE}aves/{p["slug"]}/', [(u, p['comun'], p['sci']) for u in p['fotos'][:10]], '0.8' if FUENTES.get(int(sid)) else '0.6', 'monthly')
 out += ['</urlset>', '']
 open(os.path.join(RAIZ, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))
