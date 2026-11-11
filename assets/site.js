@@ -955,6 +955,7 @@ function closeM(fast){
   try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
   document.title=document.documentElement.dataset.titulo||document.title;}
 
+function compartirJuego(){const u='https://felixsantiago.com.ar/juego/',t='Mi año pajarero: ¿cuántas aves de Córdoba sumás en un año? Jugalo acá:';if(navigator.share){navigator.share({title:'Mi año pajarero',text:t,url:u}).catch(()=>{});}else{try{navigator.clipboard.writeText(t+' '+u).then(()=>showToast('¡Link copiado!'));}catch(e){}}}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 
 

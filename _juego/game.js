@@ -263,5 +263,7 @@ function inicio(){
  ${slides()}
  <p>Elegís a dónde salir y resolvés lo que te cruza el camino. Cada lugar tiene sus aves, y muchas cambian con las estaciones. Lo que encontrás se sortea con la frecuencia real de eBird: ningún año se repite.</p>
  <div class="marq"><div class="mt">${filaRand()}</div></div>
- <button class="btn" onclick="perfil()">Empezar</button>`);pasar()}
+ <button class="btn" onclick="perfil()">Empezar</button>
+ <button class="lnk" onclick="compJuego(this)" style="align-self:flex-start">Compartir el juego</button>`);pasar()}
+function compJuego(b){const u='https://felixsantiago.com.ar/juego/',t='Mi año pajarero: ¿cuántas aves de Córdoba sumás en un año? Jugalo acá:';if(navigator.share){navigator.share({title:'Mi año pajarero',text:t,url:u}).catch(()=>{})}else{try{navigator.clipboard.writeText(t+' '+u).then(()=>{b.textContent='¡Link copiado!'})}catch(e){prompt('Copiá el link',u)}}}
 inicio();
