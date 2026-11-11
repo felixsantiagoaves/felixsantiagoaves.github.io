@@ -214,6 +214,8 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .chips{display:flex;gap:6px;flex-wrap:wrap;font-family:var(--t);font-style:normal}
 .chips i{font-style:normal;font-weight:900;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:#dfe7cc;color:#414833}
 .chips i.ra{background:#f3e3a6;color:#6b4e0a}.chips i.dn{background:#ead2cc;color:#8a2f25}.chips i.rs{background:#dcdfe8;color:#3d4660}
+.v-spin{animation:vspin 12s linear infinite}.v-hop{animation:vhop 1s ease-in-out infinite alternate}.v-ring{animation:vring 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}.v-glint2{animation:parp 1.4s ease-in-out infinite}
+@keyframes vspin{to{transform:rotate(360deg)}}@keyframes vhop{to{transform:translateY(-10px)}}@keyframes vring{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.8);opacity:0}}
 </style>
 </head>
 <body>
@@ -297,7 +299,7 @@ function semana(){const d=new Date(),o=new Date(d.getFullYear(),0,1);return d.ge
 const verano=m=>m>=9||m<=2, playeras=m=>m>=8||m<=3;
 function nota(m){return verano(m)?'Llegaron los migrantes de verano: golondrinas, vencejos, cuclillos y playeros del norte.':'Invierno: se fueron los migrantes de verano y las sierras altas están heladas.'}
 // probabilidad de que una especie aparezca en una salida a la zona zi en el mes m
-const K=1.2,ZC={U:'#c9d6a8',P:'#e4d5a0',L:'#b4d8da',E:'#e0cfa8',R:'#b4cde3',C:'#dcc7a2',A:'#cfd3da',H:'#e6c8d2',M:'#e8c9a4'};
+const K=2.2,ZC={U:'#c9d6a8',P:'#e4d5a0',L:'#b4d8da',E:'#e0cfa8',R:'#b4cde3',C:'#dcc7a2',A:'#cfd3da',H:'#e6c8d2',M:'#e8c9a4'};
 SP.forEach(x=>{const w=x[5].map(v=>Math.pow(v/100,1.6)),m=w.reduce((a,b)=>a+b,0)/w.length;x.q=w.map(v=>v/m);x.zb=ZK[w.indexOf(Math.max(...w))]});
 // f = % de las listas de eBird en Córdoba que registran la especie. q = cuánto se concentra en cada zona.
 function prob(i,zi,m){const x=SP[i];let p=x[4]/100*x.q[zi]*K*ZM[ZK[zi]];if(x[6]===1)p*=verano(m)?1.9:.04;if(x[6]===2)p*=playeras(m)?1.7:.05;if(ZK[zi]==='A'&&m>=4&&m<=7)p*=.6;return .8*(1-Math.exp(-p/.8))}
@@ -384,7 +386,7 @@ function revelar(ids){if(window.SIMULA||!ids.length)return;let k=0;
   tt=setTimeout(rev,mit?2300:1400);ov.onclick=()=>{if(!hecho)rev()}};
  sig()}
 let G;
-function nuevo(seed){G={mis:new Set(),mod:1,seed,r:rng(hash(seed)),mes:0,nafta:20,en:3,vistas:new Set(),log:[],evs:[],zona:null,lugar:null,vis:new Set(),ev:null};pintarMes()}
+function nuevo(seed){G={sus:new Set(),ari:1,mis:new Set(),mod:1,seed,r:rng(hash(seed)),mes:0,nafta:20,en:3,vistas:new Set(),log:[],evs:[],zona:null,lugar:null,vis:new Set(),ev:null};pintarMes()}
 const $=(h)=>{document.getElementById('app').innerHTML=h;window.scrollTo(0,0)};
 const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';for(let i=0;i<12;i++)c+=`<i class="${i<G.mes?'h':i===G.mes?'a':verano(i)?'v':''}"></i>`;
@@ -406,6 +408,25 @@ rueda:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#c9b48a"/
 agua:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#f0c874"/><circle class="v-sol" cx="244" cy="38" r="26" fill="#fff4b8"/><rect y="132" width="300" height="38" fill="#c9a15a"/><g class="v-wave" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".5"><path d="M30 118q10-8 20 0t20 0"/><path d="M200 112q10-8 20 0t20 0"/></g><rect x="136" y="60" width="28" height="70" rx="8" fill="#9fc3d6" opacity=".85"/><rect x="144" y="48" width="12" height="14" rx="3" fill="#414833"/><rect x="136" y="110" width="28" height="20" rx="8" fill="#9fc3d6"/><circle class="v-gota" cx="150" cy="144" r="4" fill="#4f9aa8"/></svg>`,
 celu:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#d4cdb8"/><rect x="120" y="22" width="60" height="126" rx="10" fill="#2d3322"/><rect x="126" y="34" width="48" height="100" rx="4" fill="#1d2117"/><rect class="v-bat" x="134" y="76" width="32" height="14" rx="2" fill="#b23a2e"/><rect x="166" y="80" width="3" height="6" fill="#b23a2e"/><text x="150" y="112" text-anchor="middle" font-size="11" font-weight="900" fill="#b23a2e" class="v-bat">1 %</text></svg>`,
 corte:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#bfa77c"/><rect y="124" width="300" height="46" fill="#8f7a56"/><rect x="40" y="84" width="220" height="16" fill="#fff"/><g fill="#e0561d"><path d="M40 84h28l-14 16h-28z"/><path d="M96 84h28l-14 16h-28z"/><path d="M152 84h28l-14 16h-28z"/><path d="M208 84h28l-14 16h-28z"/></g><rect x="48" y="100" width="6" height="30" fill="#555"/><rect x="246" y="100" width="6" height="30" fill="#555"/><circle class="v-luz" cx="150" cy="70" r="9" fill="#ffb347"/></svg>`};
+
+VIG.guia=`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#c9d6a8"/><rect y="132" width="300" height="38" fill="#8fa662"/><g class="v-bob"><circle cx="150" cy="58" r="16" fill="#e0b48a"/><ellipse cx="150" cy="46" rx="26" ry="6" fill="#7f5539"/><rect x="136" y="26" width="28" height="22" rx="8" fill="#7f5539"/><rect x="130" y="76" width="40" height="62" rx="12" fill="#414833"/><path d="M168 90L208 64" stroke="#414833" stroke-width="12" stroke-linecap="round"/><rect x="204" y="52" width="18" height="12" rx="3" fill="#2d3322" transform="rotate(-30 213 58)"/></g><g><circle cx="76" cy="84" r="12" fill="#e0b48a"/><rect x="64" y="98" width="24" height="40" rx="9" fill="#6b7a8c"/></g><text class="v-q" x="244" y="52" font-size="30" fill="#f3d77c">✦</text><text class="v-q" x="40" y="46" font-size="20" fill="#f3d77c" style="animation-delay:.6s">✦</text></svg>`;
+VIG.regalo=`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#f3d9a8"/><rect y="138" width="300" height="32" fill="#d9b36a"/><g class="v-hop"><rect x="114" y="76" width="72" height="16" rx="3" fill="#b23a2e"/><rect x="120" y="92" width="60" height="46" fill="#c84b3d"/><rect x="146" y="76" width="8" height="62" fill="#f3d77c"/><circle cx="138" cy="68" r="10" fill="none" stroke="#f3d77c" stroke-width="6"/><circle cx="162" cy="68" r="10" fill="none" stroke="#f3d77c" stroke-width="6"/></g><text class="v-q" x="206" y="64" font-size="28" fill="#fff">✦</text><text class="v-q" x="82" y="56" font-size="22" fill="#fff" style="animation-delay:.5s">✦</text></svg>`;
+VIG.dato=`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#d9e2d0"/><rect x="60" y="30" width="180" height="116" rx="6" fill="#f4efe6"/><path d="M60 70h180M60 108h180M120 30v116M180 30v116" stroke="#c9d6a8" stroke-width="3" fill="none"/><ellipse class="v-ring" cx="150" cy="116" rx="26" ry="9" fill="none" stroke="#b23a2e" stroke-width="3"/><g class="v-bob"><path d="M150 40a22 22 0 0 1 22 22c0 18-22 52-22 52s-22-34-22-52a22 22 0 0 1 22-22z" fill="#b23a2e"/><circle cx="150" cy="62" r="8" fill="#fff"/></g></svg>`;
+VIG.dia=`<svg viewBox="0 0 300 170"><defs><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ccbe8"/><stop offset="1" stop-color="#fbe7a8"/></linearGradient></defs><rect width="300" height="170" fill="url(#gd)"/><g class="v-spin" style="transform-origin:150px 70px"><g stroke="#ffd96a" stroke-width="6" stroke-linecap="round"><path d="M150 14v-12M150 126v12M94 70H82M206 70h12M110 30l-8-8M190 110l8 8M190 30l8-8M110 110l-8 8"/></g></g><circle cx="150" cy="70" r="34" fill="#fff4b8"/><rect y="136" width="300" height="34" fill="#8fa662"/><path d="M20 140q4-18 8 0M60 142q4-14 8 0M240 140q4-18 8 0M270 142q4-14 8 0" stroke="#e79ab0" stroke-width="3" fill="none"/></svg>`;
+VIG.hide=`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#d8e0c0"/><rect y="138" width="300" height="32" fill="#8fa662"/><path d="M110 138L124 74M190 138L176 74M124 138l52-64M176 138l-52-64" stroke="#7f5539" stroke-width="5" fill="none"/><rect x="108" y="64" width="84" height="14" fill="#a56f46"/><rect x="114" y="38" width="72" height="26" fill="#8a5a38"/><path d="M104 38l46-24 46 24z" fill="#5a3d28"/><rect x="128" y="46" width="44" height="10" fill="#2d3322"/><circle class="v-glint2" cx="140" cy="51" r="3" fill="#fff"/><circle class="v-glint2" cx="160" cy="51" r="3" fill="#fff"/><path d="M210 138V108M222 138V108M210 118h12M210 128h12" stroke="#7f5539" stroke-width="3" fill="none"/></svg>`;
+VIG.camioneta=`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#e6d2a6"/><rect y="132" width="300" height="38" fill="#b8975c"/><g class="v-bob"><rect x="70" y="86" width="108" height="32" rx="6" fill="#414833"/><path d="M176 86l-16-24h-52l-10 24z" fill="#656d4a"/><rect x="112" y="68" width="44" height="18" fill="#9fc3d6"/><rect x="178" y="98" width="38" height="20" rx="5" fill="#414833"/><g class="v-spin" style="transform-origin:100px 122px"><circle cx="100" cy="122" r="16" fill="#2b2b2b"/><circle cx="100" cy="122" r="7" fill="#8d9298"/><path d="M100 108v28" stroke="#8d9298" stroke-width="3"/></g><g class="v-spin" style="transform-origin:200px 122px"><circle cx="200" cy="122" r="16" fill="#2b2b2b"/><circle cx="200" cy="122" r="7" fill="#8d9298"/><path d="M200 108v28" stroke="#8d9298" stroke-width="3"/></g></g><g fill="#fff" class="v-hiss" opacity=".7"><circle cx="58" cy="128" r="7"/><circle cx="44" cy="120" r="5"/></g></svg>`;
+const SU=[
+{id:'guia',q:'Un guía de aves local te invita a salir juntos esta mañana.',msg:'Conoce cada rincón y cada canto.',mod:1.35,ari:1.7,tag:'Más aves y más raras'},
+{id:'regalo',q:'¡Te regalan un viaje! Un amigo te cubre la nafta del mes.',msg:'Salís con el tanque lleno.',na:3,mod:1.15,tag:'+3 nafta y más aves'},
+{id:'dato',q:'Un conocido te pasa la ubicación exacta de una rareza.',msg:'Tenés la coordenada del lugar donde la vieron.',rara:.85,tag:'Muy buena chance de una rara'},
+{id:'dia',q:'Amanece un día perfecto: sin viento, cielo claro y los árboles cargados de frutos.',msg:'Hay movimiento por todos lados.',mod:1.3,tag:'Más aves'},
+{id:'hide',q:'Descubrís un observatorio de aves nuevo, con torre y comedero.',msg:'Las aves vienen solas.',mod:1.2,ari:1.4,tag:'Más aves y más raras'},
+{id:'camioneta',q:'Te prestan una camioneta 4x4 y llegás a un rincón al que casi nadie va.',msg:'Terreno virgen y sin gente.',mod:1.2,ari:1.8,tag:'Más raras'}
+];
+function suerte(){const m=(()=>{let p=SU.filter(s=>!G.sus.has(s.id));if(!p.length){G.sus.clear();p=SU}const s=p[Math.floor(G.r()*p.length)];G.sus.add(s.id);return s})();G.su=m;
+ $(cab()+`<div class="vig">${VIG[m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><p class="nota">${m.msg}</p><span class="chips"><i class="up">${m.tag}</i></span><button class="btn" onclick="aplicarSu()">¡Qué suerte!</button>`)}
+function aplicarSu(){const s=G.su;if(s.mod)G.mod*=s.mod;if(s.ari)G.ari=s.ari;if(s.na)G.nafta+=s.na;pop('¡Suerte! '+s.tag);G.ev={w:'day',o:[]};resolver(s.rara?{rara:s.rara}:{})}
+
 const MI=[
 {id:'bino',q:'Llegás al lugar, metés la mano en la mochila… y no están los binoculares. Quedaron sobre la mesa de casa.',o:[{t:'Volver a buscarlos',s:'Perdés tiempo y nafta, pero salís completo.',c:'−1 nafta · −1 energía',na:-1,en:-1},{t:'Seguir sin binoculares',s:'Solo vas a ver lo que tengas cerca.',c:'Rendís menos este mes',mod:.55}]},
 {id:'rueda',q:'Se escucha un golpe seco y el auto empieza a ir de costado: pinchaste una goma.',o:[{t:'Cambiar la rueda ya',s:'Sudás, pero seguís tranquilo.',c:'−1 energía',en:-1},{t:'Seguir despacio hasta el lugar',s:'Con la goma baja, y a ver cuánto aguanta.',c:'Riesgo',az:[.5,.7,.95,'La goma terminó de desinflarse y llegaste tarde y con la llanta machucada (−2 nafta).','Llegó entera hasta el final.'],naMal:-2}]},
@@ -423,7 +444,8 @@ function chips(o){const c=[];
 function pop(t,bad){if(window.SIMULA||!t)return;const d=document.createElement('div');d.className='pop'+(bad?' mal':'');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
 function deltas(o){const a=[];if(o.na)a.push((o.na>0?'+':'−')+Math.abs(o.na)+' nafta');if(o.en)a.push((o.en>0?'+':'−')+Math.abs(o.en)+' energía');return a.join(' · ')}
 function viaje2(){clearTimeout(G.tm);
- if(G.mes>0&&G.r()<.32){let pool=MI.filter(m=>!G.mis.has(m.id));if(!pool.length){G.mis.clear();pool=MI}const m=pool[Math.floor(G.r()*pool.length)];G.mis.add(m.id);G.mi=m;
+ const rr=G.r();G.kind='ev';if(G.mes>0&&rr>=.25&&rr<.45){G.kind='su';return suerte()}
+ if(G.mes>0&&rr<.25){G.kind='mi';let pool=MI.filter(m=>!G.mis.has(m.id));if(!pool.length){G.mis.clear();pool=MI}const m=pool[Math.floor(G.r()*pool.length)];G.mis.add(m.id);G.mi=m;
   return $(cab()+`<div class="vig">${VIG[m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><div class="ops">${m.o.map((o,k)=>{const bl=(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=m.o.every(x=>(x.en<0&&G.en+x.en<0)||(x.na<0&&G.nafta+x.na<0)),no=bl&&!(todos&&k===m.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirMi(${k})"><b>${o.t}</b><span>${o.s}</span><small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
  evento()}
 function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
@@ -432,7 +454,7 @@ function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
  if(o.az){const mal=G.r()<o.az[0];G.mod*=mal?o.az[1]:o.az[2];if(mal){G.nafta=Math.max(0,G.nafta+(o.naMal||0));t=o.az[3];bad=true}else t=o.az[4]}
  if(o.na<0||o.en<0)bad=true;
  pop(t,bad);G.ev={w:'day',o:[]};resolver({})}
-function elegirZona(i){G.mod=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
+function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
  $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
  clearTimeout(G.tm);G.tm=setTimeout(viaje2,1500)}
 function evento(){clearTimeout(G.tm);
@@ -447,7 +469,7 @@ function resolver(o){if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.m
  if(o.az){const mal=G.r()<o.az[0];ef=mal?o.az[1]:o.az[2];msg=mal?o.az[3]:o.az[4]}
  if(G.en===0){ef*=.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
  const zi=ZK.indexOf(G.zona),nuevas=[];let rep=0;
- for(let i=0;i<N;i++){const x=SP[i];let e=ef;if(o.ari&&x[4]<2)e*=o.ari;if(o.fam&&o.fam[0].includes(x[3]))e*=o.fam[1];
+ for(let i=0;i<N;i++){const x=SP[i];let e=ef;if(o.ari&&x[4]<2)e*=o.ari;if(G.ari>1&&x[4]<2)e*=G.ari;if(o.fam&&o.fam[0].includes(x[3]))e*=o.fam[1];
   const p=1-Math.pow(1-Math.min(.8,prob(i,zi,G.mes)*MK(G.lugar)),e);if(G.r()<p){if(G.vistas.has(x[0]))rep++;else{G.vistas.add(x[0]);nuevas.push(i)}}}
  if(o.rara!=null){if(G.r()<o.rara){const cand=SP.map((x,i)=>i).filter(i=>!G.vistas.has(SP[i][0])&&SP[i][4]<1.5&&SP[i][4]>=.02),wt=i=>Math.sqrt(SP[i][4]);const tot=cand.reduce((a,i)=>a+wt(i),0);let u=G.r()*tot,pick=null;for(const i of cand){u-=wt(i);if(u<=0){pick=i;break}}if(pick!=null){G.vistas.add(SP[pick][0]);nuevas.unshift(pick);msg='Estaba. Dos horas de ruta y ahí la tenías: '+SP[pick][1]+'.'}}else msg='Llegaste y ya no estaba. Así es esto.'}
  if(G.mod<1)msg+=(msg?' ':'')+'Saliste en desventaja este mes.';
@@ -464,7 +486,7 @@ function figu(i,n){const s=SP[i],rara=s[4]<.5,mit=s[4]<.05;return `<div class="f
 function reiniciar(b){if(b.dataset.ok){clearTimeout(G&&G.tm);nuevo(String(Math.random()))}else{b.dataset.ok=1;b.textContent='¿Seguro? Tocá de nuevo';setTimeout(()=>{if(b.isConnected){delete b.dataset.ok;b.textContent='Reiniciar'}},3000)}}
 function sig(){G.mes++;pintarMes()}
 function titulo(n){return n>=T[4]?'Leyenda cordobesa':n>=T[3]?'Cazador de lifers':n>=T[2]?'Ojo entrenado':n>=T[1]?'Libreta gastada':n>=T[0]?'Salidor de domingo':'Pajarero de balcón'}
-const T=[55,80,105,130,150];
+const T=[60,90,125,155,180];
 function final(){const n=G.vistas.size,top=[...G.vistas].map(id=>IX[id]).sort((a,b)=>SP[a][4]-SP[b][4]).slice(0,6),mejor=G.log.slice().sort((a,b)=>b.n-a.n)[0];
  const txt=`Mi año pajarero\n${n} especies de Córdoba en un año · ${titulo(n)}\nMejor mes: ${MESES[mejor.m]} en ${mejor.z} (+${mejor.n})\nFigurita más difícil: ${SP[top[0]][1]}\n¿Me ganás? ${SH.url}`;
  $(`<div><p class="lab">Fin del año</p><div class="grande">${n}<small> especies</small></div><h2>de Córdoba en un año</h2></div>

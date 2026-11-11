@@ -214,6 +214,8 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .chips{display:flex;gap:6px;flex-wrap:wrap;font-family:var(--t);font-style:normal}
 .chips i{font-style:normal;font-weight:900;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:#dfe7cc;color:#414833}
 .chips i.ra{background:#f3e3a6;color:#6b4e0a}.chips i.dn{background:#ead2cc;color:#8a2f25}.chips i.rs{background:#dcdfe8;color:#3d4660}
+.v-spin{animation:vspin 12s linear infinite}.v-hop{animation:vhop 1s ease-in-out infinite alternate}.v-ring{animation:vring 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}.v-glint2{animation:parp 1.4s ease-in-out infinite}
+@keyframes vspin{to{transform:rotate(360deg)}}@keyframes vhop{to{transform:translateY(-10px)}}@keyframes vring{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.8);opacity:0}}
 </style>
 </head>
 <body>
