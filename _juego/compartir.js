@@ -28,12 +28,12 @@ async function dibujar(cv,fmt,d){const F=FMT[fmt],W=F.w,H=F.h,x=cv.getContext('2
   post:{lab:80,ns:230,ny:370,sub:425,st:505,hd:615,gy:640,cols:3,cw:195,gap:26,n:6,foot:1262,fs:.9,tf:56},
   cuadrado:{lab:85,ns:230,ny:335,sub:390,st:478,hd:580,gy:605,cols:4,cw:215,gap:20,n:4,foot:975,fs:.85,tf:46}}[fmt];
  const mid=W/2;x.textAlign='center';x.textBaseline='alphabetic';
- x.fillStyle=C.tierra;x.font='900 '+(44*L.fs)+'px '+FL;tracking(x,8);x.fillText('MI AÑO PAJARERO',mid,L.lab);tracking(x,0);
- x.font='italic 400 '+(40*L.fs)+'px '+FP;x.fillText('Doce meses por Córdoba',mid,L.lab+55*L.fs);
+ x.fillStyle=C.tierra;x.font='900 '+(44*L.fs)+'px '+FL;tracking(x,8);{const tt=d.nombre?('AÑO PAJARERO DE '+d.nombre.toUpperCase()):'MI AÑO PAJARERO';let fz=44*L.fs;x.font='900 '+fz+'px '+FL;tracking(x,8);while(x.measureText(tt).width>W-140&&fz>26){fz-=2;x.font='900 '+fz+'px '+FL}x.fillText(tt,mid,L.lab)}tracking(x,0);
+ x.font='italic 400 '+(40*L.fs)+'px '+FP;x.fillText((d.salidas===6?'6 salidas por Córdoba':'Doce meses por Córdoba')+' · '+d.perfil,mid,L.lab+55*L.fs);
  // número
  const nx=mid;
  x.fillStyle=C.oliva;x.font=`900 ${L.ns}px ${FL}`;x.fillText(String(d.n),nx,L.ny);
- x.fillStyle=C.tierra;x.font=`italic 400 ${L.ns*.14}px ${FP}`;x.fillText('especies en un año',nx,L.sub);
+ x.fillStyle=C.tierra;x.font=`italic 400 ${L.ns*.14}px ${FP}`;x.fillText('especies '+d.fin,nx,L.sub);
  // sello
  const sx=mid,sy=L.st;
  x.save();x.translate(sx,sy);x.rotate(-4*Math.PI/180);const tf=L.tf;x.font=`900 ${tf}px ${FL}`;tracking(x,3);
