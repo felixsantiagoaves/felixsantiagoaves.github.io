@@ -172,7 +172,7 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .lug small{padding:8px 12px;color:var(--figu-ink);opacity:.75;border-top:3px solid var(--ac)}
 
 .viaje{display:flex;flex-direction:column;gap:12px}
-.ruta{height:64px;border-radius:8px;background:var(--panel);overflow:hidden}.ruta .rs{width:100%;height:100%;display:block}.ruta .hu{fill:var(--tierra);opacity:0;animation:hue .5s ease-out both}.ruta .tr{fill:none;stroke:var(--tierra);stroke-width:3;stroke-linecap:round;stroke-dasharray:.02 .028;stroke-dashoffset:0;opacity:.9;clip-path:inset(0 100% 0 0);animation:trz 1.9s ease-in-out both}.ruta .o{fill:var(--tierra)}.ruta .pin{fill:var(--tierra);opacity:0;transform-box:fill-box;transform-origin:50% 100%;animation:cae2 .5s 1.8s ease-out both}@keyframes hue{from{opacity:0;transform:scale(.6)}to{opacity:.85}}@keyframes trz{to{clip-path:inset(0 0 0 0)}}@keyframes cae2{from{opacity:0;transform:translateY(-14px)}to{opacity:1}}
+.ruta{height:64px;border-radius:8px;background:var(--panel);overflow:hidden}.ruta .rs{width:100%;height:100%;display:block}.ruta .hu{fill:var(--tierra);opacity:0;animation:hue .4s ease-out both}.ruta .tr{fill:none;stroke:var(--tierra);stroke-width:3;stroke-linecap:round;stroke-dasharray:3 6}.ruta .mk{fill:none;stroke:#fff;stroke-width:6;stroke-dasharray:1;stroke-dashoffset:1;animation:trz 2s ease-in-out forwards}.ruta .o{fill:var(--tierra)}.ruta .pin{fill:var(--tierra);opacity:0;animation:hue .4s 1.9s ease-out both}@keyframes hue{to{opacity:.9}}@keyframes trz{to{stroke-dashoffset:0}}
 .prog{height:6px;border-radius:3px;background:var(--panel);overflow:hidden}.prog i{display:block;height:100%;width:100%;background:var(--tierra);transform-origin:0 50%;animation:carga 1.4s linear both}
 @keyframes carga{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 /* revelación */
@@ -194,7 +194,7 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 @keyframes aparece{from{opacity:0}}@keyframes gira{to{transform:rotate(360deg)}}@keyframes late{from{opacity:.55;transform:scale(.96)}to{opacity:1;transform:scale(1.04)}}
 @keyframes golpe{from{transform:scale(2.6);opacity:0}}@keyframes entra{from{transform:scale(.2) rotate(-14deg);opacity:0}}@keyframes vibra{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 @keyframes chispa{from{transform:translate(0,0) scale(1);opacity:1}to{transform:translate(var(--x),var(--y)) scale(0);opacity:0}}
-@media (prefers-reduced-motion:reduce){.esc .bg,.ov .rayos,.susp,.ojo,.chispa,.esc .fx,.esc .fx2,.prog i,.ruta .hu,.ruta .tr,.ruta .pin{animation:none!important;opacity:1;clip-path:none}.ov .figu,.grito{animation:none}}
+@media (prefers-reduced-motion:reduce){.esc .bg,.ov .rayos,.susp,.ojo,.chispa,.esc .fx,.esc .fx2,.prog i,.ruta .hu,.ruta .pin{animation:none!important;opacity:1}.ruta .mk{animation:none!important;stroke-dashoffset:0}.ov .figu,.grito{animation:none}}
 .tabs{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 .tabs button{font:inherit;font-weight:900;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:99px;border:2px solid var(--arena);background:transparent;color:var(--tierra);cursor:pointer}
 .tabs button.on{background:var(--oliva);border-color:var(--oliva);color:#ede0d4}
@@ -570,9 +570,9 @@ function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
  pop(t,bad);G.ev={w:'day',o:[]};resolver({})}
 function elegirZona(i){G.mod=1;G.ari=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
  $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}${ruta(G.lugar.c===0)}<button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
- clearTimeout(G.tm);G.tm=setTimeout(viaje2,2400)}
-function ruta(a){if(a){let h='';for(let k=0;k<10;k++){const L=k%2===0,x=22+k*29,y=L?20:34;h+=`<g class="hu" style="animation-delay:${(k*.2).toFixed(2)}s" transform="translate(${x} ${y}) rotate(${L?-8:8})"><ellipse cx="0" cy="-5" rx="3.6" ry="5.2"/><ellipse cx="0" cy="5" rx="2.6" ry="3.2"/></g>`}return `<div class="ruta"><svg viewBox="0 0 320 56" class="rs">${h}</svg></div>`}
- return `<div class="ruta"><svg viewBox="0 0 320 56" class="rs"><path class="tr" pathLength="1" d="M14 42 C60 8 96 52 152 28 S248 8 290 30"/><g class="pin"><path d="M290 30 c-7-9-8-12-8-16 a8 8 0 0 1 16 0 c0 4-1 7-8 16z" /><circle cx="290" cy="14" r="3" fill="#fff"/></g><circle class="o" cx="14" cy="42" r="4"/></svg></div>`}
+ clearTimeout(G.tm);G.tm=setTimeout(viaje2,2900)}
+function ruta(a){if(a){let h='';for(let k=0;k<14;k++){const y=k%2?36:22,x=20+k*21.5;h+=`<g transform="translate(${x} ${y})"><g class="hu" style="animation-delay:${(k*.15).toFixed(2)}s"><ellipse cx="3.5" cy="0" rx="5" ry="3.3"/><ellipse cx="-4.5" cy="0" rx="3" ry="2.4"/></g></g>`}return `<div class="ruta"><svg viewBox="0 0 320 56" class="rs">${h}</svg></div>`}
+ return `<div class="ruta"><svg viewBox="0 0 320 56" class="rs"><defs><mask id="mk"><path class="mk" pathLength="1" d="M14 42 C60 8 96 52 152 28 S248 8 290 30"/></mask></defs><path class="tr" mask="url(#mk)" d="M14 42 C60 8 96 52 152 28 S248 8 290 30"/><g class="pin"><path d="M290 30 c-7-9-8-12-8-16 a8 8 0 0 1 16 0 c0 4-1 7-8 16z" /><circle cx="290" cy="14" r="3" style="fill:#fff"/></g><circle class="o" cx="14" cy="42" r="4"/></svg></div>`}
 function gscore(fi,zi){let s=0;for(let i=0;i<N;i++){const x=SP[i];if(x[3]===fi&&!G.vistas.has(x[0]))s+=prob(i,zi,G.mes)*MK(G.lugar)}return s}
 function expertoEv(ev){const zi=ZK.indexOf(G.zona),sc=FAMS.map((n,fi)=>[fi,gscore(fi,zi),SP.filter(x=>x[3]===fi).length]).filter(a=>a[2]>=3).sort((a,b)=>b[1]-a[1]);
  const top=sc.slice(0,3),mal=sc.slice(-8),buena=G.r()<.6,pk=buena?top[Math.floor(G.r()*top.length)]:mal[Math.floor(G.r()*mal.length)];
