@@ -131,7 +131,7 @@ body{background:var(--fg-cr)}
   .fgh-info{padding:.7rem .4rem .8rem}
   .fgh-name{font-size:1.3rem}
   .fgh-sci{margin-bottom:.4rem;font-size:.88rem}
-  .fgh-lab,.fgh-cur,.fgh-lab-cur,.fgh-share,.fgh .ult-video{display:none!important}
+  .fgh-lab,.fgh-cur,.fgh-lab-cur,.fgh-share{display:none!important}
   .fgh-btn{margin:.6rem 0 0}
   .fgh-hoy{background:none;box-shadow:none;padding:0}
   .fgh-stk{min-height:0;background:none;padding:6px 0 0;gap:10px 6px;overflow:visible;justify-content:space-around}
