@@ -196,8 +196,21 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .tabs{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 .tabs button{font:inherit;font-weight:900;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:99px;border:2px solid var(--arena);background:transparent;color:var(--tierra);cursor:pointer}
 .tabs button.on{background:var(--oliva);border-color:var(--oliva);color:#ede0d4}
-.cv{display:block;margin:0 auto;max-width:100%;max-height:68vh;width:auto;height:auto;border-radius:8px;box-shadow:0 6px 18px var(--sombra);background:#ede0d4}
+.cv{display:block;margin:12px auto 0;max-width:100%;max-height:56vh;width:auto;height:auto;border-radius:8px;box-shadow:0 6px 18px var(--sombra);background:#ede0d4}
 .btn:disabled{opacity:.6;cursor:wait}
+.vig{border-radius:8px;overflow:hidden;box-shadow:0 6px 18px var(--sombra)}.vig svg{display:block;width:100%;height:auto}
+.v-bob{animation:vbob 2.4s ease-in-out infinite}.v-glint{animation:vglint 3s ease-in-out infinite}.v-steam{animation:vsteam 2.2s ease-in-out infinite}.v-q{animation:vq 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.v-sag{animation:vsag 2.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}.v-hiss{animation:vhiss 1.6s ease-out infinite}
+.v-sol{animation:late2 2.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}.v-wave{animation:vwave 2s ease-in-out infinite}.v-gota{animation:vgota 1.8s ease-in infinite}
+.v-bat{animation:parp 1s steps(2,end) infinite}.v-luz{animation:parp .8s steps(2,end) infinite}
+@keyframes vbob{50%{transform:translateY(-4px)}}@keyframes vglint{0%,55%{transform:translateX(-30px);opacity:0}65%{opacity:.7}100%{transform:translateX(120px);opacity:0}}
+@keyframes vsteam{0%{transform:translateY(6px);opacity:0}50%{opacity:.7}100%{transform:translateY(-8px);opacity:0}}@keyframes vq{50%{transform:translateY(-6px) scale(1.15)}}
+@keyframes vsag{from{transform:scaleY(1)}to{transform:scaleY(.82)}}@keyframes vhiss{0%{transform:translate(0,0);opacity:.9}100%{transform:translate(18px,-16px);opacity:0}}
+@keyframes vwave{50%{transform:translateY(-6px);opacity:.15}}@keyframes vgota{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(18px);opacity:0}}
+.pop{position:fixed;left:50%;top:22%;transform:translateX(-50%);z-index:60;background:var(--oliva);color:#ede0d4;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;padding:9px 16px;border-radius:99px;box-shadow:0 8px 22px var(--sombra);animation:pop 1.7s ease-out both;pointer-events:none;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis}
+.pop.mal{background:var(--rojo)}
+@keyframes pop{0%{opacity:0;transform:translate(-50%,16px) scale(.8)}12%{opacity:1;transform:translate(-50%,0) scale(1.05)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-36px)}}
+@media (prefers-reduced-motion:reduce){.vig svg *,.pop{animation:none!important}}
 </style>
 </head>
 <body>

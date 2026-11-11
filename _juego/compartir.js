@@ -33,7 +33,7 @@ async function dibujar(cv,fmt,d){const F=FMT[fmt],W=F.w,H=F.h,x=cv.getContext('2
  // número
  const nx=mid;
  x.fillStyle=C.oliva;x.font=`900 ${L.ns}px ${FL}`;x.fillText(String(d.n),nx,L.ny);
- x.fillStyle=C.tierra;x.font=`italic 400 ${L.ns*.14}px ${FP}`;x.fillText(`de ${N} especies`,nx,L.sub);
+ x.fillStyle=C.tierra;x.font=`italic 400 ${L.ns*.14}px ${FP}`;x.fillText('especies en un año',nx,L.sub);
  // sello
  const sx=mid,sy=L.st;
  x.save();x.translate(sx,sy);x.rotate(-4*Math.PI/180);const tf=L.tf;x.font=`900 ${tf}px ${FL}`;tracking(x,3);

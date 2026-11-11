@@ -51,6 +51,10 @@ const EV=[
 {z:'CAEU',q:'Hay un arbusto florecido con picaflores dando vueltas.',o:[{t:'Quedarte quieto con la cámara',s:'Un rato largo, pero valen la pena.',c:'−1 energía',en:-1,ef:.7,fam:[f('Picaflores'),5]},{t:'Seguir caminando',s:'Hay mucho por recorrer.',c:'Sin costo',ef:1}]},
 {z:'LHPE',q:'Se acerca la noche en un campo abierto.',o:[{t:'Salida nocturna con linterna roja',s:'Lechuzas y atajacaminos a la vista.',c:'−1 energía',en:-1,ef:.5,fam:[f('Lechuzas','Atajacaminos'),6]},{t:'Volver a casa',s:'Cenar tranquilo.',c:'+1 energía',en:1,ef:.95}]},
 {q:'Se rompe el parabrisas con una piedra en el camino de ripio.',o:[{t:'Hacerlo arreglar ya',s:'Perdés media jornada, pero con el auto sano.',c:'−2 nafta',na:-2,ef:.6},{t:'Seguir con la grieta',s:'Más tiempo en el campo.',c:'Riesgo',az:[.35,.8,1.2,'Se agrandó la grieta y tuviste que volver.','Llegó entero hasta el final.']}]},
+{z:'LHPE',q:'Un alambrado con un cartel: "Propiedad privada". Del otro lado, un bañado lleno de patos.',o:[{t:'Meterte igual',s:'Nadie te ve… ¿o sí?',c:'Riesgo',az:[.55,.3,1.7,'Apareció el dueño y te pidió que te fueras. Perdiste la mañana.','Nadie te vio, pero te quedó el cargo de conciencia.']},{t:'Mirar desde el camino',s:'Menos, pero tranquilo.',c:'Sin costo',ef:.9}]},
+{z:'RCEU',q:'Ves un nido con pichones a pocos metros del sendero.',o:[{t:'Acercarte para la foto',s:'Una imagen única.',c:'Riesgo',az:[.6,.35,1.4,'Los padres se asustaron y ahuyentaron todo alrededor. Te fuiste con mala conciencia.','Salió la foto, pero los padres tardaron en volver.']},{t:'Alejarte y observar de lejos',s:'Los dejás tranquilos.',c:'Sin costo',ef:1.05}]},
+{z:'PLHE',q:'Un grupo de pajareros pasa el canto grabado sin parar en un árbol.',o:[{t:'Usar el playback vos también',s:'Las aves se acercan enseguida.',c:'Riesgo',az:[.5,.4,1.5,'Las aves se estresaron y se fueron. Nadie vio nada más.','Se acercaron un rato, pero no es la mejor manera.']},{t:'Esperar en silencio',s:'Más lento, pero respetuoso.',c:'−1 energía',en:-1,ef:1.1}]},
+{q:'Ruta con mucho tránsito y la banquina angosta. Se ven aves en el alambrado.',o:[{t:'Frenar a mirar en la banquina',s:'Es rápido.',c:'Riesgo',az:[.4,.5,1.2,'Pasó un camión demasiado cerca. Te fuiste de ahí con el susto.','Pudiste mirar tranquilo un buen rato.']},{t:'Buscar un camino de tierra',s:'Más seguro y tranquilo.',c:'−1 nafta',na:-1,ef:1.05}]},
 {z:'APH',q:'Soplan vientos del sur con aire frío y limpio.',o:[{t:'Salir a la costa o a la cima',s:'Las aves viajan con el viento a favor.',c:'−1 energía',en:-1,ef:1.2},{t:'Quedarte reparado',s:'Menos viento, menos movimiento.',c:'Seguro',ef:.85}]}
 ];
 const WX={'Suena el despertador':'dawn','El pronóstico anuncia lluvia':'rain','Se hace la tarde':'dusk','Viento fuerte':'wind','Neblina':'fog','Crecida':'rain','Tormenta':'storm','Se ve humo':'fire','Ola de calor':'heat','Madrugada con helada':'frost','Camino de barro':'rain','Se acerca la noche':'night','Soplan vientos':'wind'};
@@ -99,12 +103,12 @@ function revelar(ids){if(window.SIMULA||!ids.length)return;let k=0;
   tt=setTimeout(rev,mit?2300:1400);ov.onclick=()=>{if(!hecho)rev()}};
  sig()}
 let G;
-function nuevo(seed){G={seed,r:rng(hash(seed)),mes:0,nafta:20,en:3,vistas:new Set(),log:[],evs:[],zona:null,lugar:null,vis:new Set(),ev:null};pintarMes()}
+function nuevo(seed){G={mis:new Set(),mod:1,seed,r:rng(hash(seed)),mes:0,nafta:20,en:3,vistas:new Set(),log:[],evs:[],zona:null,lugar:null,vis:new Set(),ev:null};pintarMes()}
 const $=(h)=>{document.getElementById('app').innerHTML=h;window.scrollTo(0,0)};
 const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';for(let i=0;i<12;i++)c+=`<i class="${i<G.mes?'h':i===G.mes?'a':verano(i)?'v':''}"></i>`;
 return `<div class="top"><button class="snd" onclick="reiniciar(this)">Reiniciar</button><button class="snd" onclick="SND=!SND;this.textContent=SND?'Sonido: sí':'Sonido: no'">Sonido: ${SND?'sí':'no'}</button></div><div class="camino" aria-label="Mes ${G.mes+1} de 12">${c}</div>
-<div class="barra"><div class="dato"><span class="lab">Especies</span><b>${G.vistas.size}<small> / ${N}</small></b></div><div class="dato"><span class="lab">Nafta</span><b>${G.nafta}</b></div><div class="dato"><span class="lab">Energía</span><span class="pts" aria-label="${G.en} de 4">${pts(G.en,4)}</span></div></div>`}
+<div class="barra"><div class="dato"><span class="lab">Especies</span><b>${G.vistas.size}</b></div><div class="dato"><span class="lab">Nafta</span><b>${G.nafta}</b></div><div class="dato"><span class="lab">Energía</span><span class="pts" aria-label="${G.en} de 4">${pts(G.en,4)}</span></div></div>`}
 function potencial(l){const zi=ZK.indexOf(l.z),m=MK(l);let s=0;for(let i=0;i<N;i++)if(!G.vistas.has(SP[i][0]))s+=Math.min(.8,prob(i,zi,G.mes)*m);return s}
 function tier(p){return p<12?'pocas novedades':p<18?'algunas novedades':p<24?'varias novedades':'muchas novedades'}
 function pintarMes(){
@@ -114,16 +118,42 @@ function pintarMes(){
  G.ops=[el[0],...el.slice(1).sort((a,b)=>a.c-b.c)];
  $(cab()+`<div><p class="lab">${MESES[G.mes]} · mes ${G.mes+1} de 12</p><h2>¿A dónde salís este mes?</h2></div><p class="estac">${nota(G.mes)}</p>
  <div class="ops">${G.ops.map((l,i)=>{const no=l.c>G.nafta;return `<button class="op lug" style="--r:${[-.6,.5,-.3][i]}deg;--ac:${ZA[l.z]};--tn:${ZT[l.z]||'#fff'}" ${no?'disabled':''} onclick="elegirZona(${i})"><div class="lb" style="background-image:${ZIMG(l.z,'day')}"><b>${l.n}</b></div><small>${no?'No te alcanza la nafta':l.c?'Nafta −'+l.c:'Cerca · sin nafta'}</small></button>`}).join('')}</div><p class="pie">Lugares: sitios de interés de eBird en Córdoba.</p>`)}
-function elegirZona(i){G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
- $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="evento()">Seguir</button></div>`);
- clearTimeout(G.tm);G.tm=setTimeout(evento,1500)}
+
+const VIG={
+bino:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#e2cfae"/><rect y="118" width="300" height="52" fill="#8a5a38"/><rect y="118" width="300" height="5" fill="#a56f46"/><g class="v-bob"><rect x="104" y="66" width="38" height="58" rx="14" fill="#2d3322"/><rect x="158" y="66" width="38" height="58" rx="14" fill="#2d3322"/><rect x="136" y="82" width="28" height="14" fill="#414833"/><circle cx="123" cy="70" r="13" fill="#9fc3d6"/><circle cx="177" cy="70" r="13" fill="#9fc3d6"/><rect class="v-glint" x="96" y="56" width="10" height="60" fill="#fff" opacity=".6" transform="rotate(20 100 86)"/></g><ellipse cx="228" cy="122" rx="20" ry="6" fill="#00000030"/><rect x="214" y="98" width="28" height="24" rx="5" fill="#c9d6a8"/><path d="M243 104q14 2 0 14" fill="none" stroke="#c9d6a8" stroke-width="5"/><path class="v-steam" d="M222 90q-6-10 0-18M232 90q-6-10 0-18" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".6"/><rect x="40" y="108" width="52" height="14" rx="2" fill="#b23a2e" transform="rotate(-6 66 115)"/><text x="150" y="40" text-anchor="middle" font-size="26" font-weight="900" fill="#7f5539" class="v-q">¿?</text></svg>`,
+rueda:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#c9b48a"/><rect y="126" width="300" height="44" fill="#9a8460"/><g class="v-sag"><ellipse cx="150" cy="118" rx="52" ry="34" fill="#2b2b2b"/><ellipse cx="150" cy="118" rx="26" ry="17" fill="#8d9298"/><ellipse cx="150" cy="118" rx="9" ry="6" fill="#555"/></g><g fill="#fff" class="v-hiss"><circle cx="196" cy="128" r="5"/><circle cx="210" cy="118" r="4"/><circle cx="222" cy="108" r="3"/></g><text x="150" y="40" text-anchor="middle" font-size="22" font-weight="900" fill="#7f5539">psssss…</text></svg>`,
+agua:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#f0c874"/><circle class="v-sol" cx="244" cy="38" r="26" fill="#fff4b8"/><rect y="132" width="300" height="38" fill="#c9a15a"/><g class="v-wave" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".5"><path d="M30 118q10-8 20 0t20 0"/><path d="M200 112q10-8 20 0t20 0"/></g><rect x="136" y="60" width="28" height="70" rx="8" fill="#9fc3d6" opacity=".85"/><rect x="144" y="48" width="12" height="14" rx="3" fill="#414833"/><rect x="136" y="110" width="28" height="20" rx="8" fill="#9fc3d6"/><circle class="v-gota" cx="150" cy="144" r="4" fill="#4f9aa8"/></svg>`,
+celu:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#d4cdb8"/><rect x="120" y="22" width="60" height="126" rx="10" fill="#2d3322"/><rect x="126" y="34" width="48" height="100" rx="4" fill="#1d2117"/><rect class="v-bat" x="134" y="76" width="32" height="14" rx="2" fill="#b23a2e"/><rect x="166" y="80" width="3" height="6" fill="#b23a2e"/><text x="150" y="112" text-anchor="middle" font-size="11" font-weight="900" fill="#b23a2e" class="v-bat">1 %</text></svg>`,
+corte:`<svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#bfa77c"/><rect y="124" width="300" height="46" fill="#8f7a56"/><rect x="40" y="84" width="220" height="16" fill="#fff"/><g fill="#e0561d"><path d="M40 84h28l-14 16h-28z"/><path d="M96 84h28l-14 16h-28z"/><path d="M152 84h28l-14 16h-28z"/><path d="M208 84h28l-14 16h-28z"/></g><rect x="48" y="100" width="6" height="30" fill="#555"/><rect x="246" y="100" width="6" height="30" fill="#555"/><circle class="v-luz" cx="150" cy="70" r="9" fill="#ffb347"/></svg>`};
+const MI=[
+{id:'bino',q:'Llegás al lugar, metés la mano en la mochila… y no están los binoculares. Quedaron sobre la mesa de casa.',o:[{t:'Volver a buscarlos',s:'Perdés tiempo y nafta, pero salís completo.',c:'−1 nafta · −1 energía',na:-1,en:-1},{t:'Seguir sin binoculares',s:'Solo vas a ver lo que tengas cerca.',c:'Rendís menos este mes',mod:.55}]},
+{id:'rueda',q:'Se escucha un golpe seco y el auto empieza a ir de costado: pinchaste una goma.',o:[{t:'Cambiar la rueda ya',s:'Sudás, pero seguís tranquilo.',c:'−1 energía',en:-1},{t:'Seguir despacio hasta el lugar',s:'Con la goma baja, y a ver cuánto aguanta.',c:'Riesgo',az:[.5,.7,.95,'La goma terminó de desinflarse y llegaste tarde y con la llanta machucada (−2 nafta).','Llegó entera hasta el final.'],naMal:-2}]},
+{id:'agua',q:'Hace calor y te das cuenta de que no llevaste agua.',o:[{t:'Comprar agua en el próximo pueblo',s:'Un desvío corto.',c:'−1 nafta',na:-1},{t:'Aguantar hasta la vuelta',s:'Total, es una mañana.',c:'−1 energía · rendís menos',en:-1,mod:.85}]},
+{id:'celu',q:'El celular se quedó sin batería. Sin la app para identificar los cantos.',o:[{t:'Cargarlo en el auto',s:'Perdés un rato al principio.',c:'−1 nafta',na:-1},{t:'Seguir con la libreta y de oído',s:'Como se hacía antes.',c:'Rendís menos este mes',mod:.85}]},
+{id:'corte',q:'Un camino cortado por obras te bloquea el acceso.',o:[{t:'Dar toda la vuelta',s:'Un buen desvío.',c:'−2 nafta',na:-2},{t:'Cruzar a pie por la banquina',s:'Cansa, pero se llega.',c:'−1 energía · rendís menos',en:-1,mod:.85}]}
+];
+function pop(t,bad){if(window.SIMULA||!t)return;const d=document.createElement('div');d.className='pop'+(bad?' mal':'');d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1700)}
+function deltas(o){const a=[];if(o.na)a.push((o.na>0?'+':'−')+Math.abs(o.na)+' nafta');if(o.en)a.push((o.en>0?'+':'−')+Math.abs(o.en)+' energía');return a.join(' · ')}
+function viaje2(){clearTimeout(G.tm);
+ if(G.mes>0&&G.r()<.32){let pool=MI.filter(m=>!G.mis.has(m.id));if(!pool.length){G.mis.clear();pool=MI}const m=pool[Math.floor(G.r()*pool.length)];G.mis.add(m.id);G.mi=m;
+  return $(cab()+`<div class="vig">${VIG[m.id]}</div><div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${m.q}</h2></div><div class="ops">${m.o.map((o,k)=>{const bl=(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=m.o.every(x=>(x.en<0&&G.en+x.en<0)||(x.na<0&&G.nafta+x.na<0)),no=bl&&!(todos&&k===m.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirMi(${k})"><b>${o.t}</b><span>${o.s}</span><small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
+ evento()}
+function elegirMi(k){const o=G.mi.o[k];let bad=false,t=deltas(o);
+ if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
+ if(o.mod){G.mod*=o.mod;t+=(t?' · ':'')+'rendís menos';bad=true}
+ if(o.az){const mal=G.r()<o.az[0];G.mod*=mal?o.az[1]:o.az[2];if(mal){G.nafta=Math.max(0,G.nafta+(o.naMal||0));t=o.az[3];bad=true}else t=o.az[4]}
+ if(o.na<0||o.en<0)bad=true;
+ pop(t,bad);evento()}
+function elegirZona(i){G.mod=1;G.lugar=G.ops[i];G.zona=G.lugar.z;G.vis.add(G.lugar.n);G.nafta-=G.lugar.c;
+ $(cab()+`<div class="viaje"><p class="lab">${MESES[G.mes]}</p><h2>Viajando a ${G.lugar.n}…</h2>${escena(G.zona,G.mes>=5&&G.mes<=7?'frost':'day','')}<div class="prog"><i></i></div><button class="btn sec" onclick="viaje2()">Seguir</button></div>`);
+ clearTimeout(G.tm);G.tm=setTimeout(viaje2,1500)}
 function evento(){clearTimeout(G.tm);
  const ok=(e)=>!e.z||e.z.includes(G.zona);
  let pool=G.evs.filter(j=>ok(EV[j]));if(!pool.length){G.evs=EV.map((_,j)=>j);pool=G.evs.filter(j=>ok(EV[j]))}
  const j=pool[Math.floor(G.r()*pool.length)];G.evs.splice(G.evs.indexOf(j),1);G.ev=EV[j];
  $(cab()+escena(G.zona,G.ev.w,nota(G.mes))+`<div><p class="lab">${MESES[G.mes]} · ${G.lugar.n}</p><h2>${G.ev.q}</h2></div>
  <div class="ops">${G.ev.o.map((o,k)=>{const bl=o=>(o.en<0&&G.en+o.en<0)||(o.na<0&&G.nafta+o.na<0),todos=G.ev.o.every(bl),no=bl(o)&&!(todos&&k===G.ev.o.length-1);return `<button class="op" style="--r:${k?.5:-.5}deg" ${no?'disabled':''} onclick="elegirEv(${k})"><b>${o.t}</b><span>${o.s}</span><small>${o.c}${no?' · no te alcanza':''}</small></button>`}).join('')}</div>`)}
-function elegirEv(k){const o=G.ev.o[k];let ef=o.ef||1,msg='';
+function elegirEv(k){const o=G.ev.o[k];if(o.en<0||o.na<0)pop(deltas(o),true);let ef=(o.ef||1)*(G.mod||1),msg='';
  if(o.en)G.en=Math.max(0,Math.min(4,G.en+o.en));if(o.na)G.nafta=Math.max(0,G.nafta+o.na);
  if(o.az){const mal=G.r()<o.az[0];ef=mal?o.az[1]:o.az[2];msg=mal?o.az[3]:o.az[4]}
  if(G.en===0){ef*=.8;msg+=(msg?' ':'')+'Estás fundido: rendís menos hasta que descanses.'}
@@ -131,6 +161,7 @@ function elegirEv(k){const o=G.ev.o[k];let ef=o.ef||1,msg='';
  for(let i=0;i<N;i++){const x=SP[i];let e=ef;if(o.ari&&x[4]<2)e*=o.ari;if(o.fam&&o.fam[0].includes(x[3]))e*=o.fam[1];
   const p=1-Math.pow(1-Math.min(.8,prob(i,zi,G.mes)*MK(G.lugar)),e);if(G.r()<p){if(G.vistas.has(x[0]))rep++;else{G.vistas.add(x[0]);nuevas.push(i)}}}
  if(o.rara!=null){if(G.r()<o.rara){const cand=SP.map((x,i)=>i).filter(i=>!G.vistas.has(SP[i][0])&&SP[i][4]<1.5&&SP[i][4]>=.02),wt=i=>Math.sqrt(SP[i][4]);const tot=cand.reduce((a,i)=>a+wt(i),0);let u=G.r()*tot,pick=null;for(const i of cand){u-=wt(i);if(u<=0){pick=i;break}}if(pick!=null){G.vistas.add(SP[pick][0]);nuevas.unshift(pick);msg='Estaba. Dos horas de ruta y ahí la tenías: '+SP[pick][1]+'.'}}else msg='Llegaste y ya no estaba. Así es esto.'}
+ if(G.mod<1)msg+=(msg?' ':'')+'Saliste en desventaja este mes.';
  nuevas.sort((a,b)=>SP[a][4]-SP[b][4]);
  G.log.push({m:G.mes,z:G.lugar.n,n:nuevas.length,ids:nuevas});
  const fin=G.mes===11;
@@ -146,20 +177,20 @@ function sig(){G.mes++;pintarMes()}
 function titulo(n){return n>=T[4]?'Leyenda cordobesa':n>=T[3]?'Cazador de lifers':n>=T[2]?'Ojo entrenado':n>=T[1]?'Libreta gastada':n>=T[0]?'Salidor de domingo':'Pajarero de balcón'}
 const T=[55,80,105,130,150];
 function final(){const n=G.vistas.size,top=[...G.vistas].map(id=>IX[id]).sort((a,b)=>SP[a][4]-SP[b][4]).slice(0,6),mejor=G.log.slice().sort((a,b)=>b.n-a.n)[0];
- const txt=`Mi año pajarero\n${n} de ${N} especies de Córdoba · ${titulo(n)}\nMejor mes: ${MESES[mejor.m]} en ${mejor.z} (+${mejor.n})\nFigurita más difícil: ${SP[top[0]][1]}\n¿Me ganás? ${SH.url}`;
- $(`<div><p class="lab">Fin del año</p><div class="grande">${n}<small> de ${N}</small></div><h2>especies de Córdoba en tu año</h2></div>
+ const txt=`Mi año pajarero\n${n} especies de Córdoba en un año · ${titulo(n)}\nMejor mes: ${MESES[mejor.m]} en ${mejor.z} (+${mejor.n})\nFigurita más difícil: ${SP[top[0]][1]}\n¿Me ganás? ${SH.url}`;
+ $(`<div><p class="lab">Fin del año</p><div class="grande">${n}<small> especies</small></div><h2>de Córdoba en un año</h2></div>
  <span class="sello">${titulo(n)}</span>
- <p class="sub">Te sobraron ${G.nafta} de nafta. Completaste el ${Math.round(n/N*100)} % de la lista provincial.</p>
+ <div class="comp"><p class="lab" style="margin-bottom:8px">Compartí tu año</p><div class="tabs">${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')">${FMT[k].n}</button>`).join('')}</div><div class="fila"><button class="btn" id="bsh" onclick="compartir()" disabled>Preparando imagen…</button><button class="btn sec" id="bdl" onclick="descargar()" style="display:none">Descargar</button><button class="btn sec" onclick="nuevo(String(Math.random()))">Jugar otro año</button></div><canvas id="cv" class="cv" aria-label="Imagen para compartir tu resultado"></canvas>
+ </div>
+ <p class="sub">Te sobraron ${G.nafta} de nafta.</p>
  <div><p class="lab" style="margin-bottom:8px">Tus figuritas más difíciles</p><div class="figus">${top.map((i,k)=>figu(i,k)).join('')}</div></div>
  <div><p class="lab" style="margin-bottom:6px">Tu camino</p><div class="recap">${G.log.map(l=>`<div><span>${MESES[l.m]} · ${l.z}</span><b>+${l.n}</b></div>`).join('')}</div></div>
- <div><p class="lab" style="margin-bottom:8px">Compartí tu año</p><div class="tabs">${Object.keys(FMT).map(k=>`<button data-f="${k}" onclick="elegirFmt('${k}')">${FMT[k].n}</button>`).join('')}</div><canvas id="cv" class="cv" aria-label="Imagen para compartir tu resultado"></canvas></div>
- <div class="fila"><button class="btn" id="bsh" onclick="compartir()" disabled>Preparando imagen…</button><button class="btn sec" id="bdl" onclick="descargar()" style="display:none">Descargar</button></div>
- <div class="fila"><button class="btn sec" id="cp" onclick="copiar()">Copiar texto</button><button class="btn sec" onclick="nuevo(String(Math.random()))">Jugar otro año</button></div><textarea id="txt" rows="4" readonly style="display:none">${txt}</textarea>
+ <div class="fila"><button class="btn sec" id="cp" onclick="copiar()">Copiar texto</button></div><textarea id="txt" rows="4" readonly style="display:none">${txt}</textarea>
  <p class="pie"><a href="/">Volver a la web</a> · Frecuencias: eBird, 85.637 listas completas de Córdoba. El porcentaje de cada figurita es en cuántas listas aparece.</p>`);SH.d={n,top,titulo:titulo(n)};SH.txt=txt;elegirFmt('historia')}
 function copiar(){const t=document.getElementById('txt'),b=document.getElementById('cp');const ok=()=>{b.textContent='Copiado'};
  (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).then(ok).catch(()=>{t.style.display='block';t.focus();t.select();b.textContent='Seleccionado: copialo'})}
 function inicio(){const dem=[7,4,112,153,323,99].map(id=>IX[id]).filter(i=>i!=null);
- $(`<div><p class="lab"><a href="/" style="color:inherit;text-decoration:none">Félix Santiago Aves</a></p><h1>Mi año pajarero</h1><p class="sub">Doce meses por Córdoba, una libreta y nafta contada. ¿Cuántas de las ${N} aves de la provincia sumás?</p></div>
+ $(`<div><p class="lab"><a href="/" style="color:inherit;text-decoration:none">Félix Santiago Aves</a></p><h1>Mi año pajarero</h1><p class="sub">Doce meses por Córdoba, una libreta y nafta contada. ¿Cuántas aves de Córdoba lográs sumar en un año?</p></div>
  ${escena('L','dawn','Amanece en la laguna',1)}
  <p>Cada mes elegís a dónde salir y resolvés lo que te cruza el camino. Cada zona tiene sus aves, y muchas cambian con las estaciones. Lo que encontrás se sortea con la frecuencia real de eBird: ningún año se repite.</p>
  <div class="figus">${dem.map((i,k)=>figu(i,k)).join('')}</div>
