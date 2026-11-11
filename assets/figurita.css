@@ -380,3 +380,12 @@ body{background:var(--fg-cr)}
 #m-img{view-transition-name:ave-foto}
 @media (prefers-reduced-motion:reduce){.stickers .fig.rara .fig-img::after{display:none}#m-img{view-transition-name:none}}
 #page-juegos .trab::before{display:none!important}#page-juegos .trab>img{margin-left:auto!important;margin-right:auto!important}
+
+.ult-juego{display:flex;gap:.7rem;align-items:center;width:100%;max-width:520px;margin:.8rem 0;padding:.5rem;background:#ede0d4;border:1px solid #ddd0c0;border-radius:2px;text-decoration:none;text-align:left}
+.ult-juego .uj-th{flex:0 0 130px;aspect-ratio:16/9;background:#ede0d4;border:2px solid var(--fg-ar,#c4a882);border-radius:8px;overflow:hidden;padding:4px;box-sizing:border-box}
+.ult-juego .uj-info{display:flex;flex-direction:column;min-width:0;flex:1}
+.ult-juego .uj-t{font:900 .65rem 'Lato',sans-serif;text-transform:uppercase;letter-spacing:2px;color:var(--fg-v2,#656d4a)}
+.ult-juego .uj-n{font:italic 1.1rem/1.1 'Playfair Display',serif;color:#5c3d28;margin:.15rem 0}
+.ult-juego .uj-c{font:700 .76rem/1.3 'Lato',sans-serif;color:var(--fg-ti,#7f5539)}
+.ult-juego:hover .uj-c{text-decoration:underline}
+@media(max-width:420px){.ult-juego .uj-th{flex-basis:110px}}
