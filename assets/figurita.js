@@ -27,6 +27,22 @@
   }
   var tries = 0, t = setInterval(function(){ if(dots() || ++tries > 40) clearInterval(t); }, 250);
 
+
+  /* Fotos "En el campo": avanzan solas; se frenan si las tocás o las mirás con el mouse */
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    var pausa = 0, n = 0;
+    function marca(){ pausa = Date.now() + 9000; }
+    var t = setInterval(function(){
+      var g = document.getElementById('campo-grid'); if(!g){ if(++n > 40) clearInterval(t); return; }
+      if(!g.dataset.auto){ g.dataset.auto = 1; ['pointerdown','touchstart','wheel','mouseenter','focusin'].forEach(function(e){ g.addEventListener(e, marca, {passive: true}); }); }
+      if(document.hidden || Date.now() < pausa || g.children.length < 2) return;
+      var r = g.getBoundingClientRect(); if(r.bottom < 0 || r.top > innerHeight) return;
+      var w = g.clientWidth, i = Math.round(g.scrollLeft / Math.max(1, w)), fin = g.scrollLeft + w >= g.scrollWidth - 4;
+      g.scrollTo({left: fin ? 0 : (i + 1) * w, behavior: 'smooth'});
+    }, 4000);
+  })();
+
   /* Mascota de la portada: una al azar entre las dibujadas; cambia sola cada tanto o al tocarla */
   var MAS = ['aguatero','atajacaminos-tijera','calandrita','carancho','carpintero-hembra','carpintero-macho','chiricote','chivi-comun','crespin','barullero','colorada','gallineta','golondrina-ceja-blanca','inambu-montaraz','inambu-silbon','juan-chiviro','monterita-de-collar','pecho-colorado','pepitero-chico','pepitero-gris','pijui-frente-gris','pitiayumi'];
   function mascota(){
