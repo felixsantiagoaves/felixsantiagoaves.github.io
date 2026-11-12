@@ -486,7 +486,7 @@ const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';G.cal=G.P.cal;G.cal.forEach((m,i)=>{c+=`<i class="${i<G.k?'h':i===G.k?'a':verano(m)?'v':''}"></i>`});
 return `<div class="top"><button class="snd" onclick="reiniciar(this)">Reiniciar</button><button class="snd" onclick="sndToggle(this)">Sonido: ${SND?'sí':'no'}</button></div><div class="camino" style="grid-template-columns:repeat(${G.cal.length},1fr)" aria-label="Salida ${G.k+1} de ${G.cal.length}">${c}</div>
 <div class="barra"><button class="dato dbtn" onclick="libreta()" aria-label="Ver mis especies"><span class="lab">Especies ▾</span><b>${G.vistas.size}</b></button><div class="dato"><span class="lab">Nafta</span><b>${G.nafta}</b></div><div class="dato"><span class="lab">Energía</span><span class="pts" aria-label="${G.en} de 4">${pts(G.en,4)}</span></div></div>`}
-const API='';/* poner 'https://api.felixsantiago.com.ar' cuando el Worker esté activo */
+const API='https://api.felixsantiago.com.ar';
 function hist(){try{return JSON.parse(localStorage.getItem('ap_hist')||'[]')}catch(e){return[]}}
 function rkHTML(l,yo){return l.length?`<ol class="rk">${l.map((x,i)=>`<li class="${yo&&x.nombre===yo.nombre&&x.e===yo.e?'yo':''}"><span>${i+1}</span><b>${x.nombre.replace(/</g,'')}</b><i>${x.e}</i></li>`).join('')}</ol>`:'<p class="pie">Todavía no hay partidas en este perfil.</p>'}
 function guardarPartida(n){const reg={n:NOMBRE||'Anónimo',p:G.modo,e:n,t:titulo(n),d:Date.now()};try{const h=hist();h.unshift(reg);localStorage.setItem('ap_hist',JSON.stringify(h.slice(0,60)))}catch(e){}
