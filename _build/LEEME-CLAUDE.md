@@ -174,3 +174,8 @@ Los textos de las fichas (`_fichas/<slug>.json`, `secciones`) y los minis de `as
 - assets/mascotas/*.svg + mascotas.js: personajes originales de Felix (carancho, carpintero lomo blanco macho/hembra, gallineta pico pintado) que pasan por el borde de la pantalla en SU ficha.
 - _fichas/gen_fichas.py: dict MASCOTAS (slug -> personaje). Solo esas fichas incluyen <div id="mascota"> y el script.
 - Sin movimiento si la persona tiene "reducir movimiento". Los originales (con .png y demo.html) quedan solo en la carpeta local WEB/assets/mascotas.
+
+## Juego "Mi año pajarero" (/juego/ y /juegos/)
+Documentación completa en `_juego/LEEME-JUEGO.md` (cómo se arma con `python3 _juego/build.py`, perfiles, sonido, ranking en
+Cloudflare Worker + D1 en api.felixsantiago.com.ar, siluetas y herramientas). La página `/juegos/` sale de
+`_build/fragmentos/juegos.html` y `juego/index.html` se GENERA: no editarlo a mano.
