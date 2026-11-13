@@ -22,3 +22,8 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 - Las fotos hay que leerlas de la carpeta de la PC de Felix (chat de la app de escritorio con la carpeta `WEB` conectada) o que las adjunte al chat. No están en el repo (pesan mucho).
 - Orden de meses: enero con foto a un lado, febrero al otro, y así alternando. La portada es el cuervillo de cañada.
 - Preguntas aún abiertas (hacer pocas y solo si hacen falta): qué extras lleva cada mes (feriados sí; luna / "aves que llegan" sin decidir), impresión casera (margen blanco) o imprenta (sangrado), y encuadernación/base.
+
+## Avance (13/11/2026)
+- Llegaron las 14 fotos por el chat (la conexión con la PC seguía caída). Nombres: churrinche, maca cara blanca, varillero congo, cuervillo de cañada (portada), tachurí siete colores, pico de plata, cigüeña americana, jote cabeza negra, águila mora, gallineta pico pintado, tacuarita azul, picaflor verde, chingolo, chimango. Sobra una (13 usables para portada + 12 meses → falta decidir cuál queda afuera).
+- `gen_calendario.py <carpeta_fotos> <salida> [meses]` genera cada tira (210×99 mm) en PNG. Los meses se configuran en el dict `MESES` (archivo, nombre, lado de la foto L/R, feriados). Las fotos se llaman como en la lista (ej. `picaflor_verde.jpg`).
+- `vistas/`: portada y enero (foto izquierda, picaflor verde) para aprobar.
