@@ -91,8 +91,8 @@ def mes(d, m):
     foto = 'left:0' if lado == 'L' else 'right:0'
     panel = 'left:144mm' if lado == 'L' else 'left:7mm'
     return ('<div class="s"><div class="ph" style="%s;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div></div></div>'
-            '<div class="p" style="%s"><span class="y">2027</span><h1>%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
-            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, fec, panel, NOM[m-1], th, rows, fl)
+            '<div class="p" style="%s"><span class="y">2027</span><h1 style="font-size:%smm">%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
+            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, fec, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
     return ('<div class="s"><div class="ph" style="right:0;background-size:185%% auto;background-position:52%% 62%%;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div></div></div>'
