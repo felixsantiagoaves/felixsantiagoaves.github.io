@@ -102,3 +102,5 @@ según el propio criterio: tucán (pico algo despegado), ratona (cola), cuclillo
 - Posible 2º juego (la página `/juegos/` ya dice "Más juegos, pronto").
 - Mejorar las siluetas más flojas (sección 7).
 - Probar sonido y cantos en celular real.
+- Código del juego: el repo es público, por lo que `_juego/` también. Felix preguntó si se puede mantener privado; opciones planteadas: A) repo privado aparte con el código fuente y publicar solo `juego/index.html`, B) dejarlo público, C) ofuscar. Sin decidir, no se hizo nada.
+- Borrar la fila de prueba "Anónimo" de la base D1 del ranking (Cloudflare → D1 → Console: `DELETE FROM scores WHERE nombre='Anónimo';`).
