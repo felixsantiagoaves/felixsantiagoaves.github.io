@@ -25,43 +25,70 @@ AVES = {
 # mes -> (archivo, lado de la foto L/R). Feriados nacionales 2027 abajo. Queda afuera: cigüeña americana.
 MESES = {1:('chingolo','L'),2:('chimango','R'),3:('picaflor_verde','L'),4:('gallineta_pico_pintado','R'),5:('tachuri_siete_colores','L'),6:('tacuarita_azul','R'),
  7:('aguila_mora','L'),8:('varillero_congo','R'),9:('churrinche','L'),10:('jote_cabeza_negra','R'),11:('pico_de_plata','L'),12:('maca_cara_blanca','R')}
-FERIADOS = {1:[1],2:[8,9],3:[24,26],4:[2],5:[1,25],6:[20,21],7:[9],8:[16],10:[11],11:[20],12:[8,25]}
+# mes -> [(texto del día, descripción, [días])]  (nacionales 2027; 20/11 podría moverse)
+FERIADOS = {
+ 1:[('1','Año Nuevo',[1])],
+ 2:[('8 y 9','Carnaval',[8,9])],
+ 3:[('24','Día de la Memoria, por la Verdad y la Justicia',[24]),('26','Viernes Santo',[26])],
+ 4:[('2','Día del Veterano y de los Caídos en Malvinas',[2])],
+ 5:[('1','Día del Trabajador',[1]),('25','Día de la Revolución de Mayo',[25])],
+ 6:[('20','Paso a la Inmortalidad del Gral. Belgrano',[20]),('21','Paso a la Inmortalidad del Gral. Güemes',[21])],
+ 7:[('9','Día de la Independencia',[9])],
+ 8:[('16','Paso a la Inmortalidad del Gral. San Martín',[16])],
+ 9:[],
+ 10:[('11','Día del Respeto a la Diversidad Cultural',[11])],
+ 11:[('20','Día de la Soberanía Nacional',[20])],
+ 12:[('8','Inmaculada Concepción de María',[8]),('25','Navidad',[25])],
+}
+
 NOM = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
-CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:Lato,Helvetica,Arial,sans-serif;color:#2a1f14}
-.s{width:210mm;height:99mm;background:#ede0d4;position:relative;overflow:hidden}
-.ph{position:absolute;top:0;height:99mm;background-size:cover;background-position:center}
-.a{font-size:2.4mm;letter-spacing:1.2mm;color:#7f5539;font-weight:700}h1{font:italic 700 11mm/1 'Playfair Display',Georgia,serif;color:#414833}
-.p{position:absolute;top:5mm;bottom:4mm;width:60mm;display:flex;flex-direction:column}
-table{border-collapse:collapse;table-layout:fixed;width:100%;margin-top:2.5mm}th{font-size:2.1mm;color:#7f5539;padding-bottom:.8mm}
-td{height:5.6mm;text-align:center;font-size:2.9mm;font-weight:700;color:#414833;border-top:.25mm solid #c4a882}td.d{color:#7f5539}
-td.f{background:#414833;color:#ede0d4;border-radius:50%}
-.n{font:italic 700 4mm 'Playfair Display',Georgia,serif;color:#414833;margin-top:2.5mm}.sc{font:italic 2.7mm Georgia,serif;color:#5c3d28}.lg{font-size:2.3mm;color:#7f5539;margin-top:.6mm;line-height:1.25}
-.ft{margin-top:auto;display:flex;align-items:center;gap:2mm;border-top:.25mm solid #c4a882;padding-top:1.6mm}
-.lo{width:5.5mm;height:8mm;background:#414833;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
-.ft b{font-size:2.5mm;color:#414833;display:block}.ft i{font-style:normal;font-size:2.2mm;color:#7f5539}
-.cv{position:absolute;background-size:100% 100%}.cv2{position:absolute;inset:0;background:linear-gradient(270deg,#000b 0,#0000 52%)}
-.ct{position:absolute;right:10mm;bottom:9mm;color:#fff;text-align:right}.ct h1{color:#fff;font-size:17mm}.ct .a{color:#f0e2d0}.ct p{font:italic 3.4mm Georgia,serif;margin-top:2mm}.ct small{display:block;font-size:2.6mm;margin-top:1mm;opacity:.9}"""
+CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:Inter,Helvetica,Arial,sans-serif;color:#2b2a20}
+.s{width:210mm;height:99mm;background:#f3ece1;position:relative;overflow:hidden}
+.ph{position:absolute;top:0;height:99mm;width:137mm;background-size:cover;background-position:center}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c 0,#0007 22%,#0000 48%)}
+.cap{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2;max-width:100mm}
+.cap .n{font:700 6.6mm/1.05 Caladea,Georgia,serif}.cap .sc{font:italic 3.4mm Caladea,Georgia,serif;margin-top:.8mm;opacity:.95}
+.cap .lg{font-size:2.3mm;letter-spacing:.25mm;margin-top:1.4mm;opacity:.85;text-transform:uppercase}
+.p{position:absolute;top:6mm;bottom:5mm;width:59mm;display:flex;flex-direction:column}
+.y{font-size:2.4mm;letter-spacing:1.6mm;color:#8a6a3d;font-weight:600}
+h1{font:700 13.5mm/1 Caladea,Georgia,serif;color:#2f3a1e;margin-top:.6mm;letter-spacing:-.2mm}
+table{border-collapse:collapse;table-layout:fixed;width:100%;margin-top:3mm}
+th{font-size:1.9mm;color:#8a6a3d;font-weight:600;letter-spacing:.3mm;padding-bottom:1.2mm;border-bottom:.3mm solid #2f3a1e}
+td{height:5.7mm;text-align:center;font-size:3mm;font-weight:500;color:#2b2a20;font-variant-numeric:tabular-nums}
+td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(circle,#b5532f 0,#b5532f 2.45mm,#0000 2.5mm)}
+.fl{margin-top:2.6mm;display:flex;flex-direction:column;gap:.9mm}.fl div{font-size:2.25mm;line-height:1.2;color:#4a4636;display:flex;gap:1.6mm}
+.fl b{color:#b5532f;font-weight:700;min-width:6.2mm}
+.ft{margin-top:auto;display:flex;align-items:center;gap:2.2mm;border-top:.3mm solid #cbb89a;padding-top:2mm}
+.lo{width:5mm;height:7.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
+.ft b{font-size:2.6mm;color:#2f3a1e;display:block;font-weight:700}.ft i{font-style:normal;font-size:2.2mm;color:#8a6a3d}
+.cvf{position:absolute;background-size:100% 100%}.cv2{position:absolute;inset:0;background:linear-gradient(270deg,#000d 0,#000a 32%,#0000 62%)}
+.ct{position:absolute;right:11mm;top:0;bottom:0;width:78mm;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right}
+.clo{width:11mm;height:16mm;background:#fff;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
+.ct .mk{font-size:2.6mm;letter-spacing:1.6mm;font-weight:600;margin-top:2mm;opacity:.9}
+.ct .yr{font:200 38mm/0.9 'Inter Display',Inter,sans-serif;letter-spacing:-1.5mm;margin-top:5mm}
+.ct .ca{font:italic 5mm Caladea,Georgia,serif;margin-top:2mm}
+.ct .ft2{margin-top:7mm;font-size:2.4mm;line-height:1.5;opacity:.85}.ct .ft2 b{display:block;font-weight:600;font-size:2.6mm;opacity:1}"""
 def img(d, n):
     return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(d, n + '.jpg'), 'rb').read()).decode()
 def logo():
     return 'data:image/png;base64,' + base64.b64encode(open(LOGO, 'rb').read()).decode()
 def mes(d, m):
     f, lado = MESES[m]; nom, cie, lug, fec = AVES[f]; fer = FERIADOS.get(m, [])
+    dias = [x for _, _, ds in fer for x in ds]
     cal = calendar.Calendar(0).monthdayscalendar(2027, m)
-    rows = ''.join('<tr>' + ''.join('<td></td>' if x == 0 else '<td class="%s">%d</td>' % (('f' if x in fer else 'd' if i == 6 else ''), x) for i, x in enumerate(w)) + '</tr>' for w in cal)
+    rows = ''.join('<tr>' + ''.join('<td></td>' if x == 0 else '<td class="%s">%d</td>' % (('f' if x in dias else 'd' if i == 6 else ''), x) for i, x in enumerate(w)) + '</tr>' for w in cal)
     th = ''.join('<th>%s</th>' % c for c in 'LMMJVSD')
+    fl = ''.join('<div><b>%s</b><span>%s</span></div>' % (t, tx) for t, tx, _ in fer)
     foto = 'left:0' if lado == 'L' else 'right:0'
-    panel = 'left:144mm' if lado == 'L' else 'left:6mm'
-    return ('<div class="s"><div class="ph" style="%s;width:137mm;background-image:url(%s)"></div>'
-            '<div class="p" style="%s"><span class="a">2027</span><h1>%s</h1><table><tr>%s</tr>%s</table>'
-            '<div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div>'
-            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), panel, NOM[m-1], th, rows, nom, cie, lug, fec)
+    panel = 'left:144mm' if lado == 'L' else 'left:7mm'
+    return ('<div class="s"><div class="ph" style="%s;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div></div></div>'
+            '<div class="p" style="%s"><span class="y">2027</span><h1>%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
+            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, fec, panel, NOM[m-1], th, rows, fl)
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]
-    # foto ampliada y corrida para que el ave quede a la izquierda y el texto a la derecha
-    return ('<div class="s"><div class="cv" style="background-image:url(%s);width:280mm;height:187mm;left:-70mm;top:-47mm"></div><div class="cv2"></div><div class="ct">'
-            '<span class="a">CALENDARIO DE ESCRITORIO</span><h1>Aves 2027</h1><p>%s · <i>%s</i></p><small>%s · %s</small>'
-            '<small>felixsantiago.com.ar · @felix_santiago_aves</small></div></div>') % (img(d, PORTADA), nom, cie, lug, fec)
+    return ('<div class="s"><div class="cvf" style="background-image:url(%s);width:280mm;height:187mm;left:-70mm;top:-47mm"></div><div class="cv2"></div>'
+            '<div class="ct"><div class="clo"></div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="yr">2027</div><div class="ca">Calendario de escritorio</div>'
+            '<div class="ft2"><b>%s · <i>%s</i></b>%s · %s<br>felixsantiago.com.ar · @felix_santiago_aves</div></div></div>') % (img(d, PORTADA), nom, cie, lug, fec)
 if __name__ == '__main__':
     fotos, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)
