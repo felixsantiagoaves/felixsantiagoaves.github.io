@@ -67,3 +67,10 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 
 ## Encuadres v3 (13/11, 14:07)
 - Felix reencuadró con el marco de 87 mm y pegó el JSON final: guardado en `encuadres.json`; `encuadre.html` (v3) arranca desde esos valores. PDF regenerado.
+
+## Versiones de impresión (13/11) — `armar_pdfs.py <tiras_png> <salida>`
+1. casa-sin-bordes-A4: A4 lleno, requiere "sin márgenes" en la impresora (si no, recorta ~4–5 mm).
+2. casa-con-margen-5mm-guias-corte: reducido a 95 % (200 mm de ancho), marcas de corte en los bordes.
+3. imprenta-A4-sangrado-marcas-de-corte: página 230×317 mm, sangrado 3 mm (borde replicado) y marcas; cortes interiores sin sangrado (tiras pegadas).
+4. imprenta-13-paginas-sangrado: 13 páginas de 216×105 mm (tira + 3 mm por lado).
+Pendiente: definir imprenta/casa y tipo de anillado (arriba, banda libre 12 mm). Los PDF viven en `calendario-2027/versiones-impresion/` de su PC, no en el repo.
