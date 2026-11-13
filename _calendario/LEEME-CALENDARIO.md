@@ -60,3 +60,7 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 ## PDF para imprimir (13/11, 14:00)
 - `calendario-2027-A4.pdf`: 5 hojas A4 vertical a 300 dpi, 3 tiras de 21 × 9,9 cm por hoja a sangre completa (portada, enero, febrero / marzo-abril-mayo / junio-julio-agosto / septiembre-octubre-noviembre / diciembre + 2 lugares vacíos). Se arma con `CAL_ESCALA=3.125 python3 gen_calendario.py <fotos> <salida>` y luego se pegan las tiras en hojas de 2480×3508 px (ver historial del chat). encuadres.json final con la tacuarita nueva (z 1.51).
 - Sin marcas de corte ni margen: las tiras ocupan toda la hoja. Pendiente: método de impresión (casera deja ~4–5 mm blancos), encuadernación y base A4.
+
+## Anillado (13/11, 14:10)
+- Decisión de Felix: banda libre de 12 mm arriba de cada tira (anillos/espiral por el lado largo de 21 cm). El diseño ocupa 210 × 87 mm bajo esa banda (BANDA/ALTO en `gen_calendario.py`).
+- `encuadres.json` convertido al marco nuevo (137 × 87; z de los meses × 1,084; portada igual) para conservar el mismo recorte horizontal. `encuadre.html` (v2) ya usa el marco de 87 mm y parte de esos valores. Panel del mes algo más compacto.

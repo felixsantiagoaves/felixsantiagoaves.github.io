@@ -52,34 +52,37 @@ def fuentes_css():
 def titulo(t):
     return ' '.join(p if p in ('de', 'del', 'la', 'y') else p[:1].upper() + p[1:] for p in t.split(' '))
 NOM = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+BANDA = 12  # mm libres arriba de cada tira para el anillado
+ALTO = 99 - BANDA
 CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:Inter,Helvetica,Arial,sans-serif;color:#2b2a20}
 .s{width:210mm;height:99mm;background:#f3ece1;position:relative;overflow:hidden}
-.ph{position:absolute;top:0;height:99mm;width:137mm;background-size:cover;background-position:center}
+.dz{position:absolute;left:0;right:0;top:BANDAmm;height:ALTOmm;overflow:hidden}
+.ph{position:absolute;top:0;height:ALTOmm;width:137mm;background-size:cover;background-position:center}
 .ph{overflow:hidden}.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c 0,#0007 22%,#0000 48%)}
 .cap{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2;max-width:100mm}
 .cap .n{font:600 8.4mm/1 Corm,Georgia,serif;letter-spacing:.1mm}.cap .sc{font:italic 500 4.2mm Corm,Georgia,serif;margin-top:.8mm;opacity:.95}
 .cap .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.4mm;opacity:.85;text-transform:uppercase}
-.p{position:absolute;top:6mm;bottom:5mm;width:59mm;display:flex;flex-direction:column}
+.p{position:absolute;top:4.5mm;bottom:3.5mm;width:59mm;display:flex;flex-direction:column}
 .y{font-size:2.3mm;letter-spacing:2.2mm;color:#8a6a3d;font-weight:600}
 h1{font:600 16mm/.95 Corm,Georgia,serif;color:#2f3a1e;margin-top:.8mm}
-table{border-collapse:collapse;table-layout:fixed;width:100%;margin-top:3mm}
+table{border-collapse:collapse;table-layout:fixed;width:100%;margin-top:2.2mm}
 th{font-size:1.9mm;color:#8a6a3d;font-weight:600;letter-spacing:.3mm;padding-bottom:1.2mm;border-bottom:.3mm solid #2f3a1e}
-td{height:5.7mm;text-align:center;font-size:3mm;font-weight:500;color:#2b2a20;font-variant-numeric:tabular-nums}
-tr.sp td{height:1.3mm}td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(circle,#b5532f 0,#b5532f 2.45mm,#0000 2.5mm)}
-.fl{margin-top:2.6mm;display:flex;flex-direction:column;gap:.9mm}.fl div{font-size:2.25mm;line-height:1.2;color:#4a4636;display:flex;gap:1.6mm}
+td{height:5mm;text-align:center;font-size:2.8mm;font-weight:500;color:#2b2a20;font-variant-numeric:tabular-nums}
+tr.sp td{height:1.1mm}td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(circle,#b5532f 0,#b5532f 2.1mm,#0000 2.15mm)}
+.fl{margin-top:2mm;display:flex;flex-direction:column;gap:.9mm}.fl div{font-size:2.25mm;line-height:1.2;color:#4a4636;display:flex;gap:1.6mm}
 .fl b{color:#b5532f;font-weight:700;min-width:6.2mm}
-.ft{margin-top:auto;display:flex;align-items:center;gap:3mm;border-top:.3mm solid #cbb89a;padding-top:2.6mm}
-.lo{width:5.6mm;height:8.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat;flex:none}
+.ft{margin-top:auto;display:flex;align-items:center;gap:3mm;border-top:.3mm solid #cbb89a;padding-top:1.8mm}
+.lo{width:4.8mm;height:7.2mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat;flex:none}
 .ft b{font-size:2.1mm;letter-spacing:.95mm;color:#2f3a1e;display:block;font-weight:600}.ft i{font:italic 500 3.5mm Corm,Georgia,serif;color:#8a6a3d;display:block;margin-top:.5mm}
 .cv{position:absolute;inset:0;overflow:hidden}
 .cv2{position:absolute;inset:0;background:linear-gradient(90deg,#000d 0,#000a 24%,#0000 52%),linear-gradient(0deg,#000a 0,#0000 32%)}
-.cl{position:absolute;left:10mm;top:9mm;bottom:8mm;width:100mm;color:#fff;display:flex;flex-direction:column}
-.cl .ca{font-size:2.6mm;letter-spacing:1.6mm;font-weight:500;margin-top:17mm;opacity:.92}
-.cl .yr{font:300 36mm/1 'Inter Display',Inter,sans-serif;letter-spacing:-1.6mm;margin:1mm 0 0 -1.2mm}
+.cl{position:absolute;left:10mm;top:6mm;bottom:6mm;width:100mm;color:#fff;display:flex;flex-direction:column}
+.cl .ca{font-size:2.6mm;letter-spacing:1.6mm;font-weight:500;margin-top:11mm;opacity:.92}
+.cl .yr{font:300 31mm/1 'Inter Display',Inter,sans-serif;letter-spacing:-1.6mm;margin:1mm 0 0 -1.2mm}
 .cl .ft{margin-top:auto;display:flex;align-items:center;gap:3mm;border:0;padding:0}
 .clo{width:8mm;height:12mm;background:#fff;-webkit-mask:url(LOGO) left center/contain no-repeat;mask:url(LOGO) left center/contain no-repeat}
 .cl .mk{font-size:3mm;letter-spacing:1.2mm;font-weight:500}.cl .wb{font-size:2.5mm;margin-top:1.2mm;opacity:.9;letter-spacing:.2mm}
-.cap2{position:absolute;right:8mm;bottom:8mm;color:#fff;text-align:right}.cap2 .n{font:600 7mm/1 Corm,Georgia,serif}.cap2 .sc{font:italic 500 3.8mm Corm,Georgia,serif;margin-top:.7mm}.cap2 .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.3mm;opacity:.9;text-transform:uppercase}"""
+.cap2{position:absolute;right:8mm;bottom:6mm;color:#fff;text-align:right}.cap2 .n{font:600 7mm/1 Corm,Georgia,serif}.cap2 .sc{font:italic 500 3.8mm Corm,Georgia,serif;margin-top:.7mm}.cap2 .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.3mm;opacity:.9;text-transform:uppercase}"""
 def img(d, n):
     return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(d, n + '.jpg'), 'rb').read()).decode()
 import json
@@ -104,15 +107,15 @@ def mes(d, m):
     fl = ''.join('<div><b>%s</b><span>%s</span></div>' % (t, tx) for t, tx, _ in fer)
     foto = 'left:0' if lado == 'L' else 'right:0'
     panel = 'left:144mm' if lado == 'L' else 'left:7mm'
-    return ('<div class="s"><div class="ph" style="%s"><div class="im" style="%s"></div><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>'
+    return ('<div class="s"><div class="dz"><div class="ph" style="%s"><div class="im" style="%s"></div><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>'
             '<div class="p" style="%s"><span class="y">2027</span><h1 style="font-size:%smm">%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
-            '<div class="ft"><div class="lo"></div><div><b>FÉLIX SANTIAGO · AVES</b><i>felixsantiago.com.ar</i></div></div></div></div>') % (foto, caja(d, f, '%02d' % m, 137, 99), nom, cie, lug, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
+            '<div class="ft"><div class="lo"></div><div><b>FÉLIX SANTIAGO · AVES</b><i>felixsantiago.com.ar</i></div></div></div></div></div>') % (foto, caja(d, f, '%02d' % m, 137, ALTO), nom, cie, lug, panel, ('14' if len(NOM[m-1]) <= 7 else '12' if len(NOM[m-1]) <= 8 else '10.4'), NOM[m-1], th, rows, fl)
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
-    return ('<div class="s"><div class="cv"><div style="%s"></div></div><div class="cv2"></div>'
+    return ('<div class="s"><div class="dz"><div class="cv"><div style="%s"></div></div><div class="cv2"></div>'
             '<div class="cl"><div class="ca">CALENDARIO DE ESCRITORIO</div><div class="yr">2027</div>'
             '<div class="ft"><div class="clo"></div><div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="wb">felixsantiago.com.ar · @felix_santiago_aves</div></div></div></div>'
-            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>') % (caja(d, ENC.get('portada', {}).get('foto', PORTADA), 'portada', 210, 99, 1.4286, .397, .5075), nom, cie, lug)
+            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div></div>') % (caja(d, ENC.get('portada', {}).get('foto', PORTADA), 'portada', 210, ALTO, 1.4286, .397, .5075), nom, cie, lug)
 if __name__ == '__main__':
     fotos, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)
@@ -123,6 +126,6 @@ if __name__ == '__main__':
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={'width': 794, 'height': 374}, device_scale_factor=float(os.environ.get('CAL_ESCALA', '2')))
         for k, h in pags.items():
-            pg.set_content('<meta charset="utf-8"><style>%s</style>%s' % (fuentes_css() + CSS.replace('LOGO', logo()), h)); pg.wait_for_timeout(300)
+            pg.set_content('<meta charset="utf-8"><style>%s</style>%s' % (fuentes_css() + CSS.replace('LOGO', logo()).replace('BANDA', str(BANDA)).replace('ALTO', str(ALTO)), h)); pg.wait_for_timeout(300)
             pg.locator('.s').screenshot(path=os.path.join(out, k + '.png')); print(k)
         b.close()
