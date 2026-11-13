@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Encuadre del calendario 2027</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#1d1f17;color:#eee;font-family:Inter,system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#2f3a1e;padding:12px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+header h1{font-size:17px;margin:0;font-weight:600}header span{opacity:.8;font-size:13px}
+button{background:#f3ece1;color:#2f3a1e;border:0;border-radius:8px;padding:9px 14px;font-weight:600;cursor:pointer;font-size:14px}button.s{background:#506034;color:#fff}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(520px,1fr));gap:22px;padding:20px}
+.f{background:#2a2d22;border-radius:12px;padding:12px}.f h2{margin:0 0 8px;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+select{background:#f3ece1;border:0;border-radius:6px;padding:5px;font-size:13px;max-width:55%}
+.box{position:relative;overflow:hidden;background:#000;cursor:grab;touch-action:none;margin:0 auto;border-radius:4px}.box:active{cursor:grabbing}
+.box img{position:absolute;max-width:none;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.ov{position:absolute;inset:0;pointer-events:none}
+.cap{position:absolute;left:5%;bottom:6%;color:#fff;font:600 clamp(14px,2.6vw,26px) Georgia,serif;text-shadow:0 1px 6px #000}.cap i{display:block;font:italic 400 .62em Georgia,serif;opacity:.9}
+.row{display:flex;gap:10px;align-items:center;margin-top:8px;font-size:13px}.row input{flex:1}
+.hint{opacity:.7;font-size:12px;margin-top:4px}
+#msg{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#f3ece1;color:#2f3a1e;padding:10px 16px;border-radius:8px;font-weight:600;display:none;z-index:9}
+</style>
+<header><h1>Encuadre del calendario 2027</h1><span>Arrastrá la foto para moverla · rueda del mouse o barra para acercar · lo que ves es lo que sale</span>
+<button id="copiar">Copiar encuadres</button><button class="s" id="reset">Volver todo al inicio</button></header>
+<main id="m"></main><div id="msg"></div>
+<script>
+const FOTOS=__FOTOS__;           // clave -> [nombre, científico, lugar, dataURL, ancho, alto]
+const MESES=__MESES__;           // [clave de marco, título, ancho mm, alto mm, foto por defecto, z, cx, cy]
+const KEY='encuadre-calendario-2027-v1';
+let S={};try{S=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const $=(t,c,p)=>{const e=document.createElement(t);if(c)e.className=c;if(p)p.appendChild(e);return e};
+function toast(t){const m=document.getElementById('msg');m.textContent=t;m.style.display='block';setTimeout(()=>m.style.display='none',2200)}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const frames=[];
+MESES.forEach(([k,tit,FW,FH,f0,z0,cx0,cy0])=>{
+  const st=S[k]=Object.assign({foto:f0,z:z0,cx:cx0,cy:cy0},S[k]||{});
+  const card=$('div','f',document.getElementById('m'));const h=$('h2','',card);$('span','',h).textContent=tit;
+  const sel=$('select','',h);Object.entries(FOTOS).forEach(([id,v])=>{const o=$('option','',sel);o.value=id;o.textContent=v[0];if(id==st.foto)o.selected=true});
+  const W=Math.min(560,innerWidth-80),H=W*FH/FW;
+  const box=$('div','box',card);box.style.width=W+'px';box.style.height=H+'px';
+  const im=$('img','',box);const ov=$('div','ov',box);
+  const row=$('div','row',card);$('span','',row).textContent='Zoom';const rg=$('input','',row);rg.type='range';rg.min=1;rg.max=4;rg.step=.01;
+  const b=$('button','s',row);b.textContent='Reiniciar';
+  if(k==='portada'){ov.style.background='linear-gradient(90deg,#000d 0,#000a 24%,#0000 52%),linear-gradient(0deg,#000a 0,#0000 32%)';
+    const t=$('div','',ov);t.style.cssText='position:absolute;left:5%;top:30%;color:#fff;font:300 '+(W*.17)+'px Inter,sans-serif;letter-spacing:-.04em';t.textContent='2027';
+    const c=$('div','cap',ov);c.style.cssText+=';left:auto;right:4%;text-align:right';c.dataset.cap=1}
+  else{ov.style.background='linear-gradient(0deg,#000c 0,#0007 22%,#0000 48%)';const c=$('div','cap',ov);c.dataset.cap=1}
+  const cap=ov.querySelector('.cap');
+  function dim(){const v=FOTOS[st.foto];const iw=v[4],ih=v[5];const Wc=Math.max(FW,FH*iw/ih);const w=Wc*st.z,h=w*ih/iw;return{iw,ih,w,h,s:W/FW}}
+  function draw(){const d=dim(),v=FOTOS[st.foto];
+    st.cx=Math.min(1-(FW/2)/d.w,Math.max((FW/2)/d.w,st.cx));st.cy=Math.min(1-(FH/2)/d.h,Math.max((FH/2)/d.h,st.cy));
+    im.src=v[3];im.style.width=d.w*d.s+'px';im.style.height=d.h*d.s+'px';
+    im.style.left=(W/2-st.cx*d.w*d.s)+'px';im.style.top=(H/2-st.cy*d.h*d.s)+'px';
+    cap.innerHTML=v[0]+'<i>'+v[1]+'</i><i style="font-size:.4em;letter-spacing:.1em;text-transform:uppercase;font-family:Inter,sans-serif">'+v[2]+'</i>';
+    rg.value=st.z;save()}
+  let drag=null;
+  box.addEventListener('pointerdown',e=>{box.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY,cx:st.cx,cy:st.cy}});
+  box.addEventListener('pointermove',e=>{if(!drag)return;const d=dim();st.cx=drag.cx-(e.clientX-drag.x)/(d.w*d.s);st.cy=drag.cy-(e.clientY-drag.y)/(d.h*d.s);draw()});
+  box.addEventListener('pointerup',()=>drag=null);
+  box.addEventListener('wheel',e=>{e.preventDefault();st.z=Math.min(4,Math.max(1,st.z*(e.deltaY<0?1.05:.95)));draw()},{passive:false});
+  rg.oninput=()=>{st.z=+rg.value;draw()};
+  sel.onchange=()=>{st.foto=sel.value;st.z=1;st.cx=.5;st.cy=.5;draw()};
+  b.onclick=()=>{Object.assign(st,{z:z0,cx:cx0,cy:cy0});draw()};
+  frames.push({k,st,draw,sel,f0,z0,cx0,cy0});draw();
+});
+document.getElementById('reset').onclick=()=>{if(!confirm('¿Volver todos los encuadres al inicio?'))return;frames.forEach(f=>{Object.assign(f.st,{foto:f.f0,z:f.z0,cx:f.cx0,cy:f.cy0});f.sel.value=f.f0;f.draw()})};
+document.getElementById('copiar').onclick=async()=>{const o={};frames.forEach(f=>o[f.k]={foto:f.st.foto,z:+f.st.z.toFixed(3),cx:+f.st.cx.toFixed(4),cy:+f.st.cy.toFixed(4)});
+  const t=JSON.stringify(o);try{await navigator.clipboard.writeText(t);toast('Copiado. Pegalo en el chat con Claude')}catch(e){prompt('Copiá este texto y pegalo en el chat:',t)}};
+</script></html>

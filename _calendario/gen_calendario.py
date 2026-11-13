@@ -55,7 +55,7 @@ NOM = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septie
 CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:Inter,Helvetica,Arial,sans-serif;color:#2b2a20}
 .s{width:210mm;height:99mm;background:#f3ece1;position:relative;overflow:hidden}
 .ph{position:absolute;top:0;height:99mm;width:137mm;background-size:cover;background-position:center}
-.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c 0,#0007 22%,#0000 48%)}
+.ph{overflow:hidden}.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c 0,#0007 22%,#0000 48%)}
 .cap{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2;max-width:100mm}
 .cap .n{font:600 8.4mm/1 Corm,Georgia,serif;letter-spacing:.1mm}.cap .sc{font:italic 500 4.2mm Corm,Georgia,serif;margin-top:.8mm;opacity:.95}
 .cap .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.4mm;opacity:.85;text-transform:uppercase}
@@ -71,7 +71,7 @@ td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(ci
 .ft{margin-top:auto;display:flex;align-items:center;gap:2.2mm;border-top:.3mm solid #cbb89a;padding-top:2mm}
 .lo{width:5mm;height:7.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
 .ft b{font-size:2.6mm;color:#2f3a1e;display:block;font-weight:700}.ft i{font-style:normal;font-size:2.2mm;color:#8a6a3d}
-.cv{position:absolute;background-size:100% 100%;width:300mm;height:200mm;left:-14mm;top:-52mm}
+.cv{position:absolute;inset:0;overflow:hidden}
 .cv2{position:absolute;inset:0;background:linear-gradient(90deg,#000d 0,#000a 24%,#0000 52%),linear-gradient(0deg,#000a 0,#0000 32%)}
 .cl{position:absolute;left:10mm;top:9mm;bottom:8mm;width:100mm;color:#fff;display:flex;flex-direction:column}
 .cl .ca{font-size:2.6mm;letter-spacing:1.6mm;font-weight:500;margin-top:17mm;opacity:.92}
@@ -82,10 +82,21 @@ td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(ci
 .cap2{position:absolute;right:8mm;bottom:8mm;color:#fff;text-align:right}.cap2 .n{font:600 7mm/1 Corm,Georgia,serif}.cap2 .sc{font:italic 500 3.8mm Corm,Georgia,serif;margin-top:.7mm}.cap2 .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.3mm;opacity:.9;text-transform:uppercase}"""
 def img(d, n):
     return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(d, n + '.jpg'), 'rb').read()).decode()
+import json
+ENC_F = os.environ.get('CAL_ENC', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'encuadres.json'))
+ENC = json.load(open(ENC_F)) if os.path.exists(ENC_F) else {}   # lo exporta encuadre.html: {"portada":{foto,z,cx,cy},"01":{...}}
+def caja(d, f, key, FW, FH, z0=1.0, cx0=.5, cy0=.5):
+    """Posición de la foto dentro del marco FWxFH mm: z=zoom sobre 'cubrir', (cx,cy)=punto de la foto que queda al centro."""
+    from PIL import Image
+    e = ENC.get(key, {}); z = e.get('z', z0); cx = e.get('cx', cx0); cy = e.get('cy', cy0)
+    iw, ih = Image.open(os.path.join(d, f + '.jpg')).size
+    Wc = max(FW, FH * iw / ih); W = Wc * z; H = W * ih / iw
+    L = min(0, max(FW - W, FW / 2 - cx * W)); T = min(0, max(FH - H, FH / 2 - cy * H))
+    return 'position:absolute;width:%.2fmm;height:%.2fmm;left:%.2fmm;top:%.2fmm;background-size:100%% 100%%;background-image:url(%s)' % (W, H, L, T, img(d, f))
 def logo():
     return 'data:image/png;base64,' + base64.b64encode(open(LOGO, 'rb').read()).decode()
 def mes(d, m):
-    f, lado = MESES[m]; nom, cie, lug, fec = AVES[f]; nom = titulo(nom); fer = FERIADOS.get(m, [])
+    f, lado = MESES[m]; f = ENC.get('%02d' % m, {}).get('foto', f); nom, cie, lug, fec = AVES[f]; nom = titulo(nom); fer = FERIADOS.get(m, [])
     dias = [x for _, _, ds in fer for x in ds]
     cal = calendar.Calendar(0).monthdayscalendar(2027, m)
     rows = ''.join('<tr>' + ''.join('<td></td>' if x == 0 else '<td class="%s">%d</td>' % (('f' if x in dias else 'd' if i == 6 else ''), x) for i, x in enumerate(w)) + '</tr>' for w in cal)
@@ -93,15 +104,15 @@ def mes(d, m):
     fl = ''.join('<div><b>%s</b><span>%s</span></div>' % (t, tx) for t, tx, _ in fer)
     foto = 'left:0' if lado == 'L' else 'right:0'
     panel = 'left:144mm' if lado == 'L' else 'left:7mm'
-    return ('<div class="s"><div class="ph" style="%s;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>'
+    return ('<div class="s"><div class="ph" style="%s"><div class="im" style="%s"></div><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>'
             '<div class="p" style="%s"><span class="y">2027</span><h1 style="font-size:%smm">%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
-            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
+            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, caja(d, f, '%02d' % m, 137, 99), nom, cie, lug, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
-    return ('<div class="s"><div class="cv" style="background-image:url(%s)"></div><div class="cv2"></div>'
+    return ('<div class="s"><div class="cv"><div style="%s"></div></div><div class="cv2"></div>'
             '<div class="cl"><div class="ca">CALENDARIO DE ESCRITORIO</div><div class="yr">2027</div>'
             '<div class="ft"><div class="clo"></div><div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="wb">felixsantiago.com.ar · @felix_santiago_aves</div></div></div></div>'
-            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>') % (img(d, PORTADA), nom, cie, lug)
+            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>') % (caja(d, ENC.get('portada', {}).get('foto', PORTADA), 'portada', 210, 99, 1.4286, .397, .5075), nom, cie, lug)
 if __name__ == '__main__':
     fotos, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)
