@@ -64,3 +64,6 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 ## Anillado (13/11, 14:10)
 - Decisión de Felix: banda libre de 12 mm arriba de cada tira (anillos/espiral por el lado largo de 21 cm). El diseño ocupa 210 × 87 mm bajo esa banda (BANDA/ALTO en `gen_calendario.py`).
 - `encuadres.json` convertido al marco nuevo (137 × 87; z de los meses × 1,084; portada igual) para conservar el mismo recorte horizontal. `encuadre.html` (v2) ya usa el marco de 87 mm y parte de esos valores. Panel del mes algo más compacto.
+
+## Encuadres v3 (13/11, 14:07)
+- Felix reencuadró con el marco de 87 mm y pegó el JSON final: guardado en `encuadres.json`; `encuadre.html` (v3) arranca desde esos valores. PDF regenerado.
