@@ -22,7 +22,7 @@ select{background:#f3ece1;border:0;border-radius:6px;padding:5px;font-size:13px;
 <script>
 const FOTOS=__FOTOS__;           // clave -> [nombre, científico, lugar, dataURL, ancho, alto]
 const MESES=__MESES__;           // [clave de marco, título, ancho mm, alto mm, foto por defecto, z, cx, cy]
-const KEY='encuadre-calendario-2027-v3';
+const KEY='encuadre-calendario-2027-v4';
 let S={};try{S=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 const $=(t,c,p)=>{const e=document.createElement(t);if(c)e.className=c;if(p)p.appendChild(e);return e};
 function toast(t){const m=document.getElementById('msg');m.textContent=t;m.style.display='block';setTimeout(()=>m.style.display='none',2200)}
