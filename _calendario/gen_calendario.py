@@ -10,7 +10,7 @@ AVES = {
  'cuervillo_de_canada':('Cuervillo de cañada','Plegadis chihi','Laguna Rivero, Alcira Gigena','31/10/2026'),
  'chingolo':('Chingolo','Zonotrichia capensis','Casa, Río Cuarto','02/01/2026'),
  'chimango':('Chimango','Daptrius chimango','UNRC, Río Cuarto','27/12/2025'),
- 'picaflor_verde':('Picaflor común','Chlorostilbon lucidus','Casa, Río Cuarto','16/03/2026'),
+ 'picaflor_verde':('Picaflor verde','Chlorostilbon lucidus','Casa, Río Cuarto','16/03/2026'),
  'gallineta_pico_pintado':('Gallineta pico pintado','Pardirallus sanguinolentus','Laguna Los Medanitos, Paso del Durazno','27/06/2026'),
  'tachuri_siete_colores':('Tachurí sietecolores','Tachuris rubrigastra','Laguna Rivero, Alcira Gigena','31/10/2026'),
  'tacuarita_azul':('Tacuarita azul','Polioptila dumicola','Los Hornillos, Córdoba','12/06/2026'),

@@ -29,7 +29,7 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 
 ## Versión completa (13/11/2026)
 - 12 meses + portada generados con `gen_calendario.py` (las imágenes NO se guardan en el repo, por pedido de Felix: se regeneran cuando hacen falta; `_calendario/vistas/` está en .gitignore). Cada mes lleva: nombre común, científico, lugar y fecha de la foto (de `registros.json`), logo, felixsantiago.com.ar y @felix_santiago_aves. Feriados nacionales 2027 en círculo verde (fuente: calcularsueldo.com.ar; Jueves Santo 25/3 es no laborable, no marcado; días turísticos 2027 no encontrados, revisar si se decretaron; 20/11 podría moverse).
-- Orden: Ene chingolo, Feb chimango, Mar picaflor común, Abr gallineta pico pintado, May tachurí sietecolores, Jun tacuarita azul, Jul águila mora, Ago varillero congo, Sep churrinche, Oct jote cabeza negra, Nov pico de plata, Dic macá cara blanca. Alterna foto izquierda/derecha. Queda afuera la cigüeña americana.
+- Orden: Ene chingolo, Feb chimango, Ene picaflor verde (NO común), Abr gallineta pico pintado, May tachurí sietecolores, Jun tacuarita azul, Jul águila mora, Ago varillero congo, Sep churrinche, Oct jote cabeza negra, Nov pico de plata, Dic macá cara blanca. Alterna foto izquierda/derecha. Queda afuera la cigüeña americana.
 - Pendiente: lugares de chingolo (02/01/2026), picaflor (16/03/2026) y tacuarita azul (12/06/2026, hay 2 lugares ese día) — figuran "POR CONFIRMAR" en `AVES` del script. Después: hojas A4 con marcas de corte, molde de la base, método de impresión.
 
 ## Dónde están los archivos pesados
