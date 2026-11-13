@@ -121,7 +121,7 @@ if __name__ == '__main__':
         pags['%02d-%s' % (m, NOM[m-1].lower())] = mes(fotos, m)
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 794, 'height': 374}, device_scale_factor=2)
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 794, 'height': 374}, device_scale_factor=float(os.environ.get('CAL_ESCALA', '2')))
         for k, h in pags.items():
             pg.set_content('<meta charset="utf-8"><style>%s</style>%s' % (fuentes_css() + CSS.replace('LOGO', logo()), h)); pg.wait_for_timeout(300)
             pg.locator('.s').screenshot(path=os.path.join(out, k + '.png')); print(k)

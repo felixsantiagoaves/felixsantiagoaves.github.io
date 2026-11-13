@@ -56,3 +56,7 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 - Foto de la tacuarita azul reemplazada por `12062026-DSC_0437-tacuarita azul.jpg` (la anterior, DSC_0445, la eliminó Felix de `seleccion calendario`).
 - Espacio extra bajo la línea de los días para que los círculos de feriados de la primera semana no la toquen.
 - Pie de cada mes: logo + "FÉLIX SANTIAGO · AVES" (tracking ancho) + felixsantiago.com.ar en cursiva Cormorant; se sacó el @ de los meses (queda en la portada).
+
+## PDF para imprimir (13/11, 14:00)
+- `calendario-2027-A4.pdf`: 5 hojas A4 vertical a 300 dpi, 3 tiras de 21 × 9,9 cm por hoja a sangre completa (portada, enero, febrero / marzo-abril-mayo / junio-julio-agosto / septiembre-octubre-noviembre / diciembre + 2 lugares vacíos). Se arma con `CAL_ESCALA=3.125 python3 gen_calendario.py <fotos> <salida>` y luego se pegan las tiras en hojas de 2480×3508 px (ver historial del chat). encuadres.json final con la tacuarita nueva (z 1.51).
+- Sin marcas de corte ni margen: las tiras ocupan toda la hoja. Pendiente: método de impresión (casera deja ~4–5 mm blancos), encuadernación y base A4.
