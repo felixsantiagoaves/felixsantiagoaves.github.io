@@ -65,12 +65,12 @@ h1{font:600 16mm/.95 Corm,Georgia,serif;color:#2f3a1e;margin-top:.8mm}
 table{border-collapse:collapse;table-layout:fixed;width:100%;margin-top:3mm}
 th{font-size:1.9mm;color:#8a6a3d;font-weight:600;letter-spacing:.3mm;padding-bottom:1.2mm;border-bottom:.3mm solid #2f3a1e}
 td{height:5.7mm;text-align:center;font-size:3mm;font-weight:500;color:#2b2a20;font-variant-numeric:tabular-nums}
-td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(circle,#b5532f 0,#b5532f 2.45mm,#0000 2.5mm)}
+tr.sp td{height:1.3mm}td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(circle,#b5532f 0,#b5532f 2.45mm,#0000 2.5mm)}
 .fl{margin-top:2.6mm;display:flex;flex-direction:column;gap:.9mm}.fl div{font-size:2.25mm;line-height:1.2;color:#4a4636;display:flex;gap:1.6mm}
 .fl b{color:#b5532f;font-weight:700;min-width:6.2mm}
-.ft{margin-top:auto;display:flex;align-items:center;gap:2.2mm;border-top:.3mm solid #cbb89a;padding-top:2mm}
-.lo{width:5mm;height:7.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
-.ft b{font-size:2.6mm;color:#2f3a1e;display:block;font-weight:700}.ft i{font-style:normal;font-size:2.2mm;color:#8a6a3d}
+.ft{margin-top:auto;display:flex;align-items:center;gap:3mm;border-top:.3mm solid #cbb89a;padding-top:2.6mm}
+.lo{width:5.6mm;height:8.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat;flex:none}
+.ft b{font-size:2.1mm;letter-spacing:.95mm;color:#2f3a1e;display:block;font-weight:600}.ft i{font:italic 500 3.5mm Corm,Georgia,serif;color:#8a6a3d;display:block;margin-top:.5mm}
 .cv{position:absolute;inset:0;overflow:hidden}
 .cv2{position:absolute;inset:0;background:linear-gradient(90deg,#000d 0,#000a 24%,#0000 52%),linear-gradient(0deg,#000a 0,#0000 32%)}
 .cl{position:absolute;left:10mm;top:9mm;bottom:8mm;width:100mm;color:#fff;display:flex;flex-direction:column}
@@ -106,7 +106,7 @@ def mes(d, m):
     panel = 'left:144mm' if lado == 'L' else 'left:7mm'
     return ('<div class="s"><div class="ph" style="%s"><div class="im" style="%s"></div><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>'
             '<div class="p" style="%s"><span class="y">2027</span><h1 style="font-size:%smm">%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
-            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, caja(d, f, '%02d' % m, 137, 99), nom, cie, lug, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
+            '<div class="ft"><div class="lo"></div><div><b>FÉLIX SANTIAGO · AVES</b><i>felixsantiago.com.ar</i></div></div></div></div>') % (foto, caja(d, f, '%02d' % m, 137, 99), nom, cie, lug, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
     return ('<div class="s"><div class="cv"><div style="%s"></div></div><div class="cv2"></div>'

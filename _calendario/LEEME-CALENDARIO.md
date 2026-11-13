@@ -51,3 +51,8 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 
 ## Encuadres aplicados (13/11, 13:45)
 - Felix encuadró todo y pegó el JSON: quedó en `encuadres.json` (acá y en su PC). Con eso: Ene picaflor, Feb chimango, Mar macá cara blanca, Abr tachurí, May gallineta, Jun tacuarita azul, Jul águila mora, Ago varillero congo, Sep churrinche, Oct jote cabeza negra, Nov pico de plata, Dic chingolo; portada cuervillo de cañada. Cigüeña americana afuera.
+
+## Ajustes 13/11 (14:00)
+- Foto de la tacuarita azul reemplazada por `12062026-DSC_0437-tacuarita azul.jpg` (la anterior, DSC_0445, la eliminó Felix de `seleccion calendario`).
+- Espacio extra bajo la línea de los días para que los círculos de feriados de la primera semana no la toquen.
+- Pie de cada mes: logo + "FÉLIX SANTIAGO · AVES" (tracking ancho) + felixsantiago.com.ar en cursiva Cormorant; se sacó el @ de los meses (queda en la portada).
