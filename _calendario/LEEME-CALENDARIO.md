@@ -48,3 +48,6 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 ## Encuadre de fotos (13/11)
 - `encuadre_plantilla.html` (en el repo, sin fotos) → `encuadre.html` se genera con las fotos embebidas y vive en la PC de Felix (`WEB/claude-procesamiento/calendario-2027/`). Se abre con doble clic en el navegador; Felix arrastra y hace zoom en cada marco (portada + 12 meses) y toca "Copiar encuadres", después pega el texto en el chat.
 - Ese texto (JSON `{"portada":{foto,z,cx,cy},"01":{...}}`) se guarda como `encuadres.json` junto a `gen_calendario.py` (o en la variable CAL_ENC) y el script lo aplica solo. z = zoom sobre "cubrir el marco", cx/cy = punto de la foto que queda al centro del marco. Los defaults reproducen el diseño previo.
+
+## Encuadres aplicados (13/11, 13:45)
+- Felix encuadró todo y pegó el JSON: quedó en `encuadres.json` (acá y en su PC). Con eso: Ene picaflor, Feb chimango, Mar macá cara blanca, Abr tachurí, May gallineta, Jun tacuarita azul, Jul águila mora, Ago varillero congo, Sep churrinche, Oct jote cabeza negra, Nov pico de plata, Dic chingolo; portada cuervillo de cañada. Cigüeña americana afuera.
