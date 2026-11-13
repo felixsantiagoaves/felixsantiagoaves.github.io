@@ -74,3 +74,8 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 3. imprenta-A4-sangrado-marcas-de-corte: página 230×317 mm, sangrado 3 mm (borde replicado) y marcas; cortes interiores sin sangrado (tiras pegadas).
 4. imprenta-13-paginas-sangrado: 13 páginas de 216×105 mm (tira + 3 mm por lado).
 Pendiente: definir imprenta/casa y tipo de anillado (arriba, banda libre 12 mm). Los PDF viven en `calendario-2027/versiones-impresion/` de su PC, no en el repo.
+
+## Base triangular y render 3D (13/11)
+- Base: prisma de una sola hoja A4 (cartulina 250–300 g): solapa 12 mm + 3 caras de 95 mm (frontal, trasera, base). `gen_base.py` → `base-triangular-A4.pdf`. Hojas ancladas arriba en el vértice; perforado a 6 mm del borde (ajustar al anillo).
+- Render/animación: `render3d/` (three.js, requiere `npm i three@0.160.0`, tiras en `tex/p00..p12.jpg`, servidor http local; `frames.py` saca frames y stills; ffmpeg arma el mp4). Los medios (mp4/png/pdf) viven en la carpeta de su PC, no en el repo.
+- Detalle a validar con una maqueta real: las hojas (99 mm) sobresalen ~4 mm por arriba del vértice (dentro de la banda libre de 12 mm) para que la base de la hoja apoye en el borde de la cara de 95 mm.
