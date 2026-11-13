@@ -71,14 +71,15 @@ td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(ci
 .ft{margin-top:auto;display:flex;align-items:center;gap:2.2mm;border-top:.3mm solid #cbb89a;padding-top:2mm}
 .lo{width:5mm;height:7.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
 .ft b{font-size:2.6mm;color:#2f3a1e;display:block;font-weight:700}.ft i{font-style:normal;font-size:2.2mm;color:#8a6a3d}
-.cv{position:absolute;background-size:100% 100%;width:280mm;height:187mm;left:-60mm;top:-40mm}.cv2{position:absolute;inset:0;background:linear-gradient(270deg,#000c 0,#0008 28%,#0000 58%),linear-gradient(180deg,#0008 0,#0000 38%)}
-.cap2{position:absolute;left:8mm;top:8mm;color:#fff}.cap2 .n{font:600 8.4mm/1 Corm,Georgia,serif}.cap2 .sc{font:italic 500 4.2mm Corm,Georgia,serif;margin-top:.8mm}.cap2 .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.4mm;opacity:.9;text-transform:uppercase}
-.cr{position:absolute;right:10mm;top:8mm;bottom:8mm;width:78mm;color:#fff;display:flex;flex-direction:column;align-items:flex-end;text-align:right}
-.clo{width:10mm;height:15mm;background:#fff;-webkit-mask:url(LOGO) right center/contain no-repeat;mask:url(LOGO) right center/contain no-repeat}
-.cr .mk{font-size:2.3mm;letter-spacing:1.3mm;font-weight:600;margin-top:2.5mm;margin-right:-1.3mm;opacity:.92}
-.cr .ca{font-size:2.3mm;letter-spacing:1.5mm;font-weight:500;margin-top:auto;margin-right:-1.5mm;opacity:.85}
-.cr .yr{font:italic 700 19mm/1 Caladea,Georgia,serif;margin-top:1mm}
-.cr .ln{margin-top:5mm;border-top:.3mm solid #fff6;padding-top:2.2mm;font-size:2.3mm;line-height:1.5;opacity:.92;width:100%}.cr .ln b{font-weight:600;font-size:2.6mm}"""
+.cv{position:absolute;background-size:100% 100%;width:300mm;height:200mm;left:-14mm;top:-52mm}
+.cv2{position:absolute;inset:0;background:linear-gradient(90deg,#000d 0,#000a 24%,#0000 52%),linear-gradient(0deg,#000a 0,#0000 32%)}
+.cl{position:absolute;left:10mm;top:9mm;bottom:8mm;width:100mm;color:#fff;display:flex;flex-direction:column}
+.cl .ca{font-size:2.6mm;letter-spacing:1.6mm;font-weight:500;margin-top:17mm;opacity:.92}
+.cl .yr{font:300 36mm/1 'Inter Display',Inter,sans-serif;letter-spacing:-1.6mm;margin:1mm 0 0 -1.2mm}
+.cl .ft{margin-top:auto;display:flex;align-items:center;gap:3mm;border:0;padding:0}
+.clo{width:8mm;height:12mm;background:#fff;-webkit-mask:url(LOGO) left center/contain no-repeat;mask:url(LOGO) left center/contain no-repeat}
+.cl .mk{font-size:3mm;letter-spacing:1.2mm;font-weight:500}.cl .wb{font-size:2.5mm;margin-top:1.2mm;opacity:.9;letter-spacing:.2mm}
+.cap2{position:absolute;right:8mm;bottom:8mm;color:#fff;text-align:right}.cap2 .n{font:600 7mm/1 Corm,Georgia,serif}.cap2 .sc{font:italic 500 3.8mm Corm,Georgia,serif;margin-top:.7mm}.cap2 .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.3mm;opacity:.9;text-transform:uppercase}"""
 def img(d, n):
     return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(d, n + '.jpg'), 'rb').read()).decode()
 def logo():
@@ -98,9 +99,9 @@ def mes(d, m):
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
     return ('<div class="s"><div class="cv" style="background-image:url(%s)"></div><div class="cv2"></div>'
-            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div>'
-            '<div class="cr"><div class="clo"></div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="ca">CALENDARIO DE ESCRITORIO</div><div class="yr">Aves 2027</div>'
-            '<div class="ln"><b>felixsantiago.com.ar</b><br>@felix_santiago_aves</div></div></div>') % (img(d, PORTADA), nom, cie, lug)
+            '<div class="cl"><div class="ca">CALENDARIO DE ESCRITORIO</div><div class="yr">2027</div>'
+            '<div class="ft"><div class="clo"></div><div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="wb">felixsantiago.com.ar · @felix_santiago_aves</div></div></div></div>'
+            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>') % (img(d, PORTADA), nom, cie, lug)
 if __name__ == '__main__':
     fotos, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)

@@ -42,5 +42,5 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 
 ## Decisiones 13/11 (tarde)
 - Lugares confirmados por Felix: picaflor y chingolo en casa, Río Cuarto; tacuarita azul en Los Hornillos. En el calendario va solo nombre común, científico y lugar (sin fecha de la foto).
-- Portada: vuelve a la versión de foto completa con "Aves 2027" a la derecha, pero con el ave a la izquierda; a la derecha logo, "Félix Santiago · Aves", web y @; nombre/científico/lugar del ave arriba a la izquierda sobre la foto.
+- Portada (boceto de Felix en Canva): ave grande a la derecha, "Calendario de escritorio" + 2027 grande a la izquierda, logo + Félix Santiago · Aves + web abajo a la izquierda, nombre/científico/lugar del ave abajo a la derecha.
 - Encuadre de las fotos: queda pendiente. Idea de Felix: un HTML donde él reencuadre cada foto y me pase las posiciones.
