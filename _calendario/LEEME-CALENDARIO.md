@@ -35,3 +35,7 @@ Estado (13/11/2026): estructura decidida, falta armar los 12 meses con las fotos
 ## Dónde están los archivos pesados
 - En la PC de Felix: `WEB/claude-procesamiento/calendario-2027/` (portada, 12 meses en PNG, montaje, copia del script). Las fotos originales: `WEB/claude-procesamiento/seleccion calendario/`. El repo es público: nada pesado ni privado va ahí, solo scripts y textos.
 - La conexión con la PC volvió a funcionar el 13/11 a las 12:19; con ella se leen y se escriben archivos en esas carpetas.
+
+## Diseño v3 (13/11/2026)
+- Nombres de aves con cada palabra en mayúscula (salvo de/del/la/y). Datos del ave sobre la foto. Tipografías: Cormorant Garamond (nombres, meses; npm `@fontsource/cormorant-garamond`, los woff2 viven en la carpeta `fuentes/` de la PC, no en el repo; el script las lee de ahí o de la variable CAL_FUENTES) e Inter (números y rótulos).
+- Portada: panel verde oscuro con el logo, "Félix Santiago · Aves", 2027 grande y la foto del cuervillo de cañada ampliada a la derecha.

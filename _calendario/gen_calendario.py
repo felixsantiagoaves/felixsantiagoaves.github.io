@@ -41,17 +41,27 @@ FERIADOS = {
  12:[('8','Inmaculada Concepción de María',[8]),('25','Navidad',[25])],
 }
 
+FUENTES = os.environ.get('CAL_FUENTES', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fuentes'))  # woff2 de Cormorant Garamond (npm i @fontsource/cormorant-garamond)
+def fuentes_css():
+    out = ''
+    for w in (400, 500, 600, 700):
+        for st in ('normal', 'italic'):
+            f = os.path.join(FUENTES, 'cormorant-garamond-latin-%d-%s.woff2' % (w, st))
+            out += "@font-face{font-family:Corm;font-weight:%d;font-style:%s;src:url(data:font/woff2;base64,%s)}" % (w, st, base64.b64encode(open(f, 'rb').read()).decode())
+    return out
+def titulo(t):
+    return ' '.join(p if p in ('de', 'del', 'la', 'y') else p[:1].upper() + p[1:] for p in t.split(' '))
 NOM = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
 CSS = """*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:Inter,Helvetica,Arial,sans-serif;color:#2b2a20}
 .s{width:210mm;height:99mm;background:#f3ece1;position:relative;overflow:hidden}
 .ph{position:absolute;top:0;height:99mm;width:137mm;background-size:cover;background-position:center}
 .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c 0,#0007 22%,#0000 48%)}
 .cap{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2;max-width:100mm}
-.cap .n{font:700 6.6mm/1.05 Caladea,Georgia,serif}.cap .sc{font:italic 3.4mm Caladea,Georgia,serif;margin-top:.8mm;opacity:.95}
-.cap .lg{font-size:2.3mm;letter-spacing:.25mm;margin-top:1.4mm;opacity:.85;text-transform:uppercase}
+.cap .n{font:600 8.4mm/1 Corm,Georgia,serif;letter-spacing:.1mm}.cap .sc{font:italic 500 4.2mm Corm,Georgia,serif;margin-top:.8mm;opacity:.95}
+.cap .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.4mm;opacity:.85;text-transform:uppercase}
 .p{position:absolute;top:6mm;bottom:5mm;width:59mm;display:flex;flex-direction:column}
-.y{font-size:2.4mm;letter-spacing:1.6mm;color:#8a6a3d;font-weight:600}
-h1{font:700 13.5mm/1 Caladea,Georgia,serif;color:#2f3a1e;margin-top:.6mm;letter-spacing:-.2mm}
+.y{font-size:2.3mm;letter-spacing:2.2mm;color:#8a6a3d;font-weight:600}
+h1{font:600 16mm/.95 Corm,Georgia,serif;color:#2f3a1e;margin-top:.8mm}
 table{border-collapse:collapse;table-layout:fixed;width:100%;margin-top:3mm}
 th{font-size:1.9mm;color:#8a6a3d;font-weight:600;letter-spacing:.3mm;padding-bottom:1.2mm;border-bottom:.3mm solid #2f3a1e}
 td{height:5.7mm;text-align:center;font-size:3mm;font-weight:500;color:#2b2a20;font-variant-numeric:tabular-nums}
@@ -61,19 +71,18 @@ td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(ci
 .ft{margin-top:auto;display:flex;align-items:center;gap:2.2mm;border-top:.3mm solid #cbb89a;padding-top:2mm}
 .lo{width:5mm;height:7.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
 .ft b{font-size:2.6mm;color:#2f3a1e;display:block;font-weight:700}.ft i{font-style:normal;font-size:2.2mm;color:#8a6a3d}
-.cvf{position:absolute;background-size:100% 100%}.cv2{position:absolute;inset:0;background:linear-gradient(270deg,#000d 0,#000a 32%,#0000 62%)}
-.ct{position:absolute;right:11mm;top:0;bottom:0;width:78mm;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right}
-.clo{width:11mm;height:16mm;background:#fff;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
-.ct .mk{font-size:2.6mm;letter-spacing:1.6mm;font-weight:600;margin-top:2mm;opacity:.9}
-.ct .yr{font:200 38mm/0.9 'Inter Display',Inter,sans-serif;letter-spacing:-1.5mm;margin-top:5mm}
-.ct .ca{font:italic 5mm Caladea,Georgia,serif;margin-top:2mm}
-.ct .ft2{margin-top:7mm;font-size:2.4mm;line-height:1.5;opacity:.85}.ct .ft2 b{display:block;font-weight:600;font-size:2.6mm;opacity:1}"""
+.cp{position:absolute;left:0;top:0;bottom:0;width:73mm;background:#2f3a1e;color:#f3ece1;padding:8mm 8mm 7mm;display:flex;flex-direction:column}
+.clo{width:9mm;height:13mm;background:#f3ece1;-webkit-mask:url(LOGO) left center/contain no-repeat;mask:url(LOGO) left center/contain no-repeat}
+.cp .mk{font-size:2.2mm;letter-spacing:1.1mm;font-weight:600;margin-top:3mm;color:#d9c9a8}
+.cp .yr{font:300 30mm/.9 'Inter Display',Inter,sans-serif;margin-top:auto;letter-spacing:-1.4mm;margin-left:-1mm}
+.cp .ca{font:italic 500 6mm Corm,Georgia,serif;margin-top:4mm;color:#d9c9a8}
+.cp .ln{border-top:.3mm solid #6b7550;margin-top:6mm;padding-top:2.2mm;font-size:2.3mm;line-height:1.5;color:#d9c9a8}.cp .ln b{display:block;color:#f3ece1;font-weight:600;font-size:2.6mm}"""
 def img(d, n):
     return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(d, n + '.jpg'), 'rb').read()).decode()
 def logo():
     return 'data:image/png;base64,' + base64.b64encode(open(LOGO, 'rb').read()).decode()
 def mes(d, m):
-    f, lado = MESES[m]; nom, cie, lug, fec = AVES[f]; fer = FERIADOS.get(m, [])
+    f, lado = MESES[m]; nom, cie, lug, fec = AVES[f]; nom = titulo(nom); fer = FERIADOS.get(m, [])
     dias = [x for _, _, ds in fer for x in ds]
     cal = calendar.Calendar(0).monthdayscalendar(2027, m)
     rows = ''.join('<tr>' + ''.join('<td></td>' if x == 0 else '<td class="%s">%d</td>' % (('f' if x in dias else 'd' if i == 6 else ''), x) for i, x in enumerate(w)) + '</tr>' for w in cal)
@@ -85,20 +94,20 @@ def mes(d, m):
             '<div class="p" style="%s"><span class="y">2027</span><h1>%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
             '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, fec, panel, NOM[m-1], th, rows, fl)
 def portada(d):
-    nom, cie, lug, fec = AVES[PORTADA]
-    return ('<div class="s"><div class="cvf" style="background-image:url(%s);width:280mm;height:187mm;left:-70mm;top:-47mm"></div><div class="cv2"></div>'
-            '<div class="ct"><div class="clo"></div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="yr">2027</div><div class="ca">Calendario de escritorio</div>'
-            '<div class="ft2"><b>%s · <i>%s</i></b>%s · %s<br>felixsantiago.com.ar · @felix_santiago_aves</div></div></div>') % (img(d, PORTADA), nom, cie, lug, fec)
+    nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
+    return ('<div class="s"><div class="ph" style="right:0;background-size:185%% auto;background-position:52%% 62%%;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div></div></div>'
+            '<div class="cp"><div class="clo"></div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="yr">2027</div><div class="ca">Calendario de escritorio</div>'
+            '<div class="ln"><b>felixsantiago.com.ar</b>@felix_santiago_aves</div></div></div>') % (img(d, PORTADA), nom, cie, lug, fec)
 if __name__ == '__main__':
     fotos, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)
     pags = {'portada': portada(fotos)}
-    for m in (map(int, sys.argv[3:]) if len(sys.argv) > 3 else MESES):
+    for m in ([int(x) for x in sys.argv[3:] if x.isdigit()] if len(sys.argv) > 3 else MESES):
         pags['%02d-%s' % (m, NOM[m-1].lower())] = mes(fotos, m)
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={'width': 794, 'height': 374}, device_scale_factor=2)
         for k, h in pags.items():
-            pg.set_content('<meta charset="utf-8"><style>%s</style>%s' % (CSS.replace('LOGO', logo()), h)); pg.wait_for_timeout(300)
+            pg.set_content('<meta charset="utf-8"><style>%s</style>%s' % (fuentes_css() + CSS.replace('LOGO', logo()), h)); pg.wait_for_timeout(300)
             pg.locator('.s').screenshot(path=os.path.join(out, k + '.png')); print(k)
         b.close()
