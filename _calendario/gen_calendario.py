@@ -8,12 +8,12 @@ LOGO = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'logo-nav.
 # archivo -> (nombre común, nombre científico, lugar, fecha de la foto). Datos de registros.json / avistamientos (eBird).
 AVES = {
  'cuervillo_de_canada':('Cuervillo de cañada','Plegadis chihi','Laguna Rivero, Alcira Gigena','31/10/2026'),
- 'chingolo':('Chingolo','Zonotrichia capensis','POR CONFIRMAR','02/01/2026'),
+ 'chingolo':('Chingolo','Zonotrichia capensis','Casa, Río Cuarto','02/01/2026'),
  'chimango':('Chimango','Daptrius chimango','UNRC, Río Cuarto','27/12/2025'),
- 'picaflor_verde':('Picaflor común','Chlorostilbon lucidus','POR CONFIRMAR','16/03/2026'),
+ 'picaflor_verde':('Picaflor común','Chlorostilbon lucidus','Casa, Río Cuarto','16/03/2026'),
  'gallineta_pico_pintado':('Gallineta pico pintado','Pardirallus sanguinolentus','Laguna Los Medanitos, Paso del Durazno','27/06/2026'),
  'tachuri_siete_colores':('Tachurí sietecolores','Tachuris rubrigastra','Laguna Rivero, Alcira Gigena','31/10/2026'),
- 'tacuarita_azul':('Tacuarita azul','Polioptila dumicola','POR CONFIRMAR (Villa de las Rosas o Dique La Viña)','12/06/2026'),
+ 'tacuarita_azul':('Tacuarita azul','Polioptila dumicola','Los Hornillos, Córdoba','12/06/2026'),
  'aguila_mora':('Águila mora','Geranoaetus melanoleucus','Laguna Seca, Suco','27/07/2026'),
  'varillero_congo':('Varillero congo','Chrysomus ruficapillus','Laguna Rivero, Alcira Gigena','31/10/2026'),
  'churrinche':('Churrinche','Pyrocephalus rubinus','Río Cuarto','30/09/2026'),
@@ -71,12 +71,14 @@ td.d{color:#b5532f}td.f{color:#fff;font-weight:700;background:radial-gradient(ci
 .ft{margin-top:auto;display:flex;align-items:center;gap:2.2mm;border-top:.3mm solid #cbb89a;padding-top:2mm}
 .lo{width:5mm;height:7.4mm;background:#2f3a1e;-webkit-mask:url(LOGO) center/contain no-repeat;mask:url(LOGO) center/contain no-repeat}
 .ft b{font-size:2.6mm;color:#2f3a1e;display:block;font-weight:700}.ft i{font-style:normal;font-size:2.2mm;color:#8a6a3d}
-.cp{position:absolute;left:0;top:0;bottom:0;width:73mm;background:#2f3a1e;color:#f3ece1;padding:8mm 8mm 7mm;display:flex;flex-direction:column}
-.clo{width:9mm;height:13mm;background:#f3ece1;-webkit-mask:url(LOGO) left center/contain no-repeat;mask:url(LOGO) left center/contain no-repeat}
-.cp .mk{font-size:2.2mm;letter-spacing:1.1mm;font-weight:600;margin-top:3mm;color:#d9c9a8}
-.cp .yr{font:300 30mm/.9 'Inter Display',Inter,sans-serif;margin-top:auto;letter-spacing:-1.4mm;margin-left:-1mm}
-.cp .ca{font:italic 500 6mm Corm,Georgia,serif;margin-top:4mm;color:#d9c9a8}
-.cp .ln{border-top:.3mm solid #6b7550;margin-top:6mm;padding-top:2.2mm;font-size:2.3mm;line-height:1.5;color:#d9c9a8}.cp .ln b{display:block;color:#f3ece1;font-weight:600;font-size:2.6mm}"""
+.cv{position:absolute;background-size:100% 100%;width:280mm;height:187mm;left:-60mm;top:-40mm}.cv2{position:absolute;inset:0;background:linear-gradient(270deg,#000c 0,#0008 28%,#0000 58%),linear-gradient(180deg,#0008 0,#0000 38%)}
+.cap2{position:absolute;left:8mm;top:8mm;color:#fff}.cap2 .n{font:600 8.4mm/1 Corm,Georgia,serif}.cap2 .sc{font:italic 500 4.2mm Corm,Georgia,serif;margin-top:.8mm}.cap2 .lg{font-size:2.1mm;letter-spacing:.5mm;font-weight:500;margin-top:1.4mm;opacity:.9;text-transform:uppercase}
+.cr{position:absolute;right:10mm;top:8mm;bottom:8mm;width:78mm;color:#fff;display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.clo{width:10mm;height:15mm;background:#fff;-webkit-mask:url(LOGO) right center/contain no-repeat;mask:url(LOGO) right center/contain no-repeat}
+.cr .mk{font-size:2.3mm;letter-spacing:1.3mm;font-weight:600;margin-top:2.5mm;margin-right:-1.3mm;opacity:.92}
+.cr .ca{font-size:2.3mm;letter-spacing:1.5mm;font-weight:500;margin-top:auto;margin-right:-1.5mm;opacity:.85}
+.cr .yr{font:italic 700 19mm/1 Caladea,Georgia,serif;margin-top:1mm}
+.cr .ln{margin-top:5mm;border-top:.3mm solid #fff6;padding-top:2.2mm;font-size:2.3mm;line-height:1.5;opacity:.92;width:100%}.cr .ln b{font-weight:600;font-size:2.6mm}"""
 def img(d, n):
     return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(d, n + '.jpg'), 'rb').read()).decode()
 def logo():
@@ -90,14 +92,15 @@ def mes(d, m):
     fl = ''.join('<div><b>%s</b><span>%s</span></div>' % (t, tx) for t, tx, _ in fer)
     foto = 'left:0' if lado == 'L' else 'right:0'
     panel = 'left:144mm' if lado == 'L' else 'left:7mm'
-    return ('<div class="s"><div class="ph" style="%s;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div></div></div>'
+    return ('<div class="s"><div class="ph" style="%s;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div></div>'
             '<div class="p" style="%s"><span class="y">2027</span><h1 style="font-size:%smm">%s</h1><table><tr>%s</tr>%s</table><div class="fl">%s</div>'
-            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, fec, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
+            '<div class="ft"><div class="lo"></div><div><b>felixsantiago.com.ar</b><i>@felix_santiago_aves</i></div></div></div></div>') % (foto, img(d, f), nom, cie, lug, panel, ('16' if len(NOM[m-1]) <= 7 else '13.5' if len(NOM[m-1]) <= 8 else '11.6'), NOM[m-1], th, rows, fl)
 def portada(d):
     nom, cie, lug, fec = AVES[PORTADA]; nom = titulo(nom)
-    return ('<div class="s"><div class="ph" style="right:0;background-size:185%% auto;background-position:52%% 62%%;background-image:url(%s)"><div class="cap"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s · %s</div></div></div>'
-            '<div class="cp"><div class="clo"></div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="yr">2027</div><div class="ca">Calendario de escritorio</div>'
-            '<div class="ln"><b>felixsantiago.com.ar</b>@felix_santiago_aves</div></div></div>') % (img(d, PORTADA), nom, cie, lug, fec)
+    return ('<div class="s"><div class="cv" style="background-image:url(%s)"></div><div class="cv2"></div>'
+            '<div class="cap2"><div class="n">%s</div><div class="sc">%s</div><div class="lg">%s</div></div>'
+            '<div class="cr"><div class="clo"></div><div class="mk">FÉLIX SANTIAGO · AVES</div><div class="ca">CALENDARIO DE ESCRITORIO</div><div class="yr">Aves 2027</div>'
+            '<div class="ln"><b>felixsantiago.com.ar</b><br>@felix_santiago_aves</div></div></div>') % (img(d, PORTADA), nom, cie, lug)
 if __name__ == '__main__':
     fotos, out = sys.argv[1], sys.argv[2]
     os.makedirs(out, exist_ok=True)
