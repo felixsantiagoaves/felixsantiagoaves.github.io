@@ -572,14 +572,15 @@ body.fit-pc #page-sobre-mi.fgh.active{display:block!important;height:var(--fit-h
 body.fit-pc .fgh-grid{height:100%;max-width:2400px;box-sizing:border-box;grid-template-columns:minmax(330px,31%) minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:clamp(10px,2vh,22px) clamp(20px,2.4vw,44px);padding:clamp(10px,2.2vh,26px) clamp(20px,3vw,56px) clamp(6px,1.2vh,14px);align-items:stretch}
 /* tarjeta: la foto absorbe el alto sobrante */
 body.fit-pc .fgh-card{display:flex;flex-direction:column;min-height:0;transform:none}
-body.fit-pc .fgh-ph{flex:1 1 0;height:auto;min-height:90px}
+body.fit-pc .fgh-ph{flex:1 1 0;height:auto;min-height:150px}
 body.fit-pc .fgh-info{flex:0 0 auto;padding:clamp(6px,1.4vh,16px) .6rem clamp(8px,1.6vh,18px)}
 body.fit-pc .fgh-name{font-size:clamp(1.15rem,3.1vh,1.6rem)}
 body.fit-pc .fgh-sci{margin:.1rem 0 clamp(2px,1vh,12px)}
 body.fit-pc .fgh-lab{margin:clamp(3px,1vh,11px) 0 .1rem}
 body.fit-pc .fgh-btn,body.fit-pc .fgh-share{margin-top:clamp(5px,1.2vh,14px)}
 body.fit-pc .fgh .ult-juego{margin:clamp(4px,1vh,12px) 0}
-@media(max-height:790px){body.fit-pc .fgh .ult-juego,body.fit-pc .fgh .ult-video{display:none!important}}
+@media(max-height:980px){body.fit-pc .fgh .ult-video{display:none!important}}
+@media(max-height:860px){body.fit-pc .fgh .ult-juego{display:none!important}}
 @media(max-height:660px){body.fit-pc .fgh-txt{font-size:.84rem;line-height:1.38}body.fit-pc .fgh-pill{display:none}}
 /* panel "Mi álbum hoy": las figuritas escalan con el alto Y el ancho del panel */
 body.fit-pc .fgh-hoy{display:flex;flex-direction:column;min-height:0}
@@ -603,14 +604,13 @@ body.fit-pc .fgh-tag{font-size:max(.55rem,calc(12*var(--u)))}
 /* últimas especies: alto proporcional a la pantalla, entran todas las que caben */
 body.fit-pc .fgh .recientes{--rh:clamp(120px,27vh,250px);overflow:hidden}
 body.fit-pc .fgh .rec-titulo{margin:0 0 0 4px}
-body.fit-pc .fgh .rec-track{height:calc(var(--rh) - 14px);overflow:hidden;padding:12px 8px 6px;gap:clamp(8px,1.1vw,16px);box-sizing:border-box}
-body.fit-pc .fgh .rec-item{flex:1 1 0;min-width:0;max-width:calc(var(--rh)*.62);display:flex;flex-direction:column;height:100%}
+body.fit-pc .fgh .rec-track{height:calc(var(--rh) - 14px);overflow-x:auto;overflow-y:hidden;padding:12px 8px 6px;gap:clamp(8px,1.1vw,16px);box-sizing:border-box}
+body.fit-pc .fgh .rec-item{flex:0 0 calc((var(--rh) - 32px)*.64);width:calc((var(--rh) - 32px)*.64);display:flex;flex-direction:column;height:100%}
 body.fit-pc .fgh .rec-circulo{flex:1 1 0;min-height:0}
 body.fit-pc .fgh .rec-circulo,body.fit-pc .fgh .rec-circulo img{height:auto!important}
 body.fit-pc .fgh .rec-circulo img{height:100%!important}
 body.fit-pc .fgh .rec-nom{flex:none;min-height:0;font-size:clamp(.52rem,1.6vh,.66rem)!important;padding:.3rem .15rem .35rem;display:-webkit-box!important;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 body.fit-pc .fgh .rec-item[data-oculto]{display:none}
-body.fit-pc .fgh .rec-clon{display:none!important}
 body.fit-pc .fgh .recientes{width:100%!important;max-width:none!important;margin:0!important;justify-self:stretch}
 body.fit-pc .fgh .rec-track{justify-content:flex-start}
 body.fit-pc .fgh-stk{justify-content:space-evenly}

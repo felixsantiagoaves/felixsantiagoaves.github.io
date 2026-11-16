@@ -1824,15 +1824,8 @@ function fitSobreMi(pg) {
   document.documentElement.classList.add('fit-lock');
   fitRecientes();
 }
-function fitRecientes() {
-  const tr = document.getElementById('rec-track'); if (!tr) return;
-  const its = [...tr.children].filter(i => !i.classList.contains('rec-clon')); its.forEach(i => i.removeAttribute('data-oculto'));
-  if (!document.body.classList.contains('fit-pc')) return;
-  const mas = its.find(i => i.classList.contains('rec-mas')), norm = its.filter(i => i !== mas);
-  const rh = tr.clientHeight, minW = Math.max(70, rh * .42), gap = parseFloat(getComputedStyle(tr).columnGap) || 12, w = tr.clientWidth - 16;
-  let n = Math.max(1, Math.floor((w + gap) / (minW + gap)) - (mas ? 1 : 0));
-  norm.forEach((i, k) => { if (k >= n) i.setAttribute('data-oculto', ''); });
-}
+// Últimas especies en PC: figuritas de proporción fija (el ancho sale del alto) y carrusel automático; el ancho de pantalla solo cambia cuántas se ven.
+function fitRecientes() {}
 function fitGaleria(pg) {
   const gr = document.getElementById('foto-grid'), ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   gr.style.height = ''; const top = gr.getBoundingClientRect().top + scrollY, h = innerHeight - top - fh - 58;
