@@ -784,7 +784,7 @@ function libroCargar(cb) {
 function libroToggle() {
   const on = !window.libroOn;
   try { localStorage.setItem('albumVista', on ? 'libro' : 'lista'); } catch (e) {}
-  const ir = () => { window.libroOn = on; window._libroUser = true; document.body.classList.toggle('libro-modo', on); const b = document.getElementById('btn-libro'); if (b) b.textContent = on ? '☰ Ver como lista' : '📖 Ver como libro'; if (!on && window.libroSalir) libroSalir(); renderAlbum(); if (!on) window.scrollTo({ top: 0 }); };
+  const ir = () => { window.libroOn = on; window._libroUser = true; document.body.classList.toggle('libro-modo', on); { const ac = document.getElementById('album-container'); if (ac) ac.classList.remove('alb-cols'); } const b = document.getElementById('btn-libro'); if (b) b.textContent = on ? '☰ Ver como lista' : '📖 Ver como libro'; if (!on && window.libroSalir) libroSalir(); renderAlbum(); window.scrollTo({ top: 0 }); { const ix = document.getElementById('libro-idx'); if (ix) ix.scrollTop = 0; } fitPantalla(); if (on && window.libroEscala) { libroEscala(); setTimeout(() => { fitPantalla(); libroEscala(); }, 60); } };
   if (on) libroCargar(ir); else ir();
 }
 let albAb = null;   // grupo abierto del álbum (uno a la vez)
@@ -1804,6 +1804,7 @@ const FIT_ZMIN = .8;   // por debajo el texto queda muy chico: se deja la págin
 function fitAlbumLista() {
   // Scroll controlado: las páginas (familias) cerradas se acomodan en columnas para que la lista mida ~3 pantallas como máximo.
   const c = document.getElementById('album-container'); if (!c) return;
+  if (document.body.classList.contains('libro-modo')) { c.classList.remove('alb-cols'); return; }
   const pc = document.body.classList.contains('fit-pc'), n = c.querySelectorAll('.alb-pag.cerrada').length;
   let cols = 1;
   if (pc && n) { const top = c.getBoundingClientRect().top + scrollY, budget = 3 * innerHeight - top - 60; cols = Math.min(3, Math.max(2, Math.ceil(n * 74 / budget))); }
