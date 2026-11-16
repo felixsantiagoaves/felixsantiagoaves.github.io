@@ -2,7 +2,7 @@
    Modelo: P = páginas (0 = tapa). Hoja k: frente = P[2k], dorso = P[2k+1]. Spread s muestra P[2s-1] (izq.) y P[2s] (der.).
    Las hojas dadas vuelta (k < s) giran -180° sobre el lomo. Todas las especies, con huecos las no vistas y la figurita pegada las vistas. */
 (function () {
-  const CAP = 12, PW = 620, PH = 840;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
+  const CAP = 12, PW = 700, PH = 740;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
   let P = [], L = 0, S = 0, ctx = null, busy = false, book = null, drag = null;
 
   function armar() {
@@ -25,9 +25,14 @@
       return `<div class="lpag lpag-tapa"><div class="lt-logo"></div><h2>Álbum de aves</h2><p>${REGION === 'cba' ? 'Córdoba' : 'Argentina'}</p><b>${v} <i>de</i> ${ctx.todas.length}</b><small>Félix Santiago · Aves</small></div>`;
     }
     if (pg.t === 'fin') return '<div class="lpag lpag-fin"><p>Seguirá completándose<br>en cada salida.</p></div>';
-    const leg = []; pg.aves.forEach(a => { let g = leg.find(x => x.f === a.familiaEsp); if (!g) leg.push(g = { f: a.familiaEsp, c: ctx.col(a), n: 0, v: 0 }); g.n++; if (visto(a)) g.v++; });
-    return `<div class="lpag"><div class="album-grid stk libro-grid">${pg.aves.map((a, j) => `<div class="lcell fc${ctx.col(a)}">${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div>
-      <div class="lpag-leg">${leg.map(g => `<span class="fc${g.c}"><i></i>${escHtml(g.f)} <b>${g.v}/${g.n}</b></span>`).join('')}</div><div class="lpag-n">${i}</div></div>`;
+    // grupos de familia dentro de la hoja: la etiqueta va sobre la primera figurita de cada tramo (por fila)
+    const A = pg.aves, tag = {};
+    for (let j = 0; j < A.length;) {
+      let e = j; while (e + 1 < A.length && A[e + 1].familiaEsp === A[j].familiaEsp && Math.floor((e + 1) / 4) === Math.floor(j / 4)) e++;
+      let n = 0, v = 0; A.forEach(x => { if (x.familiaEsp === A[j].familiaEsp) { n++; if (visto(x)) v++; } });
+      tag[j] = { n: e - j + 1, t: A[j].familiaEsp + ' ' + v + '/' + n }; j = e + 1;
+    }
+    return `<div class="lpag"><div class="album-grid stk libro-grid">${A.map((a, j) => `<div class="lcell fc${ctx.col(a)}${tag[j] ? ' ini' : ''}">${tag[j] ? `<span class="lgt" style="width:calc(${tag[j].n}00% + ${(tag[j].n - 1) * 0}px)" title="${escHtml(tag[j].t)}">${escHtml(tag[j].t)}</span>` : ''}${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div><div class="lpag-n">${i}</div></div>`;
   }
 
   function llenar() {
@@ -74,7 +79,7 @@
 
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
-    const full = esMov(), sc = full ? Math.min((window.innerWidth - 130) / (2 * PW), (window.innerHeight - 64) / PH) : Math.min(1, (window.innerWidth - 150) / (2 * PW), (window.innerHeight - 260) / PH), k = Math.max(.2, sc);
+    const full = esMov(), sc = full ? Math.min((window.innerWidth - 110) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 150) / (2 * PW), (window.innerHeight - 200) / PH), k = Math.max(.2, sc);
     book.style.setProperty('--sc', k.toFixed(3));
     st.style.height = Math.round(PH * k) + 'px';
   }
@@ -93,7 +98,7 @@
     ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div>`;
     if (full) { try { (document.documentElement.requestFullscreen() || Promise.reject()).then(() => screen.orientation.lock('landscape')).catch(() => {}); } catch (e) {} }
     book = document.getElementById('libro-book'); escala(); pos();
-    if (!full) { const st = document.getElementById('libro-stage'); setTimeout(() => window.scrollTo({ top: st.getBoundingClientRect().top + scrollY - 132, behavior: 'instant' }), 60); }
+    if (!full) { const st = document.getElementById('libro-stage'); setTimeout(() => window.scrollTo({ top: st.getBoundingClientRect().top + scrollY - 126, behavior: 'instant' }), 60); }
     book.addEventListener('pointerdown', onDown);
   };
   window.libroIr = d => ir(S + d);
