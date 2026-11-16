@@ -262,3 +262,16 @@ h1{font:900 2rem/1.1 'Lato',sans-serif;text-transform:uppercase;letter-spacing:.
 #hero-img{view-transition-name:ave-foto}
 ::view-transition-group(ave-foto){animation-duration:.38s;animation-timing-function:cubic-bezier(.3,1,.4,1)}
 @media (prefers-reduced-motion:reduce){#hero-img{view-transition-name:none}}
+
+/* Scroll controlado en PC (lista de especies): ver ficha.js y _build/COMPONENTES.md */
+body.lista-fit .wrap{max-width:2000px}
+body.lista-fit .grid#lista{grid-template-columns:repeat(var(--lc,6),1fr)!important;gap:14px!important}
+body.lista-fit .grid#lista .card{container-type:inline-size;padding:5px 5px 0}
+body.lista-fit .grid#lista .card .n{font-size:clamp(.5rem,8.5cqw,.8rem);padding-top:.4rem}
+body.lista-fit .grid#lista .card .c{font-size:clamp(.5rem,7.5cqw,.78rem);padding-bottom:.4rem}
+body.lista-fit .crumbs{display:none}
+body.lista-fit .wrap{padding-top:.8rem}
+body.lista-fit .wrap>h1{font-size:1.5rem;margin:.2rem 0 .5rem}
+body.lista-fit .intro{max-width:none;margin:.2rem 0 .7rem;font-size:.95rem}
+body.lista-fit .filtros{margin-bottom:.3rem}
+body.lista-fit .filtros input,body.lista-fit .filtros select{padding:.4rem .9rem}

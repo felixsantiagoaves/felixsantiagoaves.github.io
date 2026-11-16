@@ -762,6 +762,7 @@ function renderAlbum() {
     html += `<section class="alb-pag"><div class="album-grid stk">${lista.map(fig).join('')}</div></section>`;
   }
   container.innerHTML = html;
+  fitAlbumLista();
   albNavUpd();
 }
 
@@ -1800,6 +1801,14 @@ document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preve
 // ── Pantalla fija en PC: la página se escala para entrar sin scroll vertical (Sobre mí y Estadísticas) ──
 const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes', 'page-album'];
 const FIT_ZMIN = .8;   // por debajo el texto queda muy chico: se deja la página con su scroll normal
+function fitAlbumLista() {
+  // Scroll controlado: las páginas (familias) cerradas se acomodan en columnas para que la lista mida ~3 pantallas como máximo.
+  const c = document.getElementById('album-container'); if (!c) return;
+  const pc = document.body.classList.contains('fit-pc'), n = c.querySelectorAll('.alb-pag.cerrada').length;
+  let cols = 1;
+  if (pc && n) { const top = c.getBoundingClientRect().top + scrollY, budget = 3 * innerHeight - top - 60; cols = Math.min(4, Math.max(2, Math.ceil(n * 74 / budget))); }
+  c.style.setProperty('--alc', cols); c.classList.toggle('alb-cols', pc && n > 0);
+}
 function fitPantalla() {
   const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (!pg) return;
   const pc = innerWidth >= 1000 && innerHeight >= 560 && matchMedia('(pointer:fine)').matches;
@@ -1807,7 +1816,7 @@ function fitPantalla() {
   pg.style.zoom = ''; pg.style.removeProperty('--fit-h'); pg.style.removeProperty('--fit-w'); document.documentElement.classList.remove('fit-lock');
   if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
-  if (pg.id === 'page-album') { if (document.body.classList.contains('libro-modo')) fitSobreMi(pg); return; }   // la lista del álbum scrollea normal; el libro se encaja
+  if (pg.id === 'page-album') { if (document.body.classList.contains('libro-modo')) fitSobreMi(pg); else fitAlbumLista(); return; }   // la lista del álbum scrollea normal; el libro se encaja
   if (pg.id === 'page-sobre-mi' || pg.id === 'page-redes') { fitSobreMi(pg); return; }
   if (pg.id === 'page-datos') { fitDatos(pg); return; }
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;

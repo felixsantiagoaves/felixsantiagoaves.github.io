@@ -749,3 +749,18 @@ body.fit-pc #dat-ter .ter-lista{grid-auto-rows:minmax(24px,54px);align-content:s
 body.fit-pc #dat-num .dat-filtro{flex-wrap:nowrap;white-space:nowrap;min-height:30px;max-height:34px;overflow:hidden}
 body.fit-pc #dat-num .dfl-res{flex:none;margin-left:.3rem}
 body.fit-pc #dat-num .dfl-hint{white-space:nowrap}
+
+/* Álbum en lista, PC: scroll controlado (~3 pantallas). Las familias cerradas se reparten en --alc columnas;
+   la que se abre ocupa todo el ancho. fitAlbumLista() en site.js elige las columnas. */
+body.fit-pc #album-container.alb-cols{display:grid;grid-template-columns:repeat(var(--alc,2),minmax(0,1fr));gap:12px 16px;align-items:start}
+body.fit-pc #album-container.alb-cols>.alb-pag{margin:0!important;max-width:none}
+body.fit-pc #album-container.alb-cols>.alb-pag.abierta,body.fit-pc #album-container.alb-cols>.alb-pag:not(.cerrada){grid-column:1/-1}
+body.fit-pc #album-container.alb-cols>.alb-pag.cerrada{padding:6px 10px!important}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd{padding:0!important;gap:8px;min-height:44px;flex-wrap:nowrap}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{font-size:.95rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-prev{display:none}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-barra{flex:0 0 46px;margin-left:auto}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-n{font-size:.66rem;padding:2px 7px;white-space:nowrap}
+body.fit-pc:not(.libro-modo) #page-album .page-header{padding-top:.6rem;padding-bottom:.4rem}
+body.fit-pc #album-container.alb-cols>.album-count{grid-column:1/-1}
+body.fit-pc #album-container.alb-cols .alb-pag-c{white-space:nowrap;flex:none;border-radius:99px!important}

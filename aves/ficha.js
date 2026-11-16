@@ -90,3 +90,21 @@ var a=li.firstChild;a.addEventListener('click',function(e){e.preventDefault();sh
 document.addEventListener('click',function(e){if(!sh.hidden&&!e.target.closest('.nav-mas')&&!e.target.closest('.fg-sheet')){sh.hidden=true;}});
 if(ul.querySelector('a.active[href="/aves/"]'))a.classList.add('active');}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',menu);else menu();})();
+
+/* Scroll controlado (PC): la lista de especies mide como máximo ~3 pantallas.
+   Elige cuántas columnas entran para que el largo total quepa en ese presupuesto; las tarjetas
+   mantienen su proporción (foto 4:3 + pie) y solo cambia cuántas hay por fila. Ver _build/COMPONENTES.md */
+(function(){
+  var gr=document.getElementById('lista'), cu=document.getElementById('cuenta'); if(!gr||!cu) return;
+  var SCREENS=3, MINW=84, GAP=14;
+  function fit(){
+    if(!matchMedia('(min-width:1000px) and (min-height:560px) and (pointer:fine)').matches){ gr.style.removeProperty('--lc'); document.body.classList.remove('lista-fit'); return; }
+    document.body.classList.add('lista-fit');
+    var n=gr.querySelectorAll('li:not([hidden])').length||1, W=gr.clientWidth, top=gr.getBoundingClientRect().top+scrollY,
+        budget=SCREENS*innerHeight-top-40, best=3;
+    for(var c=3;c<=14;c++){ var cw=(W-GAP*(c-1))/c; best=c; if(cw<MINW){best=c-1;break;} var h=Math.ceil(n/c)*(cw*.75+14+cw*.3+GAP); if(h<=budget) break; }
+    gr.style.setProperty('--lc',best);
+  }
+  new MutationObserver(fit).observe(cu,{childList:true,characterData:true,subtree:true});
+  addEventListener('resize',fit); fit();
+})();

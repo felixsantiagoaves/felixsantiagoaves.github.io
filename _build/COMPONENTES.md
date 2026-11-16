@@ -41,3 +41,9 @@ Especies (tipo blog, scrollea), Mapa, Juegos, Calendario (privado).
 ## Trampas conocidas (variables CSS con nombre repetido)
 - `--rh` = alto del cuadro de foto de la figurita (lo usa la mascota para escalar). La tira usa `--rec-h`. NO reutilizar `--rh` para otra cosa: en PC se redefine en `.rec-circulo`.
 - Antes de crear una variable nueva: `grep -n "\-\-nombre" assets/*.css`.
+
+## Con scroll controlado (páginas que sí scrollean)
+Regla: la página puede scrollear, pero **máximo ~3 pantallas**. No se achican letras ni se deforman piezas: cambia CUÁNTAS entran por fila (las piezas conservan su proporción).
+- **Especies** (`/aves/`): `ficha.js` (bloque final) elige columnas (`--lc`, de 3 a 14, mínimo 84 px por tarjeta) para que el largo total quepa en 3 pantallas; se recalcula al filtrar/redimensionar. Cabecera compacta, texto de la tarjeta escala con `cqw`. Clase `body.lista-fit` (solo PC). 126 especies: ~2,7 pantallas a 1440×800, ~3,3 a 1215×613.
+- **Álbum en lista** (`#album-container`): `fitAlbumLista()` en site.js reparte las familias cerradas en 2–4 columnas (`--alc`); la que se abre ocupa todo el ancho (`grid-column:1/-1`). ~2,3–2,8 pantallas. Se llama desde `renderAlbum()` y `fitPantalla()`.
+- Para otra página con scroll: misma idea, un `fit…()` que mide el presupuesto `3*innerHeight` y elige columnas.
