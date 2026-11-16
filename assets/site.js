@@ -1314,7 +1314,7 @@ function datTab(t, btn) {
   let sx = 0, sy = 0, ok = false;
   document.addEventListener('touchstart', e => {
     const pg = document.getElementById('page-datos');
-    ok = !!(pg && e.touches.length === 1 && e.target.closest('#page-datos .page-body-wide') && !document.getElementById('modal-ov').classList.contains('open') && !e.target.closest('.hb-bar,details,select'));
+    ok = !!(pg && e.touches.length === 1 && e.target.closest('#page-datos .page-body-wide') && !document.getElementById('modal-ov').classList.contains('open') && !e.target.closest('.hb-bar,details,select,.tl,#ch-acum,#ch-mensual'));
     if(ok) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }
   }, {passive: true});
   document.addEventListener('touchend', e => {
