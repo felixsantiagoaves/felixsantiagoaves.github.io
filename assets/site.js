@@ -1456,7 +1456,7 @@ function pintarNumeros() {
   rm.forEach(x => { (sm[x.ym] = sm[x.ym] || new Set()).add(x.id); if(x.lif) nuevas[x.ym] = (nuevas[x.ym] || 0) + 1; });
   Object.keys(sm).forEach(m => { vistas[m] = sm[m].size; });
   CH_DIM = null;
-  if(document.body.classList.contains('fit-pc') && $('ch-acum').clientWidth > 50) { const a = $('ch-acum'), m = $('ch-mensual'); CH_DIM = {a: {w: a.clientWidth, h: Math.max(110, a.clientHeight - 26)}, m: {w: m.clientWidth, h: Math.max(110, m.clientHeight - 46)}}; }
+  if(document.body.classList.contains('fit-pc') && $('ch-acum').clientWidth > 50) { const a = $('ch-acum'), m = $('ch-mensual'); CH_DIM = {a: {w: a.clientWidth, h: Math.max(110, a.clientHeight - 30)}, m: {w: m.clientWidth, h: Math.max(110, m.clientHeight - 56)}}; }
   if(DMESES.length) { $('ch-acum').innerHTML = chartAcumulado(DMESES, nuevas, DF.mes); $('ch-mensual').innerHTML = chartMensual(DMESES, nuevas, vistas, DF.mes); }
   // lugares y grupos (respetan los otros dos filtros)
   const lt = topPor(dFilas('lug'), x => x.pl, k => LUGARES_MAP[k].nombre, DF.lug);
