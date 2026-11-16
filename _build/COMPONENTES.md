@@ -17,8 +17,20 @@ Objeto 2 · **Paisaje con contadores** (`.fgh-hoy > .fgh-stk`, container query):
 Objeto 3 · **Carrusel "Últimas especies"** (`.recientes > #rec-track`): figurita `.rec-item` = foto o mascota `.rec-circulo` (aspect 100/118) + número `.rec-num` + nombre `.rec-nom` (2 líneas) + "Ver todas" `.rec-mas`. Ancho de figurita = `(--rec-h − 32px) × .64`; auto-scroll de `recAuto()` (clones `.rec-clon`), se frena con el mouse.
 Variantes de figurita: foto real · mascota dibujada (`rec-masc-c`) · silueta de familia (`rec-sin-foto`) · "Ver todas".
 
-## Pendiente de migrar al mismo principio
-Estadísticas (`#page-datos`: tarjetas KPI, gráfico acumulado, gráfico mensual, pestañas), Contacto (`#page-redes`), Galería (`#foto-grid`). Antes de hacerlo, escribir aquí su árbol objeto→subobjeto y qué proporción mantiene cada uno.
+## Estadísticas (`#page-datos`) — HECHO (nov 2026)
+Contenedor: grid de 2 filas (`--fit-h`): [título + pestañas en una fila] · pane activo.
+Resumen = fila 1: tarjeta "Camino a las N especies" (chips en una línea, sin wrap) + frase del filtro · fila 2: 6 KPI (foto de fondo + número + rótulo; alto proporcional a vh) · fila 3 (elástica): gráfico acumulado + gráfico mensual.
+Los gráficos NO se escalan: `pintarNumeros()` mide su tarjeta (`CH_DIM`) y `chartAcumulado/chartMensual` dibujan con viewBox = píxeles reales (textos siempre del mismo tamaño). Se redibujan en cada `fitPantalla`.
+Lugares y grupos: dos tarjetas; las barras (`.hb`) se reparten el alto (grid `1fr`). Línea de tiempo / Territorio / Las que me faltan: listas largas → scroll interno del panel (única excepción).
+
+## Contacto (`#page-redes`) — HECHO
+Objeto 1: tarjeta "Trabajemos juntos" (foto elástica `::before` · título · texto · 2 botones · "copiar mail"). Objeto 2: "Mis redes" = 5 figuritas `.red-card` de proporción fija 1:1,12 (ancho = mín(columna, fila)), 3 arriba + 2 centradas; íconos escalan con la figurita. Objeto 3: copyright (letra chica).
+
+## Galería (`#page-galeria`) — HECHO
+Cada foto = figurita con foto 4:5 + pie (66 px). `fitGaleria()`: el alto disponible fija filas y tamaño; el ancho solo cambia CUÁNTAS entran por fila (`--gal-cols`); paginación ‹ n/total ›.
+
+## Sin migrar (decisión de Felix: pueden scrollear o no aplica)
+Especies (tipo blog, scrollea), Álbum (usa su vista de libro), Mapa, Juegos, Calendario (privado).
 
 ## Trampas conocidas (variables CSS con nombre repetido)
 - `--rh` = alto del cuadro de foto de la figurita (lo usa la mascota para escalar). La tira usa `--rec-h`. NO reutilizar `--rh` para otra cosa: en PC se redefine en `.rec-circulo`.

@@ -1838,9 +1838,11 @@ function fitDatos(pg) {
   const n = document.getElementById('dat-num'); if (DROWS && n && n.offsetParent) pintarNumeros();
 }
 function fitGaleria(pg) {
+  // Fotos = figuritas de proporción casi fija (foto 4:5 + pie): el alto fija el tamaño y el ancho solo cambia CUÁNTAS entran por fila.
   const gr = document.getElementById('foto-grid'), ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
-  gr.style.height = ''; const top = gr.getBoundingClientRect().top + scrollY, h = innerHeight - top - fh - 58;
-  const cols = innerWidth >= 1500 ? 5 : innerWidth >= 1200 ? 4 : 3, rows = Math.max(1, Math.floor(h / 250)), per = cols * rows;
+  gr.style.height = ''; const top = gr.getBoundingClientRect().top + scrollY, h = innerHeight - top - fh - 66, GAP = 20, CAP = 66;
+  const rows = Math.max(1, Math.floor(h / 300)), cardH = (h - (rows - 1) * 18) / rows, cardW = (cardH - CAP) * .8 + 22;
+  const cols = Math.max(2, Math.floor((gr.clientWidth + GAP) / (cardW + GAP))), per = cols * rows;
   gr.style.setProperty('--gal-cols', cols); gr.style.setProperty('--gal-rows', rows); gr.style.height = h + 'px';
   document.documentElement.classList.add('fit-lock');
   if (per !== galPer) { galPer = per; renderGaleria(); }
