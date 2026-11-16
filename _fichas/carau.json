@@ -25,8 +25,8 @@
  ],
  "secciones": [
   {
-   "t": "Las tres veces, en Achiras",
-   "p": "Las tres veces que lo anoté, el 27 de julio, el 30 de agosto y el 10 de octubre de 2026, fue en la Reserva Hídrica Achiras."
+   "t": "Las cuatro veces, en Achiras",
+   "p": "Las cuatro veces que lo anoté, el 27 de julio, el 30 de agosto, el 10 de octubre y el 14 de noviembre de 2026, fue en la Reserva Hídrica Achiras."
   },
   {
    "t": "Ave de pantano",
@@ -64,7 +64,7 @@
  "comun": "Carau",
  "apertura": {
   "tipo": "mismo_lugar",
-  "n": 3,
+  "n": 4,
   "lugar": "Reserva Hídrica Achiras"
  }
 }

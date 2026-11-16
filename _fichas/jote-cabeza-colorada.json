@@ -26,8 +26,8 @@
  ],
  "secciones": [
   {
-   "t": "Hasta ahora, una sola vez",
-   "p": "Lo anoté una sola vez: el 10 de octubre de 2026, en la Reserva Hídrica Achiras."
+   "t": "Hasta ahora, la última",
+   "p": "La última vez que lo anoté fue el 14 de noviembre de 2026, en la Reserva Hídrica Achiras. La primera había sido el 10 de octubre, también en la Reserva Hídrica Achiras."
   },
   {
    "t": "Cabeza roja, vuelo en V",
@@ -67,8 +67,8 @@
   }
  ],
  "apertura": {
-  "tipo": "unica",
-  "fecha": "2026-10-10",
+  "tipo": "ultima",
+  "fecha": "2026-11-14",
   "lugar": "Reserva Hídrica Achiras"
  }
 }
