@@ -202,3 +202,5 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 - Celular (libro a pantalla completa): selector Córdoba/Argentina arriba del índice (`.libro-reg`); zoom por pellizco bloqueado mientras el libro está abierto (meta viewport `user-scalable=no` + preventDefault de gesturestart/touchmove multitáctil; se restaura al salir en `libroSalir()`).
 - Zoom por pellizco desactivado en TODA la web (meta viewport `maximum-scale=1, user-scalable=no` en build.py, gen_fichas.py, _juego/head.html y páginas estáticas; si se crea una página nueva, usar el mismo meta). Pedido de Felix 16/11.
 - Bug Safari (texto espejado al pasar hojas): los descendientes con transform propio ignoran el backface del padre → `.leaf .face *{backface-visibility:hidden}` + separación translateZ(.5px) entre caras.
+- Zoom en iOS: además del meta viewport, `html,body{touch-action:pan-x pan-y}` y listeners globales (gesturestart/gesturechange/gestureend + touchmove multitáctil con preventDefault) al final de site.js.
+- Libro mobile en vertical: aviso "Girá el celular" + botón Cerrar (el aviso vive dentro de `.libro-main`; no ocultar `.libro-main` en portrait).

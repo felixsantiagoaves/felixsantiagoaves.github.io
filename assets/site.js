@@ -1775,3 +1775,7 @@ function buildUltimoVideo(){
     });
   }).catch(() => {});
 }
+
+// Sin zoom por pellizco en toda la web (Safari iOS ignora user-scalable=no)
+['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
+document.addEventListener('touchmove', e => { if (e.touches.length > 1 || (e.scale && e.scale !== 1)) e.preventDefault(); }, { passive: false });

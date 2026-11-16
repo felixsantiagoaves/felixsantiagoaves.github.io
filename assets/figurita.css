@@ -508,7 +508,7 @@ body.libro-modo .libro-bar{margin:8px 0 0}
 .libro-full .libro-idx button i{width:9px;height:9px}
 .libro-full #libro-sel{display:none}
 .libro-full .libro-book{touch-action:pan-y}
-@media(orientation:portrait){.libro-full .libro-idx,.libro-full .libro-main{display:none}}
+@media(orientation:portrait){.libro-full .libro-idx{display:none}.libro-full .libro-main{display:block;height:100%}.libro-full .libro-girar{z-index:5}}
 
 .libro-full,.libro-full *{touch-action:pan-y;-webkit-user-select:none;user-select:none}
 .libro-reg{display:flex;margin:0 0 8px;border:2px solid var(--fg-v1,#414833);border-radius:99px;overflow:hidden}
@@ -519,4 +519,4 @@ body.libro-modo .libro-bar{margin:8px 0 0}
 .leaf .face,.leaf .face *{backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .leaf .front{transform:translateZ(.5px)}
 .leaf .back{transform:rotateY(180deg) translateZ(.5px)}
-html,body{touch-action:manipulation}
+html,body{touch-action:pan-x pan-y}
