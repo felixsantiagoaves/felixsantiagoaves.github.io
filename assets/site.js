@@ -1799,6 +1799,7 @@ function fitPantalla() {
   pg.style.zoom = ''; pg.style.removeProperty('--fit-h'); pg.style.removeProperty('--fit-w'); document.documentElement.classList.remove('fit-lock');
   if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
+  if (pg.id === 'page-sobre-mi') { fitSobreMi(pg); return; }
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   const avail = innerHeight - top - fh - 4, tab = document.querySelector('.dat-tab.active'), lista = pg.id === 'page-datos' && tab && tab.dataset.tab !== 'num';
   let z = 1;
@@ -1816,6 +1817,22 @@ let _fitT; const fitSoon = () => { clearTimeout(_fitT); _fitT = setTimeout(fitPa
 window.addEventListener('resize', fitSoon); window.addEventListener('load', () => { fitPantalla(); [500, 1500, 3000].forEach(t => setTimeout(fitPantalla, t)); });
 document.addEventListener('DOMContentLoaded', () => { const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (pg) new MutationObserver(fitSoon).observe(pg, { childList: true, subtree: true }); });
 
+// Sobre mí: sin zoom. La página es un contenedor de alto fijo y cada pieza se reparte el espacio por CSS.
+function fitSobreMi(pg) {
+  const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
+  pg.style.setProperty('--fit-h', Math.max(380, innerHeight - top - fh) + 'px');
+  document.documentElement.classList.add('fit-lock');
+  fitRecientes();
+}
+function fitRecientes() {
+  const tr = document.getElementById('rec-track'); if (!tr) return;
+  const its = [...tr.children].filter(i => !i.classList.contains('rec-clon')); its.forEach(i => i.removeAttribute('data-oculto'));
+  if (!document.body.classList.contains('fit-pc')) return;
+  const mas = its.find(i => i.classList.contains('rec-mas')), norm = its.filter(i => i !== mas);
+  const rh = tr.clientHeight, minW = Math.max(70, rh * .42), gap = parseFloat(getComputedStyle(tr).columnGap) || 12, w = tr.clientWidth - 16;
+  let n = Math.max(1, Math.floor((w + gap) / (minW + gap)) - (mas ? 1 : 0));
+  norm.forEach((i, k) => { if (k >= n) i.setAttribute('data-oculto', ''); });
+}
 function fitGaleria(pg) {
   const gr = document.getElementById('foto-grid'), ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   gr.style.height = ''; const top = gr.getBoundingClientRect().top + scrollY, h = innerHeight - top - fh - 58;

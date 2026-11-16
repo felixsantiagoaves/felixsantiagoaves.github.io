@@ -215,3 +215,10 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 - Especies (blog) NO usa pantalla fija; Mapa/Juegos/Contacto ya entraban. `/calendario/` (plan de contenido) no está en el menú y no se tocó.
 - Páginas nuevas: agregar su id a `FIT_IDS` si deben ser de pantalla fija.
 - Umbral de legibilidad: `FIT_ZMIN=.8` (Sobre mí .74). Si la página necesitaría escalarse más, NO se escala y queda con scroll normal (ej. notebook con viewport ~1215×615). Contacto (`page-redes`) también usa zoom-fit.
+
+## Principio de pantalla fija: "contenedor + piezas elásticas" (Sobre mí en PC, desde nov 2026)
+Ya NO se escala la página con `zoom`. La página es un contenedor de alto fijo (`--fit-h` = alto de ventana − nav − footer, lo pone `fitSobreMi()` en site.js) y cada pieza se reparte el espacio sola por CSS:
+- Tarjeta: la foto (`.fgh-ph`) es `flex:1` y absorbe el alto sobrante; video y "Para jugar" se ocultan con `max-height` (790px).
+- "Mi álbum hoy": `container-type:size` + unidad `--u=min(.303cqh,.1cqw,1.5px)`; todas las figuritas miden `calc(N*var(--u))`.
+- Últimas especies: alto `--rh` proporcional al alto de pantalla; `fitRecientes()` oculta las que no entran (`data-oculto`), siempre queda "Ver todas"; clones del auto-scroll ocultos en PC.
+Probado a 1215×613, 1440×800 y 1920×1000. Pendiente de migrar a este principio: Estadísticas, Contacto, Galería (hoy usan zoom / grilla).
