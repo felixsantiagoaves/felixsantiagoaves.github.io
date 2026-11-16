@@ -615,4 +615,4 @@ body.fit-pc .fgh .recientes{width:100%!important;max-width:none!important;margin
 body.fit-pc .fgh .rec-track{justify-content:flex-start}
 body.fit-pc .fgh-stk{justify-content:space-evenly}
 body.fit-pc .fgh .rec-nom{font-size:clamp(.5rem,1.45vh,.62rem)!important;letter-spacing:.1px;overflow-wrap:anywhere;word-break:normal;line-height:1.15;padding:.25rem .1rem .3rem}
-body.fit-pc .fgh .rec-item{padding:5px 5px 0;overflow:hidden}
+body.fit-pc .fgh .rec-item{padding:5px 5px 0}
