@@ -742,3 +742,7 @@ body.fit-pc #dat-falt .fam-det[open]{z-index:40;overflow:visible;transform:none;
 body.fit-pc #dat-falt .fam-det[open] .fam-cuerpo{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(620px,88vw);max-height:68vh;overflow:auto;background:#fff;border-radius:12px;padding:1.2rem 1.3rem;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 24px 60px rgba(42,31,20,.45);z-index:60}
 body.fit-pc .fam-velo{position:fixed;inset:0;background:rgba(42,31,20,.35);z-index:50}
 body.fit-pc #dat-ter .ter-lista{grid-auto-rows:minmax(24px,54px);align-content:space-evenly}
+
+/* especies sin foto: su mascota dibujada (como en el carrusel de Sobre mí), apoyada abajo y escalada por tamaño real del ave */
+.tl-img{position:relative;background:#e6ddc9}
+.tl-img img.tl-masc{position:absolute;left:50%;bottom:4%;width:calc(55% + 70% * var(--esc,1));height:auto;max-height:none;object-fit:contain;transform:translateX(-50%);padding:0;opacity:1;filter:none}

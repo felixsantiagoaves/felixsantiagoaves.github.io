@@ -1520,7 +1520,7 @@ function buildDatos() {
       tl += `<div class="tl-mes rv"><h3>${MESES_L[+ym.slice(5) - 1]} ${ym.slice(0, 4)}<small>${cant} especie${cant === 1 ? '' : 's'} nueva${cant === 1 ? '' : 's'}</small></h3>`;
       mesAct = ym; abierto = true;
     }
-    const img = r.foto ? `<img src="${r.foto}" alt="${escHtml(a.comun)}" loading="lazy">` : `<img class="sil" src="${SILUETAS[FAM_SILUETA[a.familiaEsp] || 'pajarito'] || SILUETAS['pajarito']}" alt="">`;
+    const img = r.foto ? `<img src="${r.foto}" alt="${escHtml(a.comun)}" loading="lazy">` : (typeof MASC !== 'undefined' && MASC[a.id]) ? `<img class="tl-masc" style="--esc:${escMascT(a.id)}" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración)" loading="lazy">` : `<img class="sil" src="${SILUETAS[FAM_SILUETA[a.familiaEsp] || 'pajarito'] || SILUETAS['pajarito']}" alt="">`;
     tl += `<button class="tl-item" title="${escHtml(a.comun)} · ${fmtFecha(r.fecha)}" onclick="abrirDesdePortada(${a.id}, tlLista)"><span class="tl-img">${img}</span><span class="tl-txt"><span class="tl-n">${escHtml(a.comun)}</span><br><span class="tl-m">${fmtFecha(r.fecha)}${r.lugar ? ' · ' + escHtml(r.lugar) : ''}</span></span><span class="tl-num">#${r.n}</span></button>`;
   });
   if(abierto) tl += '</div>';
