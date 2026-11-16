@@ -704,6 +704,7 @@ function updAlbumHead() {
   const t = document.getElementById('prog-txt'); if(t) t.textContent = v + ' de ' + fmtN(n) + ' especies encontradas';
   const pf = document.getElementById('prog-fill'); if(pf) { pf.style.width = '100%'; pf.style.transformOrigin = 'left center'; pf.style.willChange = 'transform'; pf.style.transition = 'transform 1.1s cubic-bezier(.4,0,.2,1)'; setTimeout(() => { pf.style.transform = 'scaleX(' + (pct / 100) + ')'; }, 120); }
   document.querySelectorAll('.reg-b').forEach(b => b.classList.toggle('on', b.dataset.reg === REGION));
+  const bl = document.getElementById('btn-libro'); if (bl) bl.hidden = !(window.libroOn || /[?&]libro=1/.test(location.search));
 }
 function setRegion(r) {
   if(r === REGION) return;
@@ -713,13 +714,8 @@ function setRegion(r) {
   if(hayPagina('datos')) buildDatos();
 }
 function irAlbumRegion(r) { if(aOtra('album','irAlbumRegion',[r])) return; REGION = r === 'cba' ? 'arg' : 'cba'; setRegion(r); irAlbum('todas'); }
-function renderAlbum() {
-  const container = document.getElementById('album-container');
-  // Numeración fija: orden taxonómico dentro de la región (como eBird)
-  const todas = avesReg().slice().sort((a, b) => a.tx - b.tx);
-  const numMap = {}; todas.forEach((a, i) => numMap[a.id] = i + 1);
-  const nuevasIds = new Set(recientes(8, false).map(a => a.id));
-  const fig = (ave, i) => {
+// Figurita (o hueco, si no la vi) de una especie: la usan la lista del álbum y la vista de libro
+function albFig(ave, i, numMap, nuevasIds) {
     const enc = visto(ave), av = enc ? avist[ave.id] : null;
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
@@ -734,7 +730,16 @@ function renderAlbum() {
         <div class="fig-ci">${ave.nombre}</div>
         <div class="fig-fecha">${av ? fmtFecha(av.fecha) : 'Por encontrar' + (probDe(ave.id) != null ? ' · ' + (probDe(ave.id) < 0.1 ? '<0,1' : probDe(ave.id).toLocaleString('es-AR',{maximumFractionDigits:1})) + ' %' : '')}</div>
       </div></div>`;
-  };
+  }
+
+function renderAlbum() {
+  if (window.libroOn && window.libroRender) return libroRender();
+  const container = document.getElementById('album-container');
+  // Numeración fija: orden taxonómico dentro de la región (como eBird)
+  const todas = avesReg().slice().sort((a, b) => a.tx - b.tx);
+  const numMap = {}; todas.forEach((a, i) => numMap[a.id] = i + 1);
+  const nuevasIds = new Set(recientes(8, false).map(a => a.id));
+  const fig = (ave, i) => albFig(ave, i, numMap, nuevasIds);
   const lista = avesFiltradas();
   if (!lista.length) { container.innerHTML = `<div style="text-align:center;padding:3rem;font-family:Playfair Display,serif;font-style:italic;font-size:1.2rem;color:var(--ti)">No se encontraron aves con ese criterio 🔍</div>`; albNavUpd(); return; }
   let html = '<div class="album-count">' + lista.length + ' especie' + (lista.length === 1 ? '' : 's') + '</div>';
@@ -760,6 +765,12 @@ function renderAlbum() {
 }
 
 // ── Botones flotantes del álbum: arriba / familia anterior / familia siguiente / abajo ──
+// ── Vista de libro (opción de visualización; por defecto sigue la lista plegable) ──
+const SITE_V = (document.currentScript && document.currentScript.src.split('?v=')[1]) || '';
+function libroToggle() {
+  const on = !window.libroOn, ir = () => { window.libroOn = on; document.body.classList.toggle('libro-modo', on); const b = document.getElementById('btn-libro'); if (b) b.textContent = on ? '☰ Ver como lista' : '📖 Ver como libro'; if (!on && window.libroSalir) libroSalir(); renderAlbum(); window.scrollTo({ top: 0 }); };
+  if (on && !window.libroRender) { const sc = document.createElement('script'); sc.src = '/assets/libro.js?v=' + SITE_V; sc.onload = ir; document.head.appendChild(sc); } else ir();
+}
 let albAb = null;   // grupo abierto del álbum (uno a la vez)
 function albTog(hd) {
   const sec = hd.closest('.alb-pag'), f = sec.dataset.fam, cerrando = albAb === f;

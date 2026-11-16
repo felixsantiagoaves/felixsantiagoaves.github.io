@@ -188,3 +188,10 @@ Toda especie nueva que quede "vista, sin foto" debe tener su mascota dibujada (c
 
 ## Álbum plegable (16/11/2026, idea de Felix tomada del Pokédex de Pokémon GO)
 En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barra de progreso, "X de N" y chevron); al tocarlo se abre ese grupo y se cierra el anterior (uno a la vez, `albAb` + `albTog()` en assets/site.js; los estilos van al final de figurita.css). Con búsqueda o cualquier filtro activo (Encontradas/Faltantes, familia, lugar) se muestran todos abiertos para no esconder resultados. Los botones flotantes ▲▼ saltan entre cabeceras. En celular la barra de progreso es una línea fina bajo el título y las fotos mini se mantienen (30 px) y el título baja a .78rem.
+
+## Vista de libro del álbum (16/11/2026, prototipo oculto)
+- Se activa con `/album/?libro=1` (sin eso el botón `#btn-libro` está oculto). Por defecto sigue el álbum plegable.
+- `assets/libro.js` (carga perezosa desde `libroToggle()` en site.js) expone `libroRender()`/`libroSalir()`; usa `albFig()` de site.js para las figuritas. CSS al final de `figurita.css` ("Vista de libro").
+- Páginas: tapa + hojas (familias chicas se agrupan hasta CAP=9 figuritas; familias >9 se parten parejas) + contratapa si hace falta par. Todas las especies de la región: huecos (`.fig.no`) y figuritas pegadas.
+- PC: giro 3D de hojas (◀ ▶, teclado ←/→, arrastrar borde, selector). Celular (<820px): una hoja por pantalla, swipe horizontal.
+- Para publicar: quitar la condición `?libro=1` en `updAlbumHead()`.

@@ -8,7 +8,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B = 'https://felixsantiago.com.ar/'
 esc = lambda t: html.escape(t, quote=True)
 rd = lambda p: open(os.path.join(R, p), encoding='utf-8').read()
-VER = hashlib.md5(b''.join(open(os.path.join(R, 'assets', f), 'rb').read() for f in ('site.css', 'figurita.css', 'site.js', 'figurita.js', 'datos.js', 'foco.js', 'pistas.js', 'territorio.js', 'cantos.js'))).hexdigest()[:8]
+VER = hashlib.md5(b''.join(open(os.path.join(R, 'assets', f), 'rb').read() for f in ('site.css', 'figurita.css', 'site.js', 'figurita.js', 'datos.js', 'foco.js', 'pistas.js', 'territorio.js', 'cantos.js', 'libro.js'))).hexdigest()[:8]
 
 PAGINAS = [
  # id, carpeta, fragmento, título, descripción, ruta nav
