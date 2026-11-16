@@ -185,3 +185,6 @@ Toda especie nueva que quede "vista, sin foto" debe tener su mascota dibujada (c
 
 ## Tira "Últimas especies sumadas" (Sobre mí)
 `recAuto()` en assets/site.js: la tira se desliza sola en bucle (~28 px/s; duplica los ítems), se frena con el mouse encima o al tocarla, se arrastra con el mouse y se desliza con el dedo; respeta "reducir movimiento" (ahí queda sin clones, scroll manual).
+
+## Álbum plegable (16/11/2026, idea de Felix tomada del Pokédex de Pokémon GO)
+En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barra de progreso, "X de N" y chevron); al tocarlo se abre ese grupo y se cierra el anterior (uno a la vez, `albAb` + `albTog()` en assets/site.js; los estilos van al final de figurita.css). Con búsqueda o cualquier filtro activo (Encontradas/Faltantes, familia, lugar) se muestran todos abiertos para no esconder resultados. Los botones flotantes ▲▼ saltan entre cabeceras. En celular la barra de progreso es una línea fina bajo el título y se ocultan las fotos mini.

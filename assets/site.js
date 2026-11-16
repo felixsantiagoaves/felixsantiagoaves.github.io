@@ -742,9 +742,15 @@ function renderAlbum() {
     const famsAll = [...new Set(todas.map(a => a.familiaEsp))];   // ya en orden taxonómico
     const grupos = new Map();
     lista.forEach(a => { if (!grupos.has(a.familiaEsp)) grupos.set(a.familiaEsp, []); grupos.get(a.familiaEsp).push(a); });
+    // Como las regiones del Pokédex de Pokémon GO: cada grupo llega plegado, con contador, y se abre al tocarlo.
+    // Si hay búsqueda/filtros activos se muestran todos abiertos (si no, se esconderían los resultados).
+    const filtrando = !!(busqTxt || filtro !== 'todas' || famFiltro || lugFiltro !== '');
     [...grupos.keys()].sort((a, b) => famsAll.indexOf(a) - famsAll.indexOf(b)).forEach(f => {
       const tot = todas.filter(a => a.familiaEsp === f), ok = tot.filter(a => visto(a)).length;
-      html += `<section class="alb-pag" data-fam="${escHtml(f)}"><header class="alb-pag-hd"><span class="alb-pag-n">Página ${famsAll.indexOf(f) + 1}</span><h3>${escHtml(f)}</h3><span class="alb-pag-c${ok === tot.length ? ' full' : ''}">${ok} de ${tot.length}</span></header><div class="album-grid stk">${grupos.get(f).map(fig).join('')}</div></section>`;
+      const abierta = filtrando || albAb === f;
+      const prev = !abierta ? tot.filter(a => visto(a) && avist[a.id] && avist[a.id].foto).slice(0, 3).map(a => { const u = '/' + avist[a.id].foto.replace(/^\//, ''); return `<img src="${u.replace('/fotos/', '/fotos/th/')}" onerror="this.onerror=null;this.src='${u}'" loading="lazy" decoding="async" alt="">`; }).join('') : '';
+      const tog = filtrando ? '' : ` role="button" tabindex="0" aria-expanded="${abierta}" onclick="albTog(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();albTog(this)}"`;
+      html += `<section class="alb-pag${abierta ? ' abierta' : ' cerrada'}${filtrando ? ' filtrando' : ''}" data-fam="${escHtml(f)}"><header class="alb-pag-hd"${tog} style="--p:${tot.length ? Math.round(ok / tot.length * 100) : 0}"><span class="alb-pag-n">Página ${famsAll.indexOf(f) + 1}</span><h3>${escHtml(f)}</h3>${prev ? `<span class="alb-prev">${prev}</span>` : ''}<span class="alb-barra"><i style="width:${tot.length ? Math.round(ok / tot.length * 100) : 0}%"></i></span><span class="alb-pag-c${ok === tot.length ? ' full' : ''}">${ok} de ${tot.length}</span>${filtrando ? '' : '<span class="alb-chev" aria-hidden="true"></span>'}</header>${abierta ? `<div class="album-grid stk">${grupos.get(f).map(fig).join('')}</div>` : ''}</section>`;
     });
   } else {
     html += `<section class="alb-pag"><div class="album-grid stk">${lista.map(fig).join('')}</div></section>`;
@@ -754,6 +760,14 @@ function renderAlbum() {
 }
 
 // ── Botones flotantes del álbum: arriba / familia anterior / familia siguiente / abajo ──
+let albAb = null;   // grupo abierto del álbum (uno a la vez)
+function albTog(hd) {
+  const sec = hd.closest('.alb-pag'), f = sec.dataset.fam, cerrando = albAb === f;
+  albAb = cerrando ? null : f;
+  renderAlbum();
+  const t = albSecs().find(e => e.dataset.fam === f);
+  if (t) window.scrollTo({ top: Math.max(0, t.getBoundingClientRect().top + window.scrollY - albOff()), behavior: 'auto' });
+}
 function albOff() {
   const c = document.querySelector('.album-controls');
   return 56 + (c && !c.classList.contains('fopen') ? c.offsetHeight : 0) + 10;
