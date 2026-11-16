@@ -478,3 +478,9 @@ body.libro-modo #busqueda,body.libro-modo .fb,body.libro-modo #btn-mas,body.libr
 [data-theme=dark] .libro-idx button.on{background:#c4a882}[data-theme=dark] .libro-idx button.on b{color:#232919}[data-theme=dark] .libro-idx button.on span{color:#414833}
 /* en vista libro el encabezado se compacta para que el libro quede a la vista */
 body.libro-modo #page-album .prog-wrap,body.libro-modo #page-album #prog-txt,body.libro-modo #page-album #album-sub{display:none!important}
+
+/* vista libro en PC: página fija del tamaño de la pantalla, sin scroll vertical */
+body.libro-modo:not(:has(.libro-full)){overflow:hidden}
+body.libro-modo #page-album .page-header{display:none!important}
+body.libro-modo .libro-ayuda{display:none}
+body.libro-modo .libro-bar{margin:8px 0 0}

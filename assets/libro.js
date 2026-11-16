@@ -87,7 +87,7 @@
 
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
-    const full = esMov(), sc = full ? Math.min((window.innerWidth - 110) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - 200) / PH), k = Math.max(.2, sc);
+    const full = esMov(), sc = full ? Math.min((window.innerWidth - 110) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - st.getBoundingClientRect().top - scrollY - 120) / PH), k = Math.max(.2, sc);
     book.style.setProperty('--sc', k.toFixed(3));
     st.style.height = Math.round(PH * k) + 'px';
     const ix = document.getElementById('libro-idx'); if (ix) ix.style.maxHeight = Math.round(PH * k + 56) + 'px';
@@ -109,7 +109,7 @@
     ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div></div>`;
     if (full) { try { (document.documentElement.requestFullscreen() || Promise.reject()).then(() => screen.orientation.lock('landscape')).catch(() => {}); } catch (e) {} }
     book = document.getElementById('libro-book'); escala(); pos();
-    if (!full && window._libroUser) { const st = document.getElementById('libro-stage'); setTimeout(() => window.scrollTo({ top: st.getBoundingClientRect().top + scrollY - 126, behavior: 'instant' }), 60); }
+    if (!full) window.scrollTo(0, 0);
     book.addEventListener('pointerdown', onDown);
   };
   window.libroIr = d => ir(S + d);
