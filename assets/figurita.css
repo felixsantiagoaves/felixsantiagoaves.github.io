@@ -602,10 +602,10 @@ body.fit-pc .stk-burst b{font-size:calc(21.5*var(--u))}
 body.fit-pc .fgh-dc{height:calc(118*var(--u));right:calc(16*var(--u));bottom:calc(8*var(--u))}
 body.fit-pc .fgh-tag{font-size:max(.55rem,calc(12*var(--u)))}
 /* últimas especies: alto proporcional a la pantalla, entran todas las que caben */
-body.fit-pc .fgh .recientes{--rh:clamp(120px,27vh,250px);overflow:hidden}
+body.fit-pc .fgh .recientes{--rec-h:clamp(120px,27vh,250px);overflow:hidden}
 body.fit-pc .fgh .rec-titulo{margin:0 0 0 4px}
-body.fit-pc .fgh .rec-track{height:calc(var(--rh) - 14px);overflow-x:auto;overflow-y:hidden;padding:12px 8px 6px;gap:clamp(8px,1.1vw,16px);box-sizing:border-box}
-body.fit-pc .fgh .rec-item{flex:0 0 calc((var(--rh) - 32px)*.64);width:calc((var(--rh) - 32px)*.64);display:flex;flex-direction:column;height:100%}
+body.fit-pc .fgh .rec-track{height:calc(var(--rec-h) - 14px);overflow-x:auto;overflow-y:hidden;padding:12px 8px 6px;gap:clamp(8px,1.1vw,16px);box-sizing:border-box}
+body.fit-pc .fgh .rec-item{flex:0 0 calc((var(--rec-h) - 32px)*.64);width:calc((var(--rec-h) - 32px)*.64);display:flex;flex-direction:column;height:100%}
 body.fit-pc .fgh .rec-circulo{flex:1 1 0;min-height:0}
 body.fit-pc .fgh .rec-circulo,body.fit-pc .fgh .rec-circulo img{height:auto!important}
 body.fit-pc .fgh .rec-circulo img:not(.rec-masc){height:100%!important}
@@ -620,3 +620,5 @@ body.fit-pc .fgh .rec-item{padding:5px 5px 0}
 body.fit-pc .fgh .rec-track{align-items:center}
 body.fit-pc .fgh .rec-item{height:auto}
 body.fit-pc .fgh .rec-circulo{flex:none;width:100%;aspect-ratio:100/118}
+/* la mascota se dimensiona con --rh = alto real del cuadro de la figurita (no confundir con --rec-h, alto de la tira) */
+body.fit-pc .fgh .rec-circulo{--rh:calc(((var(--rec-h) - 32px)*.64 - 10px)*1.18)}
