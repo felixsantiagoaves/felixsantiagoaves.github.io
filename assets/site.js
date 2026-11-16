@@ -1299,7 +1299,7 @@ function cargarRegistros() {
   return _regP;
 }
 function irDatos(tab) { if(aOtra('datos','irDatos',[tab])) return; datTab(tab || 'num'); window.scrollTo({top: 0}); }
-const DAT_TABS = ['num', 'lg', 'tl', 'ter', 'falt'];
+const DAT_TABS = ['num', 'tl', 'ter', 'falt'];
 function datTab(t, btn) {
   const prev = (document.querySelector('.dat-tab.active') || {dataset: {}}).dataset.tab;
   document.querySelectorAll('.dat-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
@@ -1358,9 +1358,6 @@ function datFiltro(t, k) {
   if(t === 'lug') k = +k;
   DF[t] = DF[t] === k ? null : k;
   pintarNumeros();
-  // lugares y grupos viven en su propia pestaña: al elegir uno se pasa al Resumen, que es donde se ve el filtro aplicado
-  const tab = document.querySelector('.dat-tab.active');
-  if ((t === 'lug' || t === 'grp') && DF[t] !== null && tab && tab.dataset.tab === 'lg') datTab('num');
 }
 function datQuitar(t) { DF[t] = null; pintarNumeros(); }
 function datLimpiar() { DF = {mes: null, lug: null, grp: null}; pintarNumeros(); }
@@ -1441,7 +1438,7 @@ function pintarNumeros() {
       + (DF.lug !== null ? `<button class="dfl-b" onclick="irMapaLugar(${DF.lug})">Ver en el mapa →</button>` : '')
       + (DF.grp ? `<button class="dfl-b" data-k="${escHtml(DF.grp)}" onclick="irAlbumFamilia(this.dataset.k,false)">Ver en el álbum →</button>` : '')
       + '<span class="dfl-res" id="dfl-res"></span>'
-    : '<span class="dfl-hint">Tocá un mes en los gráficos para filtrar todo el resumen.</span>';
+    : '<span class="dfl-hint">Tocá un mes, un lugar o un grupo y todo lo demás se filtra.</span>';
   // KPIs
   const rows = dFilas(null), sids = new Set(), lugs = new Set(), fotos = new Set(), dias = {}, meses = {};
   rows.forEach(x => { sids.add(x.id); x.pl.forEach(p => lugs.add(p)); if(x.foto) fotos.add(x.id); (dias[x.f] = dias[x.f] || new Set()).add(x.id); (meses[x.ym] = meses[x.ym] || new Set()).add(x.id); });
@@ -1480,24 +1477,29 @@ function buildDatos() {
   const nuevas = {}; reg.forEach(r => { const m = r.fecha.slice(0, 7); nuevas[m] = (nuevas[m] || 0) + 1; });
   DF = {mes: null, lug: null, grp: null};
   document.getElementById('dat-num').innerHTML = `<div class="dat-grid">
-    <div class="dat-card rv"><div class="dat-h">${nx ? 'Camino a las ' + nx + ' especies' : 'Álbum completo'}</div>
-      <div class="dat-s">${nx ? v + ' de ' + nx + ' · faltan ' + (nx - v) : '¡Las viste todas!'}</div>
-      <div class="hito-bar"><i style="width:${Math.round(v / (nx || v) * 100)}%"></i></div>
-      <div class="hito-chips">${chips}</div></div>
     <div class="dat-filtro" id="dat-filtro"><span class="dfl-hint sk-t">Cargando…</span></div>
-    <div class="dat-kpi rv"><b id="k-esp">${v}</b><span>Especies vistas</span></div>
-    <div class="dat-kpi rv" style="--d:.06s"><b id="k-lug">${LUGARES_MAP.length}</b><span>Lugares</span></div>
-    <div class="dat-kpi rv" style="--d:.12s"><b id="k-foto">${nFoto}</b><span>Con foto</span><small id="k-fotos-s">${Math.round(nFoto / Math.max(1, v) * 100)}% de las especies</small></div>
-    <div class="dat-kpi rv"><b id="k-dias">…</b><span>Días de registro</span></div>
-    <div class="dat-kpi rv" style="--d:.06s"><b id="k-mejor">…</b><span>Mejor día</span><small id="k-mejor-s"></small></div>
-    <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mejor mes</span><small id="k-mes-s"></small></div>
-    <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum. Tocá un mes para filtrar.</div><div id="ch-acum"><div class="sk sk-ch"></div></div></div>
-    <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Aves distintas registradas cada mes, y cuántas fueron nuevas</div><div id="ch-mensual"><div class="sk sk-ch"></div></div></div>
-  </div>`;
-  document.getElementById('dat-lg').innerHTML = `<div class="dat-grid">
-    <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-lugares"></div></div>
-    <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-grupos"></div></div>
-    <p class="dat-nota">Al tocar un lugar o un grupo, te llevo al Resumen ya filtrado.</p>
+    <div class="dat-col dat-col-a">
+      <div class="dat-card rv"><div class="dat-h">${nx ? 'Camino a las ' + nx + ' especies' : 'Álbum completo'}</div>
+        <div class="dat-s">${nx ? v + ' de ' + nx + ' · faltan ' + (nx - v) : '¡Las viste todas!'}</div>
+        <div class="hito-bar"><i style="width:${Math.round(v / (nx || v) * 100)}%"></i></div>
+        <div class="hito-chips">${chips}</div></div>
+      <div class="dat-kpis">
+        <div class="dat-kpi rv"><b id="k-esp">${v}</b><span>Especies vistas</span></div>
+        <div class="dat-kpi rv" style="--d:.06s"><b id="k-lug">${LUGARES_MAP.length}</b><span>Lugares</span></div>
+        <div class="dat-kpi rv" style="--d:.12s"><b id="k-foto">${nFoto}</b><span>Con foto</span><small id="k-fotos-s">${Math.round(nFoto / Math.max(1, v) * 100)}% de las especies</small></div>
+        <div class="dat-kpi rv"><b id="k-dias">…</b><span>Días de registro</span></div>
+        <div class="dat-kpi rv" style="--d:.06s"><b id="k-mejor">…</b><span>Mejor día</span><small id="k-mejor-s"></small></div>
+        <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mejor mes</span><small id="k-mes-s"></small></div>
+      </div>
+    </div>
+    <div class="dat-col dat-col-b">
+      <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum. Tocá un mes para filtrar.</div><div id="ch-acum"><div class="sk sk-ch"></div></div></div>
+      <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Aves distintas registradas cada mes, y cuántas fueron nuevas</div><div id="ch-mensual"><div class="sk sk-ch"></div></div></div>
+    </div>
+    <div class="dat-col dat-col-c">
+      <div class="dat-card rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-lugares"></div></div>
+      <div class="dat-card rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-grupos"></div></div>
+    </div>
   </div>`;
   cargarRegistros().then(r => {
     if(!document.getElementById('dat-filtro')) return;
@@ -1519,7 +1521,7 @@ function buildDatos() {
       mesAct = ym; abierto = true;
     }
     const img = r.foto ? `<img src="${r.foto}" alt="${escHtml(a.comun)}" loading="lazy">` : `<img class="sil" src="${SILUETAS[FAM_SILUETA[a.familiaEsp] || 'pajarito'] || SILUETAS['pajarito']}" alt="">`;
-    tl += `<button class="tl-item" onclick="abrirDesdePortada(${a.id}, tlLista)"><span class="tl-img">${img}</span><span class="tl-txt"><span class="tl-n">${escHtml(a.comun)}</span><br><span class="tl-m">${fmtFecha(r.fecha)}${r.lugar ? ' · ' + escHtml(r.lugar) : ''}</span></span><span class="tl-num">#${r.n}</span></button>`;
+    tl += `<button class="tl-item" title="${escHtml(a.comun)} · ${fmtFecha(r.fecha)}" onclick="abrirDesdePortada(${a.id}, tlLista)"><span class="tl-img">${img}</span><span class="tl-txt"><span class="tl-n">${escHtml(a.comun)}</span><br><span class="tl-m">${fmtFecha(r.fecha)}${r.lugar ? ' · ' + escHtml(r.lugar) : ''}</span></span><span class="tl-num">#${r.n}</span></button>`;
   });
   if(abierto) tl += '</div>';
   window.tlLista = lista;
@@ -1841,6 +1843,33 @@ function fitDatos(pg) {
   pg.style.setProperty('--fit-h', Math.max(380, innerHeight - top - fh) + 'px');
   document.documentElement.classList.add('fit-lock');
   const n = document.getElementById('dat-num'); if (DROWS && n && n.offsetParent) pintarNumeros();
+  const tl = document.getElementById('dat-tl'); if (tl && tl.offsetParent) fitTimeline(tl);
+  const fl = document.getElementById('dat-falt'); if (fl && fl.offsetParent) fitFaltan(fl);
+}
+// Línea de tiempo: cada mes elige cuántas columnas de miniaturas usa para que todas entren en el alto (tamaño máximo)
+function fitTimeline(pane) {
+  const tl = pane.querySelector('.tl'); if (!tl) return;
+  const cw = Math.max(150, Math.min(250, Math.round(innerWidth * .13))), G = 4; tl.style.setProperty('--cw', cw + 'px'); tl.style.setProperty('--tg', G + 'px');
+  const padX = Math.max(12, innerWidth * .012);
+  tl.querySelectorAll('.tl-mes').forEach(m => {
+    const n = m.querySelectorAll('.tl-item').length, h3 = m.querySelector('h3'), W = cw - padX, H = tl.clientHeight - (h3 ? h3.offsetHeight + 22 : 60) - 10;
+    let best = 30, bc = 1;
+    for (let c = 1; c <= n; c++) { const r = Math.ceil(n / c), s = Math.min((W - (c - 1) * G) / c, (H - (r - 1) * G) / r); if (s > best) { best = s; bc = c; } }
+    m.style.setProperty('--s', Math.floor(Math.min(best, 96)) + 'px');
+  });
+}
+// Las que me faltan: las cajas se reparten la pantalla (columnas/filas elegidas para que cada caja quede cerca de 1,35:1)
+function fitFaltan(pane) {
+  const ls = pane.querySelector('.fam-lista'); if (!ls) return;
+  const cajas = [...ls.querySelectorAll('.fam-det')], n = cajas.length; if (!n) return;
+  cajas.forEach((c, i) => { if (!c.dataset.pint) { c.dataset.pint = 1; c.classList.add('fc' + (i % 6)); const f = c.querySelector('.hb-fill'); if (f) c.style.setProperty('--p', f.style.getPropertyValue('--w') || '0%'); } });
+  const W = ls.clientWidth, H = ls.clientHeight; let bc = 1, bs = 1e9;
+  for (let c = 1; c <= n; c++) { const r = Math.ceil(n / c), sc = Math.abs(Math.log((W / c) / (H / r) / 1.35)) + (r * c - n) * .03; if (sc < bs) { bs = sc; bc = c; } }
+  ls.style.setProperty('--fc', bc); ls.style.setProperty('--fr', Math.ceil(n / bc));
+  if (!pane._ini) {
+    pane._ini = 1;
+    ls.addEventListener('toggle', e => { const d = e.target; if (!d.open) { const v = document.querySelector('.fam-velo'); if (v) v.remove(); return; } ls.querySelectorAll('.fam-det[open]').forEach(o => { if (o !== d) o.open = false; }); if (!document.querySelector('.fam-velo')) { const v = document.createElement('div'); v.className = 'fam-velo'; v.onclick = () => { d.open = false; }; document.body.appendChild(v); } }, true);
+  }
 }
 function fitGaleria(pg) {
   // Fotos = figuritas de proporción casi fija (foto 4:5 + pie): el alto fija el tamaño y el ancho solo cambia CUÁNTAS entran por fila.

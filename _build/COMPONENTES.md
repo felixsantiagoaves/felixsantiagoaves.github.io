@@ -17,11 +17,13 @@ Objeto 2 · **Paisaje con contadores** (`.fgh-hoy > .fgh-stk`, container query):
 Objeto 3 · **Carrusel "Últimas especies"** (`.recientes > #rec-track`): figurita `.rec-item` = foto o mascota `.rec-circulo` (aspect 100/118) + número `.rec-num` + nombre `.rec-nom` (2 líneas) + "Ver todas" `.rec-mas`. Ancho de figurita = `(--rec-h − 32px) × .64`; auto-scroll de `recAuto()` (clones `.rec-clon`), se frena con el mouse.
 Variantes de figurita: foto real · mascota dibujada (`rec-masc-c`) · silueta de familia (`rec-sin-foto`) · "Ver todas".
 
-## Estadísticas (`#page-datos`) — HECHO (nov 2026)
-Contenedor: grid de 2 filas (`--fit-h`): [título + pestañas en una fila] · pane activo.
-Resumen = fila 1: tarjeta "Camino a las N especies" (chips en una línea, sin wrap) + frase del filtro · fila 2: 6 KPI (foto de fondo + número + rótulo; alto proporcional a vh) · fila 3 (elástica): gráfico acumulado + gráfico mensual.
-Los gráficos NO se escalan: `pintarNumeros()` mide su tarjeta (`CH_DIM`) y `chartAcumulado/chartMensual` dibujan con viewBox = píxeles reales (textos siempre del mismo tamaño). Se redibujan en cada `fitPantalla`.
-Lugares y grupos: dos tarjetas; las barras (`.hb`) se reparten el alto (grid `1fr`). Línea de tiempo / Territorio / Las que me faltan: listas largas → scroll interno del panel (única excepción).
+## Estadísticas (`#page-datos`) — REHECHO 16/11 (4 pestañas: Resumen · Línea de tiempo · Territorio · Las que me faltan)
+Contenedor: grid de 2 filas (`--fit-h`): [título + pestañas en una fila] · pane activo. En PC fija ninguna pestaña scrollea.
+- **Resumen = un tablero** (antes eran 2 pestañas: "Lugares y grupos" se unió acá). Fila fina de filtros/hint arriba + 3 columnas (`.dat-col-a/b/c`): A = "Camino a N especies" + 6 contadores KPI (2×3, la foto de fondo se estira); B = gráfico acumulado + gráfico mensual (dibujados al tamaño real, `CH_DIM`); C = lugares con más especies + grupos más vistos (barras que se reparten el alto). Tocar mes/lugar/grupo filtra todo. En celular `.dat-col`/`.dat-kpis` son `display:contents` (los hijos van a la grilla de siempre).
+- **Línea de tiempo** = línea REAL horizontal (`.tl` en `row-reverse`: lo nuevo a la derecha, se arrastra hacia atrás). Un tramo por mes: título + punto sobre el eje + miniaturas de las especies nuevas; `fitTimeline()` elige columnas y tamaño por mes para que entren todas. Nombre/fecha en el tooltip (`title`).
+- **Territorio**: mapa y barras llenan la tarjeta (mapa = alto completo; barras con alto máximo 54 px).
+- **Las que me faltan** = cajas de familia que llenan toda la pantalla (`fitFaltan()` elige columnas/filas con caja ~1,35:1). Color = `fc0..5` (mismo ciclo que el libro), relleno de abajo hacia arriba = % que ya tengo, ✓ si está completa. Tocar una caja abre un panel central con las especies (el `<details>` original) y un velo para cerrar.
+Trampa: `datTab()` pone `style="display:block"` inline en el pane → para usar grid en un pane se selecciona `[style*="block"]` con `!important`.
 
 ## Contacto (`#page-redes`) — HECHO
 Objeto 1: tarjeta "Trabajemos juntos" (foto elástica `::before` · título · texto · 2 botones · "copiar mail"). Objeto 2: "Mis redes" = 5 figuritas `.red-card` de proporción fija 1:1,12 (ancho = mín(columna, fila)), 3 arriba + 2 centradas; íconos escalan con la figurita. Objeto 3: copyright (letra chica).
