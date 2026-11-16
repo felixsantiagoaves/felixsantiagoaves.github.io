@@ -1,4 +1,5 @@
 # Estructura del sitio (desde octubre 2026: una página por sección)
+> Estructura de componentes y reglas de adaptación: ver `_build/COMPONENTES.md` (leer antes de tocar diseño).
 
 Ya NO existe un único index.html con todo. Cada sección del menú es su propio HTML:
 
