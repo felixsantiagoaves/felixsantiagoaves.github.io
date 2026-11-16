@@ -1802,7 +1802,7 @@ function fitPantalla() {
   pg.style.zoom = ''; pg.style.removeProperty('--fit-h'); pg.style.removeProperty('--fit-w'); document.documentElement.classList.remove('fit-lock');
   if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
-  if (pg.id === 'page-sobre-mi') { fitSobreMi(pg); return; }
+  if (pg.id === 'page-sobre-mi' || pg.id === 'page-redes') { fitSobreMi(pg); return; }
   if (pg.id === 'page-datos') { fitDatos(pg); return; }
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   const avail = innerHeight - top - fh - 4, tab = document.querySelector('.dat-tab.active'), lista = pg.id === 'page-datos' && tab && tab.dataset.tab !== 'num';

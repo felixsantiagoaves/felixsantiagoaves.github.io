@@ -651,3 +651,30 @@ body.fit-pc #dat-lg{overflow:hidden}
 body.fit-pc #dat-lg .dat-grid{height:100%;grid-template-rows:minmax(0,1fr) auto;gap:clamp(8px,1.8vh,18px) clamp(10px,1.2vw,20px)}
 body.fit-pc #dat-lg .dat-card{display:flex;flex-direction:column;min-height:0;padding:clamp(6px,1.2vh,14px) 1.1rem!important}
 body.fit-pc #ch-lugares,body.fit-pc #ch-grupos{flex:1 1 0;min-height:0;overflow:hidden;display:grid;grid-auto-rows:minmax(20px,1fr);align-content:stretch}
+
+/* ══ Contacto en PC: tarjeta "Trabajemos juntos" (foto elástica) + 5 redes (figuritas de proporción fija) ══ */
+body.fit-pc #page-redes{height:var(--fit-h);display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden;max-width:1900px;margin:0 auto;padding:0 clamp(16px,2.6vw,52px);box-sizing:border-box}
+body.fit-pc #page-redes .page-header{padding:clamp(6px,1.4vh,16px) 0 0!important;margin:0!important;max-width:none!important}
+body.fit-pc #page-redes .page-header .page-sub,body.fit-pc #page-redes .page-header-logo{display:none}
+body.fit-pc #page-redes .page-title{margin:0!important}
+body.fit-pc #page-redes .page-body{max-width:none!important;min-height:0;display:grid;grid-template-columns:minmax(320px,34%) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:clamp(20px,2.6vw,48px);padding:clamp(8px,2vh,22px) 0 clamp(6px,1.4vh,16px)!important;align-items:stretch;box-sizing:border-box}
+body.fit-pc #page-redes .trab{grid-column:1;grid-row:1/4;display:flex;flex-direction:column;min-height:0;transform:none;margin:0!important}
+body.fit-pc #page-redes .trab::before{flex:1 1 0;height:auto;min-height:90px;margin-bottom:clamp(6px,1.6vh,16px)}
+body.fit-pc #page-redes .trab-h{font-size:clamp(1.2rem,3.2vh,1.8rem)!important};body.fit-pc #page-redes .trab-h em{font-size:clamp(1.2rem,3.2vh,1.8rem)!important}
+body.fit-pc #page-redes .trab-p{margin:.3rem .7rem clamp(6px,1.4vh,16px);line-height:1.45}
+body.fit-pc #page-redes .trab-alt{margin-top:clamp(4px,1vh,12px)}
+body.fit-pc #page-redes .redes-tit{grid-column:2;grid-row:1;margin:0 0 clamp(6px,1.4vh,14px)!important;text-align:left!important}
+body.fit-pc #page-redes .redes-grid{grid-column:2;grid-row:2;min-height:0;container-type:size;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(10px,2vh,24px) clamp(10px,1.4vw,24px)!important;max-width:none!important;margin:0!important;justify-items:center;align-items:center}
+/* cada red es una figurita de proporción fija (1 : 1,12): su ancho es el menor entre lo que da la columna y lo que da la fila */
+body.fit-pc #page-redes .red-card{width:min(100%,calc((50cqh - clamp(5px,1vh,12px)) / 1.12))!important;height:auto;aspect-ratio:1/1.12;max-width:none!important;display:flex;flex-direction:column;min-height:0}
+body.fit-pc #page-redes .red-icon{flex:1 1 0;height:auto!important;min-height:0;aspect-ratio:auto!important;width:100%}
+body.fit-pc #page-redes .red-name{font-size:clamp(.62rem,1.7vh,.8rem)!important;padding-top:.3rem}
+body.fit-pc #page-redes .red-handle{font-size:clamp(.6rem,1.6vh,.78rem)!important}
+body.fit-pc #page-redes .mk-copy{grid-column:2;grid-row:3;margin:clamp(6px,1.4vh,18px) 0 0!important;font-size:clamp(.55rem,1.4vh,.72rem);line-height:1.35;text-align:left!important}
+body.fit-pc #page-redes .redes-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+body.fit-pc #page-redes .red-card{grid-column:span 2}
+body.fit-pc #page-redes .red-card:nth-child(4){grid-column:2/4}
+body.fit-pc #page-redes .red-card:nth-child(5){grid-column:4/6}
+body.fit-pc #page-redes .red-icon{display:flex;align-items:center;justify-content:center}
+body.fit-pc #page-redes .red-icon svg{width:34%;height:auto;max-height:70%}
+body.fit-pc #page-redes .red-icon svg[viewBox="0 0 80 32"]{width:58%}
