@@ -45,6 +45,12 @@
     });
   }
 
+  function marca() {
+    const ix = document.getElementById('libro-idx'); if (!ix) return;
+    ix.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.s === S));
+    const b = ix.querySelector('button.on'); if (b) ix.scrollTo({ top: b.offsetTop - ix.clientHeight / 2 + b.clientHeight / 2, behavior: MENOS_MOV ? 'auto' : 'smooth' });
+  }
+
   function pos() {
     book.querySelectorAll('.leaf').forEach(el => {
       const k = +el.dataset.k, volt = k < S;
@@ -55,7 +61,7 @@
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;
     const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === L ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S);
     document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === L;
-    llenar();
+    llenar(); marca();
   }
 
   function ir(n) {
@@ -74,17 +80,17 @@
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;
     if (prev !== S) { const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === L ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S); }
     document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === L;
-    // si saltamos varias hojas, pre-llenar las del destino
-    llenar();
+    llenar(); marca();
   }
 
   const esMov = () => Math.min(window.innerWidth, window.innerHeight) < 600;
 
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
-    const full = esMov(), sc = full ? Math.min((window.innerWidth - 110) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 150) / (2 * PW), (window.innerHeight - 200) / PH), k = Math.max(.2, sc);
+    const full = esMov(), sc = full ? Math.min((window.innerWidth - 110) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - 200) / PH), k = Math.max(.2, sc);
     book.style.setProperty('--sc', k.toFixed(3));
     st.style.height = Math.round(PH * k) + 'px';
+    const ix = document.getElementById('libro-idx'); if (ix) ix.style.maxHeight = Math.round(PH * k + 56) + 'px';
   }
 
   window.libroRender = function () {
@@ -94,14 +100,16 @@
     const full = esMov();
     let host = c; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }
-    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
+    const idx = Array.from({ length: L + 1 }, (_, s) => { const pg = P[2 * s - 1], f = pg && pg.aves ? pg.aves[0].familiaEsp : '';
+      return `<button data-s="${s}" onclick="libroSalta(${s})"><b>${s === 0 ? 'Tapa' : s === L ? (pg && pg.aves ? 'Hoja ' + (2 * s - 1) : 'Final') : (2 * s - 1) + '–' + (2 * s)}</b><span>${escHtml(f)}</span></button>`; }).join('');
+    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro">${full ? '' : `<aside class="libro-idx" id="libro-idx"><h4>Índice</h4>${idx}</aside>`}<div class="libro-main"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
       Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')
     }</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div>
     <div class="libro-bar"><select id="libro-sel" aria-label="Ir a una hoja" onchange="libroSalta(this.value)"><option value="0">Tapa</option>${grupos}</select><span id="libro-info"></span>${full ? '<button class="libro-x" onclick="libroToggle()">✕ Cerrar</button>' : ''}</div>
-    ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div>`;
+    ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div></div>`;
     if (full) { try { (document.documentElement.requestFullscreen() || Promise.reject()).then(() => screen.orientation.lock('landscape')).catch(() => {}); } catch (e) {} }
     book = document.getElementById('libro-book'); escala(); pos();
-    if (!full) { const st = document.getElementById('libro-stage'); setTimeout(() => window.scrollTo({ top: st.getBoundingClientRect().top + scrollY - 126, behavior: 'instant' }), 60); }
+    if (!full && window._libroUser) { const st = document.getElementById('libro-stage'); setTimeout(() => window.scrollTo({ top: st.getBoundingClientRect().top + scrollY - 126, behavior: 'instant' }), 60); }
     book.addEventListener('pointerdown', onDown);
   };
   window.libroIr = d => ir(S + d);

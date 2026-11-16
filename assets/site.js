@@ -704,7 +704,7 @@ function updAlbumHead() {
   const t = document.getElementById('prog-txt'); if(t) t.textContent = v + ' de ' + fmtN(n) + ' especies encontradas';
   const pf = document.getElementById('prog-fill'); if(pf) { pf.style.width = '100%'; pf.style.transformOrigin = 'left center'; pf.style.willChange = 'transform'; pf.style.transition = 'transform 1.1s cubic-bezier(.4,0,.2,1)'; setTimeout(() => { pf.style.transform = 'scaleX(' + (pct / 100) + ')'; }, 120); }
   document.querySelectorAll('.reg-b').forEach(b => b.classList.toggle('on', b.dataset.reg === REGION));
-  const bl = document.getElementById('btn-libro'); if (bl) bl.hidden = !(window.libroOn || /[?&]libro=1/.test(location.search));
+  albVistaInit(); const bl = document.getElementById('btn-libro'); if (bl) { bl.hidden = false; bl.textContent = window.libroOn ? '☰ Ver como lista' : '📖 Ver como libro'; }
 }
 function setRegion(r) {
   if(r === REGION) return;
@@ -733,6 +733,7 @@ function albFig(ave, i, numMap, nuevasIds) {
   }
 
 function renderAlbum() {
+  if (window.libroOn && !window.libroRender) { libroCargar(renderAlbum); return; }
   if (window.libroOn && window.libroRender) return libroRender();
   const container = document.getElementById('album-container');
   // Numeración fija: orden taxonómico dentro de la región (como eBird)
@@ -767,9 +768,23 @@ function renderAlbum() {
 // ── Botones flotantes del álbum: arriba / familia anterior / familia siguiente / abajo ──
 // ── Vista de libro (opción de visualización; por defecto sigue la lista plegable) ──
 const SITE_V = (document.currentScript && document.currentScript.src.split('?v=')[1]) || '';
+// PC: libro por defecto; celular (lado menor < 600 px): lista por defecto. La elección del usuario se recuerda.
+const albEsMovil = () => Math.min(window.innerWidth, window.innerHeight) < 600;
+function albVistaInit() {
+  if (window.libroOn !== undefined) return;
+  let v = ''; try { v = localStorage.getItem('albumVista') || ''; } catch (e) {}
+  window.libroOn = v ? v === 'libro' : !albEsMovil();
+  document.body.classList.toggle('libro-modo', window.libroOn);
+}
+function libroCargar(cb) {
+  if (window.libroRender) return cb();
+  const sc = document.createElement('script'); sc.src = '/assets/libro.js?v=' + SITE_V; sc.onload = cb; document.head.appendChild(sc);
+}
 function libroToggle() {
-  const on = !window.libroOn, ir = () => { window.libroOn = on; document.body.classList.toggle('libro-modo', on); const b = document.getElementById('btn-libro'); if (b) b.textContent = on ? '☰ Ver como lista' : '📖 Ver como libro'; if (!on && window.libroSalir) libroSalir(); renderAlbum(); window.scrollTo({ top: 0 }); };
-  if (on && !window.libroRender) { const sc = document.createElement('script'); sc.src = '/assets/libro.js?v=' + SITE_V; sc.onload = ir; document.head.appendChild(sc); } else ir();
+  const on = !window.libroOn;
+  try { localStorage.setItem('albumVista', on ? 'libro' : 'lista'); } catch (e) {}
+  const ir = () => { window.libroOn = on; window._libroUser = true; document.body.classList.toggle('libro-modo', on); const b = document.getElementById('btn-libro'); if (b) b.textContent = on ? '☰ Ver como lista' : '📖 Ver como libro'; if (!on && window.libroSalir) libroSalir(); renderAlbum(); if (!on) window.scrollTo({ top: 0 }); };
+  if (on) libroCargar(ir); else ir();
 }
 let albAb = null;   // grupo abierto del álbum (uno a la vez)
 function albTog(hd) {
