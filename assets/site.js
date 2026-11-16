@@ -640,7 +640,7 @@ function buildRecientes(){
   if(!lista.length){ box.style.display = 'none'; return; }
   const circulo = a => {
     const f = avist[a.id].foto;
-    if(f) return `<div class="rec-circulo"><img src="${f}" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
+    if(f) return `<div class="rec-circulo"><img src="${TH(f)}" onerror="this.onerror=null;this.src='${f}'" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
     if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c${habCls(a.id)}"><img class="rec-masc" style="--esc:${escMascT(a.id)}" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
     const k = SILUETAS[FAM_SILUETA[a.familiaEsp]] ? FAM_SILUETA[a.familiaEsp] : 'pajarito';
     return `<div class="rec-circulo rec-sin-foto"><span class="sil-i sil-${k}" role="img" aria-label="silueta"></span></div>`;
@@ -719,7 +719,7 @@ function albFig(ave, i, numMap, nuevasIds) {
     const enc = visto(ave), av = enc ? avist[ave.id] : null;
     const foco = (av && av.foto) ? focoPos(av.foto) : 50;
     const foto = av && av.foto
-      ? `<img class="fig-foto" loading="lazy" decoding="async" src="/${av.foto.replace(/^\//, '')}" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
+      ? `<img class="fig-foto" loading="lazy" decoding="async" src="${TH(av.foto)}" onerror="this.onerror=null;this.src='/${av.foto.replace(/^\//, '')}'" style="object-position:${foco}% 40%" alt="${ave.comun} (${ave.nombre}) - Fotografiado en Argentina por Félix Santiago">`
       : (enc ? ((typeof MASC !== 'undefined' && MASC[ave.id]) ? `<div class="fig-silueta${habCls(ave.id)}"><img class="fig-masc" style="--esc:${escMasc(ave.id)}" loading="lazy" src="/assets/mascotas/${MASC[ave.id]}-quieto.svg?v=${MASC_V}" alt="${ave.comun} (ilustración animada)"><span class="fig-cm">${cmMasc(ave.id)}</span></div>` : getSilueta(ave.familiaEsp).replace('class="sil-i', 'class="sil-vivo sil-i')) + '<span class="fig-sinfoto">Sin foto</span>' : getSilueta(ave.familiaEsp));
     const rot = (((ave.id * 37) % 7) - 3) * 0.7;
     return `<div class="fig ${enc ? 'enc' : 'no'}${enc && !(av && av.foto) ? ' sinfoto' : ''}${enc && av && av.foto && (nuevasIds.has(ave.id) || (probDe(ave.id) != null && probDe(ave.id) < 1)) ? ' rara' : ''}" onclick="openM(${ave.id})" data-id="${ave.id}" style="--r:${rot}deg;animation-delay:${Math.min(i * 0.04, 0.5)}s">
@@ -1235,7 +1235,7 @@ function buildAveDia() {
   if(!a) { card.style.display = 'none'; return; }
   const av = avist[a.id];
   card.querySelector('.dia-fila').innerHTML =
-    `<div class="rec-circulo"><img src="${av.foto}" style="object-position:${focoPos(av.foto)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>
+    `<div class="rec-circulo"><img src="${TH(av.foto)}" onerror="this.onerror=null;this.src='${av.foto}'" style="object-position:${focoPos(av.foto)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>
      <div><div class="nov-val">${escHtml(a.comun)}</div><div class="nov-sub">${escHtml(a.nombre)}</div></div>`;
   card.onclick = () => abrirDesdePortada(a.id, [a]);
 }
@@ -1521,7 +1521,7 @@ function buildDatos() {
       tl += `<div class="tl-mes rv"><h3>${MESES_L[+ym.slice(5) - 1]} ${ym.slice(0, 4)}<small>${cant} especie${cant === 1 ? '' : 's'} nueva${cant === 1 ? '' : 's'}</small></h3>`;
       mesAct = ym; abierto = true;
     }
-    const img = r.foto ? `<img src="${r.foto}" alt="${escHtml(a.comun)}" loading="lazy">` : (typeof MASC !== 'undefined' && MASC[a.id]) ? `<img class="tl-masc" style="--esc:${escMascT(a.id)}" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración)" loading="lazy">` : `<img class="sil" src="${SILUETAS[FAM_SILUETA[a.familiaEsp] || 'pajarito'] || SILUETAS['pajarito']}" alt="">`;
+    const img = r.foto ? `<img src="${TH(r.foto)}" onerror="this.onerror=null;this.src='${r.foto}'" alt="${escHtml(a.comun)}" loading="lazy">` : (typeof MASC !== 'undefined' && MASC[a.id]) ? `<img class="tl-masc" style="--esc:${escMascT(a.id)}" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración)" loading="lazy">` : `<img class="sil" src="${SILUETAS[FAM_SILUETA[a.familiaEsp] || 'pajarito'] || SILUETAS['pajarito']}" alt="">`;
     tl += `<button class="tl-item" title="${escHtml(a.comun)} · ${fmtFecha(r.fecha)}" onclick="abrirDesdePortada(${a.id}, tlLista)"><span class="tl-img">${img}</span><span class="tl-txt"><span class="tl-n">${escHtml(a.comun)}</span><br><span class="tl-m">${fmtFecha(r.fecha)}${r.lugar ? ' · ' + escHtml(r.lugar) : ''}</span></span><span class="tl-num">#${r.n}</span></button>`;
   });
   if(abierto) tl += '</div>';
@@ -1801,6 +1801,8 @@ document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preve
 // ── Pantalla fija en PC: la página se escala para entrar sin scroll vertical (Sobre mí y Estadísticas) ──
 const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes', 'page-album'];
 const FIT_ZMIN = .8;   // por debajo el texto queda muy chico: se deja la página con su scroll normal
+// Miniatura de 400 px (fotos/th/) para usos chicos; si no existe, el navegador cae a la foto grande.
+const TH = u => String(u).replace(/^\/?fotos\/([^\/]+\.jpg)$/, '/fotos/th/$1');
 function fitAlbumLista() {
   // Scroll controlado: las páginas (familias) cerradas se acomodan en columnas para que la lista mida ~3 pantallas como máximo.
   const c = document.getElementById('album-container'); if (!c) return;

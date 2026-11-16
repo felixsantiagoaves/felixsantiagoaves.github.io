@@ -47,3 +47,8 @@ Regla: la página puede scrollear, pero **máximo ~3 pantallas**. No se achican 
 - **Especies** (`/aves/`): `ficha.js` (bloque final) elige columnas (`--lc`, de 3 a 14, mínimo 84 px por tarjeta) para que el largo total quepa en 3 pantallas; se recalcula al filtrar/redimensionar. Cabecera compacta, texto de la tarjeta escala con `cqw`. Clase `body.lista-fit` (solo PC). 126 especies: ~2,7 pantallas a 1440×800, ~3,3 a 1215×613.
 - **Álbum en lista** (`#album-container`): `fitAlbumLista()` en site.js reparte las familias cerradas en 2–4 columnas (`--alc`); la que se abre ocupa todo el ancho (`grid-column:1/-1`). ~2,3–2,8 pantallas. Se llama desde `renderAlbum()` y `fitPantalla()`.
 - Para otra página con scroll: misma idea, un `fit…()` que mide el presupuesto `3*innerHeight` y elige columnas.
+
+## Rendimiento (regla)
+- Fotos chicas (línea de tiempo, figuritas del álbum, carrusel, miniaturas de familia) usan la miniatura de 400 px `fotos/th/NOMBRE.jpg` vía `TH(url)` en site.js (con `onerror` que vuelve a la foto grande). Las fotos grandes (960 px, ~300 KB) solo en modal/galería/ficha.
+- Al agregar fotos nuevas correr `python3 _build/miniaturas.py` (crea las que falten en `fotos/th/`), y después `build.py`.
+- Antes: la línea de tiempo bajaba ~180 fotos grandes para mostrarlas de 60–100 px.
