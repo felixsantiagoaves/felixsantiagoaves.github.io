@@ -38,10 +38,13 @@
     return `<div class="lpag"><div class="album-grid stk libro-grid">${A.map((a, j) => `<div class="lcell fc${ctx.col(a)}${tag[j] ? ' ini' : ''}">${tag[j] ? `<span class="lgt" style="width:calc(${tag[j].n}00% + ${(tag[j].n - 1) * 0}px)" title="${escHtml(tag[j].t)}">${escHtml(tag[j].t)}</span>` : ''}${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div><div class="lpag-n">${i}</div></div>`;
   }
 
+  // Memoria: sólo las hojas cercanas a la actual tienen contenido y se dibujan (en Argentina son ~90 hojas; en celular se caía la pestaña)
   function llenar() {
     book.querySelectorAll('.leaf').forEach(el => {
-      const k = +el.dataset.k;
-      if (!el.dataset.ok && Math.abs(k - S) <= 2) { el.querySelector('.front').innerHTML = cara(2 * k); el.querySelector('.back').innerHTML = cara(2 * k + 1); el.dataset.ok = 1; }
+      const k = +el.dataset.k, d = Math.abs(k - S);
+      if (d <= 2 && !el.dataset.ok) { el.querySelector('.front').innerHTML = cara(2 * k); el.querySelector('.back').innerHTML = cara(2 * k + 1); el.dataset.ok = 1; }
+      else if (d > 3 && el.dataset.ok) { el.querySelector('.front').innerHTML = ''; el.querySelector('.back').innerHTML = ''; delete el.dataset.ok; }
+      el.style.display = d > 3 ? 'none' : '';
     });
   }
 

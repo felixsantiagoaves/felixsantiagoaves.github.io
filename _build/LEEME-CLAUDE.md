@@ -205,3 +205,4 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 - Zoom en iOS: además del meta viewport, `html,body{touch-action:pan-x pan-y}` y listeners globales (gesturestart/gesturechange/gestureend + touchmove multitáctil con preventDefault) al final de site.js.
 - Libro mobile en vertical: aviso "Girá el celular" + botón Cerrar (el aviso vive dentro de `.libro-main`; no ocultar `.libro-main` en portrait).
 - Sobre mí (tarjeta figurita): textos reescritos 16/11 ("Lo que hago" / "El álbum"), sin repetir el nombre ni frases genéricas. Editar en `_build/fragmentos/sobre-mi.html`.
+- Memoria del libro: `llenar()` solo mantiene con contenido las hojas a ≤2 de la actual, vacía las >3 y les pone `display:none` (en Argentina son ~46 hojas con todo cargado y Chrome iOS cerraba la pestaña, "No se puede abrir esta página").
