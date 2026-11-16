@@ -121,6 +121,7 @@
     }</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div>
     <div class="libro-bar"><select id="libro-sel" aria-label="Ir a una hoja" onchange="libroSalta(this.value)"><option value="0">Tapa</option>${grupos}</select><span id="libro-info"></span>${full ? '<button class="libro-x" onclick="libroToggle()">✕ Cerrar</button>' : ''}</div>
     ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div></div>`;
+    { const ix = document.getElementById('libro-idx'); if (ix) { const fijo = document.createElement('div'); fijo.className = 'libro-idx-fijo'; const k = [...ix.children]; const tapa = k.find(e => e.tagName === 'BUTTON'); k.filter(e => e.classList.contains('libro-reg') || e.tagName === 'H4').concat(tapa ? [tapa] : []).forEach(e => fijo.appendChild(e)); ix.prepend(fijo); } }
     sinZoom(full);
     if (full) { try { (document.documentElement.requestFullscreen() || Promise.reject()).then(() => screen.orientation.lock('landscape')).catch(() => {}); } catch (e) {} }
     book = document.getElementById('libro-book'); escala(); pos();
