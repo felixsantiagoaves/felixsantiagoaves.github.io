@@ -191,7 +191,7 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 
 ## Vista de libro del álbum (16/11/2026, PÚBLICA)
 - Botón `#btn-libro` visible siempre. Vista por defecto: PC = libro; celular (lado menor <600px) = lista plegable. La elección se recuerda en localStorage `albumVista` (`albVistaInit()`, `libroToggle()` en site.js).
-- PC: índice lateral izquierdo (`.libro-idx`) con un botón por hoja doble (scroll con barra fina), resalta la actual.
+- PC: índice lateral por FAMILIAS (`.libro-idx`): un botón por familia con color, nombre y vistas/total; click salta a la hoja donde empieza; resalta todas las familias presentes en la hoja actual. Scroll con barra fina.
 - `assets/libro.js` (carga perezosa desde `libroToggle()`) expone `libroRender()`/`libroSalir()`; usa `albFig()` de site.js. CSS al final de `figurita.css`.
 - Páginas: tapa + hojas de 12 figuritas (4×3) en orden taxonómico CONTINUO: una familia que termina sigue la siguiente en la misma hoja. Cada familia tiene un color de fondo (6 tonos cíclicos, `.fc0-5`) → efecto "tetris"; etiqueta (`.lgt`, color fuerte sobre fondo pastel) solo al comienzo de cada familia (contador de TODA la familia; en hoja de continuación lleva "· sigue"). Figuritas casi cuadradas (`aspect-ratio:1/1`) y el libro rompe el ancho de la página (`100vw`) para aprovechar el ancho; escala hasta 1.5. Todas las especies de la región (huecos `.fig.no` + figuritas pegadas).
 - PC: giro 3D, flechas ◀ ▶ a los costados, teclado ←/→, arrastrar borde, selector.

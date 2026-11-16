@@ -484,3 +484,16 @@ body.libro-modo:not(:has(.libro-full)){overflow:hidden}
 body.libro-modo #page-album .page-header{display:none!important}
 body.libro-modo .libro-ayuda{display:none}
 body.libro-modo .libro-bar{margin:8px 0 0}
+
+/* índice por familias */
+.libro-idx button{flex-direction:row;align-items:center;gap:8px;padding:7px 10px;margin-bottom:5px}
+.libro-idx button i{width:12px;height:12px;border-radius:4px;background:var(--fl,#c4a882);flex:none}
+.libro-idx button span{flex:1;font:700 .74rem/1.15 'Lato',sans-serif;font-style:normal;color:var(--fg-tx,#2a2a1c);white-space:normal;max-width:none}
+.libro-idx button em{font:italic .72rem 'Playfair Display',serif;color:var(--ti,#8a7358);flex:none}
+.libro-idx button.on{background:var(--fc,#e9dfcf);border-color:var(--fl,#414833)}
+.libro-idx button.on span{color:var(--fg-tx,#2a2a1c)}.libro-idx button.on em{color:var(--fg-tx,#2a2a1c)}
+.libro-idx button[data-s="0"].on{background:var(--fg-v1,#414833)}.libro-idx button[data-s="0"].on b{color:#fff}
+.libro-idx button[data-s="0"] b{font:900 .8rem 'Lato',sans-serif}
+[data-theme=dark] .libro-idx button span{color:#e8dccb}[data-theme=dark] .libro-idx button.on{background:color-mix(in srgb,var(--fl) 45%,#232919)}[data-theme=dark] .libro-idx button.on span,[data-theme=dark] .libro-idx button.on em{color:#fff}
+.libro:not(.libro-full) .libro-stage{overflow:hidden}
+.libro-idx{position:relative;z-index:6}

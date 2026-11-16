@@ -47,7 +47,8 @@
 
   function marca() {
     const ix = document.getElementById('libro-idx'); if (!ix) return;
-    ix.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.s === S));
+    const en = new Set(); [P[2 * S - 1], P[2 * S]].forEach(pg => pg && pg.aves && pg.aves.forEach(a => en.add(a.familiaEsp)));
+    ix.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.f ? en.has(b.dataset.f) : S === 0));
     const b = ix.querySelector('button.on'); if (b) ix.scrollTo({ top: b.offsetTop - ix.clientHeight / 2 + b.clientHeight / 2, behavior: MENOS_MOV ? 'auto' : 'smooth' });
   }
 
@@ -100,9 +101,9 @@
     const full = esMov();
     let host = c; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }
-    const idx = Array.from({ length: L + 1 }, (_, s) => { const pg = P[2 * s - 1], f = pg && pg.aves ? pg.aves[0].familiaEsp : '';
-      return `<button data-s="${s}" onclick="libroSalta(${s})"><b>${s === 0 ? 'Tapa' : s === L ? (pg && pg.aves ? 'Hoja ' + (2 * s - 1) : 'Final') : (2 * s - 1) + '–' + (2 * s)}</b><span>${escHtml(f)}</span></button>`; }).join('');
-    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro">${full ? '' : `<aside class="libro-idx" id="libro-idx"><h4>Índice</h4>${idx}</aside>`}<div class="libro-main"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
+    const fa = new Map(); ctx.todas.forEach((x, n) => { let g = fa.get(x.familiaEsp); if (!g) fa.set(x.familiaEsp, g = { f: x.familiaEsp, c: ctx.col(x), s: Math.ceil((Math.floor(n / CAP) + 1) / 2), n: 0, v: 0 }); g.n++; if (visto(x)) g.v++; });
+    const idx = '<button data-s="0" data-f="" onclick="libroSalta(0)"><b>Tapa</b></button>' + [...fa.values()].map(g => `<button class="fc${g.c}" data-s="${g.s}" data-f="${escHtml(g.f)}" onclick="libroSalta(${g.s})"><i></i><span>${escHtml(g.f)}</span><em>${g.v}/${g.n}</em></button>`).join('');
+    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro">${full ? '' : `<aside class="libro-idx" id="libro-idx"><h4>Familias</h4>${idx}</aside>`}<div class="libro-main"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
       Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')
     }</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div>
     <div class="libro-bar"><select id="libro-sel" aria-label="Ir a una hoja" onchange="libroSalta(this.value)"><option value="0">Tapa</option>${grupos}</select><span id="libro-info"></span>${full ? '<button class="libro-x" onclick="libroToggle()">✕ Cerrar</button>' : ''}</div>
