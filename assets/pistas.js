@@ -7,13 +7,13 @@ const MASC={"167":"halcon-peregrino","99":"crespin","330":"barullero","2":"aguat
 
 
 /* Frecuencia en Argentina: % de listas completas de eBird (617.923 listas, nov 2026) que incluyen la especie. Fuente: 'Especies en la mira' de eBird (región Argentina) de Félix. */
-const MASC_CM={"99":28,"330":11,"2":21,"27":11,"30":28,"112":39,"153":14,"198":15.5,"302":13,"305":17,"306":22,"323":41,"325":34,"327":29,"338":15,"393":17.5,"405":14,"406":16.5};
+const MASC_CM={"167":40,"99":28,"330":11,"2":21,"27":11,"30":28,"112":39,"153":14,"198":15.5,"302":13,"305":17,"306":22,"323":41,"325":34,"327":29,"338":15,"393":17.5,"405":14,"406":16.5};
 const MASC_HAB={"167":"cielo","99":"arbustal","330":"arbustal","2":"humedal","112":"humedal","27":"bosque","405":"bosque","406":"bosque","306":"bosque","198":"arbustal","338":"arbustal","305":"arbustal","30":"ocaso","302":"sierras","325":"sierras","327":"sierras","323":"pastizal","393":"pastizal","153":"cielo"};
 
 
 
 
 
-const MASC_ESC={"167":0.62};
 
+const MASC_ESC_T={"167":0.62};
 const MASC_V='a9654b13';

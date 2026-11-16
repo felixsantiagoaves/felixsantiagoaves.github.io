@@ -131,6 +131,8 @@ function mapaProv(pv,dep,pre){
   return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm${dep?' pm-d':''}" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>${top?`${pre||'Más probable en: '}${top}.`:'Registros muy escasos: casi no hay avistamientos en eBird, sin una zona clara.'}</p>${top?'<div class="pm-leg"><i></i><span>más probable</span></div>':''}</div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
 }
 const MENOS_MOV = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+// miniaturas de la portada: algunos dibujos (más compactos) necesitan un ajuste extra para no cortarse
+function escMascT(id){ const x = (typeof MASC_ESC_T !== 'undefined' && MASC_ESC_T[id]) || 1; return (parseFloat(escMasc(id)) * x).toFixed(2); }
 function escMasc(id){ if(typeof MASC_ESC !== 'undefined' && MASC_ESC[id]) return String(MASC_ESC[id]); const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? Math.min(1, 0.38 + 0.62 * (L / 41)).toFixed(2) : '1'; }
 function cmMasc(id){ const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? String(L).replace('.', ',') + ' cm' : ''; }
 function habCls(id){ return (typeof MASC_HAB !== 'undefined' && MASC_HAB[id]) ? ' hab-' + MASC_HAB[id] : ''; }
@@ -639,7 +641,7 @@ function buildRecientes(){
   const circulo = a => {
     const f = avist[a.id].foto;
     if(f) return `<div class="rec-circulo"><img src="${f}" style="object-position:${focoPos(f)}% 40%" alt="${escHtml(a.comun)}" loading="lazy"></div>`;
-    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c${habCls(a.id)}"><img class="rec-masc" style="--esc:${escMasc(a.id)}" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
+    if(typeof MASC !== 'undefined' && MASC[a.id]) return `<div class="rec-circulo rec-sin-foto rec-masc-c${habCls(a.id)}"><img class="rec-masc" style="--esc:${escMascT(a.id)}" src="/assets/mascotas/${MASC[a.id]}-quieto.svg?v=${MASC_V}" alt="${escHtml(a.comun)} (ilustración animada)"></div>`;
     const k = SILUETAS[FAM_SILUETA[a.familiaEsp]] ? FAM_SILUETA[a.familiaEsp] : 'pajarito';
     return `<div class="rec-circulo rec-sin-foto"><span class="sil-i sil-${k}" role="img" aria-label="silueta"></span></div>`;
   };
