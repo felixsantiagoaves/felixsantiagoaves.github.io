@@ -536,7 +536,7 @@ body.fit-pc #dat-num .dat-kpi b{height:62px!important;font-size:2.1rem!important
 body.fit-pc #dat-num .dat-kpi span{padding:.35rem 0 0;font-size:.62rem!important}
 body.fit-pc #dat-num .dat-card{grid-column:span 6!important;padding:.8rem 1.1rem!important}
 body.fit-pc #dat-num .dat-grid>.dat-card:first-child{padding:.7rem 1.1rem!important}
-body.fit-pc #dat-lg,body.fit-pc #dat-tl,body.fit-pc #dat-ter,body.fit-pc #dat-falt{max-height:var(--fit-h);overflow-y:auto;padding-right:10px;scrollbar-width:thin;scrollbar-color:#c4a882 transparent}
+body.fit-pc #dat-tl,body.fit-pc #dat-ter,body.fit-pc #dat-falt{overflow-y:auto;padding-right:10px;scrollbar-width:thin;scrollbar-color:#c4a882 transparent}
 body.fit-pc .dat-pane::-webkit-scrollbar{width:8px}body.fit-pc .dat-pane::-webkit-scrollbar-thumb{background:#c4a882;border-radius:99px}body.fit-pc .dat-pane::-webkit-scrollbar-track{background:rgba(196,168,130,.18);border-radius:99px}
 body.fit-pc #page-datos .page-body-wide,body.fit-pc #page-datos .page-header{max-width:var(--fit-w,1240px)!important}
 
@@ -622,3 +622,32 @@ body.fit-pc .fgh .rec-item{height:auto}
 body.fit-pc .fgh .rec-circulo{flex:none;width:100%;aspect-ratio:100/118}
 /* la mascota se dimensiona con --rh = alto real del cuadro de la figurita (no confundir con --rec-h, alto de la tira) */
 body.fit-pc .fgh .rec-circulo{--rh:calc(((var(--rec-h) - 32px)*.64 - 10px)*1.18)}
+
+/* ══ Estadísticas en PC: contenedor de alto fijo + objetos elásticos (sin zoom) ══
+   Objetos: [título+pestañas] · pane activo. Resumen = fila camino/filtro · fila 6 KPI · fila 2 gráficos (elástica). */
+body.fit-pc #page-datos{height:var(--fit-h);display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);overflow:hidden;max-width:1900px;margin:0 auto;padding:0 clamp(16px,2.6vw,52px);box-sizing:border-box}
+body.fit-pc #page-datos .page-header{grid-column:1;grid-row:1;padding:clamp(6px,1.4vh,16px) 0 0!important;margin:0!important;max-width:none!important}
+body.fit-pc #page-datos .dat-tabs{grid-column:2;grid-row:1;padding:clamp(6px,1.4vh,16px) 0 0;margin:0;justify-content:flex-end;align-items:center}
+body.fit-pc #page-datos .page-body-wide{grid-column:1/-1;grid-row:2;max-width:none!important;width:100%;min-height:0;display:flex;flex-direction:column;padding:clamp(6px,1.6vh,16px) 0 clamp(4px,1vh,10px)!important;box-sizing:border-box}
+body.fit-pc #page-datos .dat-pane{flex:1 1 0;min-height:0}
+body.fit-pc #dat-num{overflow:hidden}
+body.fit-pc #dat-num .dat-grid{height:100%;grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-template-rows:auto auto minmax(0,1fr);gap:clamp(8px,1.8vh,18px) clamp(10px,1.2vw,20px)}
+body.fit-pc #dat-num .dat-grid>.dat-card:first-child{grid-column:span 8!important;padding:clamp(6px,1.2vh,14px) 1.1rem!important}
+body.fit-pc #dat-num .dat-filtro{grid-column:span 4!important;align-self:center}
+body.fit-pc #dat-num .hito-chips{flex-wrap:nowrap;overflow:hidden;margin-top:clamp(4px,.9vh,10px)}
+body.fit-pc #dat-num .hito-chip{flex:none}
+body.fit-pc #dat-num .hito-bar{margin:clamp(3px,.8vh,10px) 0 0}
+body.fit-pc #dat-num .dat-s{margin-bottom:0}
+body.fit-pc #dat-num .dat-kpi{grid-column:span 2!important;max-width:none;padding:clamp(4px,.8vh,8px) clamp(4px,.5vw,8px) clamp(5px,1vh,10px)!important}
+body.fit-pc #dat-num .dat-kpi b{height:clamp(34px,7.5vh,92px)!important;font-size:clamp(1.4rem,4.4vh,2.6rem)!important}
+body.fit-pc #dat-num .dat-kpi span{padding:clamp(2px,.5vh,7px) 0 0;font-size:clamp(.55rem,1.4vh,.7rem)!important}
+body.fit-pc #dat-num .dat-kpi small{font-size:clamp(.65rem,1.6vh,.8rem)!important}
+body.fit-pc #dat-num .dat-card:not(:first-child){grid-column:span 6!important;display:flex;flex-direction:column;min-height:0;padding:clamp(6px,1.2vh,14px) 1.1rem clamp(4px,1vh,10px)!important}
+body.fit-pc #dat-num #ch-acum,body.fit-pc #dat-num #ch-mensual{flex:1 1 0;min-height:0;overflow:hidden}
+body.fit-pc #dat-num .ch-read{margin-top:.2rem;min-height:1.2rem;font-size:1rem}
+body.fit-pc #dat-num .ch-leg{margin-top:.2rem}
+/* Lugares y grupos: dos tarjetas que se llenan; las barras se reparten el alto */
+body.fit-pc #dat-lg{overflow:hidden}
+body.fit-pc #dat-lg .dat-grid{height:100%;grid-template-rows:minmax(0,1fr) auto;gap:clamp(8px,1.8vh,18px) clamp(10px,1.2vw,20px)}
+body.fit-pc #dat-lg .dat-card{display:flex;flex-direction:column;min-height:0;padding:clamp(6px,1.2vh,14px) 1.1rem!important}
+body.fit-pc #ch-lugares,body.fit-pc #ch-grupos{flex:1 1 0;min-height:0;overflow:hidden;display:grid;grid-auto-rows:minmax(20px,1fr);align-content:stretch}

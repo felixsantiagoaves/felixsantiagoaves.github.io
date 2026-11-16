@@ -1368,8 +1368,9 @@ function idxPaso(n, pitch, w) {
   for(let i = n - 1; i >= 0; i -= step) out.add(i);
   return out;
 }
+let CH_DIM = null;   // en pantalla fija (PC) los gráficos se dibujan con el tamaño real de su tarjeta: {a:{w,h}, m:{w,h}}
 function chartAcumulado(meses, nuevasPorMes, sel) {
-  const mov = _movil(), W = mov ? 360 : 640, H = mov ? 250 : 240, L = mov ? 30 : 34, R = mov ? 16 : 22, T = 26, B = 28, n = meses.length;
+  const mov = _movil(), D = CH_DIM && CH_DIM.a, W = D ? D.w : mov ? 360 : 640, H = D ? D.h : mov ? 250 : 240, L = mov ? 30 : 34, R = mov ? 16 : 22, T = 26, B = 28, n = meses.length;
   let c = 0; const cum = meses.map(m => (c += nuevasPorMes[m] || 0));
   const max = niceMax(cum[n - 1] || 1);
   const x = i => L + (W - L - R) * (n === 1 ? .5 : i / (n - 1)), y = v => T + (H - T - B) * (1 - v / max);
@@ -1388,7 +1389,7 @@ function chartAcumulado(meses, nuevasPorMes, sel) {
   return `<svg class="ch-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Especies acumuladas por mes">${ejesY(max, W, L, R, T, H, B)}<path class="ch-area" d="${area}"/><path class="ch-line" pathLength="1" d="${d}"/>${guia}${dots}${vals}${etiq}${hit}</svg><div class="ch-read">${lec}</div>`;
 }
 function chartMensual(meses, nuevas, vistas, sel) {
-  const mov = _movil(), W = mov ? 360 : 640, H = mov ? 250 : 240, L = mov ? 30 : 34, R = mov ? 12 : 18, T = 26, B = 28, n = meses.length;
+  const mov = _movil(), D = CH_DIM && CH_DIM.m, W = D ? D.w : mov ? 360 : 640, H = D ? D.h : mov ? 250 : 240, L = mov ? 30 : 34, R = mov ? 12 : 18, T = 26, B = 28, n = meses.length;
   const max = niceMax(Math.max(1, ...meses.map(m => vistas[m] || 0)));
   const paso = (W - L - R) / n, bw = Math.min(40, paso * .68);
   const y = v => T + (H - T - B) * (1 - v / max);
@@ -1454,6 +1455,8 @@ function pintarNumeros() {
   const rm = dFilas('mes'), sm = {}, nuevas = {}, vistas = {};
   rm.forEach(x => { (sm[x.ym] = sm[x.ym] || new Set()).add(x.id); if(x.lif) nuevas[x.ym] = (nuevas[x.ym] || 0) + 1; });
   Object.keys(sm).forEach(m => { vistas[m] = sm[m].size; });
+  CH_DIM = null;
+  if(document.body.classList.contains('fit-pc') && $('ch-acum').clientWidth > 50) { const a = $('ch-acum'), m = $('ch-mensual'); CH_DIM = {a: {w: a.clientWidth, h: Math.max(110, a.clientHeight - 26)}, m: {w: m.clientWidth, h: Math.max(110, m.clientHeight - 46)}}; }
   if(DMESES.length) { $('ch-acum').innerHTML = chartAcumulado(DMESES, nuevas, DF.mes); $('ch-mensual').innerHTML = chartMensual(DMESES, nuevas, vistas, DF.mes); }
   // lugares y grupos (respetan los otros dos filtros)
   const lt = topPor(dFilas('lug'), x => x.pl, k => LUGARES_MAP[k].nombre, DF.lug);
@@ -1800,6 +1803,7 @@ function fitPantalla() {
   if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
   if (pg.id === 'page-sobre-mi') { fitSobreMi(pg); return; }
+  if (pg.id === 'page-datos') { fitDatos(pg); return; }
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   const avail = innerHeight - top - fh - 4, tab = document.querySelector('.dat-tab.active'), lista = pg.id === 'page-datos' && tab && tab.dataset.tab !== 'num';
   let z = 1;
@@ -1826,6 +1830,13 @@ function fitSobreMi(pg) {
 }
 // Últimas especies en PC: figuritas de proporción fija (el ancho sale del alto) y carrusel automático; el ancho de pantalla solo cambia cuántas se ven.
 function fitRecientes() {}
+// Estadísticas: contenedor de alto fijo; tarjetas, números y gráficos se reparten el espacio (los gráficos se redibujan al tamaño real).
+function fitDatos(pg) {
+  const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
+  pg.style.setProperty('--fit-h', Math.max(380, innerHeight - top - fh) + 'px');
+  document.documentElement.classList.add('fit-lock');
+  const n = document.getElementById('dat-num'); if (DROWS && n && n.offsetParent) pintarNumeros();
+}
 function fitGaleria(pg) {
   const gr = document.getElementById('foto-grid'), ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   gr.style.height = ''; const top = gr.getBoundingClientRect().top + scrollY, h = innerHeight - top - fh - 58;
