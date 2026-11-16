@@ -179,3 +179,9 @@ Los textos de las fichas (`_fichas/<slug>.json`, `secciones`) y los minis de `as
 Documentación completa en `_juego/LEEME-JUEGO.md` (cómo se arma con `python3 _juego/build.py`, perfiles, sonido, ranking en
 Cloudflare Worker + D1 en api.felixsantiago.com.ar, siluetas y herramientas). La página `/juegos/` sale de
 `_build/fragmentos/juegos.html` y `juego/index.html` se GENERA: no editarlo a mano.
+
+## Regla con cada CSV nuevo: mascota para toda especie sin foto
+Toda especie nueva que quede "vista, sin foto" debe tener su mascota dibujada (como Crespín, Barullero, Halcón Peregrino): función en `_build/mascotas/dibujadas.py` (+ `MANO`), entrada en `ESPECIES` de `gen_mascotas.py`, correr `python3 -I _build/mascotas/gen_mascotas.py assets/mascotas` y sumar el id en `MASC` y `MASC_HAB` de `assets/pistas.js`. Referencia: láminas de Pearman y Areta (PDF en WEB/ de la Mac). Hacerlo en el mismo paso que el sync, sin que Felix lo pida. Al subir la foto, la web deja de mostrar la mascota sola.
+
+## Tira "Últimas especies sumadas" (Sobre mí)
+`recAuto()` en assets/site.js: la tira se desliza sola en bucle (~28 px/s; duplica los ítems), se frena con el mouse encima o al tocarla, se arrastra con el mouse y se desliza con el dedo; respeta "reducir movimiento" (ahí queda sin clones, scroll manual).

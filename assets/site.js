@@ -655,7 +655,39 @@ function buildRecientes(){
     if(b.dataset.mas) irAlbum('enc'); else abrirDesdePortada(parseInt(b.dataset.id), lista);
   };
   box.style.display = 'block';
+  recAuto(tr);
   if(window.fgUltima) fgUltima(lista[0], lista);
+}
+
+// Tira de últimas especies: se desliza sola en bucle, se frena al tocarla/pasar el mouse y se puede arrastrar (mouse) o deslizar (dedo)
+function recAuto(tr){
+  if(tr._auto || MENOS_MOV) return; tr._auto = true;
+  const items = Array.from(tr.children);
+  items.forEach(it => { const c = it.cloneNode(true); c.setAttribute('aria-hidden','true'); c.tabIndex = -1; c.classList.add('rec-clon'); tr.appendChild(c); });
+  tr.classList.add('rec-auto');
+  let pos = tr.scrollLeft, pausa = 0, drag = null, movido = false, visible = true, last = 0;
+  const mitad = () => { const a = tr.children[items.length]; return a ? a.offsetLeft - tr.children[0].offsetLeft : 0; };
+  const pausar = ms => { pausa = Math.max(pausa, performance.now() + ms); };
+  tr.addEventListener('pointerenter', e => { if(e.pointerType === 'mouse') pausa = Infinity; });
+  tr.addEventListener('pointerleave', e => { if(e.pointerType === 'mouse'){ pausa = performance.now() + 600; } });
+  tr.addEventListener('touchstart', () => pausar(4000), {passive:true});
+  tr.addEventListener('wheel', () => pausar(3000), {passive:true});
+  tr.addEventListener('scroll', () => { if(!drag) pos = tr.scrollLeft; }, {passive:true});
+  tr.addEventListener('pointerdown', e => { if(e.pointerType !== 'mouse' || e.button) return; drag = {x:e.clientX, s:tr.scrollLeft}; movido = false; });
+  window.addEventListener('pointermove', e => { if(!drag) return; const dx = e.clientX - drag.x; if(Math.abs(dx) > 4){ movido = true; tr.classList.add('rec-arrastra'); } if(movido){ tr.scrollLeft = drag.s - dx; pos = tr.scrollLeft; } });
+  window.addEventListener('pointerup', () => { if(drag){ drag = null; tr.classList.remove('rec-arrastra'); setTimeout(() => { movido = false; }, 0); } });
+  tr.addEventListener('click', e => { if(movido){ e.stopImmediatePropagation(); e.preventDefault(); } }, true);
+  if('IntersectionObserver' in window) new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(tr);
+  function paso(t){
+    requestAnimationFrame(paso);
+    const dt = Math.min(64, t - (last || t)); last = t;
+    if(MENOS_MOV || !visible || document.hidden || drag || t < pausa) return;
+    const m = mitad(); if(!m || tr.scrollWidth <= tr.clientWidth) return;
+    pos += dt * 0.028;                       // ~28 px/seg
+    if(pos >= m) pos -= m;
+    tr.scrollLeft = pos;
+  }
+  requestAnimationFrame(paso);
 }
 
 function fmtFecha(f) {

@@ -1358,3 +1358,9 @@ nav{view-transition-name:site-nav}
 .canto-fr{width:100%;height:140px;border:1px solid var(--co);display:block}
 .canto-cr{font-size:.68rem;opacity:.7;margin-top:.35rem;line-height:1.35}
 .canto-cr a{color:inherit}
+
+/* tira de últimas especies: desliza sola (site.js recAuto) */
+.rec-track.rec-auto{scroll-snap-type:none;scrollbar-width:none;cursor:grab;}
+.rec-track.rec-auto::-webkit-scrollbar{display:none;}
+.rec-track.rec-arrastra{cursor:grabbing;user-select:none;}
+.rec-track.rec-auto .rec-item{scroll-snap-align:none;}

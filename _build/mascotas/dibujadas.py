@@ -470,8 +470,30 @@ def barullero():
     return svg('Barullero', css((120, 154), (198, 176), tf=1.4), f'{legs}{tl}{cu}{wg}{hd}')
 
 
+# ───────────────────────── Halcón Peregrino (Falco peregrinus) ─────────────────────────
+def halcon_peregrino():
+    legs = patas([((136, 232), 130), ((160, 236), 156)], '#e6bd2e', 7.5, toes=(-22, -14, 9))
+    bars = ''.join(f'<path d="M{x1} {y1} L{x2} {y2}" stroke="#2c3036" stroke-width="3.2" stroke-linecap="round"/>'
+                   for x1, y1, x2, y2 in [(204, 232, 232, 226), (212, 248, 240, 241), (220, 262, 246, 256), (228, 276, 250, 271)])
+    tl = cola('M190 206 C214 216 238 246 250 286 C236 290 212 268 186 232 Z', '#5a6570', '#d8d3c6',
+              'M236 272 L262 286 L252 296 L234 292 Z', bars)
+    cd = 'M86 136 C76 178 98 226 138 248 C172 264 210 256 226 232 C240 206 234 160 198 130 C160 106 96 108 86 136 Z'
+    barr = ''.join(f'<path d="M{x1} {y1} l{dx} {dy}" stroke="#3a3f46" stroke-width="3.2" stroke-linecap="round" fill="none"/>'
+                   for x1, y1, dx, dy in [(88, 184, 20, 7), (90, 198, 24, 7), (96, 212, 26, 6), (104, 226, 26, 4), (86, 170, 16, 6), (114, 238, 24, 2)])
+    cu = cuerpo(cd, '#55606b', '<path d="M56 140 C92 144 128 160 152 196 C162 222 158 248 152 266 L56 266 Z" fill="#f2eadb"/>' + barr)
+    wg = ala('M128 132 C172 120 222 150 246 208 C256 240 258 262 260 278 C232 272 192 246 160 206 C136 180 124 152 128 132 Z', '#3d4852',
+             '<path d="M176 160 q30 20 46 58 M156 156 q30 22 48 64 M196 172 q22 22 32 54" stroke="#5c6974" stroke-width="3" fill="none" stroke-linecap="round"/>')
+    hd = cabeza(106, 106, 34, '#2f353b',
+                '<path d="M56 116 C74 108 90 118 92 150 L56 156 Z" fill="#f4eee2"/>'
+                '<path d="M94 112 C98 128 104 142 112 152" stroke="#15171a" stroke-width="12" stroke-linecap="round" fill="none"/>',
+                'M80 94 C62 92 46 98 42 118 C50 114 62 115 76 124 Z', '#8996a1',
+                ojo(92, 98, 5, lid='#2f353b', ring='#e6bd2e', rr=2.8),
+                post='<ellipse cx="76" cy="101" rx="6" ry="5" fill="#e6bd2e" stroke="#2a1f14" stroke-width="2"/>')
+    return svg('Halcón Peregrino', css((112, 140), (194, 210), tf=1.3), f'{legs}{tl}{cu}{wg}{hd}')
+
+
 MANO = {'crespin': crespin, 'barullero': barullero, 'colorada': colorada, 'pepitero-chico': pepitero_chico, 'atajacaminos-tijera': atajacaminos,
         'aguatero': aguatero, 'pitiayumi': pitiayumi, 'chiricote': chiricote, 'golondrina-ceja-blanca': golondrina,
         'pijui-frente-gris': pijui, 'monterita-de-collar': monterita, 'pepitero-gris': pepitero_gris,
         'inambu-montaraz': inambu_montaraz, 'inambu-silbon': inambu_silbon, 'calandrita': calandrita,
-        'pecho-colorado': pecho_colorado, 'chivi-comun': chivi, 'juan-chiviro': juan_chiviro}
+        'pecho-colorado': pecho_colorado, 'chivi-comun': chivi, 'juan-chiviro': juan_chiviro, 'halcon-peregrino': halcon_peregrino}

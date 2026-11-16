@@ -333,6 +333,7 @@ ESPECIES['juan-chiviro'] = _p
 
 ESPECIES['crespin'] = dict(BASE, name='Crespín')
 ESPECIES['barullero'] = dict(BASE, name='Barullero')
+ESPECIES['halcon-peregrino'] = dict(BASE, name='Halcón Peregrino')
 
 
 def main(out):
