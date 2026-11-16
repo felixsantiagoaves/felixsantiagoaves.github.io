@@ -190,8 +190,9 @@ Toda especie nueva que quede "vista, sin foto" debe tener su mascota dibujada (c
 En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barra de progreso, "X de N" y chevron); al tocarlo se abre ese grupo y se cierra el anterior (uno a la vez, `albAb` + `albTog()` en assets/site.js; los estilos van al final de figurita.css). Con búsqueda o cualquier filtro activo (Encontradas/Faltantes, familia, lugar) se muestran todos abiertos para no esconder resultados. Los botones flotantes ▲▼ saltan entre cabeceras. En celular la barra de progreso es una línea fina bajo el título y las fotos mini se mantienen (30 px) y el título baja a .78rem.
 
 ## Vista de libro del álbum (16/11/2026, prototipo oculto)
-- Se activa con `/album/?libro=1` (sin eso el botón `#btn-libro` está oculto). Por defecto sigue el álbum plegable.
-- `assets/libro.js` (carga perezosa desde `libroToggle()` en site.js) expone `libroRender()`/`libroSalir()`; usa `albFig()` de site.js para las figuritas. CSS al final de `figurita.css` ("Vista de libro").
-- Páginas: tapa + hojas (familias chicas se agrupan hasta CAP=9 figuritas; familias >9 se parten parejas) + contratapa si hace falta par. Todas las especies de la región: huecos (`.fig.no`) y figuritas pegadas.
-- PC: giro 3D de hojas (◀ ▶, teclado ←/→, arrastrar borde, selector). Celular (<820px): una hoja por pantalla, swipe horizontal.
-- Para publicar: quitar la condición `?libro=1` en `updAlbumHead()`.
+- Se activa con `/album/?libro=1` (sin eso el botón `#btn-libro` está oculto). Por defecto sigue el álbum plegable. Para publicar: quitar la condición `?libro=1` en `updAlbumHead()` (site.js).
+- `assets/libro.js` (carga perezosa desde `libroToggle()`) expone `libroRender()`/`libroSalir()`; usa `albFig()` de site.js. CSS al final de `figurita.css`.
+- Páginas: tapa + hojas de 12 figuritas (4×3) en orden taxonómico CONTINUO: una familia que termina sigue la siguiente en la misma hoja. Cada familia tiene un color de fondo (6 tonos cíclicos, `.fc0-5`) → efecto "tetris"; leyenda al pie de la hoja con vistas/total por familia. Todas las especies de la región (huecos `.fig.no` + figuritas pegadas).
+- PC: giro 3D, flechas ◀ ▶ a los costados, teclado ←/→, arrastrar borde, selector.
+- Celular (lado menor <600px): libro a pantalla completa (host `#libro-host` en body, clase `.libro-full`), pide girar el celular (portrait muestra aviso; intenta fullscreen + lock landscape). Mismo libro que en PC escalado.
+- `.libro` lleva clase `stickers` (el CSS de huecos depende de `.stickers` como ancestro).

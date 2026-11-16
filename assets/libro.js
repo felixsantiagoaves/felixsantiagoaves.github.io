@@ -2,29 +2,17 @@
    Modelo: P = páginas (0 = tapa). Hoja k: frente = P[2k], dorso = P[2k+1]. Spread s muestra P[2s-1] (izq.) y P[2s] (der.).
    Las hojas dadas vuelta (k < s) giran -180° sobre el lomo. Todas las especies, con huecos las no vistas y la figurita pegada las vistas. */
 (function () {
-  const CAP = 9, PW = 540, PH = 860;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
+  const CAP = 12, PW = 620, PH = 840;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
   let P = [], L = 0, S = 0, ctx = null, busy = false, book = null, drag = null;
 
   function armar() {
     const todas = avesReg().slice().sort((a, b) => a.tx - b.tx), numMap = {};
     todas.forEach((a, i) => numMap[a.id] = i + 1);
     ctx = { todas, numMap, nuevas: new Set(recientes(8, false).map(a => a.id)) };
-    const fams = [], m = new Map();
-    todas.forEach(a => { if (!m.has(a.familiaEsp)) { m.set(a.familiaEsp, []); fams.push(a.familiaEsp); } m.get(a.familiaEsp).push(a); });
-    const hojas = []; let cur = null;
-    const flush = () => { if (cur && cur.aves.length) hojas.push(cur); cur = null; };
-    fams.forEach(f => {
-      const l = m.get(f);
-      if (l.length > CAP) {                       // familia grande: varias hojas parejas
-        flush(); const n = Math.ceil(l.length / CAP), sz = Math.ceil(l.length / n);
-        for (let i = 0; i < n; i++) hojas.push({ fams: [f + ' (' + (i + 1) + '/' + n + ')'], aves: l.slice(i * sz, (i + 1) * sz) });
-        return;
-      }
-      if (cur && cur.aves.length + l.length > CAP) flush();   // familias chicas se juntan hasta llenar una hoja
-      if (!cur) cur = { fams: [], aves: [] };
-      cur.fams.push(f); cur.aves.push(...l);
-    });
-    flush();
+    const fi = new Map(); todas.forEach(x => { if (!fi.has(x.familiaEsp)) fi.set(x.familiaEsp, fi.size); });
+    ctx.col = x => fi.get(x.familiaEsp) % 6;
+    const hojas = [];
+    for (let i = 0; i < todas.length; i += CAP) hojas.push({ aves: todas.slice(i, i + CAP) });
     P = [{ t: 'tapa' }].concat(hojas.map(h => Object.assign({ t: 'hoja' }, h)));
     if (P.length % 2) P.push({ t: 'fin' });
     L = P.length / 2;
@@ -37,9 +25,9 @@
       return `<div class="lpag lpag-tapa"><div class="lt-logo"></div><h2>Álbum de aves</h2><p>${REGION === 'cba' ? 'Córdoba' : 'Argentina'}</p><b>${v} <i>de</i> ${ctx.todas.length}</b><small>Félix Santiago · Aves</small></div>`;
     }
     if (pg.t === 'fin') return '<div class="lpag lpag-fin"><p>Seguirá completándose<br>en cada salida.</p></div>';
-    const ok = pg.aves.filter(visto).length;
-    return `<div class="lpag"><div class="lpag-hd"><span class="lpag-fam">${pg.fams.map(escHtml).join(' · ')}</span><span class="lpag-c${ok === pg.aves.length ? ' full' : ''}">${ok} de ${pg.aves.length}</span></div>
-      <div class="album-grid stk libro-grid">${pg.aves.map((a, j) => albFig(a, j, ctx.numMap, ctx.nuevas)).join('')}</div><div class="lpag-n">${i}</div></div>`;
+    const leg = []; pg.aves.forEach(a => { let g = leg.find(x => x.f === a.familiaEsp); if (!g) leg.push(g = { f: a.familiaEsp, c: ctx.col(a), n: 0, v: 0 }); g.n++; if (visto(a)) g.v++; });
+    return `<div class="lpag"><div class="album-grid stk libro-grid">${pg.aves.map((a, j) => `<div class="lcell fc${ctx.col(a)}">${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div>
+      <div class="lpag-leg">${leg.map(g => `<span class="fc${g.c}"><i></i>${escHtml(g.f)} <b>${g.v}/${g.n}</b></span>`).join('')}</div><div class="lpag-n">${i}</div></div>`;
   }
 
   function llenar() {
@@ -82,28 +70,35 @@
     llenar();
   }
 
+  const esMov = () => Math.min(window.innerWidth, window.innerHeight) < 600;
+
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
-    const sc = Math.min(1, (window.innerWidth - 60) / (2 * PW), (window.innerHeight - 300) / PH);
-    book.style.setProperty('--sc', Math.max(.35, sc).toFixed(3));
-    st.style.height = Math.round(PH * Math.max(.35, sc)) + 'px';
+    const full = esMov(), sc = full ? Math.min((window.innerWidth - 130) / (2 * PW), (window.innerHeight - 64) / PH) : Math.min(1, (window.innerWidth - 150) / (2 * PW), (window.innerHeight - 260) / PH), k = Math.max(.2, sc);
+    book.style.setProperty('--sc', k.toFixed(3));
+    st.style.height = Math.round(PH * k) + 'px';
   }
 
   window.libroRender = function () {
     const c = document.getElementById('album-container'); if (!c) return;
     armar(); if (S > L) S = 0; busy = false;
-    const grupos = P.map((pg, i) => pg.t === 'hoja' ? '<option value="' + Math.ceil(i / 2) + '">' + i + ' · ' + escHtml(pg.fams.join(' · ')) + '</option>' : '').join('');
-    c.innerHTML = `<div class="libro" id="libro"><div class="libro-stage" id="libro-stage"><div class="libro-book" id="libro-book">${
+    const grupos = P.map((pg, i) => pg.t === 'hoja' ? '<option value="' + Math.ceil(i / 2) + '">Hoja ' + i + ' · ' + pg.aves[0].comun + ' …</option>' : '').join('');
+    const full = esMov();
+    let host = c; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
+    if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }
+    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
       Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')
-    }</div></div>
-    <div class="libro-bar"><button id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><select id="libro-sel" aria-label="Ir a una hoja" onchange="libroSalta(this.value)"><option value="0">Tapa</option>${grupos}</select><span id="libro-info"></span><button id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div>
-    <p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p></div>`;
+    }</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div>
+    <div class="libro-bar"><select id="libro-sel" aria-label="Ir a una hoja" onchange="libroSalta(this.value)"><option value="0">Tapa</option>${grupos}</select><span id="libro-info"></span>${full ? '<button class="libro-x" onclick="libroToggle()">✕ Cerrar</button>' : ''}</div>
+    ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div>`;
+    if (full) { try { (document.documentElement.requestFullscreen() || Promise.reject()).then(() => screen.orientation.lock('landscape')).catch(() => {}); } catch (e) {} }
     book = document.getElementById('libro-book'); escala(); pos();
+    if (!full) { const st = document.getElementById('libro-stage'); setTimeout(() => window.scrollTo({ top: st.getBoundingClientRect().top + scrollY - 132, behavior: 'instant' }), 60); }
     book.addEventListener('pointerdown', onDown);
   };
   window.libroIr = d => ir(S + d);
   window.libroSalta = v => ir(+v);
-  window.libroSalir = () => { S = 0; };
+  window.libroSalir = () => { S = 0; const h = document.getElementById('libro-host'); if (h) h.remove(); try { document.fullscreenElement && document.exitFullscreen(); } catch (e) {} };
 
   // Arrastrar una esquina: sólo decide la dirección (el giro lo anima el CSS)
   function onDown(e) {
