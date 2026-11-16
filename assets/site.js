@@ -1817,8 +1817,9 @@ function fitPantalla() {
   const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (!pg) return;
   const pc = innerWidth >= 1000 && innerHeight >= 560 && matchMedia('(pointer:fine)').matches;
   document.body.classList.toggle('fit-pc', pc);
+  document.body.classList.toggle('fit-datm', !pc && pg.id === 'page-datos');
   pg.style.zoom = ''; pg.style.removeProperty('--fit-h'); pg.style.removeProperty('--fit-w'); document.documentElement.classList.remove('fit-lock');
-  if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
+  if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } if (pg.id === 'page-datos') fitDatosM(pg); return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
   if (pg.id === 'page-album') { if (document.body.classList.contains('libro-modo')) fitSobreMi(pg); else fitAlbumLista(); return; }   // la lista del álbum scrollea normal; el libro se encaja
   if (pg.id === 'page-sobre-mi' || pg.id === 'page-redes' || pg.id === 'page-juegos') { fitSobreMi(pg); return; }
@@ -1851,6 +1852,17 @@ function fitSobreMi(pg) {
 // Últimas especies en PC: figuritas de proporción fija (el ancho sale del alto) y carrusel automático; el ancho de pantalla solo cambia cuántas se ven.
 function fitRecientes() {}
 // Estadísticas: contenedor de alto fijo; tarjetas, números y gráficos se reparten el espacio (los gráficos se redibujan al tamaño real).
+// Celular: Línea de tiempo y "Las que me faltan" usan el mismo diseño que en PC. La línea de tiempo ocupa el alto que queda bajo las pestañas; las cajas de familias van en 3 columnas (5 apaisado).
+function fitDatosM(pg) {
+  const tab = (document.querySelector('.dat-tab.active') || {dataset: {}}).dataset.tab;
+  ['dat-tl', 'dat-falt'].forEach(i => { const e = document.getElementById(i); if (e && !(i === 'dat-' + tab)) e.style.height = ''; });
+  const pane = document.getElementById('dat-' + tab); if (!pane) return;
+  if (tab === 'tl') {
+    const top = pane.getBoundingClientRect().top + scrollY - (document.querySelector('.page-header') ? 0 : 0);
+    pane.style.height = Math.max(340, innerHeight - Math.min(top, 260) - 80) + 'px';
+    fitTimeline(pane);
+  } else if (tab === 'falt') { pane.style.height = ''; fitFaltan(pane); }
+}
 function fitDatos(pg) {
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   pg.style.setProperty('--fit-h', Math.max(380, innerHeight - top - fh) + 'px');
@@ -1862,8 +1874,8 @@ function fitDatos(pg) {
 // Línea de tiempo: cada mes elige cuántas columnas de miniaturas usa para que todas entren en el alto (tamaño máximo)
 function fitTimeline(pane) {
   const tl = pane.querySelector('.tl'); if (!tl) return;
-  const cw = Math.max(150, Math.min(250, Math.round(innerWidth * .13))), G = 4; tl.style.setProperty('--cw', cw + 'px'); tl.style.setProperty('--tg', G + 'px');
-  const padX = Math.max(12, innerWidth * .012);
+  const mob = document.body.classList.contains('fit-datm'), cw = mob ? 130 : Math.max(150, Math.min(250, Math.round(innerWidth * .13))), G = 4; tl.style.setProperty('--cw', cw + 'px'); tl.style.setProperty('--tg', G + 'px');
+  const padX = mob ? 10 : Math.max(12, innerWidth * .012);
   tl.querySelectorAll('.tl-mes').forEach(m => {
     const n = m.querySelectorAll('.tl-item').length, h3 = m.querySelector('h3'), W = cw - padX, H = tl.clientHeight - (h3 ? h3.offsetHeight + 22 : 60) - 10;
     let best = 30, bc = 1;
@@ -1876,9 +1888,13 @@ function fitFaltan(pane) {
   const ls = pane.querySelector('.fam-lista'); if (!ls) return;
   const cajas = [...ls.querySelectorAll('.fam-det')], n = cajas.length; if (!n) return;
   cajas.forEach((c, i) => { if (!c.dataset.pint) { c.dataset.pint = 1; c.classList.add('fc' + (i % 6)); const f = c.querySelector('.hb-fill'); if (f) c.style.setProperty('--p', f.style.getPropertyValue('--w') || '0%'); } });
+  if (document.body.classList.contains('fit-datm')) {
+    const W = ls.clientWidth, c = innerWidth >= 700 ? 5 : 3, G = 8, r = Math.ceil(n / c), bh = Math.round((W - (c - 1) * G) / c / 1.2);
+    ls.style.setProperty('--fc', c); ls.style.setProperty('--fr', r); ls.style.height = (r * bh + (r - 1) * G) + 'px'; ls.style.gap = G + 'px';
+  } else {
   const W = ls.clientWidth, H = ls.clientHeight; let bc = 1, bs = 1e9;
   for (let c = 1; c <= n; c++) { const r = Math.ceil(n / c), sc = Math.abs(Math.log((W / c) / (H / r) / 1.35)) + (r * c - n) * .03; if (sc < bs) { bs = sc; bc = c; } }
-  ls.style.setProperty('--fc', bc); ls.style.setProperty('--fr', Math.ceil(n / bc));
+  ls.style.setProperty('--fc', bc); ls.style.setProperty('--fr', Math.ceil(n / bc)); }
   if (!pane._ini) {
     pane._ini = 1;
     ls.addEventListener('toggle', e => { const d = e.target; if (!d.open) { const v = document.querySelector('.fam-velo'); if (v) v.remove(); return; } ls.querySelectorAll('.fam-det[open]').forEach(o => { if (o !== d) o.open = false; }); if (!document.querySelector('.fam-velo')) { const v = document.createElement('div'); v.className = 'fam-velo'; v.onclick = () => { d.open = false; }; document.body.appendChild(v); } }, true);

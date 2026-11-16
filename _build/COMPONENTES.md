@@ -61,3 +61,5 @@ Celular = todo lo que no es `fit-pc` (ancho < 1000, alto < 560 o sin mouse; incl
 - Galería: `#foto-grid` CSS columns 2 (3 a ≥700, 4 apaisado), miniaturas `TH()`. 5–6 → ~2.
 - Sobre mí, Contacto, Juegos, Estadísticas ya andan en 1–3,6 pantallas en vertical; no se tocaron.
 - Prueba: `mob2.js` (SE 375×667, 390×844, 430×932, 360×780, apaisado 844×390) mide pantallas de largo por página.
+- Estadísticas en celular (`body.fit-datm`, `fitDatosM()`): Línea de tiempo = misma línea horizontal que en PC, ocupa el alto que queda bajo las pestañas (columnas de 130 px, se arrastra de lado); Las que me faltan = mismas cajas de color en 3 columnas (5 apaisado). Reusa los CSS de PC (`body:is(.fit-pc,.fit-datm) #dat-tl/#dat-falt`). Resumen y Territorio siguen en vertical.
+- Libro (todas las pantallas): `.libro-idx-fijo` deja Córdoba/Argentina, "Familias" y Tapa fijos arriba del índice; solo scrollean las familias.

@@ -697,16 +697,16 @@ body.fit-pc #dat-num .dat-kpi{justify-self:stretch!important;align-self:stretch;
 body.fit-pc #dat-num .dat-kpi:nth-of-type(odd){transform:rotate(.6deg)}body.fit-pc #dat-num .dat-kpi:nth-of-type(even){transform:rotate(-.7deg)}
 
 /* ── Línea de tiempo real (PC): eje horizontal, un tramo por mes; lo más nuevo a la derecha, se arrastra hacia atrás ── */
-body.fit-pc #dat-tl{overflow:hidden}
-body.fit-pc #dat-tl .tl{max-width:none;margin:0;height:100%;display:flex;flex-direction:row-reverse;align-items:stretch;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#c4a882 transparent;padding:0 0 6px}
-body.fit-pc #dat-tl .tl-mes{flex:0 0 var(--cw,170px);width:var(--cw,170px);margin:0;padding:0 clamp(6px,.6vw,12px);box-sizing:border-box;display:flex;flex-wrap:wrap;align-content:flex-start;gap:var(--tg,4px);position:relative}
-body.fit-pc #dat-tl .tl-mes h3{flex:0 0 100%;margin:0 0 clamp(10px,2vh,20px);padding:0 0 clamp(8px,1.4vh,14px);border-bottom:3px solid var(--ar,#c4a882);position:relative;font-size:clamp(.85rem,2vh,1.1rem);line-height:1.15}
-body.fit-pc #dat-tl .tl-mes h3 small{display:block;font-size:.8em}
-body.fit-pc #dat-tl .tl-mes h3::after{content:'';position:absolute;left:0;bottom:-9px;width:15px;height:15px;border-radius:50%;background:var(--fg-v1,#414833);border:3px solid #fff;box-shadow:0 0 0 1px var(--ar,#c4a882)}
-body.fit-pc #dat-tl .tl-item{width:var(--s,48px);height:var(--s,48px);padding:0;margin:0;border-radius:8px;overflow:hidden;flex:none;border:0;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.08),1px 3px 8px rgba(42,31,20,.18);transition:transform .15s}
-body.fit-pc #dat-tl .tl-item:hover{transform:translateY(-3px) scale(1.06);z-index:3}
-body.fit-pc #dat-tl .tl-img{flex:none;width:100%;height:100%;border:0;border-radius:0}
-body.fit-pc #dat-tl .tl-txt,body.fit-pc #dat-tl .tl-num{display:none}
+body:is(.fit-pc,.fit-datm) #dat-tl{overflow:hidden}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl{max-width:none;margin:0;height:100%;display:flex;flex-direction:row-reverse;align-items:stretch;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#c4a882 transparent;padding:0 0 6px}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-mes{flex:0 0 var(--cw,170px);width:var(--cw,170px);margin:0;padding:0 clamp(6px,.6vw,12px);box-sizing:border-box;display:flex;flex-wrap:wrap;align-content:flex-start;gap:var(--tg,4px);position:relative}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-mes h3{flex:0 0 100%;margin:0 0 clamp(10px,2vh,20px);padding:0 0 clamp(8px,1.4vh,14px);border-bottom:3px solid var(--ar,#c4a882);position:relative;font-size:clamp(.85rem,2vh,1.1rem);line-height:1.15}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-mes h3 small{display:block;font-size:.8em}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-mes h3::after{content:'';position:absolute;left:0;bottom:-9px;width:15px;height:15px;border-radius:50%;background:var(--fg-v1,#414833);border:3px solid #fff;box-shadow:0 0 0 1px var(--ar,#c4a882)}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-item{width:var(--s,48px);height:var(--s,48px);padding:0;margin:0;border-radius:8px;overflow:hidden;flex:none;border:0;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.08),1px 3px 8px rgba(42,31,20,.18);transition:transform .15s}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-item:hover{transform:translateY(-3px) scale(1.06);z-index:3}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-img{flex:none;width:100%;height:100%;border:0;border-radius:0}
+body:is(.fit-pc,.fit-datm) #dat-tl .tl-txt,body:is(.fit-pc,.fit-datm) #dat-tl .tl-num{display:none}
 
 /* ── Territorio (PC): mapa y barras se reparten el alto de la tarjeta ── */
 body.fit-pc #dat-ter .dat-grid{height:100%;display:block}
@@ -723,22 +723,22 @@ body.fit-pc #dat-ter .ter-det{flex:none;max-height:26%;overflow:auto;margin-top:
 body.fit-pc #dat-ter .ter-sin,body.fit-pc #dat-ter .ter-cr{flex:none}
 
 /* ── Las que me faltan (PC): cajas de familia que llenan la pantalla; el relleno de color = cuánto del grupo ya tengo ── */
-body.fit-pc #dat-falt[style*="block"]{display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:clamp(6px,1.2vh,12px) 1.2rem;align-items:center;overflow:hidden}
-body.fit-pc #dat-falt .reg-sel{grid-column:1;grid-row:1;margin:0}
-body.fit-pc #dat-falt .fam-resumen{grid-column:2;grid-row:1;margin:0;text-align:left;font-size:clamp(1rem,2.4vh,1.25rem)}
-body.fit-pc #dat-falt .fam-lista{grid-column:1/-1;grid-row:2;max-width:none;height:auto;align-self:stretch;min-height:0;display:grid;grid-template-columns:repeat(var(--fc,8),minmax(0,1fr));grid-template-rows:repeat(var(--fr,5),minmax(0,1fr));gap:clamp(6px,1.2vh,12px)}
-body.fit-pc #dat-falt .fam-det{position:relative;border:none;border-radius:10px;background:var(--fc,#fff);min-height:0;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 4px 10px rgba(42,31,20,.14);transition:transform .15s}
-body.fit-pc #dat-falt .fam-det:hover{transform:translateY(-2px)}
-body.fit-pc #dat-falt .fam-det::before{content:'';position:absolute;left:0;right:0;bottom:0;height:var(--p,0%);background:var(--fl,#8a7358);opacity:.38;transition:height 1s}
-body.fit-pc #dat-falt .fam-det.completa::before{opacity:.6}
-body.fit-pc #dat-falt .fam-det summary{position:relative;z-index:1;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(5px,1vh,10px) clamp(7px,.8vw,12px);cursor:pointer}
-body.fit-pc #dat-falt .fam-det .hb-n{white-space:normal;font-size:clamp(.62rem,1.7vh,.85rem);line-height:1.15;color:var(--fg-tx,#2a1f14);font-weight:900}
-body.fit-pc #dat-falt .fam-det .hb-bar{display:none}
-body.fit-pc #dat-falt .fam-det .hb-v{font-size:clamp(.95rem,3.4vh,1.7rem);line-height:1;color:var(--fg-v1,#414833);align-self:flex-end}
-body.fit-pc #dat-falt .fam-det.completa .hb-v::after{content:' ✓'}
+body:is(.fit-pc,.fit-datm) #dat-falt[style*="block"]{display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:clamp(6px,1.2vh,12px) 1.2rem;align-items:center;overflow:hidden}
+body:is(.fit-pc,.fit-datm) #dat-falt .reg-sel{grid-column:1;grid-row:1;margin:0}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-resumen{grid-column:2;grid-row:1;margin:0;text-align:left;font-size:clamp(1rem,2.4vh,1.25rem)}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-lista{grid-column:1/-1;grid-row:2;max-width:none;height:auto;align-self:stretch;min-height:0;display:grid;grid-template-columns:repeat(var(--fc,8),minmax(0,1fr));grid-template-rows:repeat(var(--fr,5),minmax(0,1fr));gap:clamp(6px,1.2vh,12px)}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det{position:relative;border:none;border-radius:10px;background:var(--fc,#fff);min-height:0;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.06),0 4px 10px rgba(42,31,20,.14);transition:transform .15s}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det:hover{transform:translateY(-2px)}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det::before{content:'';position:absolute;left:0;right:0;bottom:0;height:var(--p,0%);background:var(--fl,#8a7358);opacity:.38;transition:height 1s}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det.completa::before{opacity:.6}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det summary{position:relative;z-index:1;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(5px,1vh,10px) clamp(7px,.8vw,12px);cursor:pointer}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det .hb-n{white-space:normal;font-size:clamp(.62rem,1.7vh,.85rem);line-height:1.15;color:var(--fg-tx,#2a1f14);font-weight:900}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det .hb-bar{display:none}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det .hb-v{font-size:clamp(.95rem,3.4vh,1.7rem);line-height:1;color:var(--fg-v1,#414833);align-self:flex-end}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det.completa .hb-v::after{content:' ✓'}
 /* al abrir una caja, sus especies salen en un panel central */
-body.fit-pc #dat-falt .fam-det[open]{z-index:40;overflow:visible;transform:none;outline:3px solid var(--fl,#414833)}
-body.fit-pc #dat-falt .fam-det[open] .fam-cuerpo{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(620px,88vw);max-height:68vh;overflow:auto;background:#fff;border-radius:12px;padding:1.2rem 1.3rem;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 24px 60px rgba(42,31,20,.45);z-index:60}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det[open]{z-index:40;overflow:visible;transform:none;outline:3px solid var(--fl,#414833)}
+body:is(.fit-pc,.fit-datm) #dat-falt .fam-det[open] .fam-cuerpo{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(620px,88vw);max-height:68vh;overflow:auto;background:#fff;border-radius:12px;padding:1.2rem 1.3rem;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 24px 60px rgba(42,31,20,.45);z-index:60}
 body.fit-pc .fam-velo{position:fixed;inset:0;background:rgba(42,31,20,.35);z-index:50}
 body.fit-pc #dat-ter .ter-lista{grid-auto-rows:minmax(24px,54px);align-content:space-evenly}
 
@@ -820,3 +820,10 @@ body:not(.fit-pc) #foto-grid .foto-ficha{font-size:.52rem!important}
 /* Libro: región (Córdoba/Argentina), título y Tapa quedan fijos arriba del índice; solo las familias scrollean */
 .libro-idx-fijo{position:sticky;top:0;z-index:3;background:#ede0d4;padding-bottom:1px}
 [data-theme=dark] .libro-idx-fijo{background:var(--fg-bg,#161a11)}
+/* Celular: ajustes de Estadísticas (Línea de tiempo y Las que me faltan) */
+body.fit-datm #dat-tl .tl-mes h3{font-size:.8rem!important;line-height:1.15}
+body.fit-datm #dat-tl .tl-mes h3 small{display:block!important;float:none!important;margin:2px 0 0!important;font-size:.7rem!important;text-align:left}
+body.fit-datm #dat-falt[style*="block"]{grid-template-columns:1fr!important;grid-template-rows:auto auto auto!important;gap:8px!important;justify-items:center}
+body.fit-datm #dat-falt .reg-sel{grid-column:1!important;grid-row:1!important}
+body.fit-datm #dat-falt .fam-resumen{grid-column:1!important;grid-row:2!important;text-align:center!important;font-size:.95rem!important;margin:0!important}
+body.fit-datm #dat-falt .fam-lista{grid-column:1!important;grid-row:3!important;width:100%}
