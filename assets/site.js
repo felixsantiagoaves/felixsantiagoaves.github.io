@@ -1799,7 +1799,7 @@ document.addEventListener('touchmove', e => { if (e.touches.length > 1 || (e.sca
 document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
 
 // ── Pantalla fija en PC: la página se escala para entrar sin scroll vertical (Sobre mí y Estadísticas) ──
-const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes', 'page-album'];
+const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes', 'page-album', 'page-juegos'];
 const FIT_ZMIN = .8;   // por debajo el texto queda muy chico: se deja la página con su scroll normal
 // Miniatura de 400 px (fotos/th/) para usos chicos; si no existe, el navegador cae a la foto grande.
 const TH = u => String(u).replace(/^\/?fotos\/([^\/]+\.jpg)$/, '/fotos/th/$1');
@@ -1820,7 +1820,7 @@ function fitPantalla() {
   if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
   if (pg.id === 'page-album') { if (document.body.classList.contains('libro-modo')) fitSobreMi(pg); else fitAlbumLista(); return; }   // la lista del álbum scrollea normal; el libro se encaja
-  if (pg.id === 'page-sobre-mi' || pg.id === 'page-redes') { fitSobreMi(pg); return; }
+  if (pg.id === 'page-sobre-mi' || pg.id === 'page-redes' || pg.id === 'page-juegos') { fitSobreMi(pg); return; }
   if (pg.id === 'page-datos') { fitDatos(pg); return; }
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
   const avail = innerHeight - top - fh - 4, tab = document.querySelector('.dat-tab.active'), lista = pg.id === 'page-datos' && tab && tab.dataset.tab !== 'num';

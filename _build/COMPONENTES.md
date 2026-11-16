@@ -45,6 +45,7 @@ Especies (tipo blog, scrollea), Mapa, Juegos, Calendario (privado).
 ## Con scroll controlado (páginas que sí scrollean)
 Regla: la página puede scrollear, pero **máximo ~3 pantallas**. No se achican letras ni se deforman piezas: cambia CUÁNTAS entran por fila (las piezas conservan su proporción).
 - **Especies** (`/aves/`): `ficha.js` (bloque final) elige columnas (`--lc`, de 3 a 14, mínimo 84 px por tarjeta) para que el largo total quepa en 3 pantallas; se recalcula al filtrar/redimensionar. Cabecera compacta, texto de la tarjeta escala con `cqw`. Clase `body.lista-fit` (solo PC). 126 especies: ~2,7 pantallas a 1440×800, ~3,3 a 1215×613.
+- **Juegos**: pantalla fija (`page-juegos` en FIT_IDS → `fitSobreMi`); la tarjeta de cada juego centrada, logo = 26 % del alto.
 - **Álbum en lista** (`#album-container`): `fitAlbumLista()` en site.js reparte las familias cerradas en 2–4 columnas (`--alc`); la que se abre ocupa todo el ancho (`grid-column:1/-1`). ~2,3–2,8 pantallas. Se llama desde `renderAlbum()` y `fitPantalla()`.
 - Para otra página con scroll: misma idea, un `fit…()` que mide el presupuesto `3*innerHeight` y elige columnas.
 
