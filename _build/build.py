@@ -80,7 +80,7 @@ for pid, carpeta, frag, titulo, desc in PAGINAS:
   gtag('js', new Date());
   gtag('config', 'G-X5B10D1495');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 <title>{esc(titulo)}</title>
 <meta name="description" content="{esc(desc)}">
 <meta name="theme-color" content="#3f4733">

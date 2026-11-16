@@ -514,3 +514,9 @@ body.libro-modo .libro-bar{margin:8px 0 0}
 .libro-reg{display:flex;margin:0 0 8px;border:2px solid var(--fg-v1,#414833);border-radius:99px;overflow:hidden}
 .libro-reg button{flex:1;margin:0!important;padding:5px 2px!important;border:0!important;border-radius:0!important;background:#fff!important;font:900 .56rem 'Lato',sans-serif!important;letter-spacing:.5px;text-transform:uppercase;color:var(--fg-v1,#414833);display:block!important;text-align:center!important}
 .libro-reg button.on{background:var(--fg-v1,#414833)!important;color:#fff}
+
+/* Safari: el contenido con transform propio de cada cara ignora el backface del padre (se veía espejado) */
+.leaf .face,.leaf .face *{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.leaf .front{transform:translateZ(.5px)}
+.leaf .back{transform:rotateY(180deg) translateZ(.5px)}
+html,body{touch-action:manipulation}
