@@ -199,3 +199,4 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 - `.libro` lleva clase `stickers` (el CSS de huecos depende de `.stickers` como ancestro).
 - Libro en PC = página fija sin scroll vertical (`body.libro-modo{overflow:hidden}`, se oculta el título de la página; la escala del libro se calcula con el alto disponible real en `escala()` de libro.js).
 - Celular horizontal: mismo libro a pantalla completa con el índice de familias a la izquierda (150px), swipe táctil para pasar de hoja; `escala()` se re-ejecuta tras 150/500/1200 ms y en resize/orientationchange/fullscreenchange (al entrar en fullscreen el tamaño cambia).
+- Celular (libro a pantalla completa): selector Córdoba/Argentina arriba del índice (`.libro-reg`); zoom por pellizco bloqueado mientras el libro está abierto (meta viewport `user-scalable=no` + preventDefault de gesturestart/touchmove multitáctil; se restaura al salir en `libroSalir()`).
