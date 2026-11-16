@@ -91,11 +91,21 @@
 
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
-    const full = esMov(), sc = full ? Math.min((window.innerWidth - 270) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - st.getBoundingClientRect().top - scrollY - 120) / PH), k = Math.max(.2, sc);
+    const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
+    let sc;
+    if (full) sc = Math.min((window.innerWidth - 270) / (2 * PW), (window.innerHeight - 50) / PH);
+    else if (fit) {
+      // PC en pantalla fija: el libro (proporción fija) ocupa el mayor tamaño que entra en el hueco de su contenedor
+      const main = st.parentElement, bar = main.querySelector('.libro-bar'), ay = main.querySelector('.libro-ayuda');
+      const usado = (bar ? bar.offsetHeight + 12 : 0) + (ay && getComputedStyle(ay).display !== 'none' ? ay.offsetHeight + 4 : 0) + 14;
+      sc = Math.min(2, (main.clientWidth - 110) / (2 * PW), (main.clientHeight - usado) / PH);
+    } else sc = Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - st.getBoundingClientRect().top - scrollY - 120) / PH);
+    const k = Math.max(.2, sc);
     book.style.setProperty('--sc', k.toFixed(3));
     st.style.height = Math.round(PH * k) + 'px';
-    const ix = document.getElementById('libro-idx'); if (ix) ix.style.maxHeight = full ? window.innerHeight + 'px' : Math.round(PH * k + 56) + 'px';
+    const ix = document.getElementById('libro-idx'); if (ix) ix.style.maxHeight = full ? window.innerHeight + 'px' : fit ? document.getElementById('libro').clientHeight + 'px' : Math.round(PH * k + 56) + 'px';
   }
+  window.libroEscala = escala;
 
   window.libroRender = function () {
     const c = document.getElementById('album-container'); if (!c) return;

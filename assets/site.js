@@ -1358,6 +1358,9 @@ function datFiltro(t, k) {
   if(t === 'lug') k = +k;
   DF[t] = DF[t] === k ? null : k;
   pintarNumeros();
+  // lugares y grupos viven en su propia pestaña: al elegir uno se pasa al Resumen, que es donde se ve el filtro aplicado
+  const tab = document.querySelector('.dat-tab.active');
+  if ((t === 'lug' || t === 'grp') && DF[t] !== null && tab && tab.dataset.tab === 'lg') datTab('num');
 }
 function datQuitar(t) { DF[t] = null; pintarNumeros(); }
 function datLimpiar() { DF = {mes: null, lug: null, grp: null}; pintarNumeros(); }
@@ -1438,7 +1441,7 @@ function pintarNumeros() {
       + (DF.lug !== null ? `<button class="dfl-b" onclick="irMapaLugar(${DF.lug})">Ver en el mapa →</button>` : '')
       + (DF.grp ? `<button class="dfl-b" data-k="${escHtml(DF.grp)}" onclick="irAlbumFamilia(this.dataset.k,false)">Ver en el álbum →</button>` : '')
       + '<span class="dfl-res" id="dfl-res"></span>'
-    : '<span class="dfl-hint">Tocá un mes, un lugar o un grupo y todo lo demás se filtra.</span>';
+    : '<span class="dfl-hint">Tocá un mes en los gráficos para filtrar todo el resumen.</span>';
   // KPIs
   const rows = dFilas(null), sids = new Set(), lugs = new Set(), fotos = new Set(), dias = {}, meses = {};
   rows.forEach(x => { sids.add(x.id); x.pl.forEach(p => lugs.add(p)); if(x.foto) fotos.add(x.id); (dias[x.f] = dias[x.f] || new Set()).add(x.id); (meses[x.ym] = meses[x.ym] || new Set()).add(x.id); });
@@ -1494,7 +1497,7 @@ function buildDatos() {
   document.getElementById('dat-lg').innerHTML = `<div class="dat-grid">
     <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-lugares"></div></div>
     <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-grupos"></div></div>
-    <p class="dat-nota">Al tocar un lugar o un grupo se filtra todo el Resumen.</p>
+    <p class="dat-nota">Al tocar un lugar o un grupo, te llevo al Resumen ya filtrado.</p>
   </div>`;
   cargarRegistros().then(r => {
     if(!document.getElementById('dat-filtro')) return;
@@ -1793,7 +1796,7 @@ document.addEventListener('touchmove', e => { if (e.touches.length > 1 || (e.sca
 document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
 
 // ── Pantalla fija en PC: la página se escala para entrar sin scroll vertical (Sobre mí y Estadísticas) ──
-const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes'];
+const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes', 'page-album'];
 const FIT_ZMIN = .8;   // por debajo el texto queda muy chico: se deja la página con su scroll normal
 function fitPantalla() {
   const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (!pg) return;
@@ -1802,6 +1805,7 @@ function fitPantalla() {
   pg.style.zoom = ''; pg.style.removeProperty('--fit-h'); pg.style.removeProperty('--fit-w'); document.documentElement.classList.remove('fit-lock');
   if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
   if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
+  if (pg.id === 'page-album') { if (document.body.classList.contains('libro-modo')) fitSobreMi(pg); return; }   // la lista del álbum scrollea normal; el libro se encaja
   if (pg.id === 'page-sobre-mi' || pg.id === 'page-redes') { fitSobreMi(pg); return; }
   if (pg.id === 'page-datos') { fitDatos(pg); return; }
   const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
@@ -1827,6 +1831,7 @@ function fitSobreMi(pg) {
   pg.style.setProperty('--fit-h', Math.max(380, innerHeight - top - fh) + 'px');
   document.documentElement.classList.add('fit-lock');
   fitRecientes();
+  if (pg.id === 'page-album' && window.libroEscala) libroEscala();
 }
 // Últimas especies en PC: figuritas de proporción fija (el ancho sale del alto) y carrusel automático; el ancho de pantalla solo cambia cuántas se ven.
 function fitRecientes() {}

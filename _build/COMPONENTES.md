@@ -29,8 +29,12 @@ Objeto 1: tarjeta "Trabajemos juntos" (foto elástica `::before` · título · t
 ## Galería (`#page-galeria`) — HECHO
 Cada foto = figurita con foto 4:5 + pie (66 px). `fitGaleria()`: el alto disponible fija filas y tamaño; el ancho solo cambia CUÁNTAS entran por fila (`--gal-cols`); paginación ‹ n/total ›.
 
+## Álbum (`#page-album`) — vista libro HECHA, vista lista scrollea normal
+Objeto 1: barra (Córdoba/Argentina + "Ver como lista") compacta. Objeto 2: índice de familias (scroll propio, alto = contenedor). Objeto 3: el libro (`.libro-book` 1400×740, proporción fija): `escala()` en libro.js lo agranda a lo que entra en el hueco (ancho y alto del contenedor, tope 2×); cada hoja = 12 figuritas en grilla 4×3. Barra de hoja/ayuda debajo (ayuda se oculta si hay <780 px de alto).
+En Estadísticas: tocar un lugar/grupo en su pestaña pasa solo al Resumen (ahí se ve el filtro); la barra de filtros vive en su celda y no flota sobre los números.
+
 ## Sin migrar (decisión de Felix: pueden scrollear o no aplica)
-Especies (tipo blog, scrollea), Álbum (usa su vista de libro), Mapa, Juegos, Calendario (privado).
+Especies (tipo blog, scrollea), Mapa, Juegos, Calendario (privado).
 
 ## Trampas conocidas (variables CSS con nombre repetido)
 - `--rh` = alto del cuadro de foto de la figurita (lo usa la mascota para escalar). La tira usa `--rec-h`. NO reutilizar `--rh` para otra cosa: en PC se redefine en `.rec-circulo`.
