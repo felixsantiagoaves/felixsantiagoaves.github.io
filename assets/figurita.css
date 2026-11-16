@@ -424,7 +424,7 @@ body.libro-modo #busqueda,body.libro-modo .fb,body.libro-modo #btn-mas,body.libr
 .libro.stickers .fig-img,.libro.stickers .fig-silueta{height:auto!important;aspect-ratio:1/1}
 .lcell .fig{zoom:.8;margin:0!important;width:100%}
 .libro .fig{animation:none!important;opacity:1!important}
-.fc0{--fc:#f0c4a8;--fl:#c8663a}.fc1{--fc:#c3dca0;--fl:#5f8f2f}.fc2{--fc:#b5d3e6;--fl:#2f7aa3}.fc3{--fc:#e8bcd8;--fl:#a8478a}.fc4{--fc:#f3df85;--fl:#a98512}.fc5{--fc:#b6d6cf;--fl:#2f8f7f}
+.fc0{--fc:#f3d9c4;--fl:#c8663a}.fc1{--fc:#d6e6c3;--fl:#5f8f2f}.fc2{--fc:#cfe0ea;--fl:#2f7aa3}.fc3{--fc:#ecd3e3;--fl:#a8478a}.fc4{--fc:#f1e6a8;--fl:#a98512}.fc5{--fc:#cdd9c6;--fl:#2f8f7f}
 .lgt{position:absolute;left:0;bottom:100%;z-index:3;background:var(--fl);color:#fff;font:900 .62rem/1 'Lato',sans-serif;letter-spacing:.7px;text-transform:uppercase;padding:4px 8px 3px;border-radius:5px 5px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
 .lcell{background:var(--fc)}
 .lpag-n{position:absolute;bottom:8px;left:0;right:0;text-align:center;font:italic 700 .85rem 'Playfair Display',serif;color:var(--ti,#8a7358)}

@@ -26,11 +26,14 @@
     }
     if (pg.t === 'fin') return '<div class="lpag lpag-fin"><p>Seguirá completándose<br>en cada salida.</p></div>';
     // grupos de familia dentro de la hoja: la etiqueta va sobre la primera figurita de cada tramo (por fila)
-    const A = pg.aves, tag = {};
-    for (let j = 0; j < A.length;) {
+    const A = pg.aves, tag = {}, pk = i > 1 && P[i - 1].aves ? P[i - 1].aves[P[i - 1].aves.length - 1] : null;
+    for (let j = 0; j < A.length; j++) {
+      const ini = j > 0 ? A[j - 1].familiaEsp !== A[j].familiaEsp : !(pk && pk.familiaEsp === A[j].familiaEsp);
+      const cont = j === 0 && !ini;
+      if (!ini && !cont) continue;
       let e = j; while (e + 1 < A.length && A[e + 1].familiaEsp === A[j].familiaEsp && Math.floor((e + 1) / 4) === Math.floor(j / 4)) e++;
-      let n = 0, v = 0; A.forEach(x => { if (x.familiaEsp === A[j].familiaEsp) { n++; if (visto(x)) v++; } });
-      tag[j] = { n: e - j + 1, t: A[j].familiaEsp + ' ' + v + '/' + n }; j = e + 1;
+      const tot = ctx.todas.filter(x => x.familiaEsp === A[j].familiaEsp), v = tot.filter(visto).length;
+      tag[j] = { n: e - j + 1, t: A[j].familiaEsp + ' ' + v + '/' + tot.length + (cont ? ' · sigue' : '') };
     }
     return `<div class="lpag"><div class="album-grid stk libro-grid">${A.map((a, j) => `<div class="lcell fc${ctx.col(a)}${tag[j] ? ' ini' : ''}">${tag[j] ? `<span class="lgt" style="width:calc(${tag[j].n}00% + ${(tag[j].n - 1) * 0}px)" title="${escHtml(tag[j].t)}">${escHtml(tag[j].t)}</span>` : ''}${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div><div class="lpag-n">${i}</div></div>`;
   }
