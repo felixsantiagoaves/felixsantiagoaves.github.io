@@ -1299,7 +1299,7 @@ function cargarRegistros() {
   return _regP;
 }
 function irDatos(tab) { if(aOtra('datos','irDatos',[tab])) return; datTab(tab || 'num'); window.scrollTo({top: 0}); }
-const DAT_TABS = ['num', 'tl', 'ter', 'falt'];
+const DAT_TABS = ['num', 'lg', 'tl', 'ter', 'falt'];
 function datTab(t, btn) {
   const prev = (document.querySelector('.dat-tab.active') || {dataset: {}}).dataset.tab;
   document.querySelectorAll('.dat-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
@@ -1487,8 +1487,11 @@ function buildDatos() {
     <div class="dat-kpi rv" style="--d:.12s"><b id="k-mes">…</b><span>Mejor mes</span><small id="k-mes-s"></small></div>
     <div class="dat-card rv"><div class="dat-h">Especies acumuladas</div><div class="dat-s">Cómo fue creciendo el álbum. Tocá un mes para filtrar.</div><div id="ch-acum"><div class="sk sk-ch"></div></div></div>
     <div class="dat-card rv"><div class="dat-h">Especies por mes</div><div class="dat-s">Aves distintas registradas cada mes, y cuántas fueron nuevas</div><div id="ch-mensual"><div class="sk sk-ch"></div></div></div>
+  </div>`;
+  document.getElementById('dat-lg').innerHTML = `<div class="dat-grid">
     <div class="dat-card half rv"><div class="dat-h">Lugares con más especies</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-lugares"></div></div>
     <div class="dat-card half rv"><div class="dat-h">Grupos más vistos</div><div class="dat-s">Tocá uno para filtrar</div><div id="ch-grupos"></div></div>
+    <p class="dat-nota">Al tocar un lugar o un grupo se filtra todo el Resumen.</p>
   </div>`;
   cargarRegistros().then(r => {
     if(!document.getElementById('dat-filtro')) return;
@@ -1787,7 +1790,8 @@ document.addEventListener('touchmove', e => { if (e.touches.length > 1 || (e.sca
 document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
 
 // ── Pantalla fija en PC: la página se escala para entrar sin scroll vertical (Sobre mí y Estadísticas) ──
-const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria'];
+const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria', 'page-redes'];
+const FIT_ZMIN = .8;   // por debajo el texto queda muy chico: se deja la página con su scroll normal
 function fitPantalla() {
   const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (!pg) return;
   const pc = innerWidth >= 1000 && innerHeight >= 560 && matchMedia('(pointer:fine)').matches;
@@ -1803,8 +1807,9 @@ function fitPantalla() {
     const ajusta = m => { pg.style.setProperty('--fit-w', Math.round(Math.min(1560, innerWidth / m - 60)) + 'px'); pg.style.zoom = m; return pg.getBoundingClientRect().height; };
     let lo = .55, hi = 1; if (ajusta(1) <= avail) lo = 1; else for (let i = 0; i < 9; i++) { const m = (lo + hi) / 2; if (ajusta(m) <= avail) lo = m; else hi = m; }
     z = lo; ajusta(z);
+    if (z < FIT_ZMIN || pg.getBoundingClientRect().height > avail + 2) { pg.style.zoom = ''; pg.style.removeProperty('--fit-w'); return; }
   }
-  else { const h = pg.offsetHeight; z = Math.max(.55, Math.min(1, avail / h)); pg.style.zoom = z; }
+  else { const h = pg.offsetHeight; z = Math.min(1, avail / h); if (z < (pg.id === 'page-sobre-mi' ? .74 : FIT_ZMIN)) return; pg.style.zoom = z; }
   document.documentElement.classList.toggle('fit-lock', lista || pg.getBoundingClientRect().height <= avail + 2);
 }
 let _fitT; const fitSoon = () => { clearTimeout(_fitT); _fitT = setTimeout(fitPantalla, 120); };

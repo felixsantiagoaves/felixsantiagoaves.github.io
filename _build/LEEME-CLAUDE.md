@@ -210,7 +210,8 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 ## Pantalla fija en PC (16/11/2026)
 - `fitPantalla()` al final de site.js (clase `fit-pc` en body, `fit-lock` en html = overflow hidden). Solo PC (ancho ≥1000, alto ≥560, puntero fino). En celular nada cambia.
 - Sobre mí: `zoom` CSS para que entre en el alto disponible (nav + footer fijo).
-- Estadísticas: pestaña Resumen en grilla de 12 col (progreso+hint, 6 KPIs, 2×2 gráficos) y zoom por búsqueda binaria (.55–1) con `--fit-w` (ancho lógico ≤1560). Pestañas Línea de tiempo / Territorio / Las que me faltan: zoom .92 y el panel (`--fit-h`) con scroll interno fino.
+- Estadísticas: nueva pestaña "Lugares y grupos" (`#dat-lg`, tarjetas movidas desde Resumen); Resumen = progreso+hint, 6 KPIs y 2 gráficos en grilla de 12 col, con zoom por búsqueda binaria (.8–1) con `--fit-w` (ancho lógico ≤1560). Pestañas Línea de tiempo / Territorio / Las que me faltan: zoom .92 y el panel (`--fit-h`) con scroll interno fino.
 - Galería: grilla de fotos paginada (`galPer` = columnas×filas según alto; `galPag`, `galPagIr()`, pager ◀ 1/2 ▶); título, pestañas y buscador en una fila. El lightbox sigue recorriendo todas las fotos.
 - Especies (blog) NO usa pantalla fija; Mapa/Juegos/Contacto ya entraban. `/calendario/` (plan de contenido) no está en el menú y no se tocó.
 - Páginas nuevas: agregar su id a `FIT_IDS` si deben ser de pantalla fija.
+- Umbral de legibilidad: `FIT_ZMIN=.8` (Sobre mí .74). Si la página necesitaría escalarse más, NO se escala y queda con scroll normal (ej. notebook con viewport ~1215×615). Contacto (`page-redes`) también usa zoom-fit.
