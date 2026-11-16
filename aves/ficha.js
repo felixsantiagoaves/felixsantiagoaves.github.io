@@ -96,13 +96,14 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
    mantienen su proporción (foto 4:3 + pie) y solo cambia cuántas hay por fila. Ver _build/COMPONENTES.md */
 (function(){
   var gr=document.getElementById('lista'), cu=document.getElementById('cuenta'); if(!gr||!cu) return;
-  var SCREENS=3, MINW=84, GAP=14;
+  var _x;
   function fit(){
-    if(!matchMedia('(min-width:1000px) and (min-height:560px) and (pointer:fine)').matches){ gr.style.removeProperty('--lc'); document.body.classList.remove('lista-fit'); return; }
-    document.body.classList.add('lista-fit');
+    var pc=matchMedia('(min-width:1000px) and (min-height:560px) and (pointer:fine)').matches,
+        SCREENS=3, MINW=pc?84:76, GAP=pc?14:8;
+    document.body.classList.toggle('lista-fit',pc); document.body.classList.toggle('lista-m',!pc);
     var n=gr.querySelectorAll('li:not([hidden])').length||1, W=gr.clientWidth, top=gr.getBoundingClientRect().top+scrollY,
-        budget=SCREENS*innerHeight-top-40, best=3;
-    for(var c=3;c<=14;c++){ var cw=(W-GAP*(c-1))/c; best=c; if(cw<MINW){best=c-1;break;} var h=Math.ceil(n/c)*(cw*.75+14+cw*.3+GAP); if(h<=budget) break; }
+        budget=SCREENS*innerHeight-top-40, best=2;
+    for(var c=2;c<=14;c++){ var cw=(W-GAP*(c-1))/c; best=c; if(cw<MINW){best=Math.max(2,c-1);break;} var h=Math.ceil(n/c)*(cw*.75+14+cw*.3+GAP); if(h<=budget) break; }
     gr.style.setProperty('--lc',best);
   }
   new MutationObserver(fit).observe(cu,{childList:true,characterData:true,subtree:true});

@@ -53,3 +53,11 @@ Regla: la página puede scrollear, pero **máximo ~3 pantallas**. No se achican 
 - Fotos chicas (línea de tiempo, figuritas del álbum, carrusel, miniaturas de familia) usan la miniatura de 400 px `fotos/th/NOMBRE.jpg` vía `TH(url)` en site.js (con `onerror` que vuelve a la foto grande). Las fotos grandes (960 px, ~300 KB) solo en modal/galería/ficha.
 - Al agregar fotos nuevas correr `python3 _build/miniaturas.py` (crea las que falten en `fotos/th/`), y después `build.py`.
 - Antes: la línea de tiempo bajaba ~180 fotos grandes para mostrarlas de 60–100 px.
+
+## Celular (mismo principio: ≈3 pantallas de scroll, se adapta al teléfono)
+Celular = todo lo que no es `fit-pc` (ancho < 1000, alto < 560 o sin mouse; incluye teléfonos apaisados). Las piezas conservan proporción; cambia cuántas entran por fila.
+- Especies: `ficha.js` elige columnas (2–14, mín. 76 px) → clase `lista-m` (cabecera compacta). 16–20 pantallas → ~5 (tope por tamaño legible de tarjeta).
+- Álbum lista: `fitAlbumLista()` → 2 columnas (3 si ancho ≥ 700); familias cerradas muestran solo nombre + contador. 6–8 → ~2–3 pantallas.
+- Galería: `#foto-grid` CSS columns 2 (3 a ≥700, 4 apaisado), miniaturas `TH()`. 5–6 → ~2.
+- Sobre mí, Contacto, Juegos, Estadísticas ya andan en 1–3,6 pantallas en vertical; no se tocaron.
+- Prueba: `mob2.js` (SE 375×667, 390×844, 430×932, 360×780, apaisado 844×390) mide pantallas de largo por página.

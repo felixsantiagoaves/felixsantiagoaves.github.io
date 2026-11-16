@@ -756,7 +756,7 @@ function renderAlbum() {
       const abierta = filtrando || albAb === f;
       const prev = !abierta ? tot.filter(a => visto(a) && avist[a.id] && avist[a.id].foto).slice(0, 3).map(a => { const u = '/' + avist[a.id].foto.replace(/^\//, ''); return `<img src="${u.replace('/fotos/', '/fotos/th/')}" onerror="this.onerror=null;this.src='${u}'" loading="lazy" decoding="async" alt="">`; }).join('') : '';
       const tog = filtrando ? '' : ` role="button" tabindex="0" aria-expanded="${abierta}" onclick="albTog(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();albTog(this)}"`;
-      html += `<section class="alb-pag${abierta ? ' abierta' : ' cerrada'}${filtrando ? ' filtrando' : ''}" data-fam="${escHtml(f)}"><header class="alb-pag-hd"${tog} style="--p:${tot.length ? Math.round(ok / tot.length * 100) : 0}"><span class="alb-pag-n">Página ${famsAll.indexOf(f) + 1}</span><h3>${escHtml(f)}</h3>${prev ? `<span class="alb-prev">${prev}</span>` : ''}<span class="alb-barra"><i style="width:${tot.length ? Math.round(ok / tot.length * 100) : 0}%"></i></span><span class="alb-pag-c${ok === tot.length ? ' full' : ''}">${ok} de ${tot.length}</span>${filtrando ? '' : '<span class="alb-chev" aria-hidden="true"></span>'}</header>${abierta ? `<div class="album-grid stk">${grupos.get(f).map(fig).join('')}</div>` : ''}</section>`;
+      html += `<section class="alb-pag${abierta ? ' abierta' : ' cerrada'}${filtrando ? ' filtrando' : ''}" data-fam="${escHtml(f)}"><header class="alb-pag-hd"${tog} style="--p:${tot.length ? Math.round(ok / tot.length * 100) : 0}"><span class="alb-pag-n">Página <b>${famsAll.indexOf(f) + 1}</b></span><h3>${escHtml(f)}</h3>${prev ? `<span class="alb-prev">${prev}</span>` : ''}<span class="alb-barra"><i style="width:${tot.length ? Math.round(ok / tot.length * 100) : 0}%"></i></span><span class="alb-pag-c${ok === tot.length ? ' full' : ''}">${ok} de ${tot.length}</span>${filtrando ? '' : '<span class="alb-chev" aria-hidden="true"></span>'}</header>${abierta ? `<div class="album-grid stk">${grupos.get(f).map(fig).join('')}</div>` : ''}</section>`;
     });
   } else {
     html += `<section class="alb-pag"><div class="album-grid stk">${lista.map(fig).join('')}</div></section>`;
@@ -1654,7 +1654,7 @@ function renderGaleria() {
     const fit = document.body.classList.contains('fit-pc') && galPer > 0, vis = fit ? lista.slice(Math.min(galPag, Math.max(0, Math.ceil(lista.length / galPer) - 1)) * galPer, (Math.min(galPag, Math.max(0, Math.ceil(lista.length / galPer) - 1)) + 1) * galPer) : lista;
     grid.innerHTML = vis.map(f => `
       <div class="foto-item" data-src="${f.src}" onclick="openLBsrc(this)">
-        <div class="foto-img cr-w"><img src="${f.src}" style="width:100%;display:block" alt="${escHtml(f.nombre).replace(/"/g, '&quot;')}" loading="lazy" onload="this.classList.add('ok');this.closest('.foto-item').classList.add('ok')" onerror="galeriaFalla(this)"></div>
+        <div class="foto-img cr-w"><img src="${document.body.classList.contains('fit-pc') ? f.src : TH(f.src)}" style="width:100%;display:block" alt="${escHtml(f.nombre).replace(/"/g, '&quot;')}" loading="lazy" onload="this.classList.add('ok');this.closest('.foto-item').classList.add('ok')" onerror="galeriaFalla(this)"></div>
         <div class="foto-caption">${f.aveId ? `<a class="foto-ficha" onclick="event.stopPropagation();verFichaFoto('${f.src}')">Ficha →</a>` : ''}<strong>${escHtml(f.nombre)}</strong><span>${escHtml(f.lugar)}</span></div>
       </div>`).join('');
     grid.querySelectorAll('img').forEach(i => { if(i.complete && i.naturalWidth) { i.classList.add('ok'); i.closest('.foto-item').classList.add('ok'); } });
@@ -1809,8 +1809,9 @@ function fitAlbumLista() {
   if (document.body.classList.contains('libro-modo')) { c.classList.remove('alb-cols'); return; }
   const pc = document.body.classList.contains('fit-pc'), n = c.querySelectorAll('.alb-pag.cerrada').length;
   let cols = 1;
-  if (pc && n) { const top = c.getBoundingClientRect().top + scrollY, budget = 3 * innerHeight - top - 60; cols = Math.min(3, Math.max(2, Math.ceil(n * 74 / budget))); }
-  c.style.setProperty('--alc', cols); c.classList.toggle('alb-cols', pc && n > 0);
+  if (!pc) cols = innerWidth >= 700 ? 3 : 2;
+  else if (n) { const top = c.getBoundingClientRect().top + scrollY, budget = 3 * innerHeight - top - 60; cols = Math.min(3, Math.max(2, Math.ceil(n * 74 / budget))); }
+  c.style.setProperty('--alc', cols); c.classList.toggle('alb-cols', n > 0);
 }
 function fitPantalla() {
   const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (!pg) return;

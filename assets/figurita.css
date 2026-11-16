@@ -752,24 +752,24 @@ body.fit-pc #dat-num .dfl-hint{white-space:nowrap}
 
 /* Álbum en lista, PC: scroll controlado (~3 pantallas). Las familias cerradas se reparten en --alc columnas;
    la que se abre ocupa todo el ancho. fitAlbumLista() en site.js elige las columnas. */
-body.fit-pc #album-container.alb-cols{display:grid;grid-template-columns:repeat(var(--alc,2),minmax(0,1fr));gap:12px 16px;align-items:start}
-body.fit-pc #album-container.alb-cols>.alb-pag{margin:0!important;max-width:none}
-body.fit-pc #album-container.alb-cols>.alb-pag.abierta,body.fit-pc #album-container.alb-cols>.alb-pag:not(.cerrada){grid-column:1/-1}
-body.fit-pc #album-container.alb-cols>.alb-pag.cerrada{padding:6px 10px!important}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd{padding:0!important;gap:8px;min-height:44px;flex-wrap:nowrap}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{font-size:.95rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-prev{display:none}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-barra{flex:0 0 46px;margin-left:auto}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-n{font-size:.66rem;padding:2px 7px;white-space:nowrap}
+#album-container.alb-cols{display:grid;grid-template-columns:repeat(var(--alc,2),minmax(0,1fr));gap:12px 16px;align-items:start}
+#album-container.alb-cols>.alb-pag{margin:0!important;max-width:none}
+#album-container.alb-cols>.alb-pag.abierta,#album-container.alb-cols>.alb-pag:not(.cerrada){grid-column:1/-1}
+#album-container.alb-cols>.alb-pag.cerrada{padding:6px 10px!important}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd{padding:0!important;gap:8px;min-height:44px;flex-wrap:nowrap}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{font-size:.95rem!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#album-container.alb-cols .alb-pag.cerrada .alb-prev{display:none}
+#album-container.alb-cols .alb-pag.cerrada .alb-barra{flex:0 0 46px;margin-left:auto}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-n{font-size:.66rem;padding:2px 7px;white-space:nowrap}
 body.fit-pc:not(.libro-modo) #page-album .page-header{padding-top:.6rem;padding-bottom:.4rem}
-body.fit-pc #album-container.alb-cols>.album-count{grid-column:1/-1}
-body.fit-pc #album-container.alb-cols .alb-pag-c{white-space:nowrap;flex:none;border-radius:99px!important}
-body.fit-pc #album-container.alb-cols>.alb-pag.cerrada{overflow:hidden}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd>*{flex:none}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0;min-width:0}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-barra{display:none}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0!important;min-width:0!important;width:auto!important}
-body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.1!important;font-size:.85rem!important}
+#album-container.alb-cols>.album-count{grid-column:1/-1}
+#album-container.alb-cols .alb-pag-c{white-space:nowrap;flex:none;border-radius:99px!important}
+#album-container.alb-cols>.alb-pag.cerrada{overflow:hidden}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd>*{flex:none}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0;min-width:0}
+#album-container.alb-cols .alb-pag.cerrada .alb-barra{display:none}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0!important;min-width:0!important;width:auto!important}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.1!important;font-size:.85rem!important}
 
 /* Juegos (PC): pantalla fija; la tarjeta de cada juego se reparte el alto que queda y su logo escala con él */
 body.fit-pc #page-juegos.active{height:var(--fit-h);display:flex;flex-direction:column;overflow:hidden}
@@ -779,3 +779,41 @@ body.fit-pc #page-juegos .trab svg{height:calc(var(--fit-h) * .26)!important;wid
 body.fit-pc #page-juegos .trab-p{margin:.6rem 0 .8rem;font-size:clamp(.82rem,1.9vh,1rem)}
 body.fit-pc #page-juegos .trab-alt{margin:0}
 body.fit-pc #page-juegos .trab-p{text-align:center}
+
+/* Celular: familias cerradas en 2 columnas (3 si es ancho/apaisado); solo número de página, sin flecha ni miniaturas */
+@media(max-width:999px),(max-height:559px),(pointer:coarse){
+#album-container.alb-cols{display:grid;grid-template-columns:repeat(var(--alc,2),minmax(0,1fr));gap:8px}
+#album-container.alb-cols>.alb-pag.cerrada{padding:4px 8px!important;min-height:0}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd{min-height:40px;gap:6px;padding:0!important;margin:0!important}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-n{font-size:0!important;padding:2px 6px}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-n b{font-size:.68rem}
+#album-container.alb-cols .alb-pag.cerrada .alb-chev{display:none}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{font-size:.74rem!important}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-c{font-size:.58rem!important;padding:3px 6px!important;letter-spacing:.5px!important}
+}
+@media(max-width:999px),(max-height:559px),(pointer:coarse){
+#album-container.alb-cols .alb-pag.cerrada .alb-prev,#album-container.alb-cols .alb-pag.cerrada .alb-barra{display:none!important}
+#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0;min-width:0;white-space:normal!important;line-height:1.1!important}
+#album-container.alb-cols>.alb-pag.cerrada{overflow:hidden}
+}
+@media(max-width:760px){
+  .album-controls-inner{gap:.3rem!important}
+  .album-controls-inner .reg-b{padding:.45rem .6rem!important;font-size:.6rem!important;letter-spacing:.06em!important}
+  .album-controls-inner #btn-libro,.album-controls-inner #btn-mas{padding:.45rem .6rem!important;font-size:.58rem!important;letter-spacing:.06em!important;white-space:nowrap}
+}
+@media(max-width:999px),(max-height:559px),(pointer:coarse){#album-container.alb-cols .alb-pag-hd::after{display:none!important}}
+@media(max-width:400px){.album-controls-inner{flex-wrap:wrap!important}.album-controls-inner .reg-sel{flex:1 1 100%}.album-controls-inner .reg-b{flex:1}}
+@media(max-width:999px){#album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{letter-spacing:.1px!important;overflow-wrap:anywhere}}
+
+/* Celular: galería en 2 columnas (3–4 si es ancho/apaisado) para no pasar de ~3 pantallas; fotos con miniatura */
+@media(max-width:999px),(max-height:559px),(pointer:coarse){
+body:not(.fit-pc) #foto-grid{columns:2!important;column-gap:10px}
+body:not(.fit-pc) #foto-grid .foto-item{margin-bottom:12px;padding:6px 6px 0!important;break-inside:avoid}
+body:not(.fit-pc) #foto-grid .foto-item::before{width:44px;margin-left:-22px;height:14px;top:-7px}
+body:not(.fit-pc) #foto-grid .foto-caption{padding:.35rem .1rem .5rem}
+body:not(.fit-pc) #foto-grid .foto-caption strong{font-size:.62rem!important;line-height:1.15}
+body:not(.fit-pc) #foto-grid .foto-caption span{font-size:.56rem!important}
+body:not(.fit-pc) #foto-grid .foto-ficha{font-size:.52rem!important}
+}
+@media(min-width:700px) and (max-width:999px){body:not(.fit-pc) #foto-grid{columns:3!important}}
+@media(min-width:820px) and (max-width:999px) and (max-height:559px){body:not(.fit-pc) #foto-grid{columns:4!important}}
