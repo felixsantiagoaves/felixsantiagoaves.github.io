@@ -764,3 +764,9 @@ body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-n{font-size:.66r
 body.fit-pc:not(.libro-modo) #page-album .page-header{padding-top:.6rem;padding-bottom:.4rem}
 body.fit-pc #album-container.alb-cols>.album-count{grid-column:1/-1}
 body.fit-pc #album-container.alb-cols .alb-pag-c{white-space:nowrap;flex:none;border-radius:99px!important}
+body.fit-pc #album-container.alb-cols>.alb-pag.cerrada{overflow:hidden}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd>*{flex:none}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0;min-width:0}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-barra{display:none}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{flex:1 1 0!important;min-width:0!important;width:auto!important}
+body.fit-pc #album-container.alb-cols .alb-pag.cerrada .alb-pag-hd h3{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.1!important;font-size:.85rem!important}

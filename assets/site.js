@@ -1806,7 +1806,7 @@ function fitAlbumLista() {
   const c = document.getElementById('album-container'); if (!c) return;
   const pc = document.body.classList.contains('fit-pc'), n = c.querySelectorAll('.alb-pag.cerrada').length;
   let cols = 1;
-  if (pc && n) { const top = c.getBoundingClientRect().top + scrollY, budget = 3 * innerHeight - top - 60; cols = Math.min(4, Math.max(2, Math.ceil(n * 74 / budget))); }
+  if (pc && n) { const top = c.getBoundingClientRect().top + scrollY, budget = 3 * innerHeight - top - 60; cols = Math.min(3, Math.max(2, Math.ceil(n * 74 / budget))); }
   c.style.setProperty('--alc', cols); c.classList.toggle('alb-cols', pc && n > 0);
 }
 function fitPantalla() {
