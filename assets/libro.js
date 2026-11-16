@@ -22,9 +22,11 @@
     const pg = P[i]; if (!pg) return '<div class="lpag lpag-vacia"></div>';
     if (pg.t === 'tapa') {
       const v = ctx.todas.filter(visto).length;
-      return `<div class="lpag lpag-tapa"><div class="lt-logo"></div><h2>Álbum de aves</h2><p>${REGION === 'cba' ? 'Córdoba' : 'Argentina'}</p><b>${v} <i>de</i> ${ctx.todas.length}</b><small>Félix Santiago · Aves</small></div>`;
+      const tot = ctx.todas.length, pct = tot ? Math.round(v / tot * 100) : 0, C = 2 * Math.PI * 44, cba = REGION === 'cba';
+      const ult = ctx.todas.filter(a => visto(a) && avist[a.id] && avist[a.id].foto).slice(-3).map(a => { const f = String(avist[a.id].foto).replace(/^\//, ''); return `<img src="${TH(f)}" alt="" onerror="this.onerror=null;this.src='/${f}'">`; }).join('');
+      return `<div class="lpag lpag-tapa" style="--tp:url(/assets/paisajes/${cba ? 'sierra' : 'cerro'}.jpg)"><div class="lt-foto"><i class="lt-cinta"></i><div class="lt-ph"></div><span>${cba ? 'Córdoba' : 'Argentina'}</span></div><div class="lt-titulo"><h2>Álbum de <em>aves</em></h2></div><p class="lt-sub">Félix Santiago · Aves · Río Cuarto</p><div class="lt-pie"><div class="lt-anillo"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><circle class="rg" cx="50" cy="50" r="44" stroke-dasharray="${(C * pct / 100).toFixed(1)} ${C.toFixed(1)}"/></svg><b>${v}</b><small>de ${tot}</small></div>${ult ? `<div class="lt-ult">${ult}<small>Últimas especies</small></div>` : ''}</div></div>`;
     }
-    if (pg.t === 'fin') return '<div class="lpag lpag-fin"><p>Seguirá completándose<br>en cada salida.</p></div>';
+    if (pg.t === 'fin') return '<div class="lpag lpag-fin"><div class="lt-foto lt-foto-fin"><i class="lt-cinta"></i><div class="lt-ph" style="--tp:url(/assets/paisajes/ocaso.jpg)"></div></div><div class="lt-logo"></div><p>Seguirá completándose<br>en cada salida.</p><small>felixsantiago.com.ar</small></div>';
     // grupos de familia dentro de la hoja: la etiqueta va sobre la primera figurita de cada tramo (por fila)
     const A = pg.aves, tag = {}, pk = i > 1 && P[i - 1].aves ? P[i - 1].aves[P[i - 1].aves.length - 1] : null;
     for (let j = 0; j < A.length; j++) {
