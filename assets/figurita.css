@@ -497,3 +497,15 @@ body.libro-modo .libro-bar{margin:8px 0 0}
 [data-theme=dark] .libro-idx button span{color:#e8dccb}[data-theme=dark] .libro-idx button.on{background:color-mix(in srgb,var(--fl) 45%,#232919)}[data-theme=dark] .libro-idx button.on span,[data-theme=dark] .libro-idx button.on em{color:#fff}
 .libro:not(.libro-full) .libro-stage{overflow:hidden}
 .libro-idx{position:relative;z-index:6}
+
+/* celular horizontal: mismo libro con índice de familias a la izquierda */
+.libro-full{display:flex;align-items:stretch}
+.libro-full .libro-main{position:relative;flex:1;min-width:0;height:100%}
+.libro-full .libro-idx{width:150px;margin:0;padding:6px 6px 6px 8px;height:100%}
+.libro-full .libro-idx h4{margin:0 2px 6px;font-size:.6rem}
+.libro-full .libro-idx button{padding:5px 7px;gap:6px;margin-bottom:4px;border-radius:9px}
+.libro-full .libro-idx button span{font-size:.62rem}.libro-full .libro-idx button em{font-size:.58rem}
+.libro-full .libro-idx button i{width:9px;height:9px}
+.libro-full #libro-sel{display:none}
+.libro-full .libro-book{touch-action:pan-y}
+@media(orientation:portrait){.libro-full .libro-idx,.libro-full .libro-main{display:none}}

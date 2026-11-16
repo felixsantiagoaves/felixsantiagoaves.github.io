@@ -198,3 +198,4 @@ En /album/ cada grupo llega **cerrado** (cabecera con nombre, 3 fotos mini, barr
 - Celular (lado menor <600px): libro a pantalla completa (host `#libro-host` en body, clase `.libro-full`), pide girar el celular (portrait muestra aviso; intenta fullscreen + lock landscape). Mismo libro que en PC escalado.
 - `.libro` lleva clase `stickers` (el CSS de huecos depende de `.stickers` como ancestro).
 - Libro en PC = página fija sin scroll vertical (`body.libro-modo{overflow:hidden}`, se oculta el título de la página; la escala del libro se calcula con el alto disponible real en `escala()` de libro.js).
+- Celular horizontal: mismo libro a pantalla completa con el índice de familias a la izquierda (150px), swipe táctil para pasar de hoja; `escala()` se re-ejecuta tras 150/500/1200 ms y en resize/orientationchange/fullscreenchange (al entrar en fullscreen el tamaño cambia).

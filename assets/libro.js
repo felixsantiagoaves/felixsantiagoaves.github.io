@@ -88,10 +88,10 @@
 
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
-    const full = esMov(), sc = full ? Math.min((window.innerWidth - 110) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - st.getBoundingClientRect().top - scrollY - 120) / PH), k = Math.max(.2, sc);
+    const full = esMov(), sc = full ? Math.min((window.innerWidth - 270) / (2 * PW), (window.innerHeight - 50) / PH) : Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - st.getBoundingClientRect().top - scrollY - 120) / PH), k = Math.max(.2, sc);
     book.style.setProperty('--sc', k.toFixed(3));
     st.style.height = Math.round(PH * k) + 'px';
-    const ix = document.getElementById('libro-idx'); if (ix) ix.style.maxHeight = Math.round(PH * k + 56) + 'px';
+    const ix = document.getElementById('libro-idx'); if (ix) ix.style.maxHeight = full ? window.innerHeight + 'px' : Math.round(PH * k + 56) + 'px';
   }
 
   window.libroRender = function () {
@@ -103,13 +103,14 @@
     if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }
     const fa = new Map(); ctx.todas.forEach((x, n) => { let g = fa.get(x.familiaEsp); if (!g) fa.set(x.familiaEsp, g = { f: x.familiaEsp, c: ctx.col(x), s: Math.ceil((Math.floor(n / CAP) + 1) / 2), n: 0, v: 0 }); g.n++; if (visto(x)) g.v++; });
     const idx = '<button data-s="0" data-f="" onclick="libroSalta(0)"><b>Tapa</b></button>' + [...fa.values()].map(g => `<button class="fc${g.c}" data-s="${g.s}" data-f="${escHtml(g.f)}" onclick="libroSalta(${g.s})"><i></i><span>${escHtml(g.f)}</span><em>${g.v}/${g.n}</em></button>`).join('');
-    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro">${full ? '' : `<aside class="libro-idx" id="libro-idx"><h4>Familias</h4>${idx}</aside>`}<div class="libro-main"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
+    host.innerHTML = `<div class="libro stickers${full ? ' libro-full' : ''}" id="libro"><aside class="libro-idx" id="libro-idx"><h4>Familias</h4>${idx}</aside><div class="libro-main"><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${
       Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')
     }</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div>
     <div class="libro-bar"><select id="libro-sel" aria-label="Ir a una hoja" onchange="libroSalta(this.value)"><option value="0">Tapa</option>${grupos}</select><span id="libro-info"></span>${full ? '<button class="libro-x" onclick="libroToggle()">✕ Cerrar</button>' : ''}</div>
     ${full ? '<div class="libro-girar"><b>↻</b><p>Girá el celular<br>para ver el álbum como libro</p><button class="libro-x" onclick="libroToggle()">✕ Cerrar</button></div>' : '<p class="libro-ayuda">Tocá una figurita para verla · pasá de hoja con ◀ ▶, con las flechas del teclado o arrastrando una esquina</p>'}</div></div>`;
     if (full) { try { (document.documentElement.requestFullscreen() || Promise.reject()).then(() => screen.orientation.lock('landscape')).catch(() => {}); } catch (e) {} }
     book = document.getElementById('libro-book'); escala(); pos();
+    if (full) [150, 500, 1200].forEach(t => setTimeout(() => { if (window.libroOn && book && book.isConnected) escala(); }, t));
     if (!full) window.scrollTo(0, 0);
     book.addEventListener('pointerdown', onDown);
   };
@@ -119,13 +120,14 @@
 
   // Arrastrar una esquina: sólo decide la dirección (el giro lo anima el CSS)
   function onDown(e) {
+    if (e.pointerType === 'touch') { drag = { x: e.clientX, d: 0, any: 1 }; return; }
     if (e.button || e.target.closest('.fig')) return;
     const r = book.getBoundingClientRect(), x = e.clientX - r.left, w = r.width;
     const borde = x < w * .12 ? -1 : x > w * .88 ? 1 : 0;
     if (!borde) return; drag = { x: e.clientX, d: borde };
   }
-  window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (Math.abs(dx) > 60 && Math.sign(dx) === -drag.d) { const d = drag.d; drag = null; ir(S + d); } });
+  window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (drag.any) { if (Math.abs(dx) > 50) { const d = dx < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (Math.abs(dx) > 60 && Math.sign(dx) === -drag.d) { const d = drag.d; drag = null; ir(S + d); } });
   window.addEventListener('pointerup', () => { drag = null; });
   window.addEventListener('keydown', e => { if (!window.libroOn || !book || e.target.closest('input,select,textarea')) return; if (e.key === 'ArrowRight') ir(S + 1); if (e.key === 'ArrowLeft') ir(S - 1); });
-  window.addEventListener('resize', () => { if (window.libroOn) escala(); });
+  ['resize', 'orientationchange', 'fullscreenchange'].forEach(ev => window.addEventListener(ev, () => { if (window.libroOn && book && book.isConnected) escala(); }));
 })();
