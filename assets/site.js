@@ -1306,7 +1306,7 @@ function datTab(t, btn) {
   DAT_TABS.forEach(k => { document.getElementById('dat-' + k).style.display = k === t ? 'block' : 'none'; });
   const pane = document.getElementById('dat-' + t);
   if(prev && prev !== t) { const d = DAT_TABS.indexOf(t) > DAT_TABS.indexOf(prev); pane.classList.remove('dat-entra-d', 'dat-entra-i'); void pane.offsetWidth; pane.classList.add(d ? 'dat-entra-d' : 'dat-entra-i'); }
-  iniReveal();
+  iniReveal(); if (typeof fitSoon === 'function') fitSoon();
 }
 // Deslizar entre pestañas de Estadísticas
 (function() {
@@ -1624,7 +1624,9 @@ function galFiltroUI() {
   sel.style.display = anios.length > 1 ? '' : 'none';
   sel.innerHTML = '<option value="">Todos los años</option>' + anios.map(a => `<option ${a === galAnio ? 'selected' : ''}>${a}</option>`).join('');
 }
-function galSet(q, a) { if(q !== null) galQ = q; if(a !== null) galAnio = a; renderGaleria(); }
+let galPag = 0, galPer = 0;
+function galSet(q, a) { if(q !== null) galQ = q; if(a !== null) galAnio = a; galPag = 0; renderGaleria(); }
+function galPagIr(d) { galPag += d; renderGaleria(); }
 function renderGaleria() {
   const grid = document.getElementById('foto-grid');
   const q = galNorm(galQ);
@@ -1637,13 +1639,16 @@ function renderGaleria() {
   } else if(!lista.length) {
     grid.innerHTML = '<p style="padding:2rem;color:var(--ti);font-family:Playfair Display,serif;font-style:italic;font-size:1.1rem">No hay fotos con ese criterio 🔍</p>';
   } else {
-    grid.innerHTML = lista.map(f => `
+    const fit = document.body.classList.contains('fit-pc') && galPer > 0, vis = fit ? lista.slice(Math.min(galPag, Math.max(0, Math.ceil(lista.length / galPer) - 1)) * galPer, (Math.min(galPag, Math.max(0, Math.ceil(lista.length / galPer) - 1)) + 1) * galPer) : lista;
+    grid.innerHTML = vis.map(f => `
       <div class="foto-item" data-src="${f.src}" onclick="openLBsrc(this)">
         <div class="foto-img cr-w"><img src="${f.src}" style="width:100%;display:block" alt="${escHtml(f.nombre).replace(/"/g, '&quot;')}" loading="lazy" onload="this.classList.add('ok');this.closest('.foto-item').classList.add('ok')" onerror="galeriaFalla(this)"></div>
         <div class="foto-caption">${f.aveId ? `<a class="foto-ficha" onclick="event.stopPropagation();verFichaFoto('${f.src}')">Ficha →</a>` : ''}<strong>${escHtml(f.nombre)}</strong><span>${escHtml(f.lugar)}</span></div>
       </div>`).join('');
     grid.querySelectorAll('img').forEach(i => { if(i.complete && i.naturalWidth) { i.classList.add('ok'); i.closest('.foto-item').classList.add('ok'); } });
   }
+  const pg = document.getElementById('gal-pager');
+  if(pg) { const n = galPer > 0 && document.body.classList.contains('fit-pc') ? Math.ceil(lista.length / galPer) : 1; galPag = Math.max(0, Math.min(galPag, n - 1)); pg.hidden = n <= 1; if(n > 1) { document.getElementById('gal-pag-n').textContent = (galPag + 1) + ' / ' + n; pg.children[0].disabled = galPag === 0; pg.children[2].disabled = galPag === n - 1; } }
 }
 function verFichaFoto(src) {
   const f = GALERIA_ALL.find(x => x.src === src); if(!f || !f.aveId) return;
@@ -1780,3 +1785,37 @@ function buildUltimoVideo(){
 ['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
 document.addEventListener('touchmove', e => { if (e.touches.length > 1 || (e.scale && e.scale !== 1)) e.preventDefault(); }, { passive: false });
 document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+
+// ── Pantalla fija en PC: la página se escala para entrar sin scroll vertical (Sobre mí y Estadísticas) ──
+const FIT_IDS = ['page-sobre-mi', 'page-datos', 'page-galeria'];
+function fitPantalla() {
+  const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (!pg) return;
+  const pc = innerWidth >= 1000 && innerHeight >= 560 && matchMedia('(pointer:fine)').matches;
+  document.body.classList.toggle('fit-pc', pc);
+  pg.style.zoom = ''; pg.style.removeProperty('--fit-h'); pg.style.removeProperty('--fit-w'); document.documentElement.classList.remove('fit-lock');
+  if (!pc) { if (pg.id === 'page-galeria' && galPer) { galPer = 0; renderGaleria(); } return; }
+  if (pg.id === 'page-galeria') { fitGaleria(pg); return; }
+  const top = pg.getBoundingClientRect().top + scrollY, ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
+  const avail = innerHeight - top - fh - 4, tab = document.querySelector('.dat-tab.active'), lista = pg.id === 'page-datos' && tab && tab.dataset.tab !== 'num';
+  let z = 1;
+  if (lista) { z = .92; pg.style.zoom = z; const hd = [...pg.querySelectorAll('.page-header,.dat-tabs')].reduce((a, e) => a + e.offsetHeight, 0); pg.style.setProperty('--fit-h', Math.max(240, avail / z - hd - 36) + 'px'); }
+  else if (pg.id === 'page-datos') {
+    const ajusta = m => { pg.style.setProperty('--fit-w', Math.round(Math.min(1560, innerWidth / m - 60)) + 'px'); pg.style.zoom = m; return pg.getBoundingClientRect().height; };
+    let lo = .55, hi = 1; if (ajusta(1) <= avail) lo = 1; else for (let i = 0; i < 9; i++) { const m = (lo + hi) / 2; if (ajusta(m) <= avail) lo = m; else hi = m; }
+    z = lo; ajusta(z);
+  }
+  else { const h = pg.offsetHeight; z = Math.max(.55, Math.min(1, avail / h)); pg.style.zoom = z; }
+  document.documentElement.classList.toggle('fit-lock', lista || pg.getBoundingClientRect().height <= avail + 2);
+}
+let _fitT; const fitSoon = () => { clearTimeout(_fitT); _fitT = setTimeout(fitPantalla, 120); };
+window.addEventListener('resize', fitSoon); window.addEventListener('load', () => { fitPantalla(); [500, 1500, 3000].forEach(t => setTimeout(fitPantalla, t)); });
+document.addEventListener('DOMContentLoaded', () => { const pg = FIT_IDS.map(i => document.getElementById(i)).find(Boolean); if (pg) new MutationObserver(fitSoon).observe(pg, { childList: true, subtree: true }); });
+
+function fitGaleria(pg) {
+  const gr = document.getElementById('foto-grid'), ft = document.getElementById('site-footer-global'), fh = ft ? ft.offsetHeight : 40;
+  gr.style.height = ''; const top = gr.getBoundingClientRect().top + scrollY, h = innerHeight - top - fh - 58;
+  const cols = innerWidth >= 1500 ? 5 : innerWidth >= 1200 ? 4 : 3, rows = Math.max(1, Math.floor(h / 250)), per = cols * rows;
+  gr.style.setProperty('--gal-cols', cols); gr.style.setProperty('--gal-rows', rows); gr.style.height = h + 'px';
+  document.documentElement.classList.add('fit-lock');
+  if (per !== galPer) { galPer = per; renderGaleria(); }
+}
