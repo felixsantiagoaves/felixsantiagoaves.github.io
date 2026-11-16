@@ -14,4 +14,6 @@ const MASC_HAB={"167":"cielo","99":"arbustal","330":"arbustal","2":"humedal","11
 
 
 
-const MASC_V='7b271208';
+const MASC_ESC={"167":0.62};
+
+const MASC_V='a9654b13';

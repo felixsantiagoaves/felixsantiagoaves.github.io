@@ -489,7 +489,7 @@ def halcon_peregrino():
                 'M80 94 C62 92 46 98 42 118 C50 114 62 115 76 124 Z', '#8996a1',
                 ojo(92, 98, 5, lid='#2f353b', ring='#e6bd2e', rr=2.8),
                 post='<ellipse cx="76" cy="101" rx="6" ry="5" fill="#e6bd2e" stroke="#2a1f14" stroke-width="2"/>')
-    return svg('Halcón Peregrino', css((112, 140), (194, 210), tf=1.3), f'{legs}{tl}{cu}{wg}{hd}')
+    return svg('Halcón Peregrino', css((112, 130), (194, 200), root_o=(150, 265), tf=1.3), f'<g transform="translate(0,-10)">{legs}{tl}{cu}{wg}{hd}</g>')
 
 
 MANO = {'crespin': crespin, 'barullero': barullero, 'colorada': colorada, 'pepitero-chico': pepitero_chico, 'atajacaminos-tijera': atajacaminos,

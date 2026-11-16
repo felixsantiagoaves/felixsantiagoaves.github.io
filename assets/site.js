@@ -131,7 +131,7 @@ function mapaProv(pv,dep,pre){
   return `<div class="pista"><span class="pista-t">Dónde buscarla</span><div class="pm-wrap"><svg class="pm${dep?' pm-d':''}" viewBox="0 0 ${M.w} ${M.h}" role="img" aria-label="Mapa de calor por ${dep?'departamento':'provincia'}">${ps}</svg><div class="pm-txt"><p>${top?`${pre||'Más probable en: '}${top}.`:'Registros muy escasos: casi no hay avistamientos en eBird, sin una zona clara.'}</p>${top?'<div class="pm-leg"><i></i><span>más probable</span></div>':''}</div></div><small>Porcentaje de listas completas de eBird de cada ${dep?'departamento':'provincia'} que la registran. Contornos: ${dep?'geoBoundaries (CC BY 4.0)':'amCharts'}.</small></div>`;
 }
 const MENOS_MOV = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-function escMasc(id){ const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? Math.min(1, 0.38 + 0.62 * (L / 41)).toFixed(2) : '1'; }
+function escMasc(id){ if(typeof MASC_ESC !== 'undefined' && MASC_ESC[id]) return String(MASC_ESC[id]); const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? Math.min(1, 0.38 + 0.62 * (L / 41)).toFixed(2) : '1'; }
 function cmMasc(id){ const L = (typeof MASC_CM !== 'undefined') ? MASC_CM[id] : 0; return L ? String(L).replace('.', ',') + ' cm' : ''; }
 function habCls(id){ return (typeof MASC_HAB !== 'undefined' && MASC_HAB[id]) ? ' hab-' + MASC_HAB[id] : ''; }
 function probTxt(p){ return p >= 3 ? 'De las más probables' : p >= 1 ? 'Posible' : p >= 0.1 ? 'Difícil' : 'Rareza'; }
