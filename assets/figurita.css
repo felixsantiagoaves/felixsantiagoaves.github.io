@@ -1041,10 +1041,10 @@ body.fit-pc .fgh-stk{background:radial-gradient(ellipse at 50% 40%,#efe4d0 0,#dc
 body.fit-pc .stk-circ+.stk-circ{margin-top:0}
 body.fit-pc .stk-tick{grid-column:1/3}
 body.fit-pc .fgh-dc{display:none}
-body.fit-pc .hl-book{display:block;grid-column:3;grid-row:1/4;position:relative;width:100%;height:100%;min-height:0;pointer-events:none;overflow:hidden}
+body.fit-pc .hl-book{display:block;grid-column:3;grid-row:1/4;position:relative;width:100%;height:100%;min-height:0;cursor:pointer;overflow:hidden}
 .hb2{position:absolute!important;left:50%;top:50%;margin:-370px 0 0 -700px;transform-origin:center center!important;transform:scale(var(--sc))!important;filter:drop-shadow(0 8px 14px rgba(42,31,20,.35));transition:opacity .6s!important}
 .hb2.fade{opacity:0}
-.hb2 .leaf{transition-duration:1.1s}
+.hb2 .leaf{transition-duration:.55s}
 .hb2>.face{position:absolute;top:0;width:700px;height:740px;overflow:hidden}
 .hb2-l{left:0}.hb2-r{left:700px}
 .hb2::before{display:none}

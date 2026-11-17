@@ -167,7 +167,7 @@
     };
     var N = (NP - 2) / 2, hojas = '';
     for(var k = 0; k < N; k++) hojas += '<div class="leaf" style="z-index:' + (N - k + 2) + '"><div class="face front">' + cara(2 * k + 1) + '</div><div class="face back">' + cara(2 * k + 2) + '</div></div>';
-    var el = document.createElement('div'); el.className = 'hl-book libro stickers'; el.setAttribute('aria-hidden', 'true');
+    var el = document.createElement('div'); el.className = 'hl-book libro stickers'; el.setAttribute('role', 'link'); el.setAttribute('aria-label', 'Ir al álbum'); el.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); irAlbum('todas'); }, true);
     el.innerHTML = '<div class="libro-book hb2"><div class="face back hb2-l">' + cara(0) + '</div><div class="face front hb2-r">' + cara(NP - 1) + '</div>' + hojas + '</div>';
     stk.insertBefore(el, stk.firstChild);
     var bk = el.firstChild, leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false;
@@ -180,7 +180,7 @@
       if(i < leaves.length){ leaves[i].classList.add('volt'); i++; }
       else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; bk.classList.remove('fade'); }, 700); }
     };
-    setTimeout(function(){ setInterval(paso, 2800); }, 2000);
+    setTimeout(function(){ setInterval(paso, 1500); }, 2000);
   }
   var arrancar = function(){ (window.requestIdleCallback || function(g){ setTimeout(g, 900); })(armar, { timeout: 2500 }); };
   if(document.readyState === 'complete') arrancar(); else addEventListener('load', arrancar);
