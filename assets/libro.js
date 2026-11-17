@@ -2,7 +2,7 @@
    Modelo: P = páginas (0 = tapa). Hoja k: frente = P[2k], dorso = P[2k+1]. Spread s muestra P[2s-1] (izq.) y P[2s] (der.).
    Las hojas dadas vuelta (k < s) giran -180° sobre el lomo. Todas las especies, con huecos las no vistas y la figurita pegada las vistas. */
 (function () {
-  const CAP = 12, PW = 700, PH = 740;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
+  const CAP = 12, PW = 700; let PH = 740;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
   let LM = 0, COLS = 4, V = 0, vModo = false, P = [], L = 0, S = 0, ctx = null, busy = false, book = null, drag = null;
 
   function armar() {
@@ -101,7 +101,7 @@
     const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
     if (vModo && full) {
       const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / PW, (innerHeight - top - 126) / PH));
-      book.style.setProperty('--sc', k.toFixed(3)); st.style.height = Math.round(PH * k) + 'px'; return;
+      book.style.setProperty('--sc', k.toFixed(3)); book.style.setProperty('--ph', PH + 'px'); st.style.height = Math.round(PH * k) + 'px'; return;
     }
     let sc;
     if (full) sc = Math.min((window.innerWidth - 120 - 96) / (2 * PW), (window.innerHeight - 12) / PH);
@@ -120,9 +120,9 @@
 
   window.libroRender = function () {
     const c = document.getElementById('album-container'); if (!c) return;
-    const full0 = esMov(); vModo = full0 && innerHeight > innerWidth; armar(); if (S > LM) S = 0; busy = false;
+    const full0 = esMov(); vModo = full0 && innerHeight > innerWidth; COLS = vModo ? 3 : 4; PH = vModo ? 1080 : 740; armar(); if (S > LM) S = 0; busy = false;
     const grupos = P.map((pg, i) => pg.t === 'hoja' ? '<option value="' + Math.ceil(i / 2) + '">Hoja ' + i + ' · ' + pg.aves[0].comun + ' …</option>' : '').join('');
-    const full = esMov(), vert = full && innerHeight > innerWidth; COLS = 4; vModo = vert;
+    const full = esMov(), vert = full && innerHeight > innerWidth; vModo = vert; COLS = vert ? 3 : 4; PH = vert ? 1080 : 740;
     if (vert) return renderV(c);
     let host = c; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }

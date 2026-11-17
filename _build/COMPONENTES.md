@@ -75,3 +75,4 @@ Celular = todo lo que no es `fit-pc` (ancho < 1000, alto < 560 o sin mouse; incl
 Se mantiene el nav (logo) arriba; sin título de página. Una sola barra fija de 46px: [Córdoba|Argentina] [Libro/Lista] [Filtros ▾ (lista) / Ir a familia (libro)]. CSS al final de `assets/figurita.css` (`body:not(.fit-pc):has(#page-album.active)`); markup del libro en `renderV()` de `assets/libro.js`; texto del botón en `libroBtnTxt()` (site.js).
 Textos de stickers del libro vertical agrandados (.libro-vv .fig-co/.fig-ci/.fig-num al final de figurita.css); overlay del libro empieza en top:54px (altura del nav).
 Libro vertical en celular = UNA página por vez (ancho completo): en vModo armar() intercala páginas 'vacia' (P=[tapa,vacia,h1,vacia,h2…]), LM=L-1, --sh=-1, escala por ancho/alto de 1 página. Reemplaza la doble página apilada.
+Libro vertical celular: 3 columnas × 4 filas por página (COLS=3, PH=1080 en vModo; --ph en CSS).
