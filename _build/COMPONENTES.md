@@ -85,3 +85,4 @@ Libro vertical: pliegue tenue (≈.26 de opacidad máx.) para igualar la sutilez
 Libro vertical: la página izquierda (reverso de la hoja pasada) muestra SOLO la 3.ª columna de una hoja anterior con miniaturas livianas (.lpag-izq/.lf-col); antes se duplicaba la hoja completa y se caía la pestaña en el celular. En vModo solo se mantienen 3 hojas con contenido (lim=1) y .back sin clicks.
 Libro vertical: sin mix-blend-mode en la sombra del pliegue (causaba glitch al terminar el giro 3D); .leaf will-change:transform.
 Libro vertical: pliegue ESTÁTICO (.libro-book::before simétrico, z alto) en vez de sombra por hoja (evita glitch al pasar); la página izquierda siempre muestra la col. 3 de la hoja inmediata anterior (cara(i-1)).
+Libro: dorso de la tapa (interior verde, .lpag-dorso) a la izquierda de la 1.ª hoja, tanto en PC (P=[tapa,dorso,h1…]; numeración de hojas = índice-1) como en celular vertical (relleno izquierdo de la hoja 1).
