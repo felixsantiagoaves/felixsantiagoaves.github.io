@@ -911,3 +911,9 @@ body.fit-pc #page-mapa .mapa-wrap{flex:1 1 0;min-height:0;height:auto!important;
 .libro-vv .libro-nav{width:32px;height:32px;opacity:.8;left:auto;right:6px;transform:none}
 .libro-vv .libro-nav.pv{top:36%}.libro-vv .libro-nav.nx{top:58%}
 .libro-vv,.libro-vv *{touch-action:none!important}
+/* Índice lateral del libro vertical: pestañitas de color por familia (2 primeras letras); la de la hoja actual resalta y se centra */
+.lv-idx{position:absolute;left:3px;top:50px;bottom:4px;width:34px;overflow-y:auto;display:flex;flex-direction:column;gap:3px;scrollbar-width:none;z-index:6}
+.lv-idx::-webkit-scrollbar{display:none}
+.lv-idx button{flex:none;height:30px;border:0;border-radius:6px;background:var(--fl,#414833);color:#fff;font:900 .62rem 'Lato',sans-serif;letter-spacing:0;opacity:.7;cursor:pointer;padding:0;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.lv-idx button.on{opacity:1;outline:2px solid #fff;box-shadow:0 0 0 4px var(--fl,#414833)}
+.lv-idx button:not([class]){background:#414833}
