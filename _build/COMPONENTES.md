@@ -92,3 +92,7 @@ Guía en la tapa del libro vertical: .lt-guia2 (mismo contenido que .ld-guia de 
 Libro vertical: PH=1120, etiquetas de familia grandes (.lgt 1.02rem), figuritas 5/4 para que el texto entre completo (nombre, científico, fecha).
 Página izquierda de relleno (vertical): misma grilla .libro-grid de 12 celdas (solo la 3.ª columna visible) con la figurita completa (albFig) dentro de .lcell fcN, alineada en alto y con color de familia; solo 4 figuritas, sin clicks.
 Libro PC (fit-pc): se quitó la barra inferior 'Hojas N y M' (.libro-bar oculto); el libro usa ese alto.
+
+## Portada PC: álbum animado (panel "Mi álbum hoy")
+- Solo `body.fit-pc`. `assets/figurita.js` (último bloque) arma `.hl-book` dentro de `.fgh-stk`: página izquierda fija (dorso), derecha fija y 3 hojas que se dan vuelta solas cada 2,6 s, luego fade y reinicio. Fotos reales de especies vistas (TH), colores por familia.
+- Se pausa con el mouse encima o pestaña oculta; con "reducir movimiento" queda quieto. Se arma en idle. CSS al final de `assets/figurita.css` (`.hb-*`). Sin foto de camino de fondo (fondo crema). Móvil sin cambios.

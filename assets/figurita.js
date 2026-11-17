@@ -139,3 +139,42 @@
     if(c){ new MutationObserver(mirar).observe(c, {childList: true}); mirar(); }
   }
 })();
+
+/* Portada (Sobre mí, PC): el panel "Mi álbum hoy" muestra un álbum real pasando hojas solo (en vez de la foto del camino). Se pausa al pasar el mouse, respeta "reducir movimiento" y se carga cuando el navegador está libre. Doc: _build/COMPONENTES.md */
+(function(){
+  var menos = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function armar(){
+    var stk = document.querySelector('.fgh-stk');
+    if(!stk || stk.querySelector('.hl-book') || !document.body.classList.contains('fit-pc') || typeof avesReg !== 'function' || typeof TH !== 'function') return;
+    var todas = avesReg().slice().sort(function(a, b){ return a.tx - b.tx; }), fi = new Map();
+    todas.forEach(function(x){ if(!fi.has(x.familiaEsp)) fi.set(x.familiaEsp, fi.size); });
+    var vis = function(a){ return avist[a.id] && avist[a.id].foto; };
+    var NP = 7, CAP = 12, pgs = Math.ceil(todas.length / CAP), best = 0, bs = -1;
+    for(var s = 0; s + NP <= pgs; s += 2){ var c = 0; for(var i = s * CAP; i < (s + NP) * CAP && i < todas.length; i++) if(vis(todas[i])) c++; if(c > bs){ bs = c; best = s; } }
+    var cara = function(n){
+      var A = todas.slice((best + n) * CAP, (best + n + 1) * CAP);
+      return '<div class="hb-pg"><div class="hb-grid">' + A.map(function(a){
+        var f = vis(a) ? String(avist[a.id].foto).replace(/^\//, '') : '';
+        return '<div class="hb-c fc' + (fi.get(a.familiaEsp) % 6) + (f ? '' : ' vac') + '">' + (f ? '<img src="' + TH(f) + '" alt="" decoding="async" loading="lazy">' : '') + '</div>';
+      }).join('') + '</div></div>';
+    };
+    var N = (NP - 1) / 2, hojas = '';
+    for(var k = 0; k < N; k++) hojas += '<div class="hb-leaf" style="z-index:' + (N - k + 2) + '"><div class="hb-face hb-f">' + cara(2 * k) + '</div><div class="hb-face hb-b">' + cara(2 * k + 1) + '</div></div>';
+    var el = document.createElement('div'); el.className = 'hl-book'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<div class="hb"><div class="hb-base hb-l"><div class="hb-dorso"></div></div><div class="hb-base hb-r">' + cara(NP - 1) + '</div>' + hojas + '<i class="hb-fold"></i></div>';
+    stk.insertBefore(el, stk.firstChild);
+    var leaves = el.querySelectorAll('.hb-leaf'), hb = el.querySelector('.hb'), i = 0, pausa = false;
+    el.addEventListener('mouseenter', function(){ pausa = true; }); el.addEventListener('mouseleave', function(){ pausa = false; });
+    stk.addEventListener('mouseenter', function(){ pausa = true; }); stk.addEventListener('mouseleave', function(){ pausa = false; });
+    if(menos) return;
+    var paso = function(){
+      if(document.hidden || pausa){ return; }
+      if(i < leaves.length){ leaves[i].classList.add('volt'); i++; }
+      else { hb.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); void hb.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; hb.classList.remove('fade'); }, 700); }
+    };
+    setTimeout(function(){ setInterval(paso, 2600); }, 1800);
+  }
+  var arrancar = function(){ var f = function(){ armar(); }; (window.requestIdleCallback || function(g){ setTimeout(g, 900); })(f, { timeout: 2500 }); };
+  if(document.readyState === 'complete') arrancar(); else addEventListener('load', arrancar);
+  addEventListener('resize', function(){ var s = document.querySelector('.fgh-stk .hl-book'); if(!s && document.body.classList.contains('fit-pc')) armar(); });
+})();
