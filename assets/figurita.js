@@ -149,7 +149,7 @@
     var todas = avesReg().slice().sort(function(a, b){ return a.tx - b.tx; }), numMap = {}, fi = new Map(), CAP = 12;
     todas.forEach(function(x, n){ numMap[x.id] = n + 1; if(!fi.has(x.familiaEsp)) fi.set(x.familiaEsp, fi.size); });
     var nuevas = new Set(recientes(8, false).map(function(a){ return a.id; }));
-    var pgs = Math.ceil(todas.length / CAP), NP = 7, sel = [];
+    var pgs = Math.ceil(todas.length / CAP), NP = 13, sel = [];
     for(var g0 = 0; g0 < pgs; g0++){ var c = 0; for(var q = g0 * CAP; q < (g0 + 1) * CAP && q < todas.length; q++) if(visto(todas[q]) && avist[todas[q].id] && avist[todas[q].id].foto) c++; sel.push([g0, c]); }
     sel = sel.sort(function(x, y){ return y[1] - x[1] || x[0] - y[0]; }).slice(0, NP).map(function(x){ return x[0]; }).sort(function(x, y){ return x - y; });
     var esc = typeof escHtml === 'function' ? escHtml : function(t){ return t; };
@@ -168,10 +168,10 @@
     };
     var v = todas.filter(visto).length;
     var tapa = '<div class="lpag lpag-tapa"><div class="lt-titulo"><h2>Álbum de <em>aves</em></h2></div><p class="lt-sub">Félix Santiago · Aves · Río Cuarto</p><div class="lt-pie"><div class="lt-anillo"><b>' + v + '</b><small>de ' + todas.length + '</small></div></div></div>';
-    var hojas = '<div class="leaf" style="z-index:' + 6 + '"><div class="face front">' + tapa + '</div><div class="face back"><div class="lpag lpag-dorso"></div></div></div>';
-    for(var k = 0; k < 3; k++) hojas += '<div class="leaf" style="z-index:' + (5 - k) + '"><div class="face front">' + cara(2 * k) + '</div><div class="face back">' + cara(2 * k + 1) + '</div></div>';
+    var hojas = '<div class="leaf" style="z-index:' + 9 + '"><div class="face front">' + tapa + '</div><div class="face back"><div class="lpag lpag-dorso"></div></div></div>';
+    for(var k = 0; k < 6; k++) hojas += '<div class="leaf" style="z-index:' + (8 - k) + '"><div class="face front">' + cara(2 * k) + '</div><div class="face back">' + cara(2 * k + 1) + '</div></div>';
     var el = document.createElement('div'); el.className = 'hl-book libro stickers'; el.setAttribute('role', 'link'); el.setAttribute('aria-label', 'Ir al álbum'); el.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); irAlbum('todas'); }, true);
-    el.innerHTML = '<div class="libro-book hb2"><div class="face front hb2-r">' + cara(6) + '</div>' + hojas + '</div>';
+    el.innerHTML = '<div class="libro-book hb2"><div class="face front hb2-r">' + cara(NP - 1) + '</div>' + hojas + '</div>';
     stk.insertBefore(el, stk.firstChild);
     var bk = el.firstChild; bk.style.setProperty('--sh', -0.5);
     var  leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false, ya = 0;
@@ -182,10 +182,10 @@
     var paso = function(){
       if(document.hidden || pausa) return;
       if(i < leaves.length){ leaves[i].classList.add('volt'); bk.style.setProperty('--sh', 0); i++; }
-      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); leaves[0].classList.add('volt'); if(!ya){ ya = 1; leaves[0].querySelector('.back').innerHTML = cara(6); } bk.style.setProperty('--sh', 0); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 1; bk.classList.remove('fade'); }, 700); }
+      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); leaves[0].classList.add('volt'); if(!ya){ ya = 1; leaves[0].querySelector('.back').innerHTML = cara(NP - 1); } bk.style.setProperty('--sh', 0); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 1; bk.classList.remove('fade'); }, 700); }
     };
     setTimeout(function(){ paso(); setInterval(paso, 850); }, 700);
   }
-  var arrancar = function(){ var n = 0, t = setInterval(function(){ n++; if(document.querySelector('.fgh-stk .hl-book') || n > 40){ clearInterval(t); return; } armar(); }, 100); };
+  var arrancar = function(){ var n = 0, last = -1, est = 0, t = setInterval(function(){ n++; if(document.querySelector('.fgh-stk .hl-book') || n > 60){ clearInterval(t); return; } if(typeof avesReg !== 'function' || typeof avist === 'undefined') return; var c = 0; try{ avesReg().forEach(function(a){ if(visto(a) && avist[a.id] && avist[a.id].foto) c++; }); }catch(e){ return; } est = c > 0 && c === last ? est + 1 : 0; last = c; if(est >= 2) armar(); }, 100);   /* espera a que los datos de fotos terminen de cargar (si no, elige páginas vacías) */ };
   if(document.readyState !== 'loading') arrancar(); else addEventListener('DOMContentLoaded', arrancar);
 })();
