@@ -128,9 +128,9 @@
 
   window.libroRender = function () {
     const c = document.getElementById('album-container'); if (!c) return;
-    const full0 = esMov(); vModo = full0 && innerHeight > innerWidth; COLS = vModo ? 3 : 4; PH = vModo ? 1080 : 740; armar(); if (S > LM) S = 0; busy = false;
+    const full0 = esMov(); vModo = full0 && innerHeight > innerWidth; COLS = vModo ? 3 : 4; PH = vModo ? 1120 : 740; armar(); if (S > LM) S = 0; busy = false;
     const grupos = P.map((pg, i) => pg.t === 'hoja' ? '<option value="' + Math.ceil(i / 2) + '">Hoja ' + i + ' · ' + pg.aves[0].comun + ' …</option>' : '').join('');
-    const full = esMov(), vert = full && innerHeight > innerWidth; vModo = vert; COLS = vert ? 3 : 4; PH = vert ? 1080 : 740;
+    const full = esMov(), vert = full && innerHeight > innerWidth; vModo = vert; COLS = vert ? 3 : 4; PH = vert ? 1120 : 740;
     if (vert) return renderV(c);
     let host = c; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }

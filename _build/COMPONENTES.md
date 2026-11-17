@@ -89,3 +89,4 @@ Libro: dorso de la tapa (interior verde, .lpag-dorso) a la izquierda de la 1.ª 
 Libro: final realista = última hoja a la izquierda + interior de la contratapa (.lpag-dorso) a la derecha, luego contratapa ('blanca' si la cantidad de hojas es impar); en celular vertical la última página es el dorso verde. Tapa: mini guía de uso (.lt-guia) sobre cómo está organizado el álbum.
 Guía de uso: en PC va en el dorso de la tapa (.ld-guia, dorso con guia:1) y se oculta de la tapa; en celular vertical queda en la tapa (el dorso casi no se ve).
 Guía en la tapa del libro vertical: .lt-guia2 (mismo contenido que .ld-guia de PC), visible solo en .libro-vv.
+Libro vertical: PH=1120, etiquetas de familia grandes (.lgt 1.02rem), figuritas 5/4 para que el texto entre completo (nombre, científico, fecha).
