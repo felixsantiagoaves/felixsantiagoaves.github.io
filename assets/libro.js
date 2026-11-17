@@ -96,7 +96,7 @@
     const st = document.getElementById('libro-stage'); if (!st) return;
     const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
     if (vModo && full) {
-      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / PW, (innerHeight - top - 6) / (2 * PH)));
+      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / PW, (innerHeight - top - 72) / (2 * PH)));
       book.style.setProperty('--sc', k.toFixed(3)); st.style.height = Math.round(2 * PH * k) + 'px'; return;
     }
     let sc;
@@ -148,7 +148,7 @@
     c.innerHTML = ''; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     const host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' }));
     const fams = []; P.forEach(pg => { if (pg.aves && !fams.includes(pg.aves[0].familiaEsp)) fams.push(pg.aves[0].familiaEsp); });
-    host.innerHTML = `<div class="libro stickers libro-full libro-vv" id="libro"><div class="lv-top"><select id="lv-sel" aria-label="Ir a una familia" onchange="libroVFam(this.value)"><option value="">Tapa</option>${fams.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('')}</select><div class="libro-reg"><button class="${REGION === 'cba' ? 'on' : ''}" onclick="setRegion('cba')">Córdoba</button><button class="${REGION === 'arg' ? 'on' : ''}" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><button class="libro-x" onclick="libroToggle()" aria-label="Cerrar">✕</button></div><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">▲</button><div class="libro-book" id="libro-book">${Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')}</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▼</button></div></div>`;
+    host.innerHTML = `<div class="libro stickers libro-full libro-vv" id="libro"><div class="lv-top"><select id="lv-sel" aria-label="Ir a una familia" onchange="libroVFam(this.value)"><option value="">Tapa</option>${fams.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('')}</select><div class="libro-reg"><button class="${REGION === 'cba' ? 'on' : ''}" onclick="setRegion('cba')">Córdoba</button><button class="${REGION === 'arg' ? 'on' : ''}" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><button class="libro-x lv-lista" onclick="libroToggle()" aria-label="Ver como lista">☰ Lista</button></div><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">▲</button><div class="libro-book" id="libro-book">${Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')}</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▼</button></div></div>`;
     sinZoom(true); book = document.getElementById('libro-book'); escala(); pos();
     [150, 500, 1200].forEach(t => setTimeout(() => { if (window.libroOn && book && book.isConnected) escala(); }, t));
     book.addEventListener('pointerdown', onDown);

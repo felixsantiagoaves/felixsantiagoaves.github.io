@@ -774,7 +774,7 @@ const albEsMovil = () => Math.min(window.innerWidth, window.innerHeight) < 600;
 function albVistaInit() {
   if (window.libroOn !== undefined) return;
   let v = ''; try { v = localStorage.getItem('albumVista') || ''; } catch (e) {}
-  window.libroOn = v ? v === 'libro' : !albEsMovil();
+  window.libroOn = v ? v === 'libro' : true;
   document.body.classList.toggle('libro-modo', window.libroOn);
 }
 function libroCargar(cb) {
