@@ -863,3 +863,10 @@ body.fit-datm #dat-falt .fam-lista{grid-column:1!important;grid-row:3!important;
 .ar-s{position:absolute;top:13%;left:50%;width:1.7em;height:1.15em;margin:0 0 0 -.85em;z-index:2;transform:rotate(-6deg)}
 .reg-b .ar,.mreg-b .ar,.libro-reg .ar{width:1.1em;margin-right:.35em}
 .on .ar{box-shadow:0 0 0 1px rgba(255,255,255,.6)}
+
+/* Círculo "En Argentina": colores de la bandera (celeste, blanco y sol) */
+.stk-tierra .in{background:#5aa3dc!important;color:#fff}
+.stk-tierra circle{stroke:rgba(255,255,255,.32)!important}
+.stk-tierra circle.rg{stroke:#f6b40e!important}
+.stk-tierra b{color:#fff}
+.stk-tierra small{color:#fff!important;opacity:.95}
