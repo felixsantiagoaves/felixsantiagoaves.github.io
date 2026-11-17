@@ -17,7 +17,7 @@
       P = [{ t: 'tapa' }]; hojas.forEach(h => { P.push({ t: 'vacia' }); P.push(Object.assign({ t: 'hoja' }, h)); }); P.push({ t: 'vacia' }, { t: 'dorso' }, { t: 'vacia' });   // al final: interior de la contratapa
       L = P.length / 2; LM = L - 1; return;
     }
-    P = [{ t: 'tapa' }, { t: 'dorso' }].concat(hojas.map(h => Object.assign({ t: 'hoja' }, h)));   // 'dorso' = interior de la tapa, a la izquierda de la 1.ª hoja
+    P = [{ t: 'tapa' }, { t: 'dorso', guia: 1 }].concat(hojas.map(h => Object.assign({ t: 'hoja' }, h)));   // 'dorso' = interior de la tapa, a la izquierda de la 1.ª hoja
     if (hojas.length % 2) P.push({ t: 'blanca' });   // hoja en blanco para que la última hoja quede a la izquierda
     P.push({ t: 'dorso' }, { t: 'fin' });             // interior de la contratapa (a la derecha de la última hoja) y contratapa
     L = P.length / 2; LM = L;
@@ -36,7 +36,7 @@
       return `<div class="lpag lpag-tapa" style="--tp:url(/assets/paisajes/${cba ? 'sierra' : 'cerro'}.jpg)"><div class="lt-foto"><i class="lt-cinta"></i><div class="lt-ph"></div><span>${cba ? 'Córdoba' : '<i class="ar"></i>Argentina'}</span></div><div class="lt-titulo"><h2>Álbum de <em>aves</em></h2></div><p class="lt-sub">Félix Santiago · Aves · Río Cuarto</p><p class="lt-guia">Las aves van ordenadas por familia, cada una con su color. Las <b>figuritas con foto</b> son las que ya vi; las <b>grises</b> están por encontrar. Tocá una para ver su ficha.</p><div class="lt-pie"><div class="lt-anillo"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><circle class="rg" cx="50" cy="50" r="44" stroke-dasharray="${(C * pct / 100).toFixed(1)} ${C.toFixed(1)}"/></svg><b>${v}</b><small>de ${tot}</small></div>${ult ? `<div class="lt-ult">${ult}<small>Últimas especies</small></div>` : ''}</div></div>`;
     }
     if (pg.t === 'blanca') return '<div class="lpag"></div>';
-    if (pg.t === 'dorso') return '<div class="lpag lpag-dorso"></div>';
+    if (pg.t === 'dorso') return pg.guia ? '<div class="lpag lpag-dorso"><div class="ld-guia"><h3>Cómo está organizado</h3><ul><li><b>Por familias.</b> Las aves van agrupadas por familia, cada una con su color y su etiqueta al comienzo.</li><li><b>Con foto.</b> Las figuritas a color son las que ya vi; las grises están por encontrar.</li><li><b>Fichas.</b> Tocá una figurita para ver su ficha.</li><li><b>Para moverte.</b> Pasá de hoja con las flechas o arrastrando, y saltá de familia con el índice de la izquierda.</li></ul></div></div>' : '<div class="lpag lpag-dorso"></div>';
     if (pg.t === 'fin') return '<div class="lpag lpag-fin"><div class="lt-foto lt-foto-fin"><i class="lt-cinta"></i><div class="lt-ph" style="--tp:url(/assets/paisajes/ocaso.jpg)"></div></div><div class="lt-logo"></div><p>Seguirá completándose<br>en cada salida.</p><small>felixsantiago.com.ar</small></div>';
     // grupos de familia dentro de la hoja: la etiqueta va sobre la primera figurita de cada tramo (por fila)
     const A = pg.aves, tag = {}, pp = P[i - (vModo ? 2 : 1)], pk = i > 1 && pp && pp.aves ? pp.aves[pp.aves.length - 1] : null;
