@@ -961,3 +961,6 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .libro-stage{background:linear-gradient(90deg,transparent 0,transparent 0)}
 .libro-vv .front .lpag{background:linear-gradient(90deg,rgba(18,10,3,.85) 0,rgba(18,10,3,.5) 1.4%,rgba(18,10,3,.24) 4%,rgba(18,10,3,.09) 8%,rgba(255,255,255,0) 10%,rgba(255,255,255,.3) 12.5%,rgba(255,255,255,0) 18%),#f6efdf}
 .libro-vv .back .lpag{background:linear-gradient(270deg,rgba(18,10,3,.85) 0,rgba(18,10,3,.5) 1.4%,rgba(18,10,3,.24) 4%,rgba(18,10,3,.09) 10%,rgba(255,255,255,0) 16%),#f1e8d3;border-radius:0}
+/* Libro vertical: el libro se apoya contra el borde derecho (más página izquierda visible, menos margen vacío a la derecha) */
+.libro-vv .libro-stage{justify-content:flex-end!important;padding-right:14px;box-sizing:border-box}
+.libro-vv .libro-book{transform-origin:top right!important}
