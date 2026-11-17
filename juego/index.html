@@ -249,6 +249,69 @@ textarea{width:100%;font:inherit;font-size:.9rem;background:var(--panel);color:v
 .fmt button[data-f].on{background:var(--panel);border-color:var(--tierra);color:var(--ink)}
 .fmt .lnk{margin-left:auto}
 .cred{font-size:.78rem;opacity:.8;position:relative;color:#ede0d4;max-width:300px}
+
+/* ===== Adaptación de tamaños (flexible, sin scroll): ver LEEME-JUEGO.md ===== */
+.c1,.c2{display:contents}
+body{box-sizing:border-box;min-height:100dvh}
+@media (min-width:900px) and (min-height:500px) and (pointer:fine){
+ html,body{height:100dvh;overflow:hidden}
+ body{display:flex;flex-direction:column;padding:10px 32px 14px}
+ .gn{max-width:1200px;width:100%;margin:0 auto 8px;flex:none}
+ #app{max-width:1200px;width:100%;flex:1;min-height:0;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0 36px;align-content:stretch;grid-auto-rows:minmax(0,1fr)}
+ #app>*{min-height:0}
+ #app[data-p=juego] .c1,#app[data-p=juego] .c2{display:flex;flex-direction:column;gap:12px;min-height:0}
+ #app[data-p=juego] .c1 .esc{height:auto;flex:1 1 0;min-height:140px}
+ #app[data-p=juego] .c1 .vig{flex:1 1 0;min-height:0;display:flex}
+ #app[data-p=juego] .c1 .vig svg{width:100%;height:100%}
+ #app[data-p=juego] .c2{justify-content:center}
+ #app[data-p=juego] .ops{flex:1 1 auto;min-height:0}
+ #app[data-p=juego] .op.lug{flex:1 1 0;min-height:0}
+ #app[data-p=juego] .op.lug .lb{flex:1;min-height:0}
+ #app[data-p=juego] .figus{flex:1 1 0;min-height:0;align-content:start}
+ #app[data-p=perfil]{grid-template-columns:1fr;grid-auto-rows:auto;align-content:center;gap:14px}
+ #app[data-p=perfil] .ops{flex-direction:row}#app[data-p=perfil] .ops>*{flex:1}
+ #app[data-p=portada] .slides{grid-column:1;grid-row:1/span 6;height:auto;min-height:0}
+ #app[data-p=portada]>:not(.slides){grid-column:2;align-self:center}
+ #app[data-p=portada]{grid-auto-rows:auto;align-content:center}
+ #app[data-p=juego] .c2{justify-content:center!important;gap:clamp(10px,2.2dvh,22px)}
+ #app[data-p=juego] .c2 h2{font-size:clamp(1.5rem,2.2rem + 0*1dvh,2.3rem)}
+ #app[data-p=juego] .op:not(.lug){padding:clamp(12px,2.4dvh,22px) 22px}
+ #app[data-p=juego] .op:not(.lug) b{font-size:clamp(1rem,2.4dvh,1.3rem)}
+ #app[data-p=juego] .op:not(.lug) span{font-size:clamp(.95rem,2.2dvh,1.2rem)}
+ #app[data-p=juego] .nota{font-size:clamp(1rem,2.3dvh,1.25rem)}
+ #app[data-p=final] .c1,#app[data-p=final] .c2{display:flex;flex-direction:column;gap:10px;min-height:0}
+ #app[data-p=final] .c2{overflow-y:auto;padding-right:6px}
+ #app[data-p=final] .comp{flex:1 1 0;min-height:0;display:flex;flex-direction:column;align-items:flex-start}
+ #app[data-p=final] .cv{flex:1 1 0;min-height:0;max-width:100%;max-height:none;width:auto;height:auto;margin:8px 0 0;object-fit:contain}
+}
+@media not all and (min-width:900px) and (min-height:500px) and (pointer:fine){
+ body{display:flex;flex-direction:column;height:100dvh;overflow:hidden;padding-block:8px 10px}
+ .gn{width:100%;flex:none}
+ #app{flex:1;min-height:0;gap:10px;overflow-y:auto;overflow-x:hidden;width:100%;min-width:0}
+ #app[data-p=final]{overflow-y:auto}
+ .esc{height:clamp(80px,17dvh,160px)}
+ .vig{flex:0 1 auto;min-height:0}
+ .vig svg{max-height:22dvh;width:100%}
+ #app[data-p=juego] .figus{flex:1 1 0;min-height:0;align-content:start}
+ #app[data-p=juego] .ops{flex:1 1 auto;min-height:0}
+ #app[data-p=juego] .op.lug{flex:1 1 0;min-height:0}
+ #app[data-p=juego] .op.lug .lb{flex:1;min-height:0}
+}
+ @media (max-height:720px){#app .tip{display:none}}
+ @media (max-height:600px){#app .estac{display:none}}
+ #app .op.lug .lb{min-height:40px}
+ @media (max-height:700px){
+  #app{gap:6px}
+  h2{font-size:1.2rem}.lab{font-size:.62rem}
+  .esc{height:clamp(64px,11dvh,110px)}
+  .top .pill{padding:5px 10px;font-size:.68rem}.top .pill svg{width:12px;height:12px}
+  .dato{padding:4px 8px;min-width:70px}.dato b{font-size:1rem}.barra{gap:6px}
+  .op{padding:8px 12px 8px 14px;gap:2px}.op b{font-size:.92rem}.op span{font-size:.86rem}
+  .nota{padding:8px 12px;font-size:.92rem}
+  .btn{padding:10px 18px}
+ }
+.figu em{max-height:3.4em;overflow:hidden}
+.figu em{font-size:clamp(.38rem,calc(var(--w,58px)*.1),.66rem)}
 </style>
 </head>
 <body>
@@ -483,7 +546,13 @@ let NOMBRE='';try{NOMBRE=localStorage.getItem('pajarero_nombre')||''}catch(e){}
 const TIPS=['Los lugares lejanos gastan nafta, pero suelen rendir más especies. Los cercanos son gratis y se pueden repetir.','Fijate en la energía: las decisiones de esfuerzo la gastan, y con 0 rendís menos.','Algunas aves aparecen solo en ciertas épocas. En verano llegan golondrinas, vencejos y playeros del norte.','Las etiquetas de cada decisión te dicen si suben las aves en general o las raras.','Una rara aparece muy pocas veces. Cuando sale, es una figurita especial.','Un lugar lejano que ya visitaste no se repite en el año.'];
 const tip=t=>(G&&G.P&&G.P.tip)?`<p class="tip"><b>Consejo</b> ${t}</p>`:'';
 function nuevo(seed,modo){modo=modo||'normal';const P=PERF[modo];G={modo,P,k:0,sus:new Set(),ari:1,mis:new Set(),mod:1,seed,r:rng(hash(seed)),mes:P.cal[0],nafta:P.nafta,en:P.en,vistas:new Set(),log:[],evs:[],zona:null,lugar:null,vis:new Set(),ev:null};pintarMes()}
-const $=(h)=>{document.getElementById('app').innerHTML=h;window.scrollTo(0,0);try{const e=document.querySelector('.esc'),m=e&&e.className.match(/w-(\w+)/);if(MU.on)ambiente(m?m[1]:'day')}catch(x){}};
+/* Adaptación de tamaños: en pantallas de juego se agrupa en 2 columnas (c1 = HUD + escena, c2 = texto y opciones); en celular los grupos son display:contents (flujo normal). Ver _juego/LEEME-JUEGO.md (sección Adaptación) */
+function agrupar(A){A.className='';A.dataset.p=A.querySelector('.hl')?'portada':A.querySelector('#nom')?'perfil':A.querySelector('.sello')?'final':A.querySelector('.camino')?'juego':'otro';
+ if(A.dataset.p==='juego'||A.dataset.p==='final'){const k=[...A.children],c1=document.createElement('div'),c2=document.createElement('div'),sel=A.dataset.p==='final'?'.sello,.comp':'.top,.camino,.barra,.esc,.vig';c1.className='c1';c2.className='c2';k.forEach((e,i)=>((e.matches(sel)||(A.dataset.p==='final'&&i===0))?c1:c2).appendChild(e));A.append(c1,c2);c1.querySelectorAll('.vig svg').forEach(v=>v.setAttribute('preserveAspectRatio','xMidYMid slice'))}
+ requestAnimationFrame(fitFigus)}
+function fitFigus(){const f=document.querySelector('.figus');if(!f||!f.children.length)return;const W=f.clientWidth,H=f.clientHeight,g=6;if(!W||!H)return;let c=Math.max(3,Math.ceil((W+g)/(104+g)));for(;c<=30;c++){f.style.gridTemplateColumns='repeat('+c+',minmax(0,1fr))';f.style.setProperty('--w',((W-(c-1)*g)/c)+'px');if(f.scrollHeight<=H+1)break}}
+addEventListener('resize',()=>requestAnimationFrame(fitFigus));
+const $=(h)=>{const A=document.getElementById('app');A.innerHTML=h;agrupar(A);window.scrollTo(0,0);try{const e=document.querySelector('.esc'),m=e&&e.className.match(/w-(\w+)/);if(MU.on)ambiente(m?m[1]:'day')}catch(x){}};
 const pts=(n,m)=>'●'.repeat(Math.max(0,n))+'○'.repeat(Math.max(0,m-n));
 function cab(){let c='';G.cal=G.P.cal;G.cal.forEach((m,i)=>{c+=`<i class="${i<G.k?'h':i===G.k?'a':verano(m)?'v':''}"></i>`});
 return `<div class="top"><button class="pill sm" onclick="reiniciar(this)">${ico('redo')}<span>Reiniciar</span></button>${API?`<button class="pill sm" onclick="verRanking()">${ico('rank')}<span>Ranking</span></button>`:''}<button class="pill sm" onclick="sndToggle(this)">${ico('son')}<span>Sonido: ${SND?'sí':'no'}</span></button></div><div class="camino" style="grid-template-columns:repeat(${G.cal.length},1fr)" aria-label="Salida ${G.k+1} de ${G.cal.length}">${c}</div>

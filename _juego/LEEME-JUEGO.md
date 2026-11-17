@@ -104,3 +104,11 @@ según el propio criterio: tucán (pico algo despegado), ratona (cola), cuclillo
 - Probar sonido y cantos en celular real.
 - Código del juego: el repo es público, por lo que `_juego/` también. Felix preguntó si se puede mantener privado; opciones planteadas: A) repo privado aparte con el código fuente y publicar solo `juego/index.html`, B) dejarlo público, C) ofuscar. Sin decidir, no se hizo nada.
 - Borrar la fila de prueba "Anónimo" de la base D1 del ranking (Cloudflare → D1 → Console: `DELETE FROM scores WHERE nombre='Anónimo';`).
+
+## 9. Adaptación de tamaños (17/11/2026)
+Misma regla que el resto de la web: pantalla fija sin scroll, elementos elásticos.
+- `agrupar(A)` en `game.js` (la llama `$()` en cada pantalla): marca `#app[data-p=portada|perfil|juego|final]`; en `juego` agrupa en `.c1` (HUD + escena/viñeta) y `.c2` (texto y opciones); en `final` `.c1` = título + sello + imagen para compartir, `.c2` = el resto. En celular `.c1/.c2` son `display:contents` (flujo normal).
+- PC (≥900×500, puntero fino; bloque al final de `head.html`): `body` 100dvh sin scroll, `#app` grilla de 2 columnas (hasta 1200px); escena/viñeta rellenan la columna izquierda (los SVG `.vig` pasan a `slice`); perfil en fila de 3; portada con imagen a la izquierda.
+- Celular/cualquier otro: `#app` flex 100dvh con tamaños por `dvh` (`.esc`, `.vig`); en alturas ≤700/600px se compactan paddings y se ocultan consejo/estación. Si algo igual no entra, `#app` scrollea por dentro (fallback, por ej. celular apaisado).
+- `fitFigus()` elige cuántas columnas tiene la grilla de especies nuevas midiendo el alto real disponible (mismo principio que Especies/Álbum).
+- Probado en 1280×720, 1366×613, 396×683 y 360×640. Siempre `python3 _juego/build.py` después de tocar `_juego/`.
