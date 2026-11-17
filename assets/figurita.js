@@ -149,11 +149,12 @@
     var todas = avesReg().slice().sort(function(a, b){ return a.tx - b.tx; }), numMap = {}, fi = new Map(), CAP = 12;
     todas.forEach(function(x, n){ numMap[x.id] = n + 1; if(!fi.has(x.familiaEsp)) fi.set(x.familiaEsp, fi.size); });
     var nuevas = new Set(recientes(8, false).map(function(a){ return a.id; }));
-    var pgs = Math.ceil(todas.length / CAP), NP = 8, best = 0, bs = -1;
-    for(var s0 = 0; s0 + NP <= pgs; s0++){ var c = 0; for(var q = s0 * CAP; q < (s0 + NP) * CAP && q < todas.length; q++) if(visto(todas[q])) c++; if(c > bs){ bs = c; best = s0; } }
+    var pgs = Math.ceil(todas.length / CAP), NP = 7, sel = [];
+    for(var g0 = 0; g0 < pgs; g0++){ var c = 0; for(var q = g0 * CAP; q < (g0 + 1) * CAP && q < todas.length; q++) if(visto(todas[q]) && avist[todas[q].id] && avist[todas[q].id].foto) c++; sel.push([g0, c]); }
+    sel = sel.sort(function(x, y){ return y[1] - x[1] || x[0] - y[0]; }).slice(0, NP).map(function(x){ return x[0]; }).sort(function(x, y){ return x - y; });
     var esc = typeof escHtml === 'function' ? escHtml : function(t){ return t; };
     var cara = function(n){
-      var g = best + n, A = todas.slice(g * CAP, (g + 1) * CAP), pk = g > 0 ? todas[g * CAP - 1] : null, tag = {};
+      var g = sel[n], A = todas.slice(g * CAP, (g + 1) * CAP), pk = g > 0 && sel[n - 1] === g - 1 ? todas[g * CAP - 1] : null, tag = {};
       for(var j = 0; j < A.length; j++){
         var ini = j > 0 ? A[j - 1].familiaEsp !== A[j].familiaEsp : !(pk && pk.familiaEsp === A[j].familiaEsp), cont = j === 0 && !ini;
         if(!ini && !cont) continue;
@@ -165,20 +166,23 @@
         return '<div class="lcell fc' + (fi.get(a.familiaEsp) % 6) + (tag[j] ? ' ini' : '') + '">' + (tag[j] ? '<span class="lgt" style="width:' + tag[j].n + '00%">' + esc(tag[j].t) + '</span>' : '') + albFig(a, j, numMap, nuevas) + '</div>';
       }).join('') + '</div><div class="lpag-n">' + (g + 1) + '</div></div>';
     };
-    var N = (NP - 2) / 2, hojas = '';
-    for(var k = 0; k < N; k++) hojas += '<div class="leaf" style="z-index:' + (N - k + 2) + '"><div class="face front">' + cara(2 * k + 1) + '</div><div class="face back">' + cara(2 * k + 2) + '</div></div>';
+    var v = todas.filter(visto).length;
+    var tapa = '<div class="lpag lpag-tapa"><div class="lt-titulo"><h2>Álbum de <em>aves</em></h2></div><p class="lt-sub">Félix Santiago · Aves · Río Cuarto</p><div class="lt-pie"><div class="lt-anillo"><b>' + v + '</b><small>de ' + todas.length + '</small></div></div></div>';
+    var hojas = '<div class="leaf" style="z-index:' + 6 + '"><div class="face front">' + tapa + '</div><div class="face back"><div class="lpag lpag-dorso"></div></div></div>';
+    for(var k = 0; k < 3; k++) hojas += '<div class="leaf" style="z-index:' + (5 - k) + '"><div class="face front">' + cara(2 * k) + '</div><div class="face back">' + cara(2 * k + 1) + '</div></div>';
     var el = document.createElement('div'); el.className = 'hl-book libro stickers'; el.setAttribute('role', 'link'); el.setAttribute('aria-label', 'Ir al álbum'); el.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); irAlbum('todas'); }, true);
-    el.innerHTML = '<div class="libro-book hb2"><div class="face back hb2-l">' + cara(0) + '</div><div class="face front hb2-r">' + cara(NP - 1) + '</div>' + hojas + '</div>';
+    el.innerHTML = '<div class="libro-book hb2"><div class="face front hb2-r">' + cara(6) + '</div>' + hojas + '</div>';
     stk.insertBefore(el, stk.firstChild);
-    var bk = el.firstChild, leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false;
+    var bk = el.firstChild; bk.style.setProperty('--sh', -0.5);
+    var  leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false;
     var fit = function(){ var w = el.clientWidth, h = el.clientHeight; if(w) bk.style.setProperty('--sc', Math.min(w / 1420, h / 760).toFixed(4)); };
     fit(); addEventListener('resize', fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(el);
     stk.addEventListener('mouseenter', function(){ pausa = true; }); stk.addEventListener('mouseleave', function(){ pausa = false; });
     if(menos) return;
     var paso = function(){
       if(document.hidden || pausa) return;
-      if(i < leaves.length){ leaves[i].classList.add('volt'); i++; }
-      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; bk.classList.remove('fade'); }, 700); }
+      if(i < leaves.length){ leaves[i].classList.add('volt'); bk.style.setProperty('--sh', 0); i++; }
+      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); bk.style.setProperty('--sh', -0.5); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; bk.classList.remove('fade'); }, 700); }
     };
     setTimeout(function(){ setInterval(paso, 850); }, 2000);
   }
