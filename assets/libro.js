@@ -14,11 +14,12 @@
     const hojas = [];
     for (let i = 0; i < todas.length; i += CAP) hojas.push({ aves: todas.slice(i, i + CAP) });
     if (vModo) {   // celular vertical: UNA página por vez (cada hoja ocupa el lado de abajo; el de arriba queda vacío)
-      P = [{ t: 'tapa' }]; hojas.forEach(h => { P.push({ t: 'vacia' }); P.push(Object.assign({ t: 'hoja' }, h)); }); P.push({ t: 'vacia' });
+      P = [{ t: 'tapa' }]; hojas.forEach(h => { P.push({ t: 'vacia' }); P.push(Object.assign({ t: 'hoja' }, h)); }); P.push({ t: 'vacia' }, { t: 'dorso' }, { t: 'vacia' });   // al final: interior de la contratapa
       L = P.length / 2; LM = L - 1; return;
     }
     P = [{ t: 'tapa' }, { t: 'dorso' }].concat(hojas.map(h => Object.assign({ t: 'hoja' }, h)));   // 'dorso' = interior de la tapa, a la izquierda de la 1.ª hoja
-    if (P.length % 2) P.push({ t: 'fin' });
+    if (hojas.length % 2) P.push({ t: 'blanca' });   // hoja en blanco para que la última hoja quede a la izquierda
+    P.push({ t: 'dorso' }, { t: 'fin' });             // interior de la contratapa (a la derecha de la última hoja) y contratapa
     L = P.length / 2; LM = L;
   }
 
@@ -32,8 +33,9 @@
       const v = ctx.todas.filter(visto).length;
       const tot = ctx.todas.length, pct = tot ? Math.round(v / tot * 100) : 0, C = 2 * Math.PI * 44, cba = REGION === 'cba';
       const ult = ctx.todas.filter(a => visto(a) && avist[a.id] && avist[a.id].foto).slice(-3).map(a => { const f = String(avist[a.id].foto).replace(/^\//, ''); return `<img src="${TH(f)}" alt="" onerror="this.onerror=null;this.src='/${f}'">`; }).join('');
-      return `<div class="lpag lpag-tapa" style="--tp:url(/assets/paisajes/${cba ? 'sierra' : 'cerro'}.jpg)"><div class="lt-foto"><i class="lt-cinta"></i><div class="lt-ph"></div><span>${cba ? 'Córdoba' : '<i class="ar"></i>Argentina'}</span></div><div class="lt-titulo"><h2>Álbum de <em>aves</em></h2></div><p class="lt-sub">Félix Santiago · Aves · Río Cuarto</p><div class="lt-pie"><div class="lt-anillo"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><circle class="rg" cx="50" cy="50" r="44" stroke-dasharray="${(C * pct / 100).toFixed(1)} ${C.toFixed(1)}"/></svg><b>${v}</b><small>de ${tot}</small></div>${ult ? `<div class="lt-ult">${ult}<small>Últimas especies</small></div>` : ''}</div></div>`;
+      return `<div class="lpag lpag-tapa" style="--tp:url(/assets/paisajes/${cba ? 'sierra' : 'cerro'}.jpg)"><div class="lt-foto"><i class="lt-cinta"></i><div class="lt-ph"></div><span>${cba ? 'Córdoba' : '<i class="ar"></i>Argentina'}</span></div><div class="lt-titulo"><h2>Álbum de <em>aves</em></h2></div><p class="lt-sub">Félix Santiago · Aves · Río Cuarto</p><p class="lt-guia">Las aves van ordenadas por familia, cada una con su color. Las <b>figuritas con foto</b> son las que ya vi; las <b>grises</b> están por encontrar. Tocá una para ver su ficha.</p><div class="lt-pie"><div class="lt-anillo"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><circle class="rg" cx="50" cy="50" r="44" stroke-dasharray="${(C * pct / 100).toFixed(1)} ${C.toFixed(1)}"/></svg><b>${v}</b><small>de ${tot}</small></div>${ult ? `<div class="lt-ult">${ult}<small>Últimas especies</small></div>` : ''}</div></div>`;
     }
+    if (pg.t === 'blanca') return '<div class="lpag"></div>';
     if (pg.t === 'dorso') return '<div class="lpag lpag-dorso"></div>';
     if (pg.t === 'fin') return '<div class="lpag lpag-fin"><div class="lt-foto lt-foto-fin"><i class="lt-cinta"></i><div class="lt-ph" style="--tp:url(/assets/paisajes/ocaso.jpg)"></div></div><div class="lt-logo"></div><p>Seguirá completándose<br>en cada salida.</p><small>felixsantiago.com.ar</small></div>';
     // grupos de familia dentro de la hoja: la etiqueta va sobre la primera figurita de cada tramo (por fila)

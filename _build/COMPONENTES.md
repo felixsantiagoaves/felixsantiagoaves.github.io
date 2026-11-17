@@ -86,3 +86,4 @@ Libro vertical: la página izquierda (reverso de la hoja pasada) muestra SOLO la
 Libro vertical: sin mix-blend-mode en la sombra del pliegue (causaba glitch al terminar el giro 3D); .leaf will-change:transform.
 Libro vertical: pliegue ESTÁTICO (.libro-book::before simétrico, z alto) en vez de sombra por hoja (evita glitch al pasar); la página izquierda siempre muestra la col. 3 de la hoja inmediata anterior (cara(i-1)).
 Libro: dorso de la tapa (interior verde, .lpag-dorso) a la izquierda de la 1.ª hoja, tanto en PC (P=[tapa,dorso,h1…]; numeración de hojas = índice-1) como en celular vertical (relleno izquierdo de la hoja 1).
+Libro: final realista = última hoja a la izquierda + interior de la contratapa (.lpag-dorso) a la derecha, luego contratapa ('blanca' si la cantidad de hojas es impar); en celular vertical la última página es el dorso verde. Tapa: mini guía de uso (.lt-guia) sobre cómo está organizado el álbum.

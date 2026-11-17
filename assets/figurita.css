@@ -993,3 +993,9 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 /* Dorso de la tapa (interior de la tapa verde, a la izquierda de la 1.ª hoja) */
 .lpag-dorso{background:var(--fg-v1,#414833)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)!important}
 .lpag-dorso::before{content:'';position:absolute;inset:22px 22px 22px 14px;border:2px solid rgba(232,220,203,.28);border-radius:4px}
+
+.lpag-tapa .lt-guia{position:absolute;left:12%;right:12%;top:57%;margin:0;text-align:center;font:400 .78rem/1.45 'Lato',sans-serif;color:rgba(232,220,203,.88)}
+.lpag-tapa .lt-guia b{color:#e8dccb;font-weight:900}
+.libro-vv .lpag-tapa .lt-guia{font-size:.95rem;top:55%}
+.lpag-tapa .lt-guia b{all:unset;font-weight:900;color:#e8dccb}
+.libro:not(.libro-vv) .lpag-tapa .lt-guia{left:31%;right:41%;top:72%;text-align:left;font-size:.72rem;line-height:1.4}
