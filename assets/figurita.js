@@ -181,8 +181,8 @@
     if(menos) return;
     var paso = function(){
       if(document.hidden || pausa) return;
-      if(i < leaves.length){ leaves[i].classList.add('volt'); bk.style.setProperty('--sh', 0); i++; }
-      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); leaves[0].classList.add('volt'); if(!ya){ ya = 1; leaves[0].querySelector('.back').innerHTML = cara(NP - 1); } bk.style.setProperty('--sh', 0); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 1; bk.classList.remove('fade'); }, 700); }
+      if(i < leaves.length){ leaves[i].classList.add('volt'); leaves[i].style.zIndex = i + 1; bk.style.setProperty('--sh', 0); i++; }
+      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l, q){ l.style.transition = 'none'; l.classList.remove('volt'); l.style.zIndex = leaves.length + 2 - q; }); leaves[0].classList.add('volt'); leaves[0].style.zIndex = 1; if(!ya){ ya = 1; leaves[0].querySelector('.back').innerHTML = cara(NP - 1); } bk.style.setProperty('--sh', 0); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 1; bk.classList.remove('fade'); }, 700); }
     };
     setTimeout(function(){ paso(); setInterval(paso, 850); }, 700);
   }
