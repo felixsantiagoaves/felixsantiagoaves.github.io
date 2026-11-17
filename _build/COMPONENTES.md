@@ -71,5 +71,6 @@ Celular = todo lo que no es `fit-pc` (ancho < 1000, alto < 560 o sin mouse; incl
   - (Se probó un índice lateral de pestañitas con abreviaturas: no servía, se sacó. El libro vertical queda limitado por el ALTO de pantalla; con 4×3 figuritas por página el ancho sobrante no agranda las figuritas.)
 - Celular: el LIBRO es la vista por defecto del Álbum (antes lista). El libro vertical deja visible la barra de abajo de la web (sin "Cerrar"; botón "☰ Lista" para cambiar de vista) y `.modal-ov` tiene z-index 10050 para que las fichas abran POR ENCIMA del libro (antes quedaban detrás y "no andaban"). Una elección guardada en localStorage (`albumVista`) tiene prioridad sobre el default.
 
-## Álbum en celular: cabecera única (lista y libro)
-Sin logo ni título arriba. Una sola barra fija de 46px: [Córdoba|Argentina] [Libro/Lista] [Filtros ▾ (lista) / Ir a familia (libro)]. CSS al final de `assets/figurita.css` (`body:not(.fit-pc):has(#page-album.active)`); markup del libro en `renderV()` de `assets/libro.js`; texto del botón en `libroBtnTxt()` (site.js).
+## Álbum en celular: barra única (lista y libro), con el nav de arriba visible
+Se mantiene el nav (logo) arriba; sin título de página. Una sola barra fija de 46px: [Córdoba|Argentina] [Libro/Lista] [Filtros ▾ (lista) / Ir a familia (libro)]. CSS al final de `assets/figurita.css` (`body:not(.fit-pc):has(#page-album.active)`); markup del libro en `renderV()` de `assets/libro.js`; texto del botón en `libroBtnTxt()` (site.js).
+Textos de stickers del libro vertical agrandados (.libro-vv .fig-co/.fig-ci/.fig-num al final de figurita.css); overlay del libro empieza en top:54px (altura del nav).

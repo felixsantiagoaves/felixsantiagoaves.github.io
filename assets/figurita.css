@@ -916,15 +916,12 @@ body.fit-pc #page-mapa .mapa-wrap{flex:1 1 0;min-height:0;height:auto!important;
 .libro-vv .libro-grid{gap:14px 0!important}
 .libro-vv .lcell .fig{zoom:.92}
 /* Libro vertical dentro de la web: deja visible la barra de navegación de abajo (no hay "entrar/salir") y los modales quedan POR ENCIMA del libro */
-.libro-vv.libro-full{inset:0 0 66px 0!important;z-index:200!important}
+.libro-vv.libro-full{inset:54px 0 66px 0!important;z-index:200!important}
 .lv-top .lv-lista{font-size:.62rem;padding:.35rem .6rem;white-space:nowrap}
 .modal-ov{z-index:10050!important}
 
 /* Celular: la lista y el libro comparten la misma cabecera: sin logo ni título arriba, una sola barra fija [región] [Libro/Lista] [Filtros / Ir a familia] */
 @media(max-width:999px),(pointer:coarse){
-body:not(.fit-pc):has(#page-album.active) > nav{height:0!important;min-height:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:transparent!important}
-body:not(.fit-pc):has(#page-album.active) > nav .nav-logo{display:none!important}
-body:not(.fit-pc):has(#page-album.active) > nav .nav-i{height:0!important;min-height:0!important;padding:0!important}
 body:not(.fit-pc) #page-album .page-header{display:none!important}
 body:not(.fit-pc) #page-album .album-controls{position:sticky!important;top:0!important;z-index:40;padding:6px 8px!important;min-height:46px;box-sizing:border-box}
 .lv-top{min-height:46px;box-sizing:border-box;padding:6px 8px}
@@ -943,3 +940,8 @@ body:not(.fit-pc) #page-album .album-controls #btn-mas{order:3}
 @media(max-width:999px),(pointer:coarse){
 body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:.5rem .6rem;display:inline-flex;align-items:center;gap:4px;font-size:.62rem}
 }
+
+/* Textos de los stickers del libro vertical: más grandes (el libro se escala ~.5) */
+.libro-vv .fig-co{font-size:1.15rem!important;line-height:1.1!important}
+.libro-vv .fig-ci{font-size:.95rem!important;line-height:1.1!important}
+.libro-vv .fig-num{font-size:.95rem!important}
