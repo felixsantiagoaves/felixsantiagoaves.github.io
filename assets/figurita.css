@@ -1033,3 +1033,4 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .lpag-izq .libro-grid{align-items:stretch!important;grid-auto-rows:auto}
 .libro-vv .lpag-izq .lcell{align-self:stretch!important;height:auto}
 .libro-vv .lpag-izq .lf-c{align-self:stretch;flex:1}
+body.fit-pc.libro-modo .libro-bar{display:none!important}

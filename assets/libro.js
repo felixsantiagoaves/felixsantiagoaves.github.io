@@ -116,7 +116,7 @@
     else if (fit) {
       // PC en pantalla fija: el libro (proporción fija) ocupa el mayor tamaño que entra en el hueco de su contenedor
       const main = st.parentElement, bar = main.querySelector('.libro-bar'), ay = main.querySelector('.libro-ayuda');
-      const usado = (bar ? bar.offsetHeight + 12 : 0) + (ay && getComputedStyle(ay).display !== 'none' ? ay.offsetHeight + 4 : 0) + 14;
+      const usado = (bar && bar.offsetHeight ? bar.offsetHeight + 12 : 0) + (ay && getComputedStyle(ay).display !== 'none' ? ay.offsetHeight + 4 : 0) + 14;
       sc = Math.min(2, (main.clientWidth - 110) / (2 * PW), (main.clientHeight - usado) / PH);
     } else sc = Math.min(1.5, (window.innerWidth - 390) / (2 * PW), (window.innerHeight - st.getBoundingClientRect().top - scrollY - 120) / PH);
     const k = Math.max(.2, sc);
