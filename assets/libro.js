@@ -23,7 +23,10 @@
   }
 
   function cara(i) {
-    if (vModo && P[i] && P[i].t === 'vacia') { const q = P[i - 3]; return q && q.t === 'hoja' ? cara(i - 3) : '<div class="lpag lpag-vacia"></div>'; }   // página izquierda 'de relleno' (realismo): contenido de una hoja anterior
+    if (vModo && P[i] && P[i].t === 'vacia') {   // página izquierda 'de relleno' (realismo): solo la 3.ª columna (la pegada al pliegue) de una hoja anterior, con miniaturas livianas
+      const q = P[i - 3]; if (!q || q.t !== 'hoja') return '<div class="lpag lpag-vacia"></div>';
+      return '<div class="lpag lpag-izq"><div class="lf-col">' + [2, 5, 8, 11].map(j => { const a = q.aves[j], f = a && visto(a) && avist[a.id] && avist[a.id].foto ? String(avist[a.id].foto).replace(/^\//, '') : ''; return '<div class="lf-c">' + (f ? `<img src="${TH(f)}" alt="" decoding="async">` : '') + '</div>'; }).join('') + '</div></div>';
+    }
     const pg = P[i]; if (!pg || pg.t === 'vacia') return '<div class="lpag lpag-vacia"></div>';
     if (pg.t === 'tapa') {
       const v = ctx.todas.filter(visto).length;
@@ -48,10 +51,10 @@
   // Memoria: sólo las hojas cercanas a la actual tienen contenido y se dibujan (en Argentina son ~90 hojas; en celular se caía la pestaña)
   function llenar() {
     book.querySelectorAll('.leaf').forEach(el => {
-      const k = +el.dataset.k, d = Math.abs(k - S);
-      if (d <= 2 && !el.dataset.ok) { el.querySelector('.front').innerHTML = cara(2 * k); el.querySelector('.back').innerHTML = cara(2 * k + 1); el.dataset.ok = 1; }
-      else if (d > 3 && el.dataset.ok) { el.querySelector('.front').innerHTML = ''; el.querySelector('.back').innerHTML = ''; delete el.dataset.ok; }
-      el.style.display = d > 3 ? 'none' : '';
+      const k = +el.dataset.k, d = Math.abs(k - S), lim = vModo ? 1 : 2;
+      if (d <= lim && !el.dataset.ok) { el.querySelector('.front').innerHTML = cara(2 * k); el.querySelector('.back').innerHTML = cara(2 * k + 1); el.dataset.ok = 1; }
+      else if (d > lim + 1 && el.dataset.ok) { el.querySelector('.front').innerHTML = ''; el.querySelector('.back').innerHTML = ''; delete el.dataset.ok; }
+      el.style.display = d > lim + 1 ? 'none' : '';
     });
   }
 

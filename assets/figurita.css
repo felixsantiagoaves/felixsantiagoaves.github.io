@@ -976,3 +976,8 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .back .lpag::after{background:linear-gradient(270deg,rgba(60,40,20,.26) 0,rgba(60,40,20,.14) 2%,rgba(60,40,20,.05) 5%,rgba(60,40,20,0) 10%)}
 
 .libro-vv .back{pointer-events:none}
+
+.libro-vv .lpag-izq{padding:0}
+.libro-vv .lf-col{position:absolute;right:10px;top:14px;bottom:20px;width:215px;display:grid;grid-template-rows:repeat(4,1fr);gap:14px}
+.libro-vv .lf-c{background:#e3d9c0;border:3px solid #fff;box-shadow:0 1px 3px rgba(42,31,20,.3);overflow:hidden}
+.libro-vv .lf-c img{width:100%;height:100%;object-fit:cover;display:block}
