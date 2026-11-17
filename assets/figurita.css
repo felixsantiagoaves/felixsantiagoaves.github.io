@@ -870,3 +870,12 @@ body.fit-datm #dat-falt .fam-lista{grid-column:1!important;grid-row:3!important;
 .stk-tierra circle.rg{stroke:#f6b40e!important}
 .stk-tierra b{color:#fff}
 .stk-tierra small{color:#fff!important;opacity:.95}
+
+/* Mapa (PC): pantalla fija; la barra de título/botones ocupa lo justo y el mapa se lleva TODO el resto (ancho y alto) */
+body.fit-pc #page-mapa.active{height:var(--fit-h);display:flex;flex-direction:column;overflow:hidden}
+body.fit-pc #page-mapa .mapa-section{flex:1 1 0;min-height:0;display:flex;flex-direction:column;padding:0 clamp(12px,2vw,40px) 10px}
+body.fit-pc #page-mapa .mapa-titulo-wrap{flex:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1.1rem;padding:.55rem 0 .5rem}
+body.fit-pc #page-mapa .mapa-titulo{margin:0;font-size:clamp(1.1rem,2.6vh,1.5rem)}
+body.fit-pc #page-mapa .mapa-barra{margin:0}
+body.fit-pc #page-mapa .mapa-leyenda{flex:1 0 100%;margin:0;font-size:.78rem}
+body.fit-pc #page-mapa .mapa-wrap{flex:1 1 0;min-height:0;height:auto!important;max-width:none!important;width:100%;margin:0;transform:none;box-sizing:border-box}
