@@ -180,7 +180,7 @@
       if(i < leaves.length){ leaves[i].classList.add('volt'); i++; }
       else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; bk.classList.remove('fade'); }, 700); }
     };
-    setTimeout(function(){ setInterval(paso, 1500); }, 2000);
+    setTimeout(function(){ setInterval(paso, 850); }, 2000);
   }
   var arrancar = function(){ (window.requestIdleCallback || function(g){ setTimeout(g, 900); })(armar, { timeout: 2500 }); };
   if(document.readyState === 'complete') arrancar(); else addEventListener('load', arrancar);
