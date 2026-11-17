@@ -51,6 +51,7 @@
   }
 
   function marca() {
+    if (vModo) return marcaV();
     const ix = document.getElementById('libro-idx'); if (!ix) return;
     const en = new Set(); [P[2 * S - 1], P[2 * S]].forEach(pg => pg && pg.aves && pg.aves.forEach(a => en.add(a.familiaEsp)));
     ix.querySelectorAll('button[data-s]').forEach(b => b.classList.toggle('on', b.dataset.f ? en.has(b.dataset.f) : S === 0));
@@ -94,6 +95,10 @@
   function escala() {
     const st = document.getElementById('libro-stage'); if (!st) return;
     const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
+    if (vModo && full) {
+      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min(innerWidth / PW, (innerHeight - top - 6) / (2 * PH)));
+      book.style.setProperty('--sc', k.toFixed(3)); st.style.height = Math.round(2 * PH * k) + 'px'; return;
+    }
     let sc;
     if (full) sc = Math.min((window.innerWidth - 120 - 96) / (2 * PW), (window.innerHeight - 12) / PH);
     else if (fit) {
@@ -113,8 +118,8 @@
     const c = document.getElementById('album-container'); if (!c) return;
     armar(); if (S > L) S = 0; busy = false;
     const grupos = P.map((pg, i) => pg.t === 'hoja' ? '<option value="' + Math.ceil(i / 2) + '">Hoja ' + i + ' · ' + pg.aves[0].comun + ' …</option>' : '').join('');
-    const full = esMov(), vert = full && innerHeight > innerWidth; COLS = vert ? 3 : 4; vModo = vert;
-    if (vert) { book = null; return renderV(c); }
+    const full = esMov(), vert = full && innerHeight > innerWidth; COLS = 4; vModo = vert;
+    if (vert) return renderV(c);
     let host = c; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     if (full) { c.innerHTML = ''; host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' })); }
     const fa = new Map(); ctx.todas.forEach((x, n) => { let g = fa.get(x.familiaEsp); if (!g) fa.set(x.familiaEsp, g = { f: x.familiaEsp, c: ctx.col(x), s: Math.ceil((Math.floor(n / CAP) + 1) / 2), n: 0, v: 0 }); g.n++; if (visto(x)) g.v++; });
@@ -133,36 +138,25 @@
     book.addEventListener('pointerdown', onDown);
   };
 
-  // ── Libro en celular VERTICAL: una página por pantalla (3 columnas × 4 filas), se pasa deslizando. Mismo contenido y paginación que el libro apaisado. ──
-  function vDim() { const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, W = innerWidth, H = innerHeight - top; return { sc: W / 700, h: Math.max(740, Math.round(700 * H / W)), H, W }; }
-  function vEscala() {
-    const st = document.getElementById('lv-stage'); if (!st) return; const d = vDim();
-    const esc = st.querySelector('.lv-esc'), pg = st.querySelector('.lv-page');
-    esc.style.transform = 'scale(' + d.sc + ')'; pg.style.height = d.h + 'px'; esc.style.height = d.h + 'px';
+  // ── Libro en celular VERTICAL: doble página APILADA (como un almanaque de pared). Hoja de arriba = página par, hoja de abajo = página impar; al pasar, la hoja de abajo se levanta hacia arriba. Mismo motor y paginación que el libro apaisado, con el lomo horizontal. ──
+  window.libroVFam = f => { const i = P.findIndex(pg => pg.aves && pg.aves[0].familiaEsp === f); window.libroSalta(f ? Math.ceil(i / 2) : 0); };
+  function marcaV() {
+    const sel = document.getElementById('lv-sel'); if (!sel) return;
+    let f = ''; [P[2 * S - 1], P[2 * S]].forEach(pg => { if (!f && pg && pg.aves) f = pg.aves[0].familiaEsp; }); sel.value = f;
   }
-  function vPagina(dir) {
-    const pg = document.getElementById('lv-page'); if (!pg) return;
-    pg.innerHTML = cara(V); pg.classList.remove('lv-ir', 'lv-vuelve'); void pg.offsetWidth; if (dir) pg.classList.add(dir > 0 ? 'lv-ir' : 'lv-vuelve');
-    const f = P[V] && P[V].aves ? P[V].aves[0].familiaEsp : '', sel = document.getElementById('lv-sel'); if (sel) sel.value = f || '';
-    document.getElementById('lv-prev').disabled = V === 0; document.getElementById('lv-next').disabled = V >= P.length - 1;
-  }
-  window.libroVIr = d => { const n = Math.max(0, Math.min(P.length - 1, V + d)); if (n === V) return; V = n; vPagina(d); };
-  window.libroVSalta = f => { if (!f) { V = 0; vPagina(-1); return; } const i = P.findIndex(pg => pg.aves && pg.aves[0].familiaEsp === f); if (i < 0) return; const dir = i > V ? 1 : -1; V = i; vPagina(dir); };
   function renderV(c) {
     c.innerHTML = ''; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     const host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' }));
-    if (V > P.length - 1) V = 0;
     const fams = []; P.forEach(pg => { if (pg.aves && !fams.includes(pg.aves[0].familiaEsp)) fams.push(pg.aves[0].familiaEsp); });
-    host.innerHTML = `<div class="libro stickers libro-full libro-v" id="libro"><div class="lv-top"><select id="lv-sel" aria-label="Ir a una familia" onchange="libroVSalta(this.value)"><option value="">Tapa</option>${fams.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('')}</select><div class="libro-reg"><button class="${REGION === 'cba' ? 'on' : ''}" onclick="setRegion('cba')">Córdoba</button><button class="${REGION === 'arg' ? 'on' : ''}" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><button class="libro-x" onclick="libroToggle()" aria-label="Cerrar">✕</button></div><div class="lv-stage" id="lv-stage"><div class="lv-esc"><div class="lv-page" id="lv-page"></div></div><button class="libro-nav pv" id="lv-prev" onclick="libroVIr(-1)" aria-label="Página anterior">◀</button><button class="libro-nav nx" id="lv-next" onclick="libroVIr(1)" aria-label="Página siguiente">▶</button></div></div>`;
-    sinZoom(true); vEscala(); vPagina(0);
-    const st = document.getElementById('lv-stage'); let t0 = null;
-    st.addEventListener('touchstart', e => { t0 = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null; }, { passive: true });
-    st.addEventListener('touchend', e => { if (!t0) return; const dx = e.changedTouches[0].clientX - t0.x, dy = e.changedTouches[0].clientY - t0.y; t0 = null; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) libroVIr(dx < 0 ? 1 : -1); }, { passive: true });
+    host.innerHTML = `<div class="libro stickers libro-full libro-vv" id="libro"><div class="lv-top"><select id="lv-sel" aria-label="Ir a una familia" onchange="libroVFam(this.value)"><option value="">Tapa</option>${fams.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('')}</select><div class="libro-reg"><button class="${REGION === 'cba' ? 'on' : ''}" onclick="setRegion('cba')">Córdoba</button><button class="${REGION === 'arg' ? 'on' : ''}" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><button class="libro-x" onclick="libroToggle()" aria-label="Cerrar">✕</button></div><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">▲</button><div class="libro-book" id="libro-book">${Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')}</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▼</button></div></div>`;
+    sinZoom(true); book = document.getElementById('libro-book'); escala(); pos();
+    [150, 500, 1200].forEach(t => setTimeout(() => { if (window.libroOn && book && book.isConnected) escala(); }, t));
+    book.addEventListener('pointerdown', onDown);
   }
   ['resize', 'orientationchange'].forEach(ev => window.addEventListener(ev, () => {
     if (!window.libroOn || !document.getElementById('libro-host')) return;
     const vert = esMov() && innerHeight > innerWidth;
-    if (vert !== vModo) { if (window.libroRender) libroRender(); } else if (vert) vEscala();
+    if (vert !== vModo && window.libroRender) libroRender();
   }));
   window.libroIr = d => ir(S + d);
   window.libroSalta = v => ir(+v);
@@ -174,13 +168,13 @@
 
   // Arrastrar una esquina: sólo decide la dirección (el giro lo anima el CSS)
   function onDown(e) {
-    if (e.pointerType === 'touch') { drag = { x: e.clientX, d: 0, any: 1 }; return; }
+    if (e.pointerType === 'touch') { drag = { x: e.clientX, y: e.clientY, d: 0, any: 1 }; return; }
     if (e.button || e.target.closest('.fig')) return;
     const r = book.getBoundingClientRect(), x = e.clientX - r.left, w = r.width;
     const borde = x < w * .12 ? -1 : x > w * .88 ? 1 : 0;
     if (!borde) return; drag = { x: e.clientX, d: borde };
   }
-  window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (drag.any) { if (Math.abs(dx) > 50) { const d = dx < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (Math.abs(dx) > 60 && Math.sign(dx) === -drag.d) { const d = drag.d; drag = null; ir(S + d); } });
+  window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (drag.any && vModo) { const dy = e.clientY - drag.y; if (Math.abs(dy) > 50 && Math.abs(dy) > Math.abs(dx)) { const d = dy < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (drag.any) { if (Math.abs(dx) > 50) { const d = dx < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (Math.abs(dx) > 60 && Math.sign(dx) === -drag.d) { const d = drag.d; drag = null; ir(S + d); } });
   window.addEventListener('pointerup', () => { drag = null; });
   window.addEventListener('keydown', e => { if (!window.libroOn || !book || e.target.closest('input,select,textarea')) return; if (e.key === 'ArrowRight') ir(S + 1); if (e.key === 'ArrowLeft') ir(S - 1); });
   ['resize', 'orientationchange', 'fullscreenchange'].forEach(ev => window.addEventListener(ev, () => { if (window.libroOn && book && book.isConnected) escala(); }));
