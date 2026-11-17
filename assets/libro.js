@@ -65,7 +65,7 @@
   function pos() {
     book.querySelectorAll('.leaf').forEach(el => {
       const k = +el.dataset.k, volt = k < S;
-      el.classList.toggle('volt', volt);
+      el.classList.toggle('volt', volt); el.classList.toggle('cur', k === S);
       el.style.zIndex = volt ? k + 1 : L - k + 1;
     });
     book.style.setProperty('--sh', vModo ? -1 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);   // cerrado: la tapa/contratapa queda centrada
@@ -77,7 +77,8 @@
 
   function ir(n) {
     n = Math.max(0, Math.min(LM, n)); if (n === S || busy) return;
-    const dir = n > S ? 1 : -1, ms = MENOS_MOV ? 0 : 650;
+    const dir = n > S ? 1 : -1, ms = MENOS_MOV || vModo ? 0 : 650;
+    if (vModo && !MENOS_MOV) { const b = document.getElementById('libro'); if (b) { b.style.setProperty('--vd', dir * 60 + 'px'); b.classList.remove('vs'); void b.offsetWidth; b.classList.add('vs'); } }
     const k = dir > 0 ? S : S - 1, el = book.querySelector('.leaf[data-k="' + k + '"]');
     busy = true; llenar();
     // hojas intermedias saltan; sólo la más cercana anima
@@ -86,6 +87,7 @@
     const prev = S; S = n;
     leafs.forEach(l => { const kk = +l.dataset.k; if (l !== el) { l.classList.toggle('volt', kk < S); l.style.zIndex = kk < S ? kk + 1 : L - kk + 1; } });
     el.classList.toggle('volt', dir > 0);
+    if (vModo) leafs.forEach(l => l.classList.toggle('cur', +l.dataset.k === S));
     book.style.setProperty('--sh', vModo ? -1 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);
     setTimeout(() => { busy = false; pos(); }, ms);
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;

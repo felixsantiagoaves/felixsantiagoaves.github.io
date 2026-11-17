@@ -951,3 +951,11 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .libro-grid{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(4,1fr)!important}
 .libro-vv .lcell .fig{zoom:1}
 .libro-vv .fig-co{font-size:1.05rem!important}.libro-vv .fig-ci{font-size:.85rem!important}
+
+/* Libro vertical (una página): sin giro de hoja; la página nueva se desliza desde abajo/arriba y aparece */
+.libro-vv .leaf{transition:none!important}
+.libro-vv.vs .lpag{animation:vslide .3s ease-out}
+@keyframes vslide{from{transform:translateY(var(--vd,60px));opacity:.2}to{transform:none;opacity:1}}
+
+.libro-vv .leaf:not(.cur){visibility:hidden}
+.libro-vv.vs .lpag{animation:vslide .28s ease-out}

@@ -76,3 +76,4 @@ Se mantiene el nav (logo) arriba; sin título de página. Una sola barra fija de
 Textos de stickers del libro vertical agrandados (.libro-vv .fig-co/.fig-ci/.fig-num al final de figurita.css); overlay del libro empieza en top:54px (altura del nav).
 Libro vertical en celular = UNA página por vez (ancho completo): en vModo armar() intercala páginas 'vacia' (P=[tapa,vacia,h1,vacia,h2…]), LM=L-1, --sh=-1, escala por ancho/alto de 1 página. Reemplaza la doble página apilada.
 Libro vertical celular: 3 columnas × 4 filas por página (COLS=3, PH=1080 en vModo; --ph en CSS).
+Libro vertical: sin giro de hoja; solo la hoja .cur es visible y la página nueva se desliza (@keyframes vslide, --vd según dirección).
