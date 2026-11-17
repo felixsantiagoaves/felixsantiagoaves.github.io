@@ -95,7 +95,7 @@
     const st = document.getElementById('libro-stage'); if (!st) return;
     const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
     let sc;
-    if (full) sc = Math.min((window.innerWidth - 270) / (2 * PW), (window.innerHeight - 50) / PH);
+    if (full) sc = Math.min((window.innerWidth - 120 - 96) / (2 * PW), (window.innerHeight - 12) / PH);
     else if (fit) {
       // PC en pantalla fija: el libro (proporción fija) ocupa el mayor tamaño que entra en el hueco de su contenedor
       const main = st.parentElement, bar = main.querySelector('.libro-bar'), ay = main.querySelector('.libro-ayuda');
