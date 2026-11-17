@@ -174,7 +174,7 @@
     el.innerHTML = '<div class="libro-book hb2"><div class="face front hb2-r">' + cara(6) + '</div>' + hojas + '</div>';
     stk.insertBefore(el, stk.firstChild);
     var bk = el.firstChild; bk.style.setProperty('--sh', -0.5);
-    var  leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false;
+    var  leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false, ya = 0;
     var fit = function(){ var w = el.clientWidth, h = el.clientHeight; if(w) bk.style.setProperty('--sc', Math.min(w / 1420, h / 760).toFixed(4)); };
     fit(); addEventListener('resize', fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(el);
     stk.addEventListener('mouseenter', function(){ pausa = true; }); stk.addEventListener('mouseleave', function(){ pausa = false; });
@@ -182,10 +182,10 @@
     var paso = function(){
       if(document.hidden || pausa) return;
       if(i < leaves.length){ leaves[i].classList.add('volt'); bk.style.setProperty('--sh', 0); i++; }
-      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); bk.style.setProperty('--sh', -0.5); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; bk.classList.remove('fade'); }, 700); }
+      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); leaves[0].classList.add('volt'); if(!ya){ ya = 1; leaves[0].querySelector('.back').innerHTML = cara(6); } bk.style.setProperty('--sh', 0); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 1; bk.classList.remove('fade'); }, 700); }
     };
-    setTimeout(function(){ setInterval(paso, 850); }, 2000);
+    setTimeout(function(){ paso(); setInterval(paso, 850); }, 700);
   }
-  var arrancar = function(){ (window.requestIdleCallback || function(g){ setTimeout(g, 900); })(armar, { timeout: 2500 }); };
-  if(document.readyState === 'complete') arrancar(); else addEventListener('load', arrancar);
+  var arrancar = function(){ var n = 0, t = setInterval(function(){ n++; if(document.querySelector('.fgh-stk .hl-book') || n > 40){ clearInterval(t); return; } armar(); }, 100); };
+  if(document.readyState !== 'loading') arrancar(); else addEventListener('DOMContentLoaded', arrancar);
 })();
