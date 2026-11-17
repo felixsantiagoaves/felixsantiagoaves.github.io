@@ -24,7 +24,7 @@
 
   function cara(i) {
     if (vModo && P[i] && P[i].t === 'vacia') {   // página izquierda 'de relleno' (realismo): solo la 3.ª columna (la pegada al pliegue) de una hoja anterior, con miniaturas livianas
-      const q = P[i - 3]; if (!q || q.t !== 'hoja') return '<div class="lpag lpag-vacia"></div>';
+      const q = P[i - 1]; if (!q || q.t !== 'hoja') return '<div class="lpag lpag-vacia"></div>';
       return '<div class="lpag lpag-izq"><div class="lf-col">' + [2, 5, 8, 11].map(j => { const a = q.aves[j], f = a && visto(a) && avist[a.id] && avist[a.id].foto ? String(avist[a.id].foto).replace(/^\//, '') : ''; return '<div class="lf-c">' + (f ? `<img src="${TH(f)}" alt="" decoding="async">` : '') + '</div>'; }).join('') + '</div></div>';
     }
     const pg = P[i]; if (!pg || pg.t === 'vacia') return '<div class="lpag lpag-vacia"></div>';

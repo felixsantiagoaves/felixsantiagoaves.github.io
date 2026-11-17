@@ -985,3 +985,7 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .front .lpag::after,.libro-vv .back .lpag::after{mix-blend-mode:normal!important}
 .libro-vv .leaf{will-change:transform}
 .libro-vv .leaf .face{transform-style:flat}
+/* Pliegue ESTÁTICO (no gira con las hojas: evita el glitch al pasar de página): una sola sombra simétrica sobre el centro del libro */
+.libro-vv .front .lpag::after,.libro-vv .back .lpag::after{display:none!important}
+.libro-vv .libro-book::before{content:'';position:absolute;left:-96px;width:200px;top:0;bottom:0;height:auto;z-index:99999;pointer-events:none;border-radius:0;
+ background:linear-gradient(90deg,rgba(60,40,20,0) 0,rgba(60,40,20,.05) 20%,rgba(60,40,20,.14) 34%,rgba(60,40,20,.26) 46%,rgba(60,40,20,.3) 50%,rgba(60,40,20,.26) 54%,rgba(60,40,20,.14) 66%,rgba(60,40,20,.05) 80%,rgba(60,40,20,0) 100%)}
