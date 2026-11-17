@@ -3,7 +3,7 @@
    Las hojas dadas vuelta (k < s) giran -180° sobre el lomo. Todas las especies, con huecos las no vistas y la figurita pegada las vistas. */
 (function () {
   const CAP = 12, PW = 700, PH = 740;     // figuritas por hoja; tamaño natural de una página (px, luego se escala)
-  let COLS = 4, V = 0, vModo = false, P = [], L = 0, S = 0, ctx = null, busy = false, book = null, drag = null;
+  let LM = 0, COLS = 4, V = 0, vModo = false, P = [], L = 0, S = 0, ctx = null, busy = false, book = null, drag = null;
 
   function armar() {
     const todas = avesReg().slice().sort((a, b) => a.tx - b.tx), numMap = {};
@@ -13,13 +13,17 @@
     ctx.col = x => fi.get(x.familiaEsp) % 6;
     const hojas = [];
     for (let i = 0; i < todas.length; i += CAP) hojas.push({ aves: todas.slice(i, i + CAP) });
+    if (vModo) {   // celular vertical: UNA página por vez (cada hoja ocupa el lado de abajo; el de arriba queda vacío)
+      P = [{ t: 'tapa' }]; hojas.forEach(h => { P.push({ t: 'vacia' }); P.push(Object.assign({ t: 'hoja' }, h)); }); P.push({ t: 'vacia' });
+      L = P.length / 2; LM = L - 1; return;
+    }
     P = [{ t: 'tapa' }].concat(hojas.map(h => Object.assign({ t: 'hoja' }, h)));
     if (P.length % 2) P.push({ t: 'fin' });
-    L = P.length / 2;
+    L = P.length / 2; LM = L;
   }
 
   function cara(i) {
-    const pg = P[i]; if (!pg) return '<div class="lpag lpag-vacia"></div>';
+    const pg = P[i]; if (!pg || pg.t === 'vacia') return '<div class="lpag lpag-vacia"></div>';
     if (pg.t === 'tapa') {
       const v = ctx.todas.filter(visto).length;
       const tot = ctx.todas.length, pct = tot ? Math.round(v / tot * 100) : 0, C = 2 * Math.PI * 44, cba = REGION === 'cba';
@@ -28,7 +32,7 @@
     }
     if (pg.t === 'fin') return '<div class="lpag lpag-fin"><div class="lt-foto lt-foto-fin"><i class="lt-cinta"></i><div class="lt-ph" style="--tp:url(/assets/paisajes/ocaso.jpg)"></div></div><div class="lt-logo"></div><p>Seguirá completándose<br>en cada salida.</p><small>felixsantiago.com.ar</small></div>';
     // grupos de familia dentro de la hoja: la etiqueta va sobre la primera figurita de cada tramo (por fila)
-    const A = pg.aves, tag = {}, pk = i > 1 && P[i - 1].aves ? P[i - 1].aves[P[i - 1].aves.length - 1] : null;
+    const A = pg.aves, tag = {}, pp = P[i - (vModo ? 2 : 1)], pk = i > 1 && pp && pp.aves ? pp.aves[pp.aves.length - 1] : null;
     for (let j = 0; j < A.length; j++) {
       const ini = j > 0 ? A[j - 1].familiaEsp !== A[j].familiaEsp : !(pk && pk.familiaEsp === A[j].familiaEsp);
       const cont = j === 0 && !ini;
@@ -37,7 +41,7 @@
       const tot = ctx.todas.filter(x => x.familiaEsp === A[j].familiaEsp), v = tot.filter(visto).length;
       tag[j] = { n: e - j + 1, t: A[j].familiaEsp + ' ' + v + '/' + tot.length + (cont ? ' · sigue' : '') };
     }
-    return `<div class="lpag"><div class="album-grid stk libro-grid">${A.map((a, j) => `<div class="lcell fc${ctx.col(a)}${tag[j] ? ' ini' : ''}">${tag[j] ? `<span class="lgt" style="width:calc(${tag[j].n}00% + ${(tag[j].n - 1) * 0}px)" title="${escHtml(tag[j].t)}">${escHtml(tag[j].t)}</span>` : ''}${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div><div class="lpag-n">${i}</div></div>`;
+    return `<div class="lpag"><div class="album-grid stk libro-grid">${A.map((a, j) => `<div class="lcell fc${ctx.col(a)}${tag[j] ? ' ini' : ''}">${tag[j] ? `<span class="lgt" style="width:calc(${tag[j].n}00% + ${(tag[j].n - 1) * 0}px)" title="${escHtml(tag[j].t)}">${escHtml(tag[j].t)}</span>` : ''}${albFig(a, j, ctx.numMap, ctx.nuevas)}</div>`).join('')}</div><div class="lpag-n">${vModo ? i / 2 : i}</div></div>`;
   }
 
   // Memoria: sólo las hojas cercanas a la actual tienen contenido y se dibujan (en Argentina son ~90 hojas; en celular se caía la pestaña)
@@ -64,15 +68,15 @@
       el.classList.toggle('volt', volt);
       el.style.zIndex = volt ? k + 1 : L - k + 1;
     });
-    book.style.setProperty('--sh', S === 0 ? -0.5 : S === L ? 0.5 : 0);   // cerrado: la tapa/contratapa queda centrada
+    book.style.setProperty('--sh', vModo ? -1 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);   // cerrado: la tapa/contratapa queda centrada
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;
-    const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === L ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S);
-    document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === L;
+    const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === LM ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S);
+    document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === LM;
     llenar(); marca();
   }
 
   function ir(n) {
-    n = Math.max(0, Math.min(L, n)); if (n === S || busy) return;
+    n = Math.max(0, Math.min(LM, n)); if (n === S || busy) return;
     const dir = n > S ? 1 : -1, ms = MENOS_MOV ? 0 : 650;
     const k = dir > 0 ? S : S - 1, el = book.querySelector('.leaf[data-k="' + k + '"]');
     busy = true; llenar();
@@ -82,11 +86,11 @@
     const prev = S; S = n;
     leafs.forEach(l => { const kk = +l.dataset.k; if (l !== el) { l.classList.toggle('volt', kk < S); l.style.zIndex = kk < S ? kk + 1 : L - kk + 1; } });
     el.classList.toggle('volt', dir > 0);
-    book.style.setProperty('--sh', S === 0 ? -0.5 : S === L ? 0.5 : 0);
+    book.style.setProperty('--sh', vModo ? -1 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);
     setTimeout(() => { busy = false; pos(); }, ms);
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;
-    if (prev !== S) { const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === L ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S); }
-    document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === L;
+    if (prev !== S) { const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === LM ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S); }
+    document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === LM;
     llenar(); marca();
   }
 
@@ -96,8 +100,8 @@
     const st = document.getElementById('libro-stage'); if (!st) return;
     const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
     if (vModo && full) {
-      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / PW, (innerHeight - top - 126) / (2 * PH)));
-      book.style.setProperty('--sc', k.toFixed(3)); st.style.height = Math.round(2 * PH * k) + 'px'; return;
+      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / PW, (innerHeight - top - 126) / PH));
+      book.style.setProperty('--sc', k.toFixed(3)); st.style.height = Math.round(PH * k) + 'px'; return;
     }
     let sc;
     if (full) sc = Math.min((window.innerWidth - 120 - 96) / (2 * PW), (window.innerHeight - 12) / PH);
@@ -116,7 +120,7 @@
 
   window.libroRender = function () {
     const c = document.getElementById('album-container'); if (!c) return;
-    armar(); if (S > L) S = 0; busy = false;
+    const full0 = esMov(); vModo = full0 && innerHeight > innerWidth; armar(); if (S > LM) S = 0; busy = false;
     const grupos = P.map((pg, i) => pg.t === 'hoja' ? '<option value="' + Math.ceil(i / 2) + '">Hoja ' + i + ' · ' + pg.aves[0].comun + ' …</option>' : '').join('');
     const full = esMov(), vert = full && innerHeight > innerWidth; COLS = 4; vModo = vert;
     if (vert) return renderV(c);
