@@ -26,7 +26,7 @@
   function cara(i) {
     if (vModo && P[i] && P[i].t === 'vacia') {   // página izquierda 'de relleno' (realismo): solo la 3.ª columna (la pegada al pliegue) de una hoja anterior, con miniaturas livianas
       const q = P[i - 1]; if (q && q.t === 'tapa') return '<div class="lpag lpag-dorso"></div>'; if (!q || q.t !== 'hoja') return '<div class="lpag lpag-vacia"></div>';
-      return '<div class="lpag lpag-izq"><div class="lf-col">' + [2, 5, 8, 11].map(j => { const a = q.aves[j], f = a && visto(a) && avist[a.id] && avist[a.id].foto ? String(avist[a.id].foto).replace(/^\//, '') : ''; return '<div class="lf-c">' + (f ? `<img src="${TH(f)}" alt="" decoding="async">` : '') + '</div>'; }).join('') + '</div></div>';
+      return '<div class="lpag lpag-izq"><div class="album-grid stk libro-grid">' + q.aves.map((a, j) => { if (j % 3 !== 2) return '<div class="lcell" style="visibility:hidden"></div>'; const f = visto(a) && avist[a.id] && avist[a.id].foto ? String(avist[a.id].foto).replace(/^\//, '') : ''; return `<div class="lcell fc${ctx.col(a)}">${f ? `<div class="lf-c"><img src="${TH(f)}" alt="" decoding="async"></div>` : ''}</div>`; }).join('') + '</div></div>';
     }
     const pg = P[i]; if (!pg || pg.t === 'vacia') return '<div class="lpag lpag-vacia"></div>';
     if (pg.t === 'tapa') {

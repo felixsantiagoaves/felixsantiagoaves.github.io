@@ -1026,3 +1026,7 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro.stickers.libro-vv .fig-img,.libro.stickers.libro-vv .fig-silueta{aspect-ratio:5/4!important}
 .libro-vv .fig-info{min-height:0!important;padding:.35rem .25rem .3rem!important}
 .libro-vv .fig-fecha{font-size:.78rem!important}
+
+/* página izquierda de relleno: misma grilla que la derecha (alineada en alto) y con el color de familia */
+.libro-vv .lpag-izq .lf-c{height:100%;box-sizing:border-box;background:#fff;padding:6px;border-radius:3px;box-shadow:0 1px 3px rgba(42,31,20,.3);display:flex;border:0}
+.libro-vv .lpag-izq .lf-c img{flex:1;min-width:0;min-height:0;width:100%;height:100%;object-fit:cover;border-radius:1px}
