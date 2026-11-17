@@ -919,3 +919,27 @@ body.fit-pc #page-mapa .mapa-wrap{flex:1 1 0;min-height:0;height:auto!important;
 .libro-vv.libro-full{inset:0 0 66px 0!important;z-index:200!important}
 .lv-top .lv-lista{font-size:.62rem;padding:.35rem .6rem;white-space:nowrap}
 .modal-ov{z-index:10050!important}
+
+/* Celular: la lista y el libro comparten la misma cabecera: sin logo ni título arriba, una sola barra fija [región] [Libro/Lista] [Filtros / Ir a familia] */
+@media(max-width:999px),(pointer:coarse){
+body:not(.fit-pc):has(#page-album.active) > nav{height:0!important;min-height:0!important;padding:0!important;border:0!important;box-shadow:none!important;background:transparent!important}
+body:not(.fit-pc):has(#page-album.active) > nav .nav-logo{display:none!important}
+body:not(.fit-pc):has(#page-album.active) > nav .nav-i{height:0!important;min-height:0!important;padding:0!important}
+body:not(.fit-pc) #page-album .page-header{display:none!important}
+body:not(.fit-pc) #page-album .album-controls{position:sticky!important;top:0!important;z-index:40;padding:6px 8px!important;min-height:46px;box-sizing:border-box}
+.lv-top{min-height:46px;box-sizing:border-box;padding:6px 8px}
+.lv-top .reg-sel{flex:none;margin:0}
+.lv-top .fb2{flex:none}
+.lv-top select.fb2{flex:1 1 0;min-width:0;font:700 .66rem 'Lato',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:.45rem .5rem;border:2px solid var(--fg-v1,#414833);border-radius:99px;background:#fff;color:var(--fg-v1,#414833)}
+.lv-top .lv-lista{padding:.45rem .7rem;white-space:nowrap}
+}
+@media(max-width:999px),(pointer:coarse){
+body:not(.fit-pc) #page-album .album-controls-inner{display:flex!important;flex-wrap:nowrap!important;align-items:center;gap:6px;padding:0!important}
+body:not(.fit-pc) #page-album .album-controls .reg-sel{width:auto!important;flex:none!important;margin:0!important}
+body:not(.fit-pc) #page-album .album-controls .fb2{flex:1 1 0;min-width:0;white-space:nowrap;padding:.45rem .5rem}
+body:not(.fit-pc) #page-album .album-controls #btn-libro{order:2}
+body:not(.fit-pc) #page-album .album-controls #btn-mas{order:3}
+}
+@media(max-width:999px),(pointer:coarse){
+body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:.5rem .6rem;display:inline-flex;align-items:center;gap:4px;font-size:.62rem}
+}

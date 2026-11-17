@@ -704,7 +704,7 @@ function updAlbumHead() {
   const t = document.getElementById('prog-txt'); if(t) t.textContent = v + ' de ' + fmtN(n) + ' especies encontradas';
   const pf = document.getElementById('prog-fill'); if(pf) { pf.style.width = '100%'; pf.style.transformOrigin = 'left center'; pf.style.willChange = 'transform'; pf.style.transition = 'transform 1.1s cubic-bezier(.4,0,.2,1)'; setTimeout(() => { pf.style.transform = 'scaleX(' + (pct / 100) + ')'; }, 120); }
   document.querySelectorAll('.reg-b').forEach(b => b.classList.toggle('on', b.dataset.reg === REGION));
-  albVistaInit(); const bl = document.getElementById('btn-libro'); if (bl) { bl.hidden = false; bl.textContent = window.libroOn ? '☰ Ver como lista' : '📖 Ver como libro'; }
+  albVistaInit(); const bl = document.getElementById('btn-libro'); if (bl) { bl.hidden = false; bl.textContent = libroBtnTxt(window.libroOn); }
 }
 function setRegion(r) {
   if(r === REGION) return;
@@ -770,6 +770,7 @@ function renderAlbum() {
 // ── Vista de libro (opción de visualización; por defecto sigue la lista plegable) ──
 const SITE_V = (document.currentScript && document.currentScript.src.split('?v=')[1]) || '';
 // PC: libro por defecto; celular (lado menor < 600 px): lista por defecto. La elección del usuario se recuerda.
+const libroBtnTxt = on => innerWidth < 760 ? (on ? '☰ Lista' : '📖 Libro') : (on ? '☰ Ver como lista' : '📖 Ver como libro');
 const albEsMovil = () => Math.min(window.innerWidth, window.innerHeight) < 600;
 function albVistaInit() {
   if (window.libroOn !== undefined) return;
@@ -784,7 +785,7 @@ function libroCargar(cb) {
 function libroToggle() {
   const on = !window.libroOn;
   try { localStorage.setItem('albumVista', on ? 'libro' : 'lista'); } catch (e) {}
-  const ir = () => { window.libroOn = on; window._libroUser = true; document.body.classList.toggle('libro-modo', on); { const ac = document.getElementById('album-container'); if (ac) ac.classList.remove('alb-cols'); } const b = document.getElementById('btn-libro'); if (b) b.textContent = on ? '☰ Ver como lista' : '📖 Ver como libro'; if (!on && window.libroSalir) libroSalir(); renderAlbum(); window.scrollTo({ top: 0 }); { const ix = document.getElementById('libro-idx'); if (ix) ix.scrollTop = 0; } fitPantalla(); if (on && window.libroEscala) { libroEscala(); setTimeout(() => { fitPantalla(); libroEscala(); }, 60); } };
+  const ir = () => { window.libroOn = on; window._libroUser = true; document.body.classList.toggle('libro-modo', on); { const ac = document.getElementById('album-container'); if (ac) ac.classList.remove('alb-cols'); } const b = document.getElementById('btn-libro'); if (b) b.textContent = libroBtnTxt(on); if (!on && window.libroSalir) libroSalir(); renderAlbum(); window.scrollTo({ top: 0 }); { const ix = document.getElementById('libro-idx'); if (ix) ix.scrollTop = 0; } fitPantalla(); if (on && window.libroEscala) { libroEscala(); setTimeout(() => { fitPantalla(); libroEscala(); }, 60); } };
   if (on) libroCargar(ir); else ir();
 }
 let albAb = null;   // grupo abierto del álbum (uno a la vez)
