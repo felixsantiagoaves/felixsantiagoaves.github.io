@@ -81,4 +81,4 @@ Libro vertical (celular): página única que gira sobre su borde izquierdo hacia
 Libro vertical: libro grueso abierto (referencia: foto de libro abierto): pliegue central con degradé en la página derecha (.front .lpag) y espejado en la izquierda (.back .lpag), canto de hojas apiladas a derecha y abajo + tapa verde (.libro-book::after). Hojas a left:4px, book width 716.
 Libro vertical: libro apoyado a la derecha (stage justify-content:flex-end, padding-right 14px, transform-origin top right).
 Libro vertical: sombra del pliegue como overlay (.lpag::after, multiply) sobre el contenido para que oscurezca también las fotos.
-Libro horizontal (PC): mismo pliegue central (.lpag::after multiply, ambas páginas) que el vertical.
+Libro vertical: pliegue tenue (≈.26 de opacidad máx.) para igualar la sutileza del libro de PC; el de PC no se toca.

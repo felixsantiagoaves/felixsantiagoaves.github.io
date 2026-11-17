@@ -971,7 +971,6 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .front .lpag::after{background:linear-gradient(90deg,rgba(60,40,20,.55) 0,rgba(60,40,20,.3) 2%,rgba(60,40,20,.14) 6%,rgba(60,40,20,.05) 12%,rgba(60,40,20,0) 20%)}
 .libro-vv .back .lpag::after{background:linear-gradient(270deg,rgba(60,40,20,.55) 0,rgba(60,40,20,.3) 2%,rgba(60,40,20,.14) 6%,rgba(60,40,20,.05) 12%,rgba(60,40,20,0) 20%)}
 .libro-vv .lpag-tapa::after,.libro-vv .lpag-fin::after{display:none}
-/* Libro horizontal (PC / celular apaisado): mismo pliegue central que el vertical, sombra encima del contenido */
-.libro:not(.libro-vv) .lpag:not(.lpag-tapa):not(.lpag-fin)::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:50;mix-blend-mode:multiply}
-.libro:not(.libro-vv) .front .lpag::after{background:linear-gradient(90deg,rgba(60,40,20,.55) 0,rgba(60,40,20,.3) 2%,rgba(60,40,20,.14) 6%,rgba(60,40,20,.05) 12%,rgba(60,40,20,0) 20%)}
-.libro:not(.libro-vv) .back .lpag::after{background:linear-gradient(270deg,rgba(60,40,20,.55) 0,rgba(60,40,20,.3) 2%,rgba(60,40,20,.14) 6%,rgba(60,40,20,.05) 12%,rgba(60,40,20,0) 20%)}
+/* Pliegue del libro vertical más tenue, parecido al del libro de PC */
+.libro-vv .front .lpag::after{background:linear-gradient(90deg,rgba(60,40,20,.26) 0,rgba(60,40,20,.14) 2%,rgba(60,40,20,.05) 5%,rgba(60,40,20,0) 10%)}
+.libro-vv .back .lpag::after{background:linear-gradient(270deg,rgba(60,40,20,.26) 0,rgba(60,40,20,.14) 2%,rgba(60,40,20,.05) 5%,rgba(60,40,20,0) 10%)}
