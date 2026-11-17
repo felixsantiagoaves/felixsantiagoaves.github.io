@@ -855,3 +855,11 @@ body.fit-datm #dat-falt .fam-lista{grid-column:1!important;grid-row:3!important;
 .lpag-fin p{font:italic 1.35rem/1.35 'Playfair Display',serif;color:#ede0d4;margin:0}
 .lpag-fin small{position:absolute;bottom:34px;font:700 .72rem 'Lato',sans-serif;letter-spacing:3px;text-transform:uppercase;color:#c4a882}
 .lt-anillo small{bottom:auto!important;letter-spacing:0!important;text-transform:none!important;font-size:.95rem!important}
+
+/* Banderita argentina (celeste, blanco, celeste, con sol): <i class="ar"></i> junto a todo "Argentina" de la interfaz */
+.ar{display:inline-block;width:1.25em;height:.84em;margin-right:.4em;vertical-align:-.1em;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:none;
+  background:radial-gradient(circle at 50% 50%,#f6b40e 0 14%,transparent 16%),linear-gradient(180deg,#74acdf 0 33.3%,#fff 33.3% 66.6%,#74acdf 66.6% 100%)}
+.fgh-sci .ar{margin:0 0 0 .3em}
+.ar-s{position:absolute;top:13%;left:50%;width:1.7em;height:1.15em;margin:0 0 0 -.85em;z-index:2;transform:rotate(-6deg)}
+.reg-b .ar,.mreg-b .ar,.libro-reg .ar{width:1.1em;margin-right:.35em}
+.on .ar{box-shadow:0 0 0 1px rgba(255,255,255,.6)}

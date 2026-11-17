@@ -700,7 +700,7 @@ function fmtFecha(f) {
 
 function updAlbumHead() {
   const lista = avesReg(), n = lista.length, v = lista.filter(visto).length, pct = Math.round(v / n * 100);
-  const sub = document.getElementById('album-sub'); if(sub) sub.textContent = (REGION === 'cba' ? 'Córdoba' : 'Argentina') + ' · ' + fmtN(n) + ' especies';
+  const sub = document.getElementById('album-sub'); if(sub) sub.innerHTML = (REGION === 'cba' ? 'Córdoba' : '<i class="ar"></i>Argentina') + ' · ' + fmtN(n) + ' especies';
   const t = document.getElementById('prog-txt'); if(t) t.textContent = v + ' de ' + fmtN(n) + ' especies encontradas';
   const pf = document.getElementById('prog-fill'); if(pf) { pf.style.width = '100%'; pf.style.transformOrigin = 'left center'; pf.style.willChange = 'transform'; pf.style.transition = 'transform 1.1s cubic-bezier(.4,0,.2,1)'; setTimeout(() => { pf.style.transform = 'scaleX(' + (pct / 100) + ')'; }, 120); }
   document.querySelectorAll('.reg-b').forEach(b => b.classList.toggle('on', b.dataset.reg === REGION));
@@ -1532,7 +1532,7 @@ function buildDatos() {
   const vR = avesReg().filter(visto).length, falt = avesReg().length - vR;
   const fams = Object.entries(porFamR).map(([n, f]) => ({n, t: f.t, s: f.s, m: f.t - f.s})).sort((a, b) => famIdx(a.n) - famIdx(b.n));
   const completas = fams.filter(f => f.m === 0).length;
-  document.getElementById('dat-falt').innerHTML = `<div class="reg-sel" role="group" aria-label="Región"><button class="reg-b${REGION === 'cba' ? ' on' : ''}" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b${REGION === 'arg' ? ' on' : ''}" data-reg="arg" onclick="setRegion('arg')">Argentina</button></div><div class="fam-resumen">Me faltan <b>${fmtN(falt)}</b> especies de ${fmtN(avesReg().length)} · ${completas} grupo${completas === 1 ? '' : 's'} completo${completas === 1 ? '' : 's'}</div>
+  document.getElementById('dat-falt').innerHTML = `<div class="reg-sel" role="group" aria-label="Región"><button class="reg-b${REGION === 'cba' ? ' on' : ''}" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b${REGION === 'arg' ? ' on' : ''}" data-reg="arg" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><div class="fam-resumen">Me faltan <b>${fmtN(falt)}</b> especies de ${fmtN(avesReg().length)} · ${completas} grupo${completas === 1 ? '' : 's'} completo${completas === 1 ? '' : 's'}</div>
     <div class="fam-lista">${fams.map((f, i) => {
       const aves = avesReg().filter(a => a.familiaEsp === f.n).sort((a, b) => (!!visto(b) - !!visto(a)) * -1 || a.tx - b.tx);
       const esc = f.n.replace(/'/g, "\\'");
@@ -1605,7 +1605,7 @@ function pintarTerritorio() {
   const sin = zonas.filter(c => !n(c)).map(c => d.M.n[c] || c).sort((a, b) => a.localeCompare(b, 'es'));
   const btn = (k, v, t) => `<button class="reg-b${TER[k] === v ? ' on' : ''}" onclick="terSet('${k}','${v}')">${t}</button>`;
   el.innerHTML = `<div class="dat-grid">
-    <div class="dat-card rv"><div class="ter-ctl"><div class="reg-sel">${btn('reg', 'cba', 'Córdoba')}${btn('reg', 'arg', 'Argentina')}</div><div class="reg-sel">${btn('modo', 'visto', 'Lo que ya vi')}${btn('modo', 'pot', 'Dónde conviene salir')}</div></div>
+    <div class="dat-card rv"><div class="ter-ctl"><div class="reg-sel">${btn('reg', 'cba', 'Córdoba')}${btn('reg', 'arg', '<i class="ar"></i>Argentina')}</div><div class="reg-sel">${btn('modo', 'visto', 'Lo que ya vi')}${btn('modo', 'pot', 'Dónde conviene salir')}</div></div>
       <div class="dat-s">${potModo ? `Especies que todavía no viste que sumarías, en promedio, en una lista completa de eBird en cada ${unidad}. Sale de las listas "Especies en la mira" de eBird.` : `Especies distintas que registraste en cada ${unidad}.`}</div>
       <div class="ter-wrap">${terMapa(d, vals, mx, fmt)}
         <div class="ter-lado"><div class="ter-kpi"><b>${con.length}</b><span>de ${zonas.length} ${unidades} con registros</span></div>
