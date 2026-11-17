@@ -94,5 +94,5 @@ Página izquierda de relleno (vertical): misma grilla .libro-grid de 12 celdas (
 Libro PC (fit-pc): se quitó la barra inferior 'Hojas N y M' (.libro-bar oculto); el libro usa ese alto.
 
 ## Portada PC: álbum animado (panel "Mi álbum hoy")
-- Solo `body.fit-pc`. `assets/figurita.js` (último bloque) arma `.hl-book` dentro de `.fgh-stk`: página izquierda fija (dorso), derecha fija y 3 hojas que se dan vuelta solas cada 2,6 s, luego fade y reinicio. Fotos reales de especies vistas (TH), colores por familia.
-- Se pausa con el mouse encima o pestaña oculta; con "reducir movimiento" queda quieto. Se arma en idle. CSS al final de `assets/figurita.css` (`.hb-*`). Sin foto de camino de fondo (fondo crema). Móvil sin cambios.
+- Solo `body.fit-pc`. Último bloque de `assets/figurita.js` arma `.hl-book` con el álbum REAL (mismas clases `.leaf/.face/.lpag/.libro-grid/.lcell/.lgt` y `albFig` que `libro.js`: nombres, etiquetas de familia, colores). 8 páginas consecutivas (las que más fotos tienen), 3 hojas que se dan vuelta solas cada 2,8 s, fade y reinicio. Se escala a 1400×740 con `--sc` según el tamaño del panel.
+- Contadores en columna izquierda (grid en `.fgh-stk`, `--u` ×.66); el carancho se oculta en PC. Pausa con mouse encima; quieto con "reducir movimiento". CSS al final de `assets/figurita.css`. Móvil sin cambios.

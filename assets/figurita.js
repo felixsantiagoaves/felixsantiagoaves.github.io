@@ -140,41 +140,48 @@
   }
 })();
 
-/* Portada (Sobre mí, PC): el panel "Mi álbum hoy" muestra un álbum real pasando hojas solo (en vez de la foto del camino). Se pausa al pasar el mouse, respeta "reducir movimiento" y se carga cuando el navegador está libre. Doc: _build/COMPONENTES.md */
+/* Portada (Sobre mí, PC): el panel "Mi álbum hoy" muestra el álbum REAL (mismas hojas, familias, etiquetas y figuritas que /album) pasando hojas solo. Contadores a la izquierda. Se pausa con el mouse, respeta "reducir movimiento", se arma en idle. Doc: _build/COMPONENTES.md */
 (function(){
   var menos = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
   function armar(){
     var stk = document.querySelector('.fgh-stk');
-    if(!stk || stk.querySelector('.hl-book') || !document.body.classList.contains('fit-pc') || typeof avesReg !== 'function' || typeof TH !== 'function') return;
-    var todas = avesReg().slice().sort(function(a, b){ return a.tx - b.tx; }), fi = new Map();
-    todas.forEach(function(x){ if(!fi.has(x.familiaEsp)) fi.set(x.familiaEsp, fi.size); });
-    var vis = function(a){ return avist[a.id] && avist[a.id].foto; };
-    var NP = 7, CAP = 12, pgs = Math.ceil(todas.length / CAP), best = 0, bs = -1;
-    for(var s = 0; s + NP <= pgs; s += 2){ var c = 0; for(var i = s * CAP; i < (s + NP) * CAP && i < todas.length; i++) if(vis(todas[i])) c++; if(c > bs){ bs = c; best = s; } }
+    if(!stk || stk.querySelector('.hl-book') || !document.body.classList.contains('fit-pc') || typeof avesReg !== 'function' || typeof albFig !== 'function') return;
+    var todas = avesReg().slice().sort(function(a, b){ return a.tx - b.tx; }), numMap = {}, fi = new Map(), CAP = 12;
+    todas.forEach(function(x, n){ numMap[x.id] = n + 1; if(!fi.has(x.familiaEsp)) fi.set(x.familiaEsp, fi.size); });
+    var nuevas = new Set(recientes(8, false).map(function(a){ return a.id; }));
+    var pgs = Math.ceil(todas.length / CAP), NP = 8, best = 0, bs = -1;
+    for(var s0 = 0; s0 + NP <= pgs; s0++){ var c = 0; for(var q = s0 * CAP; q < (s0 + NP) * CAP && q < todas.length; q++) if(visto(todas[q])) c++; if(c > bs){ bs = c; best = s0; } }
+    var esc = typeof escHtml === 'function' ? escHtml : function(t){ return t; };
     var cara = function(n){
-      var A = todas.slice((best + n) * CAP, (best + n + 1) * CAP);
-      return '<div class="hb-pg"><div class="hb-grid">' + A.map(function(a){
-        var f = vis(a) ? String(avist[a.id].foto).replace(/^\//, '') : '';
-        return '<div class="hb-c fc' + (fi.get(a.familiaEsp) % 6) + (f ? '' : ' vac') + '">' + (f ? '<img src="' + TH(f) + '" alt="" decoding="async" loading="lazy">' : '') + '</div>';
-      }).join('') + '</div></div>';
+      var g = best + n, A = todas.slice(g * CAP, (g + 1) * CAP), pk = g > 0 ? todas[g * CAP - 1] : null, tag = {};
+      for(var j = 0; j < A.length; j++){
+        var ini = j > 0 ? A[j - 1].familiaEsp !== A[j].familiaEsp : !(pk && pk.familiaEsp === A[j].familiaEsp), cont = j === 0 && !ini;
+        if(!ini && !cont) continue;
+        var e = j; while(e + 1 < A.length && A[e + 1].familiaEsp === A[j].familiaEsp && Math.floor((e + 1) / 4) === Math.floor(j / 4)) e++;
+        var tot = todas.filter(function(x){ return x.familiaEsp === A[j].familiaEsp; }), v = tot.filter(visto).length;
+        tag[j] = { n: e - j + 1, t: A[j].familiaEsp + ' ' + v + '/' + tot.length + (cont ? ' · sigue' : '') };
+      }
+      return '<div class="lpag"><div class="album-grid stk libro-grid">' + A.map(function(a, j){
+        return '<div class="lcell fc' + (fi.get(a.familiaEsp) % 6) + (tag[j] ? ' ini' : '') + '">' + (tag[j] ? '<span class="lgt" style="width:' + tag[j].n + '00%">' + esc(tag[j].t) + '</span>' : '') + albFig(a, j, numMap, nuevas) + '</div>';
+      }).join('') + '</div><div class="lpag-n">' + (g + 1) + '</div></div>';
     };
-    var N = (NP - 1) / 2, hojas = '';
-    for(var k = 0; k < N; k++) hojas += '<div class="hb-leaf" style="z-index:' + (N - k + 2) + '"><div class="hb-face hb-f">' + cara(2 * k) + '</div><div class="hb-face hb-b">' + cara(2 * k + 1) + '</div></div>';
-    var el = document.createElement('div'); el.className = 'hl-book'; el.setAttribute('aria-hidden', 'true');
-    el.innerHTML = '<div class="hb"><div class="hb-base hb-l"><div class="hb-dorso"></div></div><div class="hb-base hb-r">' + cara(NP - 1) + '</div>' + hojas + '<i class="hb-fold"></i></div>';
+    var N = (NP - 2) / 2, hojas = '';
+    for(var k = 0; k < N; k++) hojas += '<div class="leaf" style="z-index:' + (N - k + 2) + '"><div class="face front">' + cara(2 * k + 1) + '</div><div class="face back">' + cara(2 * k + 2) + '</div></div>';
+    var el = document.createElement('div'); el.className = 'hl-book libro stickers'; el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<div class="libro-book hb2"><div class="face back hb2-l">' + cara(0) + '</div><div class="face front hb2-r">' + cara(NP - 1) + '</div>' + hojas + '</div>';
     stk.insertBefore(el, stk.firstChild);
-    var leaves = el.querySelectorAll('.hb-leaf'), hb = el.querySelector('.hb'), i = 0, pausa = false;
-    el.addEventListener('mouseenter', function(){ pausa = true; }); el.addEventListener('mouseleave', function(){ pausa = false; });
+    var bk = el.firstChild, leaves = el.querySelectorAll('.leaf'), i = 0, pausa = false;
+    var fit = function(){ var w = el.clientWidth, h = el.clientHeight; if(w) bk.style.setProperty('--sc', Math.min(w / 1420, h / 760).toFixed(4)); };
+    fit(); addEventListener('resize', fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(el);
     stk.addEventListener('mouseenter', function(){ pausa = true; }); stk.addEventListener('mouseleave', function(){ pausa = false; });
     if(menos) return;
     var paso = function(){
-      if(document.hidden || pausa){ return; }
+      if(document.hidden || pausa) return;
       if(i < leaves.length){ leaves[i].classList.add('volt'); i++; }
-      else { hb.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); void hb.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; hb.classList.remove('fade'); }, 700); }
+      else { bk.classList.add('fade'); setTimeout(function(){ leaves.forEach(function(l){ l.style.transition = 'none'; l.classList.remove('volt'); }); void bk.offsetWidth; leaves.forEach(function(l){ l.style.transition = ''; }); i = 0; bk.classList.remove('fade'); }, 700); }
     };
-    setTimeout(function(){ setInterval(paso, 2600); }, 1800);
+    setTimeout(function(){ setInterval(paso, 2800); }, 2000);
   }
-  var arrancar = function(){ var f = function(){ armar(); }; (window.requestIdleCallback || function(g){ setTimeout(g, 900); })(f, { timeout: 2500 }); };
+  var arrancar = function(){ (window.requestIdleCallback || function(g){ setTimeout(g, 900); })(armar, { timeout: 2500 }); };
   if(document.readyState === 'complete') arrancar(); else addEventListener('load', arrancar);
-  addEventListener('resize', function(){ var s = document.querySelector('.fgh-stk .hl-book'); if(!s && document.body.classList.contains('fit-pc')) armar(); });
 })();
