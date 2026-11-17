@@ -101,7 +101,7 @@
     const st = document.getElementById('libro-stage'); if (!st) return;
     const full = esMov(), fit = !full && document.body.classList.contains('fit-pc') && document.body.classList.contains('libro-modo');
     if (vModo && full) {
-      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / PW, (innerHeight - top - 126) / PH));
+      const top = (document.querySelector('.lv-top') || { offsetHeight: 44 }).offsetHeight, k = Math.max(.2, Math.min((innerWidth - 8) / (PW + 44), (innerHeight - top - 126) / PH));
       book.style.setProperty('--sc', k.toFixed(3)); book.style.setProperty('--ph', PH + 'px'); st.style.height = Math.round(PH * k) + 'px'; return;
     }
     let sc;
