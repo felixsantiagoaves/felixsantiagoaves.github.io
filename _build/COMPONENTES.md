@@ -80,3 +80,4 @@ Libro vertical: sin giro de hoja; solo la hoja .cur es visible y la página nuev
 Libro vertical (celular): página única que gira sobre su borde izquierdo hacia los costados (como pasar página); flechas ◀▶, swipe horizontal. Reemplaza el deslizado vertical.
 Libro vertical: libro grueso abierto (referencia: foto de libro abierto): pliegue central con degradé en la página derecha (.front .lpag) y espejado en la izquierda (.back .lpag), canto de hojas apiladas a derecha y abajo + tapa verde (.libro-book::after). Hojas a left:4px, book width 716.
 Libro vertical: libro apoyado a la derecha (stage justify-content:flex-end, padding-right 14px, transform-origin top right).
+Libro vertical: sombra del pliegue como overlay (.lpag::after, multiply) sobre el contenido para que oscurezca también las fotos.
