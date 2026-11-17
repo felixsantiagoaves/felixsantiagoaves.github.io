@@ -68,7 +68,7 @@
       el.classList.toggle('volt', volt); el.classList.toggle('cur', k === S);
       el.style.zIndex = volt ? k + 1 : L - k + 1;
     });
-    book.style.setProperty('--sh', vModo ? -1 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);   // cerrado: la tapa/contratapa queda centrada
+    book.style.setProperty('--sh', vModo ? 0 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);   // cerrado: la tapa/contratapa queda centrada
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;
     const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === LM ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S);
     document.getElementById('libro-prev').disabled = S === 0; document.getElementById('libro-next').disabled = S === LM;
@@ -77,8 +77,7 @@
 
   function ir(n) {
     n = Math.max(0, Math.min(LM, n)); if (n === S || busy) return;
-    const dir = n > S ? 1 : -1, ms = MENOS_MOV || vModo ? 0 : 650;
-    if (vModo && !MENOS_MOV) { const b = document.getElementById('libro'); if (b) { b.style.setProperty('--vd', dir * 60 + 'px'); b.classList.remove('vs'); void b.offsetWidth; b.classList.add('vs'); } }
+    const dir = n > S ? 1 : -1, ms = MENOS_MOV ? 0 : 650;
     const k = dir > 0 ? S : S - 1, el = book.querySelector('.leaf[data-k="' + k + '"]');
     busy = true; llenar();
     // hojas intermedias saltan; sólo la más cercana anima
@@ -88,7 +87,7 @@
     leafs.forEach(l => { const kk = +l.dataset.k; if (l !== el) { l.classList.toggle('volt', kk < S); l.style.zIndex = kk < S ? kk + 1 : L - kk + 1; } });
     el.classList.toggle('volt', dir > 0);
     if (vModo) leafs.forEach(l => l.classList.toggle('cur', +l.dataset.k === S));
-    book.style.setProperty('--sh', vModo ? -1 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);
+    book.style.setProperty('--sh', vModo ? 0 : S === 0 ? -0.5 : S === LM && !vModo ? 0.5 : 0);
     setTimeout(() => { busy = false; pos(); }, ms);
     const sel = document.getElementById('libro-sel'); if (sel) sel.value = S;
     if (prev !== S) { const info = document.getElementById('libro-info'); if (info) info.textContent = S === 0 ? 'Tapa' : S === LM ? 'Contratapa' : 'Hojas ' + (2 * S - 1) + ' y ' + (2 * S); }
@@ -154,7 +153,7 @@
     c.innerHTML = ''; const h0 = document.getElementById('libro-host'); if (h0) h0.remove();
     const host = document.body.appendChild(Object.assign(document.createElement('div'), { id: 'libro-host' }));
     const fams = []; P.forEach(pg => { if (pg.aves && !fams.includes(pg.aves[0].familiaEsp)) fams.push(pg.aves[0].familiaEsp); });
-    host.innerHTML = `<div class="libro stickers libro-full libro-vv" id="libro"><div class="lv-top"><div class="reg-sel reg-sticky" role="group" aria-label="Región"><button class="reg-b ${REGION === 'cba' ? 'on' : ''}" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b ${REGION === 'arg' ? 'on' : ''}" data-reg="arg" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><button class="fb2 lv-lista" onclick="libroToggle()" aria-label="Ver como lista">☰ Lista</button><select id="lv-sel" class="fb2" aria-label="Ir a una familia" onchange="libroVFam(this.value)"><option value="">Tapa</option>${fams.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('')}</select></div><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">▲</button><div class="libro-book" id="libro-book">${Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')}</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▼</button></div></div>`;
+    host.innerHTML = `<div class="libro stickers libro-full libro-vv" id="libro"><div class="lv-top"><div class="reg-sel reg-sticky" role="group" aria-label="Región"><button class="reg-b ${REGION === 'cba' ? 'on' : ''}" data-reg="cba" onclick="setRegion('cba')">Córdoba</button><button class="reg-b ${REGION === 'arg' ? 'on' : ''}" data-reg="arg" onclick="setRegion('arg')"><i class="ar"></i>Argentina</button></div><button class="fb2 lv-lista" onclick="libroToggle()" aria-label="Ver como lista">☰ Lista</button><select id="lv-sel" class="fb2" aria-label="Ir a una familia" onchange="libroVFam(this.value)"><option value="">Tapa</option>${fams.map(f => `<option value="${escHtml(f)}">${escHtml(f)}</option>`).join('')}</select></div><div class="libro-stage" id="libro-stage"><button class="libro-nav pv" id="libro-prev" onclick="libroIr(-1)" aria-label="Hoja anterior">◀</button><div class="libro-book" id="libro-book">${Array.from({ length: L }, (_, k) => `<div class="leaf" data-k="${k}"><div class="face front"></div><div class="face back"></div></div>`).join('')}</div><button class="libro-nav nx" id="libro-next" onclick="libroIr(1)" aria-label="Hoja siguiente">▶</button></div></div>`;
     sinZoom(true); book = document.getElementById('libro-book'); escala(); pos();
     [150, 500, 1200].forEach(t => setTimeout(() => { if (window.libroOn && book && book.isConnected) escala(); }, t));
     book.addEventListener('pointerdown', onDown);
@@ -180,7 +179,7 @@
     const borde = x < w * .12 ? -1 : x > w * .88 ? 1 : 0;
     if (!borde) return; drag = { x: e.clientX, d: borde };
   }
-  window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (drag.any && vModo) { const dy = e.clientY - drag.y; if (Math.abs(dy) > 50 && Math.abs(dy) > Math.abs(dx)) { const d = dy < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (drag.any) { if (Math.abs(dx) > 50) { const d = dx < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (Math.abs(dx) > 60 && Math.sign(dx) === -drag.d) { const d = drag.d; drag = null; ir(S + d); } });
+  window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (drag.any) { if (Math.abs(dx) > 50) { const d = dx < 0 ? 1 : -1; drag = null; ir(S + d); } return; } if (Math.abs(dx) > 60 && Math.sign(dx) === -drag.d) { const d = drag.d; drag = null; ir(S + d); } });
   window.addEventListener('pointerup', () => { drag = null; });
   window.addEventListener('keydown', e => { if (!window.libroOn || !book || e.target.closest('input,select,textarea')) return; if (e.key === 'ArrowRight') ir(S + 1); if (e.key === 'ArrowLeft') ir(S - 1); });
   ['resize', 'orientationchange', 'fullscreenchange'].forEach(ev => window.addEventListener(ev, () => { if (window.libroOn && book && book.isConnected) escala(); }));
