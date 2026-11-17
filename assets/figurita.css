@@ -981,3 +981,7 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 .libro-vv .lf-col{position:absolute;right:10px;top:14px;bottom:20px;width:215px;display:grid;grid-template-rows:repeat(4,1fr);gap:14px}
 .libro-vv .lf-c{background:#e3d9c0;border:3px solid #fff;box-shadow:0 1px 3px rgba(42,31,20,.3);overflow:hidden}
 .libro-vv .lf-c img{width:100%;height:100%;object-fit:cover;display:block}
+/* sin mix-blend-mode (provocaba un salto/glitch de la sombra al terminar el giro de la hoja en 3D): sombra con transparencia normal */
+.libro-vv .front .lpag::after,.libro-vv .back .lpag::after{mix-blend-mode:normal!important}
+.libro-vv .leaf{will-change:transform}
+.libro-vv .leaf .face{transform-style:flat}

@@ -83,3 +83,4 @@ Libro vertical: libro apoyado a la derecha (stage justify-content:flex-end, padd
 Libro vertical: sombra del pliegue como overlay (.lpag::after, multiply) sobre el contenido para que oscurezca también las fotos.
 Libro vertical: pliegue tenue (≈.26 de opacidad máx.) para igualar la sutileza del libro de PC; el de PC no se toca.
 Libro vertical: la página izquierda (reverso de la hoja pasada) muestra SOLO la 3.ª columna de una hoja anterior con miniaturas livianas (.lpag-izq/.lf-col); antes se duplicaba la hoja completa y se caía la pestaña en el celular. En vModo solo se mantienen 3 hojas con contenido (lim=1) y .back sin clicks.
+Libro vertical: sin mix-blend-mode en la sombra del pliegue (causaba glitch al terminar el giro 3D); .leaf will-change:transform.
