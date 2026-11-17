@@ -947,12 +947,17 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 
 /* Libro vertical (una página): la hoja gira sobre su borde izquierdo hacia los costados, como pasar una página */
 .libro-vv .libro-book{--ph:1080px;width:716px;height:var(--ph);transform-origin:top center;transform:scale(var(--sc));transition:none}
-.libro-vv .leaf{left:16px;top:0;width:700px;height:var(--ph);transform-origin:left center}
+.libro-vv .leaf{left:4px;top:0;width:700px;height:var(--ph);transform-origin:left center}
 .libro-vv .libro-nav{width:32px;height:32px;opacity:.8;top:50%;transform:translateY(-50%)}
 .libro-vv .libro-nav.pv{left:4px;right:auto}.libro-vv .libro-nav.nx{right:4px;left:auto}
 
-/* Álbum grueso: las hojas se hunden hacia el centro (pliegue). Sombra de pliegue sobre la página + canto de hojas apiladas a la izquierda */
-.libro-vv .libro-book::after{content:'';position:absolute;left:0;top:0;bottom:0;width:20px;z-index:999;pointer-events:none;border-radius:6px 0 0 6px;
- background:linear-gradient(90deg,rgba(20,12,4,.55) 0,rgba(20,12,4,.25) 70%,rgba(20,12,4,0) 100%),repeating-linear-gradient(90deg,#cdbf9f 0 1px,#f4ecd7 1px 3px)}
-.libro-vv .libro-book{filter:drop-shadow(0 6px 10px rgba(30,20,8,.35))}
-.libro-vv .front .lpag{background:linear-gradient(90deg,rgba(30,20,8,.5) 0,rgba(30,20,8,.22) 3%,rgba(30,20,8,.08) 9%,rgba(30,20,8,0) 17%),#f6efdf}
+/* Álbum grueso abierto (siempre vemos la página derecha): pliegue central que se hunde + canto de hojas apiladas a la derecha y abajo + tapa dura debajo */
+.libro-vv .libro-book::after{content:'';position:absolute;left:4px;top:0;width:700px;height:100%;z-index:0;pointer-events:none;border-radius:0 4px 4px 0;
+ box-shadow:2px 2px 0 #efe6cf,3px 3px 0 #c7ba99,5px 5px 0 #efe6cf,6px 6px 0 #bfb292,8px 8px 0 #ece3cb,9px 9px 0 #b5a888,11px 11px 0 #ece3cb,12px 12px 0 #5a6446,13px 13px 0 #414833,14px 14px 12px rgba(20,14,6,.4)}
+.libro-vv .libro-book{filter:none}
+.libro-vv .front .lpag{background:linear-gradient(90deg,rgba(25,15,5,.62) 0,rgba(25,15,5,.34) .9%,rgba(25,15,5,.16) 2.8%,rgba(25,15,5,.05) 6%,rgba(255,255,255,0) 8%,rgba(255,255,255,.28) 10.5%,rgba(255,255,255,0) 15%),#f6efdf}
+/* página izquierda (hojas ya pasadas, vista de costado): mismo pliegue espejado, converge al centro */
+.libro-vv .back .lpag{background:linear-gradient(270deg,rgba(25,15,5,.7) 0,rgba(25,15,5,.4) 1.2%,rgba(25,15,5,.18) 3.5%,rgba(25,15,5,.06) 8%,rgba(255,255,255,0) 12%),#f1e8d3;border-radius:0}
+.libro-vv .libro-stage{background:linear-gradient(90deg,transparent 0,transparent 0)}
+.libro-vv .front .lpag{background:linear-gradient(90deg,rgba(18,10,3,.85) 0,rgba(18,10,3,.5) 1.4%,rgba(18,10,3,.24) 4%,rgba(18,10,3,.09) 8%,rgba(255,255,255,0) 10%,rgba(255,255,255,.3) 12.5%,rgba(255,255,255,0) 18%),#f6efdf}
+.libro-vv .back .lpag{background:linear-gradient(270deg,rgba(18,10,3,.85) 0,rgba(18,10,3,.5) 1.4%,rgba(18,10,3,.24) 4%,rgba(18,10,3,.09) 10%,rgba(255,255,255,0) 16%),#f1e8d3;border-radius:0}

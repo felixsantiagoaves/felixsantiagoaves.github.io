@@ -78,4 +78,4 @@ Libro vertical en celular = UNA página por vez (ancho completo): en vModo armar
 Libro vertical celular: 3 columnas × 4 filas por página (COLS=3, PH=1080 en vModo; --ph en CSS).
 Libro vertical: sin giro de hoja; solo la hoja .cur es visible y la página nueva se desliza (@keyframes vslide, --vd según dirección).
 Libro vertical (celular): página única que gira sobre su borde izquierdo hacia los costados (como pasar página); flechas ◀▶, swipe horizontal. Reemplaza el deslizado vertical.
-Libro vertical: efecto de álbum grueso: pliegue (sombra degradada en el borde izquierdo de la página + canto de hojas apiladas, .libro-book::after 20px); hojas desplazadas 16px (book width 716).
+Libro vertical: libro grueso abierto (referencia: foto de libro abierto): pliegue central con degradé en la página derecha (.front .lpag) y espejado en la izquierda (.back .lpag), canto de hojas apiladas a derecha y abajo + tapa verde (.libro-book::after). Hojas a left:4px, book width 716.
