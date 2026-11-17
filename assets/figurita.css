@@ -974,3 +974,5 @@ body:not(.fit-pc) #page-album .album-controls .reg-b{white-space:nowrap;padding:
 /* Pliegue del libro vertical más tenue, parecido al del libro de PC */
 .libro-vv .front .lpag::after{background:linear-gradient(90deg,rgba(60,40,20,.26) 0,rgba(60,40,20,.14) 2%,rgba(60,40,20,.05) 5%,rgba(60,40,20,0) 10%)}
 .libro-vv .back .lpag::after{background:linear-gradient(270deg,rgba(60,40,20,.26) 0,rgba(60,40,20,.14) 2%,rgba(60,40,20,.05) 5%,rgba(60,40,20,0) 10%)}
+
+.libro-vv .back{pointer-events:none}

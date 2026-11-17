@@ -23,6 +23,7 @@
   }
 
   function cara(i) {
+    if (vModo && P[i] && P[i].t === 'vacia') { const q = P[i - 3]; return q && q.t === 'hoja' ? cara(i - 3) : '<div class="lpag lpag-vacia"></div>'; }   // página izquierda 'de relleno' (realismo): contenido de una hoja anterior
     const pg = P[i]; if (!pg || pg.t === 'vacia') return '<div class="lpag lpag-vacia"></div>';
     if (pg.t === 'tapa') {
       const v = ctx.todas.filter(visto).length;
