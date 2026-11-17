@@ -891,3 +891,30 @@ body.fit-pc #page-mapa .mapa-wrap{flex:1 1 0;min-height:0;height:auto!important;
 .libro-full .libro-nav{width:36px;height:36px}
 .libro-full .libro-reg button{font-size:.52rem!important;letter-spacing:0!important;padding:.35rem .1rem!important;white-space:nowrap}
 .libro-full .libro-reg .ar{width:.9em;margin-right:.2em}
+
+/* Libro en celular VERTICAL: una página por pantalla (3 columnas × 4 filas), se pasa deslizando o con ◀ ▶ */
+.libro-v{display:flex!important;flex-direction:column;background:#ede0d4}
+[data-theme=dark] .libro-v{background:#1a1f12}
+.lv-top{flex:none;display:flex;align-items:center;gap:6px;padding:6px 8px}
+.lv-top select{flex:1 1 0;min-width:0;padding:.4rem .6rem;border:1.5px solid var(--co,#c4a882);border-radius:99px;background:#fff;font:700 .7rem 'Lato',sans-serif;color:var(--fg-tx,#2a2a1c)}
+.lv-top .libro-reg{flex:none;display:flex;margin:0}
+.lv-top .libro-reg button{font-size:.56rem;letter-spacing:0;padding:.38rem .5rem;white-space:nowrap}
+.lv-top .libro-x{flex:none;padding:.3rem .6rem;font-size:.7rem}
+.lv-stage{position:relative;flex:1 1 0;min-height:0;overflow:hidden;touch-action:pan-y}
+.lv-esc{position:absolute;left:0;top:0;width:700px;transform-origin:top left}
+.lv-page{position:relative;width:700px;box-shadow:0 0 0 1px rgba(65,72,51,.18)}
+.libro-v .lpag{border-radius:0!important}
+.libro-v .libro-grid{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(4,1fr)}
+.lv-stage .libro-nav{width:34px;height:34px;opacity:.85;top:50%;font-size:.8rem}
+.lv-ir{animation:lvIr .32s ease both}.lv-vuelve{animation:lvVuelve .32s ease both}
+@keyframes lvIr{from{opacity:.2;transform:translateX(60px)}to{opacity:1;transform:none}}
+@keyframes lvVuelve{from{opacity:.2;transform:translateX(-60px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.lv-ir,.lv-vuelve{animation:none}}
+.libro-v .lcell .fig{zoom:1}
+.lv-stage .libro-nav{top:auto;bottom:8px;transform:none;width:32px;height:32px;opacity:.75}
+.libro-v .lt-foto{width:86%;padding:16px 16px 52px}.libro-v .lt-foto .lt-ph{height:640px}.libro-v .lt-foto>span{font-size:1.7rem;bottom:12px}
+.libro-v .lpag-tapa .lt-titulo{margin-top:70px;padding:.8rem 1.8rem}.libro-v .lpag-tapa .lt-titulo h2{font-size:2.6rem}
+.libro-v .lpag-tapa .lt-sub{margin-top:26px;font-size:.85rem}
+.libro-v .lt-anillo{width:190px;height:190px}.libro-v .lpag-tapa .lt-anillo b{font-size:3.4rem}
+.libro-v .lt-ult img{width:120px;height:150px}
+.libro-v .lt-foto-fin{width:70%}.libro-v .lt-foto-fin .lt-ph{height:480px}.libro-v .lpag-fin p{font-size:1.8rem}.libro-v .lpag-fin .lt-logo{width:70px;height:100px}
